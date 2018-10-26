@@ -5,24 +5,26 @@ import java.text.DecimalFormat;
 
 public class MyMath {
     public static void main(String[] args) {
-        long value = 20;
-//        System.out.println(factorial(value)); // max is 999_999_999
-        System.out.println(new DecimalFormat("###,###").format(factorial(value)));
-        System.out.println(insertSpaces(String.valueOf(factorial(value))));
-        double Value = Math.pow(2.5, 10);
-        System.out.println(Value);
-        System.out.println(insertSpaces(String.valueOf((int) Value)));
+        int factor = 10;
+        System.out.println(factor + "! = " + insertSpaces(String.valueOf(factorial(10))));
+
+        long fact = 20;
+        System.out.println(fact + "! = " + new DecimalFormat("###,###").format(factorial(fact)));
+        System.out.println(fact + "! = " + insertSpaces(String.valueOf(factorial(fact))));
+
+        long f = 2;
+        long r = 10;
+        double pow = Math.pow(f, r);
+        System.out.println("pow(" + f + ", " + r + ") = " + insertSpaces(String.valueOf((int) pow)));
     }
 
-/*
-    public static long factorial(long value) {
-        long result = 1;
+    public static long factorial(int value) {
+        int result = 1;
         for (int factor = 2; factor <= value; factor++) result = result * factor;
         return result;
     }
-*/
 
-    public static BigInteger factorial(long value) {
+    private static BigInteger factorial(long value) {
         if (value < 0) throw new IllegalArgumentException("Value must be positive");
         BigInteger result = BigInteger.ONE;
         for (int factor = 2; factor <= value; factor++) result = result.multiply(BigInteger.valueOf(factor));
@@ -35,16 +37,8 @@ public class MyMath {
 
         for (int i = charArray.length; i > 0; i--) {
             result += charArray[charArray.length - i];
-            if ((i-1) % 3 == 0) result += " ";
+            if ((i - 1) % 3 == 0) result += " ";
         }
-/*
-        int i = charArray.length - 1;
-        for (char ch : charArray) {
-            result += ch;
-            if (i % 3 == 0) result += " ";
-            i--;
-        }
-*/
         return result;
     }
 }
