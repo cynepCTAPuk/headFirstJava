@@ -1,29 +1,31 @@
 package test.Sorting;
 
-import java.util.Arrays;
-
-class Shake {
+class OddEven {
     static void sort(int[] array) {
-        int left = 0;
+        int left;
         int right = array.length - 1;
         int swap;
-        while (left < right) {
-            for (int i = left; i < right; i++) {
+        boolean b = true;
+        while (b) {
+            b = false;
+            left = 0;
+            for (int i = left; i < right; i = i + 2) {
                 if (array[i] > array[i + 1]) {
+                    b = true;
                     swap = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = swap;
                 }
             }
-            right--;
-            for (int i = right; i > left; i--) {
-                if (array[i - 1] > array[i]) {
-                    swap = array[i - 1];
-                    array[i - 1] = array[i];
-                    array[i] = swap;
+            left = 1;
+            for (int i = left; i < right; i = i + 2) {
+                if (array[i] > array[i + 1]) {
+                    b = true;
+                    swap = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = swap;
                 }
             }
-            left++;
         }
     }
 

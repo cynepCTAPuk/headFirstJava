@@ -8,25 +8,35 @@ import java.util.Timer;
 
 public class TestSorting {
     public static void main(String[] args) {
-        double t0, tBublle, tShake;
-        int[] array = new int[10_000];
+        double t0, tBublle, tShake, tOddEven;
+        int[] array = new int[1_000];
         NewArray.fillRandom(array);
-//        System.out.println(Arrays.toString(array));
+
         int[] arrayBubble = array.clone();
-
         int[] arrayShake = array.clone();
-
-        int[] array3 = array.clone();
+        int[] arrayOddEven = array.clone();
 
         t0 = System.nanoTime();
         Bubble.sort(arrayBubble);
         tBublle = System.nanoTime() - t0;
-        System.out.println("Bublle\t" + String.format("%,.0f", tBublle));
 
         t0 = System.nanoTime();
         Shake.sort(arrayShake);
         tShake = System.nanoTime() - t0;
-        System.out.println("Shake\t" + String.format("%,.0f", tShake));
-    }
 
+        t0 = System.nanoTime();
+        OddEven.sort(arrayOddEven);
+        tOddEven = System.nanoTime() - t0;
+
+/*
+        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(arrayBubble));
+        System.out.println(Arrays.toString(arrayShake));
+        System.out.println(Arrays.toString(arrayOddEven));
+*/
+
+        System.out.println("Bublle\t" + String.format("%,.0f", tBublle));
+        System.out.println("Shake\t" + String.format("%,.0f", tShake));
+        System.out.println("OddEven\t" + String.format("%,.0f", tOddEven));
+    }
 }
