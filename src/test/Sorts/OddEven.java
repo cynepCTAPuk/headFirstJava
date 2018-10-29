@@ -1,15 +1,17 @@
-package test.Sorting;
+package test.Sorts;
 
 class OddEven {
     static void sort(int[] array) {
         int left;
         int right = array.length - 1;
         int swap;
+        int count = 0;
         boolean b = true;
         while (b) {
             b = false;
             left = 0;
             for (int i = left; i < right; i = i + 2) {
+                count++;
                 if (array[i] > array[i + 1]) {
                     b = true;
                     swap = array[i];
@@ -19,6 +21,7 @@ class OddEven {
             }
             left = 1;
             for (int i = left; i < right; i = i + 2) {
+                count++;
                 if (array[i] > array[i + 1]) {
                     b = true;
                     swap = array[i];
@@ -27,6 +30,8 @@ class OddEven {
                 }
             }
         }
+        System.out.println("OddEven cycles\t" + String.format("%,d", count));
+
     }
 
 }

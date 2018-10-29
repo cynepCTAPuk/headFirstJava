@@ -1,6 +1,6 @@
-package test.Sorting;
+package test.Sorts;
 
-class ShakeClassic {
+class Bubble {
     static void sort(int[] array) {
         int left = 0;
         int right = array.length - 1;
@@ -16,18 +16,8 @@ class ShakeClassic {
                 }
             }
             right--;
-
-            for (int i = right; i > left; i--) {
-                count++;
-                if (array[i - 1] > array[i]) {
-                    swap = array[i - 1];
-                    array[i - 1] = array[i];
-                    array[i] = swap;
-                }
-            }
-            left++;
         }
-        System.out.println("ShakeClassic\t" + String.format("%,d", count));
-    }
+        System.out.println("Buble cycles\t" + String.format("%,d", count));
 
+    }
 }

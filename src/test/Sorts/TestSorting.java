@@ -1,11 +1,4 @@
-package test.Sorting;
-
-import test.MyMath;
-
-import java.sql.Time;
-import java.util.Arrays;
-import java.util.Timer;
-import java.util.concurrent.TimeUnit;
+package test.Sorts;
 
 public class TestSorting {
     public static void main(String[] args) {
@@ -15,25 +8,25 @@ public class TestSorting {
         int[] arrayBubble, arrayShake, arrayShakeClassic, arrayOddEven;
 
         arrayBubble = array.clone();
-        arrayShake = array.clone();
-        arrayShakeClassic = array.clone();
         arrayOddEven = array.clone();
+        arrayShakeClassic = array.clone();
+        arrayShake = array.clone();
 
         t0 = System.nanoTime();
         Bubble.sort(arrayBubble);
         tBubble = System.nanoTime() - t0;
 
         t0 = System.nanoTime();
-        Shake.sort(arrayShake);
-        tShake = System.nanoTime() - t0;
+        OddEven.sort(arrayOddEven);
+        tOddEven = System.nanoTime() - t0;
 
         t0 = System.nanoTime();
         ShakeClassic.sort(arrayShakeClassic);
         tShakeClassic = System.nanoTime() - t0;
 
         t0 = System.nanoTime();
-        OddEven.sort(arrayOddEven);
-        tOddEven = System.nanoTime() - t0;
+        Shake.sort(arrayShake);
+        tShake = System.nanoTime() - t0;
 /*
         System.out.println(Arrays.toString(array));
         System.out.println(Arrays.toString(arrayBubble));
@@ -41,9 +34,9 @@ public class TestSorting {
         System.out.println(Arrays.toString(arrayOddEven));
 */
         System.out.println();
-        System.out.println("Bubble\t" + String.format("%,.0f", tBubble));
-        System.out.println("Shake\t" + String.format("%,.0f", tShake));
-        System.out.println("ShakeClassic\t" + String.format("%,.0f", tShakeClassic));
-        System.out.println("OddEven\t" + String.format("%,.0f", tOddEven));
+        System.out.println("Bubble time nanoseconds \t" + String.format("%,.0f", tBubble));
+        System.out.println("OddEven time nanoseconds\t" + String.format("%,.0f", tOddEven));
+        System.out.println("ShakeC time nanoseconds \t" + String.format("%,.0f", tShakeClassic));
+        System.out.println("Shake time nanoseconds  \t" + String.format("%,.0f", tShake));
     }
 }

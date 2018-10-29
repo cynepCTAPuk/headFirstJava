@@ -1,6 +1,5 @@
-package test.Sorting;
+package test.Sorts;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class NewArray {
