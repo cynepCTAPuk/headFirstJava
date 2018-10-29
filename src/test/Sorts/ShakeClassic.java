@@ -29,12 +29,12 @@ class ShakeClassic {
             }
             left++;
         }
-        System.out.println("ShakeC cycles\t" + String.format("%,d", count));
+        System.out.println("ShakeCl\tcycles\t" + String.format("%,d", count));
     }
 
     public static void main(String[] args) {
         int[] array = new int[100];
-        NewArray.fillRandom(array);
+        UtilsArray.fillRandom(array);
 
         int[] arrayShakeClassic;
         arrayShakeClassic = array.clone();

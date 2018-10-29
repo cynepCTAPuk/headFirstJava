@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * The class contains util methods
  **/
-public final class SortUtils {
+public final class UtilsSort {
 
     /**
      * Helper method for swapping elements in array
@@ -15,7 +15,7 @@ public final class SortUtils {
      * @param idx   index of the first element
      * @param idy   index of the second element
      */
-    public static <T> boolean swap(T[] array, int idx, int idy) {
+    static <T> boolean swap(T[] array, int idx, int idy) {
         T swap = array[idx];
         array[idx] = array[idy];
         array[idy] = swap;
@@ -29,8 +29,8 @@ public final class SortUtils {
      * @param w second element
      * @return true if the first element is less then the second element
      */
-    public static <T extends Comparable<T>> boolean less(T v, T w) {
-        return v.compareTo(w) < 0;
+    static <T extends Comparable<T>> boolean less(T v, T w) {
+        return v.compareTo(w) > 0;
     }
 
     /**
@@ -51,7 +51,7 @@ public final class SortUtils {
      *
      * @param toPrint - the array  which should be printed
      */
-    public static void print(Object[] toPrint) {
+    static void print(Object[] toPrint) {
         System.out.println(Arrays.toString(toPrint));
     }
 

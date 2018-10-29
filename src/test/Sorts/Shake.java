@@ -32,23 +32,8 @@ class Shake {
             }
             left = swappedLeft;
         }
-        System.out.println("Shake cycles\t" + String.format("%,d", count));
+        System.out.println("Shake\tcycles\t" + String.format("%,d", count));
 
     }
 
-    public static void main(String[] args) {
-        int[] array = new int[100];
-        NewArray.fillRandom(array);
-
-        int[] arrayShake;
-        arrayShake = array.clone();
-        System.out.println(Arrays.toString(arrayShake));
-
-        double t0 = System.nanoTime();
-        Shake.sort(arrayShake);
-        double tShake = System.nanoTime() - t0;
-
-        System.out.println(Arrays.toString(arrayShake));
-        System.out.println("Shake time nanoseconds\t" + String.format("%,.0f", tShake));
-    }
 }
