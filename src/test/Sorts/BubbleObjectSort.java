@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 import static test.Sorts.UtilsSort.print;
 
-class BubbleObjectSort {
+class BubbleObjectSort implements SortAlgorithm {
     /**
      * @param array The array to be sorted
      *              Sorts the array in increasing order
      **/
 
-    public static <T extends Comparable<T>> T[] sort(T array[]) {
+    public <T extends Comparable<T>> T[] sort(T array[]) {
         int last = array.length;
         boolean swap;
         int count = 0;
@@ -32,16 +32,16 @@ class BubbleObjectSort {
     public static void main(String[] args) {
         BubbleObjectSort bubbleObjectSort = new BubbleObjectSort();
         Integer[] integers = {4, 23, 6, 78, 1, 54, 231, 9, 12};
-        String[] strings = {"c", "a", "e", "b", "d"};
+        String[] strings = {"c", "a", "e", "b", "d", "x", "n", "j", "g"};
 //        UtilsSort.print(bubbleObjectSort.sort(integers));
 //        UtilsSort.print(bubbleObjectSort.sort(strings));
 
         UtilsSort.print(integers);
-        BubbleObjectSort.sort(integers);
+        bubbleObjectSort.sort(integers);
         UtilsSort.print(integers);
 
         UtilsSort.print(strings);
-        BubbleObjectSort.sort(strings);
+        bubbleObjectSort.sort(strings);
         UtilsSort.print(strings);
 
     }

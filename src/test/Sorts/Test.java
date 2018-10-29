@@ -20,7 +20,9 @@ public class Test {
         double tBubble = System.nanoTime() - t0;
 
         t0 = System.nanoTime();
-        BubbleObjectSort.sort(arrayBubbleSort);
+        BubbleObjectSort bubbleObjectSort = new BubbleObjectSort();
+        bubbleObjectSort.sort(arrayBubbleSort);
+
         double tBubbleSort = System.nanoTime() - t0;
 
         t0 = System.nanoTime();
