@@ -16,7 +16,8 @@ public class DecimalFormatDemo {
         customFormat("###,###.###", 123456.789);
         customFormat("$###,###.###", 12345.67);
 
-        System.out.println(new DecimalFormat("###,###.##").format(1234567.890));
+        System.out.println(new DecimalFormat("###,###.##")
+                .format(1234567.890)+" \tDecimalFormat");
         System.out.format("123456.789", "###,###.##");
     }
 }

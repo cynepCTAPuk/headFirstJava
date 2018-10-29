@@ -1,12 +1,11 @@
 package test.Sorting;
 
-class Shake {
+class ShakeClassic {
     static void sort(int[] array) {
         int left = 0;
         int right = array.length - 1;
-        int swap, swappedLeft, swappedRight;
+        int swap;
         int count = 0;
-        swappedRight = 0;
         while (left <= right) {
             for (int i = left; i < right; i++) {
                 count++;
@@ -14,11 +13,9 @@ class Shake {
                     swap = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = swap;
-                    swappedRight = i;
                 }
             }
-            right = swappedRight;
-            swappedLeft = array.length - 1;
+            right--;
 
             for (int i = right; i > left; i--) {
                 count++;
@@ -26,13 +23,11 @@ class Shake {
                     swap = array[i - 1];
                     array[i - 1] = array[i];
                     array[i] = swap;
-                    swappedLeft = i;
                 }
             }
-            left = swappedLeft;
+            left++;
         }
-        System.out.println("Shake\t" + String.format("%,d", count));
-
+        System.out.println("ShakeClassic\t" + String.format("%,d", count));
     }
 
 }
