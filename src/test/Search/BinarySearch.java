@@ -19,7 +19,7 @@ import static java.lang.String.format;
  * @see IterativeBinarySearch
  */
 
-class BinarySearch implements SearchAlgorithm {
+public class BinarySearch implements SearchAlgorithm {
 
     /**
      * @param array is an array where the element should be found
@@ -43,41 +43,10 @@ class BinarySearch implements SearchAlgorithm {
      **/
     private <T extends Comparable<T>> int search(T array[], T key, int left, int right) {
         if (right < left) return -1; // this means that the key not found
-
-        // find median
         int median = (left + right) >>> 1;
         int comp = key.compareTo(array[median]);
-
-        if (comp < 0) {
-            return search(array, key, left, median - 1);
-        }
-
-        if (comp > 0) {
-            return search(array, key, median + 1, right);
-        }
-
+        if (comp < 0) return search(array, key, left, median - 1);
+        if (comp > 0) return search(array, key, median + 1, right);
         return median;
-    }
-
-    // Driver Program
-    public static void main(String[] args) {
-
-        //just generate data
-        Random r = new Random();
-        int size = 100;
-        int maxElement = 100000;
-        Integer[] integers = Stream.generate(() -> r.nextInt(maxElement)).limit(size).sorted().toArray(Integer[]::new);
-
-        //the element that should be found
-        Integer shouldBeFound = integers[r.nextInt(size - 1)];
-
-        BinarySearch search = new BinarySearch();
-        int atIndex = search.find(integers, shouldBeFound);
-
-        System.out.println(String.format("Should be found: %d. Found %d at index %d. An array length %d"
-                , shouldBeFound, integers[atIndex], atIndex, size));
-
-        int toCheck = Arrays.binarySearch(integers, shouldBeFound);
-        System.out.println(format("Found by system method at an index: %d. Is equal: %b", toCheck, toCheck == atIndex));
     }
 }

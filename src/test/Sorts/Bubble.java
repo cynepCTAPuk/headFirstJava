@@ -17,7 +17,7 @@ class Bubble {
             }
             right--;
         }
-        System.out.println("Bubble\tcycles\t" + String.format("%,d", count));
+        System.out.println(String.format("Bubble\tcycles\t%,d", count));
 
     }
 }

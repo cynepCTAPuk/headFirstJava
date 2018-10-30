@@ -24,11 +24,10 @@ class BubbleObjectSort implements SortAlgorithm {
             }
             last--;
         } while (swap);
-        System.out.println("BubbleS\tcycles\t" + String.format("%,d", count));
+        System.out.println(String.format("BubbleS\tcycles\t%,d", count));
         return array;
     }
 
-    // Driver Program
     public static void main(String[] args) {
         BubbleObjectSort bubbleObjectSort = new BubbleObjectSort();
         Integer[] integers = {4, 23, 6, 78, 1, 54, 231, 9, 12};

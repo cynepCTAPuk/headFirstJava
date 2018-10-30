@@ -32,7 +32,7 @@ class Shake {
             }
             left = swappedLeft;
         }
-        System.out.println("Shake\tcycles\t" + String.format("%,d", count));
+        System.out.println(String.format("Shake\tcycles\t%,d", count));
 
     }
 

@@ -5,7 +5,6 @@ import java.util.List;
 
 /**
  *  The common interface of most sorting algorithms
- *
  **/
 public interface SortAlgorithm {
 

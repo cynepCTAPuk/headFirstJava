@@ -30,8 +30,6 @@ class OddEven {
                 }
             }
         }
-        System.out.println("OddEven\tcycles\t" + String.format("%,d", count));
-
+        System.out.println(String.format("OddEven\tcycles\t%,d", count));
     }
-
 }

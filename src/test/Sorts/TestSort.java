@@ -1,6 +1,6 @@
 package test.Sorts;
 
-public class Test {
+public class TestSort {
     public static void main(String[] args) {
         double t0;
         int[] array = new int[10_000];
@@ -43,10 +43,10 @@ public class Test {
         System.out.println(Arrays.toString(arrayOddEven));
 */
         System.out.println();
-        System.out.println("Bubble\ttime nanoseconds\t" + String.format("%,.0f", tBubble));
-        System.out.println("BubbleS\ttime nanoseconds\t" + String.format("%,.0f", tBubbleSort));
-        System.out.println("OddEven\ttime nanoseconds\t" + String.format("%,.0f", tOddEven));
-        System.out.println("ShakeCl\ttime nanoseconds\t" + String.format("%,.0f", tShakeClassic));
-        System.out.println("Shake\ttime nanoseconds\t" + String.format("%,.0f", tShake));
+        System.out.println(String.format("Bubble\ttime nanoseconds\t%,.0f", tBubble));
+        System.out.println(String.format("BubbleS\ttime nanoseconds\t%,.0f", tBubbleSort));
+        System.out.println(String.format("OddEven\ttime nanoseconds\t%,.0f", tOddEven));
+        System.out.println(String.format("ShakeCl\ttime nanoseconds\t%,.0f", tShakeClassic));
+        System.out.println(String.format("Shake\ttime nanoseconds\t%,.0f", tShake));
     }
 }

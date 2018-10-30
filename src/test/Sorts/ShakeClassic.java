@@ -29,24 +29,6 @@ class ShakeClassic {
             }
             left++;
         }
-        System.out.println("ShakeCl\tcycles\t" + String.format("%,d", count));
+        System.out.println(String.format("ShakeCl\tcycles\t%,d", count));
     }
-
-    public static void main(String[] args) {
-        int[] array = new int[100];
-        UtilsArray.fillRandom(array);
-
-        int[] arrayShakeClassic;
-        arrayShakeClassic = array.clone();
-        System.out.println(Arrays.toString(arrayShakeClassic));
-
-        double t0 = System.nanoTime();
-        ShakeClassic.sort(arrayShakeClassic);
-        double tShakeClassic = System.nanoTime() - t0;
-
-        System.out.println(Arrays.toString(arrayShakeClassic));
-        System.out.println("ShakeClassic time nanoseconds\t" + String.format("%,.0f", tShakeClassic));
-
-    }
-
 }
