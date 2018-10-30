@@ -1,4 +1,4 @@
-package Search;
+package search;
 
 import static java.lang.String.format;
 

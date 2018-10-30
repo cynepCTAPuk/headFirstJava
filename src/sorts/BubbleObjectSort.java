@@ -1,6 +1,6 @@
-package Sorts;
+package sorts;
 
-import static Sorts.UtilsSort.print;
+import static sorts.UtilsSort.print;
 
 class BubbleObjectSort implements SortAlgorithm {
     /**

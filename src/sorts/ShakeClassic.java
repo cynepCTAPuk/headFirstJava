@@ -1,4 +1,4 @@
-package Sorts;
+package sorts;
 
 class ShakeClassic {
     static void sort(int[] array) {

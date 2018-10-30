@@ -1,4 +1,4 @@
-package Search;
+package search;
 
 /**
  *  The common interface of most searching algorithms

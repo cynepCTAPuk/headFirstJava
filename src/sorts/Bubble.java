@@ -1,4 +1,4 @@
-package Sorts;
+package sorts;
 
 class Bubble {
     static void sort(int[] array) {
