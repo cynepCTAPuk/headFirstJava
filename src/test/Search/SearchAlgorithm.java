@@ -3,8 +3,6 @@ package test.Search;
 /**
  *  The common interface of most searching algorithms
  *
- * @author Podshivalov Nikita (https://github.com/nikitap492)
- *
  **/
 public interface SearchAlgorithm {
 

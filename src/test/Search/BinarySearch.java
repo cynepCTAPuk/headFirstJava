@@ -15,8 +15,6 @@ import static java.lang.String.format;
  * Average performance	O(log n)
  * Worst-case space complexity	O(1)
  *
- * @author Varun Upadhyay (https://github.com/varunu28)
- * @author Podshivalov Nikita (https://github.com/nikitap492)
  * @see SearchAlgorithm
  * @see IterativeBinarySearch
  */
