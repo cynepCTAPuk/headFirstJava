@@ -1,5 +1,3 @@
-package test;
-
 class VarArgsExample {
     int sumArrays(int[]... intArrays) {
         int sum, i, j;

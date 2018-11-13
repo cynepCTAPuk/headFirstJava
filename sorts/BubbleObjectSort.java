@@ -1,7 +1,3 @@
-package sorts;
-
-import static sorts.UtilsSort.print;
-
 class BubbleObjectSort implements SortAlgorithm {
     /**
      * @param array The array to be sorted

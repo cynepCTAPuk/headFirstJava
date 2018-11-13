@@ -1,4 +1,4 @@
-package javaRush.level02.lecture06;
+package level02.lecture06;
 
 public class References {
   public static void main(String[] args) {

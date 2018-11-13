@@ -1,4 +1,4 @@
-package javaRush.level02.lecture02;
+package level02.lecture02;
 
 public class Variables {
   private static String TEXT = "The end.";

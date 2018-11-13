@@ -1,5 +1,3 @@
-package sorts;
-
 class Bubble {
     static void sort(int[] array) {
         int left = 0;

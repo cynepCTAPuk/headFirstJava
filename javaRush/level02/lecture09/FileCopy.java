@@ -1,4 +1,4 @@
-package javaRush.level02.lecture09;
+package level02.lecture09;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

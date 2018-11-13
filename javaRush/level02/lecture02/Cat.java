@@ -1,4 +1,4 @@
-package javaRush.level02.lecture02;
+package level02.lecture02;
 
 public class Cat {
   Person owner;

@@ -1,5 +1,3 @@
-package sorts;
-
 import java.util.Random;
 
 public class UtilsArray {

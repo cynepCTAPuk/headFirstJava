@@ -1,5 +1,3 @@
-package test;
-
 import java.util.Calendar;
 import java.util.Locale;
 

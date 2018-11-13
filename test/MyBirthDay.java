@@ -1,5 +1,3 @@
-package test;
-
 import java.time.*;
 import java.time.temporal.ChronoUnit;
 

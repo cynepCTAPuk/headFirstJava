@@ -1,4 +1,4 @@
-package javaRush.level02.lecture10;
+package level02.lecture10;
 
 public class Cat {
 

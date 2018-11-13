@@ -1,4 +1,4 @@
-package javaRush.level02.lecture07;
+package level02.lecture07;
 
 public class MethodCall {
   public static void main(String[] args) {
