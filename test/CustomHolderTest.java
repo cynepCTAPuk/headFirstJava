@@ -1,5 +1,3 @@
-package test;
-
 public class CustomHolderTest {
     public static void main(String args[]) {
         CustomHolder<String> stringHolder = new CustomHolder<String>();

@@ -1,4 +1,4 @@
-public class Utils{
+public class UtilsConverter {
 
 public static void main(String[] args) {
     int number = 255;
