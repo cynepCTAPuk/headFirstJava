@@ -1,13 +1,12 @@
 package utils;
 
+import java.util.Iterator;
 import java.util.Random;
 
 public class UtilsAlgorithms {
   public static void fillRandom(int[] array) {
     Random rnd = new Random();
-    for (int i = 0; i < array.length; i++) {
-      array[i] = rnd.nextInt(100);
-    }
+    for (int i = 0; i < array.length; i++) array[i] = rnd.nextInt(100);
   }
 
   public static void swap(int[] array, int x, int y) {
@@ -27,9 +26,13 @@ public class UtilsAlgorithms {
   }
 
   public static void printV(int[] one, int[] two) {
+    System.out.println("<-|\t|->");
     if (one.length == two.length) {
-      System.out.println("<-|\t|->");
       for (int i = 0; i < one.length; i++) System.out.println(one[i] + "\t" + two[i]);
     } else System.out.println("Length of arrays must be equal!");
+  }
+
+  public static void printB(int[] array) {
+    for (int i : array) System.out.print(i + " ");
   }
 }

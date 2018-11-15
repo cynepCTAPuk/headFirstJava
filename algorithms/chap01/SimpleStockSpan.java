@@ -40,6 +40,6 @@ public class SimpleStockSpan {
       }
     }
     UtilsAlgorithms.print(spans);
-    UtilsAlgorithms.printV(quotes, spans);
+    UtilsAlgorithms.printB(quotes);
   }
 }
