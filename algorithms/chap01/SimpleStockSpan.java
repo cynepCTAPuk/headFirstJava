@@ -20,26 +20,41 @@ package chap01;
  *
  */
 
-import utils.UtilsAlgorithms;
+import utils.Utils;
 
 public class SimpleStockSpan {
   public static void main(String[] args) {
     int n = 10;
     int[] quotes = new int[n];
-    int[] spans = new int[n];
-    UtilsAlgorithms.fillRandom(quotes);
-    UtilsAlgorithms.print(quotes);
+    int[] spans1 = new int[n];
+    int[] spans2 = new int[n];
+    Utils.fillRandom(quotes);
 
+//    spans1[0] =0;
     for (int i = 0; i < n; i++) {
       int k = 1;
       boolean span_end = false;
       while (((i - k) >= 0) & !span_end) {
         if (quotes[i - k] <= quotes[i]) k = k + 1;
         else span_end = true;
-        spans[i] = k;
+        spans1[i] = k;
       }
     }
-    UtilsAlgorithms.print(spans);
-    UtilsAlgorithms.printB(quotes);
+    spans2[0] = 0;
+    for (int i = 1; i < n; i++) {
+      if (quotes[i] >= quotes[i - 1]) spans2[i] = spans2[i - 1] + 1;
+      else spans2[i] = 1;
+    }
+    Utils.print(quotes);
+    Utils.print(spans1);
+    Utils.print(spans2);
+
+/*
+    Utils.printForEach(spans1);
+    Integer[] quotesInt = IntStream.of(quotes).boxed().toArray(Integer[]::new);
+    Integer[] spansInt = IntStream.of(spans1).boxed().toArray(Integer[]::new);
+    Utils.printForEach(quotesInt);
+    Utils.printForEach(spansInt);
+*/
   }
 }
