@@ -22,39 +22,52 @@ package chap01;
 
 import utils.Utils;
 
+import java.util.Stack;
+
 public class SimpleStockSpan {
   public static void main(String[] args) {
-    int n = 10;
+    int n = 20;
     int[] quotes = new int[n];
-    int[] spans1 = new int[n];
-    int[] spans2 = new int[n];
+//    int[] quotes = new int[]{7, 11, 8, 6, 3, 8, 9};
     Utils.fillRandom(quotes);
+    long starTime;
 
-//    spans1[0] =0;
+
+    starTime = System.nanoTime();
+    int[] spans1 = new int[n];
     for (int i = 0; i < n; i++) {
       int k = 1;
       boolean span_end = false;
-      while (((i - k) >= 0) & !span_end) {
+      while (((i - k) >= 0) && !span_end) {
         if (quotes[i - k] <= quotes[i]) k = k + 1;
         else span_end = true;
         spans1[i] = k;
       }
     }
-    spans2[0] = 0;
-    for (int i = 1; i < n; i++) {
-      if (quotes[i] >= quotes[i - 1]) spans2[i] = spans2[i - 1] + 1;
-      else spans2[i] = 1;
+    double tSpans1 = System.nanoTime() - starTime;
+
+    starTime = System.nanoTime();
+    int[] spans2 = new int[n]; // 1
+    spans2[0] = 1; // 2
+    Stack<Integer> stack = new Stack<>(); // 3
+    stack.push(0); // 4
+    for (int i = 1; i < n; i++) { // 5
+      while (!stack.empty() && (quotes[stack.peek()] <= quotes[i])) stack.pop(); // 6-7
+      if (stack.empty()) spans2[i] = i + 1; // 8-9
+      else spans2[i] = i - stack.peek(); // 10-11
+      stack.push(i); // 12
     }
+    double tSpans2 = System.nanoTime() - starTime;
+
     Utils.print(quotes);
     Utils.print(spans1);
     Utils.print(spans2);
+    System.out.println(String.format("tSpans1\ttime nanoseconds\t%,.0f", tSpans1));
+    System.out.println(String.format("tSpans2\ttime nanoseconds\t%,.0f", tSpans2));
 
 /*
-    Utils.printForEach(spans1);
     Integer[] quotesInt = IntStream.of(quotes).boxed().toArray(Integer[]::new);
     Integer[] spansInt = IntStream.of(spans1).boxed().toArray(Integer[]::new);
-    Utils.printForEach(quotesInt);
-    Utils.printForEach(spansInt);
 */
   }
 }
