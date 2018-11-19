@@ -1,4 +1,4 @@
-package chap01;
+package louridas.chap01;
 
 import java.util.ArrayList;
 
