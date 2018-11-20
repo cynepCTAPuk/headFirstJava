@@ -1,3 +1,5 @@
+package lafore.chap04.PriorityQ;
+
 // priorityQ.java
 // demonstrates priority queue
 // to run this program: C>java PriorityQApp

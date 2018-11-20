@@ -1,4 +1,4 @@
-package lafore.chap13;
+package utils;
 
 class Vertex {
   public char label; // Метка (например, ‘A’)

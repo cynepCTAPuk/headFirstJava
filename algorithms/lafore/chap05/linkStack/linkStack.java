@@ -1,3 +1,5 @@
+package lafore.chap05.linkStack;
+
 // linkStack.java
 // demonstrates a stack implemented as a list
 // to run this program: C>java LinkStackApp

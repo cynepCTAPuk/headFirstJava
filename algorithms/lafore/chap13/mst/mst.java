@@ -1,3 +1,5 @@
+package lafore.chap13.mst;
+
 // mst.java
 // demonstrates minimum spanning tree
 // to run this program: C>java MSTApp
@@ -44,26 +46,26 @@ class Vertex
 class Graph
    {
    private final int MAX_VERTS = 20;
-   private Vertex vertexList[]; // list of vertices
+   private lafore.chap13.dfs.Vertex vertexList[]; // list of vertices
    private int adjMat[][];      // adjacency matrix
    private int nVerts;          // current number of vertices
-   private StackX theStack;
+   private lafore.chap13.dfs.StackX theStack;
 // -------------------------------------------------------------
    public Graph()               // constructor
       {
-      vertexList = new Vertex[MAX_VERTS];
+      vertexList = new lafore.chap13.dfs.Vertex[MAX_VERTS];
                                           // adjacency matrix
       adjMat = new int[MAX_VERTS][MAX_VERTS];
       nVerts = 0;
       for(int j=0; j<MAX_VERTS; j++)      // set adjacency
          for(int k=0; k<MAX_VERTS; k++)   //    matrix to 0
             adjMat[j][k] = 0;
-      theStack = new StackX();
+      theStack = new lafore.chap13.dfs.StackX();
       }  // end constructor
 // -------------------------------------------------------------
    public void addVertex(char lab)
       {
-      vertexList[nVerts++] = new Vertex(lab);
+      vertexList[nVerts++] = new lafore.chap13.dfs.Vertex(lab);
       }
 // -------------------------------------------------------------
    public void addEdge(int start, int end)
@@ -120,7 +122,7 @@ class MSTApp
    {
    public static void main(String[] args)
       {
-      Graph theGraph = new Graph();
+      lafore.chap13.dfs.Graph theGraph = new lafore.chap13.dfs.Graph();
       theGraph.addVertex('A');    // 0  (start for mst)
       theGraph.addVertex('B');    // 1
       theGraph.addVertex('C');    // 2

@@ -1,4 +1,4 @@
-// reverse.java
+package lafore.chap04.Reverse;// reverse.java
 // stack used to reverse a string
 // to run this program: C>java ReverseApp
 import java.io.*;                 // for I/O

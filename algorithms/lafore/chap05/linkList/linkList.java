@@ -1,3 +1,5 @@
+package lafore.chap05.linkList;
+
 // linkList.java
 // demonstrates linked list
 // to run this program: C>java LinkListApp

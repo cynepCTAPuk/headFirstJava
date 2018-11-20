@@ -1,4 +1,4 @@
-package lafore.chap13;
+package utils;
 
 class Graph {
   private final int MAX_VERTS = 20;
