@@ -5,8 +5,8 @@ package lafore.chap02.Array;
 ////////////////////////////////////////////////////////////////
 class ArrayApp {
   public static void main(String[] args) {
-    int[] array = new int[20];
-    int nElems = 0;             // number of items
+    int[] array = new int[11];
+    int qtyElems = 0;             // number of items
     int i;                      // loop counter
     int searchKey;              // key of item to search for
 //--------------------------------------------------------------
@@ -20,22 +20,22 @@ class ArrayApp {
     array[7] = 00;
     array[8] = 66;
     array[9] = 33;
-    nElems = 10;
+    qtyElems = 10;
 //-------------------------------------------------------------- Печать массива
-    for (i = 0; i < nElems; i++) System.out.print(array[i] + " ");
+    for (i = 0; i < qtyElems; i++) System.out.print(array[i] + " ");
     System.out.println();
 //-------------------------------------------------------------- Поиск элемента
     searchKey = 66;
-    for (i = 0; i < nElems; i++) if (array[i] == searchKey) break;
-    if (i == nElems) System.out.println("Can't find " + searchKey);
+    for (i = 0; i < qtyElems; i++) if (array[i] == searchKey) break;
+    if (i == qtyElems) System.out.println("Can't find " + searchKey);
     else System.out.println("Found " + searchKey);
-//--------------------------------------------------------------
+//-------------------------------------------------------------- Удаление элемента
     searchKey = 55;
-    for (i = 0; i < nElems; i++) if (array[i] == searchKey) break;
-    for (int k = i; k < nElems; k++) array[k] = array[k + 1];
-    nElems--;
+    for (i = 0; i < qtyElems; i++) if (array[i] == searchKey) break;
+    for (int k = i; k < qtyElems; k++) array[k] = array[k + 1];
+    qtyElems--;
 //-------------------------------------------------------------- Печать массива
-    for (i = 0; i < nElems; i++) System.out.print(array[i] + " ");
+    for (i = 0; i < qtyElems; i++) System.out.print(array[i] + " ");
     System.out.println("");
-  }  // end main()
-}  // end class ArrayApp
+  }
+}
