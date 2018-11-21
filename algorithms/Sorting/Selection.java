@@ -1,20 +1,24 @@
-package Tools;
+package Sorting;
+
+import Tools.Utils;
 
 import java.util.Arrays;
 
-class Bubble {
-  static void sort(int[] array) {
+public class Selection {
+  public static void sort(int[] array) {
     int left = 0, right = array.length - 1;
 
     while (left < right) {
+      int min = left;
       for (int i = left; i < right; i++) {
-        if (array[i] > array[i + 1]) {
-          int swap = array[i];
-          array[i] = array[i + 1];
-          array[i + 1] = swap;
+        if (array[min] > array[i+1]) {
+          min = i + 1;
         }
       }
-      right--;
+      int swap = array[left];
+      array[left] = array[min];
+      array[min] = swap;
+      left++;
     }
   }
 
@@ -22,7 +26,7 @@ class Bubble {
     int[] array = new int[50];
     Utils.fillRandom(array);
     System.out.println(Arrays.toString(array));
-    Bubble.sort(array);
+    Selection.sort(array);
     System.out.println(Arrays.toString(array));
   }
 }

@@ -1,9 +1,11 @@
-package Tools;
+package Sorting;
+
+import Tools.Utils;
 
 import java.util.Arrays;
 
-class OddEven {
-  static void sort(int[] array) {
+public class OddEven {
+  public static void sort(int[] array) {
     int left, right = array.length - 1;
     boolean condition = true;
 
