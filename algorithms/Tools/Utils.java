@@ -1,4 +1,4 @@
-package utils;
+package Tools;
 
 import java.util.Random;
 
@@ -13,9 +13,15 @@ public class Utils {
   }
 
   public static void swap(int[] array, int left, int right) {
-    int swap = array[left];
+    int temp = array[left];
     array[left] = array[right];
-    array[right] = swap;
+    array[right] = temp;
+  }
+
+  public static <T> void swap(T[] array, int left, int right) {
+    T temp = array[right];
+    array[right] = array[left];
+    array[left] = temp;
   }
 
   public static void print(int[] array) {

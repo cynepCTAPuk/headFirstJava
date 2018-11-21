@@ -1,4 +1,4 @@
-package utils;
+package Tools;
 
 class Graph {
   private final int MAX_VERTS = 20;

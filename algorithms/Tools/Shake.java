@@ -1,19 +1,17 @@
-package utils;
+package Tools;
 
-class Shake1 {
+import java.util.Arrays;
+
+class Shake {
   static void sort(int[] array) {
-    int s = array.length;
-    int left = 0;
-    int right = array.length - 1;
-    int swap, swappedLeft, swappedRight;
-    long count = 0;
+    int left = 0, right = array.length - 1;
+    int swappedLeft, swappedRight;
+
     while (left < right) {
       swappedRight = 0;
       for (int i = left; i < right; i++) {
-        count++;
-        if ((count % (s*s>>5)) == 0) System.out.print("X");
         if (array[i] > array[i + 1]) {
-          swap = array[i];
+          int swap = array[i];
           array[i] = array[i + 1];
           array[i + 1] = swap;
           swappedRight = i;
@@ -22,10 +20,8 @@ class Shake1 {
       right = swappedRight;
       swappedLeft = array.length - 1;
       for (int i = right; i > left; i--) {
-        count++;
-        if ((count % (s*s>>5)) == 0) System.out.print("X");
         if (array[i - 1] > array[i]) {
-          swap = array[i - 1];
+          int swap = array[i - 1];
           array[i - 1] = array[i];
           array[i] = swap;
           swappedLeft = i;
@@ -33,7 +29,12 @@ class Shake1 {
       }
       left = swappedLeft;
     }
-    System.out.println();
-    System.out.println(String.format("Shake1\tcycles\t%,d", count));
+  }
+  public static void main(String[] args) {
+    int[] array = new int[50];
+    Utils.fillRandom(array);
+    System.out.println(Arrays.toString(array));
+    OddEven.sort(array);
+    System.out.println(Arrays.toString(array));
   }
 }

@@ -20,7 +20,7 @@ package louridas.chap01;
  *
  */
 
-import utils.Utils;
+import Tools.Utils;
 
 import java.util.Stack;
 

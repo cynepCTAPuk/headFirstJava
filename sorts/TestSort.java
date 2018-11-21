@@ -1,7 +1,7 @@
 public class TestSort {
     public static void main(String[] args) {
         double t0;
-        int[] array = new int[10_000];
+        int[] array = new int[1_000];
         UtilsArray.fillRandom(array);
 
         Integer[] arrayBubbleSort = new Integer[array.length];

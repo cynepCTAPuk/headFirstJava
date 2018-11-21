@@ -1,4 +1,4 @@
-package utils;
+package Tools;
 
 class Vertex {
   public char label; // Метка (например, ‘A’)
