@@ -1,6 +1,6 @@
-package Sorting;
+package sortInt;
 
-import Tools.Utils;
+import tools.Utils;
 
 import java.util.Arrays;
 

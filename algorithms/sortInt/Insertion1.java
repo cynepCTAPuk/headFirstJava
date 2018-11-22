@@ -1,10 +1,10 @@
-package Sorting;
+package sortInt;
 
-import Tools.Utils;
+import tools.Utils;
 
 import java.util.Arrays;
 
-public class Insertion {
+public class Insertion1 {
   public static void sort(int[] array) {
     int right = 1;
 
@@ -24,7 +24,7 @@ public class Insertion {
     int[] array = new int[50];
     Utils.fillRandom(array);
     System.out.println(Arrays.toString(array));
-    Insertion.sort(array);
+    Insertion1.sort(array);
     System.out.println(Arrays.toString(array));
   }
 }
