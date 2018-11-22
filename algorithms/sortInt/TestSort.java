@@ -54,7 +54,7 @@ public class TestSort {
     System.out.println(String.format("Selection\ttime nanoseconds\t%,.0f", tSelection));
     System.out.println(String.format("Shake\t\ttime nanoseconds\t%,.0f", tShake));
 
-    System.out.println(Binary.search(arrayBubble, 50));
+    Binary.search(arrayBubble, 99);
   }
 
 }

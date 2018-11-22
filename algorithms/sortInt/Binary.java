@@ -7,8 +7,7 @@ public class Binary {
     int count = 0;
     int median = (left + right) >>> 1;
     while (left <= right) {
-      count++;
-      System.out.println("Number of cycle = " + count + "\tMiddle of search = " + median);
+      System.out.println("Number of cycle = " + ++count + "\tMiddle of array = " + median);
       if (array[median] == key) return median;
       if (array[median] > key) {
         right = median - 1;
@@ -19,8 +18,6 @@ public class Binary {
         median = (left + right) >>> 1;
       }
     }
-    System.out.println("Qyt cycles = " + count);
     return -1;
   }
-
 }
