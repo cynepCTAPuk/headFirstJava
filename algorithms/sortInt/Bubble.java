@@ -22,7 +22,7 @@ public class Bubble {
 
   public static void main(String[] args) {
     int[] array = new int[50];
-    Utils.fillRandom(array);
+    Utils.fillRandom100(array);
     System.out.println(Arrays.toString(array));
     Bubble.sort(array);
     System.out.println(Arrays.toString(array));

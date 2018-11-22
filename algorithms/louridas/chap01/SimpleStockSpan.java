@@ -29,7 +29,7 @@ public class SimpleStockSpan {
     int n = 20;
     int[] quotes = new int[n];
 //    int[] quotes = new int[]{7, 11, 8, 6, 3, 8, 9};
-    Utils.fillRandom(quotes);
+    Utils.fillRandom100(quotes);
     long starTime;
 
 

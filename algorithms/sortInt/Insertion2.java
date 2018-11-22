@@ -19,7 +19,7 @@ public class Insertion2 {
 
   public static void main(String[] args) {
     int[] array = new int[20];
-    Utils.fillRandom(array);
+    Utils.fillRandom100(array);
     System.out.println(Arrays.toString(array));
     Insertion2.sort(array);
     System.out.println(Arrays.toString(array));

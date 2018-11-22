@@ -3,7 +3,7 @@ package tools;
 import java.util.Random;
 
 public class Utils {
-  public static void fillRandom(int[] array) {
+  public static void fillRandom100(int[] array) {
     Random rnd = new Random();
     for (int i = 0; i < array.length; i++) array[i] = rnd.nextInt(100);
   }

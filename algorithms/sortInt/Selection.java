@@ -24,7 +24,7 @@ public class Selection {
 
   public static void main(String[] args) {
     int[] array = new int[50];
-    Utils.fillRandom(array);
+    Utils.fillRandom100(array);
     System.out.println(Arrays.toString(array));
     Selection.sort(array);
     System.out.println(Arrays.toString(array));

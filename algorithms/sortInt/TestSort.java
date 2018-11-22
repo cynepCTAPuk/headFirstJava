@@ -7,8 +7,8 @@ import java.util.*;
 public class TestSort {
   public static void main(String[] args) {
     double t0;
-    int[] array = new int[127];
-    Utils.fillRandom(array);
+    int[] array = new int[50];
+    Utils.fillRandom100(array);
     int arrayBubble[] = array.clone();
     int arrayInsertion1[] = array.clone();
     int arrayInsertion2[] = array.clone();
@@ -53,8 +53,5 @@ public class TestSort {
     System.out.println(String.format("OddEven\t\ttime nanoseconds\t%,.0f", tOddEven));
     System.out.println(String.format("Selection\ttime nanoseconds\t%,.0f", tSelection));
     System.out.println(String.format("Shake\t\ttime nanoseconds\t%,.0f", tShake));
-
-    Binary.search(arrayBubble, 99);
-  }
-
+ }
 }
