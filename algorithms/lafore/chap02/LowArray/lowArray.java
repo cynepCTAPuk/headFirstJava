@@ -22,7 +22,7 @@ class LowArrayApp {
   public static void main(String[] args) {
     LowArray lowArray;                     // reference
     lowArray = new LowArray(100);     // create LowArray object
-    int qtyElems = 0;                      // number of items in array
+    int nElems = 0;                      // number of items in array
     int searchKey;
     int i;                                 // loop variable
 
@@ -36,22 +36,22 @@ class LowArrayApp {
     lowArray.setElem(7, 00);
     lowArray.setElem(8, 66);
     lowArray.setElem(9, 33);
-    qtyElems = 10;                          // now 10 items in array
+    nElems = 10;                          // now 10 items in array
 
-    for (i = 0; i < qtyElems; i++) System.out.print(lowArray.getElem(i) + " ");
+    for (i = 0; i < nElems; i++) System.out.print(lowArray.getElem(i) + " ");
     System.out.println();
 
     searchKey = 66;                         // search for data item
-    for (i = 0; i < qtyElems; i++) if (lowArray.getElem(i) == searchKey) break;
-    if (i == qtyElems) System.out.println("Can't find " + searchKey);
+    for (i = 0; i < nElems; i++) if (lowArray.getElem(i) == searchKey) break;
+    if (i == nElems) System.out.println("Can't find " + searchKey);
     else System.out.println("Found " + searchKey + " \"Index\" = " + i);
 
     searchKey = 55;                         // delete value 55
-    for (i = 0; i < qtyElems; i++) if (lowArray.getElem(i) == searchKey) break;
-    for (int k = i; k < qtyElems; k++) lowArray.setElem(k, lowArray.getElem(k + 1));
-    qtyElems--;                             // decrement size
+    for (i = 0; i < nElems; i++) if (lowArray.getElem(i) == searchKey) break;
+    for (int k = i; k < nElems; k++) lowArray.setElem(k, lowArray.getElem(k + 1));
+    nElems--;                             // decrement size
 
-    for (i = 0; i < qtyElems; i++) System.out.print(lowArray.getElem(i) + " ");
+    for (i = 0; i < nElems; i++) System.out.print(lowArray.getElem(i) + " ");
     System.out.println();
   }
 }

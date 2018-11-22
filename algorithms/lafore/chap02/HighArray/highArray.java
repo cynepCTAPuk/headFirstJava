@@ -9,7 +9,7 @@ class HighArray {
   private int nElems;               // number of data items
 
   //-----------------------------------------------------------
-  public HighArray(int max) {
+  HighArray(int max) {
     a = new long[max];                 // create the array
     nElems = 0;                        // no items yet
   }
@@ -19,8 +19,7 @@ class HighArray {
     int i;
     System.out.println("Looking for " + searchKey);
     for (i = 0; i < nElems; i++) if (a[i] == searchKey) break;
-    if (i == nElems) return false;
-    else return true;
+    return i != nElems;
   }
 
   //-----------------------------------------------------------
@@ -33,13 +32,15 @@ class HighArray {
   //-----------------------------------------------------------
   public boolean delete(long value) {
     int j;
-    for (j = 0; j < nElems; j++)
+    for (j = 0; j < nElems; j++) {
       if (value == a[j]) break;
-    if (j == nElems)
+    }
+    if (j == nElems) {
       return false;
-    else {
-      for (int k = j; k < nElems; k++)
+    } else {
+      for (int k = j; k < nElems; k++) {
         a[k] = a[k + 1];
+      }
       nElems--;                   // decrement size
       System.out.println("Deleted " + value);
       return true;
@@ -49,7 +50,7 @@ class HighArray {
   //-----------------------------------------------------------
   public void display() {
     for (int j = 0; j < nElems; j++) System.out.print(a[j] + " ");
-    System.out.println("");
+    System.out.println();
   }
   //-----------------------------------------------------------
 }  // end class HighArray
