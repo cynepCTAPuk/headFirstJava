@@ -29,7 +29,7 @@ class Tree
    public Tree()                  // constructor
       { root = null; }            // no nodes in tree yet
 // -------------------------------------------------------------
-   public Node find(int key)      // find node with given key
+   public Node find(int key)      // search node with given key
       {                           // (assumes non-empty tree)
       Node current = root;               // start at root
       while(current.iData != key)        // while no match,
@@ -39,10 +39,10 @@ class Tree
          else                            // or go right?
             current = current.rightChild;
          if(current == null)             // if no child,
-            return null;                 // didn't find it
+            return null;                 // didn't search it
          }
       return current;                    // found it
-      }  // end find()
+      }  // end search()
 // -------------------------------------------------------------
    public void insert(int id, double dd)
       {
@@ -100,7 +100,7 @@ class Tree
             current = current.rightChild;
             }
          if(current == null)             // end of the line,
-            return false;                // didn't find it
+            return false;                // didn't search it
          }  // end while
       // found node to delete
 
@@ -294,7 +294,7 @@ class TreeApp
       while(true)
          {
          System.out.print("Enter first letter of show, ");
-         System.out.print("insert, find, delete, or traverse: ");
+         System.out.print("insert, search, delete, or traverse: ");
          int choice = getChar();
          switch(choice)
             {
@@ -307,7 +307,7 @@ class TreeApp
                theTree.insert(value, value + 0.9);
                break;
             case 'f':
-               System.out.print("Enter value to find: ");
+               System.out.print("Enter value to search: ");
                value = getInt();
                Node found = theTree.find(value);
                if(found != null)
@@ -317,7 +317,7 @@ class TreeApp
                   System.out.print("\n");
                   }
                else
-                  System.out.print("Could not find ");
+                  System.out.print("Could not search ");
                   System.out.print(value + '\n');
                break;
             case 'd':

@@ -30,7 +30,7 @@ class ordArray
       if(a[curIn]==searchKey)
          return curIn;              // found it
       else if(lowerBound > upperBound)
-         return nElems;             // can't find it
+         return nElems;             // can't search it
       else                          // divide range
          {
          if(a[curIn] < searchKey)   // it's in upper half
@@ -43,7 +43,7 @@ class ordArray
    public void insert(long value)    // put element into array
       {
       int j;
-      for(j=0; j<nElems; j++)        // find where it goes
+      for(j=0; j<nElems; j++)        // search where it goes
          if(a[j] > value)            // (linear search)
             break;
       for(int k=nElems; k>j; k--)    // move bigger ones up
@@ -92,7 +92,7 @@ class BinarySearchApp
       if( arr.find(searchKey) != arr.size() )
          System.out.println("Found " + searchKey);
       else
-         System.out.println("Can't find " + searchKey);
+         System.out.println("Can't search " + searchKey);
       }  // end main()
    }  // end class BinarySearchApp
 ////////////////////////////////////////////////////////////////

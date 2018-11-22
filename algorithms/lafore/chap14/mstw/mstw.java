@@ -34,7 +34,7 @@ class PriorityQ
       {
       int j;
 
-      for(j=0; j<size; j++)           // find place to insert
+      for(j=0; j<size; j++)           // search place to insert
          if( item.distance >= queArray[j].distance )
             break;
 
@@ -67,7 +67,7 @@ class PriorityQ
    public Edge peekN(int n)      // peek at item n
       { return queArray[n]; }
 // -------------------------------------------------------------
-   public int find(int findDex)  // find item with specified
+   public int find(int findDex)  // search item with specified
       {                          // destVert value
       for(int j=0; j<size; j++)
          if(queArray[j].destVert == findDex)

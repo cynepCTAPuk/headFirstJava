@@ -60,7 +60,7 @@ class SortedList
          previous.next = current.next; //    delete current link
       }  // end delete()
 // -------------------------------------------------------------
-   public Link find(int key)         // find link
+   public Link find(int key)         // search link
       {
       Link current = first;          // start at first
                                      // until end of list,
@@ -70,8 +70,8 @@ class SortedList
             return current;          // found it, return link
          current = current.next;     // go to next item
          }
-      return null;                   // didn't find it
-      }  // end find()
+      return null;                   // didn't search it
+      }  // end search()
 // -------------------------------------------------------------
    public void displayList()
       {
@@ -126,7 +126,7 @@ class HashTable
       hashArray[hashVal].delete(key); // delete link
       }  // end delete()
 // -------------------------------------------------------------
-   public Link find(int key)         // find link
+   public Link find(int key)         // search link
       {
       int hashVal = hashFunc(key);   // hash the key
       Link theLink = hashArray[hashVal].find(key);  // get link
@@ -160,7 +160,7 @@ class HashChainApp
       while(true)                    // interact with user
          {
          System.out.print("Enter first letter of ");
-         System.out.print("show, insert, delete, or find: ");
+         System.out.print("show, insert, delete, or search: ");
          char choice = getChar();
          switch(choice)
             {
@@ -179,13 +179,13 @@ class HashChainApp
                theHashTable.delete(aKey);
                break;
             case 'f':
-               System.out.print("Enter key value to find: ");
+               System.out.print("Enter key value to search: ");
                aKey = getInt();
                aDataItem = theHashTable.find(aKey);
                if(aDataItem != null)
                   System.out.println("Found " + aKey);
                else
-                  System.out.println("Could not find " + aKey);
+                  System.out.println("Could not search " + aKey);
                break;
             default:
                System.out.print("Invalid entry\n");

@@ -43,7 +43,7 @@ class LowArrayApp {
 
     searchKey = 66;                         // search for data item
     for (i = 0; i < nElems; i++) if (lowArray.getElem(i) == searchKey) break;
-    if (i == nElems) System.out.println("Can't find " + searchKey);
+    if (i == nElems) System.out.println("Can't search " + searchKey);
     else System.out.println("Found " + searchKey + " \"Index\" = " + i);
 
     searchKey = 55;                         // delete value 55

@@ -32,7 +32,7 @@ class ArraySh
       int inner, outer;
       long temp;
 
-      int h = 1;                     // find initial value of h
+      int h = 1;                     // search initial value of h
       while(h <= nElems/3)
          h = h*3 + 1;                // (1, 4, 13, 40, 121, ...)
 

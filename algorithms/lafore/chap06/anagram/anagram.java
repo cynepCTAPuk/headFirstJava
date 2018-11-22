@@ -13,7 +13,7 @@ class AnagramApp
       {
       System.out.print("Enter a word: ");    // get word
       String input = getString();
-      size = input.length();                 // find its size
+      size = input.length();                 // search its size
       count = 0;
       for(int j=0; j<size; j++)              // put it in array
          arrChar[j] = input.charAt(j);

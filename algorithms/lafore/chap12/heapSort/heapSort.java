@@ -44,7 +44,7 @@ class Heap
          {
          int leftChild = 2*index+1;
          int rightChild = leftChild+1;
-                                          // find larger child
+                                          // search larger child
          if(rightChild < currentSize &&   // right ch exists?
                              heapArray[leftChild].getKey() <
                              heapArray[rightChild].getKey())

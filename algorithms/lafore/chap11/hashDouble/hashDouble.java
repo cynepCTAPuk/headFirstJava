@@ -85,10 +85,10 @@ class HashTable
          hashVal += stepSize;            // add the step
          hashVal %= arraySize;           // for wraparound
          }
-      return null;                   // can't find item
+      return null;                   // can't search item
       }  // end delete()
 // -------------------------------------------------------------
-   public DataItem find(int key)     // find item with key
+   public DataItem find(int key)     // search item with key
    // (assumes table not full)
       {
       int hashVal = hashFunc1(key);      // hash the key
@@ -101,7 +101,7 @@ class HashTable
          hashVal += stepSize;            // add the step
          hashVal %= arraySize;           // for wraparound
          }
-      return null;                   // can't find item
+      return null;                   // can't search item
       }
 // -------------------------------------------------------------
    }  // end class HashTable
@@ -131,7 +131,7 @@ class HashDoubleApp
       while(true)                 // interact with user
          {
          System.out.print("Enter first letter of ");
-         System.out.print("show, insert, delete, or find: ");
+         System.out.print("show, insert, delete, or search: ");
          char choice = getChar();
          switch(choice)
             {
@@ -150,13 +150,13 @@ class HashDoubleApp
                theHashTable.delete(aKey);
                break;
             case 'f':
-               System.out.print("Enter key value to find: ");
+               System.out.print("Enter key value to search: ");
                aKey = getInt();
                aDataItem = theHashTable.find(aKey);
                if(aDataItem != null)
                   System.out.println("Found " + aKey);
                else
-                  System.out.println("Could not find " + aKey);
+                  System.out.println("Could not search " + aKey);
                break;
             default:
                System.out.print("Invalid entry\n");

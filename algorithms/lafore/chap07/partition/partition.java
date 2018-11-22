@@ -36,11 +36,11 @@ class ArrayPar
        int rightPtr = right + 1;         // left of pivot
        while(true)
           {
-          while(leftPtr < right &&       // find bigger item
+          while(leftPtr < right &&       // search bigger item
                 theArray[++leftPtr] < pivot)
              ;  // (nop)
 
-          while(rightPtr > left &&       // find smaller item
+          while(rightPtr > left &&       // search smaller item
                 theArray[--rightPtr] > pivot)
              ;  // (nop)
           if(leftPtr >= rightPtr)        // if pointers cross,

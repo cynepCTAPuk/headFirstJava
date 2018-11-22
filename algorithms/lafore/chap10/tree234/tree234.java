@@ -148,7 +148,7 @@ class Tree234 {
       if ((childNumber = curNode.findItem(key)) != -1)
         return childNumber;               // found it
       else if (curNode.isLeaf())
-        return -1;                        // can't find it
+        return -1;                        // can't search it
       else                                 // search deeper
         curNode = getNextChild(curNode, key);
     }  // end while
@@ -272,7 +272,7 @@ class Tree234App {
 
     while (true) {
       System.out.print("Enter first letter of ");
-      System.out.print("show, insert, or find: ");
+      System.out.print("show, insert, or search: ");
       char choice = getChar();
       switch (choice) {
         case 's':
@@ -284,13 +284,13 @@ class Tree234App {
           theTree.insert(value);
           break;
         case 'f':
-          System.out.print("Enter value to find: ");
+          System.out.print("Enter value to search: ");
           value = getInt();
           int found = theTree.find(value);
           if (found != -1)
             System.out.println("Found " + value);
           else
-            System.out.println("Could not find " + value);
+            System.out.println("Could not search " + value);
           break;
         default:
           System.out.print("Invalid entry\n");

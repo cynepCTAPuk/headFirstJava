@@ -76,10 +76,10 @@ class HashTable
          ++hashVal;                 // go to next cell
          hashVal %= arraySize;      // wraparound if necessary
          }
-      return null;                  // can't find item
+      return null;                  // can't search item
       }  // end delete()
 // -------------------------------------------------------------
-   public DataItem find(int key)    // find item with key
+   public DataItem find(int key)    // search item with key
       {
       int hashVal = hashFunc(key);  // hash the key
 
@@ -90,7 +90,7 @@ class HashTable
          ++hashVal;                 // go to next cell
          hashVal %= arraySize;      // wraparound if necessary
          }
-      return null;                  // can't find item
+      return null;                  // can't search item
       }
 // -------------------------------------------------------------
    }  // end class HashTable
@@ -121,7 +121,7 @@ class HashTableApp
       while(true)                   // interact with user
          {
          System.out.print("Enter first letter of ");
-         System.out.print("show, insert, delete, or find: ");
+         System.out.print("show, insert, delete, or search: ");
          char choice = getChar();
          switch(choice)
             {
@@ -140,7 +140,7 @@ class HashTableApp
                theHashTable.delete(aKey);
                break;
             case 'f':
-               System.out.print("Enter key value to find: ");
+               System.out.print("Enter key value to search: ");
                aKey = getInt();
                aDataItem = theHashTable.find(aKey);
                if(aDataItem != null)
@@ -148,7 +148,7 @@ class HashTableApp
                   System.out.println("Found " + aKey);
                   }
                else
-                  System.out.println("Could not find " + aKey);
+                  System.out.println("Could not search " + aKey);
                break;
             default:
                System.out.print("Invalid entry\n");

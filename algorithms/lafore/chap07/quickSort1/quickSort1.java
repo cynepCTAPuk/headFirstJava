@@ -51,10 +51,10 @@ class ArrayIns
        int leftPtr = left-1;           // left    (after ++)
        int rightPtr = right;           // right-1 (after --)
        while(true)
-          {                            // find bigger item
+          {                            // search bigger item
           while( theArray[++leftPtr] < pivot )
              ;  // (nop)
-                                       // find smaller item
+                                       // search smaller item
           while(rightPtr > 0 && theArray[--rightPtr] > pivot)
              ;  // (nop)
 

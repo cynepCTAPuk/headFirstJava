@@ -65,7 +65,7 @@ class Graph
       adjMat[start][end] = weight;  // (directed)
       }
 // -------------------------------------------------------------
-   public void path()                // find all shortest paths
+   public void path()                // search all shortest paths
       {
       int startTree = 0;             // start at vertex 0
       vertexList[startTree].isInTree = true;

@@ -132,7 +132,7 @@ class InToPost                  // infix to postfix conversion
       {
         int prec2;                 // precedence of new op
 
-        if (opTop == '+' || opTop == '-')  // find new op prec
+        if (opTop == '+' || opTop == '-')  // search new op prec
           prec2 = 1;
         else
           prec2 = 2;

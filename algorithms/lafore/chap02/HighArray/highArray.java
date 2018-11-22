@@ -76,7 +76,7 @@ class HighArrayApp {
 
     int searchKey = 35;           // search for item
     if (highArray.find(searchKey)) System.out.println("Found " + searchKey);
-    else System.out.println("Can't find " + searchKey);
+    else System.out.println("Can't search " + searchKey);
 
     highArray.delete(00);               // delete 3 items
     highArray.delete(55);

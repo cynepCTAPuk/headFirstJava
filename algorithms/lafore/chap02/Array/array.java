@@ -27,7 +27,7 @@ class ArrayApp {
 //-------------------------------------------------------------- Поиск элемента
     searchKey = 66;
     for (i = 0; i < nElems; i++) if (array[i] == searchKey) break;
-    if (i == nElems) System.out.println("Can't find " + searchKey);
+    if (i == nElems) System.out.println("Can't search " + searchKey);
     else System.out.println("Found " + searchKey);
 //-------------------------------------------------------------- Удаление элемента
     searchKey = 55;

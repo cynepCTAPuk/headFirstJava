@@ -79,9 +79,9 @@ class ArrayIns
 
        while(true)
           {
-          while( theArray[++leftPtr] < pivot )  // find bigger
+          while( theArray[++leftPtr] < pivot )  // search bigger
              ;                                  //    (nop)
-          while( theArray[--rightPtr] > pivot ) // find smaller
+          while( theArray[--rightPtr] > pivot ) // search smaller
              ;                                  //    (nop)
           if(leftPtr >= rightPtr)      // if pointers cross,
              break;                    //    partition done

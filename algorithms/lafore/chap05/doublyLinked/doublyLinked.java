@@ -87,7 +87,7 @@ class DoublyLinkedList
          {
          current = current.next;     // move to next link
          if(current == null)
-            return false;            // didn't find it
+            return false;            // didn't search it
          }
       Link newLink = new Link(dd);   // make new link
 
@@ -114,7 +114,7 @@ class DoublyLinkedList
          {
          current = current.next;     // move to next link
          if(current == null)
-            return null;             // didn't find it
+            return null;             // didn't search it
          }
       if(current==first)             // found it; first item?
          first = current.next;       // first --> old next
