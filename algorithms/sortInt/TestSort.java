@@ -2,13 +2,13 @@ package sortInt;
 
 import tools.*;
 
-import java.util.*;
-
 public class TestSort {
   public static void main(String[] args) {
     double t0;
-    int[] array = new int[50];
+    int nElements = 100_000;
+    int[] array = new int[nElements];
     Utils.fillRandom100(array);
+    System.out.println("Qty elements = " + nElements);
     int arrayBubble[] = array.clone();
     int arrayInsertion1[] = array.clone();
     int arrayInsertion2[] = array.clone();
@@ -40,8 +40,8 @@ public class TestSort {
     Shake.sort(arrayShake);
     double tShake = System.nanoTime() - t0;
 
-    System.out.println(Arrays.toString(array));
-    System.out.println(Arrays.toString(arrayBubble));
+//    System.out.println(Arrays.toString(array));
+//    System.out.println(Arrays.toString(arrayBubble));
 //    System.out.println(Arrays.toString(arrayInsertion1));
 //    System.out.println(Arrays.toString(arrayInsertion2));
 //    System.out.println(Arrays.toString(arraySelection));
@@ -53,5 +53,5 @@ public class TestSort {
     System.out.println(String.format("OddEven\t\ttime nanoseconds\t%,.0f", tOddEven));
     System.out.println(String.format("Selection\ttime nanoseconds\t%,.0f", tSelection));
     System.out.println(String.format("Shake\t\ttime nanoseconds\t%,.0f", tShake));
- }
+  }
 }
