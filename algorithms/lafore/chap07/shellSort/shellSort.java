@@ -1,5 +1,5 @@
 // shellSort.java
-// demonstrates shell sort
+// demonstrates shell sortB
 // to run this program: C>java ShellSortApp
 //--------------------------------------------------------------
 class ArraySh
@@ -38,7 +38,7 @@ class ArraySh
 
       while(h>0)                     // decreasing h, until h=1
          {
-                                     // h-sort the file
+                                     // h-sortB the file
          for(outer=h; outer<nElems; outer++)
             {
             temp = theArray[outer];
@@ -71,7 +71,7 @@ class ShellSortApp
          arr.insert(n);
          }
       arr.display();                // display unsorted array
-      arr.shellSort();              // shell sort the array
+      arr.shellSort();              // shell sortB the array
       arr.display();                // display sorted array
       }  // end main()
    }  // end class ShellSortApp

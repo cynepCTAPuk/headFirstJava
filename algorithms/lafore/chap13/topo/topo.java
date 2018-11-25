@@ -47,7 +47,7 @@ class Graph
       System.out.print(vertexList[v].label);
       }
 // -------------------------------------------------------------
-   public void topo()  // toplogical sort
+   public void topo()  // toplogical sortB
       {
       int orig_nVerts = nVerts;  // remember how many verts
 
@@ -147,7 +147,7 @@ class TopoApp
       theGraph.addEdge(5, 7);     // FH
       theGraph.addEdge(6, 7);     // GH
 
-      theGraph.topo();            // do the sort
+      theGraph.topo();            // do the sortB
       }  // end main()
    }  // end class TopoApp
 ////////////////////////////////////////////////////////////////

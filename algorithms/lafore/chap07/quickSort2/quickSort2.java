@@ -1,7 +1,7 @@
 package lafore.chap07.quickSort2;
 
 // quickSort2.java
-// demonstrates quick sort with median-of-three partitioning
+// demonstrates quick sortB with median-of-three partitioning
 // to run this program: C>java QuickSort2App
 ////////////////////////////////////////////////////////////////
 class ArrayIns
@@ -37,7 +37,7 @@ class ArrayIns
    public void recQuickSort(int left, int right)
       {
       int size = right-left+1;
-      if(size <= 3)                  // manual sort if small
+      if(size <= 3)                  // manual sortB if small
          manualSort(left, right);
       else                           // quicksort if large
          {
@@ -96,15 +96,15 @@ class ArrayIns
       {
       int size = right-left+1;
       if(size <= 1)
-         return;         // no sort necessary
+         return;         // no sortB necessary
       if(size == 2)
-         {               // 2-sort left and right
+         {               // 2-sortB left and right
          if( theArray[left] > theArray[right] )
             swap(left, right);
          return;
          }
       else               // size is 3
-         {               // 3-sort left, center, & right
+         {               // 3-sortB left, center, & right
          if( theArray[left] > theArray[right-1] )
             swap(left, right-1);                // left, center
          if( theArray[left] > theArray[right] )

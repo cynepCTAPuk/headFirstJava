@@ -1,5 +1,5 @@
 // objectSort.java
-// demonstrates sorting objects (uses insertion sort)
+// demonstrates sorting objects (uses insertion sortB)
 // to run this program: C>java ObjectSortApp
 ////////////////////////////////////////////////////////////////
 class Person
@@ -93,7 +93,7 @@ class ObjectSortApp
       System.out.println("Before sorting:");
       arr.display();                 // display items
 
-      arr.insertionSort();           // insertion-sort them
+      arr.insertionSort();           // insertion-sortB them
 
       System.out.println("After sorting:");
       arr.display();                 // display them again
