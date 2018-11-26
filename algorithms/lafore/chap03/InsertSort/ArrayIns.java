@@ -1,5 +1,7 @@
 package lafore.chap03.InsertSort;
 
+import tools.*;
+
 import java.util.*;
 
 // InsertSortApp.java
@@ -66,14 +68,14 @@ public class ArrayIns {
   }
 
   //--------------------------------------------------------------
-  //--------------------------------------------------------------
   public long medianSort() {
     insertionSort();
     if (nElems % 2 == 0) return (a[nElems / 2] + a[nElems / 2 - 1]) / 2;
     else return a[nElems / 2];
   }
 
-  public long median() {
+  //--------------------------------------------------------------
+  public long medianA() {
     long median = 0;
     int qty = 0;
     long med;
@@ -150,18 +152,20 @@ public class ArrayIns {
       }
       return median / qty;
     }
-    System.out.println("-=Увы, алгоритм не работает хорошо при повторяющихся элементах=-");
+    System.out.println("-=Увы, данный алгоритм не работает хорошо при повторяющихся элементах=-");
     return -1;
   }
 
+  //--------------------------------------------------------------
   public static void main(String[] args) {
-    int size = 64;
+    int size = 51;
     ArrayIns array = new ArrayIns(size);
-    for (int i = 0; i < size; i++) array.insert((long) (Math.random() * 10 + 10));
+
+    for (int i = 0; i < size; i++) array.insert((long) (Math.random() * 100 + 100));
     System.out.println("Число элементов в массиве = " + array.nElems);
     System.out.println("Среднее арифметическое = " + array.average());
     array.display();
-    System.out.println("Медиана через сравнение  = " + array.median());
+    System.out.println("Медиана через сравнение  = " + array.medianA());
     System.out.println("Медиана через сортировку = " + array.medianSort());
     array.display();
   }
