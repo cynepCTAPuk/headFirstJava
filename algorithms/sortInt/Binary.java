@@ -5,6 +5,7 @@ import tools.*;
 import java.util.*;
 
 public class Binary {
+
   public static int search(int[] array, int key) {
     int left = 0;
     int right = array.length - 1;

@@ -21,8 +21,7 @@ class OrdArray {
 
   //-----------------------------------------------------------
   public int find(long searchKey) {
-    int lowerBound = 0;
-    int upperBound = nElems - 1;
+    int lowerBound = 0, upperBound = nElems - 1;
 
     while (true) {
       int curIn = (lowerBound + upperBound) / 2;
@@ -44,6 +43,8 @@ class OrdArray {
     for (int k = nElems; k > j; k--) a[k] = a[k - 1];       // move bigger ones up
     a[j] = value;                  // insert it
     nElems++;                      // increment size
+    System.out.println("Добавлен элемент" + value);
+    display();
   }  // end insert()
 
   //-----------------------------------------------------------
@@ -53,6 +54,7 @@ class OrdArray {
     else {
       for (int k = j; k < nElems; k++) a[k] = a[k + 1];     // move bigger ones down
       nElems--;                                             // decrement size
+      System.out.println("Удалён элемент " + value);
       return true;
     }
   }  // end delete()
