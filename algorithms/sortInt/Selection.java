@@ -15,9 +15,9 @@ public class Selection {
           min = i + 1;
         }
       }
-      int swap = array[left];
+      int temp = array[left];
       array[left] = array[min];
-      array[min] = swap;
+      array[min] = temp;
       left++;
     }
   }

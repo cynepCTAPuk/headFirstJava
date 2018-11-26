@@ -18,20 +18,20 @@ class BubbleSortApp {
     arr.insert(33);
 
     arr.display();                // display items
-    arr.bubbleSort();             // bubble sortB them
+    arr.bubbleSortReverse();             // bubble sort them
     arr.display();                // display them again
 
-    int size = 100_000;
+    int size = 1_000;
     ArrayBub array = new ArrayBub(size);  // reference to array ? сreate the array
     for (int i = 0; i < size; i++) {
-      long n = (long) (java.lang.Math.random()*(size-1)+10_000);
+      long n = (long) (java.lang.Math.random() * (size - 1) + 10_000);
       array.insert(n);
     }
-//    array.display();
     double t0 = System.nanoTime();
     array.bubbleSort();
-    System.out.println(System.nanoTime()-t0);
-//    array.display();
+    double t1 = System.nanoTime() - t0;
+    System.out.println(String.format("Время выполнения %,.0f наносекунд", t1));
+
   }  // end main()
 }  // end class BubbleSortApp
 ////////////////////////////////////////////////////////////////

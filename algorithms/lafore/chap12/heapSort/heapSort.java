@@ -1,5 +1,5 @@
 // heapSort.java
-// demonstrates heap sortB
+// demonstrates heap sort
 // to run this program: C>java HeapSortApp
 import java.io.*;
 ////////////////////////////////////////////////////////////////

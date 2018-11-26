@@ -1,5 +1,5 @@
 // mergeSort.java
-// demonstrates recursive merge sortB
+// demonstrates recursive merge sort
 // to run this program: C>java MergeSortApp
 ////////////////////////////////////////////////////////////////
 class DArray
@@ -40,9 +40,9 @@ class DArray
       else
          {                                    // search midpoint
          int mid = (lowerBound+upperBound) / 2;
-                                              // sortB low half
+                                              // sort low half
          recMergeSort(workSpace, lowerBound, mid);
-                                              // sortB high half
+                                              // sort high half
          recMergeSort(workSpace, mid+1, upperBound);
                                               // merge them
          merge(workSpace, lowerBound, mid+1, upperBound);
@@ -98,7 +98,7 @@ class MergeSortApp
 
       arr.display();                 // display items
 
-      arr.mergeSort();               // merge sortB the array
+      arr.mergeSort();               // merge sort the array
 
       arr.display();                 // display items again
       }  // end main()

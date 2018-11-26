@@ -1,7 +1,7 @@
 package lafore.chap03.InsertSort;
 
-// insertSort.java
-// demonstrates insertion sortB
+// InsertSortApp.java
+// demonstrates insertion sort
 // to run this program: C>java InsertSortApp
 //--------------------------------------------------------------
 public class ArrayIns {
@@ -36,6 +36,19 @@ public class ArrayIns {
       long temp = a[out];            // remove marked item
       int in = out;                      // start shifts at out
       while (in > 0 && a[in - 1] >= temp) { // until one is smaller,
+        a[in] = a[in - 1];            // shift item to right
+        --in;                       // go left one position
+      }
+      a[in] = temp;                  // insert marked item
+    }  // end for
+  }  // end insertionSort()
+
+  //--------------------------------------------------------------
+  public void insertionSortReverse() {
+    for (int out = 1; out < nElems; out++) { // out is dividing line
+      long temp = a[out];            // remove marked item
+      int in = out;                      // start shifts at out
+      while (in > 0 && a[in - 1] < temp) { // until one is smaller,
         a[in] = a[in - 1];            // shift item to right
         --in;                       // go left one position
       }

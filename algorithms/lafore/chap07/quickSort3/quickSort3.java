@@ -1,7 +1,7 @@
 package lafore.chap07.quickSort3;
 
 // quickSort3.java
-// demonstrates quick sortB; uses insertion sortB for cleanup
+// demonstrates quick sort; uses insertion sort for cleanup
 // to run this program: C>java QuickSort3App
 ////////////////////////////////////////////////////////////////
 class ArrayIns
@@ -38,7 +38,7 @@ class ArrayIns
    public void recQuickSort(int left, int right)
       {
       int size = right-left+1;
-      if(size < 10)                   // insertion sortB if small
+      if(size < 10)                   // insertion sort if small
          insertionSort(left, right);
       else                            // quicksort if large
          {
@@ -92,7 +92,7 @@ class ArrayIns
        return leftPtr;                 // return pivot location
        }  // end partitionIt()
 //--------------------------------------------------------------
-                                       // insertion sortB
+                                       // insertion sort
    public void insertionSort(int left, int right)
       {
       int in, out;

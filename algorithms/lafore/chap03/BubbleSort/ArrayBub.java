@@ -1,7 +1,7 @@
 package lafore.chap03.BubbleSort;
 
-// bubbleSort.java
-// demonstrates bubble sortB
+// BubbleSortApp.java
+// demonstrates bubble sort
 // to run this program: C>java BubbleSortApp
 ////////////////////////////////////////////////////////////////
 public class ArrayBub {
@@ -34,6 +34,16 @@ public class ArrayBub {
     for (out = nElems - 1; out > 1; out--)   // outer loop (backward)
       for (in = 0; in < out; in++)        // inner loop (forward)
         if (a[in] > a[in + 1])       // out of order?
+          swap(in, in + 1);          // swap them
+  }  // end bubbleSort()
+
+  //--------------------------------------------------------------
+  public void bubbleSortReverse() {
+    int out, in;
+
+    for (out = nElems - 1; out > 1; out--)   // outer loop (backward)
+      for (in = 0; in < out; in++)        // inner loop (forward)
+        if (a[in] < a[in + 1])       // out of order?
           swap(in, in + 1);          // swap them
   }  // end bubbleSort()
 

@@ -1,5 +1,5 @@
 // quickSort1.java
-// demonstrates simple version of quick sortB
+// demonstrates simple version of quick sort
 // to run this program: C>java QuickSort1App
 ////////////////////////////////////////////////////////////////
 class ArrayIns
@@ -41,8 +41,8 @@ class ArrayIns
          long pivot = theArray[right];      // rightmost item
                                             // partition range
          int partition = partitionIt(left, right, pivot);
-         recQuickSort(left, partition-1);   // sortB left side
-         recQuickSort(partition+1, right);  // sortB right side
+         recQuickSort(left, partition-1);   // sort left side
+         recQuickSort(partition+1, right);  // sort right side
          }
       }  // end recQuickSort()
 //--------------------------------------------------------------
