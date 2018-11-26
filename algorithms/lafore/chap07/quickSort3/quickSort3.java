@@ -63,7 +63,7 @@ class ArrayIns
          swap(center, right);
 
       swap(center, right-1);           // put pivot on right
-      return theArray[right-1];        // return median value
+      return theArray[right-1];        // return medianSort value
       }  // end medianOf3()
 //--------------------------------------------------------------
    public void swap(int dex1, int dex2)  // swap two elements

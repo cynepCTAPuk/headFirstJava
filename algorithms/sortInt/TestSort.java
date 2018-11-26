@@ -9,7 +9,7 @@ public class TestSort {
     int[] array = new int[nElements];
 //    for (int i = 0; i < nElements; i++) array[i] = i; // Sorted array
 //    for (int i = 0; i < nElements; i++) array[nElements - 1 - i] = i; //Reversed sorted array
-    Utils.fillRandom100(array); 
+    Utils.fillRandom100(array);
     System.out.println(String.format("Кол-во элементов = %,d", nElements));
     int arrayBubble[] = array.clone();
     int arrayInsertB[] = array.clone();

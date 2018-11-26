@@ -1,7 +1,7 @@
 package lafore.chap07.quickSort2;
 
 // quickSort2.java
-// demonstrates quick sort with median-of-three partitioning
+// demonstrates quick sort with medianSort-of-three partitioning
 // to run this program: C>java QuickSort2App
 ////////////////////////////////////////////////////////////////
 class ArrayIns
@@ -62,7 +62,7 @@ class ArrayIns
          swap(center, right);
 
       swap(center, right-1);             // put pivot on right
-      return theArray[right-1];          // return median value
+      return theArray[right-1];          // return medianSort value
       }  // end medianOf3()
 //--------------------------------------------------------------
    public void swap(int dex1, int dex2)  // swap two elements
