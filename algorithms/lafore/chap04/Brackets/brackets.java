@@ -11,15 +11,16 @@ class StackX {
   private int top;
 
   //--------------------------------------------------------------
-  public StackX(int s) { // constructor
-    maxSize = s;
-    stackArray = new char[maxSize];
+  public StackX(int maxSize) { // constructor
+    this.maxSize = maxSize;
+    stackArray = new char[this.maxSize];
     top = -1;
   }
 
   //--------------------------------------------------------------
-  public void push(char j) { // put item on top of stack
-    stackArray[++top] = j;
+  public void push(char ch) { // put item on top of stack
+    if (top < maxSize) stackArray[++top] = ch;
+    else System.out.print("Can't insert, stack is full");
   }
 
   //--------------------------------------------------------------
@@ -44,44 +45,42 @@ class BracketChecker {
   private String input;                   // input string
 
   //--------------------------------------------------------------
-  public BracketChecker(String in) { // constructor
-    input = in;
+  public BracketChecker(String input) { // constructor
+    this.input = input;
   }
 
   //--------------------------------------------------------------
   public void check() {
-    int stackSize = input.length();      // get max stack size
-    StackX theStack = new StackX(stackSize);  // make stack
+    int stackSize = input.length();               // get max stack size
+    StackX stackX = new StackX(stackSize);      // make stack
 
-    for (int j = 0; j < input.length(); j++) { // get chars in turn
-      char ch = input.charAt(j);        // get char
+    for (int i = 0; i < input.length(); i++) {    // get chars in turn
+      char ch = input.charAt(i);                  // get char
       switch (ch) {
-        case '{':                      // opening symbols
+        case '{':                                 // opening symbols
         case '[':
         case '(':
-          theStack.push(ch);          // push them
+          stackX.push(ch);                                // push them
           break;
-
-        case '}':                      // closing symbols
+        case '}':                                           // closing symbols
         case ']':
         case ')':
-          if (!theStack.isEmpty())   // if stack not empty,
-          {
-            char chx = theStack.pop();  // pop and check
+          if (!stackX.isEmpty()) {                        // if stack not empty,
+            char chx = stackX.pop();                      // pop and check
             if ((ch == '}' && chx != '{') ||
                     (ch == ']' && chx != '[') ||
                     (ch == ')' && chx != '('))
-              System.out.println("Error: " + ch + " at " + j);
-          } else                        // prematurely empty
-            System.out.println("Error: " + ch + " at " + j);
+              System.out.println("Error-1: " + ch + " at " + i);
+          } else {
+            System.out.println("Error-2: " + ch + " at " + i); // prematurely empty
+          }
           break;
-        default:    // no action on other characters
+        default:                                             // no action on other characters
           break;
       }  // end switch
     }  // end for
     // at this point, all characters have been processed
-    if (!theStack.isEmpty())
-      System.out.println("Error: missing right delimiter");
+    if (!stackX.isEmpty()) System.out.println("Error: missing right delimiter");
   }  // end check()
 //--------------------------------------------------------------
 }  // end class BracketChecker
@@ -93,19 +92,19 @@ class BracketsApp {
     while (true) {
       System.out.print("Enter string containing delimiters: ");
       System.out.flush();
-      input = getString();     // read a string from kbd
-      if (input.equals("")) break; // quit if [Enter]
-      BracketChecker theChecker = new BracketChecker(input); // make a BracketChecker
-      theChecker.check();      // check brackets
+      input = getString();                                    // read a string from kbd
+      if (input.equals("")) break;                            // quit if [Enter]
+      BracketChecker bracketChecker = new BracketChecker(input);  // make a BracketChecker
+      bracketChecker.check();                                     // check brackets
     }  // end while
   }  // end main()
 
   //--------------------------------------------------------------
   public static String getString() throws IOException {
-    InputStreamReader isr = new InputStreamReader(System.in);
-    BufferedReader br = new BufferedReader(isr);
-    String s = br.readLine();
-    return s;
+    InputStreamReader streamReader = new InputStreamReader(System.in);
+    BufferedReader bufferedReader = new BufferedReader(streamReader);
+    String line = bufferedReader.readLine();
+    return line;
   }
 //--------------------------------------------------------------
 }  // end class BracketsApp
