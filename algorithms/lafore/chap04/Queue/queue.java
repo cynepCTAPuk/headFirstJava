@@ -4,89 +4,91 @@ package lafore.chap04.Queue;
 // demonstrates queue
 // to run this program: C>java QueueApp
 ////////////////////////////////////////////////////////////////
-class Queue
-   {
-   private int maxSize;
-   private long[] queArray;
-   private int front;
-   private int rear;
-   private int nItems;
+class Queue {
+  private int maxSize;
+  private long[] queArray;
+  private int front;
+  private int rear;
+  private int nItems;
+
+  //--------------------------------------------------------------
+  public Queue(int maxSize) {                                           // constructor
+    this.maxSize = maxSize;
+    queArray = new long[this.maxSize];
+    front = 0;
+    rear = -1;
+    nItems = 0;
+  }
+
+  //--------------------------------------------------------------
+  public void insert(long value) {                                // put item at rear of queue
+    if (rear == maxSize - 1) rear = -1;                           // deal with wraparound
+    queArray[++rear] = value;                                     // increment rear and insert
+    nItems++;                                                     // one more item
+    System.out.println("front = " + front + " rear = " + rear +
+            " insert value = " + value);
+  }
+
+  //--------------------------------------------------------------
+  public long remove() {                                          // take item from front of queue
+    System.out.println("\tfront = " + front + " rear = " + rear +
+            " delete value = " + peekFront());
+    long temp = queArray[front++];                                // get value and increment front
+    if (front == maxSize) front = 0;                              // deal with wraparound
+    nItems--;                                                     // one less item
+    return temp;
+  }
+
+  //--------------------------------------------------------------
+  public long peekFront() {                                       // peek at front of queue
+    return queArray[front];
+  }
+
+  //--------------------------------------------------------------
+  public boolean isEmpty() {                                      // true if queue is empty
+    return (nItems == 0);
+  }
+
+  //--------------------------------------------------------------
+  public boolean isFull() {                                       // true if queue is full
+    return (nItems == maxSize);
+  }
+
+  //--------------------------------------------------------------
+  public int size() {                                             // number of items in queue
+    return nItems;
+  }
 //--------------------------------------------------------------
-   public Queue(int s)          // constructor
-      {
-      maxSize = s;
-      queArray = new long[maxSize];
-      front = 0;
-      rear = -1;
-      nItems = 0;
-      }
-//--------------------------------------------------------------
-   public void insert(long j)   // put item at rear of queue
-      {
-      if(rear == maxSize-1)         // deal with wraparound
-         rear = -1;
-      queArray[++rear] = j;         // increment rear and insert
-      nItems++;                     // one more item
-      }
-//--------------------------------------------------------------
-   public long remove()         // take item from front of queue
-      {
-      long temp = queArray[front++]; // get value and incr front
-      if(front == maxSize)           // deal with wraparound
-         front = 0;
-      nItems--;                      // one less item
-      return temp;
-      }
-//--------------------------------------------------------------
-   public long peekFront()      // peek at front of queue
-      {
-      return queArray[front];
-      }
-//--------------------------------------------------------------
-   public boolean isEmpty()    // true if queue is empty
-      {
-      return (nItems==0);
-      }
-//--------------------------------------------------------------
-   public boolean isFull()     // true if queue is full
-      {
-      return (nItems==maxSize);
-      }
-//--------------------------------------------------------------
-   public int size()           // number of items in queue
-      {
-      return nItems;
-      }
-//--------------------------------------------------------------
-   }  // end class Queue
+}  // end class Queue
+
 ////////////////////////////////////////////////////////////////
-class QueueApp
-   {
-   public static void main(String[] args)
-      {
-      Queue theQueue = new Queue(5);  // queue holds 5 items
+class QueueApp {
+  public static void main(String[] args) {
+    Queue queue = new Queue(5);                      // queue holds 5 items
 
-      theQueue.insert(10);            // insert 4 items
-      theQueue.insert(20);
-      theQueue.insert(30);
-      theQueue.insert(40);
+    queue.insert(10);                             // insert 4 items
+    queue.insert(20);
+    queue.insert(30);
+    queue.insert(40);
 
-      theQueue.remove();              // remove 3 items
-      theQueue.remove();              //    (10, 20, 30)
-      theQueue.remove();
+    queue.remove();                                     // remove 3 items
+    queue.remove();                                     //    (10, 20, 30)
+    queue.remove();
 
-      theQueue.insert(50);            // insert 4 more items
-      theQueue.insert(60);            //    (wraps around)
-      theQueue.insert(70);
-      theQueue.insert(80);
+    queue.insert(50);                             // insert 4 more items
+    queue.insert(60);                             //    (wraps around)
+    queue.insert(70);
+    queue.insert(80);
+//    queue.insert(90);
 
-      while( !theQueue.isEmpty() )    // remove and display
-         {                            //    all items
-         long n = theQueue.remove();  // (40, 50, 60, 70, 80)
-         System.out.print(n);
-         System.out.print(" ");
-         }
-      System.out.println("");
-      }  // end main()
-   }  // end class QueueApp
+    while (!queue.isEmpty())                            // remove and display
+    {                                                   //    all items
+      long n = queue.remove();                          // (40, 50, 60, 70, 80)
+//      System.out.print(n);
+//      System.out.print(" ");
+
+    }
+    System.out.println();
+  }  // end main()
+}  // end class QueueApp
 ////////////////////////////////////////////////////////////////
