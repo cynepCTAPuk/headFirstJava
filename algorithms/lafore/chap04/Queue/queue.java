@@ -22,20 +22,26 @@ class Queue {
 
   //--------------------------------------------------------------
   public void insert(long value) {                                // put item at rear of queue
-    if (rear == maxSize - 1) rear = -1;                           // deal with wraparound
-    queArray[++rear] = value;                                     // increment rear and insert
-    nItems++;                                                     // one more item
-    System.out.println("front = " + front + " rear = " + rear +
-            " insert value = " + value);
+    if (size() == maxSize) {
+      System.out.println("-= Queue is full =-");
+    } else {
+      if (rear == maxSize - 1) rear = -1;                           // deal with wraparound
+      System.out.print("front = " + front + " rear = " + rear +
+              " items = " + size() + " insert VALUE = " + value);
+      queArray[++rear] = value;                                     // increment rear and insert
+      nItems++;                                                     // one more item
+      System.out.println(" items after = " + size());
+    }
   }
 
   //--------------------------------------------------------------
   public long remove() {                                          // take item from front of queue
-    System.out.println("\tfront = " + front + " rear = " + rear +
-            " delete value = " + peekFront());
+    System.out.print("\tfront = " + front + " rear = " + rear +
+            " items before = " + size() + " delete VALUE = " + peekFront());
     long temp = queArray[front++];                                // get value and increment front
     if (front == maxSize) front = 0;                              // deal with wraparound
     nItems--;                                                     // one less item
+    System.out.println(" items after = " + size());
     return temp;
   }
 
@@ -47,6 +53,7 @@ class Queue {
   //--------------------------------------------------------------
   public boolean isEmpty() {                                      // true if queue is empty
     return (nItems == 0);
+//    return (rear + 1 == front || (front + maxSize - 1 == rear));
   }
 
   //--------------------------------------------------------------
@@ -57,7 +64,14 @@ class Queue {
   //--------------------------------------------------------------
   public int size() {                                             // number of items in queue
     return nItems;
+/*
+    if (rear >= front)                              // Непрерывная последовательность
+      return rear - front + 1;
+    else                                            // Несвязная последовательность
+      return (maxSize - front) + (rear + 1);
+*/
   }
+
 //--------------------------------------------------------------
 }  // end class Queue
 
@@ -79,7 +93,7 @@ class QueueApp {
     queue.insert(60);                             //    (wraps around)
     queue.insert(70);
     queue.insert(80);
-//    queue.insert(90);
+    queue.insert(90);
 
     while (!queue.isEmpty())                            // remove and display
     {                                                   //    all items
