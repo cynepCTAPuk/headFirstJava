@@ -144,15 +144,15 @@ class InToPost { // infix to postfix conversion
 class InfixApp {
    public static void main(String[] args) throws IOException {
       String input, output;
+
       while (true) {
          System.out.print("Enter infix: ");
          System.out.flush();
-         input = getString();                    // read a string from kbd
-         if (input.equals(""))                   // quit if [Enter]
-            break;
-         // make a translator
-         InToPost theTrans = new InToPost(input);
-         output = theTrans.doTranslation(); // do the translation
+         input = getString();                            // read a string from kbd
+         if (input.equals("")) break;                    // quit if [Enter]
+
+         InToPost inToPost = new InToPost(input);        // make a translator
+         output = inToPost.doTranslation();              // do the translation
          System.out.println("Postfix is " + output + '\n');
       }  // end while
    }  // end main()
