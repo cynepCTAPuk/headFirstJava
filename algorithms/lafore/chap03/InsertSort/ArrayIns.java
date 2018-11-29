@@ -1,7 +1,5 @@
 package lafore.chap03.InsertSort;
 
-import tools.*;
-
 import java.util.*;
 
 // InsertSortApp.java
