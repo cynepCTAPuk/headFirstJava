@@ -79,7 +79,7 @@ class Queue {
          if ((front + i) < maxSize) System.out.print(queArray[(front + i)] + " ");
          if ((front + i) >= maxSize) System.out.print( queArray[((front + i) - maxSize)] + " ");
       }
-      System.out.println("] *****");
+      System.out.println("] *****                  ");
    }
 
 //--------------------------------------------------------------
