@@ -64,7 +64,7 @@ class StackX {
       System.out.print(peekN(j));
       System.out.print(' ');
     }
-    System.out.println("");
+    System.out.println();
   }
 //--------------------------------------------------------------
 }  // end class StackX
