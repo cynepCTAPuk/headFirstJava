@@ -59,27 +59,40 @@ class SortedList {
 ////////////////////////////////////////////////////////////////
 class ListInsertionSortApp {
     public static void main(String[] args) {
-        int size = 61;
+        int size = 10_000;
+        System.out.println(String.format("Кол-во элементов = %,d", size));
+
+        double t0;
+        double t1;
 
         Link[] linkArray = new Link[size];  // create array of links
 
+        t0 = System.nanoTime();
         for (int i = 0; i < size; i++) {    // fill array with links random number
             int n = (int) (java.lang.Math.random() * 100);
             Link newLink = new Link(n);     // make link
             linkArray[i] = newLink;         // put in array
         }
+        t1 = System.nanoTime();
+        System.out.println(String.format("Filling array by random numbers = %,.0f", t1 - t0));
 
-        System.out.print("Unsorted array: ");   // display array contents
-        for (int i = 0; i < size; i++) System.out.print(linkArray[i].dData + " ");
-        System.out.println();
+//        System.out.print("Unsorted array: ");   // display array contents
+//        for (int i = 0; i < size; i++) System.out.print(linkArray[i].dData + " ");
+//        System.out.println();
 
+        t0 = System.nanoTime();
         SortedList sortedList = new SortedList(linkArray);   // create new list
+        t1 = System.nanoTime();
+        System.out.println(String.format("Array to Sorted List = %,.0f", t1 - t0));
 
+        t0 = System.nanoTime();
         for (int i = 0; i < size; i++) linkArray[i] = sortedList.remove();   // links from list to array
+        t1 = System.nanoTime();
+        System.out.println(String.format("Sorted List to Array = %,.0f", t1 - t0));
 
-        System.out.print("Sorted Array:   ");   // display array contents
-        for (int i = 0; i < size; i++) System.out.print(linkArray[i].dData + " ");
-        System.out.println();
+//        System.out.print("Sorted Array:   ");   // display array contents
+//        for (int i = 0; i < size; i++) System.out.print(linkArray[i].dData + " ");
+//        System.out.println();
 
     }  // end main()
 }  // end class ListInsertionSortApp
