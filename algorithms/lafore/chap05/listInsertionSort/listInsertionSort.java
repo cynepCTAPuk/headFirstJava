@@ -1,7 +1,5 @@
 package lafore.chap05.listInsertionSort;
 
-import java.util.*;
-
 // listInsertionSort.java
 // demonstrates sorted list used for sorting
 // to run this program: C>java ListInsertionSortApp
@@ -29,13 +27,13 @@ class SortedList {
     // -------------------------------------------------------------
     public SortedList(Link[] linkArr) {     // constructor (array as argument)
         first = null;                       // initialize list
-        for (int i = 0; i < linkArr.length; i++) insert(linkArr[i]);    // copy array to list
+        for (int i = 0; i < linkArr.length; i++) {
+            insert(linkArr[i]);             // copy array to list
+        }
     }
 
     // -------------------------------------------------------------
-
-    public void insert(Link k)              // insert (in order)
-    {
+    public void insert(Link k) {            // insert (in order)
         Link previous = null;               // start at first
         Link current = first;
 

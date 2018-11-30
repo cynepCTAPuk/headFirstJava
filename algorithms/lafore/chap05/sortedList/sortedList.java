@@ -1,7 +1,5 @@
 package lafore.chap05.sortedList;
 
-import tools.Utils;
-
 // sortedList.java
 // demonstrates sorted list
 // to run this program: C>java SortedListApp
@@ -89,12 +87,11 @@ class SortedListApp {
         sortedList.displayList();                    // display list
 */
 
-        int number = 1_000_000;
+        int number = 100_000;
         System.out.println(String.format("Кол-во элементов = %,d", number));
 
         int[] array = new int[number];
-        Utils.fillRandom100(array);
-//        for (int i = 0; i < array.length; i++) array[i] = (int) (java.lang.Math.random() * 100);
+        for (int i = 0; i < array.length; i++) array[i] = (int) (java.lang.Math.random() * 100);
 //        for (int i = 0; i < array.length; i++) System.out.print(array[i] + " ");
 //        System.out.println();
 
