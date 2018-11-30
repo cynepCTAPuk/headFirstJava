@@ -39,7 +39,8 @@ class SortedList {
         Link previous = null;                   // start at first
         Link current = first;
 
-        while (current != null && key > current.dData) {    // until end of list or key > current,
+        // until end of list or key > current,
+        while (current != null && key > current.dData) {
             previous = current;
             current = current.next;             // go to next item
         }
