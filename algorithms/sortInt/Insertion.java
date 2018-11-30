@@ -18,18 +18,18 @@ public class Insertion {
 
   public static void main(String[] args) {
     int size = 60;
-    int[] arrayB = new int[size];
+    int[] array = new int[size];
 
     for (int i = 0; i < size - 1; i++) {
       int n = (int) (Math.random() * size);
-      arrayB[i] = n;
+      array[i] = n;
     }
 
-    System.out.println(Arrays.toString(arrayB));
+    System.out.println(Arrays.toString(array));
     double t0 = System.nanoTime();
-    Insertion.sort(arrayB);
+    Insertion.sort(array);
     double tInsB = System.nanoTime() - t0;
-    System.out.println(Arrays.toString(arrayB));
+    System.out.println(Arrays.toString(array));
     System.out.println(String.format("tInsB\t\ttime nanoseconds\t%,.0f", tInsB));
   }
 }
