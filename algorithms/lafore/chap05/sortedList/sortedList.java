@@ -70,21 +70,37 @@ class SortedList {
 ////////////////////////////////////////////////////////////////
 class SortedListApp {
     public static void main(String[] args) {
+/*
         SortedList sortedList = new SortedList();    // create new list
         sortedList.insert(20);                  // insert 2 items
         sortedList.insert(40);
-
         sortedList.displayList();                    // display list
 
         sortedList.insert(10);                  // insert 3 more items
         sortedList.insert(30);
         sortedList.insert(50);
-
         sortedList.displayList();                    // display list
 
         sortedList.remove();                         // remove an item
-
+        sortedList.remove();                         // remove an item
         sortedList.displayList();                    // display list
+*/
+
+        int number = 10_000;
+        System.out.println(String.format("Кол-во элементов = %,d", number));
+
+        int[] array = new int[number];
+        for (int i = 0; i < array.length; i++) array[i] = (int) (java.lang.Math.random() * 100);
+//        for (int i = 0; i < array.length; i++) System.out.print(array[i] + " ");
+//        System.out.println();
+
+        SortedList sortedListArray = new SortedList();
+        double t0 = System.nanoTime();
+        for (int i = 0; i < array.length; i++) sortedListArray.insert(array[i]);
+        double t1 = System.nanoTime();
+        System.out.println(String.format("Time in nanoseconds = %,.0f", t1 - t0));
+//        sortedListArray.displayList();
+
     }  // end main()
 }  // end class SortedListApp
 ////////////////////////////////////////////////////////////////

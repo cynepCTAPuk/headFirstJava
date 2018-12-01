@@ -1,6 +1,5 @@
 package lafore.chap05.listInsertionSort;
 
-import java.util.*;
 
 // listInsertionSort.java
 // demonstrates sorted list used for sorting
@@ -27,15 +26,15 @@ class SortedList {
     }                                       // initialize list
 
     // -------------------------------------------------------------
-    public SortedList(Link[] linkArr) {     // constructor (array as argument)
-        first = null;                       // initialize list
-        for (int i = 0; i < linkArr.length; i++) insert(linkArr[i]);    // copy array to list
+    public SortedList(Link[] linkArr)  // constructor (array
+    {                               // as argument)
+        first = null;                        // initialize list
+        for (int j = 0; j < linkArr.length; j++)  // copy array
+            insert(linkArr[j]);             // to list
     }
 
     // -------------------------------------------------------------
-
-    public void insert(Link k)              // insert (in order)
-    {
+    public void insert(Link k) {            // insert (in order)
         Link previous = null;               // start at first
         Link current = first;
 
@@ -61,28 +60,42 @@ class SortedList {
 ////////////////////////////////////////////////////////////////
 class ListInsertionSortApp {
     public static void main(String[] args) {
-        int size = 61;
 
-        Link[] linkArray = new Link[size];  // create array of links
+        int size = 10_000;
+        System.out.println(String.format("Кол-во элементов = %,d", size));
+        // create array of links
+        Link[] linkArray = new Link[size];
 
-        for (int i = 0; i < size; i++) {    // fill array with links random number
-            int n = (int) (java.lang.Math.random() * 100);
-            Link newLink = new Link(n);     // make link
-            linkArray[i] = newLink;         // put in array
+        double t0;
+        double t1;
+
+        t0 = System.nanoTime();
+        for (int j = 0; j < size; j++) {   // fill array with links
+            int n = (int) (java.lang.Math.random() * 99);   // random number
+            Link newLink = new Link(n);  // make link
+            linkArray[j] = newLink;      // put in array
         }
+        t1 = System.nanoTime();
+        System.out.println(String.format("Filling array by random numbers = %,.0f", t1 - t0));
 
-        System.out.print("Unsorted array: ");   // display array contents
-        for (int i = 0; i < size; i++) System.out.print(linkArray[i].dData + " ");
-        System.out.println();
+//        System.out.print("Unsorted array: ");   // display array contents
+//        for (int j = 0; j < size; j++) System.out.print(linkArray[j].dData + " ");
+//        System.out.println();
 
-        SortedList sortedList = new SortedList(linkArray);   // create new list
+        t0 = System.nanoTime();
+        SortedList theSortedList = new SortedList(linkArray);
+        t1 = System.nanoTime();
+        System.out.println(String.format("Array to Sorted List = %,.0f", t1 - t0));
 
-        for (int i = 0; i < size; i++) linkArray[i] = sortedList.remove();   // links from list to array
+        t0 = System.nanoTime();
+        for (int j = 0; j < size; j++)  // links from list to array
+            linkArray[j] = theSortedList.remove();
+        t1 = System.nanoTime();
+        System.out.println(String.format("Sorted List to Array = %,.0f", t1 - t0));
 
-        System.out.print("Sorted Array:   ");   // display array contents
-        for (int i = 0; i < size; i++) System.out.print(linkArray[i].dData + " ");
-
-        System.out.println();
+//        System.out.print("Sorted Array:   ");   // display array contents
+//        for (int i = 0; i < size; i++) System.out.print(linkArray[i].dData + " ");
+//        System.out.println();
 
     }  // end main()
 }  // end class ListInsertionSortApp
