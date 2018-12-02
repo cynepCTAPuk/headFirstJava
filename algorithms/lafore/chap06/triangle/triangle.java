@@ -1,4 +1,4 @@
-// factorial.java
+package lafore.chap06.triangle;// factorial.java
 // evaluates triangular numbers
 // to run this program: C>java TriangleApp
 

@@ -17,15 +17,20 @@ class FactorialApp {
 
     //-------------------------------------------------------------
     public static int factorial(int n) {
-        if (n == 1) {
-            System.out.println("Returning = " + n);
-            return 1;
+        if (n < 0) {
+            System.out.println("It must be positive number!");
         } else {
-            int temp = n * factorial(n - 1);
-            System.out.println(String.format("Returning %,d! = %,d", n, temp));
-            return temp;
+            if (n == 0) {
+                System.out.println("Returning = " + n);
+                return 1;
+            } else {
+                int temp = n * factorial(n - 1);
+                System.out.println(String.format("Returning %,d! = %,d", n, temp));
+                return temp;
 //            return (n + factorial(n - 1));
+            }
         }
+        return -1;
     }
 
     //-------------------------------------------------------------
