@@ -1,28 +1,28 @@
-// factorial.java
+package lafore.chap06.factorial;// factorial.java
 // evaluates triangular numbers
-// to run this program: C>java TriangleApp
+// to run this program: C>java FactorialApp
 
 import java.io.*;
 
 ////////////////////////////////////////////////////////////////
-class TriangleApp {
+class FactorialApp {
     static int theNumber;
 
     public static void main(String[] args) throws IOException {
         System.out.print("Enter a number: ");
         theNumber = getInt();
-        int theAnswer = triangle(theNumber);
-        System.out.println("Triangle = " + theAnswer);
+        int theAnswer = factorial(theNumber);
+        System.out.println(String.format("Factorial = %,d", theAnswer));
     }  // end main()
 
     //-------------------------------------------------------------
-    public static int triangle(int n) {
+    public static int factorial(int n) {
         if (n == 1) {
-            System.out.println("Returning 1");
+            System.out.println("Returning = " + n);
             return 1;
         } else {
-            int temp = n + triangle(n - 1);
-            System.out.println("Returning " + temp);
+            int temp = n * factorial(n - 1);
+            System.out.println(String.format("Returning %,d! = %,d", n, temp));
             return temp;
 //            return (n + factorial(n - 1));
         }
@@ -42,5 +42,5 @@ class TriangleApp {
         return Integer.parseInt(string);
     }
 //--------------------------------------------------------------
-}  // end class TriangleApp
+}  // end class FactorialApp
 ////////////////////////////////////////////////////////////////

@@ -107,7 +107,7 @@ class StackTriangleApp
             return true;
          }  // end switch
       return false;
-      }  // end triangle
+      }  // end factorial
 //-------------------------------------------------------------
    public static String getString() throws IOException
       {
