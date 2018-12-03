@@ -3,7 +3,7 @@ package lafore.chap06.merge;
 // merge.java
 // demonstrates merging two arrays into a third
 // to run this program: C>java MergeApp
-////////////////////////////////////////////////////////////////
+///////////////////////////1/////////////////////////////////////
 class MergeApp {
     public static void main(String[] args) {
         int[] arrayA = {23, 47, 81, 95};
