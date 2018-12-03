@@ -86,7 +86,7 @@ class SortedListApp {
         sortedList.displayList();                    // display list
 */
 
-        int number = 10_000;
+        int number = 100_000;
         System.out.println(String.format("Кол-во элементов = %,d", number));
 
         int[] array = new int[number];
@@ -98,7 +98,7 @@ class SortedListApp {
         double t0 = System.nanoTime();
         for (int i = 0; i < array.length; i++) sortedListArray.insert(array[i]);
         double t1 = System.nanoTime();
-        System.out.println(String.format("Time in nanoseconds = %,.0f", t1 - t0));
+        System.out.println(String.format("InsertSort Time in nanoseconds = %,.0f", t1 - t0));
 //        sortedListArray.displayList();
 
     }  // end main()
