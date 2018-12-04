@@ -33,5 +33,7 @@ public class ColourConsoleDemo {
         System.out.printf(leftAlignFormat, formattedMessage, 2, 1, 0);
         System.out.print("\033[0m"); // Close print red
         System.out.format("+----------------------+---------+---------+---------+%n");
+
+        System.out.printf("%6d%n%6d%n%6d%n%6d%n%6d%n%6d", 666666, 55555, 4444, 333, 22, 1);
     }
 }

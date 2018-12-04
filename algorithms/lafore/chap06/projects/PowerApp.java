@@ -1,26 +1,32 @@
 package lafore.chap06.projects;
-
-import static lafore.chap06.projects.MultApp.*;
+/**
+ * Роберт Лафоре
+ * проект 6.1
+ *
+ *
+ */
 
 public class PowerApp {
     static int i = 0;
 
     public static void main(String[] args) {
-        int a = 2;
-        int b = 5;
+        long a = 2, b = 10;
         long c = power(a, b);
-        System.out.println(String.format("%,d xx %,d = %,d", a, b, c));
+        System.out.format("%d ^ %d = %,d%n", a, b, c);
     }
 
-    public static long power(long first, long second) {
+    public static long power(long left, long right) {
         long result;
-        if (second == 1) {
-            System.out.println("          " + ++i + " Mult step & result" + first);
-            result = first;
+        String alignFormat = "| %2d | %-16s | %2d ^ %-2d = %12d |%n";
+        String message = "Exponentiation";
+        if (right == 1) {
+//            System.out.format("|------------------------------------------------|%n");
+//            System.out.format("+-Step-+--Operation-------+-----Result-----------+%n");
+            result = left;
+//            System.out.format(alignFormat, ++i, message, left, right, result);
         } else {
-//            result = first * power(first, second - 1);
-            result = mult(first, power(first, second - 1));
-            System.out.println("          " + ++i + " Mult step & result = " + result);
+            result = left * power(left, right - 1);
+//            System.out.format(alignFormat, ++i, message, left, right, result);
         }
         return result;
     }

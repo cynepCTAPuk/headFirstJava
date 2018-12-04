@@ -1,29 +1,31 @@
 package lafore.chap06.projects;
+/**
+ * Роберт Лафоре
+ * проект 6.1
+ */
 
 public class MultApp {
     static int i = 0;
 
     public static void main(String[] args) {
-        int a = 11;
-        int b = 9;
+        long a = 17, b = 11;
         long c = mult(a, b);
-        System.out.println(a + " x " + b + " = " + c);
+        System.out.format("%d x %d = %,d%n", a, b, c);
     }
 
-    public static long mult(long first, long second) {
+    public static long mult(long left, long right) {
         long result;
-        String leftAlignFormat = "| %-4d | %-10s | %-20d |%n";
-        String message = "Add step".trim();
-        if (second == 1) {
-//            System.out.println(++i + " Add step " + first);
-            System.out.format("|------Test Cases with Steps Summary ------|%n");
-            System.out.format("+------+------------+----------------------+%n");
-            System.out.printf(leftAlignFormat, ++i, message, first);
-            result = first;
+        String alignFormat = "| %2d | %-16s | %2d x %2d = %-11d |%n";
+        String message = "Multiplication";
+
+        if (right == 1) {
+            System.out.format("|------------------------------------------------|%n");
+            System.out.format("+-Step-+--Operation-------+-----Result-----------+%n");
+            result = left;
+            System.out.format(alignFormat, ++i, message, left, right, result);
         } else {
-            result = first + mult(first, second - 1);
-//            System.out.println(++i + " Add step " + result);
-            System.out.printf(leftAlignFormat, ++i, message, result);
+            result = left + mult(left, right - 1);
+            System.out.format(alignFormat, ++i, message, left, right, result);
         }
         return result;
     }
