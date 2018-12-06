@@ -106,7 +106,7 @@ class MergeSortApp {
         arr.display();                 // display items again
 */
 
-        int number = 10_000_000;
+        int number = 1_000_000;
         System.out.println(String.format("Кол-во элементов = %,d", number));
 
         DArray array = new DArray(number);     // create the array

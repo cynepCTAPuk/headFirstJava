@@ -60,11 +60,11 @@ public class Utility {
   public static void main(String[] args) {
     Comparator<Integer> comp = Comparator.naturalOrder();
     Random rnd = new Random();
-    int arr = 100;
+    int arr = 10;
     for (int size = arr; size <= arr; size++) {
       ArrayList<Integer> coll = new ArrayList<>(size);
-      for (int i = 0; i < size; i++) coll.add(rnd.nextInt(100));
-//      System.out.println(coll.toString());
+      for (int i = 0; i < size; i++) coll.add(rnd.nextInt(10));
+      System.out.println(coll.toString());
       System.out.println("Median of " + coll.size() + " is " + median(coll, comp));
     } // for a range of possible input sizes
   } // main(args)
