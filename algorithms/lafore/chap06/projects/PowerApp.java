@@ -23,10 +23,10 @@ public class PowerApp {
 //            System.out.format("|------------------------------------------------|%n");
 //            System.out.format("+-Step-+--Operation-------+-----Result-----------+%n");
             result = left;
-//            System.out.format(alignFormat, ++i, message, left, right, result);
+//            System.out.format(alignFormat, ++index, message, left, right, result);
         } else {
             result = left * power(left, right - 1);
-//            System.out.format(alignFormat, ++i, message, left, right, result);
+//            System.out.format(alignFormat, ++index, message, left, right, result);
         }
         return result;
     }
