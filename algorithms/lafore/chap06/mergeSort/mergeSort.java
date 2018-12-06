@@ -1,6 +1,6 @@
 package lafore.chap06.mergeSort;
 
-// mergeSort.java
+// TreeBuild.java
 // demonstrates recursive merge sort
 // to run this program: C>java MergeSortApp
 ////////////////////////////////////////////////////////////////
@@ -9,37 +9,33 @@ class DArray {
     private int nElems;               // number of data items
 
     //-----------------------------------------------------------
-    public DArray(int max)            // constructor
-    {
+    public DArray(int max) {     // constructor
         theArray = new long[max];      // create array
         nElems = 0;
     }
 
     //-----------------------------------------------------------
-    public void insert(long value)    // put element into array
-    {
+    public void insert(long value) { // put element into array
         theArray[nElems] = value;      // insert it
         nElems++;                      // increment size
     }
 
     //-----------------------------------------------------------
-    public void display()             // displays array contents
-    {
+    public void display() {     // displays array contents
         for (int j = 0; j < nElems; j++)    // for each element,
             System.out.print(theArray[j] + " ");  // display it
-        System.out.println("");
+        System.out.println();
     }
 
     //-----------------------------------------------------------
-    public void mergeSort()           // called by main()
-    {                              // provides workspace
+    public void mergeSort() {           // called by main() & provides workspace
         long[] workSpace = new long[nElems];
         recMergeSort(workSpace, 0, nElems - 1);
     }
 
     //-----------------------------------------------------------
-    private void recMergeSort(long[] workSpace, int lowerBound,
-                              int upperBound) {
+    private void recMergeSort(long[] workSpace,
+                              int lowerBound, int upperBound) {
         if (lowerBound == upperBound)            // if range is 1,
             return;                              // no use sorting
         else {                                    // search midpoint
@@ -54,8 +50,8 @@ class DArray {
     }  // end recMergeSort()
 
     //-----------------------------------------------------------
-    private void merge(long[] workSpace, int lowPtr,
-                       int highPtr, int upperBound) {
+    private void merge(long[] workSpace,
+                       int lowPtr, int highPtr, int upperBound) {
         int j = 0;                             // workspace index
         int lowerBound = lowPtr;
         int mid = highPtr - 1;
