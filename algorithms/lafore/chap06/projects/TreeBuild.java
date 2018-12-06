@@ -64,13 +64,11 @@ class DArray {
                 workSpace[index++] = theArray[highPtr++];
         }
 
-        while (lowPtr <= mid) {
+        while (lowPtr <= mid)
             workSpace[index++] = theArray[lowPtr++];
-        }
 
-        while (highPtr <= upperBound) {
+        while (highPtr <= upperBound)
             workSpace[index++] = theArray[highPtr++];
-        }
 
         for (index = 0; index < n; index++)
             theArray[lowerBound + index] = workSpace[index];
@@ -105,7 +103,7 @@ class MergeSortApp {
         arr.display();                 // display items again
 */
 
-        int number = 10_000_000;
+        int number = 1_000_000_000;
         System.out.println(String.format("Кол-во элементов = %,d", number));
 
         DArray array = new DArray(number);     // create the array
