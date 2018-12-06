@@ -7,58 +7,43 @@ package lafore.chap06.projects;
 import static lafore.chap06.projects.PowerApp.*;
 
 public class BinaryTreeBuildApp {
-    static int i = 0;
+    static int index = 0;
     static int left = 2, right = 4;
     static int size = (int) power(left, right);
-    static char[][] chars = new char[right][size];
+    static String[][] strings = new String[right][size];
 
 
     public static void main(String[] args) {
-        System.out.println("left = " + left + " right = " + right + " size = " + size);
-        for (int i = 0; i < chars.length; i++) {
-            for (int j = 0; i < chars[i].length; j++) {
-                chars[i][j] = '-';
-            }
-        }
-//        drawTree(size);
-//        Display();
-        System.out.println(chars.length);
+        System.out.println("index = " + index + " left = " + left + " right = " + right + " size = " + size);
+        fillArray();
+        drawTree();
+        display();
     }
 
-    public static void drawTree(int size) {
-        recTree(0, size - 1);
+    public static void drawTree() {
+        for (int i = 0; i < strings.length; i++) {
+            for (int j = 0; j < strings[i].length; j++) {
+                if ((size % (j / 4 + 1) == 0)) strings[i][j] = "X";
+            }
+        }
     }
 
     public static int recTree(int left, int right) {
-
-/*
-        int middle = (left + right + 1) >>> 1;
-
-        if (middle == 1) {
-            for (int i = 0; i < chars.length; i++) chars[i] = '-';
-            chars[size / 2] = 'X';
-            for (int i = 0; i < chars.length; i++) System.out.print(chars[i]);
-            System.out.println(" middle = " + middle);
-            return middle;
-        } else {
-            for (int i = 0; i < chars.length; i++) chars[i] = '-';
-            middle = recTree(left, middle) + 1;
-            chars[middle] = 'X';
-            for (int i = 0; i < chars.length; i++) System.out.print(chars[i]);
-            System.out.println(" middle = " + middle);
-            return middle;
-        }
-*/
-        return -1;
+        return (left + right) >>> 1;
+//        strings[index++][middle] = "X";
     }
 
-    public static void Display() {
-        for (int i = 0; i < right - 1; i++) {
-            System.out.print("[");
-            for (int j = 0; i < size - 1; j++) {
-                System.out.print(chars[i][j]);
-            }
-            System.out.println("]");
+
+    public static void fillArray() {
+        for (int i = 0; i < strings.length; i++) {
+            for (int j = 0; j < strings[i].length; j++) strings[i][j] = "-";
+        }
+    }
+
+    public static void display() {
+        for (int i = 0; i < strings.length; i++) {
+            for (int j = 0; j < strings[i].length; j++) System.out.print(strings[i][j]);
+            System.out.println();
         }
     }
 }

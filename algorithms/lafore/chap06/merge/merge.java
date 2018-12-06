@@ -11,7 +11,9 @@ class MergeApp {
         int[] arrayC = new int[10];
 
         merge(arrayA, 4, arrayB, 6, arrayC);
-        display(arrayC, 10);
+        display(arrayA);
+        display(arrayB);
+        display(arrayC);
     }  // end main()
 
     //-----------------------------------------------------------
@@ -24,8 +26,9 @@ class MergeApp {
         while (aDex < sizeA && bDex < sizeB)  // neither array empty
             if (arrayA[aDex] < arrayB[bDex]) {
                 arrayC[cDex++] = arrayA[aDex++];
-            } else
+            } else {
                 arrayC[cDex++] = arrayB[bDex++];
+            }
 
         while (aDex < sizeA)                  // arrayB is empty,
             arrayC[cDex++] = arrayA[aDex++];  // but arrayA isn't
@@ -36,8 +39,8 @@ class MergeApp {
 
     //-----------------------------------------------------------
     // display array
-    public static void display(int[] theArray, int size) {
-        for (int j = 0; j < size; j++)
+    public static void display(int[] theArray) {
+        for (int j = 0; j < theArray.length; j++)
             System.out.print(theArray[j] + " ");
         System.out.println();
     }

@@ -1,4 +1,4 @@
-package lafore.chap06.mergeSort;
+package lafore.chap06.projects;
 
 // TreeBuild.java
 // demonstrates recursive merge sort
@@ -28,14 +28,14 @@ class DArray {
     }
 
     //-----------------------------------------------------------
-    public void mergeSort() {           // called by main() & provides workspace
+    public void mergeSort() {   // called by main() & provides workspace
         long[] workSpace = new long[nElems];
         recMergeSort(workSpace, 0, nElems - 1);
     }
 
     //-----------------------------------------------------------
-    private void recMergeSort(long[] workSpace,
-                              int lowerBound, int upperBound) {
+    private void recMergeSort(
+            long[] workSpace, int lowerBound, int upperBound) {
         if (lowerBound == upperBound)            // if range is 1,
             return;                              // no use sorting
         else {                                    // search midpoint
@@ -50,27 +50,28 @@ class DArray {
     }  // end recMergeSort()
 
     //-----------------------------------------------------------
-    private void merge(long[] workSpace,
-                       int lowPtr, int highPtr, int upperBound) {
-        int j = 0;                             // workspace index
+    private void merge(
+            long[] workSpace, int lowPtr, int highPtr, int upperBound) {
+        int index = 0;                             // workspace index
         int lowerBound = lowPtr;
         int mid = highPtr - 1;
         int n = upperBound - lowerBound + 1;       // # of items
 
-        while (lowPtr <= mid && highPtr <= upperBound)
+        while (lowPtr <= mid && highPtr <= upperBound) {
             if (theArray[lowPtr] < theArray[highPtr])
-                workSpace[j++] = theArray[lowPtr++];
+                workSpace[index++] = theArray[lowPtr++];
             else
-                workSpace[j++] = theArray[highPtr++];
+                workSpace[index++] = theArray[highPtr++];
+        }
 
         while (lowPtr <= mid)
-            workSpace[j++] = theArray[lowPtr++];
+            workSpace[index++] = theArray[lowPtr++];
 
         while (highPtr <= upperBound)
-            workSpace[j++] = theArray[highPtr++];
+            workSpace[index++] = theArray[highPtr++];
 
-        for (j = 0; j < n; j++)
-            theArray[lowerBound + j] = workSpace[j];
+        for (index = 0; index < n; index++)
+            theArray[lowerBound + index] = workSpace[index];
     }  // end merge()
     //-----------------------------------------------------------
 }  // end class DArray
@@ -102,12 +103,12 @@ class MergeSortApp {
         arr.display();                 // display items again
 */
 
-        int number = 1_000_000;
+        int number = 1_000_000_000;
         System.out.println(String.format("Кол-во элементов = %,d", number));
 
         DArray array = new DArray(number);     // create the array
 //        int[] array = new int[number];
-        for (int i = 0; i < number; i++) array.insert((long) (java.lang.Math.random() * 100));
+        for (int i = 0; i < number; i++) array.insert((long) (Math.random() * 100));
         double t0 = System.nanoTime();
         array.mergeSort();
         double t1 = System.nanoTime();
