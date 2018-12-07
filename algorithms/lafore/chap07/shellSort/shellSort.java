@@ -33,9 +33,9 @@ class ArraySh {
         int inner, outer;
         long temp;
 
-        int h = 2_391_484;                              // search initial value of h
+        int h = 2_391_484;                       // search initial value of h
+        // 1, 4, 13, 40, 121, 364, 1_093, 3_280, 9_841, 29_524, 88_573, 265_720...)
         while (h <= nElems / 3) h = h * 3 + 1;
-        // (1, 4, 13, 40, 121, 364, 1_093, 3_280, 9_841, 29_524, 88_573, 265_720...)
 
         while (h > 0) {                         // decreasing h, until h=1
             // h-sort the file
