@@ -83,7 +83,7 @@ class MergeSortApp {
         int maxSize = 100_000_000;                       // array size
         System.out.println(String.format("Кол-во элементов = %,d", maxSize));
 
-        DArray array = new DArray(maxSize);     // create the array
+        DArray array = new DArray(maxSize);     // reference to array & create the array
         for (int i = 0; i < maxSize; i++) {      // fill array with random numbers
             long n = (int) (100+java.lang.Math.random() * (999-100));
             array.insert(n);

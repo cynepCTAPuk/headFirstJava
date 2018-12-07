@@ -75,20 +75,20 @@ class QuickSort1App {
     public static void main(String[] args) {
         double t0;
         double t1;
-        int maxSize = 100_000_000;                       // array size
+        int maxSize = 100_000_000;              // array size
         System.out.println(String.format("Кол-во элементов = %,d", maxSize));
 
-        ArrayIns arr = new ArrayIns(maxSize);            // create array
+        ArrayIns arr = new ArrayIns(maxSize);   // reference to array & create the array
         for (int j = 0; j < maxSize; j++) {     // fill array with random numbers
-            long n = (int) (100+java.lang.Math.random() * (999-100));
+            long n = (int) (100 + java.lang.Math.random() * (999 - 100));
             arr.insert(n);
         }
-//        arr.display();                          // display items
+//        arr.display();                        // display items
         t0 = System.nanoTime();
         arr.quickSort();                        // quicksort them
         t1 = System.nanoTime();
-        System.out.println(String.format("QuickSort\ttime nanoseconds =\t%,.0f", t1-t0));
-//        arr.display();                          // display them again
+        System.out.println(String.format("QuickSort1\ttime nanoseconds =\t%,.0f", t1 - t0));
+//        arr.display();                        // display them again
     }  // end main()
 }  // end class QuickSort1App
 ////////////////////////////////////////////////////////////////
