@@ -78,41 +78,22 @@ class DArray {
 ////////////////////////////////////////////////////////////////
 class MergeSortApp {
     public static void main(String[] args) {
-/*
-        int maxSize = 100;             // array size
-        DArray arr = new DArray(maxSize);     // create the array
+        double t0;
+        double t1;
+        int maxSize = 100_000_000;                       // array size
+        System.out.println(String.format("Кол-во элементов = %,d", maxSize));
 
-        arr.insert(64);                // insert items
-        arr.insert(21);
-        arr.insert(33);
-        arr.insert(70);
-        arr.insert(12);
-        arr.insert(85);
-        arr.insert(44);
-        arr.insert(3);
-        arr.insert(99);
-        arr.insert(0);
-        arr.insert(108);
-        arr.insert(36);
-
-        arr.display();                 // display items
-
-        arr.mergeSort();               // merge sort the array
-
-        arr.display();                 // display items again
-*/
-
-        int number = 1_000_000;
-        System.out.println(String.format("Кол-во элементов = %,d", number));
-
-        DArray array = new DArray(number);     // create the array
-//        int[] array = new int[number];
-        for (int i = 0; i < number; i++) array.insert((long) (java.lang.Math.random() * 100));
-        double t0 = System.nanoTime();
+        DArray array = new DArray(maxSize);     // create the array
+        for (int i = 0; i < maxSize; i++) {      // fill array with random numbers
+            long n = (int) (100+java.lang.Math.random() * (999-100));
+            array.insert(n);
+        }
+//        arr.display();                 // display items
+        t0 = System.nanoTime();
         array.mergeSort();
-        double t1 = System.nanoTime();
-        System.out.println(String.format("MergeSort Time in nanoseconds = %,.0f", t1 - t0));
-
+        t1 = System.nanoTime();
+        System.out.println(String.format("MergeSort\tnanoseconds =\t%,.0f", t1 - t0));
+//        arr.display();                 // display items again
     }  // end main()
 }  // end class MergeSortApp
 ////////////////////////////////////////////////////////////////
