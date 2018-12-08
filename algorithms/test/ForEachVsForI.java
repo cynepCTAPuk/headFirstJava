@@ -16,7 +16,6 @@ public class ForEachVsForI {
             arr[i] = n;
         }
 
-/*
         t0 = System.nanoTime();
         for (int i = 0; i < arr.length; i++) System.out.print(arr[i] + " ");
         System.out.println();
@@ -34,19 +33,6 @@ public class ForEachVsForI {
         System.out.println();
         t1 = System.nanoTime();
         System.out.format("Print Arrays.stream.forEachOrdered\tnanoseconds =\t%,.0f %n", t1 - t0);
-*/
-
-// #1
-        System.out.println("\t\tArrays.asList(arr).stream().forEach(s -> System.out.print(s));");
-        Arrays.asList(arr).stream().forEach(s -> System.out.println(s));
-
-// #2
-        System.out.println("\t\tStream.of(arr).forEach(System.out::println);");
-        Stream.of(arr).forEach(System.out::println);
-
-// #3
-        System.out.println("\t\tArrays.stream(arr).forEach(System.out::print);");
-        Arrays.stream(arr).forEach(System.out::print);
 
     }
 }

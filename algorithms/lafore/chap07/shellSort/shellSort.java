@@ -38,17 +38,25 @@ class ArraySh {
         while (h <= nElems / 3) h = h * 3 + 1;
 
         while (h > 0) {                         // decreasing h, until h=1
-            // h-sort the file
-            for (outer = h; outer < nElems; outer++) {
+
+            for (outer = h; outer < nElems; outer++) {  // h-sort the file
+
+                for (int i = 0; i < theArray.length; i++) System.out.format("%,3d", theArray[i]);
+                System.out.format("  h =%,2d ", h);
+
                 temp = theArray[outer];
                 inner = outer;
-                // one subpass (eg 0, 4, 8)
-                while (inner > h - 1 && theArray[inner - h] >= temp) {
+
+                while (inner > h - 1 && theArray[inner - h] >= temp) {  // one subpass (eg 0, 4, 8)
+                    System.out.format("(%,2d = %,2d) <-> (%,2d = %,2d) ",
+                            inner, temp, inner - h, theArray[inner - h]);
                     theArray[inner] = theArray[inner - h];
                     inner -= h;
                 }
+                System.out.println();
                 theArray[inner] = temp;
             }  // end for
+
             h = (h - 1) / 3;              // decrease h
         }  // end while(h>0)
     }  // end shellSort()
@@ -60,19 +68,22 @@ class ShellSortApp {
     public static void main(String[] args) {
         double t0;
         double t1;
-        int maxSize = 1_000_000;            // array size
+        int maxSize = 20;            // array size
         System.out.println(String.format("Кол-во элементов = %,d", maxSize));
 
         ArraySh arr = new ArraySh(maxSize); // reference to array & create the array
         for (int j = 0; j < maxSize; j++) { // fill array with random numbers
-            long n = (int) (100 + java.lang.Math.random() * (999 - 100));
+            long n = (int) (java.lang.Math.random() * 99);
             arr.insert(n);
         }
 //        arr.display();                    // display items
-        t0 = System.nanoTime();
+//        t0 = System.nanoTime();
+        for (int i = 0; i < maxSize; i++) System.out.format("%,3d", i);
+        System.out.println();
+        System.out.println(" |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|");
         arr.shellSort();                    // shell sort the array
-        t1 = System.nanoTime();
-        System.out.println(String.format("ShellSort1\ttime nanoseconds =\t%,.0f", t1 - t0));
+//        t1 = System.nanoTime();
+//        System.out.println(String.format("ShellSort1\ttime nanoseconds =\t%,.0f", t1 - t0));
 //        arr.display();                    // display them again
     }  // end main()
 }  // end class ShellSortApp

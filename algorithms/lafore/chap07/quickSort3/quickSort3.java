@@ -79,6 +79,7 @@ class ArrayIns {
             if (leftPtr >= rightPtr) break;         // if pointers cross, partition done
             else swap(leftPtr, rightPtr);           // not crossed, so swap elements
         }  // end while(true)
+
         swap(leftPtr, right - 1);         // restore pivot
         return leftPtr;                 // return pivot location
     }  // end partitionIt()
