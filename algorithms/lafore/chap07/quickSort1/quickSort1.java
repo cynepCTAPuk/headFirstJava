@@ -47,9 +47,17 @@ class ArrayIns {
     }  // end recQuickSort()
 
     //--------------------------------------------------------------
+    public void swap(int dex1, int dex2) { // swap two elements
+        long temp = theArray[dex1];        // A into temp
+        theArray[dex1] = theArray[dex2];   // B into A
+        theArray[dex2] = temp;             // temp into B
+    }  // end swap(
+
+    //--------------------------------------------------------------
     public int partitionIt(int left, int right, long pivot) {
         int leftPtr = left - 1;           // left    (after ++)
         int rightPtr = right;           // right-1 (after --)
+
         while (true) {
             while (theArray[++leftPtr] < pivot) ;  // search bigger item (nop)
             while (rightPtr > 0 && theArray[--rightPtr] > pivot) ;  // search smaller item (nop)
@@ -61,12 +69,6 @@ class ArrayIns {
         return leftPtr;                 // return pivot location
     }  // end partitionIt()
 
-    //--------------------------------------------------------------
-    public void swap(int dex1, int dex2) { // swap two elements
-        long temp = theArray[dex1];        // A into temp
-        theArray[dex1] = theArray[dex2];   // B into A
-        theArray[dex2] = temp;             // temp into B
-    }  // end swap(
 //--------------------------------------------------------------
 }  // end class ArrayIns
 

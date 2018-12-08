@@ -71,9 +71,11 @@ class ArrayIns {
     public int partitionIt(int left, int right, long pivot) {
         int leftPtr = left;             // right of first elem
         int rightPtr = right - 1;       // left of pivot
+
         while (true) {
             while (theArray[++leftPtr] < pivot) ;   // search bigger (nop)
             while (theArray[--rightPtr] > pivot) ;  // search smaller (nop)
+
             if (leftPtr >= rightPtr) break;         // if pointers cross, partition done
             else swap(leftPtr, rightPtr);           // not crossed, so swap elements
         }  // end while(true)

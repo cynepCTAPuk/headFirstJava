@@ -33,7 +33,7 @@ class ArraySh {
         int inner, outer;
         long temp;
 
-        int h = 2_391_484;                       // search initial value of h
+        int h = 1;                       // search initial value of h
         // 1, 4, 13, 40, 121, 364, 1_093, 3_280, 9_841, 29_524, 88_573, 265_720...)
         while (h <= nElems / 3) h = h * 3 + 1;
 
@@ -60,7 +60,7 @@ class ShellSortApp {
     public static void main(String[] args) {
         double t0;
         double t1;
-        int maxSize = 10_000_000;            // array size
+        int maxSize = 1_000_000;            // array size
         System.out.println(String.format("Кол-во элементов = %,d", maxSize));
 
         ArraySh arr = new ArraySh(maxSize); // reference to array & create the array

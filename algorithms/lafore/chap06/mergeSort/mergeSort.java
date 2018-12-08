@@ -9,21 +9,21 @@ class DArray {
     private int nElems;               // number of data items
 
     //-----------------------------------------------------------
-    public DArray(int max) {     // constructor
+    public DArray(int max) {            // constructor
         theArray = new long[max];      // create array
         nElems = 0;
     }
 
     //-----------------------------------------------------------
-    public void insert(long value) { // put element into array
+    public void insert(long value) {    // put element into array
         theArray[nElems] = value;      // insert it
         nElems++;                      // increment size
     }
 
     //-----------------------------------------------------------
-    public void display() {     // displays array contents
-        for (int j = 0; j < nElems; j++)    // for each element,
-            System.out.print(theArray[j] + " ");  // display it
+    public void display() {                         // displays array contents
+        for (int j = 0; j < nElems; j++)            // for each element,
+            System.out.print(theArray[j] + " ");    // display it
         System.out.println();
     }
 
@@ -36,41 +36,33 @@ class DArray {
     //-----------------------------------------------------------
     private void recMergeSort(long[] workSpace,
                               int lowerBound, int upperBound) {
-        if (lowerBound == upperBound)            // if range is 1,
-            return;                              // no use sorting
-        else {                                    // search midpoint
+        if (lowerBound == upperBound)                       // if range is 1,
+            return;                                         // no use sorting
+        else {                                              // search midpoint
             int mid = (lowerBound + upperBound) / 2;
-            // sort low half
-            recMergeSort(workSpace, lowerBound, mid);
-            // sort high half
-            recMergeSort(workSpace, mid + 1, upperBound);
-            // merge them
-            merge(workSpace, lowerBound, mid + 1, upperBound);
+            recMergeSort(workSpace, lowerBound, mid);                  // sort low half
+            recMergeSort(workSpace, mid + 1, upperBound);    // sort high half
+            merge(workSpace, lowerBound, mid + 1, upperBound);  // merge them
         }  // end else
     }  // end recMergeSort()
 
     //-----------------------------------------------------------
     private void merge(long[] workSpace,
                        int lowPtr, int highPtr, int upperBound) {
-        int j = 0;                             // workspace index
+        int j = 0;                                  // workspace index
         int lowerBound = lowPtr;
         int mid = highPtr - 1;
-        int n = upperBound - lowerBound + 1;       // # of items
+        int n = upperBound - lowerBound + 1;        // # of items
 
         while (lowPtr <= mid && highPtr <= upperBound)
-            if (theArray[lowPtr] < theArray[highPtr])
-                workSpace[j++] = theArray[lowPtr++];
-            else
-                workSpace[j++] = theArray[highPtr++];
+            if (theArray[lowPtr] < theArray[highPtr]) workSpace[j++] = theArray[lowPtr++];
+            else workSpace[j++] = theArray[highPtr++];
 
-        while (lowPtr <= mid)
-            workSpace[j++] = theArray[lowPtr++];
+        while (lowPtr <= mid) workSpace[j++] = theArray[lowPtr++];
 
-        while (highPtr <= upperBound)
-            workSpace[j++] = theArray[highPtr++];
+        while (highPtr <= upperBound) workSpace[j++] = theArray[highPtr++];
 
-        for (j = 0; j < n; j++)
-            theArray[lowerBound + j] = workSpace[j];
+        for (j = 0; j < n; j++) theArray[lowerBound + j] = workSpace[j];
     }  // end merge()
     //-----------------------------------------------------------
 }  // end class DArray
@@ -80,20 +72,20 @@ class MergeSortApp {
     public static void main(String[] args) {
         double t0;
         double t1;
-        int maxSize = 100_000_000;                       // array size
+        int maxSize = 100;                       // array size
         System.out.println(String.format("Кол-во элементов = %,d", maxSize));
 
-        DArray array = new DArray(maxSize);     // reference to array & create the array
+        DArray arr = new DArray(maxSize);     // reference to array & create the array
         for (int i = 0; i < maxSize; i++) {      // fill array with random numbers
-            long n = (int) (100+java.lang.Math.random() * (999-100));
-            array.insert(n);
+            long n = (int) (100 + java.lang.Math.random() * (999 - 100));
+            arr.insert(n);
         }
-//        arr.display();                 // display items
+        arr.display();                 // display items
         t0 = System.nanoTime();
-        array.mergeSort();
+        arr.mergeSort();
         t1 = System.nanoTime();
         System.out.println(String.format("MergeSort\tnanoseconds =\t%,.0f", t1 - t0));
-//        arr.display();                 // display items again
+        arr.display();                 // display items again
     }  // end main()
 }  // end class MergeSortApp
 ////////////////////////////////////////////////////////////////
