@@ -265,10 +265,10 @@ class TreeApp {
         theTree.insert(87, 1.7);
         theTree.insert(93, 1.5);
         theTree.insert(97, 1.5);
-
-        while (true) {
+        boolean ch = true;
+        while (ch) {
             System.out.print("Enter first letter of show, ");
-            System.out.print("insert, search, delete, or traverse: ");
+            System.out.print("insert, search, delete, or traverse and x for exit: ");
             int choice = getChar();
             switch (choice) {
                 case 's':
@@ -305,6 +305,10 @@ class TreeApp {
                     System.out.print("Enter type 1, 2 or 3: ");
                     value = getInt();
                     theTree.traverse(value);
+                    break;
+                case 'x':
+                    System.out.println("Bye");
+                    ch = false;
                     break;
                 default:
                     System.out.print("Invalid entry\n");
