@@ -77,11 +77,11 @@ class Node {
 
     // -------------------------------------------------------------
     public int findItem(long key) {   // return index of item (within node)
-        for (int j = 0; j < ORDER - 1; j++) {   // if found, otherwise,
-            if (itemArray[j] == null)          // return -1
+        for (int i = 0; i < ORDER - 1; i++) {   // if found, otherwise,
+            if (itemArray[i] == null)          // return -1
                 break;
-            else if (itemArray[j].dData == key)
-                return j;
+            else if (itemArray[i].dData == key)
+                return i;
         }
         return -1;
     }  // end findItem
@@ -92,16 +92,16 @@ class Node {
         numItems++;                          // will add new item
         long newKey = newItem.dData;         // key of new item
 
-        for (int j = ORDER - 2; j >= 0; j--) {   // start on right, examine items
-            if (itemArray[j] == null) {        // if item null,
+        for (int i = ORDER - 2; i >= 0; i--) {   // start on right, examine items
+            if (itemArray[i] == null) {        // if item null,
                 continue;                      // go left one cell
             } else {                  // not null, get its key
-                long itsKey = itemArray[j].dData;
+                long itsKey = itemArray[i].dData;
                 if (newKey < itsKey) {       // if it's bigger
-                    itemArray[j + 1] = itemArray[j]; // shift it right
+                    itemArray[i + 1] = itemArray[i]; // shift it right
                 } else {
-                    itemArray[j + 1] = newItem;   // insert new item
-                    return j + 1;                 // return index to
+                    itemArray[i + 1] = newItem;   // insert new item
+                    return i + 1;                 // return index to
                 }                           //    new item
             }  // end else (not null)
         }  // end for                     // shifted all items,
@@ -110,8 +110,7 @@ class Node {
     }  // end insertItem()
 
     // -------------------------------------------------------------
-    public DataItem removeItem() {       // remove largest item
-        // assumes node not empty
+    public DataItem removeItem() {       // remove largest item (assumes node not empty)
         DataItem temp = itemArray[numItems - 1];  // save item
         itemArray[numItems - 1] = null;           // disconnect it
         numItems--;                             // one less item
@@ -120,8 +119,8 @@ class Node {
 
     // -------------------------------------------------------------
     public void displayNode() {       // format "/24/56/74/"
-        for (int j = 0; j < numItems; j++)
-            itemArray[j].displayItem();   // "/56"
+        for (int i = 0; i < numItems; i++)
+            itemArray[i].displayItem();   // "/56"
         System.out.println("/");         // final "/"
     }
 // -------------------------------------------------------------
@@ -141,9 +140,9 @@ class Tree234 {
             } else {
                 if (curNode.isLeaf()) {
                     return -1;                  // can't search it
-                } else {                        // search deeper
-                    curNode = getNextChild(curNode, key);
-                }
+                } else
+                    curNode = getNextChild(curNode, key);   // search deeper
+
             }
         }  // end while
     }
@@ -155,10 +154,9 @@ class Tree234 {
         DataItem tempItem = new DataItem(dValue);
 
         while (true) {
-            if (curNode.isFull()) {                 // if node full,
-                split(curNode);                     // split it
-                curNode = curNode.getParent();      // back up
-
+            if (curNode.isFull()) {                         // if node full,
+                split(curNode);                             // split it
+                curNode = curNode.getParent();              // back up
                 curNode = getNextChild(curNode, dValue);    // search once
             }  // end if(node is full)
 
@@ -199,10 +197,11 @@ class Tree234 {
         itemIndex = parent.insertItem(itemB); // item B to parent
         int n = parent.getNumItems();         // total items?
 
-        for (int j = n - 1; j > itemIndex; j--) {  // move parent's connections
-            Node temp = parent.disconnectChild(j); // one child
-            parent.connectChild(j + 1, temp);        // to the right
+        for (int i = n - 1; i > itemIndex; i--) {  // move parent's connections
+            Node temp = parent.disconnectChild(i); // one child
+            parent.connectChild(i + 1, temp);        // to the right
         }
+
         // connect newRight to parent
         parent.connectChild(itemIndex + 1, newRight);
 
@@ -215,14 +214,14 @@ class Tree234 {
     // -------------------------------------------------------------
     // gets appropriate child of node during search for value
     public Node getNextChild(Node theNode, long theValue) {
-        int j;
+        int i;
         // assumes node is not empty, not full, not a leaf
         int numItems = theNode.getNumItems();
-        for (j = 0; j < numItems; j++) {   // for each item in node are we less?
-            if (theValue < theNode.getItem(j).dData)
-                return theNode.getChild(j);  // return left child
+        for (i = 0; i < numItems; i++) {   // for each item in node are we less?
+            if (theValue < theNode.getItem(i).dData)
+                return theNode.getChild(i);  // return left child
         }  // end for                   // we're greater, so
-        return theNode.getChild(j);        // return right child
+        return theNode.getChild(i);        // return right child
     }
 
     // -------------------------------------------------------------
@@ -237,10 +236,10 @@ class Tree234 {
 
         // call ourselves for each child of this node
         int numItems = thisNode.getNumItems();
-        for (int j = 0; j < numItems + 1; j++) {
-            Node nextNode = thisNode.getChild(j);
+        for (int i = 0; i < numItems + 1; i++) {
+            Node nextNode = thisNode.getChild(i);
             if (nextNode != null) {
-                recDisplayTree(nextNode, level + 1, j);
+                recDisplayTree(nextNode, level + 1, i);
             } else return;
         }
     }  // end recDisplayTree()
@@ -258,10 +257,10 @@ class Tree234App {
         theTree.insert(60);
         theTree.insert(30);
         theTree.insert(70);
-
-        while (true) {
+        boolean enter = true;
+        while (enter) {
             System.out.print("Enter first letter of ");
-            System.out.print("show, insert, or search: ");
+            System.out.print("show, insert, find or x for EXIT: ");
             char choice = getChar();
             switch (choice) {
                 case 's':
@@ -280,6 +279,10 @@ class Tree234App {
                         System.out.println("Found " + value);
                     else
                         System.out.println("Could not search " + value);
+                    break;
+                case 'x':
+                    System.out.println("Bye!");
+                    enter = false;
                     break;
                 default:
                     System.out.print("Invalid entry\n");
