@@ -38,10 +38,8 @@ class HashTable {
     public void displayTable() {
         System.out.print("Table: ");
         for (int j = 0; j < arraySize; j++) {
-            if (hashArray[j] != null)
-                System.out.print(hashArray[j].getKey() + " ");
-            else
-                System.out.print("** ");
+            if (hashArray[j] != null) System.out.print(hashArray[j].getKey() + " ");
+            else System.out.print("** ");
         }
         System.out.println();
     }
@@ -55,16 +53,23 @@ class HashTable {
     public void insert(DataItem item) {      // insert a DataItem (assumes table not full)
         int key = item.getKey();      // extract key
         int hashVal = hashFunc(key);  // hash the key
-        // until empty cell or -1,
-        while (hashArray[hashVal] != null && hashArray[hashVal].getKey() != -1) {
-            ++hashVal;                 // go to next cell
-            hashVal %= arraySize;      // wraparound if necessary
-        }
-        hashArray[hashVal] = item;    // insert item
+
+        if (key >= 0) {
+            // until empty cell or -1,
+            while (hashArray[hashVal] != null && hashArray[hashVal].getKey() != -1) {
+                ++hashVal;                 // go to next cell
+                hashVal %= arraySize;      // wraparound if necessary
+            }
+            hashArray[hashVal] = item;    // insert item
+        } else System.out.println("Number must be positive");
     }  // end insert()
 
     // -------------------------------------------------------------
     public DataItem delete(int key) {      // delete a DataItem
+        if (key < 0) {
+            System.out.println("Number must be positive");
+            return null;
+        }
         int hashVal = hashFunc(key);  // hash the key
 
         while (hashArray[hashVal] != null) {   // until empty cell, found the key?
@@ -104,12 +109,12 @@ class HashTableApp {
         System.out.print("Enter initial number of items: "); // initial qty numbers
         n = getInt();
         keysPerCell = 10;
-        HashTable theHashTable = new HashTable(size); // make table
+        HashTable hashTable = new HashTable(size);      // make table
 
         for (int j = 0; j < n; j++) {   // insert random data (0 - keysPerCell*size)
             aKey = (int) (java.lang.Math.random() * keysPerCell * size);
             aDataItem = new DataItem(aKey);
-            theHashTable.insert(aDataItem);
+            hashTable.insert(aDataItem);
         }
 
         boolean enter = true;
@@ -119,23 +124,23 @@ class HashTableApp {
             char choice = getChar();
             switch (choice) {
                 case 's':
-                    theHashTable.displayTable();
+                    hashTable.displayTable();
                     break;
                 case 'i':
                     System.out.print("Enter key value to insert: ");
                     aKey = getInt();
                     aDataItem = new DataItem(aKey);
-                    theHashTable.insert(aDataItem);
+                    hashTable.insert(aDataItem);
                     break;
                 case 'd':
                     System.out.print("Enter key value to delete: ");
                     aKey = getInt();
-                    theHashTable.delete(aKey);
+                    hashTable.delete(aKey);
                     break;
                 case 'f':
                     System.out.print("Enter key value to search: ");
                     aKey = getInt();
-                    aDataItem = theHashTable.find(aKey);
+                    aDataItem = hashTable.find(aKey);
                     if (aDataItem != null) {
                         System.out.println("Found " + aKey);
                     } else
