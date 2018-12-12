@@ -108,19 +108,16 @@ class HashDoubleApp {
         int aKey;
         DataItem aDataItem;
         int size, n;
-        // get sizes
-        System.out.print("Enter size of hash table: ");
+        System.out.print("Enter size of hash table: "); // get sizes
         size = getInt();
         System.out.print("Enter initial number of items: ");
         n = getInt();
-        // make table
-        HashTable theHashTable = new HashTable(size);
+        HashTable hashTable = new HashTable(size);      // make table
 
-        for (int j = 0; j < n; j++)      // insert data
-        {
+        for (int j = 0; j < n; j++) {                   // insert data
             aKey = (int) (java.lang.Math.random() * 2 * size);
             aDataItem = new DataItem(aKey);
-            theHashTable.insert(aKey, aDataItem);
+            hashTable.insert(aKey, aDataItem);
         }
 
         boolean enter = true;
@@ -130,23 +127,23 @@ class HashDoubleApp {
             char choice = getChar();
             switch (choice) {
                 case 's':
-                    theHashTable.displayTable();
+                    hashTable.displayTable();
                     break;
                 case 'i':
                     System.out.print("Enter key value to insert: ");
                     aKey = getInt();
                     aDataItem = new DataItem(aKey);
-                    theHashTable.insert(aKey, aDataItem);
+                    hashTable.insert(aKey, aDataItem);
                     break;
                 case 'd':
                     System.out.print("Enter key value to delete: ");
                     aKey = getInt();
-                    theHashTable.delete(aKey);
+                    hashTable.delete(aKey);
                     break;
                 case 'f':
                     System.out.print("Enter key value to search: ");
                     aKey = getInt();
-                    aDataItem = theHashTable.find(aKey);
+                    aDataItem = hashTable.find(aKey);
                     if (aDataItem != null)
                         System.out.println("Found " + aKey);
                     else
