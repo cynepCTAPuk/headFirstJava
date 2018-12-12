@@ -36,12 +36,12 @@ class HashTable {
 
     // -------------------------------------------------------------
     public void displayTable() {
-        System.out.print("Table: ");
+        System.out.println("Table: ");
         for (int j = 0; j < arraySize; j++) {
-            if (hashArray[j] != null) System.out.print(hashArray[j].getKey() + " ");
-            else System.out.print("** ");
+            if (hashArray[j] != null) System.out.format("|%3d ",hashArray[j].getKey());
+            else System.out.print("| ** ");
         }
-        System.out.println();
+        System.out.println("|");
     }
 
     // -------------------------------------------------------------
