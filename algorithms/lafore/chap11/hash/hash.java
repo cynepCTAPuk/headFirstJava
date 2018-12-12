@@ -23,15 +23,15 @@ class DataItem {                                // (could have more data)
 
 ////////////////////////////////////////////////////////////////
 class HashTable {
-    private DataItem[] hashArray;    // array holds hash table
+    private DataItem[] hashArray;      // array holds hash table
     private int arraySize;
-    private DataItem nonItem;        // for deleted items
+    private DataItem nonItem;          // for deleted items
 
     // -------------------------------------------------------------
-    public HashTable(int size) {      // constructor
+    public HashTable(int size) {       // constructor
         arraySize = size;
         hashArray = new DataItem[arraySize];
-        nonItem = new DataItem(-1);   // deleted item key is -1
+        nonItem = new DataItem(-1); // deleted item key is -1
     }
 
     // -------------------------------------------------------------
@@ -50,17 +50,17 @@ class HashTable {
     }
 
     // -------------------------------------------------------------
-    public void insert(DataItem item) {      // insert a DataItem (assumes table not full)
-        int key = item.getKey();      // extract key
-        int hashVal = hashFunc(key);  // hash the key
+    public void insert(DataItem item) { // insert a DataItem (assumes table not full)
+        int key = item.getKey();        // extract key
+        int hashVal = hashFunc(key);    // hash the key
 
         if (key >= 0) {
             // until empty cell or -1,
             while (hashArray[hashVal] != null && hashArray[hashVal].getKey() != -1) {
-                ++hashVal;                 // go to next cell
-                hashVal %= arraySize;      // wraparound if necessary
+                ++hashVal;              // go to next cell
+                hashVal %= arraySize;   // wraparound if necessary
             }
-            hashArray[hashVal] = item;    // insert item
+            hashArray[hashVal] = item;  // insert item
         } else System.out.println("Number must be positive");
     }  // end insert()
 
@@ -68,7 +68,7 @@ class HashTable {
     public DataItem delete(int key) {      // delete a DataItem
         if (key < 0) {
             System.out.println("Number must be positive");
-            return null;
+            return nonItem;
         }
         int hashVal = hashFunc(key);  // hash the key
 
@@ -147,8 +147,8 @@ class HashTableApp {
                         System.out.println("Could not search " + aKey);
                     break;
                 case 'x':
-                    System.out.println("Bye!");
                     enter = false;
+                    System.out.println("Bye!");
                     break;
                 default:
                     System.out.print("Invalid entry\n");
