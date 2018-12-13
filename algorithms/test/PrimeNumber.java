@@ -2,15 +2,17 @@ package test;
 
 public class PrimeNumber {
     public static void main(String[] args) {
-        int n = 999;
+        int n = 1111;
         PrimeNumber primeNumber = new PrimeNumber();
         int m = primeNumber.getPrime(n);
         System.out.format("First Prime after %d = %d", n, m);
     }
 
     private int getPrime(int min) { // Возвращает первое простое число > min
-        for (int i = min + 1; true; i++) {  // Для всех i > min
-            System.out.format("%d ", i);
+        int newmin = min + 1;
+        if (newmin % 2 == 0) newmin++;
+        for (int i = newmin; true; i = i + 2) {  // Для всех i > min
+            System.out.format("%4d = ", i);
             if (isPrime(i)) {               // Число i простое?
                 return i;                   // Да, вернуть его
             }
