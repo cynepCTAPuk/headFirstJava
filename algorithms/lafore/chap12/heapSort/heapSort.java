@@ -151,10 +151,11 @@ class HeapSortApp {
             theHeap.insertAt(j, biggestNode);
         }
         double t1 = System.nanoTime();
-        System.out.format("Nanoseconds %,.0f%n", t1 - t0);
 
         System.out.print("Sorted: ");
         theHeap.displayArray();     // display sorted array
+
+        System.out.format("heapSort:%nsize array = %d%nNanoseconds = %,.0f%n", size, t1 - t0);
     }  // end main()
 
     // -------------------------------------------------------------
