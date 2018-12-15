@@ -1,5 +1,6 @@
 package lafore.chap08.tree;
 
+import java.io.*;
 import java.util.*;
 
 public class HuffmanCode {
@@ -7,7 +8,7 @@ public class HuffmanCode {
         final int sum;
         String code;
 
-        void builCode(String code) {
+        void buildCode(String code) {
             this.code = code;
         }
 
@@ -26,10 +27,10 @@ public class HuffmanCode {
         Node right;
 
         @Override
-        void builCode(String code) {
-            super.builCode(code);
-            left.builCode(code + "0");
-            right.builCode(code + "1");
+        void buildCode(String code) {
+            super.buildCode(code);
+            left.buildCode(code + "0");
+            right.buildCode(code + "1");
         }
 
         public InternalNode(Node left, Node right) {
@@ -43,8 +44,8 @@ public class HuffmanCode {
         char symbol;
 
         @Override
-        void builCode(String code) {
-            super.builCode(code);
+        void buildCode(String code) {
+            super.buildCode(code);
             System.out.println(symbol + ": " + code);
         }
 
@@ -56,9 +57,13 @@ public class HuffmanCode {
         int count;
     }
 
-    private void run() {
-        String s = "SUSIE SAYS IT IS EASY";
-//        String s ="abacabad";
+    private void run() throws FileNotFoundException {
+//        String s = "SUSIE SAYS IT IS EASY";
+//        String s = "abacabad";
+//        String s = "abccccccc";
+        Scanner scanner = new Scanner(new File("C:/000/input.txt"));
+        String s = scanner.next();
+
         System.out.println(s);
 
         Map<Character, Integer> map = new HashMap<>();
@@ -77,7 +82,8 @@ public class HuffmanCode {
 */
         System.out.print("Sort by Value\t");
         map.entrySet().stream().
-                sorted(Collections.reverseOrder(Map.Entry.comparingByValue())).
+                sorted(Collections.reverseOrder
+                        (Map.Entry.comparingByValue())).
                 forEach(result -> System.out.print(result + "\t"));
         System.out.println();
 
@@ -97,10 +103,14 @@ public class HuffmanCode {
 */
         for (int i = 0; i < map.size(); i++) {
         }
+        Map<Character, Node> characterNodeMap = new HashMap<>();
         PriorityQueue<Node> priorityQueue = new PriorityQueue<>();
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
-            priorityQueue.add(new LeafNode(entry.getKey(), entry.getValue()));
+            LeafNode node = new LeafNode(entry.getKey(), entry.getValue());
+            characterNodeMap.put(entry.getKey(), node);
+            priorityQueue.add(node);
         }
+
         int sum = 0;
         while (priorityQueue.size() > 1) {
             Node first = priorityQueue.poll();
@@ -109,12 +119,32 @@ public class HuffmanCode {
             sum += node.sum;
             priorityQueue.add(node);
         }
+
+        if (map.size() == 1) sum = s.length();
+
         System.out.println(map.size() + " " + sum);
         Node root = priorityQueue.poll();
-        root.builCode("");
+        if (map.size() == 1) {
+            root.code = "0";
+        } else root.buildCode("");
+
+        String encodeString = "";
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            encodeString += characterNodeMap.get(c).code;
+        }
+        System.out.println(encodeString);
+/*
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            stringBuilder.append(characterNodeMap.get(c).code);
+        }
+        System.out.println(stringBuilder);
+*/
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         long startTime = System.currentTimeMillis();
         new HuffmanCode().run();
         long finishTime = System.currentTimeMillis();
