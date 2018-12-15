@@ -129,7 +129,7 @@ class HeapSortApp {
         Heap theHeap = new Heap(size);
 
         for (j = 0; j < size; j++) {  // fill array with random nodes
-            int random = (int) (java.lang.Math.random() * 100);
+            int random = (int) (10 + java.lang.Math.random() * (99-10));
             Node newNode = new Node(random);
             theHeap.insertAt(j, newNode);
             theHeap.incrementSize();
@@ -137,14 +137,19 @@ class HeapSortApp {
 
         System.out.print("Random: ");
         theHeap.displayArray();  // display random array
+        theHeap.displayHeap();      // display heap
 
         for (j = size / 2 - 1; j >= 0; j--)  // make random array into heap
+        {
             theHeap.trickleDown(j);
+            theHeap.displayHeap();      // display heap
+        }
 
         System.out.print("Heap:   ");
         theHeap.displayArray();     // display heap array
-        theHeap.displayHeap();      // display heap
+//        theHeap.displayHeap();      // display heap
 
+/*
         double t0 = System.nanoTime();
         for (j = size - 1; j >= 0; j--) {    // remove from heap and store at array end
             Node biggestNode = theHeap.remove();
@@ -156,6 +161,7 @@ class HeapSortApp {
         theHeap.displayArray();     // display sorted array
 
         System.out.format("heapSort:%nsize array = %d%nNanoseconds = %,.0f%n", size, t1 - t0);
+*/
     }  // end main()
 
     // -------------------------------------------------------------
