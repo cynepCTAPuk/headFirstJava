@@ -125,23 +125,23 @@ public class HuffmanCode {
         System.out.println(map.size() + " " + sum);
         Node root = priorityQueue.poll();
         if (map.size() == 1) {
-            root.code = "0";
+            root.buildCode("0");
         } else root.buildCode("");
 
+/*
         String encodeString = "";
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             encodeString += characterNodeMap.get(c).code;
         }
         System.out.println(encodeString);
-/*
+*/
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             stringBuilder.append(characterNodeMap.get(c).code);
         }
         System.out.println(stringBuilder);
-*/
     }
 
     public static void main(String[] args) throws FileNotFoundException {
