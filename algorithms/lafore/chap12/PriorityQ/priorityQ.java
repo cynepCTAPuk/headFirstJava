@@ -26,8 +26,10 @@ class PriorityQ { // array in sorted order, from max at 0 to min at size-1
                 queArray[nItems++] = item;      // if no items, insert at 0
             } else {                            // if items,
                 for (i = nItems - 1; i >= 0; i--) {     // start at end,
-                    if (item > queArray[i]) queArray[i + 1] = queArray[i];  // if new item larger, shift upward
-                    else break;                 // if smaller, done shifting
+                    // if new item larger, shift upward
+                    if (item > queArray[i]) {
+                        queArray[i + 1] = queArray[i];
+                    } else break;                 // if smaller, done shifting
                 }                               // end for
                 queArray[i + 1] = item;         // insert it
                 nItems++;
