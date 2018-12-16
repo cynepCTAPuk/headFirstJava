@@ -133,6 +133,9 @@ public class HuffmanCode {
         }
         printWriter.close();
 //        System.out.println(encodeString);
+        PrintWriter printWrite = new PrintWriter("C:/000/outputString.txt");
+        printWrite.print(encodeString);
+        printWrite.close();
 /*
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < string.length(); i++) {
