@@ -9,10 +9,11 @@ package test;
  */
 public class ASCII {
     public static void main(String[] args) {
-        int a = 33;         // start symbol (33 - start printable symbols)
-        int b = 300;        // qty all symbols
-        int c = 10;         // qty symbols in row
+        int a = 30;         // start symbol (33 - start printable symbols)
+        int b = 150;        // qty all symbols
+        int c = 15;         // qty symbols in row
         int n = 0;
+        System.out.println("Space = " + (int) (' '));
         for (int i = a; i < a + b; i++) {
             System.out.format("%3d ", i);
             System.out.format("%2c\t\t", (char) i);

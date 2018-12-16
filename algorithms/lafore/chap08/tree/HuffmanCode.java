@@ -58,22 +58,20 @@ public class HuffmanCode {
     }
 
     private void run() throws FileNotFoundException {
-//        String s = "SUSIE SAYS IT IS EASY";
-//        String s = "abacabad";
-//        String s = "abccccccc";
+//        String string = "SUSIE SAYS IT IS EASY";
+//        String string = "abacabad";
+//        String string = "abccccccc";
         Scanner scanner = new Scanner(new File("C:/000/input.txt"));
-        String s = scanner.next();
-
-        System.out.println(s);
+        String string = scanner.next();
+//        System.out.println(string);
 
         Map<Character, Integer> map = new HashMap<>();
-        for (int i = 0; i < s.length(); i++) { // fill
-            char c = s.charAt(i);
+        for (int i = 0; i < string.length(); i++) { // fill
+            char c = string.charAt(i);
             if (map.containsKey(c)) {
                 map.put(c, map.get(c) + 1);
             } else map.put(c, 1);
         }
-
 /*
         for (Character character : map.keySet()) {
             System.out.println("(" + character + "-" + map.get(character) + ") ");
@@ -101,8 +99,6 @@ public class HuffmanCode {
         System.out.println(map.keySet());
         System.out.println(map.values());
 */
-        for (int i = 0; i < map.size(); i++) {
-        }
         Map<Character, Node> characterNodeMap = new HashMap<>();
         PriorityQueue<Node> priorityQueue = new PriorityQueue<>();
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
@@ -120,7 +116,7 @@ public class HuffmanCode {
             priorityQueue.add(node);
         }
 
-        if (map.size() == 1) sum = s.length();
+        if (map.size() == 1) sum = string.length();
 
         System.out.println(map.size() + " " + sum);
         Node root = priorityQueue.poll();
@@ -128,20 +124,33 @@ public class HuffmanCode {
             root.buildCode("0");
         } else root.buildCode("");
 
-/*
+        PrintWriter printWriter = new PrintWriter("C:/000/output.txt");
         String encodeString = "";
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
+            printWriter.print(characterNodeMap.get(c).code);
             encodeString += characterNodeMap.get(c).code;
         }
-        System.out.println(encodeString);
-*/
+        printWriter.close();
+//        System.out.println(encodeString);
+/*
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
             stringBuilder.append(characterNodeMap.get(c).code);
         }
         System.out.println(stringBuilder);
+*/
+//        writeToFile(encodeString);
+    }
+
+    public static void writeToFile(String string) throws FileNotFoundException {
+        PrintWriter printWriter = new PrintWriter("C:/000/output.txt");
+        boolean b;
+        for (int i = 0; i < string.length(); i++) {
+            printWriter.print(string.charAt(i));
+        }
+        printWriter.close();
     }
 
     public static void main(String[] args) throws FileNotFoundException {

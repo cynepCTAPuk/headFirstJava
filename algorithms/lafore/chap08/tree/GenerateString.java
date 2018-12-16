@@ -13,7 +13,7 @@ public class GenerateString {
         printWriter = new PrintWriter("C:/000/input.txt");
 
 
-        int n = 1_000;
+        int n = 10_000;
         Random random = new Random();
         for (int i = 0; i < n; i++) {
             printWriter.print((char) ('a' + random.nextInt(26)));
