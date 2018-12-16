@@ -1,4 +1,4 @@
-package lafore.chap12.heapSort;
+package lafore.chap12.heapSortReverse;
 // heapSort.java
 // demonstrates heap sort
 // to run this program: C>java HeapSortApp
@@ -44,25 +44,23 @@ class Heap {
 
     // -------------------------------------------------------------
     public void trickleDown(int index) {
-        int largerChild;
+        int smallerChild;
         Node top = heapArray[index];        // save root
-        while (index < currentSize / 2)        // not on bottom row
-        {
+        while (index < currentSize / 2) {    // not on bottom row
             int leftChild = 2 * index + 1;
             int rightChild = leftChild + 1;
-            // search larger child
+            // search smaller child
             if (rightChild < currentSize &&   // right ch exists?
-                    heapArray[leftChild].getKey() <
-                            heapArray[rightChild].getKey())
-                largerChild = rightChild;
+                    heapArray[leftChild].getKey() > heapArray[rightChild].getKey())
+                smallerChild = rightChild;
             else
-                largerChild = leftChild;
-            // top >= largerChild?
-            if (top.getKey() >= heapArray[largerChild].getKey())
+                smallerChild = leftChild;
+            // top <= smallerChild?
+            if (top.getKey() <= heapArray[smallerChild].getKey())
                 break;
             // shift child up
-            heapArray[index] = heapArray[largerChild];
-            index = largerChild;             // go down
+            heapArray[index] = heapArray[smallerChild];
+            index = smallerChild;             // go down
         }  // end while
         heapArray[index] = top;             // root to index
     }  // end trickleDown()
@@ -74,28 +72,28 @@ class Heap {
         int column = 0;
         int j = 0;                          // current item
         String dots = "...............................";
-        System.out.println(dots + dots);    // dotted top line
+        System.out.println(dots + dots);      // dotted top line
 
-        while (currentSize > 0) {           // for each heap item
-            if (column == 0) {              // first item in row?
-                for (int k = 0; k < nBlanks; k++) {    // preceding blanks
+        while (currentSize > 0)              // for each heap item
+        {
+            if (column == 0)                  // first item in row?
+                for (int k = 0; k < nBlanks; k++)  // preceding blanks
                     System.out.print(' ');
-                }
-            }
-            System.out.print(heapArray[j].getKey());    // display item
+            // display item
+            System.out.print(heapArray[j].getKey());
 
-            if (++j == currentSize) break;  // done?
+            if (++j == currentSize)           // done?
+                break;
 
-            if (++column == itemsPerRow) {  // end of row?
-                nBlanks /= 2;               // half the blanks
-                itemsPerRow *= 2;           // twice the items
-                column = 0;                 // start over on
-                System.out.println();       //    new row
-            } else {                        // next item on row
-                for (int k = 0; k < nBlanks * 2 - 2; k++) {
-                    System.out.print(' ');  // interim blanks
-                }
-            }
+            if (++column == itemsPerRow)        // end of row?
+            {
+                nBlanks /= 2;                 // half the blanks
+                itemsPerRow *= 2;             // twice the items
+                column = 0;                   // start over on
+                System.out.println();         //    new row
+            } else                             // next item on row
+                for (int k = 0; k < nBlanks * 2 - 2; k++)
+                    System.out.print(' ');     // interim blanks
         }  // end for
         System.out.println("\n" + dots + dots); // dotted bottom line
     }  // end displayHeap()
@@ -129,7 +127,7 @@ class HeapSortApp {
         Heap theHeap = new Heap(size);
 
         for (j = 0; j < size; j++) {  // fill array with random nodes
-            int random = (int) (10 + java.lang.Math.random() * (99 - 10));
+            int random = (int) (10 + Math.random() * (99 - 10));
             Node newNode = new Node(random);
             theHeap.insertAt(j, newNode);
             theHeap.incrementSize();
@@ -142,6 +140,7 @@ class HeapSortApp {
         for (j = size / 2 - 1; j >= 0; j--)  // make random array into heap
         {
             theHeap.trickleDown(j);
+//            theHeap.displayArray();  // display random array
             theHeap.displayHeap();      // display heap
         }
 
