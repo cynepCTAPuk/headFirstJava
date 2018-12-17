@@ -2,7 +2,7 @@ package test;
 
 import java.util.*;
 
-public class ElementsTest {
+public class CountCharsInString {
 
     public static void main(String[] args) {
         String string = "Hello my little friends!";
