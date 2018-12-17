@@ -9,14 +9,13 @@ public class CountCharsInString {
         System.out.println(string);
         Elements elements = new Elements();
 
-        Map<Character, Integer> map = new HashMap<>();
+        HashMap<Character, Integer> map = new HashMap<>();
 
         for (int i = 0; i < string.length(); i++) {
             char c = string.charAt(i);
 
-            if (map.containsKey(c)) {
-                map.put(c, map.get(c) + 1);
-            } else map.put(c, 1);
+            if (map.containsKey(c)) map.put(c, map.get(c) + 1);
+            else map.put(c, 1);
 
             elements.put(c);
         }
@@ -76,12 +75,12 @@ class Elements {
             elements[++idx] = new Element(key);
             return true;
         }
+        int index = getIndex(key);
+        int value = getValue(key);
 
-        if (getValue(key) == -1) elements[++idx] = new Element(key);
-        else elements[getIndex(key)].setValue(getValue(key) + 1);
-
+        if (value == -1) elements[++idx] = new Element(key);
+        else elements[index].setValue(value + 1);
         return true;
-
     }
 
     int getIndex(char key) {
@@ -99,7 +98,10 @@ class Elements {
     @Override
     public String toString() {
         String display = "elm = {";
-        for (int i = 0; i <= idx; i++) display += elements[i] + ", ";
+        for (int i = 0; i <= idx; i++) {
+            if (i == idx) display += elements[i];
+            else display += elements[i] + ", ";
+        }
         return display + '}';
     }
 
