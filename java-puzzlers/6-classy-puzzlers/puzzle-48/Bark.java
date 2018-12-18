@@ -13,6 +13,6 @@ public class Bark {
         Dog woofer = new Dog();
         Dog nipper = new Basenji();
         woofer.bark();
-        nipper.bark();
+//        nipper.bark();
     }
 }
