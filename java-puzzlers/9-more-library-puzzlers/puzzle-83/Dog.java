@@ -1,6 +1,6 @@
-public class Dog extends Exception {
-    public static final Dog INSTANCE = new Dog();
-    private Dog() { }
+class Dog2 extends Exception {
+    public static final Dog2 INSTANCE = new Dog2();
+    private Dog2() { }
 
     public String toString() {
         return "Woof";

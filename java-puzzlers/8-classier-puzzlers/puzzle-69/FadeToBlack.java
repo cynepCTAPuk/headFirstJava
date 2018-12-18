@@ -4,14 +4,14 @@ public class FadeToBlack {
     }
 }
 
-class X {
-    static class Y {
+class X1 {
+    static class Y1 {
         static String Z = "Black";
     } 
 
-    static C Y = new C();
+    static C1 Y = new C1();
 }
 
-class C {
+class C1 {
     String Z = "White";
 }

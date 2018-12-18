@@ -1,13 +1,13 @@
 import java.util.*;
 
-public class Name {
+public class Name1 {
     private String first, last;
 
-    public Name(String first, String last) {
+    public Name1(String first, String last) {
         this.first = first; this.last = last;
     }
 
-    public boolean equals(Name n) {
+    public boolean equals(Name1 n) {
         return n.first.equals(first) && n.last.equals(last);
     }
 
@@ -16,9 +16,9 @@ public class Name {
     }
 
     public static void main(String[] args) {
-        Set<Name> s = new HashSet<Name>();
-        s.add(new Name("Donald", "Duck"));
+        Set<Name1> s = new HashSet<Name1>();
+        s.add(new Name1("Donald", "Duck"));
         System.out.println(
-            s.contains(new Name("Donald", "Duck")));
+            s.contains(new Name1("Donald", "Duck")));
     }
 }
