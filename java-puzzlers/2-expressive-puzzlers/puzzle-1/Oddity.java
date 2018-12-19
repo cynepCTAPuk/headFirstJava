@@ -4,5 +4,6 @@ public class Oddity {
     }
 
     public static void main(String[] args) {
+        System.out.println(isOdd(4));
     }
 }
