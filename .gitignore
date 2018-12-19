@@ -1,3 +1,4 @@
+# Intellij IDEA
 **/.idea
 **.iml
 **/target
@@ -14,8 +15,11 @@
 **/gradle/
 **/.gradle/
 
+#Eclipse
+**.classpath
+**.project
+
 #common
 **/out
 **.class
-**.classpath
-**.project
+
