@@ -9,9 +9,9 @@ public class LongDivision {
         final long NEW_MICROS_PER_DAY = HOURS_PER_DAY * 60 * 60 * 1000 * 1000;
         final long NEW_MILLIS_PER_DAY = HOURS_PER_DAY * 60 * 60 * 1000;
 
-        System.out.println("a = " + NEW_MICROS_PER_DAY);
-        System.out.println("b = " + NEW_MILLIS_PER_DAY);
-        System.out.println("a / b = " + NEW_MICROS_PER_DAY / NEW_MILLIS_PER_DAY);
+        System.out.println("NEW_MICROS_PER_DAY = " + NEW_MICROS_PER_DAY);
+        System.out.println("NEW_MILLIS_PER_DAY = " + NEW_MILLIS_PER_DAY);
+        System.out.println("NEW_MICROS_PER_DAY / NEW_MILLIS_PER_DAY = " + NEW_MICROS_PER_DAY / NEW_MILLIS_PER_DAY);
         System.out.format("%,14d%n", 24);
         System.out.format("%,14d = 24 * 60%n", 24 * 60);
         System.out.format("%,14d = 24 * 60 * 60%n", 24 * 60 * 60);

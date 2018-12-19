@@ -24,6 +24,6 @@ public class ASCII {
         String s = String.join(",", "a", "b", "c");
         int size = 30;
         int[] ints = new int[size];
-        new Random().ints(30, 10, 100).forEach(result -> System.out.format("%2d ", result));
+//        new Random().ints(30, 10, 100).forEach(result -> System.out.format("%2d ", result));
     }
 }

@@ -6,7 +6,7 @@ public class Change {
         double b = 1.10;
         System.out.println( (a - b));
 
-        System.out.println((float)(a - b));
         System.out.println((float)(2.00 - 1.10));
+        System.out.println((float)(a - b));
     }
 }
