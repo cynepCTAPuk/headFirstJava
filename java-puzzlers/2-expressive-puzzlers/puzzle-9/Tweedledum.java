@@ -6,7 +6,6 @@ public class Tweedledum {
 
         x += i;     // Must be LEGAL
 //        x = x + i;  // Must be ILLEGAL
-
         System.out.println(x + " "+i);  //  vk
     }
 }
