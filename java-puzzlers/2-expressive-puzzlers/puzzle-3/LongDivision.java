@@ -22,14 +22,14 @@ public class LongDivision {
         System.out.format("%,14d = 24 * 60%n", 24 * 60);
         System.out.format("%,14d = 24 * 60 * 60%n", 24 * 60 * 60);
         System.out.format("%,14d = 24 * 60 * 60 * 1000%n", 24 * 60 * 60 * 1000);
-        System.out.format("%,14d = 24 * 60 * 60 * 1000 * 1000%n", (24 * 60 * 60 * 1000 * 1000));
+//        System.out.format("%,14d = 24 * 60 * 60 * 1000 * 1000%n", (24 * 60 * 60 * 1000 * 1000));
 
-//        System.out.format("%,14d%n", (1 << 31) - 1);
-//        System.out.format("%,d%n", (1 << 31));
+        System.out.format("%,14d%n", (1 << 31) - 1);
+        System.out.format("%,d%n", (1 << 31));
         int x = 1;
-        int y = 1;
+        int y = 0;
         for (int i = 0; i < 32; i++) {
-//            System.out.format("%14d = %s%n",(x << i) - y, BigInteger.toBinaryString((x << i) - y));
+            System.out.format("%,14d = %s%n",(x << i) - y, Integer.toBinaryString((x << i) - y));
         }
     }
 }
