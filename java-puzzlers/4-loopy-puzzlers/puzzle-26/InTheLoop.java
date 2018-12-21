@@ -4,8 +4,21 @@ public class InTheLoop {
 
     public static void main(String[] args) {
         int count = 0;
-        for (int i = START; i <= END; i++)
+        System.out.println("END = Integer.MAX_VALUE =\t" + END);
+        System.out.println("START = END - 100 =\t\t\t" + START);
+
+        for (int i = START; i < END; i++) {
+            System.out.print(i + "\t");
             count++;
-        System.out.println(count);
+            if (count > 200) {
+                System.out.println("*****");
+                break;
+            }
+        }
+/*
+        for (int i = 0; i <= 100; i++) {
+            System.out.print(END - i + "\t");
+        }
+*/
     }
 }
