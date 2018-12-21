@@ -7,7 +7,7 @@ public class Indecisive {
         try {
             return true;
         } finally {
-            return false;
+//            return false;
         }
     } 
 }
