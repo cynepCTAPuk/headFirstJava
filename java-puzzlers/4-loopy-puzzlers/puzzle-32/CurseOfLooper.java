@@ -3,6 +3,7 @@ public class CurseOfLooper {
         // Place your declarations for i and j here
         int i = 2, j = 2;
         while (i <= j && j <= i && i != j) {
+            System.out.println(i+" "+j);
             break;
         }
     }
