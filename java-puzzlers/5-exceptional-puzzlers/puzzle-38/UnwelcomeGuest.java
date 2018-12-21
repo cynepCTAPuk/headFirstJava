@@ -6,7 +6,7 @@ public class UnwelcomeGuest {
         try {
             USER_ID = getUserIdFromEnvironment();
         } catch (IdUnavailableException e) {
-            USER_ID = GUEST_USER_ID;
+//            USER_ID = GUEST_USER_ID;
             System.out.println("Logging in as guest");
         }
     }
