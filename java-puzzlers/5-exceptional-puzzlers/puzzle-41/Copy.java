@@ -9,12 +9,11 @@ public class Copy {
             out = new FileOutputStream(dest);
             byte[] buf = new byte[1024];
             int n;
-            while ((n = in.read(buf)) > 0)
-                out.write(buf, 0, n);
+            while ((n = in.read(buf)) > 0) out.write(buf, 0, n);
         } finally {
             if (in != null) in.close();
             if (out != null) out.close();
-        } 
+        }
     }
 
     public static void main(String[] args) throws IOException {
