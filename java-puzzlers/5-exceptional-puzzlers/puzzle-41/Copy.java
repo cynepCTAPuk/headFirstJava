@@ -17,9 +17,7 @@ public class Copy {
     }
 
     public static void main(String[] args) throws IOException {
-        if (args.length != 2)
-            System.out.println("Usage: java Copy <source> <dest>");
-        else
-            copy(args[0], args[1]);
+        if (args.length != 2) System.out.println("Usage: java Copy <source> <dest>");
+        else copy(args[0], args[1]);
     }
 }
