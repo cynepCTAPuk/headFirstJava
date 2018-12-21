@@ -12,8 +12,7 @@ public class UnwelcomeGuest {
         }
     }
 
-    private static long getUserIdFromEnvironment()
-            throws IdUnavailableException {
+    private static long getUserIdFromEnvironment() throws IdUnavailableException {
         throw new IdUnavailableException(); // Simulate an error
     }
 
