@@ -4,7 +4,7 @@ public class LooperMeetsWolfman {
         int i = 2;
         while (i != 0 && i == -i) {
             i--;
-            System.out.println(i);
+            System.out.println(i+" ");
         }
     }
 }
