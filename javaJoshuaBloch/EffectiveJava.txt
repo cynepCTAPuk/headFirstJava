@@ -1,0 +1,3 @@
+Joshua Bloch
+Effective Java
+2008
