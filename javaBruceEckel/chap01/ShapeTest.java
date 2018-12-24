@@ -2,6 +2,7 @@ package chap01;
 
 public class ShapeTest {
     private static void doSomething(Shape shape) {
+        System.out.println(shape.getClass());
         shape.erase();
         // ...
         shape.draw();
