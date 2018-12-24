@@ -1,6 +1,6 @@
 package chap01;
 
-public class Triangle extends Shape {
+class Triangle extends Shape {
     @Override
     void draw() {
         super.draw();

@@ -1,7 +1,7 @@
 package chap01;
 
 public class ShapeTest {
-    public static void doSomething(Shape shape) {
+    private static void doSomething(Shape shape) {
         shape.erase();
         // ...
         shape.draw();
@@ -9,8 +9,10 @@ public class ShapeTest {
 
     public static void main(String[] args) {
         Circle circle = new Circle();
+        Square square = new Square();
         Triangle triangle = new Triangle();
         doSomething(circle);
+        doSomething(square);
         doSomething(triangle);
     }
 }

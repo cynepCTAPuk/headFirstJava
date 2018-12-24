@@ -1,6 +1,6 @@
 package chap01;
 
-public class Shape {
+class Shape {
     void draw() {
         System.out.println("Draw");
     }

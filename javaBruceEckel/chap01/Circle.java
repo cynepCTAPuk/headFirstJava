@@ -1,6 +1,6 @@
 package chap01;
 
-public class Circle extends Shape {
+class Circle extends Shape {
     @Override
     void draw() {
         super.draw();
