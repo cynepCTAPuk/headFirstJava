@@ -2,9 +2,9 @@ package chap01;
 
 public class ShapeTest {
     private static void doSomething(Shape shape) {
-        System.out.println(shape.getClass());
+//        System.out.println(shape.getClass());
         shape.erase();
-        // ...
+        System.out.println("Do something with " + shape.getClass());
         shape.draw();
     }
 
