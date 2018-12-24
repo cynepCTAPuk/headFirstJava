@@ -19,9 +19,4 @@ public class Shape {
         System.out.println("Set color");
     }
 
-    void doSomething(Shape shape) {
-        shape.erase();
-        // ...
-        shape.draw();
-    }
 }
