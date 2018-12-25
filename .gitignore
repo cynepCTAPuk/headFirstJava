@@ -1,8 +1,8 @@
 # Eclipse
 **.classpath
 **.project
+**.metadata/
 **.settings/
-.metadata/
 
 # Gradle
 **/build/
@@ -12,14 +12,16 @@
 # Intellij IDEA
 **/.idea
 **/.out
-**.iml
 **/target
+**.iml
+**.ipr
+**.iws
 
 # Maven
 **/log/
 **/target/
-**.ser
 **.ec
+**.ser
 
 # common
 **/out
