@@ -35,4 +35,35 @@ public class XmasTree {
             System.out.println();
         }
     }
+
+    public static void xmasTree3(int row) {
+        int i, j, k;
+        for (i = 1; i < row; i++) {
+            for (j = row + (row / 2); j > i; j--) {
+                System.out.print(" ");
+            }
+            for (k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (i = 1; i < row + (row / 2); i++) {
+            for (j = row + (row / 2); j > i; j--) {
+                System.out.print(" ");
+            }
+            for (k = 1; k <= 2 * i - 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (i = 1; i < row - (row / 2); i++) {
+            for (j = row + (row / 2); j > 1; j--) {
+                System.out.print(" ");
+            }
+            for (k = row / 2; k <= (row / 2) + 1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
 }
