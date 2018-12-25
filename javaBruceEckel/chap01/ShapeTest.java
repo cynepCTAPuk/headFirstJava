@@ -1,5 +1,7 @@
 package chap01;
 
+import java.util.*;
+
 public class ShapeTest {
     private static void doSomething(Shape shape) {
 //        System.out.println(shape.getClass());
@@ -15,5 +17,10 @@ public class ShapeTest {
         doSomething(circle);
         doSomething(square);
         doSomething(triangle);
+
+        ArrayList<Shape> shapes = new ArrayList<>();
+        shapes.add(circle);
+        shapes.add(square);
+        shapes.add(triangle);
     }
 }
