@@ -1,25 +1,27 @@
-# Intellij IDEA
-**/.idea
-**.iml
-**/target
+# Eclipse
+**.classpath
+**.project
+**.settings/
+.metadata/
 
-# Mac
-.DS_Store
-  
-# Maven
-**/log/
-**/target/
-
-#Gradle
+# Gradle
 **/build/
 **/gradle/
 **/.gradle/
 
-#Eclipse
-**.classpath
-**.project
+# Intellij IDEA
+**/.idea
+**/.out
+**.iml
+**/target
 
-#common
+# Maven
+**/log/
+**/target/
+**.ser
+**.ec
+
+# common
 **/out
 **.class
 **.log
