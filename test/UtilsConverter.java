@@ -6,7 +6,7 @@ public static void main(String[] args) {
         + intToString(number, 4) + " inToString");
     System.out.print("Number "+ number + " to binary");
     bitPattern(number);
-    System.out.print("Nubmer "+ number+ " to binary ");
+    System.out.print("Number "+ number+ " to binary ");
     toBase(number, 2);
     System.out.println("Number "+ number + " to binary "
         + convertNumber(number) + " convertNumber");
