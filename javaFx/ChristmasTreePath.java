@@ -10,6 +10,7 @@ import javafx.stage.*;
 
 /**
  * Simple example of using JavaFX 2.0's Path to create a simple Christmas tree.
+ * https://www.javaworld.com/article/2074487/core-java/javafx-2-0-christmas-tree--javafx-2-0-shapes-.html
  *
  * @author Dustin
  */
@@ -318,7 +319,7 @@ public class ChristmasTreePath extends Application {
         text1.setFont(Font.font(java.awt.Font.SERIF, 50));
         group.getChildren().add(text1);
 
-        final Text text2 = new Text(600, 150, "2011");
+        final Text text2 = new Text(600, 150, "2019");
         text2.setFill(Color.DARKGREEN);
         text2.setFont(Font.font(java.awt.Font.SERIF, 75));
         group.getChildren().add(text2);
@@ -332,7 +333,7 @@ public class ChristmasTreePath extends Application {
      */
     @Override
     public void start(final Stage stage) throws Exception {
-        stage.setTitle("JavaFX 2.0: Christmas Tree 2011");
+        stage.setTitle("JavaFX 2.0: Christmas Tree 2019");
         final Group rootGroup = new Group();
         final Scene scene = new Scene(rootGroup, 800, 600, Color.WHITE);
         stage.setScene(scene);
