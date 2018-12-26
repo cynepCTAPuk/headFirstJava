@@ -106,11 +106,10 @@ class QuickSort3App {
     public static void main(String[] args) {
         double t0;
         double t1;
-        int maxSize = 10_000_000;              // array size
-        System.out.println(String.format("Кол-во элементов = %,d", maxSize));
+        int size = 10_000_000;              // array size
 
-        ArrayIns arr = new ArrayIns(maxSize);   // reference to array & create the array
-        for (int j = 0; j < maxSize; j++) {     // fill array with random numbers
+        ArrayIns arr = new ArrayIns(size);   // reference to array & create the array
+        for (int j = 0; j < size; j++) {     // fill array with random numbers
             long n = (int) (100 + java.lang.Math.random() * (999 - 100));
             arr.insert(n);
         }
@@ -118,7 +117,7 @@ class QuickSort3App {
         t0 = System.nanoTime();
         arr.quickSort();                        // quicksort them
         t1 = System.nanoTime();
-        System.out.println(String.format("QuickSort2\ttime nanoseconds =\t%,.0f", t1 - t0));
+        System.out.format("QuickSort2:%nsize array = %,d%nNanoseconds = %,.0f%n", size, t1 - t0);
 //        arr.display();                        // display them again
     }  // end main()
 }  // end class QuickSort3App

@@ -28,10 +28,10 @@ class Heap {
     private int currentSize;       // number of items in array
 
     // -------------------------------------------------------------
-    public Heap(int mx) {        // constructor
-        maxSize = mx;
+    public Heap(int maxSize) {        // constructor
+        this.maxSize = maxSize;
         currentSize = 0;
-        heapArray = new Node[maxSize];
+        heapArray = new Node[this.maxSize];
     }
 
     // -------------------------------------------------------------
@@ -46,8 +46,7 @@ class Heap {
     public void trickleDown(int index) {
         int largerChild;
         Node top = heapArray[index];        // save root
-        while (index < currentSize / 2)        // not on bottom row
-        {
+        while (index < currentSize / 2) {    // not on bottom row
             int leftChild = 2 * index + 1;
             int rightChild = leftChild + 1;
             // search larger child
@@ -68,46 +67,6 @@ class Heap {
     }  // end trickleDown()
 
     // -------------------------------------------------------------
-    public void displayHeap() {
-        int nBlanks = 32;
-        int itemsPerRow = 1;
-        int column = 0;
-        int j = 0;                          // current item
-        String dots = "...............................";
-        System.out.println(dots + dots);    // dotted top line
-
-        while (currentSize > 0) {           // for each heap item
-            if (column == 0) {              // first item in row?
-                for (int k = 0; k < nBlanks; k++) {    // preceding blanks
-                    System.out.print(' ');
-                }
-            }
-            System.out.print(heapArray[j].getKey());    // display item
-
-            if (++j == currentSize) break;  // done?
-
-            if (++column == itemsPerRow) {  // end of row?
-                nBlanks /= 2;               // half the blanks
-                itemsPerRow *= 2;           // twice the items
-                column = 0;                 // start over on
-                System.out.println();       //    new row
-            } else {                        // next item on row
-                for (int k = 0; k < nBlanks * 2 - 2; k++) {
-                    System.out.print(' ');  // interim blanks
-                }
-            }
-        }  // end for
-        System.out.println("\n" + dots + dots); // dotted bottom line
-    }  // end displayHeap()
-
-    // -------------------------------------------------------------
-    public void displayArray() {
-        for (int j = 0; j < maxSize; j++)
-            System.out.print(heapArray[j].getKey() + " ");
-        System.out.println();
-    }
-
-    // -------------------------------------------------------------
     public void insertAt(int index, Node newNode) {
         heapArray[index] = newNode;
     }
@@ -124,10 +83,6 @@ class HeapSortApp {
     public static void main(String[] args) throws IOException {
         int size = 1_000_000;
         int i;
-        System.out.format("Кол-во элементов = %,d%n", size);
-
-//        System.out.print("Enter number of items: ");
-//        size = getInt();
         Heap theHeap = new Heap(size);
 
         for (i = 0; i < size; i++) {  // fill array with random nodes
@@ -137,18 +92,9 @@ class HeapSortApp {
             theHeap.incrementSize();
         }
 
-//        System.out.print("Random: ");
-//        theHeap.displayArray();  // display random array
-//        theHeap.displayHeap();      // display heap
-
         for (i = size / 2 - 1; i >= 0; i--) {  // make random array into heap
             theHeap.trickleDown(i);
-//            theHeap.displayHeap();      // display heap
         }
-
-//        System.out.print("Heap:   ");
-//        theHeap.displayArray();     // display heap array
-//        theHeap.displayHeap();      // display heap
 
         double t0 = System.nanoTime();
         for (i = size - 1; i >= 0; i--) {    // remove from heap and store at array end
@@ -157,8 +103,6 @@ class HeapSortApp {
         }
         double t1 = System.nanoTime();
 
-//        System.out.print("Sorted: ");
-//        theHeap.displayArray();     // display sorted array
         System.out.format("heapSort:%nsize array = %,d%nNanoseconds = %,.0f%n", size, t1 - t0);
     }  // end main()
 
