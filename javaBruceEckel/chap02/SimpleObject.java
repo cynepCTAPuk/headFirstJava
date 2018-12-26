@@ -14,15 +14,15 @@ public class SimpleObject {
     @Override
     public String toString() {
         return "SimpleObject{" +
-                "aBoolean=" + aBoolean +
-                ", aChar=" + aChar +
-                ", aByte=" + aByte +
-                ", aShort=" + aShort +
-                ", anInt=" + anInt +
-                ", aLong=" + aLong +
-                ", aFloat=" + aFloat +
-                ", aDouble=" + aDouble +
-                ", simpleObject=" + simpleObject +
+                "\naBoolean=" + aBoolean +
+                ",\naChar=" + aChar +
+                ",\naByte=" + aByte +
+                ",\naShort=" + aShort +
+                ",\nanInt=" + anInt +
+                ",\naLong=" + aLong +
+                ",\naFloat=" + aFloat +
+                ",\naDouble=" + aDouble +
+                ",\nsimpleObject=" + simpleObject +
                 '}';
     }
 
