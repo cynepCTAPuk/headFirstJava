@@ -49,16 +49,19 @@ class KeyPrinter implements TreeVisitor {
 
 class TreeSort {
     public static void main(String[] args) {
-        int size = 1_000;
-        Tree myTree;
-        myTree = new Tree(7);       // создать дерево (с ключом)
-        myTree.insert(new Tree(5));  // присоединять поддеревья
-        myTree.insert(new Tree(9));
+        Tree myTree = new Tree(50);
+        int size = 20;            // array size
+        double t0;
+        double t1;
+        System.out.println(String.format("Кол-во элементов = %,d", size));
         for (int i = 0; i < size; i++) {  // fill array with random nodes
             int random = (int) (10 + java.lang.Math.random() * (99 - 10));
             myTree.insert(new Tree(random));
         }
 
-//        myTree.traverse(new KeyPrinter());
+//        myTree = new Tree(7);       // создать дерево (с ключом)
+//        myTree.insert(new Tree(5));  // присоединять поддеревья
+//        myTree.insert(new Tree(9));
+        myTree.traverse(new KeyPrinter());
     }
 }
