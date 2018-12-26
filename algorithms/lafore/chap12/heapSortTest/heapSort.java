@@ -122,44 +122,44 @@ class Heap {
 ////////////////////////////////////////////////////////////////
 class HeapSortApp {
     public static void main(String[] args) throws IOException {
-        int size, j;
+        int size = 1_000_000;
+        int i;
+        System.out.format("Кол-во элементов = %,d", size);
 
-        System.out.print("Enter number of items: ");
-        size = getInt();
+//        System.out.print("Enter number of items: ");
+//        size = getInt();
         Heap theHeap = new Heap(size);
 
-        for (j = 0; j < size; j++) {  // fill array with random nodes
+        for (i = 0; i < size; i++) {  // fill array with random nodes
             int random = (int) (10 + Math.random() * (99 - 10));
             Node newNode = new Node(random);
-            theHeap.insertAt(j, newNode);
+            theHeap.insertAt(i, newNode);
             theHeap.incrementSize();
         }
 
-        System.out.print("Random: ");
-        theHeap.displayArray();  // display random array
-        theHeap.displayHeap();      // display heap
+//        System.out.print("Random: ");
+//        theHeap.displayArray();  // display random array
+//        theHeap.displayHeap();      // display heap
 
-        for (j = size / 2 - 1; j >= 0; j--)  // make random array into heap
-        {
-            theHeap.trickleDown(j);
-            theHeap.displayHeap();      // display heap
+        for (i = size / 2 - 1; i >= 0; i--) {  // make random array into heap
+            theHeap.trickleDown(i);
+//            theHeap.displayHeap();      // display heap
         }
 
-        System.out.print("Heap:   ");
-        theHeap.displayArray();     // display heap array
+//        System.out.print("Heap:   ");
+//        theHeap.displayArray();     // display heap array
 //        theHeap.displayHeap();      // display heap
 
         double t0 = System.nanoTime();
-        for (j = size - 1; j >= 0; j--) {    // remove from heap and store at array end
+        for (i = size - 1; i >= 0; i--) {    // remove from heap and store at array end
             Node biggestNode = theHeap.remove();
-            theHeap.insertAt(j, biggestNode);
+            theHeap.insertAt(i, biggestNode);
         }
         double t1 = System.nanoTime();
 
-        System.out.print("Sorted: ");
-        theHeap.displayArray();     // display sorted array
-
-        System.out.format("heapSort:%nsize array = %d%nNanoseconds = %,.0f%n", size, t1 - t0);
+//        System.out.print("Sorted: ");
+//        theHeap.displayArray();     // display sorted array
+        System.out.format("heapSort: size array = %,d Nanoseconds = %,.0f%n", size, t1 - t0);
     }  // end main()
 
     // -------------------------------------------------------------
