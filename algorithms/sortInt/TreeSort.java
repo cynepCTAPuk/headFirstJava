@@ -30,9 +30,7 @@ class Tree {
     */
     void traverse(TreeVisitor visitor) {
         if (left != null) left.traverse(visitor);
-
         visitor.visit(this);
-
         if (right != null) right.traverse(visitor);
     }
 }
