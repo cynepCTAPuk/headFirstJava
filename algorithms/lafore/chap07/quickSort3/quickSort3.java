@@ -106,7 +106,7 @@ class QuickSort3App {
     public static void main(String[] args) {
         double t0;
         double t1;
-        int maxSize = 1_000_000;              // array size
+        int maxSize = 10_000_000;              // array size
         System.out.println(String.format("Кол-во элементов = %,d", maxSize));
 
         ArrayIns arr = new ArrayIns(maxSize);   // reference to array & create the array

@@ -124,7 +124,7 @@ class HeapSortApp {
     public static void main(String[] args) throws IOException {
         int size = 1_000_000;
         int i;
-        System.out.format("Кол-во элементов = %,d", size);
+        System.out.format("Кол-во элементов = %,d%n", size);
 
 //        System.out.print("Enter number of items: ");
 //        size = getInt();
@@ -159,7 +159,7 @@ class HeapSortApp {
 
 //        System.out.print("Sorted: ");
 //        theHeap.displayArray();     // display sorted array
-        System.out.format("heapSort: size array = %,d Nanoseconds = %,.0f%n", size, t1 - t0);
+        System.out.format("heapSort:%nsize array = %,d%nNanoseconds = %,.0f%n", size, t1 - t0);
     }  // end main()
 
     // -------------------------------------------------------------
