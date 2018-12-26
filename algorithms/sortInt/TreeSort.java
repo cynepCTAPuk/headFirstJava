@@ -43,25 +43,33 @@ interface TreeVisitor {
 
 class KeyPrinter implements TreeVisitor {
     public void visit(Tree node) {
-        System.out.println(" " + node.key);
+        System.out.print(" " + node.key);
     }
 }
 
 class TreeSort {
     public static void main(String[] args) {
         Tree myTree = new Tree(50);
-        int size = 20;            // array size
+        int size = 1_000_000;            // array size
         double t0;
         double t1;
+        double t00;
+        double t01;
         System.out.println(String.format("Кол-во элементов = %,d", size));
+        t0 = System.nanoTime();
+        t00 = System.currentTimeMillis();
         for (int i = 0; i < size; i++) {  // fill array with random nodes
             int random = (int) (10 + java.lang.Math.random() * (99 - 10));
             myTree.insert(new Tree(random));
         }
+        t1 = System.nanoTime();
+        t01 = System.currentTimeMillis();
+        System.out.println(String.format("TreeSort\ttime nanoseconds =\t%,.0f", t1 - t0));
+        System.out.println(String.format("TreeSort\ttime milliseconds =\t%,.0f", t01 - t00));
 
 //        myTree = new Tree(7);       // создать дерево (с ключом)
 //        myTree.insert(new Tree(5));  // присоединять поддеревья
 //        myTree.insert(new Tree(9));
-        myTree.traverse(new KeyPrinter());
+//        myTree.traverse(new KeyPrinter());
     }
 }
