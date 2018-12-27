@@ -9,9 +9,10 @@ public class MathOps {
     public static void main(String[] args) {
         Random rand = new Random(47); // Create a seeded random number generator:
         int i, j, k;
-        j = rand.nextInt(100) + 1;
 // Choose value from 1 to 100:
+        j = rand.nextInt(100) + 1;
         System.out.println("j : " + j);
+// Choose value from 1 to 100:
         k = rand.nextInt(100) + 1;
         System.out.println("k : " + k);
         i = j + k;
