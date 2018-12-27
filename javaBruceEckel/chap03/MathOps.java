@@ -7,11 +7,10 @@ import java.util.*;
 
 public class MathOps {
     public static void main(String[] args) {
-// Create a seeded random number generator:
-        Random rand = new Random(47);
+        Random rand = new Random(47); // Create a seeded random number generator:
         int i, j, k;
-// Choose value from 1 to 100:
         j = rand.nextInt(100) + 1;
+// Choose value from 1 to 100:
         System.out.println("j : " + j);
         k = rand.nextInt(100) + 1;
         System.out.println("k : " + k);
@@ -41,8 +40,7 @@ public class MathOps {
         System.out.println("v * w : " + u);
         u = v / w;
         System.out.println("v / w : " + u);
-// The following also works for char,
-// byte, short, int, long, and double:
+// The following also works for char, byte, short, int, long, and double:
         u += v;
         System.out.println("u += v : " + u);
         u -= v;
