@@ -17,6 +17,8 @@ public class EqualsMethod2 {
         v2.i = 100;
         System.out.println(v2);
         System.out.println(v1.equals(v2));
+        v1 = v2;
+        System.out.println(v1.equals(v2));
     }
 } /* Output:
 false
