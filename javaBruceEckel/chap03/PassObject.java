@@ -8,15 +8,15 @@ class Letter {
 }
 
 public class PassObject {
-    static void f(Letter y) {
-        y.c = 'z';
+    static void f(Letter y, char ch) {
+        y.c = ch;
     }
 
     public static void main(String[] args) {
         Letter x = new Letter();
         x.c = 'a';
         System.out.println("1: x.c: " + x.c);
-        f(x);
+        f(x,'y');
         System.out.println("2: x.c: " + x.c);
     }
 } /* Output:
