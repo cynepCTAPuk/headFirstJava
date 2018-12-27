@@ -10,8 +10,12 @@ public class EqualsMethod2 {
     public static void main(String[] args) {
         Value v1 = new Value();
         Value v2 = new Value();
+        System.out.println(v1);
         v1.i = 100;
+        System.out.println(v1);
+        System.out.println(v2);
         v2.i = 100;
+        System.out.println(v2);
         System.out.println(v1.equals(v2));
     }
 } /* Output:
