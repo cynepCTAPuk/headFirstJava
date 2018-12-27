@@ -22,8 +22,9 @@ public class HelloDate {
      * @throws exceptions No exceptions thrown
      */
     public static void main(String[] args) {
-        out.println("Hello, it's:");
+        out.print("Hello, it's: ");
         out.println(new Date());
+        out.printf("Hello, it's: %s", new Date());
     }
 }
 /* Output: (55% match)
