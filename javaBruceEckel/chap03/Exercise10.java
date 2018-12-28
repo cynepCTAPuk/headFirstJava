@@ -15,13 +15,24 @@ public class Exercise10 {
                 , Integer.toBinaryString(i1 | i2)
                 , Integer.toBinaryString(i1 ^ i2));
 
-        System.out.format("%,d", pow(4, 3));
+        System.out.format("%,d\n", pow(4, 3));
+        System.out.format("%,d\n", power(4, 3));
     }
 
     static int pow(int base, int exp) {
         if (exp < 0) return -1;
         if (exp == 0) return 1;
-        int result = pow(base, exp - 1) * base;
-        return result;
+        return pow(base, exp - 1) * base;
     }
+
+    static int power(int base, int exp) {
+        if (exp < 0) return -1;
+        int result = 1;
+        for (int i = 0; i < exp; i++) {
+            result *= base;
+        }
+        return result;
+
+    }
+
 }
