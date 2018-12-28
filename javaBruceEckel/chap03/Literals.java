@@ -24,9 +24,11 @@ public class Literals {
         float f1 = 1;
         float f2 = 1F; // float suffix
         float f3 = 1f; // float suffix
+        System.out.println("f3: " + f3);
 
         double d1 = 1d; // double suffix
         double d2 = 1D; // double suffix
+        System.out.println("d2: " + d2);
 // (Hex and Octal also work with long)
     }
 } /* Output:
