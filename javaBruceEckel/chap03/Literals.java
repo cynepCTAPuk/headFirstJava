@@ -10,25 +10,26 @@ public class Literals {
         int i3 = 0177; // Octal (leading zero)
         System.out.println("i3: " + Integer.toBinaryString(i3));
 
-        char c = 0xffff; // max char hex value
-        System.out.println("c: " + Integer.toBinaryString(c));
-        byte b = 0x7f; // max byte hex value
-        System.out.println("b: " + Integer.toBinaryString(b));
-        short s = 0x7fff; // max short hex value
-        System.out.println("s: " + Integer.toBinaryString(s));
+        char ch = 0xffff; // max char hex value
+        System.out.println("ch: " + Integer.toBinaryString(ch));
+        byte by = 0x7f; // max byte hex value
+        System.out.println("by: " + Integer.toBinaryString(by));
+        short sh = 0x7fff; // max short hex value
+        System.out.println("sh: " + Integer.toBinaryString(sh));
 
         long n1 = 200L; // long suffix
         long n2 = 200l; // long suffix (but can be confusing)
         long n3 = 200;
 
         float f1 = 1;
-        float f2 = 1F; // float suffix
-        float f3 = 1f; // float suffix
-        System.out.println("f3: " + f3);
+        float f2 = 2F; // float suffix
+        float f3 = 3f; // float suffix
+        System.out.format("f1: %f f2: %f f3: %f%n", f1, f2, f3);
 
-        double d1 = 1d; // double suffix
-        double d2 = 1D; // double suffix
-        System.out.println("d2: " + d2);
+        double d1 = 1;
+        double d2 = 2d; // double suffix
+        double d3 = 3D; // double suffix
+        System.out.format("d1: %f d2: %f d3: %f%n", d1, d2, d3);
 // (Hex and Octal also work with long)
     }
 } /* Output:
