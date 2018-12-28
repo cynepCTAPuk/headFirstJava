@@ -8,9 +8,9 @@ public class Exponents {
         float expFloat = 1.39e-43f;
         expFloat = 1.39E-43f;
         System.out.println(expFloat);
-        double expDouble = 47e47d; // ‘d’ is optional
+        double expDouble1 = 47e47d; // ‘d’ is optional
         double expDouble2 = 47e47; // Automatically double
-        System.out.println(expDouble);
+        System.out.println(expDouble1 +" " +expDouble2);
     }
 } /* Output:
 1.39E-43
