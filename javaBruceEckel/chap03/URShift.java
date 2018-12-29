@@ -2,28 +2,31 @@ package chap03;
 
 //: operators/URShift.java
 // Test of unsigned right shift.
-import static net.mindview.util.Print.*;
 public class URShift {
     public static void main(String[] args) {
         int i = -1;
-        print(Integer.toBinaryString(i));
+        System.out.print("i " + Integer.toBinaryString(i) + " ");
+        System.out.println(Integer.toBinaryString(i).length() + " -1");
         i >>>= 10;
-        print(Integer.toBinaryString(i));
+        System.out.print("i " + Integer.toBinaryString(i) + " ");
+        System.out.println(Integer.toBinaryString(i).length() + " i>>>=10");
         long l = -1;
-        print(Long.toBinaryString(l));
+        System.out.print("l " + Long.toBinaryString(l) + " ");
+        System.out.println(Long.toBinaryString(l).length() + " -1");
         l >>>= 10;
-        print(Long.toBinaryString(l));
+        System.out.print("l " + Long.toBinaryString(l) + " ");
+        System.out.println(Long.toBinaryString(l).length() + " l>>>=10");
         short s = -1;
-        print(Integer.toBinaryString(s));
+        System.out.println("s " + Integer.toBinaryString(s));
         s >>>= 10;
-        print(Integer.toBinaryString(s));
+        System.out.println("s " + Integer.toBinaryString(s));
         byte b = -1;
-        print(Integer.toBinaryString(b));
+        System.out.println("b " + Integer.toBinaryString(b));
         b >>>= 10;
-        print(Integer.toBinaryString(b));
+        System.out.println("b " + Integer.toBinaryString(b));
         b = -1;
-        print(Integer.toBinaryString(b));
-        print(Integer.toBinaryString(b>>>10));
+        System.out.println("b " + Integer.toBinaryString(b));
+        System.out.println("b " + Integer.toBinaryString(b >>> 10));
     }
 } /* Output:
 11111111111111111111111111111111
