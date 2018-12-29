@@ -6,7 +6,7 @@ public class URShiftCycle {
     public static void main(String[] args) {
         int j = 1;
         int k = 0;
-        for (int i = 0; i < 33; i++) {
+        for (int i = 0; i <= 32; i++) {
             System.out.format("%33s", Integer.toBinaryString(j << i));
             System.out.format("%-33s\n", Integer.toBinaryString((j << i)-1));
         }
