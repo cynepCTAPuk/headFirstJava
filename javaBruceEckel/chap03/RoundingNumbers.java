@@ -9,7 +9,9 @@ public class RoundingNumbers {
         System.out.println("Math.round(above): " + Math.round(above));
         System.out.println("Math.round(below): " + Math.round(below));
         System.out.println("Math.round(fabove): " + Math.round(fabove));
-        System.out.println("Math.round(fbelow): " + Math.round(fbelow));
+        System.out.println("Math.round(fbelow): " + Math.round(fbelow)+"\n");
+        System.out.println("Math.floor(above): " + Math.floor(above));
+        System.out.println("Math.ceil(above): " + Math.ceil(above));
     }
 } /* Output:
 Math.round(above): 1
