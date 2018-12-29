@@ -2,7 +2,9 @@ package chap03;
 
 //: operators/BitManipulation.java
 // Using the bitwise operators.
+
 import java.util.*;
+
 public class BitManipulation {
     public static void main(String[] args) {
         Random rand = new Random(47);
@@ -10,9 +12,9 @@ public class BitManipulation {
         int j = rand.nextInt();
         printBinaryInt("-1", -1);
         printBinaryInt("+1", +1);
-        int maxpos = 2147483647;
+        int maxpos = 2_147_483_647;
         printBinaryInt("maxpos", maxpos);
-        int maxneg = -2147483648;
+        int maxneg = -2_147_483_648;
         printBinaryInt("maxneg", maxneg);
         printBinaryInt("i", i);
         printBinaryInt("~i", ~i);
@@ -47,13 +49,15 @@ public class BitManipulation {
         printBinaryLong("l >>> 5", l >>> 5);
         printBinaryLong("(~l) >>> 5", (~l) >>> 5);
     }
+
     static void printBinaryInt(String s, int i) {
-        System.out.println(s + ", int: " + i + ", binary:\n " +
-                Integer.toBinaryString(i));
+        String binaryString = Integer.toBinaryString(i);
+        System.out.println(s + ", int: " + i + ", binary:\n " + binaryString);
     }
+
     static void printBinaryLong(String s, long l) {
-        System.out.println(s + ", long: " + l + ", binary:\n " +
-                Long.toBinaryString(l));
+        String binaryString = Long.toBinaryString(l);
+        System.out.println(s + ", long: " + l + ", binary:\n " + binaryString);
     }
 } /* Output:
 -1, int: -1, binary:
