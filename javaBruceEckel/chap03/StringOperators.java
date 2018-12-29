@@ -7,6 +7,7 @@ public class StringOperators {
         String s = "x, y, z ";
         System.out.println(s + x + y + z);
         System.out.println(x + " " + s); // Converts x to a String
+        System.out.println();
         s += "(summed) = "; // Concatenation operator
         System.out.println(s + (x + y + z));
         System.out.println("" + x); // Shorthand for Integer.toString()
