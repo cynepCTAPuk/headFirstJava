@@ -15,6 +15,6 @@ public class Exercise4 {
                 qty++;
             }
         }
-        System.out.println("\nQuantity Prime numbers " + qty);
+        System.out.println("\nPrime numbers quantity " + qty);
     }
 }
