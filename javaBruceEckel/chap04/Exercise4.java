@@ -2,16 +2,19 @@ package chap04;
 
 public class Exercise4 {
     public static void main(String[] args) {
-        int max = 1_00;
+        int max = 1_000_000;
         int count;
         int qty = 0;
         for (int i = 3; i < max; i += 2) {
             count = 0;
-            for (int j = (i / 2); j > 1; j--) {
-                if (i % j == 0) count++;
+            for (int j = 2; j < (i / 2); j++) {
+                if (i % j == 0) {
+                    count++;
+                    break;
+                }
             }
             if (count == 0) {
-                System.out.print(i + " ");
+                System.out.format("%,d ", i);
                 qty++;
             }
         }
