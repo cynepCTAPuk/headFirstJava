@@ -8,15 +8,16 @@ public class Exercise5 {
         int i2 = pow(b, a0) + pow(b, a2) + pow(b, a4) + pow(b, a6);
 
         System.out.format("i1%10s %,4d\ni2%10s %,4d\n"
-                , Integer.toBinaryString(i1), i1, Integer.toBinaryString(i2), i2);
+                , Integer.toBinaryString(i1), i1
+                , Integer.toBinaryString(i2), i2);
 
         System.out.format("& %10s\n| %10s\n^ %10s\n"
                 , Integer.toBinaryString(i1 & i2)
                 , Integer.toBinaryString(i1 | i2)
                 , Integer.toBinaryString(i1 ^ i2));
 
-        System.out.format("%,d\n", pow(4, 3));
-        System.out.format("%,d\n", power(4, 3));
+        System.out.format("Test pow method: %,d\n", pow(4, 3));
+        System.out.format("Test power method: %,d\n", power(4, 3));
     }
 
     static int pow(int base, int exp) {
@@ -32,7 +33,6 @@ public class Exercise5 {
             result *= base;
         }
         return result;
-
     }
 
 }
