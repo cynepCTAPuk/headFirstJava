@@ -9,7 +9,7 @@ public class Exercise3 {
         int one = random.nextInt(10);
         int two;
         System.out.println(one);
-        for (int i = 0; i < 25; i++) {
+        while (true) {
             two = random1.nextInt(10);
             if (two > one) {
                 System.out.print(two + "> ");
