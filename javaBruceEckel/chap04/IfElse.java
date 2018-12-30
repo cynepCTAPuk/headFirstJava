@@ -4,11 +4,11 @@ package chap04;
 public class IfElse {
     static int result = 0;
     static void test(int testval, int target) {
-        if(testval > target)
+        if(testval > target) {
             result = +1;
-        else if(testval < target)
+        } else if(testval < target) {
             result = -1;
-        else
+        } else
             result = 0; // Match
     }
     public static void main(String[] args) {
