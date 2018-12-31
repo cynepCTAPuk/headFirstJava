@@ -16,30 +16,29 @@ public class Exercise5 {
 
     static String toBinary(int number) {
         String binary = "";
-        int temp = number;
-        if (temp == 0) binary += 0;
-        while (temp > 0) {
-            binary = (temp % 2) + binary;
-            temp = temp / 2;
+        if (number == 0) binary += 0;
+        while (number > 0) {
+            binary = (number % 2) + binary;
+            number = number / 2;
         }
 /*
-        while (temp > 0) {
-            binary = oddeven(temp, binary);
-            temp = temp / 2;
-        }
-*/
-/*
-        while (temp > 0) {  // it works!
-            if (temp % 2 == 0) binary = 0 + binary;
-            else binary = 1 + binary;
-            temp = temp / 2;
+        while (nubmer > 0) {
+            binary = oddeven(nubmer, binary);
+            nubmer = nubmer / 2;
         }
 */
 /*
-        while (temp < 0) { // should be done!!!
-            if (temp % 2 == 0) binary = 0 + binary;
+        while (nubmer > 0) {  // it works!
+            if (nubmer % 2 == 0) binary = 0 + binary;
             else binary = 1 + binary;
-            temp = temp / 2;
+            nubmer = nubmer / 2;
+        }
+*/
+/*
+        while (nubmer < 0) { // should be done!!!
+            if (nubmer % 2 == 0) binary = 0 + binary;
+            else binary = 1 + binary;
+            nubmer = nubmer / 2;
         }
 */
         return binary;
