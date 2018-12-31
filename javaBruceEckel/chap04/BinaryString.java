@@ -11,12 +11,13 @@ public class BinaryString {
     };
 
     public static void main(String[] args) {
-        int number = pow(2, 0);
-        for (int i = 0; i < 11; i++) {
+        int number = pow(2, 31)-5;
+        for (int i = 0; i < 20; i++) {
             System.out.format("%32s ", toBinary(number));
-            System.out.format("%32s ", toOctal(number));
-//            System.out.format("%32s %4d\n", Integer.toBinaryString(number), number);
-            System.out.format("%10d\n", number);
+//            System.out.format("%32s ", toOctal(number));
+            System.out.format("%32s ", toHex(number));
+//            System.out.format("%32s ", Integer.toBinaryString(number));
+            System.out.format("%,10d\n", number);
             number++;
 
         }
@@ -25,8 +26,13 @@ public class BinaryString {
     public static String toBinary(int i) {
         return toUnsignedString(i, 1);
     }
+
     public static String toOctal(int i) {
-        return toUnsignedString(i, 7);
+        return toUnsignedString(i, 3);
+    }
+
+    public static String toHex(int i) {
+        return toUnsignedString(i, 4);
     }
 
     private static String toUnsignedString(int number, int shift) {

@@ -16,13 +16,6 @@ public class Exercise5 {
 
     static String toBinary(int number) {
         String binary = "";
-<<<<<<< HEAD
-        for (int i = 2; i < number; i++)
-
-            if (number / i == 0) binary = "1" + binary;
-            else binary = "0" + binary;
-        System.out.format("%3d = %10s\n", number, binary);
-=======
         if (number == 0) binary += 0;
         while (number > 0) {
             binary = (number % 2) + binary;
@@ -49,7 +42,6 @@ public class Exercise5 {
         }
 */
         return binary;
->>>>>>> f11cd12460c1655ff2ca103d373182a91a8ca8b9
     }
 
     private static int pow(int base, int exp) {
