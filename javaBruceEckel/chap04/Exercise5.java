@@ -44,7 +44,7 @@ public class Exercise5 {
         return binary;
     }
 
-    static int pow(int base, int exp) {
+    private static int pow(int base, int exp) {
         if (exp < 0) return -1;
         if (exp == 0) return 1;
         return pow(base, exp - 1) * base;
