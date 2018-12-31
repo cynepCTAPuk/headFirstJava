@@ -14,8 +14,9 @@ public class BinaryString {
         int number = pow(2, 0);
         for (int i = 0; i < 11; i++) {
             System.out.format("%32s ", toBinary(number));
+            System.out.format("%32s ", toOctal(number));
 //            System.out.format("%32s %4d\n", Integer.toBinaryString(number), number);
-            System.out.println(" " + number);
+            System.out.format("%10d\n", number);
             number++;
 
         }
@@ -23,6 +24,9 @@ public class BinaryString {
 
     public static String toBinary(int i) {
         return toUnsignedString(i, 1);
+    }
+    public static String toOctal(int i) {
+        return toUnsignedString(i, 7);
     }
 
     private static String toUnsignedString(int number, int shift) {
