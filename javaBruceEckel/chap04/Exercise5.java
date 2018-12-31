@@ -10,7 +10,7 @@ public class Exercise5 {
     static void toBinary(int number) {
         String binary = "";
         for (int i = 2; i < number; i++)
-            
+
             if (number / i == 0) binary = "1" + binary;
             else binary = "0" + binary;
         System.out.format("%3d = %10s\n", number, binary);
