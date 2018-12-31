@@ -11,14 +11,14 @@ public class BinaryString {
     };
 
     public static void main(String[] args) {
-        int number = pow(2, 31)-5;
-        for (int i = 0; i < 20; i++) {
+        int number = pow(2, 0) - 1;
+        for (int i = 0; i < 10; i++) {
             System.out.format("%32s ", toBinary(number));
 //            System.out.format("%32s ", toOctal(number));
             System.out.format("%32s ", toHex(number));
 //            System.out.format("%32s ", Integer.toBinaryString(number));
             System.out.format("%,14d\n", number);
-            number++;
+            number += 16;
 
         }
     }
