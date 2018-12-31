@@ -17,7 +17,7 @@ public class BinaryString {
 //            System.out.format("%32s ", toOctal(number));
             System.out.format("%32s ", toHex(number));
 //            System.out.format("%32s ", Integer.toBinaryString(number));
-            System.out.format("%,10d\n", number);
+            System.out.format("%,14d\n", number);
             number++;
 
         }
