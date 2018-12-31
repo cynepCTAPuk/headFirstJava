@@ -2,7 +2,7 @@ package chap04;
 
 public class Exercise5 {
     public static void main(String[] args) {
-        int number = pow(2, 0);
+        int number = pow(2, 0)-6;
         for (int i = 0; i < 11; i++) {
             System.out.format("%32s ", toBinary(number));
             System.out.format("%32s %4d\n", Integer.toBinaryString(number), number);
