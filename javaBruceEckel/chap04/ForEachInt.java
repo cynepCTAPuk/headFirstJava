@@ -22,9 +22,9 @@ public class ForEachInt {
     }
 
     static int[] range(int start, int end, int step) {
-        int length = (end - start)/step;
-        int[] array = new int[(end - start) / step];
-        for (int i = start; i < array.length; i += step) array[i] = i;
+        int length = (end - start) / step;
+        int[] array = new int[length];
+        for (int i = 0; i < array.length; i++) array[i] = (start + (step * i));
         return array;
     }
 } /* Output:
