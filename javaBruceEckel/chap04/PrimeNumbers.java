@@ -4,7 +4,7 @@ public class PrimeNumbers {
     static int[] primeNumbers;
 
     public static void main(String[] args) {
-        int n = 1_000;
+        int n = 1_000_000;
         long t0 = System.nanoTime();
         printPrimeNumbers(n);
         long t1 = System.nanoTime();
