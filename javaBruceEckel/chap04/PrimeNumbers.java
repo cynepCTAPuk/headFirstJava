@@ -8,7 +8,7 @@ public class PrimeNumbers {
         long t0 = System.nanoTime();
         printPrimeNumbers(n);
         long t1 = System.nanoTime();
-        System.out.println(t1-t0);
+        System.out.println("Time seeking: " + (t1 - t0));
     }
 
     static int printPrimeNumbers(int numbers) {   // Основная функция
