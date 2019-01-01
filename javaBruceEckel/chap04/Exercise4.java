@@ -22,6 +22,7 @@ public class Exercise4 {
         }
         System.out.println("\nPrime numbers quantity " + qty);
         long t1 = System.nanoTime();
+
         System.out.format("Time seeking: %,d", (t1 - t0));
     }
 }
