@@ -1,7 +1,7 @@
 package util;
 
 //: control/ForEachInt.java
-public class Util {
+public class Range {
     public static int[] range(int end) {
         return range(0, end, 1);
     }
@@ -15,9 +15,5 @@ public class Util {
         int[] array = new int[length];
         for (int i = 0; i < array.length; i++) array[i] = (start + (step * i));
         return array;
-    }
-
-    public static void print(String string) {
-        System.out.println(string);
     }
 }

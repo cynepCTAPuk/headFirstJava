@@ -1,6 +1,7 @@
 package chap04;
 
-import static util.Util.print;
+
+import static util.Print.print;
 
 //: control/LabeledFor.java
 // For loops with "labeled break" and "labeled continue."
