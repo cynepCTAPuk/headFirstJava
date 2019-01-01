@@ -1,6 +1,6 @@
 package chap04;
 
-import static chap04.Range.range;
+import static chap04.Util.range;
 
 //: control/ForEachInt.java
 public class ForEachInt {
