@@ -1,6 +1,6 @@
 package chap04;
 
-import static chap04.Util.*;
+import static util.Util.*;
 
 //: control/BreakAndContinue.java
 // Demonstrates break and continue keywords.
