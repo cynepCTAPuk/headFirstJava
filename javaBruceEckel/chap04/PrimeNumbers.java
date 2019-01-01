@@ -38,7 +38,7 @@ public class PrimeNumbers {
 //        System.out.printf("Простые числа, не превосходящие %,d\n",numbers);
         for (i = 0; i < k; i++)
             System.out.printf("%,d ", primeNumbers[i]);
-        System.out.printf("\nКол-во простых чисел: %d", k);
+        System.out.printf("\nКол-во простых чисел: %d\n", k);
 
         return k;
     } /* End of 'printPrimeNumbers' function */
