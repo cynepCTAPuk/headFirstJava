@@ -2,6 +2,8 @@ package chap04;
 
 public class Exercise4 {
     public static void main(String[] args) {
+        long t0 = System.nanoTime();
+
         int max = 1_000;
         int count;
         int qty = 1;
@@ -20,5 +22,7 @@ public class Exercise4 {
             }
         }
         System.out.println("\nPrime numbers quantity " + qty);
+        long t1 = System.nanoTime();
+        System.out.println("Time seeking: " + (t1 - t0));
     }
 }
