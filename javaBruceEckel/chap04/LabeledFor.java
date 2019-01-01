@@ -1,6 +1,5 @@
 package chap04;
 
-
 import static util.Print.print;
 
 //: control/LabeledFor.java
