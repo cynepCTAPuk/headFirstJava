@@ -3,7 +3,7 @@ package chap04;
 public class Exercise4 {
     public static void main(String[] args) {
         long t0 = System.nanoTime();
-        int max = 1_000;
+        int max = 1_000_000;
         int count;
         int qty = 1;
         System.out.format("%,d ", 2);
