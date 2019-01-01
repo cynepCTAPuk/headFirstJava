@@ -12,6 +12,7 @@ public class BreakAndContinue {
             System.out.print(i + " ");
         }
         System.out.println();
+
 // Using foreach:
         for (int i : range(100)) {
             if (i == 74) break; // Out of for loop
@@ -19,6 +20,7 @@ public class BreakAndContinue {
             System.out.print(i + " ");
         }
         System.out.println();
+        
         int i = 0;
 // An "infinite loop":
         while (true) {
