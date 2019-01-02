@@ -1,9 +1,9 @@
 package chap04;
 
 public class Exercise9a {
-    public static void main(int[] args) {
+    public static void main(String[] args) {
 //        int n = 20;
-        int n = args[0];
+        int n = Integer.parseInt(args[0]);
         fibonacci(n);
     }
 
