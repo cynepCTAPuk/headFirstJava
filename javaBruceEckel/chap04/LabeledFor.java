@@ -8,10 +8,10 @@ public class LabeledFor {
     public static void main(String[] args) {
         int i = 0;
         outer:
-        // Can’t have statements here
+        // Can’t have statements here (Другие команды недопустимы)
         for (; true; ) {                     // infinite loop
             inner:
-            // Can’t have statements here
+            // Can’t have statements here (Другие команды недопустимы)
             for (; i < 10; i++) {
                 print("i = " + i);
                 if (i == 2) {
