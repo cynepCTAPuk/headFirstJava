@@ -3,7 +3,6 @@ package chap04;
 public class Exercise9a {
     public static void main(String[] args) {
         int n = 20;
-        
         fibonacci(n);
     }
 
