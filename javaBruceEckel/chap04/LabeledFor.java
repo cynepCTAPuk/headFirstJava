@@ -20,14 +20,12 @@ public class LabeledFor {
                 }
                 if (i == 3) {
                     print("break");
-                    i++;                    // Otherwise i never
-                    // gets incremented.
+                    i++;                    // Otherwise i never gets incremented.
                     break;
                 }
                 if (i == 7) {
                     print("continue outer");
-                    i++;                    // Otherwise i never
-                    // gets incremented.
+                    i++;                    // Otherwise i never gets incremented.
                     continue outer;
                 }
                 if (i == 8) {
@@ -42,7 +40,7 @@ public class LabeledFor {
                 }
             }
         }
-// Can’t break or continue to labels here
+        // Can’t break or continue to labels here
     }
 } /* Output:
 i = 0
