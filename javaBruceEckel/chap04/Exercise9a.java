@@ -3,6 +3,11 @@ package chap04;
 public class Exercise9a {
     public static void main(String[] args) {
         int n = 20;
+        
+        fibonacci(n);
+    }
+
+    public static void fibonacci(int n) {
         int prev = 1;
         int curr = 1;
         int next;
@@ -13,7 +18,6 @@ public class Exercise9a {
             System.out.print(" ");
             prev = curr;
             curr = next;
-
         }
     }
 }
