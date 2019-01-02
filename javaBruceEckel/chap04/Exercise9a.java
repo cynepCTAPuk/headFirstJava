@@ -11,11 +11,10 @@ public class Exercise9a {
         int prev = 1;
         int curr = 1;
         int next;
-        System.out.print(prev + " " + curr + " ");
+        System.out.print("First " + n + " Fibonacci numbers\n" + prev + " " + curr + " ");
         for (int i = 2; i < n; i++) {
             next = prev + curr;
-            System.out.print(next);
-            System.out.print(" ");
+            System.out.print(next + " ");
             prev = curr;
             curr = next;
         }
