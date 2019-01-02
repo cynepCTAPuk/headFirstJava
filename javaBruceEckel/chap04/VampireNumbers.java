@@ -1,6 +1,8 @@
 package chap04;
 
 public class VampireNumbers {
+    static String primary;
+
     public static void main(String[] args) {
         int qty = 0;
         int start = 10;
@@ -10,7 +12,7 @@ public class VampireNumbers {
 
         for (int i = 1_000; i < 1_010; i++) {
             if (i % 100 == 0) continue;
-            String primary = String.valueOf(i);
+            primary = String.valueOf(i);
             char[] charsPrimary = primary.toCharArray();
 
             for (int j = 0; j < 90; j++) {
