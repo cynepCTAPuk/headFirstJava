@@ -2,24 +2,15 @@ package chap04;
 
 public class Exercise9 {
     public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
-            switch (i) {
-                case (0):
-                    System.out.format("%d",i);
-//                    break;
-                case (1):
-                    System.out.format("%d",i);
-//                    break;
-                case (2):
-                    System.out.format("%d",i);
-//                    break;
-                case (3):
-                    System.out.format("%d",i);
-//                    break;
-                default:
-                    System.out.format("%d",i);
-            }
-            System.out.println();
+        int n = 20;
+        int[] fibonacci = new int[n];
+        fibonacci[0] = 1;
+        fibonacci[1] = 1;
+        for (int i = 2; i < n; i++) {
+            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+        }
+        for (int j = 0; j < n; j++) {
+            System.out.print(fibonacci[j] + " ");
         }
     }
 }
