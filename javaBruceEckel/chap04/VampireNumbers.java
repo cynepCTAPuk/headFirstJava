@@ -10,21 +10,22 @@ public class VampireNumbers {
 
         for (int i = 1_000; i < 2_000; i++) {
             if (i % 100 == 0) continue;
-            String primary = String.valueOf(i);
+            String primary = new String("");
+            primary = String.valueOf(i);
 
             for (int j = 0; j < 90; j++) {
                 String divider1 = String.valueOf(numbers[j]);
                 if (!contain(primary, divider1)) continue;
                 else {
-//                    primary = replace(primary, divider1);
                     for (int k = 0; k < 90; k++) {
                         String divider2 = String.valueOf(numbers[k]);
                         if (!contain(primary, divider2)) continue;
                         else {
                             if (i == (numbers[j] * numbers[k])) {
-                                System.out.format("%,d = %,d * %,d %s\n"
+                                System.out.format("%,d = %,d*%,d %s\t|\t"
                                         , i, numbers[j], numbers[k], primary);
                                 qty++;
+                                if(qty%3==0) System.out.println();
                             }
                         }
                     }
@@ -40,10 +41,14 @@ public class VampireNumbers {
         int i;
         for (i = 0; i < chars.length; i++) {
             if (!base.contains(String.valueOf(chars[i]))) break;
-            base = base.replace(chars[i], 'x');
+            else {
+                base = base.replace(chars[i], 'x');
+            }
         }
-        if (i == part.length()) return true;
-        else return false;
+        if (i == part.length()) {
+//            System.out.print(base + " ");
+            return true;
+        } else return false;
     }
 
     static String replace(String base, String part) {
