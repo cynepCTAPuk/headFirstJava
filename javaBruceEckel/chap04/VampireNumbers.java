@@ -8,7 +8,7 @@ public class VampireNumbers {
         int[] numbers = new int[90];
         for (int i = 0; i < 90; i++) numbers[i] = start++;
 
-        for (int i = 1_000; i < 1_100; i++) {
+        for (int i = 1_000; i < 2_000; i++) {
             if (i % 100 == 0) continue;
             String primary = String.valueOf(i);
 
@@ -16,14 +16,16 @@ public class VampireNumbers {
                 String divider1 = String.valueOf(numbers[j]);
                 if (!contain(primary, divider1)) continue;
                 else {
+//                    primary = replace(primary, divider1);
                     for (int k = 0; k < 90; k++) {
                         String divider2 = String.valueOf(numbers[k]);
-                        char[] charsDivider2 = divider2.toCharArray();
-
-                        if (i == (numbers[j] * numbers[k])) {
-                            System.out.format("%,d = %,d * %,d %s\n"
-                                    , i, numbers[j], numbers[k], primary);
-                            qty++;
+                        if (!contain(primary, divider2)) continue;
+                        else {
+                            if (i == (numbers[j] * numbers[k])) {
+                                System.out.format("%,d = %,d * %,d %s\n"
+                                        , i, numbers[j], numbers[k], primary);
+                                qty++;
+                            }
                         }
                     }
                 }
@@ -42,5 +44,13 @@ public class VampireNumbers {
         }
         if (i == part.length()) return true;
         else return false;
+    }
+
+    static String replace(String base, String part) {
+        char[] chars = part.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            base = base.replace(chars[i], 'x');
+        }
+        return base;
     }
 }
