@@ -5,7 +5,7 @@ public class Print {
     public static void print(String string) {
         System.out.println(string);
     }
-    public static void printb(String string) {
+    public static void printnb(String string) {
         System.out.print(string);
     }
 }
