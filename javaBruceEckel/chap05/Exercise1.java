@@ -2,11 +2,11 @@ package chap05;
 
 public class Exercise1 {
     public static void main(String[] args) {
-        Obj obj = new Obj();
+        Obj1 obj = new Obj1();
         System.out.println(obj.str);
     }
 }
 
-class Obj {
+class Obj1 {
     String str;
 }
