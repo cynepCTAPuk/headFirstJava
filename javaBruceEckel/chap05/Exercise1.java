@@ -1,7 +1,12 @@
 package chap05;
 
 public class Exercise1 {
-    class Obj {
-        String str;
+    public static void main(String[] args) {
+        Obj obj = new Obj();
+        System.out.println(obj.str);
     }
+}
+
+class Obj {
+    String str;
 }
