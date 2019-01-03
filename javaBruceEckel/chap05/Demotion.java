@@ -34,7 +34,7 @@ public class Demotion {
     void testDouble() {
         double x = 0;
         print("double argument:");
-        f1(x);f2((float)x);f3((long)x);f4((int)x);
+        f1(x);f2((float)x);f3((long)x);f4((int)x);f5((short)x);f6((byte)x);f7((char)x);
     }
     public static void main(String[] args) {
         Demotion p = new Demotion();
