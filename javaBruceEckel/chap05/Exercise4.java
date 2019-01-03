@@ -1,13 +1,13 @@
 package chap05;
 
-public class Exercise3 {
+public class Exercise4 {
     public static void main(String[] args) {
-        Obj3 obj3 = new Obj3();
+        Obj4 obj4 = new Obj4();
     }
 }
-
-class Obj3 {
-    Obj3() {
+class Obj4 {
+    Obj4() {
         System.out.println("new Obj3");
     }
 }
+
