@@ -2,20 +2,20 @@ package chap05;
 
 public class Exercise2 {
     public static void main(String[] args) {
-        Obje obje1 = new Obje();
-        Obje obje2 = new Obje("New");
-        System.out.println(obje1.str);
-        System.out.println(obje2.str);
+        Obj2 obj21 = new Obj2();
+        Obj2 obj22 = new Obj2("New");
+        System.out.println(obj21.str);
+        System.out.println(obj22.str);
     }
 }
 
-class Obje {
+class Obj2 {
     String str = "Old";
 
-    Obje() {
+    Obj2() {
     }
 
-    Obje(String str) {
+    Obj2(String str) {
         this.str = str;
     }
 }
