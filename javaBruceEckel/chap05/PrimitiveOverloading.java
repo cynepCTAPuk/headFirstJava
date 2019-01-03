@@ -9,31 +9,24 @@ public class PrimitiveOverloading {
     void f1(char x) {
         printnb("f1(char) ");
     }
-
     void f1(byte x) {
         printnb("f1(byte) ");
     }
-
     void f1(short x) {
         printnb("f1(short) ");
     }
-
     void f1(int x) {
         printnb("f1(int) ");
     }
-
     void f1(long x) {
         printnb("f1(long) ");
     }
-
     void f1(float x) {
         printnb("f1(float) ");
     }
-
     void f1(double x) {
         printnb("f1(double) ");
     }
-
     void f2(byte x) {
         printnb("f2(byte) ");
     }
