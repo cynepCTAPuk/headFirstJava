@@ -34,9 +34,9 @@ public class Overloading {
             Tree t = new Tree(i);
             t.info();
             t.info("overloaded method");
+            System.out.println();
         }
-// Overloaded constructor:
-        new Tree();
+        new Tree(); // Overloaded constructor:
     }
 } /* Output:
 
