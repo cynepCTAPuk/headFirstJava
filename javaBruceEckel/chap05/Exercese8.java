@@ -10,11 +10,12 @@ public class Exercese8 {
 
 class Obj8 {
     void first() {
+        System.out.println("first");
         second();
         this.second();
     }
 
     void second() {
-
+        System.out.println("second");
     }
 }
