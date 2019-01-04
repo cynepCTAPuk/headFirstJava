@@ -13,16 +13,17 @@ public class InitialValues2 {
     int i = 999;
     long lng = 1;
     float f = 3.14f;
-    double d = 3.14159;    InitialValues2 reference;
+    double d = 3.14159;
+    InitialValues2 reference;
 
     void printInitialValues() {
         print("Data type Initial value");
-        print("boolean " + t);
-        print("char [" + c + "]");
+        print("boolean " + bool);
+        print("char [" + ch + "]");
         print("byte " + b);
         print("short " + s);
         print("int " + i);
-        print("long " + l);
+        print("long " + (lng + 1));
         print("float " + f);
         print("double " + d);
         print("reference " + reference);
