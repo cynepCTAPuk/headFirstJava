@@ -32,9 +32,7 @@ public class InitialValues {
     public static void main(String[] args) {
         InitialValues iv = new InitialValues();
         iv.printInitialValues();
-/* You could also say:
-new InitialValues().printInitialValues();
-*/
+        /* You could also say: new InitialValues().printInitialValues();*/
     }
 } /* Output:
 Data type Initial value
