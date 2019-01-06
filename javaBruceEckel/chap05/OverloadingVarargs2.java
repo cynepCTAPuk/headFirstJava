@@ -1,7 +1,7 @@
 package chap05;
 
 //: initialization/OverloadingVarargs2.java
-// {CompileTimeError} (Won’t compile) 
+// {CompileTimeError} (Won’t compile)
 public class OverloadingVarargs2 {
     static void f(float i, Character... args) {
         System.out.println("first");
