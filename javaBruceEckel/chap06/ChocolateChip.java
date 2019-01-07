@@ -9,7 +9,7 @@ public class ChocolateChip extends Cookie {
         System.out.println("ChocolateChip constructor");
     }
     public void chomp() {
-        bite(); // Can’t access bite
+        bite(); // Can’t access bite if class Cookie has package access
     }
     public static void main(String[] args) {
         ChocolateChip x = new ChocolateChip();
