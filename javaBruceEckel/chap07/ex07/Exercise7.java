@@ -1,4 +1,4 @@
-package chap07.ex06;
+package chap07.ex07;
 
 public class Exercise7 {
     public static void main(String[] args) {
