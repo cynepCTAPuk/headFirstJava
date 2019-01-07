@@ -11,8 +11,8 @@ public class Range {
     }
 
     public static int[] range(int start, int end, int step) {
-        int length = (end - start) / step;
-        int[] array = new int[length];
+        int size = (end - start) / step;
+        int[] array = new int[size];
         for (int i = 0; i < array.length; i++) array[i] = (start + (step * i));
         return array;
     }
