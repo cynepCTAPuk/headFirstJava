@@ -18,8 +18,7 @@ class Soup2 {
 // Only one public class allowed per file:
 public class Lunch {
     void testPrivate() {
-//        Soup1 soup = new Soup1();
-// Can’t do this! Private constructor:
+//        Soup1 soup = new Soup1(); // Can’t do this! Private constructor:
     }
     void testStatic() {Soup1 soup = Soup1.makeSoup();}
     void testSingleton() {Soup2.access().f();}
