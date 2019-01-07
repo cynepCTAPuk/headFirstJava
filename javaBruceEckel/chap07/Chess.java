@@ -5,9 +5,7 @@ package chap07;
 import static util.Print.print;
 
 class Game {
-    Game(int i) {
-        print("Game constructor");
-    }
+    Game(int i) { print("Game constructor"); }
 }
 class BoardGame extends Game {
     BoardGame(int i) {
