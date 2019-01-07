@@ -1,4 +1,7 @@
 package chap06;
 
-public class Pie {
-}
+//: access/Pie.java
+// The other class.
+class Pie {
+    void f() { System.out.println("Pie.f()"); }
+} ///:~
