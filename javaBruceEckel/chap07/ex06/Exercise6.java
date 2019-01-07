@@ -1,6 +1,6 @@
 package chap07.ex06;
 
-public class Exercise5 {
+public class Exercise6 {
     public static void main(String[] args) {
         C c = new C();
         System.out.println(c);
