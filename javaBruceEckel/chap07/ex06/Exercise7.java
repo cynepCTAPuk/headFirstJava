@@ -1,6 +1,6 @@
 package chap07.ex06;
 
-public class Exercise6 {
+public class Exercise7 {
     public static void main(String[] args) {
         C c = new C();
         System.out.println(c);
@@ -8,15 +8,23 @@ public class Exercise6 {
 }
 
 class A {
-    A() { System.out.println("A"); }
+    A(int i) {
+        System.out.println("A");
+    }
 }
 
 class B {
-    B() { System.out.println("B"); }
+    B() {
+        System.out.println("B");
+    }
 }
 
 class C extends A {
     B b = new B();
-    C() { System.out.println("C"); }
+
+    C() {
+        super(1);
+        System.out.println("C");
+    }
 }
 
