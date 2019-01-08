@@ -5,7 +5,7 @@ import static util.Print.print;
 //: reusing/FinalArguments.java
 // Using "final" with method arguments.
 class Gizmo {
-    public void spin() {}
+    public void spin() {print("spin");}
 }
 public class FinalArguments {
     void with(final Gizmo g) {
@@ -16,8 +16,7 @@ public class FinalArguments {
         g.spin();
     }
 //    void f(final int i) { i++; } // Can’t change
-// You can only read from a final primitive:
-    int g(final int i) { return i + 1; }
+    int g(final int i) { return i + 1; } // You can only read from a final primitive:
 
     public static void main(String[] args) {
         FinalArguments bf = new FinalArguments();
