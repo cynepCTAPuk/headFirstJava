@@ -7,7 +7,7 @@ import static util.Print.print;
 // a private or private final method.
 class WithFinals {
     private final void f() { print("WithFinals.f()"); } // Identical to "private" alone:
-    private void g() { print("WithFinals.g()"); } // Also automatically "final":
+    private void g() { print("WithoutFinals.g()"); } // Also automatically "final":
 }
 class OverridingPrivate extends WithFinals {
     private final void f() { print("OverridingPrivate.f()"); }
