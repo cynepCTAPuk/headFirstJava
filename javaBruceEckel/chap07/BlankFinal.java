@@ -1,5 +1,8 @@
 package chap07;
 
+import static util.Print.print;
+import static util.Print.printf;
+
 //: reusing/BlankFinal.java
 // "Blank" final fields.
 class Poppet {
@@ -19,8 +22,14 @@ public class BlankFinal {
         j = x; // Initialize blank final
         p = new Poppet(x); // Initialize blank final reference
     }
+
+    @Override
+    public String toString() {
+        return String.format("BlankFinal{i=%2d, j=%2d, p=%s}", i , j ,p);
+    }
+
     public static void main(String[] args) {
-        new BlankFinal();
-        new BlankFinal(47);
+        print(new BlankFinal());
+        print(new BlankFinal(47));
     }
 } ///:~
