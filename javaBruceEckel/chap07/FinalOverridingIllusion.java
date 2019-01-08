@@ -8,10 +8,12 @@ import static util.Print.print;
 class WithFinals {
     private final void f() { print("WithFinals.f()"); } // Identical to "private" alone:
     private void g() { print("WithoutFinals.g()"); } // Also automatically "final":
+//    WithFinals(){f();g();}
 }
 class OverridingPrivate extends WithFinals {
     private final void f() { print("OverridingPrivate.f()"); }
     private void g() { print("OverridingPrivate.g()"); }
+//    OverridingPrivate(){f();g();}
 }
 class OverridingPrivate2 extends OverridingPrivate {
     public final void f() { print("OverridingPrivate2.f()"); }
