@@ -1,4 +1,4 @@
-package chap08;
+package chap08.music;
 
 //: polymorphism/music/Wind.java
 // Wind objects are instruments

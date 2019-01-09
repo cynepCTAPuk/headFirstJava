@@ -1,4 +1,4 @@
-package chap08;
+package chap08.music;
 
 import static util.Print.print;
 

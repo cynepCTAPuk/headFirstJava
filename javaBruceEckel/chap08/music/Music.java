@@ -1,4 +1,4 @@
-package chap08;
+package chap08.music;
 
 //: polymorphism/music/Music.java
 // Inheritance & upcasting.
