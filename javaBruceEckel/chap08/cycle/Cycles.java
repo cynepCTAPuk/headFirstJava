@@ -1,6 +1,6 @@
 package chap08.cycle;
 
-public class Exercise1 {
+public class Cycles {
     static void ride(Cycle c) { c.ride(); }
     public static void main(String[] args) {
         Cycle cycle = new Cycle();
