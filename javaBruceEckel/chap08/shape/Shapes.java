@@ -9,7 +9,7 @@ public class Shapes {
         // Fill up the array with shapes:
         for(int i = 0; i < shapes.length; i++) shapes[i] = gen.next();
         // Make polymorphic method calls:
-        for(Shape shp : shapes) shp.draw();
+        for(Shape shp : shapes) {shp.draw(); shp.fill();}
     }
 } /* Output:
 Triangle.draw()
