@@ -3,25 +3,28 @@ package chap08;
 import static util.Print.print;
 
 public class Exercise1 {
+    static void ride(Cycle c) { c.ride(); }
     public static void main(String[] args) {
+        Cycle cycle = new Cycle();
         Unicycle unicycle = new Unicycle();
         Bicycle bicycle = new Bicycle();
         Tricycle tricycle = new Tricycle();
-        unicycle.ride();
-        bicycle.ride();
-        tricycle.ride();
+        ride(cycle);
+        ride(unicycle);
+        ride(bicycle);
+        ride(tricycle);
     }
 }
 
 class Cycle {
     void ride() { print("ride"); }
 }
-class Unicycle {
-    void ride(){ print("ride Unicycle"); }
+class Unicycle extends Cycle{
+    void ride(){ print("ride by Unicycle"); }
 }
-class Bicycle {
-    void ride(){ print("ride Bicycle"); }
+class Bicycle extends Cycle{
+    void ride(){ print("ride by Bicycle"); }
 }
-class Tricycle {
-    void ride(){ print("ride Tricycle"); }
+class Tricycle extends Cycle{
+    void ride(){ print("ride by Tricycle"); }
 }
