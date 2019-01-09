@@ -1,6 +1,4 @@
-package chap08;
-
-import static util.Print.print;
+package chap08.cycle;
 
 public class Exercise1 {
     static void ride(Cycle c) { c.ride(); }
@@ -16,15 +14,3 @@ public class Exercise1 {
     }
 }
 
-class Cycle {
-    void ride() { print("ride"); }
-}
-class Unicycle extends Cycle{
-    void ride(){ print("ride by Unicycle"); }
-}
-class Bicycle extends Cycle{
-    void ride(){ print("ride by Bicycle"); }
-}
-class Tricycle extends Cycle{
-    void ride(){ print("ride by Tricycle"); }
-}
