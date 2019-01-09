@@ -18,7 +18,7 @@ public class Music2 {
         Wind flute = new Wind();
         Stringed violin = new Stringed();
         Brass frenchHorn = new Brass();
-        tune(flute); // No upcasting
+        tune(flute);                // No upcasting
         tune(violin);
         tune(frenchHorn);
     }
