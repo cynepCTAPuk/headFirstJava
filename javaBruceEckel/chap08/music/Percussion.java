@@ -6,6 +6,6 @@ import static util.Print.*;
 public class Percussion extends Instrument {
     // Redefine interface method:
     public void play(Note n) { System.out.println("Percussion.play() " + n); }
-    public String what(Note n) { return "Percussion"; }
-    public void adjust(Note n) { print("Percussion.adjust()");}
+    public String what() { return "Percussion"; }
+    public void adjust() { print("Percussion.adjust()");}
 } ///:~

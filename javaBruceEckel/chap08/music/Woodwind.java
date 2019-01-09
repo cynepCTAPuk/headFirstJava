@@ -4,5 +4,5 @@ import static util.Print.*;
 
 class Woodwind extends Wind {
     public void play(Note n) { print("Woodwind.play() " + n); }
-    public void adjust(Note n) { print("Woodwind.adjust()");}
+    public void adjust() { print("Woodwind.adjust()");}
 }
