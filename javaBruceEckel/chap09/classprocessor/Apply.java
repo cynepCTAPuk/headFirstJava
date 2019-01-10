@@ -1,4 +1,4 @@
-package chap09;
+package chap09.classprocessor;
 
 //: interfaces/classprocessor/Apply.java
 import java.util.*;
