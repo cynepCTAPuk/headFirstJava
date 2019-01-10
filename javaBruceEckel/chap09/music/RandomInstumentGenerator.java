@@ -7,7 +7,7 @@ import java.util.*;
 
 public class RandomInstumentGenerator {
     private Random rand = new Random();
-    public Instrument next() {
+    public Playable next() {
         switch(rand.nextInt(5)) {
             default:
             case 0: return new Brass();
