@@ -1,7 +1,8 @@
 package chap09.interfaceprocessor;
 
 //: interfaces/interfaceprocessor/Apply.java
-import static util.Print.print;
+
+import static util.Print.*;
 
 public class Apply {
     public static void process(Processor p, Object s) {

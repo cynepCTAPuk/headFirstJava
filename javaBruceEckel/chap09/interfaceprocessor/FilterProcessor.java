@@ -1,6 +1,7 @@
 package chap09.interfaceprocessor;
 
 //: interfaces/interfaceprocessor/FilterProcessor.java
+
 import chap09.filters.*;
 
 public class FilterProcessor {
