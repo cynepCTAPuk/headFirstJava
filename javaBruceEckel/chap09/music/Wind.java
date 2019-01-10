@@ -8,6 +8,6 @@ import static util.Print.*;
 public class Wind implements Instrument {
     // Redefine interface method:
     public void play(Note n) { System.out.println("Wind.play() " + n); }
-    public String what() { return "Wind"; }
+    public String toString() { return "Wind"; }
     public void adjust() { print("Wind.adjust()");}
 } ///:~

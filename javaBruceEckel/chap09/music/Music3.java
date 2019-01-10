@@ -9,7 +9,7 @@ public class Music3 {
     public static void tuneAll(Instrument[] e) {
         for(Instrument i : e) tune(i);
     }
-    public static void what(Instrument i) { print(i.what()); }
+    public static void what(Instrument i) { print(i.toString()); }
     public static void whatAll(Instrument[] e) {
         for(Instrument i : e) what(i);
     }
