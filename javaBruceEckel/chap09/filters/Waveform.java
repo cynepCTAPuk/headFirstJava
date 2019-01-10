@@ -1,6 +1,5 @@
 package chap09.filters;
 
-//: interfaces/filters/Waveform.java
 public class Waveform {
     private static long counter;
     private final long id = counter++;
@@ -8,4 +7,4 @@ public class Waveform {
     public String toString() {
         return "Waveform " + id;
     }
-} ///:~
+}

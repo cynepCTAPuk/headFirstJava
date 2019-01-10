@@ -1,7 +1,5 @@
 package chap09.interfaceprocessor;
 
-//: interfaces/interfaceprocessor/FilterProcessor.java
-
 import chap09.filters.*;
 
 public class FilterProcessor {
@@ -11,11 +9,4 @@ public class FilterProcessor {
         Apply.process(new FilterAdapter(new HighPass(2.0)), w);
         Apply.process(new FilterAdapter(new BandPass(3.0, 4.0)), w);
     }
-} /* Output:
-Using Processor LowPass
-Waveform 0
-Using Processor HighPass
-Waveform 0
-Using Processor BandPass
-Waveform 0
-*///:~
+}
