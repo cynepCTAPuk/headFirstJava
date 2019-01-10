@@ -1,6 +1,6 @@
 package chap09;
 
-public interface First {
+interface First {
     void first();
 }
 
@@ -15,3 +15,4 @@ interface Third extends First {
 interface Fourth extends Second, Third {
     void fourth();
 }
+
