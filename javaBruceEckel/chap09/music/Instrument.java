@@ -3,11 +3,9 @@ package chap09.music;
 import static util.Print.*;
 
 //: polymorphism/music/Instrument.java
-class Instrument {
-    public void play(Note n) {
-        print("Instrument.play()");
-    }
+abstract class Instrument {
+    private int i; // Storage allocated for each
+    public abstract void play(Note n);
     public String what() { return "Instrument"; }
-    public void adjust() { print("Instrument.adjust()");}
+    public abstract void adjust();
 }
-///:~
