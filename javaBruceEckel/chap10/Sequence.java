@@ -18,7 +18,7 @@ public class Sequence {
         public Object current() { return items[i]; }
         public boolean end() { return i == items.length; }
         public void next() { if(i < items.length) i++; }
-        public Object outer(){ return Sequence.this; }
+        public Sequence outer(){ return Sequence.this; }
     }
     public Selector selector() { return new SequenceSelector(); }
 
