@@ -1,4 +1,6 @@
 package chap10;
 
-public class Destination {
-}
+//: innerclasses/Destination.java
+public interface Destination {
+    String readLabel();
+} ///:~
