@@ -11,7 +11,7 @@ public class Sequence {
     private Object[] items;
     private int next = 0;
     public Sequence(int size) { items = new Object[size]; }
-    public void add(Object x) { if(next < items.length) items[next++] = x; }
+    public void add(Object obj) { if(next < items.length) items[next++] = obj; }
 
     private class SequenceSelector implements Selector {
         private int i = 0;
