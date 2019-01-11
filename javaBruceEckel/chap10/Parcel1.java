@@ -1,5 +1,4 @@
 package chap10;
-
 //: innerclasses/Parcel1.java
 // Creating inner classes.
 public class Parcel1 {

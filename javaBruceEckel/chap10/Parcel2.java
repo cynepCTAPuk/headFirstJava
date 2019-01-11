@@ -21,6 +21,7 @@ public class Parcel2 {
     public static void main(String[] args) {
         Parcel2 p = new Parcel2();
         p.ship("Tasmania");
+
         Parcel2 q = new Parcel2();
 // Defining references to inner classes:
         Parcel2.Contents c = q.contents();
