@@ -7,7 +7,7 @@ import java.nio.*;
 import java.util.*;
 
 public class RandomWords implements Readable {
-    private static Random rand = new Random(47);
+    private static Random random = new Random(47);
     private static final char[] capitals = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
     private static final char[] lowers = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     private static final char[] vowels = "aeiou".toCharArray();
@@ -17,10 +17,10 @@ public class RandomWords implements Readable {
 
     public int read(CharBuffer cb) {
         if (count-- == 0) return -1; // Indicates end of input
-        cb.append(capitals[rand.nextInt(capitals.length)]);
+        cb.append(capitals[random.nextInt(capitals.length)]);
         for (int i = 0; i < 4; i++) {
-            cb.append(vowels[rand.nextInt(vowels.length)]);
-            cb.append(lowers[rand.nextInt(lowers.length)]);
+            cb.append(vowels[random.nextInt(vowels.length)]);
+            cb.append(lowers[random.nextInt(lowers.length)]);
         }
         cb.append(" ");
         return 10; // Number of characters appended
