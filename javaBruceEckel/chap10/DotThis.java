@@ -13,7 +13,9 @@ public class DotThis {
 
     public static void main(String[] args) {
         DotThis dt = new DotThis();
+        System.out.println(dt);
         DotThis.Inner dti = dt.inner();
+        System.out.println(dti.outer());
         dti.outer().f();
     }
 } /* Output:
