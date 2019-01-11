@@ -18,8 +18,8 @@ public class Sequence {
         public Object current() { return items[i]; }
         public boolean end() { return i == items.length; }
         public void next() { if(i < items.length) i++; }
+        public Object outer(){ return Sequence.this; }
     }
-
     public Selector selector() { return new SequenceSelector(); }
 
     public static void main(String[] args) {
@@ -29,7 +29,10 @@ public class Sequence {
         while(!selector.end()) {
             System.out.print(selector.current() + " ");
             selector.next();
+            if(selector.end()) System.out.println();
         }
+        System.out.println(sequence);
+        System.out.println();
     }
 } /* Output:
 0 1 2 3 4 5 6 7 8 9
