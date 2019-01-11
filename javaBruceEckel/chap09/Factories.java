@@ -31,6 +31,7 @@ public class Factories {
         s.method1();
         s.method2();
     }
+
     public static void main(String[] args) {
         serviceConsumer(new Implementation1Factory());
 // Implementations are completely interchangeable:
