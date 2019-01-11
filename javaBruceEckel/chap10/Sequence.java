@@ -3,8 +3,8 @@ package chap10;
 //: innerclasses/Sequence.java
 // Holds a sequence of Objects.
 interface Selector {
-    boolean end();
     Object current();
+    boolean end();
     void next();
 }
 public class Sequence {
@@ -16,8 +16,8 @@ public class Sequence {
     }
     private class SequenceSelector implements Selector {
         private int i = 0;
-        public boolean end() { return i == items.length; }
         public Object current() { return items[i]; }
+        public boolean end() { return i == items.length; }
         public void next() { if(i < items.length) i++; }
     }
     public Selector selector() { return new SequenceSelector(); }
