@@ -26,6 +26,24 @@ public class GreenhouseControls extends Controller {
         public String toString() { return "Light is off"; }
     }
 
+    private boolean air = false;
+    public class VentilationOn extends Event {
+        public VentilationOn(long delayTime) { super(delayTime); }
+        public void action() {
+            // Put hardware control code here to physically turn on the light.
+            air = true;
+        }
+        public String toString() { return "Ventilation is on"; }
+    }
+    public class VentilitionOff extends Event {
+        public VentilitionOff(long delayTime) { super(delayTime); }
+        public void action() {
+            // Put hardware control code here to physically turn off the light.
+            air = false;
+        }
+        public String toString() { return "Ventilation is off"; }
+    }
+
     private boolean water = false;
     public class WaterOn extends Event {
         public WaterOn(long delayTime) { super(delayTime); }
@@ -63,6 +81,7 @@ public class GreenhouseControls extends Controller {
         }
         public String toString() { return "Thermostat on day setting"; }
     }
+
     // An example of an action() that inserts a new one of itself into the event list:
     public class Bell extends Event {
         public Bell(long delayTime) { super(delayTime); }
