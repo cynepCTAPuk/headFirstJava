@@ -2,6 +2,7 @@ package chap10;
 
 //: innerclasses/Parcel6.java
 // Nesting a class within a scope.
+// Вложение класса в область действия
 public class Parcel6 {
     private void internalTracking(boolean b) {
         if(b) {
