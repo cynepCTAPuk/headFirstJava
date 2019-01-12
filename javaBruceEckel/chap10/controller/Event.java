@@ -10,11 +10,8 @@ public abstract class Event {
         this.delayTime = delayTime;
         start();
     }
-    public void start() { // Allows restarting С возможностью перезапуска
-        eventTime = System.nanoTime() + delayTime;
-    }
-    public boolean ready() {
-        return System.nanoTime() >= eventTime;
-    }
+    // Allows restarting. С возможностью перезапуска.
+    public void start() { eventTime = System.nanoTime() + delayTime; }
+    public boolean ready() { return System.nanoTime() >= eventTime; }
     public abstract void action();
 } ///:~
