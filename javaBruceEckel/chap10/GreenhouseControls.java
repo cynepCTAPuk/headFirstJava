@@ -43,7 +43,7 @@ public class GreenhouseControls extends Controller {
         }
         public String toString() { return "Greenhouse water is off"; }
     }
-    
+
     private String thermostat = "Day";
     public class ThermostatNight extends Event {
         public ThermostatNight(long delayTime) {
