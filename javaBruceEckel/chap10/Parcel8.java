@@ -7,9 +7,7 @@ public class Parcel8 {
     public Wrapping wrapping(int x) {
         // Base constructor call:
         return new Wrapping(x) { // Pass constructor argument.
-            public int value() {
-                return super.value() * 47;
-            }
+            public int value() { return super.value() * 47; }
         }; // Semicolon required
     }
     public static void main(String[] args) {
