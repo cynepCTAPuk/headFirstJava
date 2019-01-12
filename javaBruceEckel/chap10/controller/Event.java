@@ -2,6 +2,7 @@ package chap10.controller;
 
 //: innerclasses/controller/Event.java
 // The common methods for any control event.
+// Общие для всякого управляющего события методы
 public abstract class Event {
     private long eventTime;
     protected final long delayTime;
@@ -9,7 +10,7 @@ public abstract class Event {
         this.delayTime = delayTime;
         start();
     }
-    public void start() { // Allows restarting
+    public void start() { // Allows restarting С возможностью перезапуска
         eventTime = System.nanoTime() + delayTime;
     }
     public boolean ready() {
