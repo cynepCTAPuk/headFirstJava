@@ -2,6 +2,7 @@ package chap10;
 
 //: innerclasses/Parcel5.java
 // Nesting a class within a method.
+// Вложение класса в метод
 public class Parcel5 {
     public Destination destination(String s) {
         class PDestination implements Destination {
