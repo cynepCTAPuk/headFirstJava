@@ -12,12 +12,13 @@ public class Parcel6 {
             }
             TrackingSlip ts = new TrackingSlip("slip");
             String s = ts.getSlip();
+//            System.out.println(s);
         }
         // Can’t use it here! Out of scope:
 //    TrackingSlip ts = new TrackingSlip("x");
     }
     public void track() { internalTracking(true); }
-    
+
     public static void main(String[] args) {
         Parcel6 p = new Parcel6();
         p.track();
