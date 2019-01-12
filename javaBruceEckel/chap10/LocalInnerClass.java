@@ -23,6 +23,7 @@ public class LocalInnerClass {
         }
         return new LocalCounter();
     }
+
     // The same thing with an anonymous inner class:
     Counter getCounter2(final String name) {
         return new Counter() {
@@ -37,6 +38,7 @@ public class LocalInnerClass {
             }
         };
     }
+
     public static void main(String[] args) {
         LocalInnerClass lic = new LocalInnerClass();
         Counter
