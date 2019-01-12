@@ -3,6 +3,8 @@ package chap10;
 //: innerclasses/Parcel10.java
 // Using "instance initialization" to perform
 // construction on an anonymous inner class.
+// Использование "инициализации экземпляра" для выполнения
+// конструирования в анонимном внутреннем классе.
 public class Parcel10 {
     public Destination destination(final String dest, final float price) {
         return new Destination() {
