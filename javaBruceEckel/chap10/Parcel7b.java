@@ -2,6 +2,7 @@ package chap10;
 
 //: innerclasses/Parcel7b.java
 // Expanded version of Parcel7.java
+// Расширенная версия Parcel7.java
 public class Parcel7b {
     class MyContents implements Contents {
         private int i = 11;
