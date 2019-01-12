@@ -20,6 +20,6 @@ public class ApplesAndOrangesWithoutGenerics {
 //        apples.add(new Orange()); // Exception in thread "main" java.lang.ClassCastException:
         for(int i = 0; i < apples.size(); i++) ((Apple)apples.get(i)).id();
         System.out.println("We have " + apples.size() + " apples");
-// Orange is detected only at run time
+        // Orange is detected only at run time
     }
 } /* (Execute to see output) *///:~
