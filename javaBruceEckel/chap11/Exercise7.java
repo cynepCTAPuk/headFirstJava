@@ -1,12 +1,12 @@
 package chap11;
-
 import java.util.*;
+import static util.Print.*;
 
 class MyObject {
-    String str;
-    MyObject(String i) { this.str = i; }
-//    @Override public String toString() { return "MyObject{" + "str=" + str + '}'; }
-    @Override public String toString() { return str; }
+    private String string;
+    MyObject(String i) { this.string = i; }
+//    @Override public String toString() { return "MyObject{" + "string=" + string + '}'; }
+    @Override public String toString() { return string; }
 }
 
 public class Exercise7 {
@@ -14,16 +14,15 @@ public class Exercise7 {
         MyObject[] myObjects = new MyObject[10];
         for (int i = 0; i < myObjects.length; i++)
             myObjects[i] = new MyObject("" + (char)(i + 65));
-        System.out.println(Arrays.toString(myObjects));
+        print(Arrays.toString(myObjects));
 
         ArrayList<MyObject> list = new ArrayList<>(Arrays.asList(myObjects));
-        System.out.println(list);
-
         List<MyObject> sub = list.subList(1,3);
-        System.out.println(sub);
         list.removeAll(sub);
-        System.out.println(list);
+        print(list);
 
+        Iterator<MyObject> listItr = list.iterator();
+        while(listItr.hasNext()) printnb(listItr.next() + " ");
     }
 
 }
