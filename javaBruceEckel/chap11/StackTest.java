@@ -13,7 +13,7 @@ public class StackTest {
         }
         while (!stack2.empty()) {
             System.out.print(stack2.pop() + " ");
-            if(stack.empty()) System.out.println();
+            if(stack2.empty()) System.out.println();
         }
     }
 } /* Output:
