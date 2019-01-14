@@ -8,16 +8,7 @@ public class SetOfInteger {
     public static void main(String[] args) {
         Random rand = new Random(47);
         Set<Integer> intSet = new HashSet<>();
-        int rnd;
-        for (int i = 0; i < 40; i++) {
-            rnd = rand.nextInt(20);
-            System.out.print(rnd + " ");
-            intSet.add(rnd);
-        }
-        System.out.println();
-        Iterator<Integer> it = intSet.iterator();
-        while(it.hasNext()) System.out.print(it.next() + " ");
-        System.out.println();
+        for (int i = 0; i < 10_000; i++) intSet.add(rand.nextInt(30));
         System.out.println(intSet);
     }
 } /* Output:
