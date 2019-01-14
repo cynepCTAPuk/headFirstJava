@@ -11,10 +11,7 @@ public class StackTest {
             System.out.print(stack.pop() + " ");
             if(stack.empty()) System.out.println();
         }
-        while (!stack2.empty()) {
-            System.out.print(stack2.pop() + " ");
-            if(stack2.empty()) System.out.println();
-        }
+        while (!stack2.empty()) System.out.print(stack2.pop() + " ");
     }
 } /* Output:
 fleas has dog My
