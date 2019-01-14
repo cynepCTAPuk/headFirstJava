@@ -16,8 +16,9 @@ public class SetOfInteger {
         }
         System.out.println();
         Iterator<Integer> it = intSet.iterator();
-        while(it.hasNext()) System.out.print(it.remove() + " ");
-//        System.out.println(intSet);
+        while(it.hasNext()) System.out.print(it.next() + " ");
+        System.out.println();
+        System.out.println(intSet);
     }
 } /* Output:
 [15, 8, 23, 16, 7, 22, 9, 21, 6, 1, 29, 14, 24, 4, 19, 26, 11, 18, 3, 12, 27, 17, 2, 13, 28, 20, 25, 10, 5, 0]
