@@ -8,7 +8,11 @@ public class UniqueWords {
         Set<String> words = new TreeSet<>(
                 new TextFile("chap11/SetOperations.java", "\\W+"));
         System.out.println(words);
-        for(String string:words) System.out.print(string.length() + " ");
+
+        for(String string:words) {
+            if(string.co)
+            System.out.print(string.length() + " ");
+        }
     }
 } /* Output:
 [A, B, C, Collections, D, E, F, G, H, HashSet, I, J, K, L, M, N, Output, Print, Set, SetOperations, String, X, Y, Z, add, addAll, added, args, class, contains, containsAll, false, from, holding, import, in, java, main, mindview, net, new, print, public, remove, removeAll, removed, set1, set2, split, static, to, true, util, void]
