@@ -16,12 +16,12 @@ public class QueueDemo {
 
         Queue<Integer> queue = new LinkedList<>();
         for(int i = 0; i < 10; i++) queue.offer(rand.nextInt(i + 10));
-        print(queue);
+        print(queue.size());
         printQ(queue);
 
         Queue<Character> qc = new LinkedList<>();
         for(char c : "Brontosaurus".toCharArray()) qc.offer(c);
-        print(qc);
+        print(qc.size());
         printQ(qc);
     }
 } /* Output:
