@@ -1,6 +1,5 @@
-package chap11;
-
 //: holding/CollectionSequence.java
+package chap11;
 import typeinfo.pets.*;
 import java.util.*;
 public class CollectionSequence extends AbstractCollection<Pet> {
