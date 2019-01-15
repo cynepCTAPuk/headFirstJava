@@ -13,6 +13,7 @@ public class SetOperations {
         set1.add("M");
         print("H: " + set1.contains("H"));
         print("N: " + set1.contains("N"));
+
         Set<String> set2 = new HashSet<>();
         Collections.addAll(set2, "H I J K L".split(" "));
         print("set2 in set1: " + set1.containsAll(set2));
@@ -26,9 +27,14 @@ public class SetOperations {
 
         String[] strings = "X 3 | 0 A B C D E FF G H II J K L".split(" ");
         System.out.println("strings " + Arrays.toString(strings));
+
         Set<String> hashSet = new HashSet<>();
         hashSet.addAll(Arrays.asList(strings));
         System.out.println("hashSet " + hashSet);
+
+        Set<String> test = new TreeSet<>(hashSet);
+        System.out.println("testSet " + test);
+
         Set<String> treeSet = new TreeSet<>();
         treeSet.addAll(Arrays.asList(strings));
         System.out.println("treeSet " + treeSet);
