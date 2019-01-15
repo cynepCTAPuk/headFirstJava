@@ -22,7 +22,7 @@ public class SetOperations {
         set1.removeAll(set2);
         print("set2 removed from set1: " + set1);
         Collections.addAll(set1, "X Y Z".split(" "));
-        print("‘X Y Z’ added to set1: " + set1);
+        print("X Y Z added to set1: " + set1);
 
         String[] strings = "X 3 | 0 A B C D E FF G H II J K L".split(" ");
         System.out.println("strings " + Arrays.toString(strings));

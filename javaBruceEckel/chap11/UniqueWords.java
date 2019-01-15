@@ -2,7 +2,7 @@ package chap11;
 
 //: holding/UniqueWords.java
 import java.util.*;
-import net.mindview.util.*;
+import util.*;
 public class UniqueWords {
     public static void main(String[] args) {
         Set<String> words = new TreeSet<String>(
