@@ -25,7 +25,7 @@ public class SetOperations {
         Collections.addAll(set1, "X Y Z".split(" "));
         print("X Y Z added to set1: " + set1);
 
-        String[] strings = "X 3 | 0 A B C D E FF G H II J K L".split(" ");
+        String[] strings = "A B C D E FF G H II J K L".split(" ");
         System.out.println("strings " + Arrays.toString(strings));
 
         Set<String> hashSet = new HashSet<>();
