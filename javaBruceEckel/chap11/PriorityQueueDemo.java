@@ -1,13 +1,15 @@
 package chap11;
 
 //: holding/PriorityQueueDemo.java
+
 import java.util.*;
+
 public class PriorityQueueDemo {
     public static void main(String[] args) {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
         Random rand = new Random(47);
 
-        for(int i = 0; i < 10; i++) priorityQueue.offer(rand.nextInt(10));
+        for (int i = 0; i < 10; i++) priorityQueue.offer(rand.nextInt(10));
         QueueDemo.printQ(priorityQueue);
 
         List<Integer> ints = Arrays.asList(
@@ -31,9 +33,14 @@ public class PriorityQueueDemo {
         QueueDemo.printQ(stringPQ);
 
         Set<Character> charSet = new HashSet<>();
-        for(char c : fact.toCharArray()) charSet.add(c); // Autoboxing
+        for (char c : fact.toCharArray()) charSet.add(c); // Autoboxing
         PriorityQueue<Character> characterPQ = new PriorityQueue<>(charSet);
         QueueDemo.printQ(characterPQ);
+
+        Random random = new Random(47);
+        PriorityQueue<Double> doublePQ = new PriorityQueue<>();
+        for (int i = 0; i < 10; i++) doublePQ.offer(random.nextDouble());
+        while (doublePQ.peek() != null) System.out.print(doublePQ.poll() + " ");
     }
 } /* Output:
 0 1 1 1 1 1 3 5 8 14
