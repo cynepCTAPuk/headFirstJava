@@ -35,12 +35,4 @@ public class SetOperations {
         Set<String> test = new TreeSet<>(hashSet);
         System.out.println("testSet " + test);
     }
-} /* Output:
-H: true
-N: false
-set2 in set1: true
-set1: [D, K, C, B, L, G, I, M, A, F, J, E]
-set2 in set1: false
-set2 removed from set1: [D, C, B, G, M, A, F, E]
-‘X Y Z’ added to set1: [Z, D, C, B, G, M, A, F, Y, X, E]
-*///:~
+}
