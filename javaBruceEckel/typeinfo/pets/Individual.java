@@ -10,8 +10,8 @@ public class Individual implements Comparable<Individual> {
         return getClass().getSimpleName() + (name == null ? "" : " " + name);
     }
     public long id() { return id; }
-    public boolean equals(Object o) {
-        return o instanceof Individual && id == ((Individual)o).id;
+    public boolean equals(Object obj) {
+        return obj instanceof Individual && id == ((Individual)obj).id;
     }
     public int hashCode() {
         int result = 17;
