@@ -41,6 +41,10 @@ public class PriorityQueueDemo {
         PriorityQueue<Double> doublePQ = new PriorityQueue<>();
         for (int i = 0; i < 10; i++) doublePQ.offer(random.nextDouble());
         while (doublePQ.peek() != null) System.out.print(doublePQ.poll() + " ");
+
+        PriorityQueue<SimpleClass> simplePQ = new PriorityQueue<>();
+//        for (int i = 0; i < 10 ; i++) simplePQ.offer(new SimpleClass());
+//        System.out.println(simplePQ);
     }
 } /* Output:
 0 1 1 1 1 1 3 5 8 14
