@@ -34,10 +34,6 @@ public class SetOperations {
 
         Set<String> test = new TreeSet<>(hashSet);
         System.out.println("testSet " + test);
-
-        Set<String> treeSet = new TreeSet<>();
-        treeSet.addAll(Arrays.asList(strings));
-        System.out.println("treeSet " + treeSet);
     }
 } /* Output:
 H: true

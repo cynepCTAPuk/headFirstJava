@@ -10,7 +10,7 @@ public class UniqueWords {
     public static void main(String[] args) {
         Set<String> words = new TreeSet<>(
                 new TextFile("chap11/SetOperations.java", "\\W+"));
-        System.out.println(words);
+//        System.out.println(words);
 
         String vowels = "aeiouyAEIOUY";
         int countAll = 0;
