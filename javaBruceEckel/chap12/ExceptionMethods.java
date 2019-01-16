@@ -8,9 +8,9 @@ public class ExceptionMethods {
             throw new Exception("My Exception");
         } catch(Exception e) {
             print("Caught Exception");
-            print("getMessage():" + e.getMessage());
-            print("getLocalizedMessage():" + e.getLocalizedMessage());
-            print("toString():" + e);
+            print("getMessage(): " + e.getMessage());
+            print("getLocalizedMessage(): " + e.getLocalizedMessage());
+            print("toString(): " + e);
             print("printStackTrace():");
             e.printStackTrace(System.out);
         }
