@@ -4,8 +4,7 @@ package chap12;
 import java.util.logging.*;
 import java.io.*;
 class LoggingException extends Exception {
-    private static Logger logger =
-            Logger.getLogger("LoggingException");
+    private static Logger logger = Logger.getLogger("LoggingException");
     public LoggingException() {
         StringWriter trace = new StringWriter();
         printStackTrace(new PrintWriter(trace));
@@ -18,6 +17,11 @@ public class LoggingExceptions {
             throw new LoggingException();
         } catch(LoggingException e) {
             System.err.println("Caught " + e);
+        }
+        try {
+            Thread.sleep(2_000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         try {
             throw new LoggingException();
