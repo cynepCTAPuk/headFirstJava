@@ -1,9 +1,9 @@
 package util;
 
-//: net/mindview/simple/List.java
+//: net/mindview/simple/ListMindView.java
 // Creating a package.
 //package net.mindview.simple;
-class ListMindView {
+public class ListMindView {
     public ListMindView() {
         System.out.println("net.mindview.simple.List");
     }
