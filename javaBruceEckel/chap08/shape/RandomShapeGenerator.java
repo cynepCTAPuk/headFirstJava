@@ -4,6 +4,9 @@ package chap08.shape;
 // A "factory" that randomly creates shapes.
 import java.util.*;
 public class RandomShapeGenerator {
+    int size;
+    public RandomShapeGenerator(int size) { this.size = size; }
+
     private Random rand = new Random();
     public Shape next() {
         switch(rand.nextInt(4)) {
