@@ -3,8 +3,8 @@ package util;
 //: net/mindview/simple/List.java
 // Creating a package.
 //package net.mindview.simple;
-public class List {
-    public List() {
+class ListMindView {
+    public ListMindView() {
         System.out.println("net.mindview.simple.List");
     }
 } ///:~
