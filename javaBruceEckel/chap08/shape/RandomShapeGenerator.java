@@ -5,7 +5,7 @@ package chap08.shape;
 import java.util.*;
 public class RandomShapeGenerator {
     int size;
-    public RandomShapeGenerator() {size =1; }
+    public RandomShapeGenerator() { size =1; }
     public RandomShapeGenerator(int size) { this.size = size; }
 
     private Random rand = new Random();
