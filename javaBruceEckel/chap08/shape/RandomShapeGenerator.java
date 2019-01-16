@@ -21,7 +21,8 @@ public class RandomShapeGenerator implements Iterator<Shape>{
         }
     }
     public static void main(String[] args) {
-        RandomShapeGenerator shapeGenerator = new RandomShapeGenerator(3);
-        System.out.println(shapeGenerator.next().fill());
+        RandomShapeGenerator shapeGenerator = new RandomShapeGenerator();
+        System.out.println(shapeGenerator.next());
+        System.out.println(shapeGenerator.next());
     }
 } ///:~
