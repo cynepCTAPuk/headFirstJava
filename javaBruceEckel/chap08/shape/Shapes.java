@@ -3,11 +3,11 @@ package chap08.shape;
 //: polymorphism/Shapes.java
 // Polymorphism in Java.
 public class Shapes {
-    private static RandomShapeGenerator gen = new RandomShapeGenerator();
+    private static RandomShapeGenerator shape = new RandomShapeGenerator();
     public static void main(String[] args) {
         Shape[] shapes = new Shape[3];
         // Fill up the array with shapes:
-        for(int i = 0; i < shapes.length; i++) shapes[i] = gen.next();
+        for(int i = 0; i < shapes.length; i++) shapes[i] = shape.next();
         // Make polymorphic method calls:
         for(Shape shp : shapes) {
             shp.draw();
