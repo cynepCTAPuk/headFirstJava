@@ -3,7 +3,7 @@ package chap08.shape;
 //: polymorphism/Shapes.java
 // Polymorphism in Java.
 public class Shapes {
-    private static RandomShapeGenerator gen = new RandomShapeGenerator(1);
+    private static RandomShapeGenerator gen = new RandomShapeGenerator();
     public static void main(String[] args) {
         Shape[] shapes = new Shape[3];
         // Fill up the array with shapes:
