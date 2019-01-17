@@ -1,6 +1,7 @@
 //: exceptions/LostMessage.java
 // How an exception can be lost.
 package chap12;
+
 class VeryImportantException extends Exception {
     public String toString() { return "A very important exception!"; }
 }
