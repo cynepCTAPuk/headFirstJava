@@ -1,4 +1,4 @@
-xpackage chap12;
+package chap12;
 //: exceptions/DynamicFields.java
 // A Class that dynamically adds fields to itself.
 // Demonstrates exception chaining.
