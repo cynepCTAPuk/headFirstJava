@@ -5,7 +5,8 @@ package strings;
 import java.util.*;
 public class InfiniteRecursion {
     public String toString() {
-        return " InfiniteRecursion address: " + this + "\n";
+//        return " InfiniteRecursion address: " + this + "\n";
+        return "\n" + super.toString();
     }
 
     public static void main(String[] args) {
