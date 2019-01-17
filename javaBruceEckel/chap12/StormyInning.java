@@ -28,7 +28,7 @@ public class StormyInning extends Inning implements Storm {
 //    void walk() throws PopFoul {} //Compile error
     // Interface CANNOT add exceptions to existing
     // methods from the base class:
-//    public void event() throws RainedOut {}
+//    public void event() throws RainedOut {} //Compile error
     // If the method doesn’t already exist in the base class, the exception is OK:
     public void rainHard() throws RainedOut {}
     // You can choose to not throw any exceptions, even if the base version does:
