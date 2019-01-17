@@ -10,6 +10,7 @@ public class WithFinally {
             sw.on();
             // Code that can throw exceptions...
             f();
+//            throw new RuntimeException();
         } catch(OnOffException1 e) {
             System.out.println("OnOffException1");
         } catch(OnOffException2 e) {
