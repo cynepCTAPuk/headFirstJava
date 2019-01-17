@@ -1,5 +1,5 @@
-package chap12;
 //: exceptions/Switch.java
+package chap12;
 import static util.Print.*;
 public class Switch {
     private boolean state = false;
