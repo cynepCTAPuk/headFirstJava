@@ -3,13 +3,19 @@ package chap12;
 // Ignoring RuntimeExceptions.
 // {ThrowsException}
 public class NeverCaught {
-    static void f() {
-        throw new RuntimeException("From f()");
+    static void f(String string) {
+        throw new RuntimeException(string);
     }
     static void g() {
-        f();
+        String string = "From g()";
+        f(string);
     }
     public static void main(String[] args) {
-        g();
+        try {
+            g();
+        } catch (Exception e) {
+            System.out.println("Catch");
+            e.printStackTrace(System.out);
+        }
     }
 } ///:~
