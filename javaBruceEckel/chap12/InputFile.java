@@ -10,12 +10,11 @@ public class InputFile {
             // Other code that might throw exceptions
         } catch(FileNotFoundException e) { System.out.println("Could not open " + fname);
             // Wasn’t open, so don’t close it
-            throw e;
+            throw e; // Rethrow
         } catch(Exception e) {
             // All other exceptions must close it
             try { in.close();
-            } catch(IOException e2) { System.out.println("in.close() unsuccessful");
-            }
+            } catch(IOException e2) { System.out.println("in.close() unsuccessful"); }
             throw e; // Rethrow
         } finally { // Don’t close it here!!!
         }
