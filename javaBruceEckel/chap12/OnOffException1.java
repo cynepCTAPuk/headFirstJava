@@ -1,4 +1,3 @@
 package chap12;
-
-public class OnOffException1 {
-}
+//: exceptions/OnOffException1.java
+public class OnOffException1 extends Exception {} ///:~
