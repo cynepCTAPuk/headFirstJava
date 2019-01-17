@@ -8,8 +8,7 @@ public class InputFile {
         try {
             in = new BufferedReader(new FileReader(fname));
             // Other code that might throw exceptions
-        } catch(FileNotFoundException e) {
-            System.out.println("Could not open " + fname);
+        } catch(FileNotFoundException e) { System.out.println("Could not open " + fname);
             // Wasn’t open, so don’t close it
             throw e;
         } catch(Exception e) {
