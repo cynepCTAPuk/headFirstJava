@@ -14,7 +14,7 @@ public class Turtle {
     }
     public static void main(String[] args) {
         PrintStream outAlias = System.out;
-        Turtle tommy = new Turtle("Tommy", new Formatter(System.out));
+        Turtle tommy = new Turtle("Tommy", new Formatter(System.err));
         Turtle terry = new Turtle("Terry", new Formatter(outAlias));
         tommy.move(0,0);
         terry.move(4,8);
