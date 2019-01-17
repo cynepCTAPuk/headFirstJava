@@ -4,7 +4,10 @@ package chap12;
 import static util.Print.print;
 public class OnOffSwitch {
     private static Switch sw = new Switch();
-    public static void f() throws OnOffException1,OnOffException2 { print("f()"); }
+    public static void f() throws OnOffException1,OnOffException2 {
+        print("f()");
+        throw new OnOffException2();
+    }
     public static void main(String[] args) {
         try {
             sw.on();
