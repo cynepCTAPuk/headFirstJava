@@ -1,5 +1,5 @@
-package chap13_strings;
 //: strings/Replacing.java
+package chap13_strings;
 import static util.Print.*;
 public class Replacing {
     static String s = Splitting.knights;
