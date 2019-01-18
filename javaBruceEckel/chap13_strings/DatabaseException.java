@@ -9,6 +9,7 @@ public class DatabaseException extends Exception {
             throw new DatabaseException(3, 7, "Write failed");
         } catch(Exception e) {
             System.out.println(e);
+            e.printStackTrace();
         }
     }
 } /* Output:
