@@ -17,9 +17,12 @@ public class Hex {
     public static void main(String[] args) throws Exception {
         if(args.length == 0)
             // Test by displaying this class file:
+        {
             System.out.println( format(BinaryFile.read(
                     "out/Production/javaBruceEckel/util/Hex.class")));
-        else System.out.println( format(BinaryFile.read(new File(args[0]))));
+        } else {
+            System.out.println( format(BinaryFile.read(new File(args[0]))));
+        }
     }
 } /* Output: (Sample)
 00000: CA FE BA BE 00 00 00 31 00 52 0A 00 05 00 22 07
