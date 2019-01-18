@@ -9,13 +9,13 @@ public class ReceiptV02 {
     int a = 15; // Item width
     int b = 5;  // Qty width
     int c = 10; // Price width
-    String topRow =     "%-" + a + "s %" + b + "s %" + c + "s\n";
+    String title =      "%-" + a + "s %" + b + "s %" + c + "s\n";
     String itemRow =    "%-" + a + "." + a + "s %" + b + "d %" + c + ".2f\n";
-    String bottomRow =  "%-" + a + "s %" + b + "s %" + c + ".2f\n";
+    String endRow =     "%-" + a + "s %" + b + "s %" + c + ".2f\n";
 
     public void printTitle() {
-        f.format(topRow, "Item", "Qty", "Price");
-        f.format(topRow, "----", "---", "-----");
+        f.format(title, "Item", "Qty", "Price");
+        f.format(title, "----", "---", "-----");
     }
 
     public void print(String name, int qty, double price) {
@@ -24,9 +24,9 @@ public class ReceiptV02 {
     }
 
     public void printTotal() {
-        f.format(bottomRow, "Tax", "", total * 0.06);
-        f.format(topRow, "", "", "-----");
-        f.format(bottomRow, "Total", "", total * 1.06);
+        f.format(endRow, "Tax", "", total * 0.06);
+        f.format(title, "", "", "-----");
+        f.format(endRow, "Total", "", total * 1.06);
     }
 
     public static void main(String[] args) {
