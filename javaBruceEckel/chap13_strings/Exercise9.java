@@ -8,5 +8,6 @@ public class Exercise9 {
 
     public static void main(String[] args) {
         System.out.println(knights.replaceAll("[a|e|i|o|u|y|A|E|I|O|U|Y]","*"));
+        System.out.println(knights.replaceAll("\\p{Lower}","*"));
     }
 }
