@@ -8,7 +8,7 @@ import static util.Print.*;
 public class TestRegularExpression {
     public static void main(String[] args) {
         if(args.length < 2) {
-            print("Usage:\njava TestRegularExpression " + "characterSequence regularExpression+");
+            print("Usage:\njava TestRegularExpression characterSequence regularExpression+");
             System.exit(0);
         }
         print("Input: \"" + args[0] + "\"");
