@@ -5,7 +5,7 @@ import java.util.regex.*;
 
 import static util.Print.*;
 
-public class Groups {
+public class Exercise12 {
     static public final String POEM =
             "Twas brillig, and the slithy toves\n" +
                     "Did gyre and gimble in the wabe.\n" +
@@ -17,17 +17,13 @@ public class Groups {
                     "The frumious Bandersnatch.";
 
     public static void main(String[] args) {
-        Matcher m = Pattern.compile("(?m)(\\S+)\\s+((\\S+)\\s+(\\S+))$").matcher(POEM);
+        Matcher m = Pattern.compile("\\w+").matcher(POEM);
         int count = 0;
         while (m.find()) {
-            printnb(++count + " ");
-            for (int j = 0; j <= m.groupCount(); j++) {
-                printnb("[" + m.group(j) + "]\t");
-            }
-            print("");
+            count++;
+            printnb(m.group() + " ");
         }
-        print(0xff);
-        print(0xffff);
+        print("\n" + count);
     }
 } /* Output:
 [the slithy toves][the][slithy toves][slithy][toves]
