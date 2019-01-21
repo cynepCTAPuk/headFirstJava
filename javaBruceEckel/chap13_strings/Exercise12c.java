@@ -21,7 +21,7 @@ public class Exercise12c {
                     "The frumious Bandersnatch.";
 
     public static void main(String[] args) {
-        Matcher m = Pattern.compile("[a-z]\\w+").matcher(POEM);
+        Matcher m = Pattern.compile("(^[a-z])\\w+").matcher(POEM);
         Set<String> set = new TreeSet<>();
         int count = 0;
         while (m.find()) {
@@ -31,6 +31,6 @@ public class Exercise12c {
         }
         System.out.println("\n" + count);
         print(set);
-        print("Number of unique set that do not start with a capital letter: " + set.size());
+        print("Number of unique set that do not start with a capital letter:\n" + set.size());
     }
 }
