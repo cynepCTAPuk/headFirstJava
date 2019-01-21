@@ -21,7 +21,7 @@ public class Exercise12c {
                     "The frumious Bandersnatch.";
 
     public static void main(String[] args) {
-        Matcher m = Pattern.compile("(^[a-z])\\w+").matcher(POEM);
+        Matcher m = Pattern.compile("\\b[a-z]\\w+").matcher(POEM);
         Set<String> set = new TreeSet<>();
         int count = 0;
         while (m.find()) {
