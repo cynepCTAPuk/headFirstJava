@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static util.Print.*;
+import static util.Print.print;
 
-public class Exercise12 {
+public class Exercise12a {
     static public final String POEM =
             "Twas brillig, and the slithy toves\n" +
                     "Did gyre and gimble in the wabe.\n" +
