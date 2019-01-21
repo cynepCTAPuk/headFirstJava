@@ -25,21 +25,22 @@ public class StartEnd {
         Display d = new Display(regex);
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(s);
-        while(m.find())
-            d.display("find() ‘" + m.group() +
-                    "‘ start = "+ m.start() + " end = " + m.end());
-        if(m.lookingAt()) // No reset() necessary
-            d.display("lookingAt() start = "
-                    + m.start() + " end = " + m.end());
-        if(m.matches()) // No reset() necessary
-            d.display("matches() start = "
-                    + m.start() + " end = " + m.end());
+        while(m.find()) d.display(
+                "find() ‘" + m.group() + "‘ start = " + m.start() + " end = " + m.end());
+        if(m.lookingAt()) d.display( // No reset() necessary
+                "lookingAt() start = " + m.start() + " end = " + m.end());
+        if(m.matches()) d.display( // No reset() necessary
+                "matches() start = " + m.start() + " end = " + m.end());
     }
     public static void main(String[] args) {
         for(String in : input.split("\n")) {
             print("input : " + in);
             for(String regex : new String[]{
-                    "\\w*ere\\w*", "\\w*ever", "T\\w+", "Never.*?!"}) {
+                    "\\w*ere\\w*",
+                    "\\w*ever",
+                    "T\\w+",
+                    "Never.*?!"
+            }) {
                 examine(in, regex);
             }
         }
