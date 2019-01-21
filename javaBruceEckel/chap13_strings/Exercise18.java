@@ -1,10 +1,8 @@
 //: strings/JGrep.java
 // A very simple version of the "grep" program.
-// {Args: JGrep.java "\\b[Ssct]\\w+"}
+// {Args: JGrep.java "\\".*\\""}
 package chap13_strings;
-
 import util.TextFile;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
