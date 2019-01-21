@@ -18,7 +18,7 @@ public class Exercise12c {
                     "Beware the Jabberwock, my son,\n" +
                     "The jaws that bite, the claws that catch.\n" +
                     "Beware the Jubjub bird, and shun\n" +
-                    "The frumious Bandersnatch.";
+                    "The frumious Bandersnatch. z";
 
     public static void main(String[] args) {
         Matcher m = Pattern.compile("\\b[a-z]\\w+").matcher(POEM);
