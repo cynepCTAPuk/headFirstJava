@@ -1,9 +1,7 @@
 //: strings/Groups.java
 package chap13_strings;
 
-import java.util.Arrays;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 import static util.Print.print;
 
@@ -21,15 +19,9 @@ public class Exercise12a {
     public static void main(String[] args) {
         String[] poem = POEM.split("\\s|\\p{Punct}");
         print(poem.length + " ----- " + Arrays.toString(poem));
-        Map<String, Integer> map = new TreeMap<>();
+        Set<String> set = new TreeSet<>();
         for (String s : poem) {
-            if (!map.containsKey(s)) {
-                map.put(s, 1);
-            } else {
-                int key = map.get(s);
-                map.put(s, ++key);
-            }
-        }
-        print(map.size()+" ----- " +map);
+            set.add(s);        }
+        print(set.size() + " ----- " + set);
     }
 }
