@@ -26,11 +26,11 @@ public class Exercise12c {
         int count = 0;
         while (m.find()) {
             count++;
-            System.out.print(m.group() + " ");
+            System.out.print(m.group() + "(" + (m.end() - m.start()) + ") ");
             set.add(m.group());
         }
         System.out.println("\n" + count);
         print(set);
-        print("Number of unique set that do not start with a capital letter:\n" + set.size());
+        print(set.size());
     }
 }
