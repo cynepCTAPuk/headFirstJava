@@ -20,14 +20,13 @@ public class TheReplacements {
         // Replace one or more spaces at the beginning of each
         // line with no spaces. Must enable MULTILINE mode:
         s = s.replaceAll("(?m)^ +", "");
-        print("1--\n" + s);
-        s = s.replaceFirst("[aeiou]", "(VOWEL1)");
+//        print("1--\n" + s);
+//        s = s.replaceFirst("[aeiou]", "(VOWEL1)");
         StringBuffer sbuf = new StringBuffer();
-        Pattern p = Pattern.compile("[aeiou]");
+        Pattern p = Pattern.compile("[aeiou]\\w");
         Matcher m = p.matcher(s);
         // Process the find information as you
         while (m.find()) m.appendReplacement(sbuf, m.group().toUpperCase());
-        print(" --\n" + sbuf);
         m.appendTail(sbuf); // Put in the remainder of the text:
         print("2--\n" + sbuf);
     }
