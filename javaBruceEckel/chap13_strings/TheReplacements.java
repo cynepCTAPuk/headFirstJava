@@ -10,11 +10,10 @@ the special delimiters, then process the
 extracted block. !*/
 public class TheReplacements {
     public static void main(String[] args) throws Exception {
-        String s = TextFile.read("TheReplacements.java");
+        String s = TextFile.read("chap13_strings/TheReplacements.java");
         // Match the specially commented block of text above:
-        Matcher mInput =
-                Pattern.compile("/\\*!(.*)!\\*/", Pattern.DOTALL)
-                        .matcher(s);
+        Matcher mInput = Pattern.compile(
+                        "/\\*!(.*)!\\*/", Pattern.DOTALL).matcher(s);
         if(mInput.find()) s = mInput.group(1); // Captured by parentheses
         // Replace two or more spaces with a single space:
         s = s.replaceAll(" {2,}", " ");
