@@ -20,8 +20,7 @@ public class Exercise12a {
         String[] poem = POEM.split("\\s|\\p{Punct}");
         print(poem.length + " ----- " + Arrays.toString(poem));
         Set<String> set = new TreeSet<>();
-        for (String s : poem) {
-            set.add(s);        }
+        Collections.addAll(set, poem);
         print(set.size() + " ----- " + set);
     }
 }
