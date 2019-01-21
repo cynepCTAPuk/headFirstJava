@@ -1,10 +1,8 @@
 //: strings/Groups.java
 package chap13_strings;
-
 import java.util.Arrays;
 import java.util.Map;
 import java.util.TreeMap;
-
 import static util.Print.*;
 
 public class Exercise12 {

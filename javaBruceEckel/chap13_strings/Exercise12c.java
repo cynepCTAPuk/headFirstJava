@@ -1,9 +1,15 @@
 //: strings/Groups.java
 package chap13_strings;
-import java.util.*;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static util.Print.print;
 
-public class Exercise12a {
+public class Exercise12c {
     static public final String POEM =
             "Twas brillig, and the slithy toves\n" +
                     "Did gyre and gimble in the wabe.\n" +
@@ -15,10 +21,16 @@ public class Exercise12a {
                     "The frumious Bandersnatch.";
 
     public static void main(String[] args) {
-        String[] poem = POEM.split("\\s|\\p{Punct}");
-        print(poem.length + " ----- " + Arrays.toString(poem));
+        Matcher m = Pattern.compile("[a-z]\\w+").matcher(POEM);
         Set<String> set = new TreeSet<>();
-        Collections.addAll(set, poem);
-        print(set.size() + " ----- " + set);
+        int count = 0;
+        while (m.find()) {
+            count++;
+            System.out.print(m.group() + " ");
+            set.add(m.group());
+        }
+        System.out.println("\n" + count);
+        print(set);
+        print("Number of unique set that do not start with a capital letter: " + set.size());
     }
 }
