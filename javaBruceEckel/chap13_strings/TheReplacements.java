@@ -20,7 +20,7 @@ public class TheReplacements {
         // Replace one or more spaces at the beginning of each
         // line with no spaces. Must enable MULTILINE mode:
         s = s.replaceAll("(?m)^ +", "");
-        print(s);
+        print("1--\n" + s);
         s = s.replaceFirst("[aeiou]", "(VOWEL1)");
         StringBuffer sbuf = new StringBuffer();
         Pattern p = Pattern.compile("[aeiou]");
@@ -29,7 +29,7 @@ public class TheReplacements {
         while(m.find()) m.appendReplacement(sbuf, m.group().toUpperCase());
         // Put in the remainder of the text:
         m.appendTail(sbuf);
-        print(sbuf);
+        print("2--\n" + sbuf);
     }
 } /* Output:
 Here’s a block of text to use as input to
