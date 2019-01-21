@@ -5,16 +5,16 @@ import util.*;
 import static util.Print.*;
 /*! Here’s a block of text to use as input to
 the regular expression matcher. Note that we’ll
-first extract the block of text by looking for
+first   extract the block of text by looking for
 the special delimiters, then process the
 extracted block. !*/
 public class TheReplacements {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         String s = TextFile.read("chap13_strings/TheReplacements.java");
         // Match the specially commented block of text above:
         Matcher mInput = Pattern.compile(
-                        "/\\*!(.*)!\\*/", Pattern.DOTALL).matcher(s);
-        if(mInput.find()) s = mInput.group(1); // Captured by parentheses
+                "/\\*!(.*)!\\*/", Pattern.DOTALL).matcher(s);
+        if (mInput.find()) s = mInput.group(1); // Captured by parentheses
         // Replace two or more spaces with a single space:
         s = s.replaceAll(" {2,}", " ");
         // Replace one or more spaces at the beginning of each
@@ -26,9 +26,9 @@ public class TheReplacements {
         Pattern p = Pattern.compile("[aeiou]");
         Matcher m = p.matcher(s);
         // Process the find information as you
-        while(m.find()) m.appendReplacement(sbuf, m.group().toUpperCase());
-        // Put in the remainder of the text:
-        m.appendTail(sbuf);
+        while (m.find()) m.appendReplacement(sbuf, m.group().toUpperCase());
+        print(" --\n" + sbuf);
+        m.appendTail(sbuf); // Put in the remainder of the text:
         print("2--\n" + sbuf);
     }
 } /* Output:
