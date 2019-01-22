@@ -12,6 +12,7 @@ public class SimpleRead {
             System.out.println(name);
             System.out.println("How old are you? What is your favorite double?");
             System.out.println("(input: <age> <double>)");
+
             String numbers = input.readLine();
             System.out.println(numbers);
             String[] numArray = numbers.split(" ");
