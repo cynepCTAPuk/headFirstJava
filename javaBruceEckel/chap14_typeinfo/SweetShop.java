@@ -1,6 +1,6 @@
-package chap14_typeinfo;
 //: typeinfo/SweetShop.java
 // Examination of the way the class loader works.
+package chap14_typeinfo;
 import static util.Print.*;
 class Candy { static { print("Loading Candy"); } }
 class Gum { static { print("Loading Gum"); } }
@@ -10,8 +10,7 @@ public class SweetShop {
         print("inside main");
         new Candy();
         print("After creating Candy");
-        try {
-            Class.forName("Gum");
+        try { Class.forName("Gum");
         } catch(ClassNotFoundException e) {
             print("Couldn’t find Gum");
         }
