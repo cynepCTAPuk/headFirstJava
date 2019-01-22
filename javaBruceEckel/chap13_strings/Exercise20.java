@@ -27,15 +27,11 @@ class ScannerTest {
 
     ScannerTest(String string) {
         Scanner sc = new Scanner(string);
-        i = 0;
+//        sc.useDelimiter("\\s*\\,\\s*"); // java.util.InputMismatchException
         i = sc.nextInt();
-        l = 0l;
         l = sc.nextLong();
-        f = 0.0f;
         f = sc.nextFloat();
-        d = 0.0;
         d = sc.nextDouble();
-        s = "";
         s = sc.next();
     }
 
