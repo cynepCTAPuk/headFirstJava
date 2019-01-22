@@ -17,7 +17,7 @@ public class Exercise12 {
                     "The frumious Bandersnatch.";
 
     public static void main(String[] args) {
-        Matcher m = Pattern.compile("\\w+").matcher(POEM);
+        Matcher m = Pattern.compile("\\w+       ").matcher(POEM);
         int count = 0;
         while (m.find()) {
             count++;
