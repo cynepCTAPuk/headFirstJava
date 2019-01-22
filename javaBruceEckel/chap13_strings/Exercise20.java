@@ -27,7 +27,8 @@ class ScannerTest {
 
     ScannerTest(String string) {
         Scanner sc = new Scanner(string);
-//        sc.useDelimiter("\\s*\\,\\s*"); // java.util.InputMismatchException
+        // java.util.InputMismatchException
+//        sc.useDelimiter("\\s*\\,\\s*");
         i = sc.nextInt();
         l = sc.nextLong();
         f = sc.nextFloat();
