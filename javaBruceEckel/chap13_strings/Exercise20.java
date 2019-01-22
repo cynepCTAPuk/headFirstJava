@@ -5,7 +5,7 @@ import java.util.*;
 public class Exercise20 {
     public static void main(String[] args) {
         ScannerTest st1 = new ScannerTest();
-        ScannerTest st2 = new ScannerTest("1 2 3 4 string");
+        ScannerTest st2 = new ScannerTest("1 2 3 4 5");
         System.out.println(st1);
         System.out.println(st2);
     }
