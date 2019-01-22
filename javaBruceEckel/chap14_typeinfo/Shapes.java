@@ -19,8 +19,7 @@ public class Shapes {
         List<Shape> shapeList = Arrays.asList(
                 new Circle(), new Square(), new Triangle()
         );
-        for(Shape shape : shapeList)
-            shape.draw();
+        for(Shape shape : shapeList) shape.draw();
     }
 } /* Output:
 Circle.draw()
