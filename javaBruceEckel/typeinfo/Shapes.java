@@ -17,10 +17,12 @@ public class Shapes {
         );
 //        for(Shape shape : shapeList) shape.draw();
 //        for(Shape shape : shapeList) print(shape.getClass().getSimpleName());
-        Rhomboid r = new Rhomboid();
+        Shape r = new Rhomboid();
         print((Shape)r);
 //        print((Circle)r);
 // incompatible types:typeinfo.Rhomboid cannot be converted to typeinfo.Circel
+        if(r instanceof Circle) r.draw();
+        else print (r.getClass().getSimpleName() + " is not Circle");
     }
 } /* Output:
 Circle.draw()
