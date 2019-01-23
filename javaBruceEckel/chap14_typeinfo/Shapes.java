@@ -14,10 +14,13 @@ class Square extends Shape {
 class Triangle extends Shape {
     public String toString() { return "Triangle"; }
 }
+class Rhomboid extends Shape {
+    public String toString() { return "Rhomboid"; }
+}
 public class Shapes {
     public static void main(String[] args) {
         List<Shape> shapeList = Arrays.asList(
-                new Circle(), new Square(), new Triangle()
+                new Circle(), new Square(), new Triangle(), new Rhomboid()
         );
         for(Shape shape : shapeList)
             shape.draw();
