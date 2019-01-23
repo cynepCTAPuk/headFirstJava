@@ -5,6 +5,7 @@ import static util.Print.*;
 interface HasBatteries {}
 interface Waterproof {}
 interface Shoots {}
+interface Jump {}
 
 class Toy {
     // Comment out the following default constructor
@@ -12,7 +13,7 @@ class Toy {
     Toy() {}
     Toy(int i) {}
 }
-class FancyToy extends Toy implements HasBatteries, Waterproof, Shoots {
+class FancyToy extends Toy implements HasBatteries, Waterproof, Shoots, Jump {
     FancyToy() { super(1); }
 }
 public class ToyTest {
