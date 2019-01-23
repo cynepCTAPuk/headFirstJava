@@ -1,8 +1,11 @@
 //: typeinfo/Shapes.java
-package chap14_typeinfo;
+package typeinfo;
 import java.util.*;
+
+import static util.Print.print;
+
 abstract class Shape {
-    void draw() { System.out.println(this + ".draw()"); }
+    void draw() { print(this + ".draw()"); }
     abstract public String toString();
 }
 class Circle extends Shape {
@@ -22,10 +25,8 @@ public class Shapes {
         List<Shape> shapeList = Arrays.asList(
                 new Circle(), new Square(), new Triangle(), new Rhomboid()
         );
-        for(Shape shape : shapeList)
-            shape.draw();
-        for(Shape shape : shapeList)
-            System.out.println(shape.getClass().getSimpleName());
+        for(Shape shape : shapeList) shape.draw();
+        for(Shape shape : shapeList) print(shape.getClass().getSimpleName());
     }
 } /* Output:
 Circle.draw()

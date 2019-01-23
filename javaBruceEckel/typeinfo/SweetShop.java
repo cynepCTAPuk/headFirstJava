@@ -1,6 +1,6 @@
 //: typeinfo/SweetShop.java
 // Examination of the way the class loader works.
-package chap14_typeinfo;
+package typeinfo;
 import static util.Print.*;
 class Candy { static { print("Loading Candy"); } }
 class Gum { static { print("Loading Gum"); } }
