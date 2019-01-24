@@ -2,7 +2,7 @@
 // A stack implemented with an internal linked structure.
 package chap15_generics;
 public class LinkedStack1<T> {
-    private static class Node {
+    private class Node {
         T item;
         Node next;
         Node() { item = null; next = null; }
