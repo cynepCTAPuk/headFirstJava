@@ -13,6 +13,7 @@ public class WatercolorSets {
         print("set1: " + set1);
         print("set2: " + set2);
         print("union(set1, set2): " + union(set1, set2));
+
         Set<Watercolors> subset = intersection(set1, set2);
         print("intersection(set1, set2): " + subset);
         print("difference(set1, subset): " + difference(set1, subset));
