@@ -1,4 +1,4 @@
-package chap15_generics;
+package generics.watercolors;
 public enum Watercolors {
     ZINC, LEMON_YELLOW, MEDIUM_YELLOW, DEEP_YELLOW, ORANGE,
     BRILLIANT_RED, CRIMSON, MAGENTA, ROSE_MADDER, VIOLET,
