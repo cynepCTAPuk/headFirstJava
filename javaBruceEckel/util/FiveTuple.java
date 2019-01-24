@@ -7,7 +7,6 @@ public class FiveTuple<A,B,C,D,E>  extends FourTuple<A,B,C,D> {
         fifth = e;
     }
     public String toString() {
-        return "(" + first + ", " + second + ", " +
-                third + ", " + fourth + ", " + fifth + ")";
+        return "(" + first + ", " + second + ", " + third + ", " + fourth + ", " + fifth + ")";
     }
 } ///:~
