@@ -24,7 +24,7 @@ public class LinkedStack1<T> {
 
     public static void main(String[] args) {
         LinkedStack1<String> lss = new LinkedStack1<>();
-        for(String s : "Phasers on stun!".split(" ")) lss.push(s);
+        for(String s : "1 2 3 4 5".split(" ")) lss.push(s);
         String s;
         while((s = lss.pop()) != null) System.out.println(s);
     }
