@@ -2,6 +2,7 @@
 // Adapt the Fibonacci class to make it Iterable.
 package chap15_generics;
 import java.util.*;
+
 public class IterableFibonacci extends Fibonacci implements Iterable<Integer> {
     private int n;
     public IterableFibonacci(int count) { n = count; }
