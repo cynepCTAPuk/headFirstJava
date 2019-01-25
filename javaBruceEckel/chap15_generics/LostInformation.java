@@ -4,17 +4,17 @@ import java.util.*;
 class Frob {}
 class Fnorkle {}
 class Quark<Q> {}
-class Particle<POSITION,MOMENTUM> {}
+class Particle<POSITION, MOMENTUM> {}
 public class LostInformation {
     public static void main(String[] args) {
-        List<Frob> list = new ArrayList<>();
-        Map<Frob,Fnorkle> map = new HashMap<>();
+        List<Frob> frobArrayList = new ArrayList<>();
+        Map<Frob,Fnorkle> frobFnorkleHashMap = new HashMap<>();
         Quark<Fnorkle> quark = new Quark<>();
-        Particle<Long,Double> p = new Particle<>();
-        System.out.println(Arrays.toString( list.getClass().getTypeParameters()));
-        System.out.println(Arrays.toString( map.getClass().getTypeParameters()));
+        Particle<Long,Double> particle = new Particle<>();
+        System.out.println(Arrays.toString( frobArrayList.getClass().getTypeParameters()));
+        System.out.println(Arrays.toString( frobFnorkleHashMap.getClass().getTypeParameters()));
         System.out.println(Arrays.toString( quark.getClass().getTypeParameters()));
-        System.out.println(Arrays.toString( p.getClass().getTypeParameters()));
+        System.out.println(Arrays.toString( particle.getClass().getTypeParameters()));
     }
 } /* Output:
 [E]
