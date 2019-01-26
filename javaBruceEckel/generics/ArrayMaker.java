@@ -1,5 +1,5 @@
-package util;
 //: generics/ArrayMaker.java
+package generics;
 import java.lang.reflect.*;
 import java.util.*;
 public class ArrayMaker<T> {
