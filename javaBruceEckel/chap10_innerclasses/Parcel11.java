@@ -1,5 +1,6 @@
-//: innerclasses/Parcel11.java
+package chap10_innerclasses;//: innerclasses/Parcel11.java
 // Nested classes (static inner classes).
+
 
 public class Parcel11 {
   private static class ParcelContents implements Contents {

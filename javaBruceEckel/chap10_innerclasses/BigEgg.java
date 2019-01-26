@@ -1,6 +1,6 @@
-//: innerclasses/BigEgg.java
+package chap10_innerclasses;//: innerclasses/BigEgg.java
 // An inner class cannot be overriden like a method.
-import static net.mindview.util.Print.*;
+import static util.Print.print;
 
 class Egg {
   private Yolk y;

@@ -1,5 +1,5 @@
-//: holding/ContainerMethods.java
-import net.mindview.util.*;
+package chap11_holding;//: holding/ContainerMethods.java
+import util.*;
 
 public class ContainerMethods {
   public static void main(String[] args) {
