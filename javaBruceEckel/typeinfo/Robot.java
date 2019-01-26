@@ -1,6 +1,8 @@
 //: typeinfo/Robot.java
+package typeinfo;
+import util.Null;
+
 import java.util.*;
-import util.*;
 
 public interface Robot {
   String name();

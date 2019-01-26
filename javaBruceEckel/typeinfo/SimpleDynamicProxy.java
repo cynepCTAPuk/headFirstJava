@@ -1,4 +1,5 @@
 //: typeinfo/SimpleDynamicProxy.java
+package typeinfo;
 import java.lang.reflect.*;
 
 class DynamicProxyHandler implements InvocationHandler {

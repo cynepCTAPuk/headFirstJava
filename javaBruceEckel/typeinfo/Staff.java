@@ -1,5 +1,7 @@
 //: typeinfo/Staff.java
-import java.util.*;
+package typeinfo;
+
+import java.util.ArrayList;
 
 public class Staff extends ArrayList<Position> {
   public void add(String title, Person person) {

@@ -2,9 +2,10 @@
 // Using reflection to show all the methods of a class,
 // even if the methods are defined in the base class.
 // {Args: ShowMethods}
+package typeinfo;
 import java.lang.reflect.*;
 import java.util.regex.*;
-import static net.mindview.util.Print.*;
+import static util.Print.*;
 
 public class ShowMethods {
   private static String usage =
@@ -25,25 +26,26 @@ public class ShowMethods {
       Method[] methods = c.getMethods();
       Constructor[] ctors = c.getConstructors();
       if(args.length == 1) {
-        for(Method method : methods)
-          print(
-            p.matcher(method.toString()).replaceAll(""));
-        for(Constructor ctor : ctors)
+        for(Method method : methods) {
+          print( p.matcher(method.toString()).replaceAll(""));
+        }
+        for(Constructor ctor : ctors) {
           print(p.matcher(ctor.toString()).replaceAll(""));
+        }
         lines = methods.length + ctors.length;
       } else {
-        for(Method method : methods)
+        for(Method method : methods) {
           if(method.toString().indexOf(args[1]) != -1) {
-            print(
-              p.matcher(method.toString()).replaceAll(""));
+            print( p.matcher(method.toString()).replaceAll(""));
             lines++;
           }
-        for(Constructor ctor : ctors)
+        }
+        for(Constructor ctor : ctors) {
           if(ctor.toString().indexOf(args[1]) != -1) {
-            print(p.matcher(
-              ctor.toString()).replaceAll(""));
+            print(p.matcher( ctor.toString()).replaceAll(""));
             lines++;
           }
+        }
       }
     } catch(ClassNotFoundException e) {
       print("No such class: " + e);

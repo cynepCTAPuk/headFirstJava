@@ -1,7 +1,7 @@
 //: typeinfo/FamilyVsExactType.java
 // The difference between instanceof and class
 package typeinfo;
-import static net.mindview.util.Print.*;
+import static util.Print.print;
 
 class Base {}
 class Derived extends Base {}	
@@ -12,12 +12,9 @@ public class FamilyVsExactType {
     print("x instanceof Base " + (x instanceof Base));
     print("x instanceof Derived "+ (x instanceof Derived));
     print("Base.isInstance(x) "+ Base.class.isInstance(x));
-    print("Derived.isInstance(x) " +
-      Derived.class.isInstance(x));
-    print("x.getClass() == Base.class " +
-      (x.getClass() == Base.class));
-    print("x.getClass() == Derived.class " +
-      (x.getClass() == Derived.class));
+    print("Derived.isInstance(x) " + Derived.class.isInstance(x));
+    print("x.getClass() == Base.class " + (x.getClass() == Base.class));
+    print("x.getClass() == Derived.class " + (x.getClass() == Derived.class));
     print("x.getClass().equals(Base.class)) "+
       (x.getClass().equals(Base.class)));
     print("x.getClass().equals(Derived.class)) " +
