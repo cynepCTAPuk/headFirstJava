@@ -1,6 +1,6 @@
 //: typeinfo/Robot.java
 import java.util.*;
-import net.mindview.util.*;
+import util.*;
 
 public interface Robot {
   String name();

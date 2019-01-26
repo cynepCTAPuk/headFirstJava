@@ -1,7 +1,7 @@
 //: polymorphism/PrivateOverride.java
 // Trying to override a private method.
-package polymorphism;
-import static net.mindview.util.Print.*;
+package chap08_polymorphism;
+import static util.Print.*;
 
 public class PrivateOverride {
   private void f() { print("private f()"); }
