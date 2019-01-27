@@ -1,5 +1,8 @@
-package generics;
 //: generics/CovariantArrays.java
+package generics;
+
+import java.util.*;
+
 class Fruit {}
 class Apple extends Fruit {}
 class Jonathan extends Apple {}
@@ -18,6 +21,8 @@ public class CovariantArrays {
             // Compiler allows you to add Oranges:
             fruit[0] = new Orange(); // ArrayStoreException
         } catch(Exception e) { System.out.println(e); }
+        
+        System.out.println(Arrays.toString(fruit));
     }
 } /* Output:
 java.lang.ArrayStoreException: Fruit
