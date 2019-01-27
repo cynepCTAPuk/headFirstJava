@@ -29,11 +29,14 @@ class SerialNumbered extends Decorator {
 public class Decoration {
     public static void main(String[] args) {
         TimeStamped t = new TimeStamped(new Basic());
-        System.out.println(t);
+        System.out.println(t.getStamp());
         TimeStamped t2 = new TimeStamped( new SerialNumbered(new Basic()));
+        System.out.println(t2.getStamp());
         //! t2.getSerialNumber(); // Not available
         SerialNumbered s = new SerialNumbered(new Basic());
+        System.out.println(s.getSerialNumber());
         SerialNumbered s2 = new SerialNumbered( new TimeStamped(new Basic()));
+        System.out.println(s2.getSerialNumber());
         //! s2.getStamp(); // Not available
     }
 } ///:~
