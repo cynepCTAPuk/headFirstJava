@@ -30,6 +30,10 @@ public class Decoration {
     public static void main(String[] args) {
         TimeStamped t = new TimeStamped(new Basic());
         System.out.println(t.getStamp());
+
+        try { Thread.sleep(100);
+        } catch (InterruptedException e) { e.printStackTrace(); }
+
         TimeStamped t2 = new TimeStamped( new SerialNumbered(new Basic()));
         System.out.println(t2.getStamp());
         //! t2.getSerialNumber(); // Not available
