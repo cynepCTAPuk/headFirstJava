@@ -16,9 +16,8 @@ public class ArrayOptions {
                 c[i] = new BerylliumSphere();
             }
         }
-            // Aggregate initialization:
-        BerylliumSphere[] d = { new BerylliumSphere(), new BerylliumSphere(), new BerylliumSphere()
-        };
+        // Aggregate initialization:
+        BerylliumSphere[] d = { new BerylliumSphere(), new BerylliumSphere(), new BerylliumSphere()};
         // Dynamic aggregate initialization:
         a = new BerylliumSphere[]{ new BerylliumSphere(), new BerylliumSphere(),
         };
