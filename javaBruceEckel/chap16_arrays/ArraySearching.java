@@ -7,7 +7,8 @@ import static util.Print.*;
 public class ArraySearching {
     public static void main(String[] args) {
         Generator<Integer> gen = new RandomGenerator.Integer(1000);
-        int[] a = ConvertTo.primitive( Generated.array(new Integer[25], gen));
+        int[] a = ConvertTo.primitive( Generated.array(new Integer[15], gen));
+        print("UnSort array: " + Arrays.toString(a));
         Arrays.sort(a);
         print("Sorted array: " + Arrays.toString(a));
         while(true) {
