@@ -1,13 +1,16 @@
 //: arrays/IceCream.java
 // Returning arrays from methods.
 package chap16_arrays;
+
 import java.util.*;
+
 public class IceCream {
     private static Random rand = new Random(47);
     static final String[] FLAVORS = {
             "Chocolate", "Strawberry", "Vanilla Fudge Swirl", "Mint Chip",
             "Mocha Almond Fudge", "Rum Raisin", "Praline Cream", "Mud Pie"
     };
+
     public static String[] flavorSet(int n) {
         if (n > FLAVORS.length) throw new IllegalArgumentException("Set too big");
         String[] results = new String[n];
@@ -22,8 +25,18 @@ public class IceCream {
         }
         return results;
     }
+
+    public static BerylliumSphere[] spheresArray(int n) {
+        BerylliumSphere[] result = new BerylliumSphere[n];
+        for (int i = 0; i < n; i++) { result[i] = new BerylliumSphere(); }
+        return result;
+    }
+
     public static void main(String[] args) {
-        for (int i = 0; i < 7; i++) { System.out.println(Arrays.toString(flavorSet(3))); }
+        for (int i = 0; i < 7; i++) {
+            System.out.println(Arrays.toString(flavorSet(3)));
+        }
+        System.out.println(Arrays.toString(spheresArray(5)));
     }
 } /* Output:
 [Rum Raisin, Mint Chip, Mocha Almond Fudge]
