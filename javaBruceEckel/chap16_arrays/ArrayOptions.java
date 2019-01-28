@@ -12,15 +12,13 @@ public class ArrayOptions {
         print("b: " + Arrays.toString(b));
         BerylliumSphere[] c = new BerylliumSphere[4];
         for(int i = 0; i < c.length; i++) {
-            if(c[i] == null) { // Can test for null reference
-                c[i] = new BerylliumSphere();
-            }
+            // Can test for null reference
+            if(c[i] == null) { c[i] = new BerylliumSphere(); }
         }
         // Aggregate initialization:
         BerylliumSphere[] d = { new BerylliumSphere(), new BerylliumSphere(), new BerylliumSphere()};
         // Dynamic aggregate initialization:
-        a = new BerylliumSphere[]{ new BerylliumSphere(), new BerylliumSphere(),
-        };
+        a = new BerylliumSphere[]{ new BerylliumSphere(), new BerylliumSphere(), };
         // (Trailing comma is optional in both cases)
         print("a.length = " + a.length);
         print("b.length = " + b.length);
