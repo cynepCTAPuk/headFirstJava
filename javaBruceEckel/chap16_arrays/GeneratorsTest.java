@@ -9,8 +9,7 @@ public class GeneratorsTest {
             System.out.print(type.getSimpleName() + ": ");
             try {
                 Generator<?> g = (Generator<?>)type.newInstance();
-                for(int i = 0; i < size; i++)
-                    System.out.printf(g.next() + " ");
+                for(int i = 0; i < size; i++) System.out.printf(g.next() + " ");
                 System.out.println();
             } catch(Exception e) {
                 throw new RuntimeException(e);
