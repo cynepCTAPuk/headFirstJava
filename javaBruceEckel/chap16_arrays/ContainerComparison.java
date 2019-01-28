@@ -21,7 +21,7 @@ public class ContainerComparison {
         int[] integers = { 0, 1, 2, 3, 4, 5 };
         print(Arrays.toString(integers));
         print(integers[4]);
-        
+
         List<Integer> intList = new ArrayList<>( Arrays.asList(0, 1, 2, 3, 4, 5));
         intList.add(97);
         print(intList);
