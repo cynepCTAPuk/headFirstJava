@@ -1,4 +1,5 @@
 //: typeinfo/BoundedClassReferences.java
+package typeinfo;
 
 public class BoundedClassReferences {
   public static void main(String[] args) {
