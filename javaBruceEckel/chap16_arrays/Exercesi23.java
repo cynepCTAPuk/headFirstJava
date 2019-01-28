@@ -12,7 +12,7 @@ public class Exercesi23 {
 
         Arrays.sort(integers);
         System.out.println(Arrays.toString(integers));
-        
+
         Arrays.sort(integers,Comparator.reverseOrder());
         System.out.println(Arrays.toString(integers));
     }
