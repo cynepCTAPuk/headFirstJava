@@ -16,8 +16,8 @@ public class CompType implements Comparable<CompType> {
         if(count++ % 4 == 0) result += "\n";
         return result;
     }
-    public int compareTo(CompType rv) {
-        return (i < rv.i ? -1 : (i == rv.i ? 0 : 1));
+    public int compareTo(CompType compType) {
+        return (i < compType.i ? -1 : (i == compType.i ? 0 : 1));
     }
     private static Random r = new Random(47);
     public static Generator<CompType> generator() {
