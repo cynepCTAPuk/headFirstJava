@@ -10,8 +10,10 @@ public class StringSorting {
         print("Before sort: " + Arrays.toString(sa));
         Arrays.sort(sa);
         print("After sort: " + Arrays.toString(sa));
+
         Arrays.sort(sa, Collections.reverseOrder());
         print("Reverse sort: " + Arrays.toString(sa));
+
         Arrays.sort(sa, String.CASE_INSENSITIVE_ORDER);
         print("Case-insensitive sort: " + Arrays.toString(sa));
     }
