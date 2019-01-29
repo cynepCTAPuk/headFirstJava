@@ -288,8 +288,10 @@ public class Countries {
         print(new HashSet<String>(names(6)));
         print(new LinkedHashSet<String>(names(6)));
         print(new TreeSet<String>(names(6)));
+
         print(new ArrayList<String>(names(6)));
         print(new LinkedList<String>(names(6)));
+
         print(capitals().get("BRAZIL"));
     }
 } /* Output:
