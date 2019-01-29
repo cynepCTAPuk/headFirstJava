@@ -6,21 +6,16 @@ import static util.Countries.*;
 
 public class Exercise03 {
     public static void main(String[] args) {
-        Map<String, String> treeMap = new TreeMap<>(capitals(2));
-        System.out.println(treeMap.size() + " treeMap " + treeMap);
-        Set<String> treeSet = new TreeSet<>(names(4));
-        System.out.println(treeSet.size() + " treeSet " +treeSet);
+        Set<String> hashSet = new HashSet<>();
+        for (int i = 0; i < 3; i++) hashSet.add(names().get(0));
+        System.out.println(hashSet.size() + " " + hashSet);
 
-        char ch = 'A';
+        Set<String> linkedHashSet = new LinkedHashSet<>();
+        for (int i = 0; i < 3; i++) linkedHashSet.add(names().get(50));
+        System.out.println(linkedHashSet.size() + " " + linkedHashSet);
 
-        Map<String, String> map = new TreeMap<>();
-        for (String s : capitals().keySet()) {
-            if (s.charAt(0) == ch) map.put(s, capitals().get(s));
-        }
-        System.out.println(map.size() + " " + map);
-
-        Set<String> set = new TreeSet<>();
-        for (String s : names()) if (s.charAt(0) == ch) set.add(s);
-        System.out.println(set.size() + " " + set);
+        Set<String> treeSet = new TreeSet<>();
+        for (int i = 0; i < 3; i++) treeSet.add(names().get(100));
+        System.out.println(treeSet.size() + " " + treeSet);
     }
 }
