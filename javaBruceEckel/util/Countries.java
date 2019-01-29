@@ -279,10 +279,12 @@ public class Countries {
     public static void main(String[] args) {
         print(capitals(10));
         print(names(10));
+
         print(new HashMap<String,String>(capitals(3)));
         print(new LinkedHashMap<String,String>(capitals(3)));
         print(new TreeMap<String,String>(capitals(3)));
         print(new Hashtable<String,String>(capitals(3)));
+
         print(new HashSet<String>(names(6)));
         print(new LinkedHashSet<String>(names(6)));
         print(new TreeSet<String>(names(6)));
