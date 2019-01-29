@@ -55,8 +55,9 @@ public class TextFile extends ArrayList<String> {
     // Simple test:
     public static void main(String[] args) {
         String file = read("util/TextFile.java");
-        write("c:/000/test.txt", file);
-        TextFile text = new TextFile("c:/000/test.txt");
+        write("c:/000/test1.txt", file);
+
+        TextFile text = new TextFile("c:/000/test1.txt");
         text.write("c:/000/test2.txt");
 
         // Break into unique sorted list of words:
