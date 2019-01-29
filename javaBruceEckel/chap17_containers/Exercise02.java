@@ -9,6 +9,7 @@ public class Exercise02 {
         Map<String, String> treeMap = new TreeMap<>(capitals());
         System.out.println("treeMap " + treeMap);
         System.out.println(treeMap.size());
+        
         Set<String> treeSet = new TreeSet<>(names());
         System.out.println("treeSet " +treeSet);
         System.out.println(treeSet.size());
