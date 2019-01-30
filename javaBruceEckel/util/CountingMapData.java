@@ -18,8 +18,7 @@ public class CountingMapData extends AbstractMap<Integer,String> {
         }
         public Integer getKey() { return index; }
         public String getValue() {
-            return chars[index % chars.length] +
-                            Integer.toString(index / chars.length);
+            return chars[index % chars.length] + index / chars.length;
         }
         public String setValue(String value) {
             throw new UnsupportedOperationException();
