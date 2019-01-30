@@ -5,7 +5,7 @@ import java.util.*;
 import static util.Print.*;
 public class SortedSetDemo {
     public static void main(String[] args) {
-        SortedSet<String> sortedSet = new TreeSet<>();
+        TreeSet<String> sortedSet = new TreeSet<>();
         String s = "one two three four five six seven eight";
         System.out.println(s);
         Collections.addAll(sortedSet, s.split("\\W+"));
