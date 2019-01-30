@@ -33,19 +33,20 @@ public class TypesForSets {
     }
     public static void main(String[] args) {
         test(new HashSet<HashType>(), HashType.class);
+        test(new HashSet<SetType>(), SetType.class);            // doesn't work
+        test(new HashSet<TreeType>(), TreeType.class);          // doesn't work
+
         test(new LinkedHashSet<HashType>(), HashType.class);
-        test(new TreeSet<TreeType>(), TreeType.class);
+        test(new LinkedHashSet<SetType>(), SetType.class);      // doesn't work
+        test(new LinkedHashSet<TreeType>(), TreeType.class);    // doesn't work
 
         // Things that don’t work:
-        test(new HashSet<SetType>(), SetType.class);
-        test(new HashSet<TreeType>(), TreeType.class);
-        test(new LinkedHashSet<SetType>(), SetType.class);
-        test(new LinkedHashSet<TreeType>(), TreeType.class);
 
-        try { test(new TreeSet<SetType>(), SetType.class);
+        try { test(new TreeSet<HashType>(), HashType.class);    // doesn't work
         } catch(Exception e) { System.out.println(e.getMessage()); }
-        try { test(new TreeSet<HashType>(), HashType.class);
+        try { test(new TreeSet<SetType>(), SetType.class);      // doesn't work
         } catch(Exception e) { System.out.println(e.getMessage()); }
+        test(new TreeSet<TreeType>(), TreeType.class);
     }
 } /* Output: (Sample)
 [2, 4, 9, 8, 6, 1, 3, 7, 5, 0]
