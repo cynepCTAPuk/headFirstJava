@@ -12,7 +12,7 @@ public class Maps {
         print(map.keySet()); // Produce a Set of the keys
     }
     public static void test(Map<Integer,String> map) {
-        print("-----"+map.getClass().getSimpleName()+"-----");
+        print("----- " + map.getClass().getSimpleName() + " -----");
         map.putAll(new CountingMapData(19));
         // Map has ‘Set’ behavior for keys:
         map.putAll(new CountingMapData(19));
