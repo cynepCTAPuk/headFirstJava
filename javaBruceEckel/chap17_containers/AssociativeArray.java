@@ -2,13 +2,10 @@
 // Associates keys with values.
 package chap17_containers;
 import static util.Print.*;
-
 public class AssociativeArray<K, V> {
     private Object[][] pairs;
     private int index;
-    public AssociativeArray(int length) {
-        pairs = new Object[length][2];
-    }
+    public AssociativeArray(int length) { pairs = new Object[length][2];}
     public void put(K key, V value) {
         if (index >= pairs.length) throw new ArrayIndexOutOfBoundsException();
         pairs[index++] = new Object[]{key, value};
@@ -38,11 +35,8 @@ public class AssociativeArray<K, V> {
         map.put("tree", "tall");
         map.put("earth", "brown");
         map.put("sun", "warm");
-        try {
-            map.put("extra", "object"); // Past the end
-        } catch (ArrayIndexOutOfBoundsException e) {
-            print("Too many objects!");
-        }
+        try { map.put("extra", "object"); // Past the end
+        } catch (ArrayIndexOutOfBoundsException e) { print("Too many objects!");}
         print(map);
         print(map.get("ocean"));
     }
