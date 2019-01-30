@@ -16,10 +16,11 @@ public class Exercise7a {
         while (itl.hasNext()) System.out.print(itl.next() + " ");
         System.out.println();
 
-        ListIterator<String> lit1 = arrayList.listIterator();
-        while (lit1.hasNext()) {
-            lit1.next();
+        ListIterator<String> lit1 = arrayList.listIterator(arrayList.size());
+        while (lit1.hasPrevious()) {
+            lit1.previous();
             lit1.add(((LinkedList<String>) linkedList).pollFirst());
+            lit1.previous();
         }
         System.out.println(arrayList);
 
