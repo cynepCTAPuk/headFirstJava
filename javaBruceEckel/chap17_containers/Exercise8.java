@@ -1,7 +1,4 @@
 package chap17_containers;
-
-import java.util.*;
-
 class SList<T> {
     Link<T> firstLink = new Link<>(null);
     public SListIterator<T> iterator() { return new SListIterator<T>(firstLink); }
