@@ -1,7 +1,10 @@
 package chap17_containers;
+
 import util.*;
+
 import java.util.*;
-public class Exercise7 {
+
+public class Exercise7a {
     public static void main(String[] args) {
         ArrayList<String> arrayList = new ArrayList<>(Countries.names(5));
         Iterator<String> ita = arrayList.iterator();
