@@ -6,10 +6,9 @@ import java.util.*;
 import static util.Print.*;
 public class SpringDetector {
     // Uses a Groundhog or class derived from Groundhog:
-    public static <T extends Groundhog>
-    void detectSpring(Class<T> type) throws Exception {
+    public static <T extends Groundhog> void detectSpring(Class<T> type) throws Exception {
         Constructor<T> ghog = type.getConstructor(int.class);
-        Map<Groundhog,Prediction> map = new HashMap<Groundhog,Prediction>();
+        Map<Groundhog,Prediction> map = new HashMap<>();
         for(int i = 0; i < 10; i++) map.put(ghog.newInstance(i), new Prediction());
         print("map = " + map);
         Groundhog gh = ghog.newInstance(3);
