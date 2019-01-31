@@ -24,6 +24,9 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
             return oldValue;
         } else { return null; }
     }
+    public void removeAll(List<K> keys) {
+        for(Object key: keys) remove(key);
+    }
     public void clear() { keys.clear(); values.clear(); }
 
     public Set<Map.Entry<K, V>> entrySet() {
