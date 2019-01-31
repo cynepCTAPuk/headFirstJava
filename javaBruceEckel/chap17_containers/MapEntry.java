@@ -26,8 +26,7 @@ public class MapEntry<K,V> implements Map.Entry<K,V> {
                 (key == null ?
                         me.getKey() == null :
                         key.equals(me.getKey())) && (value == null ?
-                        me.getValue()== null :
-                        value.equals(me.getValue()));
+                        me.getValue()== null : value.equals(me.getValue()));
     }
     public String toString() { return key + "=" + value; }
 } ///:~
