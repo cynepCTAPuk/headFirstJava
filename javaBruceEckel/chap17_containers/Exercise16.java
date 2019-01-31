@@ -32,7 +32,8 @@ public class Exercise16 {
         map.clear();
         print("map.isEmpty() after map.clear(): " + map.isEmpty());
         System.out.println(map);
-        map.putAll(new CountingMapData(17));
+
+        map.putAll(new CountingMapData(15));
         // Operations on the Set change the Map:
         printKeys(map);
         map.keySet().removeAll(map.keySet());
