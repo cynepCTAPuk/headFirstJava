@@ -30,12 +30,14 @@ public class Exercise16 {
         map.remove(key);
         printKeys(map);
         map.clear();
+        print("map.isEmpty() after map.clear(): " + map.isEmpty());
         System.out.println(map);
-        print("map.isEmpty(): " + map.isEmpty());
-        map.putAll(new CountingMapData(25));
+        map.putAll(new CountingMapData(17));
         // Operations on the Set change the Map:
+        printKeys(map);
         map.keySet().removeAll(map.keySet());
-        print("map.isEmpty(): " + map.isEmpty());
+        print("map.isEmpty() after map.keySet().removeAll(map.keySet()): " + map.isEmpty());
+        System.out.println(map);
     }
     public static void main(String[] args) {
         test(new SlowMap<Integer,String>());
