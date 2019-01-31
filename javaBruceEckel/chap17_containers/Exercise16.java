@@ -39,7 +39,6 @@ public class Exercise16 {
         print("map.isEmpty(): " + map.isEmpty());
     }
     public static void main(String[] args) {
-        test(new HashMap<Integer,String>());
         test(new SlowMap<Integer,String>());
     }
 }
