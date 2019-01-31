@@ -12,21 +12,18 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
         } else { keys.add(key); values.add(value);}
         return oldValue;
     }
-
     public V get(Object key) { // key is type Object, not K
         if (keys.contains(key)) { return values.get(keys.indexOf(key));}
         return null;
     }
-
     public V remove(Object key) {
         if (keys.contains(key)) { V oldValue = get(key); int idx = keys.indexOf(key);
             keys.remove(idx); values.remove(idx);
             return oldValue;
         } else { return null;}
     }
-    public void removeAll(List keys) { for(Object key: keys) remove(key);}
     public void clear() { keys.clear(); values.clear(); }
-
+    public void removeAll(List keys) { for(Object key: keys) remove(key);}
     public Set<Map.Entry<K, V>> entrySet() {
         Set<Map.Entry<K, V>> set = new HashSet<>();
         Iterator<K> ki = keys.iterator();
