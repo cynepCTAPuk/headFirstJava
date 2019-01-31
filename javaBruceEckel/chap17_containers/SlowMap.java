@@ -6,7 +6,6 @@ import java.util.*;
 public class SlowMap<K, V> extends AbstractMap<K, V> {
     private List<K> keys = new ArrayList<>();
     private List<V> values = new ArrayList<>();
-
     public V put(K key, V value) {
         V oldValue = get(key); // The old value or null
         if (!keys.contains(key)) {
@@ -22,14 +21,13 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
     }
 
     public V remove(Object key) {
-        if (!keys.contains(key)) return null;
-        else {
-            V v = get(key);
+        if (keys.contains(key)) {
+            V oldValue = get(key);
             int idx = keys.indexOf(key);
             keys.remove(idx);
             values.remove(idx);
-            return v;
-        }
+            return oldValue;
+        } else { return null; }
     }
     public void clear() { keys.clear(); values.clear(); }
 
