@@ -31,7 +31,7 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
             return v;
         }
     }
-
+    public void clear() { keys.clear(); values.clear(); }
 
     public Set<Map.Entry<K, V>> entrySet() {
         Set<Map.Entry<K, V>> set = new HashSet<>();

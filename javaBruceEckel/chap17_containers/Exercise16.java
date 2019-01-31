@@ -29,8 +29,6 @@ public class Exercise16 {
         print("map.containsValue(\"F0\"): " + map.containsValue("F0"));
         Integer key = map.keySet().iterator().next();
         print("First key in map: " + key);
-        Integer key1 = map.keySet().iterator().next();
-        print("First key in map: " + key1);
         map.remove(key);
         printKeys(map);
         map.clear();
