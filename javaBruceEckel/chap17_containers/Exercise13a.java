@@ -1,26 +1,15 @@
 package chap17_containers;
-
 import util.*;
-
 import java.util.*;
-
 public class Exercise13a {
-    public static void main(String[] args) {
-        String file = "chap17_containers/Exercise13.java";
-
+    static void printQtyWords(String file) {
         List<String> arrayList = new ArrayList<>(new TextFile(file, "\\W+"));
-        System.out.println(arrayList.size() + " " + arrayList);
-
-        Set<String> treeSet = new TreeSet<>(arrayList);
-        System.out.println(treeSet.size() + " " + treeSet);
-
         Map<String, Integer> map = new TreeMap<>();
-        for (String s : arrayList) {
-            if (map.containsKey(s)) {
-                int v = map.get(s);
-                map.put(s, ++v);
-            } else { map.put(s, 1); }
-        }
-        System.out.println(map.size() + " " + map);
+        for (String s : arrayList) map.put(s, map.containsKey(s) ? map.get(s) + 1 : 1);
+        System.out.println("Quantity words = " + map.size() + "\n" + map);
+    }
+    public static void main(String[] args) {
+        String file = "chap17_containers/Exercise13a.java";
+        printQtyWords(file);
     }
 }
