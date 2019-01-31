@@ -17,13 +17,13 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
         return null;
     }
     public void clear() { keys.clear(); values.clear(); }
-    public V remove(Object key) {
-        if (keys.contains(key)) { V oldValue = get(key); int idx = keys.indexOf(key);
-            keys.remove(idx); values.remove(idx);
+    public V remove(Object keys) {
+        if (this.keys.contains(keys)) {
+            V oldValue = get(keys); int idx = this.keys.indexOf(keys);
+            this.keys.remove(idx); values.remove(idx);
             return oldValue;
         } else { return null;}
     }
-    public void removeAll(List keys) { for(Object key: keys) remove(key);}
     public Set<Map.Entry<K, V>> entrySet() {
         Set<Map.Entry<K, V>> set = new HashSet<>();
         Iterator<K> ki = keys.iterator();
