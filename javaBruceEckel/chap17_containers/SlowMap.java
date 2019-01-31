@@ -8,10 +8,8 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
     private List<V> values = new ArrayList<>();
     public V put(K key, V value) {
         V oldValue = get(key); // The old value or null
-        if (!keys.contains(key)) {
-            keys.add(key);
-            values.add(value);
-        } else values.set(keys.indexOf(key), value);
+        if (keys.contains(key)) { values.set(keys.indexOf(key), value);
+        } else { keys.add(key); values.add(value); }
         return oldValue;
     }
 
@@ -21,11 +19,8 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
     }
 
     public V remove(Object key) {
-        if (keys.contains(key)) {
-            V oldValue = get(key);
-            int idx = keys.indexOf(key);
-            keys.remove(idx);
-            values.remove(idx);
+        if (keys.contains(key)) { V oldValue = get(key); int idx = keys.indexOf(key);
+            keys.remove(idx); values.remove(idx);
             return oldValue;
         } else { return null; }
     }
