@@ -29,7 +29,7 @@ public class SlowMap<K,V> extends AbstractMap<K,V> {
         SlowMap<String,String> m= new SlowMap<>();
         m.putAll(Countries.capitals(15));
         System.out.println(m);
-        System.out.println(m.get("BULGARIA"));
+        System.out.println(m.get("CONGO"));
         System.out.println(m.entrySet());
     }
 } /* Output:
