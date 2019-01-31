@@ -1,13 +1,11 @@
 //: containers/Maps.java
 // Things you can do with Maps.
 package chap17_containers;
-
 import util.*;
 
 import java.util.*;
 
 import static util.Print.*;
-
 public class Exercise16 {
     public static void printKeys(Map<Integer,String> map) {
         printnb("Size = " + map.size() + ", ");
@@ -32,6 +30,7 @@ public class Exercise16 {
         map.remove(key);
         printKeys(map);
         map.clear();
+        System.out.println(map);
         print("map.isEmpty(): " + map.isEmpty());
         map.putAll(new CountingMapData(25));
         // Operations on the Set change the Map:
