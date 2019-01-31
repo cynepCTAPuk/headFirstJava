@@ -9,8 +9,8 @@ public class MapEntry<K,V> implements Map.Entry<K,V> {
         this.key = key;
         this.value = value;
     }
-    public K getKey() { return key; }
-    public V getValue() { return value; }
+    public K getKey() { return key;}
+    public V getValue() { return value;}
     public V setValue(V v) {
         V result = value;
         value = v;
