@@ -21,6 +21,7 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
         while(it.hasNext()) {
             MapEntry<K,V> iPair = it.next();
             if(iPair.getKey().equals(key)) {
+                System.out.println("key collision: " + key);
                 oldValue = iPair.getValue();
                 it.set(pair); // Replace old with new
                 found = true;
@@ -47,10 +48,13 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
     }
     public static void main(String[] args) {
         SimpleHashMap<String,String> m = new SimpleHashMap<>();
-        m.putAll(Countries.capitals(25));
+        m.putAll(Countries.capitals(5));
         System.out.println(m);
-        System.out.println(m.get("ERITREA"));
-        System.out.println(m.entrySet());
+        m.put("ANGOLA", "Luanda");
+        m.put("ANGOLA", "Luanda");
+        System.out.println(m);
+//        System.out.println(m.get("ERITREA"));
+//        System.out.println(m.entrySet());
     }
 } /* Output:
 {CAMEROON=Yaounde, CONGO=Brazzaville, CHAD=N’djamena, COTE D’IVOIR
