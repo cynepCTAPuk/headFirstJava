@@ -23,15 +23,16 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
             probes++;
             MapEntry<K,V> iPair = it.next();
             if(iPair.getKey().equals(key)) {
-                System.out.print("key collision pair: " + pair + " ");
+                System.out.print("Key collision!" +
+                        " new pair: " + pair + " replaced old pair " + iPair + " ");
                 oldValue = iPair.getValue();
                 it.set(pair); // Replace old with new
                 found = true;
                 break;
             }
         }
-        if(probes != 0) System.out.println(
-                "probes: " + probes + " key: " + key + " index: " + index);
+        if(probes > 0) System.out.println(
+                "probes: " + probes + " pair: " + pair + " index: " + index);
         if(!found) buckets[index].add(pair);
         return oldValue;
     }
@@ -54,11 +55,12 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
         SimpleHashMap<String,String> m = new SimpleHashMap<>();
         m.putAll(Countries.capitals(255));
 //        System.out.println(m);
+        m.put("ANGOLA", "Luand");
         m.put("ANGOLA", "Luanda");
         m.put("BENIN", "Porto-Novo");
-//        System.out.println(m);
 //        System.out.println(m.get("ERITREA"));
 //        System.out.println(m.entrySet());
+        System.out.println(m.buckets[544]);
     }
 } /* Output:
 {CAMEROON=Yaounde, CONGO=Brazzaville, CHAD=N’djamena, COTE D’IVOIR
