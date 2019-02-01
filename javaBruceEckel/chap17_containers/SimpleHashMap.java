@@ -48,6 +48,10 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
             if(list != null) list.clear();
         }
     }
+
+    public V remove(Object key) {
+
+    }
     public Set<Map.Entry<K,V>> entrySet() {
         Set<Map.Entry<K,V>> set= new HashSet<>();
         for(LinkedList<MapEntry<K,V>> bucket : buckets) {
