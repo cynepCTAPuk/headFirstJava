@@ -2,13 +2,15 @@
 // Demonstrates performance differences in Lists.
 // {Args: 100 500} Small to keep build testing short
 package chap17_containers;
+
 import util.*;
+
 import java.util.Vector;
 import java.util.*;
 
 public class ListPerformance {
     static Random rand = new Random();
-    static int reps = 1000;
+    static int reps = 10_000;
     static List<Test<List<Integer>>> tests = new ArrayList<>();
     static List<Test<LinkedList<Integer>>> qTests = new ArrayList<>();
 
@@ -44,7 +46,7 @@ public class ListPerformance {
         });
         tests.add(new Test<List<Integer>>("iteradd") {
             int test(List<Integer> list, TestParam tp) {
-                final int LOOPS = 1000000;
+                final int LOOPS = 1_000_000;
                 int half = list.size() / 2;
                 ListIterator<Integer> it = list.listIterator(half);
                 for (int i = 0; i < LOOPS; i++)
@@ -137,8 +139,7 @@ public class ListPerformance {
         }
 
         // Convenience method:
-        public static void run(List<Integer> list,
-                               List<Test<List<Integer>>> tests) {
+        public static void run(List<Integer> list, List<Test<List<Integer>>> tests) {
             new ListTester(list, tests).timedTest();
         }
     }
@@ -163,7 +164,7 @@ public class ListPerformance {
         ListTester.run(new LinkedList<Integer>(), tests);
         ListTester.run(new Vector<Integer>(), tests);
         Tester.fieldWidth = 12;
-        Tester<LinkedList<Integer>> qTest = new Tester<>( new LinkedList<Integer>(), qTests);
+        Tester<LinkedList<Integer>> qTest = new Tester<>(new LinkedList<Integer>(), qTests);
         qTest.setHeadline("Queue tests");
         qTest.timedTest();
     }
