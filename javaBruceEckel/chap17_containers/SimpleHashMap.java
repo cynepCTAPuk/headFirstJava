@@ -50,7 +50,7 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
     }
 
     public V remove(Object key) {
-
+        return null;
     }
     public Set<Map.Entry<K,V>> entrySet() {
         Set<Map.Entry<K,V>> set= new HashSet<>();
