@@ -11,8 +11,7 @@ public class CountedString {
         s = str;
         created.add(s);
         // id is the total number of instances of this string in use by CountedString:
-        for(String s2 : created)
-            if(s2.equals(s)) id++;
+        for (String s2 : created) if (s2.equals(s)) id++;
     }
     public String toString() {
         return "String: " + s + " id: " + id + " hashCode(): " + hashCode();
@@ -26,20 +25,19 @@ public class CountedString {
         return result;
     }
     public boolean equals(Object o) {
-        return o instanceof CountedString &&
-                s.equals(((CountedString)o).s) &&
-                id == ((CountedString)o).id;
+        return o instanceof
+                CountedString && s.equals(((CountedString) o).s) && id == ((CountedString) o).id;
     }
+
     public static void main(String[] args) {
-        Map<CountedString,Integer> map =
-                new HashMap<CountedString,Integer>();
+        Map<CountedString, Integer> map = new HashMap<>();
         CountedString[] cs = new CountedString[5];
-        for(int i = 0; i < cs.length; i++) {
+        for (int i = 0; i < cs.length; i++) {
             cs[i] = new CountedString("hi");
-            map.put(cs[i], i); // Autobox int -> Integer
+            map.put(cs[i], i); // Autoboxing int -> Integer
         }
         print(map);
-        for(CountedString cstring : cs) {
+        for (CountedString cstring : cs) {
             print("Looking up " + cstring);
             print(map.get(cstring));
         }
