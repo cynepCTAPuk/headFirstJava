@@ -46,11 +46,18 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
     public void clear() { for (List list : buckets) { if(list != null) list.clear();}}
 
     public V remove(Object key) {
-        int index = Math.abs(key.hashCode()) % SIZE;
-        Iterator<MapEntry<K,V>> it = buckets[index].iterator();
-        while(it.next().getKey() == key) {
-            it.remove();
-            return null; }
+        if (get(key) != null) {
+            int index = Math.abs(key.hashCode()) % SIZE;
+            Iterator<MapEntry<K,V>> it = buckets[index].iterator();
+            while(it.hasNext()) {
+                MapEntry<K, V> iPair = it.next();
+                if (iPair.getKey().equals(key)) {
+                    V oldValue = iPair.getValue();
+                    it.remove();
+                    return oldValue;
+                }
+            }
+        }
         return null;
     }
     public Set<Map.Entry<K,V>> entrySet() {
@@ -71,7 +78,8 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
 //        System.out.println(m.get("ERITREA"));
 //        System.out.println(m.entrySet());
 //        System.out.println(m.buckets[544]);
-        m.clear();
+//        m.clear();
+        m.remove("BURKINA FASO");
         System.out.println(m);
 
     }
