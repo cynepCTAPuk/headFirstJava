@@ -6,7 +6,6 @@ public class Exercise19 {
     public static void main(String[] args) {
         String file = "chap17_containers/Exercise19.java";
         List<String> arrayList = new ArrayList<>(new TextFile(file, "\\W+"));
-
         Map<String, Integer> map = new SimpleHashMap<>();
         for (String s : arrayList) {
             if (map.containsKey(s)) {
