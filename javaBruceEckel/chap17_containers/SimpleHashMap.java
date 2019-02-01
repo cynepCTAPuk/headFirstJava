@@ -6,7 +6,7 @@ import util.*;
 import java.util.*;
 public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
     // Choose a prime number for the hash table size, to achieve a uniform distribution:
-    static final int SIZE = 997;
+    static final int SIZE = 1024 - 3; // 997
     // You can’t have a physical array of generics, but you can upcast to one:
     @SuppressWarnings("unchecked")
     LinkedList<MapEntry<K,V>>[] buckets = new LinkedList[SIZE];
@@ -18,16 +18,20 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
         MapEntry<K,V> pair = new MapEntry<>(key, value);
         boolean found = false;
         ListIterator<MapEntry<K,V>> it = bucket.listIterator();
+        int probes = 0;
         while(it.hasNext()) {
+            probes++;
             MapEntry<K,V> iPair = it.next();
             if(iPair.getKey().equals(key)) {
-                System.out.println("key collision: " + key);
+                System.out.print("key collision: " + key + " ");
                 oldValue = iPair.getValue();
                 it.set(pair); // Replace old with new
                 found = true;
                 break;
             }
         }
+        if(probes != 0) System.out.println(
+                "probes: " + probes + " key: " + key + " index: " + index);
         if(!found) buckets[index].add(pair);
         return oldValue;
     }
@@ -48,11 +52,11 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
     }
     public static void main(String[] args) {
         SimpleHashMap<String,String> m = new SimpleHashMap<>();
-        m.putAll(Countries.capitals(5));
-        System.out.println(m);
+        m.putAll(Countries.capitals(255));
+//        System.out.println(m);
         m.put("ANGOLA", "Luanda");
-        m.put("ANGOLA", "Luanda");
-        System.out.println(m);
+        m.put("BENIN", "Porto-Novo");
+//        System.out.println(m);
 //        System.out.println(m.get("ERITREA"));
 //        System.out.println(m.entrySet());
     }
