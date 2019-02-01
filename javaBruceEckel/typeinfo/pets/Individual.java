@@ -19,13 +19,13 @@ public class Individual implements Comparable<Individual> {
         result = 37 * result + (int) id;
         return result;
     }
-
     public int compareTo(Individual arg) {
         // Compare by class name first:
         String first = getClass().getSimpleName();
         String argFirst = arg.getClass().getSimpleName();
         int firstCompare = first.compareTo(argFirst);
-        if (firstCompare != 0) return firstCompare;
+        if (firstCompare != 0)
+            return firstCompare;
         if (name != null && arg.name != null) {
             int secondCompare = name.compareTo(arg.name);
             if (secondCompare != 0) return secondCompare;
