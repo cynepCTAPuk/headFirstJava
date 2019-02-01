@@ -16,7 +16,7 @@ public class Exercise26 {
         for (String s2 : created) if (s2.equals(s)) id++;
     }
     public String toString() {
-        return "String: " + s + " char: " + c + " id: " + id + " hashCode(): " + hashCode();
+        return "String: " + s + ", char: " + c + ", id: " + id + ", hashCode(): " + hashCode();
     }
     public int hashCode() {
         // The very simple approach: return s.hashCode() * id;
