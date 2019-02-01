@@ -34,10 +34,12 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
 
     public static void main(String[] args) {
         SlowMap<String, String> m = new SlowMap<>();
-        m.putAll(Countries.capitals(15));
+        m.putAll(Countries.capitals(5));
         System.out.println(m);
-        System.out.println(m.get("CONGO"));
+        System.out.println(m.get("BENIN"));
         System.out.println(m.entrySet());
+        m.remove("ANGOLA");
+        System.out.println(m);
     }
 } /* Output:
 {CAMEROON=Yaounde, CHAD=N’djamena, CONGO=Brazzaville, CAPE VERDE=Praia, ALGERIA=Algiers, COMOROS=Moroni, CENTRAL AFRICAN REPUBLIC=Bangui, BOTSWANA=Gaberone, BURUNDI=Bujumbura, BENIN=Porto-Novo, BULGARIA=Sofia, EGYPT=Cairo, ANGOLA=Luanda, BURKINA FASO=Ouagadougou, DJIBOUTI=Dijibouti}
