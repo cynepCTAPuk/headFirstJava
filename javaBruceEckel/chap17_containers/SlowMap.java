@@ -17,10 +17,10 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
         return null;
     }
     public void clear() { keys.clear(); values.clear(); }
-    public V remove(Object keys) {
-        if (this.keys.contains(keys)) {
-            V oldValue = get(keys); int idx = this.keys.indexOf(keys);
-            this.keys.remove(idx); values.remove(idx);
+    public V remove(Object key) {
+        if (keys.contains(key)) {
+            V oldValue = get(key); int idx = keys.indexOf(key);
+            keys.remove(idx); values.remove(idx);
             return oldValue;
         } else { return null;}
     }
