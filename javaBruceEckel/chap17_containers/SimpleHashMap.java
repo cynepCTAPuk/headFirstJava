@@ -23,7 +23,7 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
             probes++;
             MapEntry<K,V> iPair = it.next();
             if(iPair.getKey().equals(key)) {
-                System.out.print("key collision: " + key + " ");
+                System.out.print("key collision pair: " + pair + " ");
                 oldValue = iPair.getValue();
                 it.set(pair); // Replace old with new
                 found = true;
