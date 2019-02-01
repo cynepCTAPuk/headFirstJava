@@ -43,13 +43,14 @@ public class SimpleHashMap<K,V> extends AbstractMap<K,V> {
             if(iPair.getKey().equals(key)) return iPair.getValue();
         return null;
     }
-    public void clear() {
-        for (List list : buckets) {
-            if(list != null) list.clear();
-        }
-    }
+    public void clear() { for (List list : buckets) { if(list != null) list.clear();}}
 
     public V remove(Object key) {
+        int index = Math.abs(key.hashCode()) % SIZE;
+        Iterator<MapEntry<K,V>> it = buckets[index].iterator();
+        while(it.next().getKey() == key) {
+            it.remove();
+            return null; }
         return null;
     }
     public Set<Map.Entry<K,V>> entrySet() {
