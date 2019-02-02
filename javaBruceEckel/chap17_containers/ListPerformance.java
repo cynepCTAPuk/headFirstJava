@@ -2,9 +2,7 @@
 // Demonstrates performance differences in Lists.
 // {Args: 100 500} Small to keep build testing short
 package chap17_containers;
-
 import util.*;
-
 import java.util.Vector;
 import java.util.*;
 
@@ -30,8 +28,7 @@ public class ListPerformance {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops * reps;
                 int listSize = list.size();
-                for (int i = 0; i < loops; i++)
-                    list.get(rand.nextInt(listSize));
+                for (int i = 0; i < loops; i++) list.get(rand.nextInt(listSize));
                 return loops;
             }
         });
@@ -126,10 +123,9 @@ public class ListPerformance {
     }
 
     static class ListTester extends Tester<List<Integer>> {
-        public ListTester(List<Integer> container, List<Test<List<Integer>>> tests) {
+        public ListTester(List<Integer> container, List<Test<List<Integer>>> tests){
             super(container, tests);
         }
-
         // Fill to the appropriate size before each test:
         @Override
         protected List<Integer> initialize(int size) {
@@ -137,7 +133,6 @@ public class ListPerformance {
             container.addAll(new CountingIntegerList(size));
             return container;
         }
-
         // Convenience method:
         public static void run(List<Integer> list, List<Test<List<Integer>>> tests) {
             new ListTester(list, tests).timedTest();
