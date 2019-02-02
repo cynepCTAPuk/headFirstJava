@@ -10,7 +10,7 @@ import java.util.*;
 
 public class ListPerformance {
     static Random rand = new Random();
-    static int reps = 10_000;
+    static int reps = 1_000;
     static List<Test<List<Integer>>> tests = new ArrayList<>();
     static List<Test<LinkedList<Integer>>> qTests = new ArrayList<>();
 
