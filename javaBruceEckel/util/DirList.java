@@ -11,11 +11,9 @@ public class DirList {
         String dir = ".";
         File path = new File(dir);
         String[] list;
-        if (args.length == 0) {
-            list = path.list();
-        } else {
-            list = path.list(new DirFilter(args[0]));
-        }
+        if (args.length == 0) list = path.list();
+        else list = path.list(new DirFilter(args[0]));
+
         Arrays.sort(list, String.CASE_INSENSITIVE_ORDER);
 //        for(String dirItem : list) System.out.println(dirItem);
 //        System.out.println(Arrays.toString(list));
