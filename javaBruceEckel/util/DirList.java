@@ -17,7 +17,12 @@ public class DirList {
             list = path.list(new DirFilter(args[0]));
         }
         Arrays.sort(list, String.CASE_INSENSITIVE_ORDER);
-        for(String dirItem : list) System.out.println(dirItem);
+//        System.out.println(Arrays.toString(list));
+//        for(String dirItem : list) System.out.println(dirItem);
+        for (int i = 0; i < list.length ; i++) {
+            if(i%3 == 1 ) System.out.println();
+            System.out.printf("%-24s ",list[i]);
+        }
     }
 }
 class DirFilter implements FilenameFilter {
