@@ -13,14 +13,16 @@ public class Bits {
     public static void main(String[] args) {
         Random rand = new Random(47);
         // Take the LSB of nextInt():
+
         byte bt = (byte)rand.nextInt();
         BitSet bb = new BitSet();
         for(int i = 7; i >= 0; i--) {
             if(((1 << i) & bt) != 0) { bb.set(i);
             } else { bb.clear(i); }
         }
-        print("byte value: " + bt);
+        print("byte value: " + bt + " toBinaryString " + Integer.toBinaryString(bt));
         printBitSet(bb);
+
         short st = (short)rand.nextInt();
         BitSet bs = new BitSet();
         for(int i = 15; i >= 0; i--) {
@@ -29,6 +31,7 @@ public class Bits {
         }
         print("short value: " + st);
         printBitSet(bs);
+
         int it = rand.nextInt();
         BitSet bi = new BitSet();
         for(int i = 31; i >= 0; i--) {
