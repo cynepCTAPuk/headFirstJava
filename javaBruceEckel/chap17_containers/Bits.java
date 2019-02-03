@@ -20,7 +20,16 @@ public class Bits {
             if(((1 << i) & bt) != 0) { bb.set(i);
             } else { bb.clear(i); }
         }
-        print("byte value: " + bt + " toBinaryString " + Integer.toBinaryString(bt));
+        int abc = 1302;
+        printnb("abc= " + abc + " ");
+        for (int i = 11; i >= 0; i--) {
+            printnb(((1 << i) & abc) == 0 ? 0 : 1);
+        }
+        print();
+
+        System.out.println((1<<1) + (1<<2) + (1<<4) + (1<<8) + (1<<10));
+
+        print("\nbyte value: " + bt + " toBinaryString " + Integer.toBinaryString(bt));
         printBitSet(bb);
 
         short st = (short)rand.nextInt();
@@ -29,7 +38,7 @@ public class Bits {
             if(((1 << i) & st) != 0) { bs.set(i);
             } else { bs.clear(i); }
         }
-        print("short value: " + st);
+        print("\nshort value: " + st + " toBinaryString " + Integer.toBinaryString(st));
         printBitSet(bs);
 
         int it = rand.nextInt();
@@ -38,7 +47,7 @@ public class Bits {
             if(((1 << i) & it) != 0) { bi.set(i);
             } else { bi.clear(i); }
         }
-        print("int value: " + it);
+        print("\nint value: " + it + " toBinaryString " + Integer.toBinaryString(it));
         printBitSet(bi);
         // Test bitsets >= 64 bits:
         BitSet b127 = new BitSet();
