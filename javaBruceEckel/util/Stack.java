@@ -1,7 +1,6 @@
-package chap11_holding;
-
 //: net/mindview/util/Stack.java
 // Making a stack from a LinkedList.
+package util;
 import java.util.LinkedList;
 public class Stack<T> {
     private LinkedList<T> storage = new LinkedList<T>();

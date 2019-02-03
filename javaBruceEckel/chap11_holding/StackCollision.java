@@ -1,10 +1,12 @@
 package chap11_holding;
 
+import util.*;
+
 //: holding/StackCollision.java
 public class StackCollision {
     public static void main(String[] args) {
-        Stack<String> stack = new chap11_holding.Stack<>();
-        for(String s : "My dog has fleas (chap11_holding.Stack)".split(" ")) stack.push(s);
+        Stack<String> stack = new Stack<>();
+        for(String s : "My dog has fleas (util.Stack)".split(" ")) stack.push(s);
         while(!stack.empty()) System.out.print(stack.pop() + " ");
         System.out.println();
 

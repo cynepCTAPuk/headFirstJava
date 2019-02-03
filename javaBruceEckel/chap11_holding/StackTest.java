@@ -1,5 +1,7 @@
 package chap11_holding;
 
+import util.*;
+
 //: holding/StackTest.java
 public class StackTest {
     public static void main(String[] args) {
