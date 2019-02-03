@@ -18,6 +18,7 @@ public class Utilities {
         print("lastIndexOfSubList: " + Collections.lastIndexOfSubList(list, sublist));
         Collections.replaceAll(list, "one", "Yo");
         print("replaceAll: " + list);
+        print("frequency of ‘Yo’: " + Collections.frequency(list, "Yo"));
         Collections.reverse(list);
         print("reverse: " + list);
         Collections.rotate(list, 3);
@@ -37,9 +38,8 @@ public class Utilities {
         print("‘list’ disjoint ‘dups’?: " + Collections.disjoint(list, dups));
         // Getting an old-style Enumeration:
         Enumeration<String> e = Collections.enumeration(dups);
-        Vector<String> v = new Vector<String>();
-        while(e.hasMoreElements())
-            v.addElement(e.nextElement());
+        Vector<String> v = new Vector<>();
+        while(e.hasMoreElements()) v.addElement(e.nextElement());
         // Converting an old-style Vector to a List via an Enumeration:
         ArrayList<String> arrayList = Collections.list(v.elements());
         print("arrayList: " + arrayList);
