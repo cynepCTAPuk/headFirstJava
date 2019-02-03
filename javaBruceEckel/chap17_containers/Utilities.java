@@ -37,11 +37,12 @@ public class Utilities {
         print("dups: " + dups);
         print("‘list’ disjoint ‘dups’?: " + Collections.disjoint(list, dups));
         // Getting an old-style Enumeration:
-        Enumeration<String> e = Collections.enumeration(dups);
-        Vector<String> v = new Vector<>();
-        while(e.hasMoreElements()) v.addElement(e.nextElement());
+        Enumeration<String> enumeration = Collections.enumeration(dups);
+        Vector<String> vector = new Vector<>();
+        while(enumeration.hasMoreElements()) vector.addElement(enumeration.nextElement());
+        System.out.println("vector: " + vector);
         // Converting an old-style Vector to a List via an Enumeration:
-        ArrayList<String> arrayList = Collections.list(v.elements());
+        ArrayList<String> arrayList = Collections.list(vector.elements());
         print("arrayList: " + arrayList);
     }
 } /* Output:
