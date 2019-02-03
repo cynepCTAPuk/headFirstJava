@@ -9,6 +9,7 @@ class VeryBig {
     private String ident;
     public VeryBig(String id) { ident = id; }
     public String toString() { return ident; }
+    @SuppressWarnings("deprecation")
     protected void finalize() {
         System.out.println("Finalizing " + ident);
     }
@@ -23,7 +24,7 @@ public class References {
     public static void main(String[] args) {
         int size = 10;
         // Or, choose size via the command line:
-        if(args.length > 0) size = new Integer(args[0]);
+        if(args.length > 0) size = Integer.valueOf(args[0]);
 
         LinkedList<SoftReference<VeryBig>> sa = new LinkedList<>();
         for(int i = 0; i < size; i++) {
