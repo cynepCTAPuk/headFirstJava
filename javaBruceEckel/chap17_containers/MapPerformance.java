@@ -52,23 +52,23 @@ public class MapPerformance {
     }
 } /* Output: (Sample)
 ---------- TreeMap ----------
-size put get iterate
-10 748 168 100
-100 506 264 76
-1000 771 450 78
-10000 2962 561 83
+size    put     get     iterate
+10      748     168     100
+100     506     264     76
+1000    771     450     78
+10000   2962    561     83
 ---------- HashMap ----------
-size put get iterate
-10 281 76 93
-100 179 70 73
-1000 267 102 72
-10000 1305 265 97
+size    put     get     iterate
+10      281     76      93
+100     179     70      73
+1000    267     102     72
+10000   1305    265     97
 ------- LinkedHashMap -------
-size put get iterate
-10 354 100 72
-100 273 89 50
-1000 385 222 56
-10000 2787 341 56
+size    put     get     iterate
+10      354     100     72
+100     273     89      50
+1000    385     222     56
+10000   2787    341     56
 ------ IdentityHashMap ------
 size put get iterate
 10 290 144 101
