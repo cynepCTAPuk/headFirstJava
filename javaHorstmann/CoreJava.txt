@@ -1,5 +1,0 @@
-Core Java
-volume I - Fundamentals
-Volume II - Advanced Features
-Tenth Edition
-Cay S. Horstmann
