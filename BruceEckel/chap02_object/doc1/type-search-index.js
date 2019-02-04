@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"chap02.doc1","l":"Documentation1"}]

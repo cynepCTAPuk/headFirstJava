@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"chap02.doc1","c":"Documentation1","l":"Documentation1()"},{"p":"chap02.doc1","c":"Documentation1","l":"f()"},{"p":"chap02.doc1","c":"Documentation1","l":"i"}]
