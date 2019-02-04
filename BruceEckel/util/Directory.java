@@ -19,25 +19,28 @@ public final class Directory {
     }
     // A two-tuple for returning a pair of objects:
     public static class TreeInfo implements Iterable<File> {
-        public List<File> files = new ArrayList<File>();
-        public List<File> dirs = new ArrayList<File>();
+        public List<File> files = new ArrayList<>();
+        public List<File> dirs = new ArrayList<>();
         // The default iterable element is the file list:
-        public Iterator<File> iterator() { return files.iterator(); }
+        public Iterator<File> iterator() {
+            return files.iterator();
+        }
         void addAll(TreeInfo other) {
             files.addAll(other.files);
             dirs.addAll(other.dirs);
         }
         public String toString() {
-            return "dirs: " + PPrint.pformat(dirs) + "\n\nfiles: " + PPrint.pformat(files);
+            return "dirs: " + PPrint.pformat(dirs) +
+                    "\n\nfiles: " + PPrint.pformat(files);
         }
     }
-    public static TreeInfo walk(String start, String regex) { // Begin recursion
+    public static TreeInfo walk(String start, String regex) {   // Begin recursion
         return recurseDirs(new File(start), regex);
     }
-    public static TreeInfo walk(File start, String regex) { // Overloaded
+    public static TreeInfo walk(File start, String regex) {     // Overloaded
         return recurseDirs(start, regex);
     }
-    public static TreeInfo walk(File start) { // Everything
+    public static TreeInfo walk(File start) {                   // Everything
         return recurseDirs(start, ".*");
     }
     public static TreeInfo walk(String start) {
@@ -49,7 +52,7 @@ public final class Directory {
             if (item.isDirectory()) {
                 result.dirs.add(item);
                 result.addAll(recurseDirs(item, regex));
-            } else // Regular file
+            } else                                              // Regular file
                 if (item.getName().matches(regex))
                     result.files.add(item);
         }
