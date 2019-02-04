@@ -35,23 +35,19 @@ public final class Directory {
             files.addAll(other.files);
             dirs.addAll(other.dirs);
         }
-
         public String toString() {
             return "dirs: " + PPrint.pformat(dirs) +
                     "\n\nfiles: " + PPrint.pformat(files);
         }
     }
-
     public static TreeInfo
     walk(String start, String regex) { // Begin recursion
         return recurseDirs(new File(start), regex);
     }
-
     public static TreeInfo
     walk(File start, String regex) { // Overloaded
         return recurseDirs(start, regex);
     }
-
     public static TreeInfo walk(File start) { // Everything
         return recurseDirs(start, ".*");
     }
@@ -59,7 +55,6 @@ public final class Directory {
     public static TreeInfo walk(String start) {
         return recurseDirs(new File(start), ".*");
     }
-
     static TreeInfo recurseDirs(File startDir, String regex) {
         TreeInfo result = new TreeInfo();
         for (File item : startDir.listFiles()) {
