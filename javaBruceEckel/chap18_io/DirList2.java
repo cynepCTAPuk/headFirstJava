@@ -1,7 +1,7 @@
 //: io/DirList2.java
 // Uses anonymous inner classes.
 // {Args: "D.*\.java"}
-package util;
+package chap18_io;
 import java.io.*;
 import java.util.*;
 import java.util.regex.*;
