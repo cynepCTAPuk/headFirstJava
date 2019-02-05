@@ -1,5 +1,5 @@
 //: io/TestEOF.java
-// Testing for end of file while reading a byte at a time.
+// Testing for end of newFile while reading a byte at a time.
 package chap18_io;
 
 import java.io.*;

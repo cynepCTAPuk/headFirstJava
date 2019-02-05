@@ -25,7 +25,7 @@ public class MakeDirectories {
                         "\n getPath: " + f.getPath() +
                         "\n length: " + f.length() +
                         "\n lastModified: " + f.lastModified());
-        if (f.isFile()) System.out.println("It’s a file");
+        if (f.isFile()) System.out.println("It’s a newFile");
         else if (f.isDirectory()) System.out.println("It’s a directory");
     }
 
