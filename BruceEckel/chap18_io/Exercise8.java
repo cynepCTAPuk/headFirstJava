@@ -4,7 +4,7 @@ package chap18_io;
 import java.io.*;
 import java.util.*;
 
-public class Exercise7 {
+public class Exercise8 {
     // Throw exceptions to console:
     public static String read(String filename) throws IOException {
         // Reading input by lines:
@@ -17,7 +17,9 @@ public class Exercise7 {
     }
 
     public static void main(String[] args) throws IOException {
-        String file = read("chap18_io/Exercise7.java");
+        String file;
+        if (args.length > 0) file = read(args[0]);
+        else file = read("chap18_io/Exercise8.java");
         LinkedList list = new LinkedList(Arrays.asList(file.split("\\n")));
 //        ListIterator it = list.listIterator(list.size());
 //        while(it.hasPrevious()) System.out.println(it.previous());
