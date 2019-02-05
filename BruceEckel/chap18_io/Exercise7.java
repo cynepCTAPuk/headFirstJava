@@ -18,7 +18,6 @@ public class Exercise7 {
 
     public static void main(String[] args) throws IOException {
         String file = read("chap18_io/BufferedInputFile.java");
-        System.out.println(file);
         LinkedList list = new LinkedList(Arrays.asList(file.split("\\n")));
 //        ListIterator it = list.listIterator(list.size());
 //        while(it.hasPrevious()) System.out.println(it.previous());
