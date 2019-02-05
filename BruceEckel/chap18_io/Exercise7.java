@@ -1,4 +1,4 @@
-//: io/BufferedInputFile.java
+//: chap18_io/Exercise7.java
 package chap18_io;
 
 import java.io.*;
