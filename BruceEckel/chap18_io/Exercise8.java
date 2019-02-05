@@ -1,4 +1,4 @@
-//: io/BufferedInputFile.java
+//: chap18_io/Exercise8.java
 package chap18_io;
 
 import java.io.*;
@@ -20,6 +20,7 @@ public class Exercise8 {
         String file;
         if (args.length > 0) file = read(args[0]);
         else file = read("chap18_io/Exercise8.java");
+
         LinkedList list = new LinkedList(Arrays.asList(file.split("\\n")));
 //        ListIterator it = list.listIterator(list.size());
 //        while(it.hasPrevious()) System.out.println(it.previous());
