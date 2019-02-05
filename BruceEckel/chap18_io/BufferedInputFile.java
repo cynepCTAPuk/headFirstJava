@@ -1,6 +1,8 @@
 //: io/BufferedInputFile.java
 package chap18_io;
+
 import java.io.*;
+
 public class BufferedInputFile {
     // Throw exceptions to console:
     public static String read(String filename) throws IOException {
@@ -12,6 +14,7 @@ public class BufferedInputFile {
         in.close();
         return sb.toString();
     }
+
     public static void main(String[] args) throws IOException {
         System.out.print(read("chap18_io/BufferedInputFile.java"));
     }
