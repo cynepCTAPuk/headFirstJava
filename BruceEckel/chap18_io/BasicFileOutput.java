@@ -1,8 +1,6 @@
 //: io/BasicFileOutput.java
 package chap18_io;
-
 import java.io.*;
-
 public class BasicFileOutput {
     static String newFile = "c://000/BasicFileOutput.out";
 
