@@ -1,8 +1,6 @@
 //: io/FormattedMemoryInput.java
 package chap18_io;
-
 import java.io.*;
-
 public class FormattedMemoryInput {
     public static void main(String[] args) throws IOException {
         String file = "chap18_io/FormattedMemoryInput.java";
