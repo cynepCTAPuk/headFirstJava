@@ -12,6 +12,7 @@ public class Exercise19 {
 
         TreeMap<Byte, Integer> treeMap = new TreeMap<>();
         for (Byte b : bytes) {
+            char c = Character.highSurrogate(b);
             if (treeMap.containsKey(b)) treeMap.put(b, treeMap.get(b) + 1);
             else treeMap.put(b, 1);
         }
