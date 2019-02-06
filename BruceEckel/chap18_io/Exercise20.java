@@ -7,15 +7,20 @@ import java.util.*;
 
 public class Exercise20 {
     public static void main(String[] args) throws IOException {
-        String file = "chap18_io/Exercise20.java";
-        byte[] bytes = BinaryFile.read(file);
+        File[] files = Directory.local("c:/000/", ".*class");
+        System.out.println(Arrays.toString(files));
+        for (File f : files) {
+//            RandomAccessFile raf = new RandomAccessFile(f, "r");
+//            for (int i = 0; i < 9; i++) System.out.printf("%4d",raf.read());
 
-        Map<Byte, Integer> treeMap = new TreeMap<>();
-        for (Byte b : bytes) {
-            char c = Character.highSurrogate(b);
-            if (treeMap.containsKey(b)) treeMap.put(b, treeMap.get(b) + 1);
-            else treeMap.put(b, 1);
+            byte[] bytes = BinaryFile.read(f);
+            for (int i = 0; i < 9; i++) System.out.printf("%4d", bytes[i]);
+
+            System.out.println();
         }
-        System.out.println(treeMap);
+        String s = "CAFE-BABY";
+        char[] cs = s.toCharArray();
+        for (int i = 0; i < cs.length; i++) System.out.printf("%4c", cs[i]);
     }
 }
+
