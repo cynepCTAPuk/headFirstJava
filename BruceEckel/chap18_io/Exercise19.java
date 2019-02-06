@@ -1,7 +1,5 @@
 package chap18_io;
-
 import util.*;
-
 import java.io.*;
 import java.util.*;
 
