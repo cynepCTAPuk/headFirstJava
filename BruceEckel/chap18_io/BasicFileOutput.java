@@ -13,7 +13,7 @@ public class BasicFileOutput {
         String s;
         while ((s = in.readLine()) != null) out.println(lineCount++ + ": " + s);
         out.close();
-        
+
         // Show the stored newFile:
         System.out.println(BufferedInputFile.read(newFile));
     }

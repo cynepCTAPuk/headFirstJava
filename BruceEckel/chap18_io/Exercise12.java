@@ -1,7 +1,9 @@
 //: chap18_io/Exercise12.java
 package chap18_io;
+
 import java.io.*;
 import java.util.*;
+
 public class Exercise12 {
     public static String read(String filename) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(filename));
@@ -27,6 +29,9 @@ public class Exercise12 {
         else file = read("chap18_io/Exercise12.java");
 
         LinkedList list = new LinkedList(Arrays.asList(file.split("\\n")));
-        while (!list.isEmpty()) System.out.println(list.poll());
+        int i = 0;
+        while (!list.isEmpty()) {
+            System.out.printf("%-2d %s\n", ++i, list.poll());
+        }
     }
 } /* (Execute to see output) *///:~
