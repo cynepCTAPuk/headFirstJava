@@ -10,9 +10,8 @@ public class Exercise19 {
         String file = "chap18_io/Exercise19.java";
         byte[] bytes = BinaryFile.read(file);
 
-        Map<Byte, Integer> treeMap = new TreeMap<>();
+        TreeMap<Byte, Integer> treeMap = new TreeMap<>();
         for (Byte b : bytes) {
-//            if(b == '\n') continue;
             if (treeMap.containsKey(b)) treeMap.put(b, treeMap.get(b) + 1);
             else treeMap.put(b, 1);
         }
