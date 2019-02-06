@@ -1,8 +1,6 @@
 //: io/FileOutputShortcut.java
 package chap18_io;
-
 import java.io.*;
-
 public class FileOutputShortcut {
     static String newFile = "c:/000/FileOutputShortcut.out";
 
@@ -15,6 +13,7 @@ public class FileOutputShortcut {
         String s;
         while ((s = in.readLine()) != null) out.println(lineCount++ + ": " + s);
         out.close();
+
         // Show the stored newFile:
         System.out.println(BufferedInputFile.read(newFile));
     }
