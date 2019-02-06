@@ -2,7 +2,7 @@
 package chap18_io;
 import java.io.*;
 public class BasicFileOutput {
-    static String newFile = "c://000/BasicFileOutput.out";
+    static String newFile = "c:/000/BasicFileOutput.out";
 
     public static void main(String[] args) throws IOException {
         String readFile = "chap18_io/BasicFileOutput.java";
