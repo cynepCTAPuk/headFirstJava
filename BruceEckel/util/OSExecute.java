@@ -43,6 +43,7 @@ public class OSExecute {
             BufferedReader results = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String s;
             while ((s = results.readLine()) != null) {
+//                System.out.println(s);
                 listRes.add(s);
             }
             BufferedReader errors = new BufferedReader(new InputStreamReader(process.getErrorStream()));
