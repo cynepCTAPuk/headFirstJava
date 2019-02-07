@@ -5,7 +5,7 @@ import util.*;
 
 public class OSExecuteDemo {
     public static void main(String[] args) {
-        OSExecute.command("javap OSExecuteDemo");
+        OSExecute.command("javap OSExecuteDemo", 1);
     }
 } /* Output:
 Compiled from "OSExecuteDemo.java"
