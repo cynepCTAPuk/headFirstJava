@@ -18,7 +18,7 @@ public class GetChannel {
         // Add to the end of the file:
         fc = new RandomAccessFile(file, "rw").getChannel();
         fc.position(fc.size()); // Move to the end
-        fc.write(ByteBuffer.wrap("\nSome more".getBytes()));
+        fc.write(ByteBuffer.wrap("Some more".getBytes()));
         fc.close();
 
         // Read the file:
