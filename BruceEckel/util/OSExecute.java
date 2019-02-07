@@ -37,7 +37,7 @@ public class OSExecute {
     public static List command(String command, int i) {
         boolean err = false;
         List listRes = new ArrayList();
-        List<String> listErr = new ArrayList();
+        List listErr = new ArrayList();
         try {
             Process process = new ProcessBuilder(command.split(" ")).start();
             BufferedReader results = new BufferedReader(new InputStreamReader(process.getInputStream()));

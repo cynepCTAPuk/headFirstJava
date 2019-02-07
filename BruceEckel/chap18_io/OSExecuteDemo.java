@@ -3,9 +3,12 @@
 package chap18_io;
 import util.*;
 
+import java.util.*;
+
 public class OSExecuteDemo {
     public static void main(String[] args) {
-        OSExecute.command("javap OSExecuteDemo", 1);
+        List list = OSExecute.command("javap OSExecuteDemo", 1);
+        System.out.println(list);
     }
 } /* Output:
 Compiled from "OSExecuteDemo.java"
