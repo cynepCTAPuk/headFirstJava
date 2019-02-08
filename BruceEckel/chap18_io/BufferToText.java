@@ -38,7 +38,8 @@ public class BufferToText {
         buff.clear();
         fc.read(buff);
         buff.flip();
-        System.out.println("3: Write by charset \"UTF-16BE\": " + buff.asCharBuffer());
+        System.out.println("3: Write by charset \"UTF-16BE\" and read by CharBuffer: "
+                + buff.asCharBuffer());
 
         // Use a CharBuffer to write through:
         fc = new FileOutputStream("c:/000/data2.txt").getChannel();
