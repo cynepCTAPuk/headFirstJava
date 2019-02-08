@@ -15,11 +15,12 @@ public class JGrep {
         // Iterate through the lines of the input file:
         int index = 0;
         Matcher m = p.matcher("");
-        for(String line : new TextFile(args[0])) {
+//        String file = args[0];
+        String file = "chap13_strings/JGrep.java";
+        for(String line : new TextFile(file)) {
             m.reset(line);
             while(m.find()) {
-                System.out.println(
-                        index++ + ": " + m.group() + ": " + m.start());
+                System.out.println( index++ + ": " + m.group() + ": " + m.start());
             }
         }
     }
