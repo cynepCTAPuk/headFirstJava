@@ -20,12 +20,13 @@ public class BufferToText {
         fc.read(buff);
         buff.flip();
         // Doesn’t work:
-        System.out.println("1: Default coding: \t" + buff.asCharBuffer());
+        System.out.println("1: Default coding: " + buff.asCharBuffer());
 
         // Decode using this system’s default Charset:
         buff.rewind();
         String encoding = System.getProperty("file.encoding");
-        System.out.println("2: Decoded using " + encoding + ": " + Charset.forName(encoding).decode(buff));
+        System.out.println("2: Decode by charset " + encoding + ": " +
+                Charset.forName(encoding).decode(buff));
 
         // Or, we could encode with something that will print:
         fc = new FileOutputStream("c:/000/data2.txt").getChannel();
@@ -37,7 +38,7 @@ public class BufferToText {
         buff.clear();
         fc.read(buff);
         buff.flip();
-        System.out.println("3: After \"UTF-16BE\" coding: " + buff.asCharBuffer());
+        System.out.println("3: Code by charset \"UTF-16BE\": " + buff.asCharBuffer());
 
         // Use a CharBuffer to write through:
         fc = new FileOutputStream("c:/000/data2.txt").getChannel();
