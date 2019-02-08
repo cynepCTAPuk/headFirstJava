@@ -1,9 +1,7 @@
 //: io/GetData.java
 // Getting different representations from a ByteBuffer
 package chap18_io;
-
 import java.nio.*;
-
 import static util.Print.*;
 
 public class GetData {
