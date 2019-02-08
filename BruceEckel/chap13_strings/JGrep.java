@@ -8,15 +8,15 @@ public class JGrep {
     public static void main(String[] args) {
         if(args.length < 2) {
             System.out.println("Usage: java JGrep file regex");
+//        Pattern p = Pattern.compile("\\b[Ssct]\\w+");
+//        String file = "chap13_strings/JGrep.java";
             System.exit(0);
         }
-//        Pattern p = Pattern.compile(args[1]);
-        Pattern p = Pattern.compile("\\b[Ssct]\\w+");
+        Pattern p = Pattern.compile(args[1]);
         // Iterate through the lines of the input file:
         int index = 0;
         Matcher m = p.matcher("");
-//        String file = args[0];
-        String file = "chap13_strings/JGrep.java";
+        String file = args[0];
         for(String line : new TextFile(file)) {
             m.reset(line);
             while(m.find()) {
