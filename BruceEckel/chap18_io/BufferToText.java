@@ -25,7 +25,7 @@ public class BufferToText {
         // Decode using this system’s default Charset:
         buff.rewind();
         String encoding = System.getProperty("file.encoding");
-        System.out.println("2: Decode by charset " + encoding + ": " +
+        System.out.println("2: Decode by default charset " + encoding + ": " +
                 Charset.forName(encoding).decode(buff));
 
         // Or, we could encode with something that will print:
