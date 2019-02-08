@@ -11,8 +11,7 @@ public class GetData {
         ByteBuffer bb = ByteBuffer.allocate(BSIZE);
         // Allocation automatically zeroes the ByteBuffer:
         int i = 0;
-        while (i++ < bb.limit())
-            if (bb.get() != 0) print("nonzero");
+        while (i++ < bb.limit()) if (bb.get() != 0) print("nonzero");
         print("i = " + i);
         bb.rewind();
 
@@ -47,6 +46,7 @@ public class GetData {
         bb.asDoubleBuffer().put(99_471_142);
         print("double:\t" + bb.getDouble());
         bb.rewind();
+
     }
 } /* Output:
 i = 1025
