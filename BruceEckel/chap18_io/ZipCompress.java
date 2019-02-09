@@ -18,6 +18,7 @@ public class ZipCompress {
         BufferedOutputStream out = new BufferedOutputStream(zos);
         zos.setComment("A test of Java Zipping");
         // No corresponding getComment(), though.
+
         for (String arg : args) {
             print("Writing file " + arg);
             BufferedReader in = new BufferedReader(new FileReader(arg));
@@ -28,24 +29,29 @@ public class ZipCompress {
             out.flush();
         }
         out.close();
+
         // Checksum valid only after the file has been closed!
         print("Checksum: " + csumo.getChecksum().getValue());
-        // Now extract the files:
-        print("Reading file");
+
+        // Now extract the files to console:
         FileInputStream fis = new FileInputStream(fileZip);
         CheckedInputStream csumi = new CheckedInputStream(fis, new Adler32());
         ZipInputStream zis = new ZipInputStream(csumi);
         BufferedInputStream bis = new BufferedInputStream(zis);
         ZipEntry ze;
         while ((ze = zis.getNextEntry()) != null) {
-            print("Reading file " + ze);
+            print("\nReading file " + ze);
             int x;
             while ((x = bis.read()) != -1) System.out.write(x);
         }
-        if (args.length == 1) print("Checksum: " + csumi.getChecksum().getValue());
-        bis.close();// Alternative way to open and read Zip files:
+        if (args.length == 1)
+            print("Checksum: " + csumi.getChecksum().getValue());
+        bis.close();
+
+        // Alternative way to open and read Zip files:
         ZipFile zf = new ZipFile(fileZip);
         Enumeration e = zf.entries();
+        print();
         while (e.hasMoreElements()) {
             ZipEntry ze2 = (ZipEntry) e.nextElement();
             print("File: " + ze2);
