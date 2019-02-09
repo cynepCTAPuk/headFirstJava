@@ -8,10 +8,10 @@ public class FileLocking {
         FileOutputStream fos= new FileOutputStream("c:/000/file.txt");
         FileLock fl = fos.getChannel().tryLock();
         if(fl != null) {
-            System.out.println("Locked File");
+            System.out.println("Locked File \t" + System.currentTimeMillis());
             TimeUnit.MILLISECONDS.sleep(100);
             fl.release();
-            System.out.println("Released Lock");
+            System.out.println("Released Lock \t" + System.currentTimeMillis());
         }
         fos.close();
     }
