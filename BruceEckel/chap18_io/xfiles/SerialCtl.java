@@ -22,11 +22,11 @@ public class SerialCtl implements Serializable {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         SerialCtl sc = new SerialCtl("Test1", "Test2");
         System.out.println("Before:\n" + sc);
-        ByteArrayOutputStream buf= new ByteArrayOutputStream();
-        ObjectOutputStream o = new ObjectOutputStream(buf);
-        o.writeObject(sc);
+        ByteArrayOutputStream baos= new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
+        oos.writeObject(sc);
         // Now get it back:
-        ObjectInputStream in = new ObjectInputStream( new ByteArrayInputStream(buf.toByteArray()));
+        ObjectInputStream in = new ObjectInputStream( new ByteArrayInputStream(baos.toByteArray()));
         SerialCtl sc2 = (SerialCtl)in.readObject();
         System.out.println("After:\n" + sc2);
     }
