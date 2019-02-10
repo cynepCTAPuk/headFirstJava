@@ -42,7 +42,7 @@ class Square extends Shape {
     private static int color;
     public Square(int xVal, int yVal, int dim) {
         super(xVal, yVal, dim);
-        color = RED;
+        color = BLUE;
     }
     public void setColor(int newColor) { color = newColor; }
     public int getColor() { return color; }
@@ -68,9 +68,9 @@ public class StoreCADState {
         shapeTypes.add(Line.class);
         List<Shape> shapes = new ArrayList<>();
         // Make some shapes:
-        for(int i = 0; i < 10; i++) shapes.add(Shape.randomFactory());
+        for(int i = 0; i < 7; i++) shapes.add(Shape.randomFactory());
         // Set all the static colors to GREEN:
-//        for(int i = 0; i < 10; i++) shapes.get(i).setColor(Shape.GREEN);
+        for(int i = 0; i < 7; i++) shapes.get(i).setColor(Shape.GREEN);
         // Save the state vector:
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("c:/000/CADState.out"));
         out.writeObject(shapeTypes);
