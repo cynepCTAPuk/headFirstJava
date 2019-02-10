@@ -1,4 +1,6 @@
+//: io/Alien.java
+// A serializable class.
 package chap18_io;
-
-public class Alien {
-}
+import java.io.*;
+public class Alien implements Serializable {}
+///:~
