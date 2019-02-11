@@ -1,4 +1,5 @@
+//: enumerated/Spiciness.java
 package chap19_enumerated;
-
-public class Spiciness {
-}
+public enum Spiciness {
+    NOT, MILD, MEDIUM, HOT, FLAMING
+} ///:~
