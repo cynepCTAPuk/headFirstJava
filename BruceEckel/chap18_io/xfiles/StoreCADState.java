@@ -48,7 +48,7 @@ class Square extends Shape {
     public int getColor() { return color; }
 }
 class Line extends Shape {
-    private static int color = RED;
+    private static int color = GREEN;
     public static void serializeStaticState(ObjectOutputStream os) throws IOException {
         os.writeInt(color);
     }
