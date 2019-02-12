@@ -1,3 +1,4 @@
+//: enumerated/RoShamBo2.java
 // Switching one enum on another.
 package chap19_enumerated;
 import static chap19_enumerated.Outcome.*;
