@@ -11,7 +11,7 @@ public enum ConstantSpecificMethod {
     },
     CLASSPATH {
         String getInfo() {
-            return System.getenv("CLASSPATH");
+            return System.getenv("PATH");
         }
     },
     VERSION {
