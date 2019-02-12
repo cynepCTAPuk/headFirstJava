@@ -3,6 +3,7 @@
 package chap19_enumerated;
 import java.util.*;
 import static chap19_enumerated.Outcome.*;
+
 interface Item {
     Outcome compete(Item it);
     Outcome eval(Paper p);
