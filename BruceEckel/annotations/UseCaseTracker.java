@@ -2,15 +2,21 @@
 package annotations;
 import java.lang.reflect.*;
 import java.util.*;
+
 public class UseCaseTracker {
     public static void
     trackUseCases(List<Integer> useCases, Class<?> cl) {
+        int k = 0;
         for(Method m : cl.getDeclaredMethods()) {
+            System.out.println(++k + "-------" + m);
             UseCase uc = m.getAnnotation(UseCase.class);
+            System.out.println("--------" + uc);
             if(uc != null) {
                 System.out.println("Found Use Case:" + uc.id() + " " + uc.description());
                 useCases.remove(Integer.valueOf(uc.id()));
             }
+            System.out.println();
+
         }
         for(int i : useCases) {
             System.out.println("Warning: Missing use case-" + i);
