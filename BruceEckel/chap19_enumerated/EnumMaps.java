@@ -8,12 +8,18 @@ interface Command { void action(); }
 public class EnumMaps {
     public static void main(String[] args) {
         EnumMap<AlarmPoints,Command> em = new EnumMap<>(AlarmPoints.class);
+        System.out.println("1: " + em);
+
         em.put(KITCHEN, new Command() {
             public void action() { print("Kitchen fire!"); }
         });
+        System.out.println("2: " + em);
+
         em.put(BATHROOM, new Command() {
             public void action() { print("Bathroom alert!"); }
         });
+        System.out.println("3: " + em);
+
         for(Map.Entry<AlarmPoints,Command> e : em.entrySet()) {
             printnb(e.getKey() + ": ");
             e.getValue().action();
@@ -23,6 +29,7 @@ public class EnumMaps {
         } catch(Exception e) {
             print(e);
         }
+        System.out.println("4: " + em);
     }
 } /* Output:
 BATHROOM: Bathroom alert!
