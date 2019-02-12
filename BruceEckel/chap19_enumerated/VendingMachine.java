@@ -91,16 +91,18 @@ public class VendingMachine {
         void output() { print(amount);}
     }
 
-    static void run(Generator<Input> gen) {
+    static void run(Generator<Input> gen) throws InterruptedException {
         while (state != State.TERMINAL) {
             state.next(gen.next());
-            while (state.isTransient)
+            while (state.isTransient) {
                 state.next();
+            }
             state.output();
+            Thread.sleep(2000);
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Generator<Input> gen = new RandomInputGenerator();
         if (args.length == 1)
             gen = new FileInputGenerator(args[0]);
