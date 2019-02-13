@@ -5,7 +5,7 @@ public class MainThread {
         LiftOff launch = new LiftOff();
         launch.run();
         System.out.println();
-        LiftOff launch1 = new LiftOff(5);
+        LiftOff launch1 = new LiftOff(12);
         launch1.run();
     }
 } /* Output:
