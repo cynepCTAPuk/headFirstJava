@@ -15,50 +15,48 @@ public class TableCreator {
             Class<?> cl = Class.forName(className);
             DBTable dbTable = cl.getAnnotation(DBTable.class);
             if(dbTable == null) {
-                System.out.println(
-                        "No DBTable annotations in class " + className);
+                System.out.println( "No DBTable annotations in class " + className);
                 continue;
             }
             String tableName = dbTable.name();
-// If the name is empty, use the Class name:
+            // If the name is empty, use the Class name:
             if(tableName.length() < 1)
                 tableName = cl.getName().toUpperCase();
-            List<String> columnDefs = new ArrayList<String>();
+            List<String> columnDefs = new ArrayList<>();
             for(Field field : cl.getDeclaredFields()) {
-                String columnName = null;
+                String columnName;
                 Annotation[] anns = field.getDeclaredAnnotations();
-                if(anns.length < 1)
+                if(anns.length < 1) {
                     continue; // Not a db table column
+                }
                 if(anns[0] instanceof SQLInteger) {
                     SQLInteger sInt = (SQLInteger) anns[0];
-// Use field name if name not specified
-                    if(sInt.name().length() < 1)
+                    // Use field name if name not specified
+                    if(sInt.name().length() < 1) {
                         columnName = field.getName().toUpperCase();
-                    else
+                    } else {
                         columnName = sInt.name();
-                    columnDefs.add(columnName + " INT" +
-                            getConstraints(sInt.constraints()));
+                    }
+                    columnDefs.add(columnName + " INT" + getConstraints(sInt.constraints()));
                 }
                 if(anns[0] instanceof SQLString) {
                     SQLString sString = (SQLString) anns[0];
-// Use field name if name not specified.
-                    if(sString.name().length() < 1)
+                    // Use field name if name not specified.
+                    if(sString.name().length() < 1) {
                         columnName = field.getName().toUpperCase();
-                    else
+                    } else {
                         columnName = sString.name();
-                    columnDefs.add(columnName + " VARCHAR(" +
-                            sString.value() + ")" +
+                    }
+                    columnDefs.add(columnName + " VARCHAR(" + sString.value() + ")" +
                             getConstraints(sString.constraints()));
                 }
-                StringBuilder createCommand = new StringBuilder(
-                        "CREATE TABLE " + tableName + "(");
-                for(String columnDef : columnDefs)
+                StringBuilder createCommand = new StringBuilder( "CREATE TABLE " + tableName + "(");
+                for(String columnDef : columnDefs) {
                     createCommand.append("\n " + columnDef + ",");
-// Remove trailing comma
-                String tableCreate = createCommand.substring(
-                        0, createCommand.length() - 1) + ");";
-                System.out.println("Table Creation SQL for " +
-                        className + " is :\n" + tableCreate);
+                }
+                // Remove trailing comma
+                String tableCreate = createCommand.substring( 0, createCommand.length() - 1) + ");";
+                System.out.println("Table Creation SQL for " + className + " is :\n" + tableCreate);
             }
         }
     }
