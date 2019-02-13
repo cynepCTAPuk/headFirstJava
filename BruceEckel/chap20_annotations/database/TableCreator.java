@@ -1,7 +1,7 @@
-//: annotations/database/TableCreator.java
+//: chap20_annotations/database/TableCreator.java
 // Reflection-based annotation processor.
-// {Args: annotations.database.Member}
-package annotations.database;
+// {Args: chap20_annotations.database.Member}
+package chap20_annotations.database;
 import java.lang.annotation.*;
 import java.lang.reflect.*;
 import java.util.*;
@@ -15,7 +15,7 @@ public class TableCreator {
             Class<?> cl = Class.forName(className);
             DBTable dbTable = cl.getAnnotation(DBTable.class);
             if(dbTable == null) {
-                System.out.println( "No DBTable annotations in class " + className);
+                System.out.println( "No DBTable chap20_annotations in class " + className);
                 continue;
             }
             String tableName = dbTable.name();
@@ -71,19 +71,19 @@ public class TableCreator {
         return constraints;
     }
 } /* Output:
-Table Creation SQL for annotations.database.Member is :
+Table Creation SQL for chap20_annotations.database.Member is :
 CREATE TABLE MEMBER(
 FIRSTNAME VARCHAR(30));
-Table Creation SQL for annotations.database.Member is :
+Table Creation SQL for chap20_annotations.database.Member is :
 CREATE TABLE MEMBER(
 FIRSTNAME VARCHAR(30),
 LASTNAME VARCHAR(50));
-Table Creation SQL for annotations.database.Member is :
+Table Creation SQL for chap20_annotations.database.Member is :
 CREATE TABLE MEMBER(
 FIRSTNAME VARCHAR(30),
 LASTNAME VARCHAR(50),
 AGE INT);
-Table Creation SQL for annotations.database.Member is :
+Table Creation SQL for chap20_annotations.database.Member is :
 CREATE TABLE MEMBER(
 FIRSTNAME VARCHAR(30),
 LASTNAME VARCHAR(50),

@@ -1,5 +1,5 @@
-//: annotations/database/DBTable.java
-package annotations.database;
+//: chap20_annotations/database/DBTable.java
+package chap20_annotations.database;
 
 import java.lang.annotation.*;
 

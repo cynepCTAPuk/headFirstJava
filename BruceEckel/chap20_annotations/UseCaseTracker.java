@@ -1,5 +1,5 @@
-//: annotations/UseCaseTracker.java
-package annotations;
+//: chap20_annotations/UseCaseTracker.java
+package chap20_annotations;
 import java.lang.reflect.*;
 import java.util.*;
 

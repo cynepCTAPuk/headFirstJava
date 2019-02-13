@@ -1,5 +1,5 @@
-//: annotations/AtUnitExample1.java
-package annotations;
+//: chap20_annotations/AtUnitExample1.java
+package chap20_annotations;
 import atunit.*;
 import util.*;
 public class AtUnitExample1 {
@@ -22,7 +22,7 @@ public class AtUnitExample1 {
         OSExecute.command( "atunit.AtUnit AtUnitExample1");
     }
 } /* Output:
-annotations.AtUnitExample1
+chap20_annotations.AtUnitExample1
 . methodOneTest
 . m2 This is methodTwo
 . m3
@@ -30,6 +30,6 @@ annotations.AtUnitExample1
 . anotherDisappointment (failed)
 (5 tests)
 >>> 2 FAILURES <<<
-annotations.AtUnitExample1: failureTest
-annotations.AtUnitExample1: anotherDisappointment
+chap20_annotations.AtUnitExample1: failureTest
+chap20_annotations.AtUnitExample1: anotherDisappointment
 *///:~

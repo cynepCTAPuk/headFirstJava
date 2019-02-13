@@ -1,6 +1,6 @@
-//: annotations/ExtractInterface.java
+//: chap20_annotations/ExtractInterface.java
 // APT-based annotation processing.
-package annotations;
+package chap20_annotations;
 
 import java.lang.annotation.*;
 

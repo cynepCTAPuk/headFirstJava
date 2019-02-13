@@ -1,5 +1,5 @@
-//: annotations/UseCase.java
-package annotations;
+//: chap20_annotations/UseCase.java
+package chap20_annotations;
 import java.lang.annotation.*;
 
 @Target(ElementType.METHOD)

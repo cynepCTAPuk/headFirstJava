@@ -1,5 +1,5 @@
-//: annotations/database/SQLString.java
-package annotations.database;
+//: chap20_annotations/database/SQLString.java
+package chap20_annotations.database;
 
 import java.lang.annotation.*;
 

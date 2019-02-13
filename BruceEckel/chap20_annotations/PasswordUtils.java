@@ -1,5 +1,5 @@
-//: annotations/PasswordUtils.java
-package annotations;
+//: chap20_annotations/PasswordUtils.java
+package chap20_annotations;
 import java.util.*;
 
 public class PasswordUtils {

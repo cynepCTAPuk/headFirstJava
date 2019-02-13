@@ -1,6 +1,6 @@
-//: annotations/AtUnitExternalTest.java
+//: chap20_annotations/AtUnitExternalTest.java
 // Creating non-embedded tests.
-package annotations;
+package chap20_annotations;
 import atunit.*;
 import util.*;
 public class AtUnitExternalTest extends AtUnitExample1 {
@@ -13,7 +13,7 @@ public class AtUnitExternalTest extends AtUnitExample1 {
         OSExecute.command("java atunit.AtUnit AtUnitExternalTest");
     }
 } /* Output:
-annotations.AtUnitExternalTest
+chap20_annotations.AtUnitExternalTest
 . _methodOne
 . _methodTwo This is methodTwo
 OK (2 tests)

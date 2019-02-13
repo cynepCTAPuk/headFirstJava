@@ -1,5 +1,5 @@
-//: annotations/database/Member.java
-package annotations.database;
+//: chap20_annotations/database/Member.java
+package chap20_annotations.database;
 
 @DBTable(name = "MEMBER")
 

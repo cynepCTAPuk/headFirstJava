@@ -1,5 +1,5 @@
-//: annotations/SimulatingNull.java
-package annotations;
+//: chap20_annotations/SimulatingNull.java
+package chap20_annotations;
 
 import java.lang.annotation.*;
 

@@ -1,6 +1,6 @@
-//: annotations/Multiplier.java
+//: chap20_annotations/Multiplier.java
 // APT-based annotation processing.
-package annotations;
+package chap20_annotations;
 
 @ExtractInterface("IMultiplier")
 public class Multiplier {

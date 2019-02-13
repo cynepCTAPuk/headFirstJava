@@ -1,5 +1,5 @@
-//: annotations/Testable.java
-package annotations;
+//: chap20_annotations/Testable.java
+package chap20_annotations;
 import atunit.*;
 
 public class Testable {
