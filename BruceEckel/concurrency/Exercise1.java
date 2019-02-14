@@ -9,7 +9,7 @@ class A implements Runnable{
             System.out.println("A:" + i);
             Thread.yield();
         }
-        System.out.println("Finish A");
+        System.out.println("----- Finish A");
     }
 }
 class B implements Runnable{
@@ -21,7 +21,7 @@ class B implements Runnable{
             System.out.println("B:" + i);
             Thread.yield();
         }
-        System.out.println("Finish B");
+        System.out.println("----- Finish B");
     }
 }
 class C implements Runnable{
@@ -33,7 +33,7 @@ class C implements Runnable{
             System.out.println("C: " + i);
             Thread.yield();
         }
-        System.out.println("Finish C");
+        System.out.println("----- Finish C");
     }
 }
 
