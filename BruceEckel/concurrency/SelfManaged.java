@@ -3,8 +3,8 @@
 package concurrency;
 public class SelfManaged implements Runnable {
     private int countDown = 5;
-    private Thread t = new Thread(this);
-    public SelfManaged() { t.start(); }
+    private Thread thread = new Thread(this);
+    public SelfManaged() { thread.start(); }
     public String toString() {
         return Thread.currentThread().getName() + "(" + countDown + "), ";
     }
