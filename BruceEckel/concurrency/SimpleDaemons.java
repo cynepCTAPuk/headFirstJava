@@ -21,7 +21,7 @@ public class SimpleDaemons implements Runnable {
             daemon.start();
         }
         print("All daemons started");
-        TimeUnit.MILLISECONDS.sleep(175);
+        TimeUnit.MILLISECONDS.sleep(333);
     }
 } /* Output: (Sample)
 All daemons started
