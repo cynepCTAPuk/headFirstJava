@@ -2,26 +2,29 @@
 // User interface responsiveness.
 // {RunByHand}
 package concurrency;
+
 class UnresponsiveUI {
-    private volatile double d = 1;
+    private volatile double result = 1;
     public UnresponsiveUI() throws Exception {
-        while(d > 0)
-            d = d + (Math.PI + Math.E) / d;
+        while (result > 0) result = result + (Math.PI + Math.E) / result;
         System.in.read(); // Never gets here
     }
 }
+
 public class ResponsiveUI extends Thread {
-    private static volatile double d = 1;
+    private static volatile double result = 1;
     public ResponsiveUI() {
         setDaemon(true);
         start();
     }
-    public void run() { while(true) { d = d + (Math.PI + Math.E) / d;}}
+    public void run() {
+        while (true) result = result + (Math.PI + Math.E) / result;
+    }
 
     public static void main(String[] args) throws Exception {
-        //! new UnresponsiveUI(); // Must kill this process
+//        new UnresponsiveUI(); // Must kill this process
         new ResponsiveUI();
         System.in.read();
-        System.out.println(d); // Shows progress
+        System.out.printf("%,f", result); // Shows progress
     }
 } ///:~
