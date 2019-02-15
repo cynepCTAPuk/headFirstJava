@@ -7,7 +7,9 @@ public class SimplePriorities implements Runnable {
     private volatile double d; // No optimization
     private int priority;
     public SimplePriorities(int priority) { this.priority = priority;}
-    public String toString() { return Thread.currentThread() + ": " + countDown;}
+    public String toString() {
+        return Thread.currentThread() + ": " + countDown + "\t- d: " + d;
+    }
     public void run() {
         Thread.currentThread().setPriority(priority);
         while(true) {
