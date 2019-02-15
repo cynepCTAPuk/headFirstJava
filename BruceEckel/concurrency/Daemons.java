@@ -13,15 +13,11 @@ class Daemon implements Runnable {
         }
         for(int i = 0; i < t.length; i++)
             printnb("t[" + i + "].isDaemon() = " + t[i].isDaemon() + ", ");
-        while(true)
-            Thread.yield();
+        while(true) Thread.yield();
     }
 }
 class DaemonSpawn implements Runnable {
-    public void run() {
-        while(true)
-            Thread.yield();
-    }
+    public void run() { while(true) Thread.yield();}
 }
 public class Daemons {
     public static void main(String[] args) throws Exception {
