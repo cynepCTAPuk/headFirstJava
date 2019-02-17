@@ -13,36 +13,28 @@ class Car {
         try {
             waxOn = true; // Ready to buff
             condition.signalAll();
-        } finally {
-            lock.unlock();
-        }
+        } finally { lock.unlock();}
     }
     public void buffed() {
         lock.lock();
         try {
             waxOn = false; // Ready for another coat of wax
             condition.signalAll();
-        } finally {
-            lock.unlock();
-        }
+        } finally { lock.unlock();}
     }
     public void waitForWaxing() throws InterruptedException {
         lock.lock();
         try {
             while(waxOn == false)
                 condition.await();
-        } finally {
-            lock.unlock();
-        }
+        } finally { lock.unlock();}
     }
     public void waitForBuffing() throws InterruptedException{
         lock.lock();
         try {
             while(waxOn == true)
                 condition.await();
-        } finally {
-            lock.unlock();
-        }
+        } finally { lock.unlock();}
     }
 }
 class WaxOn implements Runnable {
