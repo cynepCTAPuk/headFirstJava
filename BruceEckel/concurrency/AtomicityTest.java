@@ -1,4 +1,5 @@
 //: concurrency/AtomicityTest.java
+// Doesn't work on SDK 10.0.2
 package concurrency;
 import java.util.concurrent.*;
 public class AtomicityTest implements Runnable {
