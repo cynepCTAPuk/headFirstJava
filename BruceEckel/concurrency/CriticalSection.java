@@ -6,6 +6,9 @@ package concurrency;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.*;
 import java.util.*;
+
+import static java.lang.String.format;
+
 class Pair { // Not thread-safe
     private int x, y;
     public Pair() { this(0, 0); }
@@ -69,7 +72,8 @@ class PairManipulator implements Runnable {
         while(true) pm.increment();
     }
     public String toString() {
-        return "Pair: " + pm.getPair() + " checkCounter = " + pm.checkCounter.get();
+//        return "Pair: " + pm.getPair() + " checkCounter = " + pm.checkCounter.get();
+        return format("Pair: %12s \tcheckCounter = %,10d", pm.getPair(), pm.checkCounter.get());
     }
 }
 class PairChecker implements Runnable {
