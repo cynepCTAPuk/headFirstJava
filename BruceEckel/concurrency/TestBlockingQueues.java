@@ -37,8 +37,7 @@ public class TestBlockingQueues {
         print(message);
         getkey();
     }
-    static void
-    test(String msg, BlockingQueue<LiftOff> queue) {
+    static void test(String msg, BlockingQueue<LiftOff> queue) {
         print(msg);
         LiftOffRunner runner = new LiftOffRunner(queue);
         Thread t = new Thread(runner);
