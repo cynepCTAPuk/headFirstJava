@@ -8,18 +8,13 @@ import java.util.concurrent.atomic.*;
 import java.util.*;
 class Pair { // Not thread-safe
     private int x, y;
-    public Pair(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
     public Pair() { this(0, 0); }
+    public Pair(int x, int y) { this.x = x; this.y = y;}
     public int getX() { return x; }
     public int getY() { return y; }
     public void incrementX() { x++; }
     public void incrementY() { y++; }
-    public String toString() {
-        return "x: " + x + ", y: " + y;
-    }
+    public String toString() { return "x: " + x + ", y: " + y;}
     public class PairValuesNotEqualException extends RuntimeException {
         public PairValuesNotEqualException() {
             super("Pair values not equal: " + Pair.this);
@@ -27,15 +22,14 @@ class Pair { // Not thread-safe
     }
     // Arbitrary invariant -- both variables must be equal:
     public void checkState() {
-        if(x != y)
-            throw new PairValuesNotEqualException();
+        if(x != y) throw new PairValuesNotEqualException();
     }
 }
 // Protect a Pair inside a thread-safe class:
 abstract class PairManager {
     AtomicInteger checkCounter = new AtomicInteger(0);
     protected Pair p = new Pair();
-    private List<Pair> storage = Collections.synchronizedList(new ArrayList<Pair>());
+    private List<Pair> storage = Collections.synchronizedList(new ArrayList<>());
     public synchronized Pair getPair() {
         // Make a copy to keep the original safe:
         return new Pair(p.getX(), p.getY());
@@ -43,8 +37,7 @@ abstract class PairManager {
     // Assume this is a time consuming operation
     protected void store(Pair p) {
         storage.add(p);
-        try {
-            TimeUnit.MILLISECONDS.sleep(50);
+        try { TimeUnit.MILLISECONDS.sleep(50);
         } catch(InterruptedException ignore) {}
     }
     public abstract void increment();
@@ -71,12 +64,9 @@ class PairManager2 extends PairManager {
 }
 class PairManipulator implements Runnable {
     private PairManager pm;
-    public PairManipulator(PairManager pm) {
-        this.pm = pm;
-    }
+    public PairManipulator(PairManager pm) { this.pm = pm;}
     public void run() {
-        while(true)
-            pm.increment();
+        while(true) pm.increment();
     }
     public String toString() {
         return "Pair: " + pm.getPair() + " checkCounter = " + pm.checkCounter.get();
@@ -84,9 +74,7 @@ class PairManipulator implements Runnable {
 }
 class PairChecker implements Runnable {
     private PairManager pm;
-    public PairChecker(PairManager pm) {
-        this.pm = pm;
-    }
+    public PairChecker(PairManager pm) { this.pm = pm;}
     public void run() {
         while(true) {
             pm.checkCounter.incrementAndGet();
@@ -96,8 +84,7 @@ class PairChecker implements Runnable {
 }
 public class CriticalSection {
     // Test the two different approaches:
-    static void
-    testApproaches(PairManager pman1, PairManager pman2) {
+    static void testApproaches(PairManager pman1, PairManager pman2) {
         ExecutorService exec = Executors.newCachedThreadPool();
         PairManipulator
                 pm1 = new PairManipulator(pman1),
