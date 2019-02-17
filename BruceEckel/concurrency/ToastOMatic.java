@@ -13,9 +13,7 @@ class Toast {
     public void jam() { status = Status.JAMMED; }
     public Status getStatus() { return status; }
     public int getId() { return id; }
-    public String toString() {
-        return "Toast " + id + ": " + status;
-    }
+    public String toString() { return "Toast " + id + ": " + status;}
 }
 class ToastQueue extends LinkedBlockingQueue<Toast> {}
 class Toaster implements Runnable {
@@ -27,15 +25,11 @@ class Toaster implements Runnable {
         try {
             while(!Thread.interrupted()) {
                 TimeUnit.MILLISECONDS.sleep(100 + rand.nextInt(500));
-                // Make toast
-                Toast t = new Toast(count++);
+                Toast t = new Toast(count++); // Make toast
                 print(t);
-                // Insert into queue
-                toastQueue.put(t);
+                toastQueue.put(t); // Insert into queue
             }
-        } catch(InterruptedException e) {
-            print("Toaster interrupted");
-        }
+        } catch(InterruptedException e) { print("Toaster interrupted");}
         print("Toaster off");
     }
 }
@@ -55,9 +49,7 @@ class Butterer implements Runnable {
                 print(t);
                 butteredQueue.put(t);
             }
-        } catch(InterruptedException e) {
-            print("Butterer interrupted");
-        }
+        } catch(InterruptedException e) { print("Butterer interrupted");}
         print("Butterer off");
     }
 }
@@ -77,9 +69,7 @@ class Jammer implements Runnable {
                 print(t);
                 finishedQueue.put(t);
             }
-        } catch(InterruptedException e) {
-            print("Jammer interrupted");
-        }
+        } catch(InterruptedException e) { print("Jammer interrupted");}
         print("Jammer off");
     }
 }
@@ -100,12 +90,9 @@ class Eater implements Runnable {
                 if(t.getId() != counter++ || t.getStatus() != Toast.Status.JAMMED) {
                     print(">>>> Error: " + t);
                     System.exit(1);
-                } else
-                    print("Chomp! " + t);
+                } else print("Chomp! " + t);
             }
-        } catch(InterruptedException e) {
-            print("Eater interrupted");
-        }
+        } catch(InterruptedException e) { print("Eater interrupted");}
         print("Eater off");
     }
 }
