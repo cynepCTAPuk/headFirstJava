@@ -6,6 +6,7 @@ import java.util.*;
 class Accessor implements Runnable {
     private final int id;
     public Accessor(int idn) { id = idn; }
+    public String toString() { return "#" + id + ": " + ThreadLocalVariableHolder.get();}
     public void run() {
         while(!Thread.currentThread().isInterrupted()) {
             ThreadLocalVariableHolder.increment();
@@ -13,7 +14,6 @@ class Accessor implements Runnable {
             Thread.yield();
         }
     }
-    public String toString() { return "#" + id + ": " + ThreadLocalVariableHolder.get();}
 }
 public class ThreadLocalVariableHolder {
     private static ThreadLocal<Integer> value = new ThreadLocal<>() {
