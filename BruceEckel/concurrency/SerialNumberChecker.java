@@ -35,7 +35,7 @@ public class SerialNumberChecker {
             while(true) {
                 int serial = SerialNumberGenerator.nextSerialNumber();
                 if(serials.contains(serial)) {
-                    System.out.println("Duplicate: " + serial);
+                    System.out.printf("Duplicate: %,d\n", serial);
                     System.exit(0);
                 }
                 serials.add(serial);
