@@ -31,25 +31,16 @@ class Entrance implements Runnable {
     }
     public void run() {
         while(!canceled) {
-            synchronized(this) {
-                ++number;
-            }
+            synchronized(this) { ++number;}
             print(this + " Total: " + count.increment());
-            try {
-                TimeUnit.MILLISECONDS.sleep(100);
-            } catch(InterruptedException e) {
-                print("sleep interrupted");
-            }
+            try { TimeUnit.MILLISECONDS.sleep(100);
+            } catch(InterruptedException e) { print("sleep interrupted");}
         }
         print("Stopping " + this);
     }
     public synchronized int getValue() { return number; }
-    public String toString() {
-        return "Entrance " + id + ": " + getValue();
-    }
-    public static int getTotalCount() {
-        return count.value();
-    }
+    public String toString() { return "Entrance " + id + ": " + getValue();}
+    public static int getTotalCount() { return count.value();}
     public static int sumEntrances() {
         int sum = 0;
         for(Entrance entrance : entrances)
