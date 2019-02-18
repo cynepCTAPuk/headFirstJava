@@ -10,19 +10,17 @@ class TaskPortion implements Runnable {
     private static Random rand = new Random(47);
     private final CountDownLatch latch;
     TaskPortion(CountDownLatch latch) { this.latch = latch;}
-    public void run() {
-        try {
-            doWork();
-            latch.countDown();
-        } catch(InterruptedException ex) {
-            // Acceptable way to exit
-        }
-    }
+    public String toString() { return String.format("%1$-3d ", id);}
     public void doWork() throws InterruptedException {
         TimeUnit.MILLISECONDS.sleep(rand.nextInt(2000));
         print(this + "completed");
     }
-    public String toString() { return String.format("%1$-3d ", id);}
+    public void run() {
+        try {
+            doWork();
+            latch.countDown();
+        } catch(InterruptedException ex) { } // Acceptable way to exit
+    }
 }
 // Waits on the CountDownLatch:
 class WaitingTask implements Runnable {
@@ -30,13 +28,13 @@ class WaitingTask implements Runnable {
     private final int id = counter++;
     private final CountDownLatch latch;
     WaitingTask(CountDownLatch latch) { this.latch = latch;}
+    public String toString() { return String.format("WaitingTask %1$-3d ", id);}
     public void run() {
         try {
             latch.await();
             print("Latch barrier passed for " + this);
         } catch(InterruptedException ex) { print(this + " interrupted");}
     }
-    public String toString() { return String.format("WaitingTask %1$-3d ", id);}
 }
 public class CountDownLatchDemo {
     static final int SIZE = 100;
@@ -44,7 +42,7 @@ public class CountDownLatchDemo {
         ExecutorService exec = Executors.newCachedThreadPool();
         // All must share a single CountDownLatch object:
         CountDownLatch latch = new CountDownLatch(SIZE);
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 5; i++)
             exec.execute(new WaitingTask(latch));
         for(int i = 0; i < SIZE; i++)
             exec.execute(new TaskPortion(latch));
