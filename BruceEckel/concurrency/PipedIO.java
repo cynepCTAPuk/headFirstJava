@@ -27,8 +27,7 @@ class Receiver implements Runnable {
     }
     public void run() {
         try {
-            while(true) {
-                // Blocks until characters are there:
+            while(true) { // Blocks until characters are there:
                 printnb("Read: " + (char)in.read() + ", ");
             }
         } catch(IOException e) { print(e + " Receiver read exception");}
