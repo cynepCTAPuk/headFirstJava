@@ -18,7 +18,7 @@ public class DeadlockingDiningPhilosophers {
         for (int i = 0; i < size; i++)
             exec.execute(new Philosopher(sticks[i], sticks[(i + 1) % size], i, ponder));
         if (args.length == 3 && args[2].equals("timeout"))
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(15);
         else {
             System.out.println("Press ‘Enter’ to quit");
             System.in.read();
