@@ -43,6 +43,11 @@ public class PipedIO {
         exec.execute(receiver);
         TimeUnit.SECONDS.sleep(4);
         exec.shutdownNow();
+        TimeUnit.SECONDS.sleep(1);
+
+        for (char i = 'A'; i <= 'Z' ; i++) { System.out.printf("%4d:%c",(int)i, i);}
+        System.out.println();
+        for (char i = 'a'; i <= 'z' ; i++) { System.out.printf("%4d:%c",(int)i, i);}
     }
 } /* Output: (65% match)
 Read: A, Read: B, Read: C, Read: D, Read: E, Read: F, Read: G, Read: H,
