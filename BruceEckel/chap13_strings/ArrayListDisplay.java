@@ -1,6 +1,6 @@
 //: chap13_strings/ArrayListDisplay.java
 package chap13_strings;
-import generics.coffee.*;
+import chap15_generics.coffee.*;
 import java.util.*;
 public class ArrayListDisplay {
     public static void main(String[] args) {

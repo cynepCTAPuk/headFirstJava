@@ -1,7 +1,7 @@
 package chap11_holding;
 
 //: holding/CrossContainerIteration.java
-import typeinfo.pets.*;
+import chap14_typeinfo.pets.*;
 import java.util.*;
 public class CrossContainerIteration {
     public static void display(Iterator<Pet> it) {

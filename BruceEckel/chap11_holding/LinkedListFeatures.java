@@ -1,7 +1,7 @@
 package chap11_holding;
 
 //: holding/LinkedListFeatures.java
-import typeinfo.pets.*;
+import chap14_typeinfo.pets.*;
 import java.util.*;
 import static util.Print.print;
 

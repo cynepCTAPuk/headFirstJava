@@ -1,7 +1,7 @@
 // A utility to use with Generators.
 package chap15_generics;
 
-import generics.coffee.*;
+import chap15_generics.coffee.*;
 import util.*;
 
 import java.util.*;

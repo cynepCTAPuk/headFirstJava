@@ -1,6 +1,6 @@
 //: holding/NonCollectionSequence.java
 package chap11_holding;
-import typeinfo.pets.*;
+import chap14_typeinfo.pets.*;
 import java.util.*;
 class PetSequence {
     protected Pet[] pets = Pets.createArray(8);

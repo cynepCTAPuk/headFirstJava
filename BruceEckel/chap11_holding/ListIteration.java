@@ -1,7 +1,7 @@
 package chap11_holding;
 
 //: holding/ListIteration.java
-import typeinfo.pets.*;
+import chap14_typeinfo.pets.*;
 import java.util.*;
 public class ListIteration {
     public static void main(String[] args) {

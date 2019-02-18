@@ -1,7 +1,7 @@
 //: containers/IndividualTest.java
 package chap17_containers;
 import chap11_holding.MapOfList;
-import typeinfo.pets.*;
+import chap14_typeinfo.pets.*;
 import java.util.*;
 public class IndividualTest {
     public static void main(String[] args) {

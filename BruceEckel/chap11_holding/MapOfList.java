@@ -1,6 +1,6 @@
 //: holding/MapOfList.java
 package chap11_holding;
-import typeinfo.pets.*;
+import chap14_typeinfo.pets.*;
 import java.util.*;
 import static util.Print.*;
 

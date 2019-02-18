@@ -1,11 +1,11 @@
 //: generics/WatercolorSets.java
 package chap15_generics;
-import generics.watercolors.*;
+import chap15_generics.watercolors.*;
 
 import java.util.*;
 import static util.Print.*;
 import static util.Sets.*;
-import static generics.watercolors.Watercolors.*;
+import static chap15_generics.watercolors.Watercolors.*;
 public class WatercolorSets {
     public static void main(String[] args) {
         Set<Watercolors> set1 = EnumSet.range(BRILLIANT_RED, VIRIDIAN_HUE);

@@ -1,6 +1,6 @@
 //: holding/InterfaceVsIterator.java
 package chap11_holding;
-import typeinfo.pets.*;
+import chap14_typeinfo.pets.*;
 import java.util.*;
 public class InterfaceVsIterator {
     public static void display(Iterator<Pet> it) {

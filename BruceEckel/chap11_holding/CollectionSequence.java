@@ -1,6 +1,6 @@
 //: holding/CollectionSequence.java
 package chap11_holding;
-import typeinfo.pets.*;
+import chap14_typeinfo.pets.*;
 import java.util.*;
 public class CollectionSequence extends AbstractCollection<Pet> {
     private Pet[] pets = Pets.createArray(8);
