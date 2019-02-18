@@ -115,11 +115,9 @@ public class GreenhouseScheduler {
                         tempDirection * (1.0f + rand.nextFloat());
                 if(rand.nextInt(5) == 4)
                     humidityDirection = -humidityDirection;
-                lastHumidity = lastHumidity +
-                        humidityDirection * rand.nextFloat();
-                // Calendar must be cloned, otherwise all
-                // DataPoints hold references to the same lastTime.
-                // For a basic object like Calendar, clone() is OK.
+                lastHumidity = lastHumidity + humidityDirection * rand.nextFloat();
+                // Calendar must be cloned, otherwise all DataPoints hold references
+                // to the same lastTime. For a basic object like Calendar, clone() is OK.
                 data.add(new DataPoint((Calendar)lastTime.clone(), lastTemp, lastHumidity));
             }
         }
@@ -127,7 +125,7 @@ public class GreenhouseScheduler {
     public static void main(String[] args) {
         GreenhouseScheduler gh = new GreenhouseScheduler();
         gh.schedule(gh.new Terminate(), 5000);
-// Former "Restart" class not necessary:
+        // Former "Restart" class not necessary:
         gh.repeat(gh.new Bell(), 0, 1000);
         gh.repeat(gh.new ThermostatNight(), 0, 2000);
         gh.repeat(gh.new LightOn(), 0, 200);
