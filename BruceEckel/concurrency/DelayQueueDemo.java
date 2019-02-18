@@ -9,7 +9,7 @@ class DelayedTask implements Runnable, Delayed {
     private final int id = counter++;
     private final int delta;
     private final long trigger;
-    protected static List<DelayedTask> sequence = new ArrayList<DelayedTask>();
+    protected static List<DelayedTask> sequence = new ArrayList<>();
     public DelayedTask(int delayInMilliseconds) {
         delta = delayInMilliseconds;
         trigger = System.nanoTime() + NANOSECONDS.convert(delta, MILLISECONDS);
@@ -25,12 +25,8 @@ class DelayedTask implements Runnable, Delayed {
         return 0;
     }
     public void run() { printnb(this + " "); }
-    public String toString() {
-        return String.format("[%1$-4d]", delta) + " Task " + id;
-    }
-    public String summary() {
-        return "(" + id + ":" + delta + ")";
-    }
+    public String toString() { return String.format("[%1$-4d]", delta) + " Task " + id;}
+    public String summary() { return "(" + id + ":" + delta + ")";}
     public static class EndSentinel extends DelayedTask {
         private ExecutorService exec;
         public EndSentinel(int delay, ExecutorService e) {
@@ -66,7 +62,7 @@ public class DelayQueueDemo {
     public static void main(String[] args) {
         Random rand = new Random(47);
         ExecutorService exec = Executors.newCachedThreadPool();
-        DelayQueue<DelayedTask> queue = new DelayQueue<DelayedTask>();
+        DelayQueue<DelayedTask> queue = new DelayQueue<>();
         // Fill with tasks that have random delays:
         for(int i = 0; i < 20; i++)
             queue.put(new DelayedTask(rand.nextInt(5000)));
