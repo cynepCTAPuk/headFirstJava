@@ -12,6 +12,7 @@ class Horse implements Runnable {
     private static CyclicBarrier barrier;
     public Horse(CyclicBarrier b) { barrier = b; }
     public synchronized int getStrides() { return strides; }
+    public String toString() { return "Horse " + id + " "; }
     public void run() {
         try {
             while(!Thread.interrupted()) {
@@ -27,7 +28,6 @@ class Horse implements Runnable {
             throw new RuntimeException(e);
         }
     }
-    public String toString() { return "Horse " + id + " "; }
     public String tracks() {
         StringBuilder s = new StringBuilder();
         for(int i = 0; i < getStrides(); i++)
@@ -72,7 +72,7 @@ public class HorseRace {
     }
     public static void main(String[] args) {
         int nHorses = 7;
-        int pause = 200;
+        int pause = 500;
         if(args.length > 0) { // Optional argument
             int n = Integer.valueOf(args[0]);
             nHorses = n > 0 ? n : nHorses;
