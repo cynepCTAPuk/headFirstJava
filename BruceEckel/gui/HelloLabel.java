@@ -11,7 +11,7 @@ public class HelloLabel {
         frame.setSize(300, 100);
         frame.setLocation(500,400);
         frame.setVisible(true);
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.SECONDS.sleep(3);
         label.setText("Hey! This is Different!");
     }
 } ///:~
