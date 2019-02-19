@@ -8,7 +8,7 @@ import java.util.concurrent.locks.*;
 import java.util.*;
 import static util.Print.*;
 abstract class Accumulator {
-    public static long cycles = 50000L;
+    public static long cycles = 5_000L;
     // Number of Modifiers and Readers during each test:
     private static final int N = 4;
     public static ExecutorService exec = Executors.newFixedThreadPool(N*2);
@@ -17,7 +17,7 @@ abstract class Accumulator {
     protected volatile long value = 0;
     protected long duration = 0;
     protected String id = "error";
-    protected final static int SIZE = 100000;
+    protected final static int SIZE = 1_000_000;
     protected static int[] preLoaded = new int[SIZE];
     static {
         // Load the array of random numbers:
@@ -62,12 +62,11 @@ abstract class Accumulator {
             throw new RuntimeException(e);
         }
         duration = System.nanoTime() - start;
-        printf("%-13s: %13d\n", id, duration);
+        printf("%-13s: %,15d\n", id, duration);
     }
     public static void
     report(Accumulator acc1, Accumulator acc2) {
-        printf("%-22s: %.2f\n", acc1.id + "/" + acc2.id,
-                (double)acc1.duration/(double)acc2.duration);
+        printf("%-23s: %5.2f\n", acc1.id + "/" + acc2.id, (double)acc1.duration/(double)acc2.duration);
     }
 }
 class BaseLine extends Accumulator {
@@ -129,8 +128,8 @@ public class SynchronizationComparisons {
     static LockTest lock = new LockTest();
     static AtomicTest atomic = new AtomicTest();
     static void test() {
-        print("============================");
-        printf("%-12s : %13d\n", "Cycles", Accumulator.cycles);
+        print("==============================");
+        printf("%-12s : %,15d\n", "Cycles", Accumulator.cycles);
         baseLine.timedTest();
         synch.timedTest();
         lock.timedTest();
