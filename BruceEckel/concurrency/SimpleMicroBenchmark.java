@@ -14,7 +14,8 @@ class LockingTest extends Incrementable {
     public void increment() {
         lock.lock();
         try { ++counter;
-        } finally { lock.unlock();}
+        } finally {
+            lock.unlock();}
     }
 }
 public class SimpleMicroBenchmark {
