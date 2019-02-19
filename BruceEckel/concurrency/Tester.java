@@ -41,7 +41,7 @@ public abstract class Tester<C> {
         }
         System.out.printf("%-27s %,14d %,14d\n", testId, readTime, writeTime);
         if(readTime != 0 && writeTime != 0)
-            System.out.printf("%-27s %,14d\n", "readTime + writeTime =", readTime + writeTime);
+            System.out.printf("%-27s %,21d\n", "readTime + writeTime =", readTime + writeTime);
     }
     abstract class TestTask implements Runnable {
         abstract void test();
@@ -58,12 +58,9 @@ public abstract class Tester<C> {
         }
     }
     public static void initMain(String[] args) {
-        if(args.length > 0)
-            testReps = Integer.valueOf(args[0]);
-        if(args.length > 1)
-            testCycles = Integer.valueOf(args[1]);
-        if(args.length > 2)
-            containerSize = Integer.valueOf(args[2]);
+        if(args.length > 0) testReps = Integer.valueOf(args[0]);
+        if(args.length > 1) testCycles = Integer.valueOf(args[1]);
+        if(args.length > 2) containerSize = Integer.valueOf(args[2]);
         System.out.printf("%-27s %14s %14s\n", "Type", "Read time", "Write time");
     }
 } ///:~
