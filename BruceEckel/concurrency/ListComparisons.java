@@ -27,21 +27,16 @@ abstract class ListTest extends Tester<List<Integer>> {
                 for(int index = 0; index < containerSize; index++)
                     testContainer.set(index, writeData[index]);
         }
-        void putResults() {
-            writeTime += duration;
-        }
+        void putResults() { writeTime += duration;}
     }
     void startReadersAndWriters() {
-        for(int i = 0; i < nReaders; i++)
-            exec.execute(new Reader());
-        for(int i = 0; i < nWriters; i++)
-            exec.execute(new Writer());
+        for(int i = 0; i < nReaders; i++) exec.execute(new Reader());
+        for(int i = 0; i < nWriters; i++) exec.execute(new Writer());
     }
 }
 class SynchronizedArrayListTest extends ListTest {
     List<Integer> containerInitializer() {
-        return Collections.synchronizedList(
-                new ArrayList<>(new CountingIntegerList(containerSize)));
+        return Collections.synchronizedList( new ArrayList<>(new CountingIntegerList(containerSize)));
     }
     SynchronizedArrayListTest(int nReaders, int nWriters) {
         super("Synched ArrayList", nReaders, nWriters);
@@ -58,12 +53,15 @@ class CopyOnWriteArrayListTest extends ListTest {
 public class ListComparisons {
     public static void main(String[] args) {
         Tester.initMain(args);
+
         new SynchronizedArrayListTest(10, 0);
         new SynchronizedArrayListTest(9, 1);
         new SynchronizedArrayListTest(5, 5);
+
         new CopyOnWriteArrayListTest(10, 0);
         new CopyOnWriteArrayListTest(9, 1);
         new CopyOnWriteArrayListTest(5, 5);
+
         Tester.exec.shutdown();
     }
 } /* Output: (Sample)
