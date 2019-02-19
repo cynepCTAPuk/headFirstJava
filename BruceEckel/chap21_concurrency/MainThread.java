@@ -1,0 +1,13 @@
+//: chap21_concurrency/MainThread.java
+package chap21_concurrency;
+public class MainThread {
+    public static void main(String[] args) {
+        LiftOff launch = new LiftOff();
+        launch.run();
+        System.out.println();
+        LiftOff launch1 = new LiftOff(12);
+        launch1.run();
+    }
+} /* Output:
+#0(9), #0(8), #0(7), #0(6), #0(5), #0(4), #0(3), #0(2), #0(1), #0(Liftoff!),
+*///:~

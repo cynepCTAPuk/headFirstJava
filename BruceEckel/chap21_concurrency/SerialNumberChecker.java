@@ -1,0 +1,57 @@
+//: chap21_concurrency/SerialNumberChecker.java
+// Operations that may seem safe are not, when threads are present.
+// {Args: 4}
+package chap21_concurrency;
+import java.util.concurrent.*;
+// Reuses storage so we don’t run out of memory:
+class CircularSet {
+    private int[] array;
+    private int lenght;
+    private int index = 0;
+    public CircularSet(int size) {
+        array = new int[size];
+        lenght = size;
+        // Initialize to a value not produced by the SerialNumberGenerator:
+        for(int i = 0; i < size; i++)
+            array[i] = -1;
+    }
+    public synchronized void add(int i) {
+        array[index] = i;
+        // Wrap index and write over old elements:
+        index = ++index % lenght;
+    }
+    public synchronized boolean contains(int val) {
+        for(int i = 0; i < lenght; i++)
+            if(array[i] == val) return true;
+        return false;
+    }
+}
+public class SerialNumberChecker {
+    private static final int SIZE = 10;
+    private static CircularSet serials = new CircularSet(1000);
+    private static ExecutorService exec = Executors.newCachedThreadPool();
+    static class SerialChecker implements Runnable {
+        public void run() {
+            while(true) {
+                int serial = SerialNumberGenerator.nextSerialNumber();
+                if(serials.contains(serial)) {
+                    System.out.printf("Duplicate: %,d\n", serial);
+                    System.exit(0);
+                }
+                serials.add(serial);
+            }
+        }
+    }
+    public static void main(String[] args) throws Exception {
+        for(int i = 0; i < SIZE; i++)
+            exec.execute(new SerialChecker());
+        // Stop after n seconds if there’s an argument:
+        if(args.length > 0) {
+            TimeUnit.SECONDS.sleep(Integer.valueOf(args[0]));
+            System.out.println("No duplicates detected");
+            System.exit(0);
+        }
+    }
+} /* Output: (Sample)
+Duplicate: 8468656
+*///:~
