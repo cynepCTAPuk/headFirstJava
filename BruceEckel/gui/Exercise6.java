@@ -2,47 +2,41 @@
 // Allows you to easily try out regular expressions.
 // {Args: abcabcabcdefabc "abc+" "(abc)+" "(abc){2,}" }
 package gui;
-
 import util.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.regex.*;
-
 public class Exercise6 extends JFrame {
+    private JTextArea inputTextArea = new JTextArea(10, 55);
+    private JTextArea outputTextArea = new JTextArea(10, 55);
+    private JTextField regExpTextField = new JTextField(10);
     private JButton
-            addData = new JButton("Reg Data"),
-            clearData = new JButton("Clear Data");
-    private JTextArea textExp = new JTextArea(10, 55);
-    private JTextArea textResult = new JTextArea(10, 55);
-    private JTextField textReg = new JTextField(10);
+            searchButton = new JButton("Search"),
+            clearInputButton = new JButton("Clear Input");
 
     Exercise6() {
-        addData.addActionListener(new ActionListener() {
+        searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String exp = textExp.getText();
-                String reg = textReg.getText();
-                textResult.setText(RegExp(exp,reg));
+                String exp = inputTextArea.getText();
+                String reg = regExpTextField.getText();
+                outputTextArea.setText(RegExp(exp,reg));
             }
         });
-        clearData.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                textExp.setText("");
-            }
+        clearInputButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) { inputTextArea.setText("");}
         });
 
-        textExp.setFont(new Font("monospaced", Font.PLAIN, 12));
-        textResult.setFont(new Font("monospaced", Font.PLAIN, 12));
-//        textExp.setColumns(70);
-//        textResult.setColumns(70);
+        inputTextArea.setFont(new Font("monospaced", Font.PLAIN, 12));
+        outputTextArea.setFont(new Font("monospaced", Font.PLAIN, 12));
 
         setLayout(new FlowLayout());
-        add(new JScrollPane(textExp));
-        add(textReg);
-        add(new JScrollPane(textResult));
-        add(addData);
-        add(clearData);
+        add(new JScrollPane(inputTextArea));
+        add(regExpTextField);
+        add(new JScrollPane(outputTextArea));
+        add(searchButton);
+        add(clearInputButton);
 
     }
 
@@ -54,6 +48,7 @@ public class Exercise6 extends JFrame {
             string += "Match \"" + m.group() + "\" at positions " +
                     m.start() + "-" + (m.end() - 1 + "\n");
         }
+        if(string == "") return "\"*******\"";
         return string;
     }
 
