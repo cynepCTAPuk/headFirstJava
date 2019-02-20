@@ -18,10 +18,12 @@ public class Button2 extends JFrame {
             txt.setText(name);
         }
     }
-    private ButtonListener bl = new ButtonListener();
+
+    private ButtonListener b = new ButtonListener();
+
     public Button2() {
-        b1.addActionListener(bl);
-        b2.addActionListener(bl);
+        b1.addActionListener(b);
+        b2.addActionListener(b);
         setLayout(new FlowLayout());
         add(b1);
         add(b2);
