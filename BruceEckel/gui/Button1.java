@@ -1,11 +1,11 @@
 //: gui/Button1.java
 // Putting buttons on a Swing application.
 package gui;
-import javafx.stage.*;
+import util.*;
 
 import javax.swing.*;
 import java.awt.*;
-import static util.SwingConsole.*;
+
 public class Button1 extends JFrame {
     private JButton
             b1 = new JButton("Button 1"),
@@ -16,6 +16,6 @@ public class Button1 extends JFrame {
         add(b2);
     }
     public static void main(String[] args) {
-        run(new Button1(), 200, 100);
+        SwingConsole.run(new Button1(), 200, 100);
     }
 } ///:~

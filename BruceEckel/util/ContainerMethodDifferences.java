@@ -20,7 +20,7 @@ public class ContainerMethodDifferences {
         System.out.print(superset.getSimpleName() + " extends " + subset.getSimpleName()
                 + ", adds: ");
         Set<String> comp = Sets.difference( methodSet(superset), methodSet(subset));
-        comp.removeAll(object); // Don’t show ‘Object’ methods
+        comp.removeAll(object); // Don’t run ‘Object’ methods
         System.out.println(comp);
         interfaces(superset);
     }

@@ -23,4 +23,8 @@ public class SwingConsole {
             }
         });
     }
+
+    public static void main(String[] args) {
+        run(new JFrame(), 200,100);
+    }
 } ///:~

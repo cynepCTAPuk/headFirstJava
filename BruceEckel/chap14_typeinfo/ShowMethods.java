@@ -1,5 +1,5 @@
 //: typeinfo/ShowMethods.java
-// Using reflection to show all the methods of a class,
+// Using reflection to run all the methods of a class,
 // even if the methods are defined in the base class.
 // {Args: ShowMethods}
 package chap14_typeinfo;
@@ -11,7 +11,7 @@ public class ShowMethods {
   private static String usage =
     "usage:\n" +
     "ShowMethods qualified.class.name\n" +
-    "To show all methods in class or:\n" +
+    "To run all methods in class or:\n" +
     "ShowMethods qualified.class.name word\n" +
     "To search for methods involving 'word'";
   private static Pattern p = Pattern.compile("\\w+\\.");
