@@ -1,6 +1,8 @@
 //: gui/Button1.java
 // Putting buttons on a Swing application.
 package gui;
+import javafx.stage.*;
+
 import javax.swing.*;
 import java.awt.*;
 import static util.SwingConsole.*;
