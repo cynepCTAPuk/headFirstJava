@@ -10,21 +10,21 @@ public class Button2b extends JFrame {
             b1 = new JButton("Button 1"),
             b2 = new JButton("Button 2");
     private JTextField txt = new JTextField(10);
-    private ActionListener bl = new ActionListener() {
+    private ActionListener b = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             String name = ((JButton)e.getSource()).getText();
             txt.setText(name);
         }
     };
     public Button2b() {
-        b1.addActionListener(bl);
-        b2.addActionListener(bl);
+        b1.addActionListener(b);
+        b2.addActionListener(b);
         setLayout(new FlowLayout());
         add(b1);
         add(b2);
         add(txt);
     }
     public static void main(String[] args) {
-        run(new Button2b(), 200, 150);
+        run(new Button2b(), 200, 100);
     }
 } ///:~
