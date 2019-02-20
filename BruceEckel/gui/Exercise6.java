@@ -8,6 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.regex.*;
+
 public class Exercise6 extends JFrame {
     private JTextArea inputTextArea = new JTextArea(10, 55);
     private JTextArea outputTextArea = new JTextArea(10, 55);
@@ -21,11 +22,15 @@ public class Exercise6 extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String exp = inputTextArea.getText();
                 String reg = regExpTextField.getText();
-                outputTextArea.setText(RegExp(exp,reg));
+                outputTextArea.setText(RegExp(exp, reg));
             }
         });
         clearInputButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) { inputTextArea.setText("");}
+            public void actionPerformed(ActionEvent e) {
+                inputTextArea.setText("");
+                outputTextArea.setText("");
+                regExpTextField.setText("");
+            }
         });
 
         inputTextArea.setFont(new Font("monospaced", Font.PLAIN, 12));
@@ -33,8 +38,8 @@ public class Exercise6 extends JFrame {
 
         setLayout(new FlowLayout());
         add(new JScrollPane(inputTextArea));
-        add(regExpTextField);
         add(new JScrollPane(outputTextArea));
+        add(regExpTextField);
         add(searchButton);
         add(clearInputButton);
 
@@ -43,13 +48,13 @@ public class Exercise6 extends JFrame {
     String RegExp(String exp, String reg) {
         Pattern p = Pattern.compile(reg);
         Matcher m = p.matcher(exp);
-        String string = "";
+        StringBuilder string = new StringBuilder();
         while (m.find()) {
-            string += "Match \"" + m.group() + "\" at positions " +
-                    m.start() + "-" + (m.end() - 1 + "\n");
+            string.append("Match \"" + m.group() + "\" at positions "
+                    + m.start() + "-" + (m.end() - 1) + "\n");
         }
-        if(string == "") return "\"*******\"";
-        return string;
+        string.append("\"******************\"");
+        return string.toString();
     }
 
     public static void main(String[] args) {
