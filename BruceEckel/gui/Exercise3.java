@@ -1,6 +1,5 @@
 package gui;
 
-import util.*;
 import static util.SwingConsole.*;
 import javax.swing.*;
 public class Exercise3 extends JFrame{
