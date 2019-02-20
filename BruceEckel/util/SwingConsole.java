@@ -2,6 +2,7 @@
 // Tool for running Swing demos from the
 // console, both applets and JFrames.
 package util;
+
 import javax.swing.*;
 public class SwingConsole {
     public static void run(final JFrame f, final int width, final int height) {
@@ -12,7 +13,6 @@ public class SwingConsole {
                 f.setSize(width, height);
                 f.setVisible(true);
                 f.setLocation(500,400);
-
             }
         });
     }
