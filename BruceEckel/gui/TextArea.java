@@ -9,28 +9,31 @@ import util.*;
 import static util.SwingConsole.*;
 public class TextArea extends JFrame {
     private JButton
-            b = new JButton("Add Data"),
-            c = new JButton("Clear Data");
-    private JTextArea t = new JTextArea(20, 40);
-    private Map<String,String> m = new TreeMap<>();
+            addData = new JButton("Add Data"),
+            clearData = new JButton("Clear Data");
+    private JTextArea textArea = new JTextArea(20, 40);
+    private Map<String,String> map = new TreeMap<>();
     public TextArea() {
-        // Use up all the data:
-        m.putAll(Countries.capitals());
-        b.addActionListener(new ActionListener() {
+        map.putAll(Countries.capitals()); // Use up all the data:
+
+        addData.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                for(Map.Entry me : m.entrySet())
-                    t.append(me.getKey() + ": "+ me.getValue()+"\n");
+                for(Map.Entry me : map.entrySet())
+                    textArea.append(String.format("%-25s: %s\n",me.getKey(), me.getValue()));
             }
         });
-        c.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) { t.setText("");}
+        clearData.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) { textArea.setText("");}
         });
+
+        textArea.setFont(new Font("monospaced",Font.PLAIN, 12));
+        textArea.setColumns(70);
         setLayout(new FlowLayout());
-        add(new JScrollPane(t));
-        add(b);
-        add(c);
+        add(new JScrollPane(textArea));
+        add(addData);
+        add(clearData);
     }
     public static void main(String[] args) {
-        run(new TextArea(), 475, 425);
+        run(new TextArea(), 515, 425);
     }
 } ///:~
