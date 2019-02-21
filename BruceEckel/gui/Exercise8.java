@@ -1,17 +1,14 @@
 package gui;
-
 import util.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class Exercise8 extends JFrame {
+    private JButton jButton = new JButton("jButton");
     private JTextArea jTextArea = new JTextArea("jTextArea", 10, 55);
     private JTextField jTextField = new JTextField("jTextField", 10);
-    private JButton jButton = new JButton("jButton");
     private Cursor cursor = new Cursor(0);
-
     Exercise8() {
         jButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -23,10 +20,8 @@ public class Exercise8 extends JFrame {
             public void mouseMoved(MouseEvent e) {
                 final int x = e.getX();
                 final int y = e.getY();
-                // only display a hand if the cursor is over the items
                 jTextArea.setCursor(new Cursor(12));
             }
-
             public void mouseDragged(MouseEvent e) {}
         });
 
@@ -38,6 +33,6 @@ public class Exercise8 extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingConsole.run(new Exercise8(), 410, 500);
+        SwingConsole.run(new Exercise8(), 400, 300);
     }
 }
