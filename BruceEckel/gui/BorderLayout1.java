@@ -1,6 +1,6 @@
 //: gui/BorderLayout1.java
 // Demonstrates BorderLayout.
-package util;
+package gui;
 import javax.swing.*;
 import java.awt.*;
 import static util.SwingConsole.*;
