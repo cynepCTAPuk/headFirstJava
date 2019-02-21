@@ -12,7 +12,7 @@ public class ShowMethods extends JFrame {
     private JTextField name = new JTextField(25);
     private JTextArea results = new JTextArea(40, 65);
 //    private static Pattern addListener = Pattern.compile("(add\\w+?Listener\\(.*?\\))");
-    private static Pattern addListener = Pattern.compile("(\\w+?\\(.*?\\))");
+    private static Pattern addListener = Pattern.compile("(addMouse\\w+?\\(.*?\\))");
     private static Pattern qualifier = Pattern.compile("\\w+\\.");
     class NameL implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -26,8 +26,7 @@ public class ShowMethods extends JFrame {
             for(Method m : methods) {
                 Matcher matcher = addListener.matcher(m.toString());
                 if(matcher.find())
-                    results.append(qualifier.matcher(
-                            matcher.group(1)).replaceAll("") + "\n");
+                    results.append(qualifier.matcher( matcher.group(1)).replaceAll("") + "\n");
             }
         }
     }
@@ -44,6 +43,6 @@ public class ShowMethods extends JFrame {
         nameListener.actionPerformed( new ActionEvent("", 0 ,""));
     }
     public static void main(String[] args) {
-        run(new ShowMethods(), 500, 400);
+        run(new ShowMethods(), 600, 800);
     }
 } ///:~
