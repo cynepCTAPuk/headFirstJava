@@ -10,22 +10,16 @@ import static util.SwingConsole.*;
 public class ShowAddListeners extends JFrame {
     private JTextField name = new JTextField(25);
     private JTextArea results = new JTextArea(40, 65);
-    private static Pattern addListener = Pattern.compile("(add\\w+?Listener\\(.*?\\))");
+//    private static Pattern addListener = Pattern.compile("(add\\w+?Listener\\(.*?\\))");
+    private static Pattern addListener = Pattern.compile("(\\w+?\\(.*?\\))");
     private static Pattern qualifier = Pattern.compile("\\w+\\.");
     class NameL implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String nm = name.getText().trim();
-            if(nm.length() == 0) {
-                results.setText("No match");
-                return;
-            }
+            if(nm.length() == 0) { results.setText("No match"); return;}
             Class<?> kind;
-            try {
-                kind = Class.forName("javax.swing." + nm);
-            } catch(ClassNotFoundException ex) {
-                results.setText("No match");
-                return;
-            }
+            try { kind = Class.forName("javax.swing." + nm);
+            } catch(ClassNotFoundException ex) { results.setText("No match");return;}
             Method[] methods = kind.getMethods();
             results.setText("");
             for(Method m : methods) {
