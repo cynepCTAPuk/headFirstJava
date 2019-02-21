@@ -7,40 +7,44 @@ import util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.regex.*;
 
 public class Exercise7 extends JFrame {
-    private JTextArea inputTextArea = new JTextArea(10, 55);
-    private JTextArea outputTextArea = new JTextArea(10, 55);
-    private JTextField regExpTextField = new JTextField(10);
-    private JButton
-            searchButton = new JButton("Search"),
-            clearInputButton = new JButton("Clear Input");
+    private JButton jButton = new JButton("Clear Input");
+    private JCheckBox jCheckBox = new JCheckBox();
+    private JCheckBoxMenuItem jCheckBoxMenuItem = new JCheckBoxMenuItem();
+    private JMenu jMenu = new JMenu();
+    private JMenuItem jMenuItem = new JMenuItem();
+    private JPopupMenu jPopupMenu = new JPopupMenu();
+    private JRadioButton jRadioButton = new JRadioButton();
+    private JRadioButtonMenuItem jRadioButtonMenuItem = new JRadioButtonMenuItem();
+    private JToggleButton jToggleButton = new JToggleButton();
+    private JToolBar jToolBar = new JToolBar();
+
+    private JTextArea jTextArea = new JTextArea(10, 55);
+    private JTextField jTextField = new JTextField(10);
+
 
     Exercise7() {
-        searchButton.addActionListener(new ActionListener() {
+        jButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String exp = inputTextArea.getText();
-                String reg = regExpTextField.getText();
+                String s = jButton.getClass().getSimpleName();
+                jTextArea.setText(s);
             }
         });
-        clearInputButton.addActionListener(new ActionListener() {
+        jCheckBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                inputTextArea.setText("");
-                outputTextArea.setText("");
-                regExpTextField.setText("");
+                String s = jCheckBox.getClass().getSimpleName();
+                jTextArea.setText(s);
             }
         });
 
-        inputTextArea.setFont(new Font("monospaced", Font.PLAIN, 12));
-        outputTextArea.setFont(new Font("monospaced", Font.PLAIN, 12));
+        jTextArea.setFont(new Font("monospaced", Font.PLAIN, 12));
 
         setLayout(new FlowLayout());
-        add(new JScrollPane(inputTextArea));
-        add(new JScrollPane(outputTextArea));
-        add(regExpTextField);
-        add(searchButton);
-        add(clearInputButton);
+        add(new JScrollPane(jTextArea));
+        add(jTextField);
+        add(jButton);
+        add(jCheckBox);
 
     }
 
