@@ -10,8 +10,7 @@ import static util.SwingConsole.*;
 public class ShowAddListeners extends JFrame {
     private JTextField name = new JTextField(25);
     private JTextArea results = new JTextArea(40, 65);
-//    private static Pattern addListener = Pattern.compile("(add\\w+?Listener\\(.*?\\))");
-    private static Pattern addListener = Pattern.compile("(\\w+?\\(.*?\\))");
+    private static Pattern addListener = Pattern.compile("(add\\w+?Listener\\(.*?\\))");
     private static Pattern qualifier = Pattern.compile("\\w+\\.");
     class NameL implements ActionListener {
         public void actionPerformed(ActionEvent e) {
