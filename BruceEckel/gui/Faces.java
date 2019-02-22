@@ -7,7 +7,7 @@ import java.awt.event.*;
 import static util.SwingConsole.*;
 public class Faces extends JFrame {
     private static Icon[] faces;
-    private JButton jb, jb2 = new JButton("Disable");
+    private JButton jb1, jb2 = new JButton("Disable");
     private boolean mad = false;
     public Faces() {
         faces = new Icon[]{
@@ -17,34 +17,34 @@ public class Faces extends JFrame {
                 new ImageIcon(getClass().getResource("Face3.gif")),
                 new ImageIcon(getClass().getResource("Face4.gif")),
         };
-        jb = new JButton("JButton", faces[3]);
+        jb1 = new JButton("JButton", faces[4]);
         setLayout(new FlowLayout());
-        jb.addActionListener(new ActionListener() {
+        jb1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(mad) {
-                    jb.setIcon(faces[3]);
+                    jb1.setIcon(faces[3]);
                     mad = false;
                 } else {
-                    jb.setIcon(faces[0]);
+                    jb1.setIcon(faces[0]);
                     mad = true;
                 }
-                jb.setVerticalAlignment(JButton.TOP);
-                jb.setHorizontalAlignment(JButton.LEFT);
+                jb1.setVerticalAlignment(JButton.TOP);
+                jb1.setHorizontalAlignment(JButton.LEFT);
             }
         });
-        jb.setRolloverEnabled(true);
-        jb.setRolloverIcon(faces[1]);
-        jb.setPressedIcon(faces[2]);
-        jb.setDisabledIcon(faces[4]);
-        jb.setToolTipText("Yow!");
-        add(jb);
+        jb1.setRolloverEnabled(true);
+        jb1.setRolloverIcon(faces[1]);
+        jb1.setPressedIcon(faces[2]);
+        jb1.setDisabledIcon(faces[3]);
+        jb1.setToolTipText("Yow!");
+        add(jb1);
         jb2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if(jb.isEnabled()) {
-                    jb.setEnabled(false);
+                if(jb1.isEnabled()) {
+                    jb1.setEnabled(false);
                     jb2.setText("Enable");
                 } else {
-                    jb.setEnabled(true);
+                    jb1.setEnabled(true);
                     jb2.setText("Disable");
                 }
             }
