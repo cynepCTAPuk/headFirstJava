@@ -35,9 +35,7 @@ package gui;
  */
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import javax.swing.*;
 import javax.swing.text.*;
 import javax.swing.event.*;
@@ -63,7 +61,11 @@ public class TextFieldDemo extends JFrame implements DocumentListener {
     public TextFieldDemo() {
         initComponents();
 
-        InputStream in = getClass().getResourceAsStream("content.txt");
+//        InputStream in = getClass().getResourceAsStream("content.txt");
+        InputStream in = null;
+        try { in = new FileInputStream( "c:/000/content.txt");
+        } catch (FileNotFoundException e) { e.printStackTrace(); }
+
         try { textArea.read(new InputStreamReader(in), null);
         } catch (IOException e) { e.printStackTrace();}
 
