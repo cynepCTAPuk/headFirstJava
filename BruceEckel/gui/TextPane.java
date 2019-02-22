@@ -13,8 +13,9 @@ public class TextPane extends JFrame {
     public TextPane() {
         b.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                for(int i = 1; i < 10; i++)
+                for(int i = 0; i < 3; i++) {
                     tp.setText(tp.getText() + sg.next() + "\n");
+                }
             }
         });
         add(new JScrollPane(tp));
