@@ -66,7 +66,7 @@ public class TrackEvent extends JFrame {
         for(String evt : event) {
             JTextField t = new JTextField();
             t.setEditable(false);
-            
+
             add(new JLabel(evt, JLabel.RIGHT));
             add(t);
             h.put(evt, t);
