@@ -39,7 +39,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class GridLayoutDemo extends JFrame {
-    static final String gapList[] = {"0", "10", "15", "20"};
+    static final String gapList[] = {"0", "5", "10", "15", "20"};
     final static int maxGap = 20;
     JComboBox horGapComboBox;
     JComboBox verGapComboBox;
