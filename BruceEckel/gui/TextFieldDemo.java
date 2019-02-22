@@ -63,7 +63,7 @@ public class TextFieldDemo extends JFrame implements DocumentListener {
     public TextFieldDemo() {
         initComponents();
 
-        InputStream in = getClass().getResourceAsStream("c:/000/content.txt");
+        InputStream in = getClass().getResourceAsStream("content.txt");
         try { textArea.read(new InputStreamReader(in), null);
         } catch (IOException e) { e.printStackTrace();}
 
@@ -208,7 +208,7 @@ public class TextFieldDemo extends JFrame implements DocumentListener {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         //Schedule a job for the event dispatch thread:
         //creating and showing this application's GUI.
         SwingUtilities.invokeLater(new Runnable() {
@@ -219,6 +219,4 @@ public class TextFieldDemo extends JFrame implements DocumentListener {
             }
         });
     }
-
-
 }
