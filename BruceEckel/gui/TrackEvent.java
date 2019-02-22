@@ -62,10 +62,11 @@ public class TrackEvent extends JFrame {
         }
     }
     public TrackEvent() {
-        setLayout(new GridLayout(event.length + 1, 2, 5, 5));
+        setLayout(new GridLayout(event.length + 1, 2, 5, 0));
         for(String evt : event) {
             JTextField t = new JTextField();
             t.setEditable(false);
+            
             add(new JLabel(evt, JLabel.RIGHT));
             add(t);
             h.put(evt, t);
