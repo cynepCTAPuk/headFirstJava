@@ -19,16 +19,20 @@ public class Popup extends JFrame {
         popup.add(m);
         m = new JMenuItem("Yon");
         m.addActionListener(al);
+
         popup.add(m);
         m = new JMenuItem("Afar");
         m.addActionListener(al);
+
         popup.add(m);
         popup.addSeparator();
         m = new JMenuItem("Stay Here");
         m.addActionListener(al);
+
         popup.add(m);
         PopupListener pl = new PopupListener();
         addMouseListener(pl);
+
         t.addMouseListener(pl);
     }
     class PopupListener extends MouseAdapter {
