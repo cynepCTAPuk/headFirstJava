@@ -12,44 +12,44 @@ public class List extends JFrame {
             "Mocha Almond Fudge", "Rum Raisin", "Praline Cream", "Mud Pie"
     };
     private DefaultListModel lItems = new DefaultListModel();
-    private JList lst = new JList(lItems);
-    private JTextArea t = new JTextArea(flavors.length, 20);
-    private JButton b = new JButton("Add Item");
+    private JList list = new JList(lItems);
+    private JTextArea textArea = new JTextArea(flavors.length, 20);
+    private JButton button = new JButton("Add Item");
+    private int count = 0;
     private ActionListener bl = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
             if(count < flavors.length) {
                 lItems.add(0, flavors[count++]);
             } else {
                 // Disable, since there are no more flavors left to be added to the List
-                b.setEnabled(false);
+                button.setEnabled(false);
             }
         }
     };
-    private ListSelectionListener ll = new ListSelectionListener() {
+    private final ListSelectionListener ll = new ListSelectionListener() {
         public void valueChanged(ListSelectionEvent e) {
-            if(e.getValueIsAdjusting()) return;
-            t.setText("");
-            for(Object item : lst.getSelectedValues())
-                t.append(item + "\n");
+            if (e.getValueIsAdjusting()) return;
+            textArea.setText("");
+            for (Object item : list.getSelectedValues())
+                textArea.append(item + "\n");
         }
     };
-    private int count = 0;
     public List() {
-        t.setEditable(false);
+        textArea.setEditable(false);
         setLayout(new FlowLayout());
         // Create Borders for components:
         Border brd = BorderFactory.createMatteBorder(1, 1, 2, 2, Color.BLACK);
-        lst.setBorder(brd);
-        t.setBorder(brd);
+        list.setBorder(brd);
+        textArea.setBorder(brd);
         // Add the first four items to the List
         for(int i = 0; i < 4; i++)
             lItems.addElement(flavors[count++]);
-        add(t);
-        add(lst);
-        add(b);
+        add(textArea);
+        add(list);
+        add(button);
         // Register event listeners
-        lst.addListSelectionListener(ll);
-        b.addActionListener(bl);
+        list.addListSelectionListener(ll);
+        button.addActionListener(bl);
     }
     public static void main(String[] args) {
         run(new List(), 250, 375);
