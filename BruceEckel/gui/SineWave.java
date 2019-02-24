@@ -30,6 +30,8 @@ class SineDraw extends JPanel {
             int y1 = pts[i - 1];
             int y2 = pts[i];
             g.drawLine(x1, y1, x2, y2);
+            g.drawLine(x1, y1-1, x2, y2-1);
+            g.drawLine(x1, y1+1, x2, y2+1);
         }
     }
     public void setCycles(int newCycles) {
