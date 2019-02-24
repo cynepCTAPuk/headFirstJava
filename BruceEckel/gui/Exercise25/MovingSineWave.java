@@ -1,18 +1,22 @@
 //: gui/MovingSineWave.java
 // Drawing with Swing, using a JSlider.
-package gui;
+package gui.Exercise25;
+import chap09_interfaces.nesting.*;
+
 import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
-import java.util.*;
+import java.util.concurrent.*;
 
 import static util.SwingConsole.*;
+
 class SineDraw extends JPanel {
     private static final int SCALEFACTOR = 1_000;
     private int cycles;
     private int points;
     private double[] sines;
     private int[] pts;
+    private int step = 0;
     public SineDraw() { setCycles(1);}
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -25,13 +29,11 @@ class SineDraw extends JPanel {
         g.setColor(Color.RED);
 
         for (int i = 1; i < points; i++) {
-            int x1 = (int) ((i - 1) * hstep);
-            int x2 = (int) (i * hstep);
+            int x1 = (int) ((i - 1) * hstep) + step;
+            int x2 = (int) (i * hstep) + step;
             int y1 = pts[i - 1];
             int y2 = pts[i];
             g.drawLine(x1, y1, x2, y2);
-            g.drawLine(x1, y1-1, x2, y2-1);
-            g.drawLine(x1, y1+1, x2, y2+1);
         }
     }
     public void setCycles(int newCycles) {
@@ -42,16 +44,22 @@ class SineDraw extends JPanel {
             double radians = (Math.PI / SCALEFACTOR) * i;
             sines[i] = Math.sin(radians);
         }
-        repaint();
+        for (int i = 0; i < 100 ; i++) {
+            step++;
+            repaint();
+            try {TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException e) {e.printStackTrace();}
+        }
     }
 }
 
-public class SineWave extends JFrame {
+public class MovingSineWave extends JFrame {
     private SineDraw sines = new SineDraw();
     private JSlider adjustCycles = new JSlider(1, 30, 1);
 
-    public SineWave() {
+    public MovingSineWave() {
         add(sines);
+
         adjustCycles.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 sines.setCycles(
@@ -62,6 +70,6 @@ public class SineWave extends JFrame {
     }
 
     public static void main(String[] args) {
-        run(new SineWave(), 700, 400);
+        run(new MovingSineWave(), 700, 400);
     }
 } ///:~
