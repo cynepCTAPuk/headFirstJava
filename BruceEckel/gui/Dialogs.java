@@ -16,6 +16,7 @@ class MyDialog extends JDialog {
             }});
         add(ok);
         setSize(150,125);
+        setLocation(100,100);
     }
 }
 public class Dialogs extends JFrame {
