@@ -26,19 +26,19 @@ public class ColorChooserTest extends JFrame {
     }
     class ChooseColor implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            JColorChooser c = new JColorChooser();
-            Color color = c.showDialog(ColorChooserTest.this,
-                    "Choose Background Color", button.getBackground());
+            Color backgroundColor;
             Color textColor;
-            int r = color.getRed();
-            int g = color.getGreen();
-            int b = color.getBlue();
-            double y = (299 * r + 587 * g + 114 * b) / 1000;
+            backgroundColor = new JColorChooser().showDialog(ColorChooserTest.this,
+                    "Choose Background Color", button.getBackground());
+            int r = backgroundColor.getRed();
+            int g = backgroundColor.getGreen();
+            int b = backgroundColor.getBlue();
+            int y = (299 * r + 587 * g + 114 * b) / 1000;
             textColor = (y >= 128) ? Color.BLACK : Color.WHITE;
-            button.setBackground(color);
+            button.setBackground(backgroundColor);
             button.setForeground(textColor);
 
-            backColor.setText(color.toString());
+            backColor.setText(backgroundColor.toString());
             fontColor.setText(textColor.toString());
 
         }
