@@ -7,8 +7,8 @@ import java.awt.event.*;
 import static util.SwingConsole.*;
 public class FileChooserTest extends JFrame {
     private JTextField
-            fileName = new JTextField(),
-            dir = new JTextField();
+            dir = new JTextField(),
+            fileName = new JTextField();
     private JButton
             open = new JButton("Open"),
             save = new JButton("Save");
@@ -23,8 +23,8 @@ public class FileChooserTest extends JFrame {
         fileName.setEditable(false);
         p = new JPanel();
         p.setLayout(new GridLayout(2,1));
-        p.add(fileName);
         p.add(dir);
+        p.add(fileName);
         add(p, BorderLayout.NORTH);
     }
     class OpenL implements ActionListener {
@@ -33,12 +33,12 @@ public class FileChooserTest extends JFrame {
             // Demonstrate "Open" dialog:
             int rVal = c.showOpenDialog(FileChooserTest.this);
             if(rVal == JFileChooser.APPROVE_OPTION) {
-                fileName.setText(c.getSelectedFile().getName());
                 dir.setText(c.getCurrentDirectory().toString());
+                fileName.setText(c.getSelectedFile().getName());
             }
             if(rVal == JFileChooser.CANCEL_OPTION) {
-                fileName.setText("You pressed cancel");
                 dir.setText("");
+                fileName.setText("You pressed cancel");
             }
         }
     }
@@ -48,12 +48,12 @@ public class FileChooserTest extends JFrame {
             // Demonstrate "Save" dialog:
             int rVal = c.showSaveDialog(FileChooserTest.this);
             if(rVal == JFileChooser.APPROVE_OPTION) {
-                fileName.setText(c.getSelectedFile().getName());
                 dir.setText(c.getCurrentDirectory().toString());
+                fileName.setText(c.getSelectedFile().getName());
             }
             if(rVal == JFileChooser.CANCEL_OPTION) {
-                fileName.setText("You pressed cancel");
                 dir.setText("");
+                fileName.setText("You pressed cancel");
             }
         }
     }
