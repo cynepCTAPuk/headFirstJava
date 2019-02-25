@@ -18,6 +18,7 @@ public class TicTacToe extends JFrame {
             for(int i = 0; i < cellsWide * cellsHigh; i++)
                 add(new ToeButton());
             setSize(cellsWide * 50, cellsHigh * 50);
+            setLocation(100,100);
             setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         }
         class ToeButton extends JPanel {
@@ -58,8 +59,8 @@ public class TicTacToe extends JFrame {
     class BL implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             JDialog d = new ToeDialog(
-                    new Integer(rows.getText()),
-                    new Integer(cols.getText()));
+                    Integer.valueOf(rows.getText()),
+                    Integer.valueOf(cols.getText()));
             d.setVisible(true);
         }
     }
