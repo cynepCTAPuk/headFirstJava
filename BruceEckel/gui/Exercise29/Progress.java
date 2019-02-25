@@ -15,7 +15,7 @@ public class Progress extends JFrame {
         setLayout(new GridLayout(2,1));
         add(pb);
         pm.setProgress(0);
-        pm.setMillisToPopup(1000);
+        pm.setMillisToPopup(1_000);
         sb.setValue(0);
         sb.setPaintTicks(true);
         sb.setMajorTickSpacing(20);
