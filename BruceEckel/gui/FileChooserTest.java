@@ -1,4 +1,4 @@
-//: gui/FileChooserTest.java
+//: gui/ColorChooserTest.java
 // Demonstration of File dialog boxes.
 package gui;
 import javax.swing.*;
