@@ -1,7 +1,7 @@
 //: gui/LookAndFeel.java
 // Selecting different looks & feels.
 // {Args: motif}
-package gui.Exercise32;
+package gui;
 import javax.swing.*;
 import java.awt.*;
 import static util.SwingConsole.*;
