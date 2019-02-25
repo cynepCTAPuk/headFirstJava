@@ -38,8 +38,10 @@ public class TicTacToe extends JFrame {
                     g.drawLine(x1, y1, x1 + wide, y1 + high);
                     g.drawLine(x1, y1 + high, x1 + wide, y1);
                 }
-                if(state == State.OO)
+                if(state == State.OO) {
                     g.drawOval(x1, y1, x1 + wide/2, y1 + high/2);
+                }
+
             }
             class ML extends MouseAdapter {
                 public void mousePressed(MouseEvent e) {
