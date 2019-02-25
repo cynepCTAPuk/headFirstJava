@@ -12,10 +12,8 @@ class MyDialog extends JDialog {
         add(new JLabel("Here is my dialog"));
         JButton ok = new JButton("OK");
         ok.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose(); // Closes the dialog
-            }
-        });
+            public void actionPerformed(ActionEvent e) { dispose(); // Closes the dialog
+            }});
         add(ok);
         setSize(150,125);
     }
@@ -25,10 +23,8 @@ public class Dialogs extends JFrame {
     private MyDialog dlg = new MyDialog(null);
     public Dialogs() {
         b1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dlg.setVisible(true);
-            }
-        });
+            public void actionPerformed(ActionEvent e) { dlg.setVisible(true);
+            }});
         add(b1);
     }
     public static void main(String[] args) {
