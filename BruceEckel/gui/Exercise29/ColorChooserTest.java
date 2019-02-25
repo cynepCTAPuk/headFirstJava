@@ -8,21 +8,23 @@ import static util.SwingConsole.*;
 
 public class ColorChooserTest extends JFrame {
     private JTextField
-            backColor = new JTextField(),
-            fontColor = new JTextField();
+            backColorText = new JTextField(),
+            fontColorText = new JTextField();
     private JButton button = new JButton("Choose Color");
     public ColorChooserTest() {
-        JPanel p = new JPanel();
+        JPanel panelA = new JPanel();
+        panelA.setBackground(Color.BLACK);
         button.addActionListener(new ChooseColor());
-        p.add(button);
-        add(p, BorderLayout.SOUTH);
-        backColor.setEditable(false);
-        fontColor.setEditable(false);
-        p = new JPanel();
-        p.setLayout(new GridLayout(2,1));
-        p.add(backColor);
-        p.add(fontColor);
-        add(p, BorderLayout.NORTH);
+        panelA.add(button);
+        add(panelA, BorderLayout.SOUTH);
+        backColorText.setEditable(false);
+        fontColorText.setEditable(false);
+        JPanel panelB = new JPanel();
+        panelB.setLayout(new GridLayout(2,1));
+        panelB.setBackground(Color.CYAN);
+        panelB.add(backColorText);
+        panelB.add(fontColorText);
+        add(panelB, BorderLayout.NORTH);
     }
     class ChooseColor implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -37,10 +39,8 @@ public class ColorChooserTest extends JFrame {
             textColor = (y >= 128) ? Color.BLACK : Color.WHITE;
             button.setBackground(backgroundColor);
             button.setForeground(textColor);
-
-            backColor.setText(backgroundColor.toString());
-            fontColor.setText(textColor.toString());
-
+            backColorText.setText(backgroundColor.toString());
+            fontColorText.setText(textColor.toString());
         }
     }
     public static void main(String[] args) {
