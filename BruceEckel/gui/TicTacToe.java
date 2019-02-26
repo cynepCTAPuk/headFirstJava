@@ -35,10 +35,12 @@ public class TicTacToe extends JFrame {
                 y1 = y2/4;
                 int wide = x2/2, high = y2/2;
                 if(state == State.XX) {
+                    g.setColor(Color.BLUE);
                     g.drawLine(x1, y1, x1 + wide, y1 + high);
                     g.drawLine(x1, y1 + high, x1 + wide, y1);
                 }
                 if(state == State.OO) {
+                    g.setColor(Color.RED);
                     g.drawOval(x1, y1, x1 + wide/2, y1 + high/2);
                 }
 

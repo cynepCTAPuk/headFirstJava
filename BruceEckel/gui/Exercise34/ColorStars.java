@@ -16,8 +16,10 @@ class CStar extends JPanel implements Runnable {
     public void paintComponent(Graphics g) {
         g.setColor(color);
         Dimension s = getSize();
-        char x = 'X';
-        g.fillRect(0, 0, s.width, s.height);
+        g.drawLine(0,0, s.width, s.height);
+        g.drawLine(s.width/2,0, s.width/2, s.height);
+        g.drawLine(s.width,0, 0, s.height);
+        g.drawLine(0,s.height/2, s.width, s.height/2);
     }
     public CStar(int pause) { this.pause = pause; }
     public void run() {
