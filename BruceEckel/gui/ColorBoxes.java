@@ -29,7 +29,7 @@ class CBox extends JPanel implements Runnable {
     }
 }
 public class ColorBoxes extends JFrame {
-    private int grid = 50;
+    private int grid = 20;
     private int pause = 50;
     private static ExecutorService exec = Executors.newCachedThreadPool();
     public void setUp() {
