@@ -16,10 +16,12 @@ class CStar extends JPanel implements Runnable {
     public void paintComponent(Graphics g) {
         g.setColor(color);
         Dimension s = getSize();
-        g.drawLine(0,0, s.width, s.height);
-        g.drawLine(s.width/2,0, s.width/2, s.height);
-        g.drawLine(s.width,0, 0, s.height);
-        g.drawLine(0,s.height/2, s.width, s.height/2);
+        int gapX = s.width - s.width/8;
+        int gapY = s.height - s.height/8;
+        g.drawLine(gapX, gapY, s.width-gapX, s.height-gapY);
+        g.drawLine(s.width/2, gapY, s.width/2, s.height-gapY);
+        g.drawLine(gapX,s.height-gapY, s.width-gapX, gapY);
+        g.drawLine(gapX,s.height/2, s.width-gapX, s.height/2);
     }
     public CStar(int pause) { this.pause = pause; }
     public void run() {
@@ -36,7 +38,7 @@ class CStar extends JPanel implements Runnable {
 }
 
 public class ColorStars extends JFrame {
-    private int grid = 20;
+    private int grid = 10;
     private int pause = 50;
     private static ExecutorService exec = Executors.newCachedThreadPool();
     public void setUp() {
