@@ -19,21 +19,13 @@ BangBean extends JPanel implements Serializable {
         addMouseMotionListener(new MML());
     }
     public int getCircleSize() { return cSize; }
-    public void setCircleSize(int newSize) {
-        cSize = newSize;
-    }
+    public void setCircleSize(int newSize) { cSize = newSize;}
     public String getBangText() { return text; }
-    public void setBangText(String newText) {
-        text = newText;
-    }
+    public void setBangText(String newText) { text = newText;}
     public int getFontSize() { return fontSize; }
-    public void setFontSize(int newSize) {
-        fontSize = newSize;
-    }
+    public void setFontSize(int newSize) { fontSize = newSize;}
     public Color getTextColor() { return tColor; }
-    public void setTextColor(Color newColor) {
-        tColor = newColor;
-    }
+    public void setTextColor(Color newColor) { tColor = newColor;}
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setColor(Color.BLACK);
@@ -45,9 +37,7 @@ BangBean extends JPanel implements Serializable {
             throw new TooManyListenersException();
         actionListener = l;
     }
-    public void removeActionListener(ActionListener l) {
-        actionListener = null;
-    }
+    public void removeActionListener(ActionListener l) { actionListener = null;}
     class ML extends MouseAdapter {
         public void mousePressed(MouseEvent e) {
             Graphics g = getGraphics();
