@@ -2,17 +2,13 @@ package gui.Exercise34;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.*;
-
 public class DrawStarShape {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                createAndShowGUI();
-            }
-        });
+                createAndShowGUI();}});
     }
-
     private static void createAndShowGUI() {
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
