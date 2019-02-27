@@ -14,6 +14,6 @@ public class HelloSWT {
             if(!display.readAndDispatch())
                 display.sleep();
         display.dispose();
-    }
+r    }
 */
 } ///:~
