@@ -21,7 +21,6 @@ public class DrawStarShape {
         f.setLocationRelativeTo(null);
         f.setVisible(true);
     }
-
 }
 
 class DrawStarShapePanel extends JPanel {
@@ -52,15 +51,15 @@ class DrawStarShapePanel extends JPanel {
 
     }
 
-    private static Shape createDefaultStar(double radius, double centerX,
-                                           double centerY) {
-        return createStar(centerX, centerY, radius, radius * 2.63, 5,
-                Math.toRadians(-18));
+    private static Shape createDefaultStar(
+            double radius, double centerX, double centerY) {
+        return createStar(centerX, centerY, radius,
+                radius * 2.63, 5, Math.toRadians(-18));
     }
 
     private static Shape createStar(double centerX, double centerY,
-                                    double innerRadius, double outerRadius, int numRays,
-                                    double startAngleRad) {
+                                    double innerRadius, double outerRadius,
+                                    int numRays, double startAngleRad) {
         Path2D path = new Path2D.Double();
         double deltaAngleRad = Math.PI / numRays;
         for (int i = 0; i < numRays * 2; i++) {
