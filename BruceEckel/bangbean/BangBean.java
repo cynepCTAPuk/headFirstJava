@@ -55,8 +55,7 @@ BangBean extends JPanel implements Serializable {
             g.setColor(tColor);
             g.setFont( new Font("TimesRoman", Font.BOLD, fontSize));
             int width = g.getFontMetrics().stringWidth(text);
-            g.drawString(text, (getSize().width - width) /2,
-                    getSize().height/2);
+            g.drawString(text, (getSize().width - width) /2, getSize().height/2);
             g.dispose();
             // Call the listener’s method:
             if(actionListener != null)
