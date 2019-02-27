@@ -40,8 +40,7 @@ BangBean extends JPanel implements Serializable {
         g.drawOval(xm - cSize/2, ym - cSize/2, cSize, cSize);
     }
     // This is a unicast listener, which is the simplest form of listener management:
-    public void addActionListener(ActionListener l)
-            throws TooManyListenersException {
+    public void addActionListener(ActionListener l) throws TooManyListenersException {
         if(actionListener != null)
             throw new TooManyListenersException();
         actionListener = l;
