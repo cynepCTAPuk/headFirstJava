@@ -23,13 +23,13 @@ public class BeanDumper extends JFrame {
         for(PropertyDescriptor d: bi.getPropertyDescriptors()){
             Class<?> p = d.getPropertyType();
             if(p == null) continue;
-            print("Property type:\n " + p.getName() + "Property name:\n " + d.getName());
+            print("Property type:\n\t" + p.getName() + "Property name:\n\t" + d.getName());
             Method readMethod = d.getReadMethod();
             if(readMethod != null)
-                print("Read method:\n " + readMethod);
+                print("Read method:\n\t" + readMethod);
             Method writeMethod = d.getWriteMethod();
             if(writeMethod != null)
-                print("Write method:\n " + writeMethod);
+                print("Write method:\n\t" + writeMethod);
             print("====================");
         }
         print("Public methods:");
@@ -38,16 +38,16 @@ public class BeanDumper extends JFrame {
         print("======================");
         print("Event support:");
         for(EventSetDescriptor e: bi.getEventSetDescriptors()){
-            print("Listener type:\n " + e.getListenerType().getName());
+            print("Listener type:\n\t" + e.getListenerType().getName());
             for(Method lm : e.getListenerMethods())
-                print("Listener method:\n " + lm.getName());
+                print("Listener method:\n\t" + lm.getName());
             for(MethodDescriptor lmd :
                     e.getListenerMethodDescriptors() )
-                print("Method descriptor:\n " + lmd.getMethod());
+                print("Method descriptor:\n\t" + lmd.getMethod());
             Method addListener= e.getAddListenerMethod();
-            print("Add Listener Method:\n " + addListener);
+            print("Add Listener Method:\n\t" + addListener);
             Method removeListener = e.getRemoveListenerMethod();
-            print("Remove Listener Method:\n "+ removeListener);
+            print("Remove Listener Method:\n\t"+ removeListener);
             print("====================");
         }
     }
