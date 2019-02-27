@@ -1,4 +1,4 @@
-//: gui/ColorOvals.java
+//: gui/Color5Stars.java
 // A visual demonstration of threading.
 package gui.Exercise34;
 
@@ -9,7 +9,7 @@ import java.util.concurrent.*;
 
 import static util.SwingConsole.*;
 
-class COval extends JPanel implements Runnable {
+class Star extends JPanel implements Runnable {
     private int pause;
     private static Random rand = new Random();
     private Color color = new Color(0);
@@ -17,22 +17,31 @@ class COval extends JPanel implements Runnable {
     public void paintComponent(Graphics g) {
         g.setColor(color);
         Dimension s = getSize();
-        int radius = (s.width + s.height)/4;
-        int midX = s.width/2;
-        int midY = s.height/2;
-        int[] X = new int[5];
-        int[] Y = new int[5];
-        for (int i = 0; i < 5; i++) {
-            double x = Math.cos(2*Math.PI * i / 5);
-            double y = Math.sin(2*Math.PI * i / 5);
-            X[i] = (int)x * radius + midX;
-            Y[i] = (int)y * radius + midY;
+        int n = 10;
+        double m = 40.0 / 105;
+        double midX = s.width >> 1;
+        double midY = s.height >> 1;
+        double outerR = (midX < midY) ? midX : midY;
+        double innerR = outerR * m;
+        double r = innerR;
+        int[] X = new int[n];
+        int[] Y = new int[n];
+        double pi = Math.PI * 2;
+        for (int i = 0; i < n; i++) {
+            double angle = pi * i / n - pi / 4;
+            double x = Math.cos(angle);
+            double y = Math.sin(angle);
+            r = (r == outerR) ? innerR : outerR;
+            X[i] = (int) (x * r + outerR);
+            Y[i] = (int) (y * r + outerR);
         }
-        g.fillPolygon(X, Y, 5);
+        g.fillPolygon(X, Y, n);
     }
 
+    public Star(int pause) {
+        this.pause = pause;
+    }
 
-    public COval(int pause) { this.pause = pause;}
     public void run() {
         try {
             while (!Thread.interrupted()) {
@@ -46,22 +55,22 @@ class COval extends JPanel implements Runnable {
     }
 }
 
-public class ColorOvals extends JFrame {
-    private int grid = 3;
+public class Color5Stars extends JFrame {
+    private int grid = 10;
     private int pause = 50;
     private static ExecutorService exec = Executors.newCachedThreadPool();
 
     public void setUp() {
         setLayout(new GridLayout(grid, grid));
         for (int i = 0; i < grid * grid; i++) {
-            COval cb = new COval(pause);
+            Star cb = new Star(pause);
             add(cb);
             exec.execute(cb);
         }
     }
 
     public static void main(String[] args) {
-        ColorOvals boxes = new ColorOvals();
+        Color5Stars boxes = new Color5Stars();
         if (args.length > 0) boxes.grid = Integer.valueOf(args[0]);
         if (args.length > 1) boxes.pause = Integer.valueOf(args[1]);
         boxes.setUp();

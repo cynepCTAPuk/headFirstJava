@@ -1,4 +1,4 @@
-//: gui/ColorOvals.java
+//: gui/Color5Stars.java
 // A visual demonstration of threading.
 package gui;
 import javax.swing.*;
