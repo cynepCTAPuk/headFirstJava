@@ -1,6 +1,5 @@
 //: gui/BangBean2.java
-// You should write your Beans this way so they
-// can run in a multithreaded environment.
+// You should write your Beans this way so they can run in a multithreaded environment.
 package gui;
 import javax.swing.*;
 import java.awt.*;
@@ -9,15 +8,15 @@ import java.io.*;
 import java.util.*;
 import static util.SwingConsole.*;
 public class BangBean2 extends JPanel implements Serializable {
-    private int xm, ym;
+    private int xm, ym; // координаты мыши
     private int cSize = 20; // Circle size
     private String text = "Bang!";
     private int fontSize = 48;
     private Color tColor = Color.RED;
-    private ArrayList<ActionListener> actionListeners = new ArrayList<ActionListener>();
+    private ArrayList<ActionListener> actionListeners = new ArrayList<>();
     public BangBean2() {
         addMouseListener(new ML());
-        addMouseMotionListener(new MM());
+        addMouseMotionListener(new MML());
     }
     public synchronized int getCircleSize() { return cSize; }
     public synchronized void setCircleSize(int newSize) { cSize = newSize;}
@@ -34,12 +33,8 @@ public class BangBean2 extends JPanel implements Serializable {
     }
     // This is a multicast listener, which is more typically
     // used than the unicast approach taken in BangBean.java:
-    public synchronized void addActionListener(ActionListener l) {
-        actionListeners.add(l);
-    }
-    public synchronized void removeActionListener(ActionListener l) {
-        actionListeners.remove(l);
-    }
+    public synchronized void addActionListener(ActionListener l) { actionListeners.add(l);}
+    public synchronized void removeActionListener(ActionListener l) { actionListeners.remove(l);}
     // Notice this isn’t synchronized:
     public void notifyListeners() {
         ActionEvent a = new ActionEvent(BangBean2.this,
@@ -65,7 +60,7 @@ public class BangBean2 extends JPanel implements Serializable {
             notifyListeners();
         }
     }
-    class MM extends MouseMotionAdapter {
+    class MML extends MouseMotionAdapter {
         public void mouseMoved(MouseEvent e) {
             xm = e.getX();
             ym = e.getY();
