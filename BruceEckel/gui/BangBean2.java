@@ -71,19 +71,13 @@ public class BangBean2 extends JPanel implements Serializable {
         BangBean2 bb2 = new BangBean2();
         bb2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("ActionEvent" + e);
-            }
-        });
+                System.out.println("ActionEvent" + e);}});
         bb2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("BangBean2 action");
-            }
-        });
+                System.out.println("BangBean2 action");}});
         bb2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("More action");
-            }
-        });
+                System.out.println("More action");}});
         JFrame frame = new JFrame();
         frame.add(bb2);
         run(frame, 300, 300);
