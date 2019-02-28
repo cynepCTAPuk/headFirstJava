@@ -9,8 +9,10 @@ public class CleverSwap1 {
         System.out.println("y = " + Integer.toHexString(y));
         System.out.println("y = " + Integer.toBinaryString(y));
         System.out.println();
-        
-        x ^= y ^= x ^ y;
+
+        int tmp = x;
+        x =y;
+        y = tmp;
         System.out.println("x = " + x + "; y = " + y);
 
 
