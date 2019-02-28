@@ -1,3 +1,5 @@
+package puzzle_9;
+
 public class Tweedledum {
     public static void main(String[] args) {
         // Put your declarations for x and i here
