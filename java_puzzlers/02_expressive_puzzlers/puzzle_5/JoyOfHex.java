@@ -1,3 +1,5 @@
+package puzzle_5;
+
 public class JoyOfHex {
     public static void main(String[] args) {
         System.out.println(
