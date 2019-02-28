@@ -11,7 +11,7 @@ public class CleverSwap3 {
         System.out.println();
 
 //        x ^= y ^= x ^ y;
-        
+
         // The actual behavior of x ^= y ^= x ^= y in Java
         int tmp1 = x; // First appearance of x in the expression
         int tmp2 = y; // First appearance of y
