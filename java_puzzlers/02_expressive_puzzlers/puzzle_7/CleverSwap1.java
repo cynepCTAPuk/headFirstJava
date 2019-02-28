@@ -11,10 +11,8 @@ public class CleverSwap1 {
         System.out.println();
 
         int tmp = x;
-        x =y;
+        x = y;
         y = tmp;
         System.out.println("x = " + x + "; y = " + y);
-
-
     }
 }
