@@ -4,14 +4,15 @@ public class LongDivision {
     public static void main(String[] args) {
         final long MILLIS_PER_DAY = 24 * 60 * 60 * 1000;
         final long MICROS_PER_DAY = 24 * 60 * 60 * 1000 * 1000;
-        System.out.printf("MILLIS_PER_DAY = %,11d\n", MILLIS_PER_DAY);
-        System.out.printf("MICROS_PER_DAY = %,11d\n", MICROS_PER_DAY);
-        System.out.format("MICROS_PER_DAY / MILLIS_PER_DAY = %d\n\n", MICROS_PER_DAY / MILLIS_PER_DAY);
+        System.out.printf("MILLIS_PER_DAY = %,14d\n", MILLIS_PER_DAY);
+        System.out.printf("MICROS_PER_DAY = %,14d\n", MICROS_PER_DAY);
+        System.out.format("MICROS_PER_DAY / MILLIS_PER_DAY = %4d\n\n", MICROS_PER_DAY / MILLIS_PER_DAY);
 
+        final long MILLIS_PER_DaY = 24L * 60 * 60 * 1000;
         final long MICROS_PER_DaY = 24L * 60 * 60 * 1000 * 1000;
-        System.out.printf("MILLIS_PER_DAY = %,11d\n", MILLIS_PER_DAY);
-        System.out.printf("MICROS_PER_DaY = %,11d\n", MICROS_PER_DaY);
-        System.out.format("MICROS_PER_DaY / MILLIS_PER_DAY = %d\n\n", MICROS_PER_DaY / MILLIS_PER_DAY);
+        System.out.printf("MILLIS_PER_DaY = %,14d\n", MILLIS_PER_DaY);
+        System.out.printf("MICROS_PER_DaY = %,14d\n", MICROS_PER_DaY);
+        System.out.format("MICROS_PER_DaY / MILLIS_PER_DaY = %4d\n\n", MICROS_PER_DaY / MILLIS_PER_DaY);
 /*
         int x = 1;
         int y = 0;
