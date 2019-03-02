@@ -5,7 +5,7 @@ public class GhostOfLooper {
         // Place your declaration for i here
 //        byte i = -1;
         short i = -2;
-        
+
         while (i != 0) {
             i >>>= 1;
             System.out.printf("(%d) ", i);
