@@ -1,3 +1,5 @@
+package puzzle_46;
+
 public class Confusing {
     private Confusing(Object o) {
         System.out.println("Object");
