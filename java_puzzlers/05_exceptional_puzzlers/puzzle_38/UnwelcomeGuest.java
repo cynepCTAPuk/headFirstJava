@@ -12,8 +12,7 @@ public class UnwelcomeGuest {
             System.out.println("Logging in as guest");
         }
     }
-    private static long getUserIdFromEnvironment()
-            throws IdUnavailableException {
+    private static long getUserIdFromEnvironment() throws IdUnavailableException {
         throw new IdUnavailableException(); // Simulate an error
     }
     public static void main(String[] args) {
