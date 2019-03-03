@@ -1,8 +1,10 @@
+package puzzle_40;
+
 public class Reluctant {
-//    private Reluctant internalInstance = new Reluctant();
+    private Reluctant internalInstance = new Reluctant();
 
     public Reluctant() throws Exception {
-//        throw new Exception("I'm not coming out");
+        throw new Exception("I'm not coming out");
     }
 
     public static void main(String[] args) {
