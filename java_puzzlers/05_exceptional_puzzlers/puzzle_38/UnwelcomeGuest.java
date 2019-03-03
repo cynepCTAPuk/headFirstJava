@@ -20,6 +20,3 @@ public class UnwelcomeGuest {
         System.out.println("User ID: " + USER_ID);
     }
 }
-class IdUnavailableException extends Exception {
-    IdUnavailableException() { }
-}
