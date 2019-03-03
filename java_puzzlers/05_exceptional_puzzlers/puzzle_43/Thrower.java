@@ -1,3 +1,5 @@
+package puzzle_43;
+
 public class Thrower {
     public static void main(String[] args) {
         sneakyThrow(new Exception("This is a checked exception"));
