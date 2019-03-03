@@ -1,3 +1,5 @@
+package puzzle_41;
+
 import java.io.*;
 
 public class Copy {
