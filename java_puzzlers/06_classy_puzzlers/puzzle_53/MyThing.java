@@ -1,3 +1,5 @@
+package puzzle_53;
+
 public class MyThing extends Thing {
     private final int arg;
 
@@ -6,6 +8,6 @@ public class MyThing extends Thing {
      * effect but is legal.
      */
     public MyThing() {
-        super(arg = (int)System.currentTimeMillis());
+        super(arg = (int) System.currentTimeMillis());
     }
 }
