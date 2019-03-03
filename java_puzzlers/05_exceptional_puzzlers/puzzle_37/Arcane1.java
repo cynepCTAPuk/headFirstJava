@@ -1,3 +1,5 @@
+package puzzle_37;
+import java.io.IOException;
 public class Arcane1 {
     public static void main(String[] args) {
         try {

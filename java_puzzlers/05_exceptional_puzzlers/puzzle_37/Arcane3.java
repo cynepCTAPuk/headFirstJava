@@ -1,3 +1,5 @@
+package puzzle_37;
+
 public class Arcane3 implements Type3 {
     public void f() {
         System.out.println("Hello world!");
