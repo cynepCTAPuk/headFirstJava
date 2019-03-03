@@ -1,35 +1,24 @@
-import java.util.*;
+package puzzle_42;
 
 public class Loop {
     public static void main(String[] args) {
-        int[][] tests = {
-                {6, 5, 4, 3, 2, 1},
-                {1, 2},
-                {1, 2, 3},
-                {1, 2, 3, 4},
-                {1}};
-        int n = 0;
-        for (int i = 0; i < tests.length; i++) {
-            System.out.println("i = " + i + " " + Arrays.toString(tests[i]));
-        }
-
+        int[][] tests = {{6, 5, 4, 3, 2, 1}, {1, 2}, {1, 2, 3}, {1, 2, 3, 4}, {1}};
+        int successCount = 0;
         try {
-            int idx = 0;
+            int i = 0;
             while (true) {
-                System.out.println("idx = " + idx);
-                if (thirdElementIsThree(tests[idx++])) {
-                    n++;
-                }
+                System.out.println(i);
+                if (thirdElementIsThree(tests[i++]))
+                    successCount++;
             }
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("catch n = " + n);
+            System.out.println("catch");
             // No more tests to process
         }
-        System.out.println("n = " + n);
+        System.out.println(successCount);
     }
 
-    private static boolean thirdElementIsThree(int[] array) {
-        System.out.println("array.length = " + array.length + " array[2] = " + array[2]);
-        return array.length >= 3 & array[2] == 3;
+    private static boolean thirdElementIsThree(int[] a) {
+        return a.length >= 3 & a[2] == 3;
     }
 }
