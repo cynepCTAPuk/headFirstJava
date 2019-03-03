@@ -1,3 +1,5 @@
+package puzzle_45;
+
 public class Workout {
     public static void main(String[] args) {
         workHard();
