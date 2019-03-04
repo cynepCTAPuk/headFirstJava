@@ -1,9 +1,8 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class StringHelper {
     public static Set permutationFinder(String str) {
-        Set perm = new HashSet();
+        Set<String> perm = new TreeSet<>();
         //Handling error scenarios
         if (str == null) {
             return null;
