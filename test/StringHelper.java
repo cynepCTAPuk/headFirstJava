@@ -3,13 +3,9 @@ import java.util.*;
 public class StringHelper {
     public static Set permutationFinder(String str) {
         Set<String> perm = new TreeSet<>();
-        //Handling error scenarios
-        if (str == null) {
-            return null;
-        } else if (str.length() == 0) {
-            perm.add("");
-            return perm;
-        }
+        if (str == null) return null;
+        if (str.length() == 0) { perm.add(""); return perm;}
+
         char initial = str.charAt(0); // первый символ
         String rem = str.substring(1); // полная строка без первого символа
         Set words = permutationFinder(rem);
@@ -31,8 +27,10 @@ public class StringHelper {
         String s0 = "AAC";
         String s1 = "ABC";
         String s2 = "ABCD";
-        System.out.println("\nPermutations for " + s0 + " are: \n" + permutationFinder(s0));
-        System.out.println("\nPermutations for " + s1 + " are: \n" + permutationFinder(s1));
-        System.out.println("\nPermutations for " + s2 + " are: \n" + permutationFinder(s2));
+        String s3 = "123";
+        System.out.printf("Permutation for %s are:\n%s\n", s0, permutationFinder(s0));
+        System.out.printf("Permutation for %s are:\n%s\n", s1, permutationFinder(s1));
+        System.out.printf("Permutation for %s are:\n%s\n", s2, permutationFinder(s2));
+        System.out.printf("Permutation for %s are:\n%s\n", s3, permutationFinder(s3));
     }
 }
