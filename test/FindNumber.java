@@ -1,6 +1,6 @@
-import java.util.Arrays;
-
 //ЖОПА * ЖОПА = СЧАСТЬЕ
+
+import static java.lang.Math.*;
 
 public class FindNumber {
     public static void main(String[] args) {
@@ -17,17 +17,19 @@ public class FindNumber {
                         int[] number = new int[string.length()];
                         if (string.length() == 7) {
                             for (int i = 0; i < string.length(); i++)
-                                number[i] = square / pow(10, string.length() - 1 - i) % 10;
+                                number[i] = (int) (square / pow(10, string.length() - 1 - i) % 10);
                             if (number[0] == number[3] & number[2] == d) {
-                                if (number[0] != a & number[0] != b & number[0] != c & number[0] != d
-                                        & number[0] != number[1] & number[0] != number[2] & number[0] != number[4]
-                                        & number[0] != number[5] & number[0] != number[6]) {
-                                    if (number[1] != number[2] & number[1] != number[3] & number[1] != number[4]
-                                            & number[1] != number[5] & number[1] != number[6]) {
-                                        if (number[2] != number[3] & number[2] != number[4]
-                                                & number[2] != number[5] & number[2] != number[6]) {
-                                            if (number[3] != number[4] & number[3] != number[5]
-                                                    & number[3] != number[6]) {
+                                if (number[0] != a & number[0] != b & number[0] != c & number[0] !=
+                                        d & number[0] != number[1] & number[0] !=
+                                        number[2] & number[0] != number[4] & number[0] !=
+                                        number[5] & number[0] != number[6]) {
+                                    if (number[1] != number[2] & number[1] != number[3] & number[1] !=
+                                            number[4] & number[1] != number[5] & number[1] != number[6]) {
+                                        if (number[2] != number[3] & number[2] !=
+                                                number[4] & number[2] != number[5] & number[2] !=
+                                                number[6]) {
+                                            if (number[3] != number[4] & number[3] !=
+                                                    number[5] & number[3] != number[6]) {
                                                 if (number[4] != number[5] & number[4] != number[6]) {
                                                     if (number[5] != number[6]) {
                                                         System.out.println(result + " - " + square + "  ");
@@ -45,11 +47,13 @@ public class FindNumber {
         }
     }
 
+/*
     static int pow(int base, int exponent) {
         int result = 1;
         if (exponent < 0) return 0;
         for (int i = 0; i < exponent; i++) result *= base;
         return result;
     }
+*/
 }
 
