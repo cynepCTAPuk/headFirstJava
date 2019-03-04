@@ -1,42 +1,47 @@
-import java.math.BigInteger;
-import java.text.DecimalFormat;
+import java.math.*;
 
 public class MyMath {
     public static void main(String[] args) {
-        int factor = 10;
-        System.out.println(factor + "! = " + insertSpaces(String.valueOf(factorial(10))));
+        int factor = 20;
+        System.out.printf("%d! = %,d\n", factor, factorial(factor));
 
-        long fact = 20;
-        System.out.println(fact + "! = " + new DecimalFormat("###,###").format(factorial(fact)));
-        System.out.println(fact + "! = " + insertSpaces(String.valueOf(factorial(fact))));
+        long fact = 40;
+        System.out.printf("%d! = %,d\n", fact, factorial(fact));
 
-        long f = 2;
-        long r = 10;
-        double pow = Math.pow(f, r);
-        System.out.println("pow(" + f + ", " + r + ") = " + insertSpaces(String.valueOf((int) pow)));
+        int f = 2, r = 61;
+        long pow = pow(f, r);
+        System.out.printf("pow(%d, %d) = %,d", f, r, pow);
     }
 
     public static long factorial(int value) {
-        int result = 1;
-        for (int factor = 2; factor <= value; factor++) result = result * factor;
+        if (value < 0) throw new IllegalArgumentException("Value must be positive");
+        long result = 1;
+        for (int factor = 2; factor <= value; factor++) {
+            result = result * factor;
+        }
         return result;
     }
 
     private static BigInteger factorial(long value) {
         if (value < 0) throw new IllegalArgumentException("Value must be positive");
         BigInteger result = BigInteger.ONE;
-        for (int factor = 2; factor <= value; factor++) result = result.multiply(BigInteger.valueOf(factor));
+        for (int factor = 2; factor <= value; factor++) {
+            result = result.multiply(BigInteger.valueOf(factor));
+        }
         return result;
     }
 
-    public static String insertSpaces(String value) {
-        String result = "";
-        char[] charArray = value.toCharArray();
+    static long pow(int base, int exponent) {
+        long result = 1;
+        if (exponent < 0) return 0;
+        for (int i = 0; i < exponent; i++) result *= base;
+        return result;
+    }
 
-        for (int i = charArray.length; i > 0; i--) {
-            result += charArray[charArray.length - i];
-            if ((i - 1) % 3 == 0) result += " ";
-        }
+    static long pow(long base, long exponent) {
+        long result = 1;
+        if (exponent < 0) return 0;
+        for (int i = 0; i < exponent; i++) result *= base;
         return result;
     }
 }
