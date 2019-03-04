@@ -1,8 +1,9 @@
 public class UtilsConverter {
+    static int number = 62;
+
     public static void main(String[] args) {
-        int number = 1_002;
         System.out.println("Number " + number + " to binary " +
-                convertNumber(number) + " convertNumber");
+                decToBin(number) + " decToBin");
         System.out.println("Number " + number + " to binary " +
                 intToString(number, 16, 4) + " inToString");
         System.out.println("Number " + number + " to binary " +
@@ -10,24 +11,27 @@ public class UtilsConverter {
         System.out.print("Number " + number + " to binary ");
         bitPattern(number, 16);
         System.out.print("Number " + number + " to binary ");
-        toBase(number,16, 2);
+        toBase(number, 16, 2);
 
         System.out.println();
         System.out.print("Number " + number + " to binary " +
                 Integer.toBinaryString(number) + " Integer.toBinaryString(" + number + ")");
     }
 
-    public static String convertNumber(int number) {
+    public static String decToBin(int number) {
         StringBuilder sb = new StringBuilder();
         sb.append(number & 1);
-        int i = 0;
+        int i = 1, p = 0;
         while ((number >>= 1) != 0) {
-            if (++i % 4 == 0) sb.append(" ");
+            if (i++ % 4 == 0) {
+                sb.append(" ");
+                p++;
+            }
             sb.append(number & 1);
         }
-//        sb.append(i % 4);
         return sb.reverse().toString();
     }
+
     public static String intToString(int number, int digits, int groupSize) {
         StringBuilder result = new StringBuilder();
         int n = digits - 1;
@@ -39,6 +43,7 @@ public class UtilsConverter {
         result.replace(result.length() - 1, result.length(), "");
         return result.toString();
     }
+
     public static String toBinary(int number, int bits) {
         if (--bits > 0) {
             return toBinary(number >> 1, bits) + ((number & 0x1) == 0 ? "0" : "1");
@@ -46,8 +51,9 @@ public class UtilsConverter {
             return (number & 0x1) == 0 ? "0" : "1";
         }
     }
+
     public static void bitPattern(int number, int digits) {
-        int mask = 1 << digits -1;
+        int mask = 1 << digits - 1;
         int count = 0;
         while (mask != 0) {
             if ((mask & number) == 0) System.out.print("0");
@@ -58,6 +64,7 @@ public class UtilsConverter {
         }
         System.out.println("bitPattern");
     }
+
     public static void toBase(int number, int digits, int base) {
         String binary = "";
         int tmp = digits;
