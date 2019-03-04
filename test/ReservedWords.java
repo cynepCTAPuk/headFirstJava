@@ -1,18 +1,32 @@
+/*
+  5 - enum
+  9 - exports, module, requires
+  10 - var
+  Total = 57 (include
+  literal values - false, null, true
+  unused = const, goto)
+*/
 import java.util.*;
 
 public class ReservedWords {
     static final String keywords[] = {
-            "abstract", "assert", "boolean", "break", "byte",
-            "case", "catch", "char", "class", "const",
-            "continue", "default", "do", "double", "else",
-            "enum", "extends", "false", "final", "finally",
-            "float", "for", "goto", "if", "implements",
-            "import", "instanceof", "int", "interface", "long",
-            "native", "new", "null", "package", "private",
-            "protected", "public", "return", "short", "static",
-            "strictfp", "super", "switch", "synchronized", "this",
-            "throw", "throws", "transient", "true", "try",
-            "void", "volatile", "while"};
+            "abstract", "assert",
+            "boolean", "break", "byte",
+            "case", "catch", "char", "class", "const", "continue",
+            "default", "do", "double",
+            "else", "enum", "exports", "extends",
+            "false", "final", "finally", "float", "for",
+            "goto",
+            "if", "implements", "import", "instanceof", "int", "interface",
+            "long",
+            "module",
+            "native", "new", "null",
+            "package", "private", "protected", "public",
+            "requires", "return",
+            "short", "static", "strictfp", "super", "switch", "synchronized",
+            "this", "throw", "throws", "transient", "true", "try",
+            "var", "void", "volatile",
+            "while"};
 
     public static boolean isJavaKeyword(String keyword) {
         return (Arrays.binarySearch(keywords, keyword) >= 0);
