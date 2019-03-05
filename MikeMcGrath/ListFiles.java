@@ -9,8 +9,6 @@ public class ListFiles {
             for (int i = 0; i < files.length; i++) {
                 System.out.println(files[i]);
             }
-        } else {
-            System.out.println("Каталог не найден.");
-        }
+        } else System.out.println("Каталог не найден.");
     }
 }
