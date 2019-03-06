@@ -7,8 +7,6 @@ public class Radios extends JFrame {
     JRadioButton rad3 = new JRadioButton("Белое");
     ButtonGroup wines = new ButtonGroup();
 
-    JSlider slider = new JSlider(0, 100);
-
     public Radios() {
         super("Окно Swing");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -21,10 +19,6 @@ public class Radios extends JFrame {
         pnl.add(rad1);
         pnl.add(rad2);
         pnl.add(rad3);
-        slider.setPaintLabels(true);
-        slider.setPaintTicks(true);
-        slider.setPaintTrack(true);
-        pnl.add(slider);
 
         setVisible(true);
     }
