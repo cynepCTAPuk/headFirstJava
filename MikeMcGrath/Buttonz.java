@@ -4,7 +4,8 @@ public class Buttonz extends JFrame {
     JPanel jPanel = new JPanel();
     ClassLoader ldr = this.getClass().getClassLoader() ;
     java.net.URL tickURL = ldr.getResource( "c:/000/529.gif" ) ;
-    java.net.URL crossURL = ldr.getResource( "c:/000/539.gif" ) ;
+    java.net.URL crossURL = ldr.getResource( "c:/000/539.gif" +
+            ".0" ) ;
 
     ImageIcon tick = new ImageIcon( tickURL ) ;
     ImageIcon cross = new ImageIcon( crossURL ) ;
