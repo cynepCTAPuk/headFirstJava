@@ -2,10 +2,12 @@ import javax.swing.*;
 
 public class Radios extends JFrame {
     JPanel pnl = new JPanel();
-    JRadioButton rad1 = new JRadioButton( "Красное" , true ) ;
-    JRadioButton rad2 = new JRadioButton( "Розовое" ) ;
-    JRadioButton rad3 = new JRadioButton( "Белое" ) ;
-    ButtonGroup wines = new ButtonGroup() ;
+    JRadioButton rad1 = new JRadioButton("Красное", true);
+    JRadioButton rad2 = new JRadioButton("Розовое");
+    JRadioButton rad3 = new JRadioButton("Белое");
+    ButtonGroup wines = new ButtonGroup();
+
+    JSlider slider = new JSlider(0, 100);
 
     public Radios() {
         super("Окно Swing");
@@ -13,12 +15,17 @@ public class Radios extends JFrame {
         setSize(500, 200);
         setLocationRelativeTo(null);
         add(pnl);
-        wines.add( rad1 ) ;
-        wines.add( rad2 ) ;
-        wines.add( rad3 ) ;
-        pnl.add( rad1 ) ;
-        pnl.add( rad2 ) ;
-        pnl.add( rad3 ) ;
+        wines.add(rad1);
+        wines.add(rad2);
+        wines.add(rad3);
+        pnl.add(rad1);
+        pnl.add(rad2);
+        pnl.add(rad3);
+        slider.setPaintLabels(true);
+        slider.setPaintTicks(true);
+        slider.setPaintTrack(true);
+        pnl.add(slider);
+
         setVisible(true);
     }
 
