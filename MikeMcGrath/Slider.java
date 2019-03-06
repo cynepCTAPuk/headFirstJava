@@ -5,8 +5,6 @@ public class Slider extends JFrame {
     JPanel pnl = new JPanel();
     JSlider slider = new JSlider(0, 100);
     File dir = new File("c:/000");
-    String string = dir.toString();
-    String str = String.valueOf(5);
 
     public Slider() {
         super("Окно Swing");
@@ -24,8 +22,8 @@ public class Slider extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Slider gui = new Slider();
-        System.out.println(gui.dir);
+        System.out.println(gui.dir.getUsableSpace());
     }
 }
