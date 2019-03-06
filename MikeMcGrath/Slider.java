@@ -1,8 +1,12 @@
 import javax.swing.*;
+import java.io.*;
 
 public class Slider extends JFrame {
     JPanel pnl = new JPanel();
     JSlider slider = new JSlider(0, 100);
+    File dir = new File("c:/000");
+    String string = dir.toString();
+    String str = String.valueOf(5);
 
     public Slider() {
         super("Окно Swing");
@@ -12,9 +16,9 @@ public class Slider extends JFrame {
         add(pnl);
         slider.setMajorTickSpacing(10);
         slider.setMinorTickSpacing(5);
-        slider.setPaintLabels(true);
         slider.setPaintTicks(true);
-        
+        slider.setPaintLabels(true);
+
         pnl.add(slider);
 
         setVisible(true);
@@ -22,5 +26,6 @@ public class Slider extends JFrame {
 
     public static void main(String[] args) {
         Slider gui = new Slider();
+        System.out.println(gui.dir);
     }
 }
