@@ -1,6 +1,22 @@
 import javax.swing.*;
 import java.awt.event.*;
-
+/*
+Синтаксис команды Операция
+jar cf jar-файл входные файлы
+    Создание JAR-архива
+jar cfe jar-файл точка_входа входные файлы
+    Создание JAR-архива с указанием точки входа в приложение
+jar tf jar-файл
+    Просмотр содержимого JAR-архива
+jar uf jar-файл
+    Обновление содержимого JAR-архива
+jar ufm jar-файл файл_атрибутов
+    Обновление содержимого манифеста JAR-архива с добавлением в него атрибутов
+jar xf jar-файл
+    Извлечение содержимого JAR-архива
+jar xf jar-файл архивный_файл
+    Извлечение определенного файла из содержимого JAR-архива
+ */
 public class Lotto extends JFrame implements ActionListener {
     // Компоненты.
     ClassLoader ldr = this.getClass().getClassLoader();
