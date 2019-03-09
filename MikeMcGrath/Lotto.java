@@ -28,16 +28,10 @@ public class Lotto extends JFrame implements ActionListener {
     // Обработчик событий.
     public void actionPerformed(ActionEvent event) {
         if (event.getSource() == btn) {
-            int[] nums = new int[50];
             String str = "";
-            for (int i = 1; i < 50; i++) nums[i] = i;
-            for (int i = 1; i < 50; i++) {
-                int r = (int) (49 * Math.random()) + 1;
-                int temp = nums[i];
-                nums[i] = nums[r];
-                nums[r] = temp;
+            for (int i = 0; i < 6; i++) {
+                str += " " + ((int) (49 * Math.random()) + 1) + " ";
             }
-            for (int i = 1; i < 7; i++) str += " " + nums[i] + " ";
             txt.setText(str);
         }
     }
