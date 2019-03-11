@@ -3,8 +3,8 @@ Data Structures & Algorithms in Java
 Second Edition
 2003
 
-Лафоре Р.
-Структуры данных и алгоритмы в Java
-Классика Computers Science
-2-е изд.
+Р›Р°С„РѕСЂРµ Р .
+РЎС‚СЂСѓРєС‚СѓСЂС‹ РґР°РЅРЅС‹С… Рё Р°Р»РіРѕСЂРёС‚РјС‹ РІ Java
+РљР»Р°СЃСЃРёРєР° Computers Science
+2-Рµ РёР·Рґ.
 2013

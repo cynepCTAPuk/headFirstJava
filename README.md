@@ -1,3 +1,3 @@
-﻿# Head First Java
+# Head First Java
 
 CTAPuk@gmail.com
