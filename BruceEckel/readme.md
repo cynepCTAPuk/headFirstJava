@@ -3,7 +3,7 @@ Thinking in Java
 4th Edition
 www.MindView.net
 
-Ѕрюс Ёккель
-‘илософи€ Java
+Брюс Эккель
+Философия Java
 4е издание
 2006
