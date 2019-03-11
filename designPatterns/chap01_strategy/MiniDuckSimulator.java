@@ -24,7 +24,9 @@ public class MiniDuckSimulator {
         };
         justDuck.display();
         justDuck.swim();
-//        justDuck.performQuack();
-//        justDuck.performFly();
+        justDuck.setFlyBehavior(new FlyNoWay());
+        justDuck.performFly();
+        justDuck.setQuackBehavior(new MuteQuack());
+        justDuck.performQuack();
     }
 }
