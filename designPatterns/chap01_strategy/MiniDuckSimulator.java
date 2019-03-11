@@ -19,7 +19,7 @@ public class MiniDuckSimulator {
         Duck justDuck = new Duck() {
             @Override
             public void display() {
-                System.out.println("I'm just justDuck!");
+                System.out.println("I'm justDuck!");
             }
         };
         justDuck.display();
