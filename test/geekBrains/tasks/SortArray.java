@@ -1,4 +1,4 @@
-package test;
+package tasks;
 
 public class SortArray {
     public static void bubble(int[] array) {
@@ -14,8 +14,8 @@ public class SortArray {
                     array[i] = array[i + 1];
                     array[i + 1] = temp;
                     check = true;
-                }//if (array[i] > array[i + 1])
-            }//for (int i = 0; i < array.length - j; i++)
-        }//while (check)
-    }//bubbleSort(int[])
-} //class test.SortArray
+                }
+            }
+        }
+    }
+}

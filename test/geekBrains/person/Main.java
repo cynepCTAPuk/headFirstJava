@@ -30,8 +30,8 @@ public class Main {
 */
 /*
         int a = 10;
-        int f = test.Factorial.factorial(a);
-        System.out.println("test.Factorial " + a + "! = " + f);
+        int f = tasks.Factorial.factorial(a);
+        System.out.println("tasks.Factorial " + a + "! = " + f);
 */
 //        for (int i : new int[]{1, 2, 3}) System.out.print(i+"\t");
 

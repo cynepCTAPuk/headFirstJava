@@ -1,4 +1,4 @@
-package test;
+package tasks;
 
 class Quadratic_equation {
     static double[] solution(double a, double b, double c) {
