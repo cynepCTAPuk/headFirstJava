@@ -2,6 +2,7 @@
 The declaration of a class is composed of the following parts:
 ■ Access modifiers
 ■ Nonaccess modifiers
+ abstract static final synchronized native strictfp transient volatile
 ■ Class name
 ■ Name of the base class, if the class is extending another class
 ■ All implemented interfaces, if the class is implementing any interfaces
