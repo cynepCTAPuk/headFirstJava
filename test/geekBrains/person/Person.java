@@ -1,3 +1,5 @@
+package person;
+
 public class Person implements Comparable<Person> {
     String name;
     int age;

@@ -1,3 +1,5 @@
+package test;
+
 class Quadratic_equation {
     static double[] solution(double a, double b, double c) {
         // ax^2+bx+c=0

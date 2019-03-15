@@ -1,3 +1,5 @@
+package test;
+
 public class FillArray {
     public static void random(int[] array) {
         //for(int i=0)
@@ -9,4 +11,4 @@ public class FillArray {
             if(i>93) array[i] = (char) (i+67);
         } //for(int i=0)
     }//random(int[])
-} //FillArray class
+} //test.FillArray class

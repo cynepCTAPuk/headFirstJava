@@ -1,3 +1,5 @@
+package test;
+
 public class SortArray {
     public static void bubble(int[] array) {
         boolean check = true;
@@ -16,4 +18,4 @@ public class SortArray {
             }//for (int i = 0; i < array.length - j; i++)
         }//while (check)
     }//bubbleSort(int[])
-} //class SortArray
+} //class test.SortArray

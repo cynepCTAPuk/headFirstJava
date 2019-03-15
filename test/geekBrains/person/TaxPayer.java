@@ -1,3 +1,5 @@
+package person;
+
 public class TaxPayer extends Person {
     int salary = 20_000;
     int savings;

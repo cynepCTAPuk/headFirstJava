@@ -1,23 +1,25 @@
+package person;
+
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 /*
-        ArrayList<Person> persons = new ArrayList<Person>();
+        ArrayList<person> persons = new ArrayList<person>();
 
-        Person john = new TaxPayer();
+        person john = new person.TaxPayer();
         john.name = "John";
         john.age = 20;
         john.sex = true;
         persons.add(john);
 
-        Person jan = new Person();
+        person jan = new person();
         jan.name = "Jan";
         jan.age = 40;
         jan.sex = true;
         persons.add(jan);
 
-        Person mary = new Person();
+        person mary = new person();
         mary.name = "Mary";
         mary.age = 17;
         mary.sex = false;
@@ -28,8 +30,8 @@ public class Main {
 */
 /*
         int a = 10;
-        int f = Factorial.factorial(a);
-        System.out.println("Factorial " + a + "! = " + f);
+        int f = test.Factorial.factorial(a);
+        System.out.println("test.Factorial " + a + "! = " + f);
 */
 //        for (int i : new int[]{1, 2, 3}) System.out.print(i+"\t");
 
@@ -85,4 +87,4 @@ public class Main {
             System.out.println(arr);
 */
     } //main(String[])
-} // Main class
+} // person.Main class
