@@ -1,5 +1,7 @@
 class Quadratic_equation {
-    static double[] solution(double a, double b, double c) { //ax^2+bx+c=0; x = (-b +- sqrt(b^2-4ac))/2ac;
+    static double[] solution(double a, double b, double c) {
+        // ax^2+bx+c=0
+        // x = (-b +- sqrt(b^2-4ac))/2ac
         var d = b * b - 4 * a * c;
         double[] solution;
         solution = null;

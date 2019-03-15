@@ -4,7 +4,8 @@ public class Person implements Comparable<Person> {
     boolean sex;
 
     public void print() {
-        System.out.print("This is " + this.name + ", " + (this.sex ? "he" : "she") + " is " + this.age + " years old");
+        System.out.print("This is " + this.name + ", " +
+                (this.sex ? "he" : "she") + " is " + this.age + " years old");
     }
 
     @Override
