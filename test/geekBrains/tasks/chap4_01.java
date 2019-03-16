@@ -1,21 +1,23 @@
 package tasks;
-
+/*
+Uppercase first letter in each word and lowercase other letter in String with for each loop
+ */
 public class chap4_01 {
     public static void main(String[] args) {
-        String a = "в леСу Родилась Елочка";
-        System.out.println(a);
-        String a1 = a.toLowerCase();
+        String sOld = "в леСу Родилась Елочка";
+        System.out.println(sOld);
+        String a1 = sOld.toLowerCase();
         System.out.println(a1);
-        String a2 = "";
-        String[] b = a1.split(" ");
-        for (String s : b) {
-            char[] ch = s.toCharArray();
+        String sNew = "";
+        String[] sArray = a1.split(" ");
+        for (String w : sArray) {
+            char[] ch = w.toCharArray();
             ch[0] = (char) (ch[0] - 32);
-            s = String.valueOf(ch);
-            s += " ";
-            a2 += s;
+            w = String.valueOf(ch);
+            w += " ";
+            sNew += w;
         }
-        a2 = a2.trim();
-        System.out.println(a2 + ".");
+        sNew = sNew.trim();
+        System.out.println(sNew + ".");
     }
 }
