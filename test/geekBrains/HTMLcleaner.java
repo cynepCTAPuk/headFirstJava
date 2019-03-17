@@ -14,6 +14,5 @@ public class HTMLcleaner {
         for (Object o : objects) {
             System.out.println(((TagNode) o).getText());
         }
-
     }
 }
