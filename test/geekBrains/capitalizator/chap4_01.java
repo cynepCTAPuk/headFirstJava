@@ -1,4 +1,4 @@
-package tasks;
+package capitalizator;
 /*
 Uppercase first letter in each word and lowercase other letter in String with for each loop
  */

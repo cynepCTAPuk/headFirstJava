@@ -1,4 +1,4 @@
-package tasks;
+package capitalizator;
 
 public class chap4_02 {
     public static void main(String[] args) {

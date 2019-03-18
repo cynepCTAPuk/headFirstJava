@@ -1,3 +1,5 @@
+package htmlcleaner;
+
 import org.htmlcleaner.*;
 
 import java.io.*;
