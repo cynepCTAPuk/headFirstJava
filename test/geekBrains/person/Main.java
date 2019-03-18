@@ -87,4 +87,4 @@ public class Main {
             System.out.println(arr);
 */
     } //main(String[])
-} // person.Main class
+} // person.io.FileTest class
