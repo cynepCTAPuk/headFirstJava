@@ -21,12 +21,12 @@
 **/log/
 **/target/
 **.ec
-**.ser
 
 # common
 **/out
 **.class
 **.log
 **.jar
+**.ser
 **.zip
 **.xml
