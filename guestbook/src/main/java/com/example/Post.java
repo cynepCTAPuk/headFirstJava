@@ -28,4 +28,13 @@ public class Post {
     public void setPost(String post) {
         this.post = post;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "postID=" + postID +
+                ", userID=" + userID +
+                ", post='" + post + '\'' +
+                '}';
+    }
 }
