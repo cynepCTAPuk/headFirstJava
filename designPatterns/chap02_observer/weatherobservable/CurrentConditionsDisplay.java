@@ -3,6 +3,7 @@ package chap02_observer.weatherobservable;
 import java.util.Observable;
 import java.util.Observer;
 	
+@SuppressWarnings("deprecation")
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 	Observable observable;
 	private float temperature;

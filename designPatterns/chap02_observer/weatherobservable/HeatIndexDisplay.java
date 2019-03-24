@@ -3,6 +3,7 @@ package chap02_observer.weatherobservable;
 import java.util.Observable;
 import java.util.Observer;
 
+@SuppressWarnings("deprecation")
 public class HeatIndexDisplay implements Observer, DisplayElement {
 	float heatIndex = 0.0f;
 
@@ -37,6 +38,6 @@ public class HeatIndexDisplay implements Observer, DisplayElement {
 	}
 
 	public void display() {
-		System.out.println("Heat index is " + heatIndex);
+		System.out.println("Heat index is " + heatIndex + "\n");
 	}
 }
