@@ -1,4 +1,4 @@
-package chap02_observer;
+package chap02_observer.weather;
 
 public interface Subject {
     public void registerObserver(Observer o);

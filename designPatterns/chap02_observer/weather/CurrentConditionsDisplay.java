@@ -1,4 +1,4 @@
-package chap02_observer;
+package chap02_observer.weather;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
     private float temperature;

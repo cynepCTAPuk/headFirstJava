@@ -1,4 +1,4 @@
-package chap02_observer;
+package chap02_observer.weather;
 
 public class StatisticsDisplay implements Observer, DisplayElement {
     private float maxTemp = 0.0f;

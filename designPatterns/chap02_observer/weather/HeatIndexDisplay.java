@@ -1,4 +1,4 @@
-package chap02_observer;
+package chap02_observer.weather;
 
 public class HeatIndexDisplay implements Observer, DisplayElement {
 	float heatIndex = 0.0f;

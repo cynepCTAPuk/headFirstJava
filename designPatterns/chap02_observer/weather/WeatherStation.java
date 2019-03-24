@@ -1,4 +1,4 @@
-package chap02_observer;
+package chap02_observer.weather;
 
 public class WeatherStation {
     public static void main(String[] args) {
