@@ -1,4 +1,4 @@
-package chap02;
+package chap02_observer;
 
 public class WeatherData_0 {
     // Объявления переменных экземпляров
