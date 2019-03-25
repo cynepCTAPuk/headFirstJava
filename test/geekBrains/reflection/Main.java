@@ -57,8 +57,8 @@ public class Main {
         try {
             if (!rs.next()) return;
             for (Field f : fields) {
-                System.out.print(f.getName() + " ");
                 String name = f.getName();
+                System.out.print(name + " ");
                 if (f.getType().equals(String.class)) {
                     String val = rs.getString(name);
                     f.set(o, val);
