@@ -58,16 +58,52 @@ public class Main {
             if (!rs.next()) return;
             for (Field f : fields) {
                 String name = f.getName();
-                System.out.print(name + " ");
                 if (f.getType().equals(String.class)) {
                     String val = rs.getString(name);
                     f.set(o, val);
+                } else if (f.getType().equals(Integer.class) || f.getType().equals(int.class)) {
+                    Integer val = rs.getInt(name);
+                    f.set(o, val);
+                } else if (f.getType().equals(Boolean.class) || f.getType().equals(boolean.class)) {
+                    Boolean val = rs.getBoolean(name);
+                    f.set(o, val);
                 }
             }
-            System.out.println();
         } catch (SQLException | IllegalAccessException e) {
             e.printStackTrace();
         }
+
+    }
+
+    @SuppressWarnings("deprecation")
+    public static List selectAll(Class clazz, ResultSet rs) {
+        ArrayList arrayList = new ArrayList();
+        Field[] fields = clazz.getFields();
+
+        try {
+            while (rs.next()) {
+                Object o = clazz.newInstance();
+                arrayList.add(o);
+                for (Field f : fields) {
+                    String name = f.getName();
+                    if (f.getType().equals(String.class)) {
+                        String val = rs.getString(name);
+                        f.set(o, val);
+                    } else if (f.getType().equals(Integer.class)
+                            || f.getType().equals(int.class)) {
+                        Integer val = rs.getInt(name);
+                        f.set(o, val);
+                    } else if (f.getType().equals(Boolean.class)
+                            || f.getType().equals(boolean.class)) {
+                        Boolean val = rs.getBoolean(name);
+                        f.set(o, val);
+                    }
+                }
+            }
+        } catch (SQLException | IllegalAccessException | InstantiationException e) {
+            e.printStackTrace();
+        }
+        return arrayList;
     }
 
     public static void main(String[] args)
@@ -76,6 +112,7 @@ public class Main {
 //        getPosts();
         User u = new User();
         Post p = new Post();
+/*
         try (Connection c = getGonnection()) {
             try (PreparedStatement ps = c.prepareStatement("SELECT * FROM users LIMIT 1")) {
                 try (ResultSet resultSet = ps.executeQuery()) {
@@ -84,6 +121,8 @@ public class Main {
                 }
             }
         }
+*/
+/*
         try (Connection c = getGonnection()) {
             try (PreparedStatement ps = c.prepareStatement("SELECT * FROM posts LIMIT 1")) {
                 try (ResultSet resultSet = ps.executeQuery()) {
@@ -92,11 +131,44 @@ public class Main {
                 }
             }
         }
+*/
+/*
+        try (Connection c = getGonnection()) {
+            try (PreparedStatement ps = c.prepareStatement("SELECT * FROM users")) {
+                try (ResultSet resultSet = ps.executeQuery()) {
+                    List list = selectAll(User.class, resultSet);
+                    for (Object o : list) System.out.println(o);
+                }
+            }
+        }
+*/
+/*
+        try (Connection c = getGonnection()) {
+            try (PreparedStatement ps = c.prepareStatement("SELECT * FROM posts")) {
+                try (ResultSet resultSet = ps.executeQuery()) {
+                    List list = selectAll(Post.class, resultSet);
+                    for (Object o : list) System.out.println(o);
+                }
+            }
+        }
+*/
+        String request =
+                "SELECT users.name, posts.post FROM posts, users WHERE users.userID=posts.userID;";
+        try (Connection c = getGonnection()) {
+            try (PreparedStatement ps = c.prepareStatement(request)) {
+                try (ResultSet resultSet = ps.executeQuery()) {
+                    List list = selectAll(Object.class, resultSet);
+                    for (Object o : list) System.out.println(o);
+                }
+            }
+        }
+    }
+
 /*
         Integer x = 4;
         Class claz = x.getClass();
         for (Object o : claz.getMethods()) System.out.println(o);
         for (Object o : claz.getFields()) System.out.println(o);
 */
-    }
 }
+
