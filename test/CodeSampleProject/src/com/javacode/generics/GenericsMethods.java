@@ -8,6 +8,8 @@ S,U,V etc.
  */
 package com.javacode.generics;
 
+import java.util.*;
+
 public class GenericsMethods {
     public static void main(String[] args) {
         Integer[] intArray = {1, 2, 0, 8, 5, 6};
@@ -20,6 +22,11 @@ public class GenericsMethods {
         System.out.println(findMax(intArray));
         System.out.println(findMax(doubleArray));
         System.out.println(findMax(stringArray));
+
+        List<Integer> integers = Arrays.asList(intArray);
+        printElements(integers);
+        List<Double> doubles = Arrays.asList(doubleArray);
+        printElements(doubles);
     }
 
     private static <T> void printArray(T[] array) {
@@ -48,5 +55,9 @@ public class GenericsMethods {
             if (element.compareTo(max) > 0) max = element;
         }
         return max;
+    }
+    private static void printElements(List<? extends Number> list) {
+        for(Number n: list) System.out.print(n + " ");
+        System.out.println();
     }
 }
