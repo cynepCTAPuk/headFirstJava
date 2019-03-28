@@ -3,7 +3,7 @@ package com.javacode.lambdas;
 import java.util.ArrayList;
 import java.util.List;
 
-@FunctionalInterface
+@java.lang.FunctionalInterface
 interface ElementProcessor {
     double process(int element);
 }
