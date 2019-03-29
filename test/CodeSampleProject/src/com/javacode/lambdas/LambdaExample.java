@@ -7,8 +7,14 @@ interface ElementProcessor<T extends Number> {
     double process(T element);
 }
 
+@FunctionalInterface
 interface ExecutiveFunction {
     void process();
+}
+
+@FunctionalInterface
+interface Transformable<T> {
+    T transorm(T t);
 }
 
 public class LambdaExample {
@@ -27,12 +33,28 @@ public class LambdaExample {
         doubleList.add(4.13);
         doubleList.add(12.2);
 
-//        processElements(intList, x -> Math.sin(x.doubleValue()));
-//        processElements(doubleList, x -> Math.sin(x.doubleValue()));
+        String s = "Hello";
+        String suffix = "Alex";
+        Double d = 0.123;
+        /*
+        CustomClass::staticMethod
+        customClassInstance::nonStaticMethod
+        CustomClass::nonStaticMethod
+        CustomClass::new
+         */
+        TransformUtils<Double> doubleUtils = new TransformUtils<>();
+        System.out.println(doubleUtils.transform(d, Math::sin));
 
-        TimeUtil.measure(() -> Arrays.sort(createRandomArray()));
+        TransformUtils<String> stringUtils = new TransformUtils<>();
+        System.out.println(stringUtils.transform(s, TransformUtils::exclaim));
 
-//        TimeUtil.measure(someLongRunningMethod())
+        System.out.println(stringUtils.transform(s, x -> x.concat(suffix)));
+        System.out.println(stringUtils.transform(suffix, s::concat));
+
+        System.out.println(stringUtils.transform(s, String::toUpperCase));
+        System.out.println(stringUtils.transform(s, y -> y.toUpperCase()));
+
+        System.out.println(stringUtils.transform(s, String::new));
     }
 
     private static <T extends Number> void processElements(
