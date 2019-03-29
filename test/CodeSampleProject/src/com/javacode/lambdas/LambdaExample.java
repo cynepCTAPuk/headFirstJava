@@ -1,11 +1,14 @@
 package com.javacode.lambdas;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-@java.lang.FunctionalInterface
-interface ElementProcessor {
-    double process(int element);
+@FunctionalInterface
+interface ElementProcessor<T extends Number> {
+    double process(T element);
+}
+
+interface ExecutiveFunction {
+    void process();
 }
 
 public class LambdaExample {
@@ -24,5 +27,36 @@ public class LambdaExample {
         doubleList.add(4.13);
         doubleList.add(12.2);
 
+//        processElements(intList, x -> Math.sin(x.doubleValue()));
+//        processElements(doubleList, x -> Math.sin(x.doubleValue()));
+
+        TimeUtil.measure(() -> Arrays.sort(createRandomArray()));
+
+//        TimeUtil.measure(someLongRunningMethod())
+    }
+
+    private static <T extends Number> void processElements(
+            List<T> intList, ElementProcessor function) {
+        List<Double> doubleList = new ArrayList<>();
+        for (Number i : intList) {
+            doubleList.add(function.process(i));
+        }
+        System.out.println(doubleList);
+    }
+
+    private static int[] createRandomArray() {
+        int[] myArray = new int[1_000_000];
+        Random r = new Random();
+        for (int i = 0; i < myArray.length; i++) myArray[i] = r.nextInt(myArray.length);
+        return myArray;
+    }
+
+    public static class TimeUtil {
+        private static void measure(ExecutiveFunction function) {
+            long start = System.currentTimeMillis();
+            function.process();
+            long end = System.currentTimeMillis();
+            System.out.println("Time spent " + (end - start));
+        }
     }
 }
