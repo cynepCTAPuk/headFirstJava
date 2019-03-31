@@ -20,17 +20,15 @@ public class LambdaFunctionExample {
         people.add(new Person("John", "Green", 30));
         people.add(new Person("Sam", "Brown", 32));
         people.add(new Person("Tony", "Grey", 34));
-
+//        Predicate
         System.out.println(findMatch(employees, e -> e.getSalary() > 80_000));
-        System.out.println(findMatch(people, e -> e.getAge() > 32));
+        System.out.println(findMatch(people, p -> p.getAge() > 30));
+
+        
     }
 
     private static <T> T findMatch(List<T> elements, Predicate<T> predicateFunction) {
-        for (T e : elements) {
-            if (predicateFunction.test(e)) {
-                return e;
-            }
-        }
+        for (T e : elements) if (predicateFunction.test(e)) return e;
         return null;
     }
 }
