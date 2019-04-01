@@ -2,11 +2,6 @@ package com.javacode.lambdas;
 
 import java.util.*;
 
-@java.lang.FunctionalInterface
-interface ElementProcessor2 {
-    double process(int element, int elem2);
-}
-
 public class LambdaExample2 {
     public static void main(String[] args) {
         List<Integer> intList = new ArrayList<>();

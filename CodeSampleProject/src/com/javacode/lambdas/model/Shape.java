@@ -10,4 +10,8 @@ public interface Shape {
         for (Shape shape : shapes) squareSum = squareSum + shape.calcSquare();
         return squareSum;
     }
+
+    default double calcSomething() {
+        return 1;
+    }
 }

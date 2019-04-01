@@ -1,7 +1,5 @@
 package com.javacode.lambdas;
 
-import java.util.*;
-
 public class LambdaExample {
     public static void main(String[] args) {
 
