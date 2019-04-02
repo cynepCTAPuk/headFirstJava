@@ -9,13 +9,13 @@ public class LambdaScopeTest {
         double d = 456.123;
 
         void testScope(double d) {
-            Consumer<Double> res = e -> {
+            Consumer<Double> result = e -> {
                 System.out.println("d = " + d);
                 System.out.println("e = " + e);
                 System.out.println("this.d = " + this.d);
                 System.out.println("LambdaScopeTest.this.d = " + LambdaScopeTest.this.d);
             };
-            res.accept(789.00);
+            result.accept(789.00);
         }
     }
 }
