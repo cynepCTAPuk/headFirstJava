@@ -57,7 +57,7 @@ public class StreamsOverviewMain {
 
     private static void testStreamFromFile() throws IOException {
         Files.lines((Paths.get("c:/000/words.txt")))
-                .filter(e->e.length()>4)
+                .filter(e -> e.length() > 4)
                 .map(String::toUpperCase)
                 .distinct()
                 .sorted()
