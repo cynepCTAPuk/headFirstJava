@@ -74,6 +74,7 @@ public class StreamsOverviewMain {
         Stream.of(ids)
                 .filter(i -> i % 2 == 0)
                 .filter(i -> i % 3 == 0)
+                .skip(2)
                 .limit(1)
                 .forEach(System.out::println);
 
@@ -97,7 +98,10 @@ public class StreamsOverviewMain {
         departments.add(employeeList);
         departments.add(secondList);
 
-//        departments.stream().flatMap(l -> l.stream().map(e -> e.getFirstName())).forEach(System.out::println);
+/*
+        departments.stream().flatMap(l -> l.stream()
+                .map(e -> e.getFirstName())).forEach(System.out::println);
+*/
 
 /*
         Stream.of(ids).map(e -> String.format("%,3d", e)).forEach(System.out::print);
