@@ -29,8 +29,8 @@ public class StreamsOverviewMain1 {
         employeeList.add(new Employee(11, "Victoria", "Pink", 75_000));
 
 //        testStreamFormList();
-//        testStreamFromFile();
-        testSortAndReduce();
+        testStreamFromFile();
+//        testSortAndReduce();
     }
 
     private static void testSortAndReduce() {
@@ -44,12 +44,14 @@ public class StreamsOverviewMain1 {
                 .min(Comparator.comparingInt(Employee::getSalary)).get();
         System.out.println(employee1);
 */
+/*
         employeeList.stream()
                 .sorted((s1, s2) -> s1.getFirstName().compareTo(s2.getFirstName()))
                 .distinct()
 //                .sorted(Comparator.comparing(Employee::getFirstName))
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
+*/
 /*
         Employee identity = new Employee(0, "", "", 0);
         Employee reduceEmployee = employeeList.stream()
@@ -140,11 +142,14 @@ public class StreamsOverviewMain1 {
     }
 
     private static void testStreamFromFile() throws IOException {
-        Files.lines((Paths.get("c:/000/words.txt")))
-                .filter(e -> e.length() > 4)
+        Files.lines(
+                (Paths.get("c:/000/words.txt")))
+//                (Paths.get("src/com/javacode/streams/StreamsOverviewMain1.java")))
+                .filter(e -> e.length() > 5)
                 .map(String::toUpperCase)
                 .distinct()
                 .sorted()
+                .collect(Collectors.toList())
                 .forEach(System.out::println);
     }
 
