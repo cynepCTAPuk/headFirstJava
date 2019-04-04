@@ -3,10 +3,7 @@ package com.javacode.streams;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -29,7 +26,7 @@ public class StreamsOverviewMain1 {
         employeeList.add(new Employee(11, "Victoria", "Pink", 75_000));
 
 //        testStreamFormList();
-        testStreamFromFile();
+//        testStreamFromFile();
 //        testSortAndReduce();
     }
 
@@ -147,9 +144,14 @@ public class StreamsOverviewMain1 {
 //                (Paths.get("src/com/javacode/streams/StreamsOverviewMain1.java")))
                 .filter(e -> e.length() > 5)
                 .map(String::toUpperCase)
-                .distinct()
-                .sorted()
-                .collect(Collectors.toList())
+//                .distinct()
+//                .sorted()
+//                .collect(Collectors.toList())
+//                .collect(Collectors.toSet())
+//                .collect(Collectors.toCollection(ArrayList::new))
+//                .collect(Collectors.toCollection(LinkedList::new))
+//                .collect(Collectors.toCollection(Stack::new))
+                .collect(Collectors.toCollection(TreeSet::new))
                 .forEach(System.out::println);
     }
 

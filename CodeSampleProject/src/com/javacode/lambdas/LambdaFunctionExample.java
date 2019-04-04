@@ -1,7 +1,10 @@
 package com.javacode.lambdas;
 
-import com.javacode.lambdas.model.*;
+import com.javacode.lambdas.model.Circle;
+import com.javacode.lambdas.model.Employee;
 import com.javacode.lambdas.model.Person;
+import com.javacode.lambdas.model.Rectangle;
+import com.javacode.lambdas.model.Square;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,33 +26,40 @@ public class LambdaFunctionExample {
         people.add(new Person("Tony", "Grey", 34));
 
 //        Predicate
+/*
         System.out.println(findMatch(employees, e -> e.getSalary() > 80_000));
         System.out.println(findMatch(people, p -> p.getAge() > 30));
+*/
 
 //        Function
+/*
         System.out.printf("Total salary: %,d%n", calcSum(employees, Employee::getSalary));
         System.out.printf("Total age: %,d%n", calcSum(people, Person::getAge));
+*/
 
 //        BiFunction
+/*
         BinaryOperator<Integer> combiner = (n1, n2) -> Math.max(n1, n2);
         Integer zeroElement = 0;
         System.out.printf("Combine result: %,d%n",
                 combine(employees, zeroElement, Employee::getSalary, combiner));
+*/
 
 //        Consumer
+/*
         employees.forEach(System.out::println);
         employees.forEach(e -> e.setSalary((e.getSalary() * 11 / 10)));
         employees.forEach(System.out::println);
+*/
 
 //        Supplier
         Supplier[] shapes = {Circle::new, Rectangle::new, Square::new};
         Random random = new Random();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 6; i++) {
             int index = random.nextInt(3);
             Supplier supplier = shapes[index];
             supplier.get();
         }
-
     }
 
     private static <T> T findMatch(List<T> elements, Predicate<T> predicateFunction) {
@@ -68,5 +78,4 @@ public class LambdaFunctionExample {
         for (T e : elements) zeroElement = combiner.apply(zeroElement, function.apply(e));
         return zeroElement;
     }
-
 }
