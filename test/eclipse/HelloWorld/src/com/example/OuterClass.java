@@ -1,12 +1,25 @@
+/**
+ * @author CTAPuk
+ * 
+ */
 package com.example;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class HelloWorld {
+public class OuterClass
+{
+	class InnerClass
+	{
+	}
+	/**
+	 *  
+	 *
+	 */
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 
 		String[] strings = { "a", "b", "c" };
 		System.out.println(Arrays.toString(strings));
@@ -19,11 +32,17 @@ public class HelloWorld {
 		list.add(5);
 		System.out.println(list);
 
-		for (String s : strings) {
+		for (String s : strings)
+		{
 			System.out.printf("%s ", s);
 		}
 		System.out.println();
 
 		System.out.println("Hello World!");
 	}
+}
+
+class AnotherClass
+{
+	// TODO Auto-generated constructor stub
 }
