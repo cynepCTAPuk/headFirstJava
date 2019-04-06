@@ -1,15 +1,15 @@
 # Eclipse
+**/bin/
 **.classpath
 **.project
 **.prefs
 **.metadata/
 **.settings/
-**/bin/
 
 # Gradle
+**/.gradle/
 **/build/
 **/gradle/
-**/.gradle/
 
 # Intellij IDEA
 **/.idea
