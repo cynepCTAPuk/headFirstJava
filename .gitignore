@@ -1,8 +1,10 @@
 # Eclipse
 **.classpath
 **.project
+**.prefs
 **.metadata/
 **.settings/
+**/bin/
 
 # Gradle
 **/build/
