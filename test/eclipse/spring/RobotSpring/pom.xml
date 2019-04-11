@@ -7,7 +7,7 @@
 	<artifactId>RobotSpring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RobotSpring</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Demo project for Spring</description>
 
 	<properties>
 		<java.version>1.8</java.version>
