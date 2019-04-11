@@ -3,12 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
 	<bean id="t1000"
 		class="ru.javabegin.training.spring.impls.robot.ModelT1000">
 		<constructor-arg ref="sonyHand" />
 		<constructor-arg ref="sonyHead" />
-		<constructor-arg ref="toshibaLeg" />
+		<constructor-arg ref="sonyLeg" />
+
+		<property name="hand" ref="toshibaHand" />
+		<property name="head" ref="toshibaHead" />
+		<property name="leg" ref="toshibaLeg" />
 	</bean>
 
 	<bean id="sonyHand"
