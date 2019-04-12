@@ -8,9 +8,10 @@
 
 	<bean id="t1000"
 		class="ru.javabegin.training.spring.impls.robot.ModelT1000"
-		p:head-ref="toshibaHead" p:hand-ref="toshibaHand" p:leg-ref="sonyLeg">
-		<constructor-arg value="silver" index="0"
-			type="String" />
+		p:head-ref="toshibaHead"
+		p:hand-ref="toshibaHand"
+		p:leg-ref="sonyLeg">
+		<constructor-arg value="silver" index="0" type="String" />
 		<constructor-arg value="2005" index="1" type="int" />
 		<constructor-arg value="true" index="2" type="boolean" />
 	</bean>
@@ -29,19 +30,12 @@
 		c:leg-ref="toshibaLeg">
 	</bean>
 
+	<bean id="sonyHead" class="ru.javabegin.training.spring.impls.sony.SonyHead" />
+	<bean id="sonyHand" class="ru.javabegin.training.spring.impls.sony.SonyHand" />
+	<bean id="sonyLeg" class="ru.javabegin.training.spring.impls.sony.SonyLeg" />
 
-	<bean id="sonyHead"
-		class="ru.javabegin.training.spring.impls.sony.SonyHead" />
-	<bean id="sonyHand"
-		class="ru.javabegin.training.spring.impls.sony.SonyHand" />
-	<bean id="sonyLeg"
-		class="ru.javabegin.training.spring.impls.sony.SonyLeg" />
-
-	<bean id="toshibaHead"
-		class="ru.javabegin.training.spring.impls.toshiba.ToshibaHead" />
-	<bean id="toshibaHand"
-		class="ru.javabegin.training.spring.impls.toshiba.ToshibaHand" />
-	<bean id="toshibaLeg"
-		class="ru.javabegin.training.spring.impls.toshiba.ToshibaLeg" />
+	<bean id="toshibaHead" class="ru.javabegin.training.spring.impls.toshiba.ToshibaHead" />
+	<bean id="toshibaHand" class="ru.javabegin.training.spring.impls.toshiba.ToshibaHand" />
+	<bean id="toshibaLeg" class="ru.javabegin.training.spring.impls.toshiba.ToshibaLeg" />
 
 </beans>
