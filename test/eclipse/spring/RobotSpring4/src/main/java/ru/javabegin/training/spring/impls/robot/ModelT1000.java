@@ -7,9 +7,9 @@ import ru.javabegin.training.spring.interfaces.Robot;
 
 public class ModelT1000 implements Robot {
 
+    private Head head;
     private Hand hand;
     private Leg leg;
-    private Head head;
 
     private String color;
     private int year;
@@ -18,18 +18,18 @@ public class ModelT1000 implements Robot {
     public ModelT1000() {
     }
 
-    public ModelT1000(Hand hand, Leg leg, Head head) {
+    public ModelT1000(Head head, Hand hand, Leg leg) {
 	super();
+	this.head = head;
 	this.hand = hand;
 	this.leg = leg;
-	this.head = head;
     }
 
-    public ModelT1000(Hand hand, Leg leg, Head head, String color, int year, boolean soundEnabled) {
+    public ModelT1000(Head head, Hand hand, Leg leg, String color, int year, boolean soundEnabled) {
 	super();
+	this.head = head;
 	this.hand = hand;
 	this.leg = leg;
-	this.head = head;
 	this.color = color;
 	this.year = year;
 	this.soundEnabled = soundEnabled;
