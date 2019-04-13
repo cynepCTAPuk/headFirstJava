@@ -12,12 +12,12 @@ public class Start {
 	System.out.println("\n--t1000");
 	ModelT1000 t1000 = (ModelT1000) context.getBean("t1000");
 	t1000.action();
-	System.out.println("\n--t1000Empty");
-	ModelT1000 t1000Empty = (ModelT1000) context.getBean("t1000Empty");
-	t1000Empty.action();
-	System.out.println("\n--t1000p");
-	ModelT1000 t1000p = (ModelT1000) context.getBean("t1000p");
-	t1000p.action();
+	/*
+	 * System.out.println("\n--t1000Empty"); ModelT1000 t1000Empty = (ModelT1000)
+	 * context.getBean("t1000Empty"); t1000Empty.action();
+	 * System.out.println("\n--t1000p"); ModelT1000 t1000p = (ModelT1000)
+	 * context.getBean("t1000p"); t1000p.action();
+	 */
 	((ConfigurableApplicationContext) context).close();
     }
 }
