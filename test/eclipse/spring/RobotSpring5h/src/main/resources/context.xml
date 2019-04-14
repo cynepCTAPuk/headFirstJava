@@ -5,28 +5,22 @@
 	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-init-method="initObject"
-	default-destroy-method="destroyObject"
-	default-lazy-init="true"
-	>
+	default-lazy-init="true">
 
 	<bean id="t1000"
 		class="ru.javabegin.training.spring.impls.robot.ModelT1000"
-		p:head-ref="toshibaHead" p:hand-ref="toshibaHand" p:leg-ref="sonyLeg"
-		>
-<!-- 		scope="prototype" -->
-<!-- 		lazy-init="true" -->
-<!-- init-method="initObject" destroy-method="destroyObject" -->
-		<constructor-arg value="silver" index="0" type="String" />
+		p:head-ref="toshibaHead" p:hand-ref="toshibaHand" p:leg-ref="sonyLeg">
+		<constructor-arg value="silver" index="0"
+			type="String" />
 		<constructor-arg value="2005" index="1" type="int" />
 		<constructor-arg value="true" index="2" type="boolean" />
 	</bean>
 
+	<bean
+		class="ru.javabegin.training.spring.main.MyBeanPostProcessor" />
+
 	<bean id="t1000Empty"
-		class="ru.javabegin.training.spring.impls.robot.ModelT1000"
-		>
-<!-- 		scope="prototype" -->
-<!-- 		lazy-init="true" -->
+		class="ru.javabegin.training.spring.impls.robot.ModelT1000">
 		<constructor-arg ref="sonyHead" />
 		<constructor-arg ref="sonyHand" />
 		<constructor-arg ref="toshibaLeg" />
