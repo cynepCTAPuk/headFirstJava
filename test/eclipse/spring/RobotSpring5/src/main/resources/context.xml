@@ -4,16 +4,32 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans.xsd">
+		http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-init-method="initObject"
+	default-destroy-method="destroyObject"
+	default-lazy-init="true"
+	>
 
 	<bean id="t1000"
 		class="ru.javabegin.training.spring.impls.robot.ModelT1000"
 		p:head-ref="toshibaHead" p:hand-ref="toshibaHand" p:leg-ref="sonyLeg"
-		scope="prototype" init-method="initObject" destroy-method>
-		<constructor-arg value="silver" index="0"
-			type="String" />
+		>
+<!-- 		scope="prototype" -->
+<!-- 		lazy-init="true" -->
+<!-- init-method="initObject" destroy-method="destroyObject" -->
+		<constructor-arg value="silver" index="0" type="String" />
 		<constructor-arg value="2005" index="1" type="int" />
 		<constructor-arg value="true" index="2" type="boolean" />
+	</bean>
+
+	<bean id="t1000Empty"
+		class="ru.javabegin.training.spring.impls.robot.ModelT1000"
+		>
+<!-- 		scope="prototype" -->
+<!-- 		lazy-init="true" -->
+		<constructor-arg ref="sonyHead" />
+		<constructor-arg ref="sonyHand" />
+		<constructor-arg ref="toshibaLeg" />
 	</bean>
 
 	<bean id="sonyHead"
