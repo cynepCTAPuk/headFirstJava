@@ -20,7 +20,7 @@ public class SwingObserverExample {
 		// Without lambdas
 		//button.addActionListener(new AngelListener());
 		//button.addActionListener(new DevilListener());
-		
+
 		// With lambdas
 		button.addActionListener(event -> System.out.println("Don't do it, you might regret it!"));
 		button.addActionListener(event -> System.out.println("Come on, do it!"));
