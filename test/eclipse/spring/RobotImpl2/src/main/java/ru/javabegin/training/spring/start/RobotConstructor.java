@@ -6,16 +6,14 @@ import ru.javabegin.training.spring.impls.toshiba.ToshibaLeg;
 
 public class RobotConstructor {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SonyHand sonyHand = new SonyHand();
-		ToshibaLeg toshibaLeg = new ToshibaLeg();
-		SonyHead sonyHead = new SonyHead();
+	SonyHand sonyHand = new SonyHand();
+	ToshibaLeg toshibaLeg = new ToshibaLeg();
+	SonyHead sonyHead = new SonyHead();
 
-		Robot robot = new Robot(sonyHand, toshibaLeg, sonyHead);
+	Robot robot = new Robot(sonyHand, toshibaLeg, sonyHead);
 
-		robot.action();
-
-	}
-
+	robot.action();
+    }
 }
