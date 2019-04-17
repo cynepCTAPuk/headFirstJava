@@ -5,7 +5,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="personDao" class="com.example.sf01.dao.PersonDaoSimple">
-        <property name="age" value="28"/>
+<!--        <property name="age" value="28"/>-->
     </bean>
 
     <bean id="personService"
