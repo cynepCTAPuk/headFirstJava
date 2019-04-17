@@ -11,8 +11,8 @@ public class Main {
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "/spring-context.xml");
         PersonService s;
-//        s = context.getBean(PersonService.class);
-        s = (PersonService) context.getBean("personService");
+        s = context.getBean(PersonService.class);
+//        s = (PersonService) context.getBean("personService");
 
         System.out.println(PersonService.class);
         System.out.println(s);
