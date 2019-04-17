@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import ru.otus.spring02.domain.Person;
 import ru.otus.spring02.service.PersonService;
 
-@Configuration
+//@Configuration
 @ComponentScan
 public class Main {
 
