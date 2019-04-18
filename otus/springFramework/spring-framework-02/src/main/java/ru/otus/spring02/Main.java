@@ -2,11 +2,9 @@ package ru.otus.spring02;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import ru.otus.spring02.domain.Person;
 import ru.otus.spring02.service.PersonService;
 
-//@Configuration
 @ComponentScan
 public class Main {
 
@@ -18,6 +16,8 @@ public class Main {
 
         Person ivan = service.getByName("Ivan");
         System.out.println("name: " + ivan.getName() + " age: " + ivan.getAge());
+        Person petr = service.getByName("Petr");
+        System.out.println("name: " + petr.getName() + " age: " + petr.getAge());
     }
 }
 
