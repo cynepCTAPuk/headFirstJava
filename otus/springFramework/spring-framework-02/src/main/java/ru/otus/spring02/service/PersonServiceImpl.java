@@ -1,9 +1,11 @@
 package ru.otus.spring02.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.otus.spring02.dao.PersonDao;
 import ru.otus.spring02.domain.Person;
 
+@Service("personService")
 public class PersonServiceImpl implements PersonService {
 
     private final PersonDao dao;
