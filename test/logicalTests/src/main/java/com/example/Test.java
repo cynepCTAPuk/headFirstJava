@@ -11,3 +11,7 @@ public class Test {
         }
     }
 }
+/*
+Exception in thread "main" java.lang.NullPointerException
+	at com.example.Test.main(Test.java:7)
+ */
