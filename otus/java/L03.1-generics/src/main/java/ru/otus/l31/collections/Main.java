@@ -7,7 +7,7 @@ import java.util.*;
  */
 @SuppressWarnings("ResultOfMethodCallIgnored")
 public class Main {
-    private static final int MEASURE_COUNT = 100;
+    private static final int MEASURE_COUNT = 1_000;
 
     public static void main(String... args) {
         Collection<Integer> example = new LinkedList<>();
@@ -23,10 +23,10 @@ public class Main {
 
     private static void calcTime(Runnable runnable) {
         long startTime = System.nanoTime();
-        for (int i = 0; i < MEASURE_COUNT; i++)
-            runnable.run();
+        for (int i = 0; i < MEASURE_COUNT; i++) runnable.run();
         long finishTime = System.nanoTime();
         long timeNs = (finishTime - startTime) / MEASURE_COUNT;
-        System.out.println("Time spent: " + timeNs + "ns (" + timeNs / 1_000_000 + "ms)");
+        System.out.println("Time spent: "
+                + timeNs + "ns (" + timeNs / 1_000_000 + "ms)");
     }
 }
