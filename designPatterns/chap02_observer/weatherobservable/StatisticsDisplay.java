@@ -1,17 +1,21 @@
 package chap02_observer.weatherobservable;
 
-import java.util.*;
+import java.util.Observable;
+import java.util.Observer;
 
+@Deprecated
 public class StatisticsDisplay implements Observer, DisplayElement {
     private float maxTemp = 0.0f;
     private float minTemp = 200;
     private float tempSum = 0.0f;
     private int numReadings;
 
+    @Deprecated
     public StatisticsDisplay(Observable observable) {
         observable.addObserver(this);
     }
 
+    @Deprecated
     public void update(Observable observable, Object arg) {
         if (observable instanceof WeatherData) {
             WeatherData weatherData = (WeatherData) observable;
