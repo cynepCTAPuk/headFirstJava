@@ -18,12 +18,9 @@ public class Wildcard {
         printListOld(list);
 
         int sum = 0;
-        for(Integer integer: list){
-            sum += integer;
-        }
+//        for(Integer integer: list) sum += integer;
 
         printList(list);
-
     }
 
     private void bounds() {
@@ -35,11 +32,13 @@ public class Wildcard {
     }
 
     private void printList(List<?> list) {
+        System.out.println("printList");
         list.forEach(System.out::println);
         //list.add(new Object()); // error
     }
 
     private void printListOld(List list) {
+        System.out.println("printListOld");
         list.forEach(System.out::println);
         list.add(new Object()); // ok?
         list.add(2);

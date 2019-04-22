@@ -17,14 +17,13 @@ public class GenericMethod {
         listOfInts.add(0);
         Integer intValue = getTheFirst(listOfInts);
         System.out.println(intValue);
-        
+
         List<String> listOfStrings = new ArrayList<>();
         listOfStrings.add("Java is the best!");
         String stringValue = getTheFirst(listOfStrings);
         System.out.println(stringValue);
     }
     public static void main(String[] args) {
-        GenericMethod genericClass = new GenericMethod();
-        genericClass.run();
+        new GenericMethod().run();
     }
 }

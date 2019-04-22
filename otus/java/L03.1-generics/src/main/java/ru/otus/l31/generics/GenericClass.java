@@ -35,7 +35,6 @@ public class GenericClass<T> {
     }
 
     public static void main(String[] args) {
-        GenericClass genericClass = new GenericClass();
-        genericClass.run();
+        new GenericClass().run();
     }
 }

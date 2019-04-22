@@ -8,7 +8,8 @@ import java.lang.reflect.Type;
  */
 @SuppressWarnings({"UnusedReturnValue", "unused", "Convert2Diamond"})
 public class Main {
-    public static void main(String... args) throws NoSuchFieldException, IllegalAccessException {
+    public static void main(String... args)
+            throws NoSuchFieldException, IllegalAccessException {
         new Main().start();
     }
 
@@ -18,7 +19,8 @@ public class Main {
         System.out.println("Type name:" + getTypeAfterCompilation().getTypeName());
     }
 
-    private void printGenericType() throws IllegalAccessException, NoSuchFieldException {
+    private void printGenericType()
+            throws IllegalAccessException, NoSuchFieldException {
         GenericClass<Integer> integerClassExample = new GenericClass<Integer>(1);
         System.out.println(getTypeFromClass(integerClassExample.getClass()));
         System.out.println(getTypeFromObject(integerClassExample));
@@ -30,7 +32,8 @@ public class Main {
         System.out.println();
     }
 
-    private void printGenericIfNull() throws IllegalAccessException, NoSuchFieldException {
+    private void printGenericIfNull()
+            throws IllegalAccessException, NoSuchFieldException {
         GenericClass stringClassExample = new GenericClass<String>();
         System.out.println(getTypeFromClass(stringClassExample.getClass()));
         System.out.println(getTypeFromObject(stringClassExample));
@@ -38,15 +41,18 @@ public class Main {
     }
 
     private Type getTypeAfterCompilation() {
-        ParameterizedType t = (ParameterizedType) StringClass.class.getGenericSuperclass();
+        ParameterizedType t =
+                (ParameterizedType) StringClass.class.getGenericSuperclass();
         return t.getActualTypeArguments()[0];
     }
 
-    private Class<?> getTypeFromClass(Class<? extends GenericClass> clazz) throws IllegalAccessException, NoSuchFieldException {
+    private Class<?> getTypeFromClass(Class<? extends GenericClass> clazz)
+            throws IllegalAccessException, NoSuchFieldException {
         return clazz.getDeclaredField("value").getType();
     }
 
-    private Class<?> getTypeFromObject(GenericClass genericClass) throws IllegalAccessException, NoSuchFieldException {
+    private Class<?> getTypeFromObject(GenericClass genericClass)
+            throws IllegalAccessException, NoSuchFieldException {
         return genericClass.getClass()
                 .getDeclaredField("value")
                 .get(genericClass)
