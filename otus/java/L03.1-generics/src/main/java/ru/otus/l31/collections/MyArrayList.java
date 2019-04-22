@@ -10,6 +10,10 @@ import java.util.ListIterator;
  */
 public class MyArrayList<T> implements List<T> {
 
+    public static void main(String[] args) {
+
+    }
+
     @Override
     public int size() {
         return 0;
