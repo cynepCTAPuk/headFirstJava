@@ -9,10 +9,8 @@ import java.util.ListIterator;
 Написать свою реализацию ArrayList на основе массива
  */
 public class MyArrayList<T> implements List<T> {
-
-    public static void main(String[] args) {
-
-    }
+    private Object[] elements;
+    private int size = 0;
 
     @Override
     public int size() {
