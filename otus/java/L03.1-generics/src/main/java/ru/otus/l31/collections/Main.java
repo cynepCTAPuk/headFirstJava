@@ -12,13 +12,19 @@ public class Main {
     private static final int max = 3_999_999;
 
     public static void main(String... args) {
+/*
         Collection<Integer> arrayList = new ArrayList<>();
         fillCollection(arrayList);
 //        Collections.shuffle((List<Integer>) arrayList);
 //        calcTime(() -> Collections.sort((List<Integer>) arrayList);
         calcTime(() -> arrayList.contains(max));
         System.out.println(" - ArraySet");
+*/
 
+        System.out.printf("Integer.MAX_VALUE = %,d\n", Integer.MAX_VALUE);
+        System.out.printf("Integer.MIN_VALUE = %,d\n", Integer.MIN_VALUE);
+
+/*
         Collection<Integer> hashSet = new HashSet<>();
         fillCollection(hashSet);
         calcTime(() -> hashSet.contains(max));
@@ -38,6 +44,7 @@ public class Main {
         fillCollection(treeSet);
         calcTime(() -> treeSet.contains(max));
         System.out.println(" - TreeSet");
+*/
     }
 
     private static void fillCollection(Collection<Integer> collection) {
