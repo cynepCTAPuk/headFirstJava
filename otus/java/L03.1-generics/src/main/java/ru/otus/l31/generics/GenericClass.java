@@ -27,8 +27,15 @@ public class GenericClass<T> {
     public void run() {
         GenericClass<Integer> intObject = new GenericClass<>(1);
         Integer valueInteger = intObject.getT();
+        System.out.println(valueInteger);
 
-        //GenericClass<String> stringObject = new GenericClass<>("word");
-        //String valueString = stringObject.getT();
+        GenericClass<String> stringObject = new GenericClass<>("word");
+        String valueString = stringObject.getT();
+        System.out.println(valueString);
+    }
+
+    public static void main(String[] args) {
+        GenericClass genericClass = new GenericClass();
+        genericClass.run();
     }
 }
