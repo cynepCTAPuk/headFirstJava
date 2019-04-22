@@ -1,7 +1,5 @@
 package ru.otus.l32;
 
-import org.apache.commons.collections4.collection.UnmodifiableCollection;
-
 import java.util.*;
 
 /**
@@ -66,7 +64,9 @@ public final class CollectionHelper {
         return List.of(array);              // 1.9
     }
 
+/*
     public static <T> UnmodifiableCollection immutable(Collection<T> collection) {
         return (UnmodifiableCollection) Collections.unmodifiableCollection(collection);
     }
+*/
 }
