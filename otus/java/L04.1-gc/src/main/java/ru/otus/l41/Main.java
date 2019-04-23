@@ -5,12 +5,6 @@ import javax.management.ObjectName;
 import java.lang.management.ManagementFactory;
 
 /**
- * Created by tully.
- * <p>
- * Java 9 changes in logs:
- * https://dzone.com/articles/disruptive-changes-to-gc-logging-in-java-9
- */
-/*
  -agentlib:jdwp=transport=dt_socket,address=14000,server=y,suspend=n
  -Xms512m
  -Xmx512m
@@ -43,11 +37,11 @@ import java.lang.management.ManagementFactory;
 
 public class Main {
     public static void main(String... args) throws Exception {
-        System.out.println("Starting pid: " + ManagementFactory.getRuntimeMXBean().getName());
+        System.out.println("Starting pid: " +
+                ManagementFactory.getRuntimeMXBean().getName());
 
-        int size = 5 * 1000 * 1000;
-        //int size = 50 * 1000 * 1000;//for OOM with -Xms512m
-        //int size = 50 * 1000 * 100; //for small dump
+        int size = 5 * 1000 * 1000; //for small dump
+//        int size = 50 * 1000 * 1000;//for OOM with -Xms512m
 
         MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
         ObjectName name = new ObjectName("ru.otus:type=Benchmark");
@@ -57,8 +51,6 @@ public class Main {
         mbean.setSize(size);
         mbean.run();
 
-
         Class<?> clazz = Object[].class;
     }
-
 }

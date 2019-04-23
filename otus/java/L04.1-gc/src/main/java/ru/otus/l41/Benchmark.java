@@ -1,8 +1,5 @@
 package ru.otus.l41;
 
-/**
- * Created by tully.
- */
 class Benchmark implements BenchmarkMBean {
     private volatile int size = 0;
 
