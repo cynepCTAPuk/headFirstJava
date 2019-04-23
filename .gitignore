@@ -28,7 +28,7 @@
 # common
 **/out
 **.class
-**.log
+#**.log
 **.jar
 **.ser
 **.zip
