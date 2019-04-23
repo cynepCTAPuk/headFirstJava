@@ -2,6 +2,7 @@ package ru.otus.l41;
 
 import javax.management.MBeanServer;
 import javax.management.ObjectName;
+import java.io.File;
 import java.lang.management.ManagementFactory;
 
 /**
@@ -37,6 +38,9 @@ import java.lang.management.ManagementFactory;
 
 public class Main {
     public static void main(String... args) throws Exception {
+        File file = new File(".");
+        System.out.println(file.getAbsolutePath());
+
         System.out.println("Starting pid: " +
                 ManagementFactory.getRuntimeMXBean().getName());
 
