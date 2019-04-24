@@ -1,11 +1,6 @@
 package chap04_factory.pizza_factory;
 
-abstract class PizzaStore {
-    SimplePizzaFactory factory;
-    public PizzaStore(SimplePizzaFactory factory) {
-        this.factory = factory;
-    }
-
+public abstract class PizzaStore {
     Pizza orderPizza(String type) {
         Pizza pizza;
         pizza = createPizza(type);
