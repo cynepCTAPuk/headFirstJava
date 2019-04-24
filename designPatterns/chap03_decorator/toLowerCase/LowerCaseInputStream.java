@@ -1,4 +1,4 @@
-package chap03_decorator.own;
+package chap03_decorator.toLowerCase;
 
 import java.io.FilterInputStream;
 import java.io.IOException;
