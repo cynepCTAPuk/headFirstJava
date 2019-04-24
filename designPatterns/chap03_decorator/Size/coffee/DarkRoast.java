@@ -1,4 +1,6 @@
-package chap03_decorator.Size;
+package chap03_decorator.Size.coffee;
+
+import chap03_decorator.Size.Beverage;
 
 public class DarkRoast extends Beverage {
     public DarkRoast() {

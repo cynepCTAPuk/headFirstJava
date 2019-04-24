@@ -1,4 +1,7 @@
-package chap03_decorator.noSize;
+package chap03_decorator.noSize.condiment;
+
+import chap03_decorator.noSize.Beverage;
+import chap03_decorator.noSize.CondimentDecorator;
 
 public class Whip extends CondimentDecorator {
     Beverage beverage;

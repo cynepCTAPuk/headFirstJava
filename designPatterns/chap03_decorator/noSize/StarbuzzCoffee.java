@@ -1,5 +1,12 @@
 package chap03_decorator.noSize;
 
+import chap03_decorator.noSize.coffee.DarkRoast;
+import chap03_decorator.noSize.coffee.Espresso;
+import chap03_decorator.noSize.coffee.HouseBlend;
+import chap03_decorator.noSize.condiment.Mocha;
+import chap03_decorator.noSize.condiment.Soy;
+import chap03_decorator.noSize.condiment.Whip;
+
 public class StarbuzzCoffee {
     public static void main(String[] args) {
         Beverage beverage = new Espresso();

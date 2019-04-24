@@ -1,4 +1,7 @@
-package chap03_decorator.Size;
+package chap03_decorator.noSize.condiment;
+
+import chap03_decorator.noSize.Beverage;
+import chap03_decorator.noSize.CondimentDecorator;
 
 public class Mocha extends CondimentDecorator {
     Beverage beverage;

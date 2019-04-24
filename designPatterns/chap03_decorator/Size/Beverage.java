@@ -2,11 +2,13 @@ package chap03_decorator.Size;
 
 public abstract class Beverage {
     public enum Size {TALL, CRANDE, VENTI};
-    Size size = Size.TALL;
-    String description = "Unknown Beverage";
+    protected Size size = Size.TALL;
+    protected String description = "Unknown Beverage";
+
     public String getDescription() {
         return description;
     }
+
     public Size getSize() {
         return size;
     }
