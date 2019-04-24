@@ -1,4 +1,4 @@
-package chap03_decorator;
+package chap03_decorator.noSize;
 
 public abstract class Beverage {
     String description = "Unknown Beverage";

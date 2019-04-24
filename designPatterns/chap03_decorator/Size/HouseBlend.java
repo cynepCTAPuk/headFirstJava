@@ -1,4 +1,4 @@
-package chap03_decorator;
+package chap03_decorator.Size;
 
 public class HouseBlend extends Beverage {
     public HouseBlend() {

@@ -1,4 +1,4 @@
-package chap03_decorator;
+package chap03_decorator.noSize;
 
 public class StarbuzzCoffee {
     public static void main(String[] args) {
