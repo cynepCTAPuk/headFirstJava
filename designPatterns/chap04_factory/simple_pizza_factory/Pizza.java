@@ -1,6 +1,6 @@
-package chap04_factory;
+package chap04_factory.simple_pizza_factory;
 
-public class Pizza {
+abstract class Pizza {
     void prepare() {
         System.out.print("Prepare ");
     }

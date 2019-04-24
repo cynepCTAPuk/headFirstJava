@@ -1,4 +1,4 @@
-package chap04_factory;
+package chap04_factory.pizza_cafe;
 
 public class PizzaCafe {
     public static void main(String[] args) {

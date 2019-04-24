@@ -1,4 +1,4 @@
-package chap04_factory;
+package chap04_factory.simple_pizza_factory;
 
 public class CheesePizza extends Pizza {
     public CheesePizza() {
