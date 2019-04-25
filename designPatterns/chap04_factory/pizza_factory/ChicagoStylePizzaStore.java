@@ -12,31 +12,4 @@ public class ChicagoStylePizzaStore extends PizzaStore {
         else System.out.println("Wrong name of pizza!!!");
         return pizza;
     }
-
-    public class ChicagoStyleCheesePizza extends Pizza {
-        public ChicagoStyleCheesePizza() {
-            name = "Chicago Style Deep Dish Cheese Pizza";
-            dough = "Extra Thick Crust Dough";
-            sauce = "Plum Tomato Sauce";
-
-            toppings.add("Shredde Mozzarella Cheese");
-        }
-
-        @Override
-        void cut() {
-            System.out.println("Cutting the pizza into square slices");
-        }
-    }
-
-    public class ChicagoStyleGreekPizza extends Pizza {
-    }
-
-    public class ChicagoStylePepperoniPizza extends Pizza {
-    }
-
-    public class ChicagoStyleClamPizza extends Pizza {
-    }
-
-    public class ChicagoStyleVeggiePizza extends Pizza {
-    }
 }
