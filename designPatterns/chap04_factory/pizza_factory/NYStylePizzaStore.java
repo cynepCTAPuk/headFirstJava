@@ -13,18 +13,23 @@ public class NYStylePizzaStore extends PizzaStore {
         return pizza;
     }
 
-    private class NYStyleCheesePizza extends Pizza {
+    public class NYStyleCheesePizza extends Pizza {
+        public NYStyleCheesePizza() {
+            name = "NY Style Sauce and Cheese Pizza";
+            dough = "Thin Crust Dough";
+            sauce = "Marinara Sauce";
+        }
     }
 
-    private class NYStyleGreekPizza extends Pizza {
+    public class NYStyleGreekPizza extends Pizza {
     }
 
-    private class NYStylePepperoniPizza extends Pizza {
+    public class NYStylePepperoniPizza extends Pizza {
     }
 
-    private class NYStyleClamPizza extends Pizza {
+    public class NYStyleClamPizza extends Pizza {
     }
 
-    private class NYStyleVeggiePizza extends Pizza {
+    public class NYStyleVeggiePizza extends Pizza {
     }
 }

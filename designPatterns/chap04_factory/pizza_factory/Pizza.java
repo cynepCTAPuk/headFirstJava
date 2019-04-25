@@ -1,16 +1,30 @@
 package chap04_factory.pizza_factory;
 
+import java.util.ArrayList;
+
 public abstract class Pizza {
+    String name;
+    String dough;
+    String sauce;
+    ArrayList<String> toppings = new ArrayList<>();
     void prepare() {
-        System.out.print("Prepare ");
+        System.out.println("Preparing " + name);
+        System.out.println("Tossing dough... ");
+        System.out.println("Adding sauce... ");
+        System.out.println("Adding toppings: ");
+        for(String topping: toppings) System.out.println(" " + topping);
     }
     void bake() {
-        System.out.print("Prepare ");
+        System.out.println("Bake for 24 minutes at 350");
     }
     void cut() {
-        System.out.print("Cut ");
+        System.out.println("Cutting the pizza into diagonal slices");
     }
     void box() {
-        System.out.print("Box pizza\n");
+        System.out.println("Place pizza in official PizzaStore box");
+    }
+
+    public String getName() {
+        return name;
     }
 }

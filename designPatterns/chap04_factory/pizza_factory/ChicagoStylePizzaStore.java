@@ -13,18 +13,30 @@ public class ChicagoStylePizzaStore extends PizzaStore {
         return pizza;
     }
 
-    private class ChicagoStyleCheesePizza extends Pizza {
+    public class ChicagoStyleCheesePizza extends Pizza {
+        public ChicagoStyleCheesePizza() {
+            name = "Chicago Style Deep Dish Cheese Pizza";
+            dough = "Extra Thick Crust Dough";
+            sauce = "Plum Tomato Sauce";
+
+            toppings.add("Shredde Mozzarella Cheese");
+        }
+
+        @Override
+        void cut() {
+            System.out.println("Cutting the pizza into square slices");
+        }
     }
 
-    private class ChicagoStyleGreekPizza extends Pizza {
+    public class ChicagoStyleGreekPizza extends Pizza {
     }
 
-    private class ChicagoStylePepperoniPizza extends Pizza {
+    public class ChicagoStylePepperoniPizza extends Pizza {
     }
 
-    private class ChicagoStyleClamPizza extends Pizza {
+    public class ChicagoStyleClamPizza extends Pizza {
     }
 
-    private class ChicagoStyleVeggiePizza extends Pizza {
+    public class ChicagoStyleVeggiePizza extends Pizza {
     }
 }
