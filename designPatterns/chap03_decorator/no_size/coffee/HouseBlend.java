@@ -1,6 +1,6 @@
-package chap03_decorator.noSize.coffee;
+package chap03_decorator.no_size.coffee;
 
-import chap03_decorator.noSize.Beverage;
+import chap03_decorator.no_size.Beverage;
 
 public class HouseBlend extends Beverage {
     public HouseBlend() {

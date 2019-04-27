@@ -1,4 +1,4 @@
-package chap03_decorator.noSize;
+package chap03_decorator.no_size;
 
 public abstract class Beverage {
     protected String description = "Unknown Beverage";

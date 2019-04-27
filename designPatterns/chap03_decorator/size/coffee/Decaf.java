@@ -1,6 +1,6 @@
-package chap03_decorator.noSize.coffee;
+package chap03_decorator.size.coffee;
 
-import chap03_decorator.noSize.Beverage;
+import chap03_decorator.size.Beverage;
 
 public class Decaf extends Beverage {
     public Decaf() {

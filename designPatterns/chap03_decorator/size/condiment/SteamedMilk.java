@@ -1,7 +1,7 @@
-package chap03_decorator.Size.condiment;
+package chap03_decorator.size.condiment;
 
-import chap03_decorator.Size.Beverage;
-import chap03_decorator.Size.CondimentDecorator;
+import chap03_decorator.size.Beverage;
+import chap03_decorator.size.CondimentDecorator;
 
 public class SteamedMilk extends CondimentDecorator {
     public SteamedMilk(Beverage beverage) {

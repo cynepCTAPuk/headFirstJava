@@ -1,6 +1,6 @@
-package chap03_decorator.Size.coffee;
+package chap03_decorator.no_size.coffee;
 
-import chap03_decorator.Size.Beverage;
+import chap03_decorator.no_size.Beverage;
 
 public class Espresso extends Beverage {
     public Espresso() {

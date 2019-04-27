@@ -1,27 +1,27 @@
-package chap03_decorator.Size.condiment;
+package chap03_decorator.size.condiment;
 
-import chap03_decorator.Size.Beverage;
-import chap03_decorator.Size.CondimentDecorator;
+import chap03_decorator.size.Beverage;
+import chap03_decorator.size.CondimentDecorator;
 
-public class Mocha extends CondimentDecorator {
-    public Mocha(Beverage beverage) {
+public class Whip extends CondimentDecorator {
+    public Whip(Beverage beverage) {
         this.beverage = beverage;
     }
 
     @Override
     public String getDescription() {
-        return beverage.getDescription() + ", Mocha";
+        return beverage.getDescription() + ", Whip";
     }
 
     @Override
     public double cost() {
         double cost = beverage.cost();
         if (beverage.getSize() == Size.TALL) {
-            cost += .20;
+            cost += .10;
         } else if (beverage.getSize() == Size.CRANDE) {
-            cost += .25;
+            cost += .15;
         } else if (beverage.getSize() == Size.VENTI) {
-            cost += .30;
+            cost += .20;
         }
         return cost;
     }

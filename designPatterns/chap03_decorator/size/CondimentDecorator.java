@@ -1,4 +1,4 @@
-package chap03_decorator.Size;
+package chap03_decorator.size;
 
 public abstract class CondimentDecorator extends Beverage {
     public Beverage beverage;

@@ -1,11 +1,11 @@
-package chap03_decorator.Size;
+package chap03_decorator.size;
 
-import chap03_decorator.Size.coffee.DarkRoast;
-import chap03_decorator.Size.coffee.Espresso;
-import chap03_decorator.Size.coffee.HouseBlend;
-import chap03_decorator.Size.condiment.Mocha;
-import chap03_decorator.Size.condiment.Soy;
-import chap03_decorator.Size.condiment.Whip;
+import chap03_decorator.size.coffee.DarkRoast;
+import chap03_decorator.size.coffee.Espresso;
+import chap03_decorator.size.coffee.HouseBlend;
+import chap03_decorator.size.condiment.Mocha;
+import chap03_decorator.size.condiment.Soy;
+import chap03_decorator.size.condiment.Whip;
 
 public class StarbuzzCoffee {
     public static void main(String[] args) {

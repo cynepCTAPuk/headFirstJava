@@ -1,11 +1,11 @@
-package chap03_decorator.noSize;
+package chap03_decorator.no_size;
 
-import chap03_decorator.noSize.coffee.DarkRoast;
-import chap03_decorator.noSize.coffee.Espresso;
-import chap03_decorator.noSize.coffee.HouseBlend;
-import chap03_decorator.noSize.condiment.Mocha;
-import chap03_decorator.noSize.condiment.Soy;
-import chap03_decorator.noSize.condiment.Whip;
+import chap03_decorator.no_size.coffee.DarkRoast;
+import chap03_decorator.no_size.coffee.Espresso;
+import chap03_decorator.no_size.coffee.HouseBlend;
+import chap03_decorator.no_size.condiment.Mocha;
+import chap03_decorator.no_size.condiment.Soy;
+import chap03_decorator.no_size.condiment.Whip;
 
 public class StarbuzzCoffee {
     public static void main(String[] args) {
