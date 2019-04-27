@@ -1,4 +1,4 @@
-package chap04_factory.pizza_abstract_factory.Chicago;
+package chap04_factory.pizza_abstract_factory.chicago;
 
 import chap04_factory.pizza_abstract_factory.*;
 
@@ -36,27 +36,27 @@ public class ChigagoPizzaIngredientFactory implements PizzaIngredientFactory {
         return new FrozenClams();
     }
 
-    private class ThickCrustDough extends Dough {
+    private class ThickCrustDough implements Dough {
     }
 
-    private class PlumTomatoSauce extends Sauce {
+    private class PlumTomatoSauce implements Sauce {
     }
 
-    private class MozzarellaCheese extends Cheese {
+    private class MozzarellaCheese implements Cheese {
     }
 
-    private class BlackOlives extends Veggies {
+    private class BlackOlives implements Veggies {
     }
 
-    private class Spinach extends Veggies {
+    private class Spinach implements Veggies {
     }
 
-    private class EggPlant extends Veggies {
+    private class EggPlant implements Veggies {
     }
 
-    private class SlicedPepperoni extends Pepperoni {
+    private class SlicedPepperoni implements Pepperoni {
     }
 
-    private class FrozenClams extends Clams {
+    private class FrozenClams implements Clams {
     }
 }

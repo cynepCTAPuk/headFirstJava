@@ -1,4 +1,4 @@
-package chap04_factory.pizza_abstract_factory.California;
+package chap04_factory.pizza_abstract_factory.california;
 
 import chap04_factory.pizza_abstract_factory.*;
 
@@ -7,7 +7,7 @@ public class CaliforniaStylePizzaStore extends PizzaStore {
     protected Pizza createPizza(String item) {
         Pizza pizza = null;
         PizzaIngredientFactory ingredientFactory =
-                new CaligorniaPizzaIngredientFactory();
+                new CaliforniaPizzaIngredientFactory();
         if (item.equals("cheese")) {
             pizza = new CheesePizza(ingredientFactory);
             pizza.setName("California Style Cheese Pizza");

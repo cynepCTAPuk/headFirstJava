@@ -1,8 +1,8 @@
 package chap04_factory.pizza_abstract_factory;
 
-import chap04_factory.pizza_abstract_factory.California.CaliforniaStylePizzaStore;
-import chap04_factory.pizza_abstract_factory.Chicago.ChicagoStylePizzaStore;
-import chap04_factory.pizza_abstract_factory.NY.NYStylePizzaStore;
+import chap04_factory.pizza_abstract_factory.california.CaliforniaStylePizzaStore;
+import chap04_factory.pizza_abstract_factory.chicago.ChicagoStylePizzaStore;
+import chap04_factory.pizza_abstract_factory.ny.NYStylePizzaStore;
 
 public class PizzaTestDrive {
     public static void main(String[] args) {

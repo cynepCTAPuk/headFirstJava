@@ -1,4 +1,6 @@
-package chap04_factory.pizza_factory_method;
+package chap04_factory.pizza_factory_method.chicago;
+
+import chap04_factory.pizza_factory_method.Pizza;
 
 public class ChicagoStyleCheesePizza extends Pizza {
     public ChicagoStyleCheesePizza() {
@@ -9,7 +11,6 @@ public class ChicagoStyleCheesePizza extends Pizza {
         toppings.add("Shredde Mozzarella Cheese");
     }
 
-    @Override
     void cut() {
         System.out.println("Cutting the pizza into square slices");
     }

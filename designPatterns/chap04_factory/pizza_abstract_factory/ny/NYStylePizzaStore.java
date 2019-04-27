@@ -1,4 +1,4 @@
-package chap04_factory.pizza_abstract_factory.NY;
+package chap04_factory.pizza_abstract_factory.ny;
 
 import chap04_factory.pizza_abstract_factory.*;
 
