@@ -6,6 +6,9 @@ public class Box implements Serializable {
     private int width;
     private int height;
 
+    public Box(int yAxis) {
+    }
+
     public int getWidth() {
         return width;
     }
