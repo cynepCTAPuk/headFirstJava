@@ -8,15 +8,12 @@ public class MyBirthDay {
         LocalDate bd = LocalDate.of(1962, Month.SEPTEMBER, 10);
         LocalDate today = LocalDate.now();
         LocalTime time = LocalTime.now();
-        System.out.println("Today is " + today + " Time is " + time);
         System.out.printf("Today is %s Time is %s\n", today, time);
 
         Period p1 = Period.between(bd, today);
         long p2 = ChronoUnit.DAYS.between(bd, today);
-        System.out.println("You are " +
-                p1.getYears() + " years, " +
-                p1.getMonths() + " months, " +
-                p1.getDays() + " days old. (" + p2 + " days total)");
+        System.out.printf("You are %d years, %d moths %d days old (%,d days)\n",
+                p1.getYears(), p1.getMonths(), p1.getDays(), p2);
 
         LocalDate nextBDay = bd.withYear(today.getYear());
 
@@ -26,8 +23,7 @@ public class MyBirthDay {
 
         p1 = Period.between(today, nextBDay);
         p2 = ChronoUnit.DAYS.between(today, nextBDay);
-        System.out.println("There are " +
-                p1.getMonths() + " months and " +
-                p1.getDays() + " days until your next birthday. (" + p2 + " - total days)");
+        System.out.printf("There are %d months and %d days until your next birthday (%d days)\n",
+                p1.getMonths(), p1.getDays(),p2);
     }
 }
