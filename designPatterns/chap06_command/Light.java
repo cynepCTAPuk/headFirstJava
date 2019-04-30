@@ -9,11 +9,11 @@ public class Light {
 
     public void on() {
         status = true;
-        System.out.println("Light is on");
+        System.out.println("Light is On");
     }
 
     public void Off() {
         status = false;
-        System.out.println("Light is off");
+        System.out.println("Light is Off");
     }
 }
