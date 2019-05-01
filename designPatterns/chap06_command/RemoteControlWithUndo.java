@@ -8,7 +8,6 @@ public class RemoteControlWithUndo {
     public RemoteControlWithUndo() {
         onCommands = new Command[7];
         offCommands = new Command[7];
-
         Command noCommand = new NoCommand();
         for (int i = 0; i < 7; i++) {
             onCommands[i] = noCommand;
@@ -35,6 +34,7 @@ public class RemoteControlWithUndo {
     }
 
     public void undoButtonWasPushed() {
+        System.out.println("------ Button undo was pushed");
         undoCommand.undo();
     }
 

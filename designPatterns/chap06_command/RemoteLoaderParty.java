@@ -33,5 +33,7 @@ public class RemoteLoaderParty {
         remoteControl.onButtonWasPushed(0);
         System.out.println("--- Pushing Macro Off---");
         remoteControl.offButtonWasPushed(0);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed();
     }
 }
