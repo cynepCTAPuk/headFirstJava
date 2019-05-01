@@ -6,10 +6,10 @@ public class CeilingFan {
     public CeilingFan(String room) {this.room = room;}
 
     public void on() {
-        System.out.println("Ceiling Fan in \'" + room + "\' is On");
+        System.out.println(room + " ceiling fan is on high");
     }
 
     public void off() {
-        System.out.println("Ceiling Fan in \'" + room + "\' is Off");
+        System.out.println(room + " ceiling fan is off");
     }
 }

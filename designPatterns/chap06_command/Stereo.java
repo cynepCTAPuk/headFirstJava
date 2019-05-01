@@ -4,30 +4,32 @@ public class Stereo {
     String room;
     int volume;
 
-    public Stereo(String room) {this.room = room;}
+    public Stereo(String room) {
+        this.room = room;
+    }
 
     void on() {
-        System.out.println("Stereo is in \'" + room + "\' On");
+        System.out.println(room + " stereo is on");
     }
 
     void off() {
-        System.out.println("Stereo is in \'" + room + "\' Off");
+        System.out.println(room + " stereo is off");
     }
 
     void setCD() {
-        System.out.println("Set CD");
+        System.out.println(room + " stereo is set for CD input");
     }
 
     void setDvd() {
-        System.out.println("Set Dvd");
+        System.out.println(room + " stereo is set for Dvd input");
     }
 
     void setRadio() {
-        System.out.println("Set Radio");
+        System.out.println(room + " stereo is set for Radio");
     }
 
     public void setVolume(int volume) {
         this.volume = volume;
-        System.out.println("Volume is " + volume);
+        System.out.println(room + " stereo volume set to 11");
     }
 }

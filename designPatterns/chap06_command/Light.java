@@ -6,10 +6,10 @@ public class Light {
     public Light(String room) {this.room = room;}
 
     public void on() {
-        System.out.println("Light in \'" + room + "\' is On");
+        System.out.println(room + " light is on");
     }
 
     public void off() {
-        System.out.println("Light in \'" + room + "\' is Off");
+        System.out.println(room + " light is off");
     }
 }
