@@ -18,10 +18,10 @@ public class RemoteLoaderUndoFan {
         remoteControl.onButtonWasPushed(0);
         remoteControl.offButtonWasPushed(0);
         System.out.println(remoteControl);
-        remoteControl.undoButtonWasPressed();
+        remoteControl.undoButtonWasPushed();
 
         remoteControl.onButtonWasPushed(1);
         System.out.println(remoteControl);
-        remoteControl.undoButtonWasPressed();
+        remoteControl.undoButtonWasPushed();
     }
 }

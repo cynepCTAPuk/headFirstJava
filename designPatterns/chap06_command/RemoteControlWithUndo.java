@@ -23,6 +23,7 @@ public class RemoteControlWithUndo {
     }
 
     public void onButtonWasPushed(int slot) {
+        System.out.println("------ Slot \'" + slot + "\' button on was pushed");
         onCommands[slot].execute();
         undoCommand = offCommands[slot];
     }
@@ -32,9 +33,10 @@ public class RemoteControlWithUndo {
         undoCommand = offCommands[slot];
     }
 
-    public void undoButtonWasPressed() {
+    public void undoButtonWasPushed() {
         undoCommand.undo();
     }
+
     @Override
     public String toString() {
         StringBuffer stringBuff = new StringBuffer();
@@ -42,10 +44,10 @@ public class RemoteControlWithUndo {
         for (int i = 0; i < onCommands.length; i++) {
             stringBuff.append(
                     "" + "[slot " + i + "] "
-                    + onCommands[i].getClass().getName() + "   "
-                    + offCommands[i].getClass().getName() + "\n");
+                            + onCommands[i].getClass().getName() + "   "
+                            + offCommands[i].getClass().getName() + "\n");
         }
-        stringBuff.append("(undo) \t" + undoCommand.getClass().getName()+ "\n");
+        stringBuff.append("(undo) \t" + undoCommand.getClass().getName() + "\n");
         return stringBuff.toString();
     }
 }
