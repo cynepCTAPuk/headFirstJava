@@ -1,6 +1,6 @@
 package chap06_command;
 
-public class RemoteLoaderWithUndo {
+public class RemoteLoaderUndoLight {
     public static void main(String[] args) {
         RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
 

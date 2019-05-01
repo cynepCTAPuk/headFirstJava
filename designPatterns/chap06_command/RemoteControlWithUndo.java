@@ -45,7 +45,7 @@ public class RemoteControlWithUndo {
                     + onCommands[i].getClass().getName() + "   "
                     + offCommands[i].getClass().getName() + "\n");
         }
-        stringBuff.append("(undo) \t" + undoCommand.getClass().getName());
+        stringBuff.append("(undo) \t" + undoCommand.getClass().getName()+ "\n");
         return stringBuff.toString();
     }
 }
