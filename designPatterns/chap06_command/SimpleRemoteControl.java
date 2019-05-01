@@ -10,7 +10,11 @@ public class SimpleRemoteControl {
         slot = command;
     }
 
-    public void buttonWasPressed() {
+    public void buttonExecute() {
         slot.execute();
+    }
+
+    public void buttonUndo() {
+        slot.undo();
     }
 }

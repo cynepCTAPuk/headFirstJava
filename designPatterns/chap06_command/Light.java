@@ -12,7 +12,7 @@ public class Light {
         System.out.println("Light is On");
     }
 
-    public void Off() {
+    public void off() {
         status = false;
         System.out.println("Light is Off");
     }
