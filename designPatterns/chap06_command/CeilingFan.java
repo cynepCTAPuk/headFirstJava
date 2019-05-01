@@ -1,15 +1,39 @@
 package chap06_command;
 
 public class CeilingFan {
-    String room;
+    public static final int HIGH = 3;
+    public static final int MEDIUM = 2;
+    public static final int LOW = 1;
+    public static final int OFF = 0;
+    String location;
+    int speed;
 
-    public CeilingFan(String room) {this.room = room;}
+    public CeilingFan(String location) {
+        this.location = location;
+        speed = OFF;
+    }
 
-    public void on() {
-        System.out.println(room + " ceiling fan is on high");
+    public void high() {
+        speed = HIGH;
+        System.out.println(location + " ceiling fan is high");
+    }
+
+    public void medium() {
+        speed = MEDIUM;
+        System.out.println(location + " ceiling fan is medium");
+    }
+
+    public void low() {
+        speed = LOW;
+        System.out.println(location + " ceiling fan is low");
     }
 
     public void off() {
-        System.out.println(room + " ceiling fan is off");
+        speed = OFF;
+        System.out.println(location + " ceiling fan is off");
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 }
