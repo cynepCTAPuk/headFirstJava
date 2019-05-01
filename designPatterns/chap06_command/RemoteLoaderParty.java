@@ -20,15 +20,18 @@ public class RemoteLoaderParty {
         HottubOffCommand hottubOff = new HottubOffCommand(hottub);
 
 
-        Command[] commandsOn = new Command[]{lightOn,stereoOn,tvOn,hottubOn};
-        Command[] commandsOff = new Command[]{lightOff,stereoOff,tvOff,hottubOff};
+        Command[] partyOn = {lightOn, stereoOn, tvOn, hottubOn};
+        Command[] partyOff = {lightOff, stereoOff, tvOff, hottubOff};
 
-        MacroCommand macroCommand1 = new MacroCommand(commandsOn);
-        MacroCommand macroCommand2 = new MacroCommand(commandsOn);
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
 
-        remoteControl.setCommand(0, macroCommand1, macroCommand2);
+        remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
 
         System.out.println(remoteControl);
+        System.out.println("--- Pushing Macro On---");
         remoteControl.onButtonWasPushed(0);
+        System.out.println("--- Pushing Macro Off---");
+        remoteControl.offButtonWasPushed(0);
     }
 }
