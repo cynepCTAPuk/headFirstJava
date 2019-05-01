@@ -1,19 +1,15 @@
 package chap06_command;
 
 public class Light {
-    boolean status;
+    String room;
 
-    public boolean isStatus() {
-        return status;
-    }
+    public Light(String room) {this.room = room;}
 
     public void on() {
-        status = true;
-        System.out.println("Light is On");
+        System.out.println("Light in \'" + room + "\' is On");
     }
 
     public void off() {
-        status = false;
-        System.out.println("Light is Off");
+        System.out.println("Light in \'" + room + "\' is Off");
     }
 }
