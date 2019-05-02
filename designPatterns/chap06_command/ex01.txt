@@ -1,6 +1,6 @@
 Посетитель - Клиент
 Официантка - Инициатор
-takeOrder() - Получатель
-Заказ - setCommand()
-orderUp() - Команда
-Повар - execute()
+takeOrder() - Получатель = setCommand()
+Заказ - setCommand() = Команда
+orderUp() - Команда = execute()
+Повар - execute() = Получатель
