@@ -1,17 +1,13 @@
-package chap06_command;
+package chap06_command.lambda;
+
+import chap06_command.Light;
 
 public class RemoteLoaderLambdaLight {
     public static void main(String[] args) {
-        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
+        RemoteControlLambda remoteControl = new RemoteControlLambda();
 
         Light livingRoomLight = new Light("Living Room");
-        LightOnCommand lightOn = new LightOnCommand(livingRoomLight);
-        LightOffCommand lightOff = new LightOffCommand(livingRoomLight);
 
-        remoteControl.setCommand(0, lightOn, lightOff);
-        remoteControl.setCommand(1,
-                new LightOnCommand(livingRoomLight),
-                new LightOffCommand(livingRoomLight));
         remoteControl.setCommand(2, () -> livingRoomLight.on(), () -> livingRoomLight.off());
         remoteControl.setCommand(3, livingRoomLight::on, livingRoomLight::off);
 

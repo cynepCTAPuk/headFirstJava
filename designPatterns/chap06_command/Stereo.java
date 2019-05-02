@@ -8,23 +8,23 @@ public class Stereo {
         this.room = room;
     }
 
-    void on() {
+    public void on() {
         System.out.println(room + " stereo is on");
     }
 
-    void off() {
+    public void off() {
         System.out.println(room + " stereo is off");
     }
 
-    void setCD() {
+    public void setCD() {
         System.out.println(room + " stereo is set for CD input");
     }
 
-    void setDvd() {
+    public void setDvd() {
         System.out.println(room + " stereo is set for Dvd input");
     }
 
-    void setRadio() {
+    public void setRadio() {
         System.out.println(room + " stereo is set for Radio");
     }
 

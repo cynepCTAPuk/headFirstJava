@@ -1,8 +1,11 @@
-package chap06_command;
+package chap06_command.lambda;
+
+
+import chap06_command.Stereo;
 
 public class RemoteLoaderLambdaStereo {
     public static void main(String[] args) {
-        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
+        RemoteControlLambda remoteControl = new RemoteControlLambda();
 
         Stereo stereo = new Stereo("Living Room");
 

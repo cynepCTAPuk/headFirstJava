@@ -1,4 +1,4 @@
-package chap06_command;
+package chap06_command.lambda;
 
 public class RemoteControlLambda {
     Command[] onCommands;

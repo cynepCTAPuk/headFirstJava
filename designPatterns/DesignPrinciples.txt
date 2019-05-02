@@ -1,10 +1,14 @@
 Design principles
 
-Выделите аспекты приложения, которые могут изменяться, и отделите их от тех, которые всегда остаются постоянными. Identify the aspects of your application that vary and separate them from what stays the same.
-(Переменные аспекты — состояние субъекта, количество и тип наблюдателей. Паттерн позволяет изменять объекты, зависящие от состояния субъекта, без изменения самого субъекта. The thing that varies in the Observer Pattern is the state of the Subject and the number and types of Observers. With this pattern, you can vary the objects that are dependent on the state of the Subject, without having to change that Subject. That’s called planning ahead!)
+Выделите аспекты приложения, которые могут изменяться, и отделите их от тех, которые всегда остаются постоянными.
+Identify the aspects of your application that vary and separate them from what stays the same.
+(Переменные аспекты — состояние субъекта, количество и тип наблюдателей. Паттерн позволяет изменять объекты, зависящие от состояния субъекта, без изменения самого субъекта.
+The thing that varies in the Observer Pattern is the state of the Subject and the number and types of Observers. With this pattern, you can vary the objects that are dependent on the state of the Subject, without having to change that Subject. That’s called planning ahead!)
 
-Программируйте на уровне интерфейса, а не на уровне реализации. Program to an interface, not an implementation.
-(И субъект, и наблюдатели ис пользуют интерфейсы. Субъект отслеживает объекты, реализующие интерфейс Observer, а наблюдатели регистрируются и оповещаются через интерфейс Subject. Both the Subject and Observer use interfaces. The Subject keeps track of objects implementing the Observer interface, while the observers register with, and get notified by, the Subject interface. As we’ve seen, this keeps things nice and loosely coupled. )
+Программируйте на уровне интерфейса, а не на уровне реализации.
+Program to an interface, not an implementation.
+(И субъект, и наблюдатели ис пользуют интерфейсы. Субъект отслеживает объекты, реализующие интерфейс Observer, а наблюдатели регистрируются и оповещаются через интерфейс Subject.
+Both the Subject and Observer use interfaces. The Subject keeps track of objects implementing the Observer interface, while the observers register with, and get notified by, the Subject interface. As we’ve seen, this keeps things nice and loosely coupled. )
 
 Отдавайте предпочтение композиции перед наследованием. Favor composition over inheritance.
 (Отношения наблюдателей с субъектом не определяются иерархией наследования, а задаются во время выполнения посредством композиции! The Observer Pattern uses composition to compose any number of Observers with their Subjects. These relationships aren’t set up by some kind of inheritance hierarchy. No, they are set up at runtime by composition! )

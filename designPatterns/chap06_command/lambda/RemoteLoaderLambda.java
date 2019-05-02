@@ -1,4 +1,9 @@
-package chap06_command;
+package chap06_command.lambda;
+
+import chap06_command.CeilingFan;
+import chap06_command.GarageDoor;
+import chap06_command.Light;
+import chap06_command.Stereo;
 
 public class RemoteLoaderLambda {
     public static void main(String[] args) {
