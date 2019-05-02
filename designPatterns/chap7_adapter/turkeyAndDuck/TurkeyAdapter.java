@@ -1,4 +1,4 @@
-package chap7_adapter;
+package chap7_adapter.turkeyAndDuck;
 
 import chap7_adapter.turkeyAndDuck.Duck;
 import chap7_adapter.turkeyAndDuck.Turkey;

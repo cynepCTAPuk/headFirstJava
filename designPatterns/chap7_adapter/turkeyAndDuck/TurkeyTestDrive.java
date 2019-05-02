@@ -1,8 +1,4 @@
-package chap7_adapter;
-
-import chap7_adapter.turkeyAndDuck.MallardDuck;
-import chap7_adapter.turkeyAndDuck.Turkey;
-import chap7_adapter.turkeyAndDuck.WildTurkey;
+package chap7_adapter.turkeyAndDuck;
 
 public class TurkeyTestDrive {
     public static void main(String[] args) {
