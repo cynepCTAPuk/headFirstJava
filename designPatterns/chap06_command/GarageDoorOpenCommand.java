@@ -1,9 +1,9 @@
 package chap06_command;
 
-public class GarageDoorUpCommand implements Command {
+public class GarageDoorOpenCommand implements Command {
     GarageDoor garageDoor;
 
-    public GarageDoorUpCommand(GarageDoor garageDoor) {
+    public GarageDoorOpenCommand(GarageDoor garageDoor) {
         this.garageDoor = garageDoor;
     }
 
