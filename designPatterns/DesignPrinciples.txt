@@ -10,14 +10,19 @@ Program to an interface, not an implementation.
 (И субъект, и наблюдатели ис пользуют интерфейсы. Субъект отслеживает объекты, реализующие интерфейс Observer, а наблюдатели регистрируются и оповещаются через интерфейс Subject.
 Both the Subject and Observer use interfaces. The Subject keeps track of objects implementing the Observer interface, while the observers register with, and get notified by, the Subject interface. As we’ve seen, this keeps things nice and loosely coupled. )
 
-Отдавайте предпочтение композиции перед наследованием. Favor composition over inheritance.
-(Отношения наблюдателей с субъектом не определяются иерархией наследования, а задаются во время выполнения посредством композиции! The Observer Pattern uses composition to compose any number of Observers with their Subjects. These relationships aren’t set up by some kind of inheritance hierarchy. No, they are set up at runtime by composition! )
+Отдавайте предпочтение композиции перед наследованием.
+Favor composition over inheritance.
+(Отношения наблюдателей с субъектом не определяются иерархией наследования, а задаются во время выполнения посредством композиции!
+The Observer Pattern uses composition to compose any number of Observers with their Subjects. These relationships aren’t set up by some kind of inheritance hierarchy. No, they are set up at runtime by composition! )
 
-Стремитесь к слабой связанности взаимодействующих объектов. Strive for loosely coupled designs between objects that interact.
+Стремитесь к слабой связанности взаимодействующих объектов.
+Strive for loosely coupled designs between objects that interact.
 
-Классы должны быть открыты для расширения, но закрыты для изменения. Classes should be open for extension, but closed for modification.
+Классы должны быть открыты для расширения, но закрыты для изменения.
+Classes should be open for extension, but closed for modification.
 
-Код должен зависеть от абстракций, а не от конкретных классов. Depend upon abstractions. Do not depend upon concrete classes.
+Код должен зависеть от абстракций, а не от конкретных классов.
+Depend upon abstractions. Do not depend upon concrete classes.
 (Принцип инверсии зависимостей The Dependency Inversion Principle - ниже рекомендации, чтобы избежать нарушения принципа инверсии зависимостей в своих архитектурах.
   - Ссылки на конкретные классы не должны храниться в переменных.
   - В архитектуре не должно быть классов, производных от конкретных классов.
