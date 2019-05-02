@@ -12,7 +12,6 @@ public class HottubOnCommand implements Command {
         hottub.on();
     }
 
-    @Override
     public void undo() {
         hottub.off();
     }

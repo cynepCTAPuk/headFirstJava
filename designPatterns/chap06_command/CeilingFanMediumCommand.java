@@ -14,7 +14,6 @@ public class CeilingFanMediumCommand implements Command {
         ceilingFan.medium();
     }
 
-    @Override
     public void undo() {
         if (prevSpeed == CeilingFan.HIGH) {
             ceilingFan.high();

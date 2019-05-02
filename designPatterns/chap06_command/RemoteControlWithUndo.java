@@ -22,20 +22,20 @@ public class RemoteControlWithUndo {
     }
 
     public void onButtonWasPushed(int slot) {
-        System.out.println("------ Slot \'" + slot + "\' button on was pushed");
+//        System.out.println("------ Slot \'" + slot + "\' button on was pushed");
         onCommands[slot].execute();
         undoCommand = offCommands[slot];
     }
 
     public void offButtonWasPushed(int slot) {
-        System.out.println("------ Slot \'" + slot + "\' button off was pushed");
+//        System.out.println("------ Slot \'" + slot + "\' button off was pushed");
         offCommands[slot].execute();
         undoCommand = offCommands[slot];
     }
 
     public void undoButtonWasPushed() {
-        System.out.println("------ Button undo was pushed");
-        undoCommand.undo();
+//        System.out.println("------ Button undo was pushed");
+//        undoCommand.undo();
     }
 
     @Override
