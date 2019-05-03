@@ -1,4 +1,4 @@
-package chap7_adapter;
+package test;
 
 public class BitWiseOperations {
 
