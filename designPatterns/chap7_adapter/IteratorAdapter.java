@@ -16,3 +16,4 @@ public class IteratorAdapter implements Enumeration {
         return iterator.next();
     }
 }
+
