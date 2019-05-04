@@ -23,18 +23,4 @@ public class EnumerationIterator implements Iterator<Object> {
     public void remove() {
         throw new UnsupportedOperationException();
     }
-
-    public static void main(String[] args) {
-        ArrayList list = new ArrayList();
-        for (int i = 0; i < 10; i++) {
-            list.add(i);
-        }
-        System.out.println(list);
-/*
-        EnumerationIterator enit = new EnumerationIterator((Enumeration<?>) list);
-        while (enit.hasNext()) {
-            System.out.println(enit.next());
-        }
-*/
-    }
 }
