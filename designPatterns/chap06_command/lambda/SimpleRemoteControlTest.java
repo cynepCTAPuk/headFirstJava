@@ -4,7 +4,7 @@ package chap06_command.lambda;
 import chap06_command.GarageDoor;
 import chap06_command.Light;
 
-public class RemoteControlTest {
+public class SimpleRemoteControlTest {
     public static void main(String[] args) {
         SimpleRemoteControl remote = new SimpleRemoteControl();
 
