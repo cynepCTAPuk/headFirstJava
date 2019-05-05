@@ -1,13 +1,19 @@
 package chap7_facade;
 
 public class TheaterLights {
-    int lightsLevel;
+    boolean theaterLightsPower;
+    int theaterLightsLevel;
 
     public void on() {
+        theaterLightsPower = true;
+        System.out.println("Theater Ceiling Lights is on");
     }
     public void off() {
+        System.out.println("Theater Ceiling Lights is off");
     }
     public void dim(int lightsLevel) {
-        this.lightsLevel = lightsLevel;
+        this.theaterLightsLevel = lightsLevel;
+        System.out.println("Theater Ceiling Lights dimming to " + theaterLightsLevel + "%");
     }
+
 }
