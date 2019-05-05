@@ -1,4 +1,4 @@
-package chap7_adapter.turkeyAndDuck;
+package chap07_adapter.turkeyAndDuck;
 
 public interface Turkey {
     public void gobble();

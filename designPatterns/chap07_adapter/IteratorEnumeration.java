@@ -1,4 +1,4 @@
-package chap7_adapter;
+package chap07_adapter;
 
 import java.util.ArrayList;
 import java.util.Enumeration;

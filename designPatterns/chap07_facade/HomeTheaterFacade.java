@@ -1,4 +1,4 @@
-package chap7_facade;
+package chap07_facade;
 
 public class HomeTheaterFacade {
     Amplifier amp;

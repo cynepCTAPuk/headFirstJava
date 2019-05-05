@@ -1,6 +1,4 @@
-package chap7_adapter.turkeyAndDuck;
-
-import chap7_adapter.turkeyAndDuck.Duck;
+package chap07_adapter.turkeyAndDuck;
 
 public class MallardDuck implements Duck {
     @Override

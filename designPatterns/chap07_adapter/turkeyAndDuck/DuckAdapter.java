@@ -1,7 +1,4 @@
-package chap7_adapter.turkeyAndDuck;
-
-import chap7_adapter.turkeyAndDuck.Duck;
-import chap7_adapter.turkeyAndDuck.Turkey;
+package chap07_adapter.turkeyAndDuck;
 
 public class DuckAdapter implements Turkey {
     Duck duck;
