@@ -3,9 +3,9 @@ package chap02_observer.weather;
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
     private float temperature;
     private float humidity;
-    private Subject weatherData;
+    private Subj weatherData;
 
-    public CurrentConditionsDisplay(Subject weatherData) {
+    public CurrentConditionsDisplay(Subj weatherData) {
         this.weatherData = weatherData;
         weatherData.registerObserver(this);
     }
