@@ -7,11 +7,15 @@ public abstract class CaffeineBeverage {
         pourInCup();
         addCondements();
     }
+
     abstract void brew();
+
     abstract void addCondements();
+
     void boilWater() {
         System.out.println("Boiling water");
     }
+
     void pourInCup() {
         System.out.println("Pouring into cup");
     }
