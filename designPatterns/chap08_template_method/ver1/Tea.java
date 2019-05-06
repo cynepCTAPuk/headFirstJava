@@ -1,4 +1,4 @@
-package chap08_template_method;
+package chap08_template_method.ver1;
 
 public class Tea {
     void prepareRecipe() {
@@ -13,11 +13,11 @@ public class Tea {
     public void steepTeaBag() {
         System.out.println("Steeping the tea");
     }
-    public void addLemon() {
-        System.out.println("Adding Lemon");
-    }
     public void pourInCup() {
         System.out.println("Pouring into cup");
+    }
+    public void addLemon() {
+        System.out.println("Adding Lemon");
     }
     public static void main(String[] args) {
         Tea tea = new Tea();
