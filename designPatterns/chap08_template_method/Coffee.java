@@ -7,7 +7,7 @@ public class Coffee extends CaffeineBeverage {
     }
 
     @Override
-    void addCondements() {
+    void addCondiments() {
         System.out.println("Adding Sugar and Milk");
     }
 }

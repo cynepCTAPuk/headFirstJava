@@ -7,7 +7,7 @@ public class Tea extends CaffeineBeverage {
     }
 
     @Override
-    void addCondements() {
+    void addCondiments() {
         System.out.println("Adding Lemon");
     }
 }

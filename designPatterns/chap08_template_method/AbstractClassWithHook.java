@@ -12,8 +12,11 @@ abstract class AbstractClassWithHook {
 
     abstract void primitiveOperation2();
 
-    void concreteOperation() {
-// реализации
+    final void concreteOperation() {
+//        реализация
     }
-    void hook(){}
+
+    void hook() {
+//        Конкретный метод, который не делает ничего
+    }
 }

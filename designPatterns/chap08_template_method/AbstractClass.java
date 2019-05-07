@@ -12,6 +12,6 @@ abstract class AbstractClass {
     abstract void primitiveOperation2();
 
     void concreteOperation() {
-// реализации
+//        реализации
     }
 }
