@@ -13,9 +13,9 @@
 **/gradle/
 
 # Intellij IDEA
-**/.idea
-**/.out
-**/target
+**/.idea/
+**/.out/
+**/target/
 **.iml
 **.ipr
 **.iws
@@ -26,10 +26,11 @@
 **.ec
 
 # common
-**/out
+**/out/
 **.class
-#**.log
 **.jar
 **.ser
 **.zip
-# **.xml
+
+#**.log
+#**.xml
