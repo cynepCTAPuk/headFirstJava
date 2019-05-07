@@ -7,7 +7,9 @@ public class PizzaStore {
     }
 
     public static void main(String[] args) {
-        new PizzaStore(new SimplePizzaFactory()).orderPizza("pepperoni");
+        new PizzaStore(
+                new SimplePizzaFactory())
+                .orderPizza("pepperoni");
     }
 
     Pizza orderPizza(String type) {

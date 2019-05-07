@@ -5,12 +5,12 @@ abstract class Pizza {
         System.out.print("Prepare ");
     }
     void bake() {
-        System.out.print("Prepare ");
+        System.out.print("Bake ");
     }
     void cut() {
         System.out.print("Cut ");
     }
     void box() {
-        System.out.print("Box pizza\n");
+        System.out.print("Box\n");
     }
 }
