@@ -25,7 +25,7 @@ public class MainFrame extends javax.swing.JFrame {
     boolean mulBool = false;
     boolean pointBool = false;
     String display = "";
-
+    
     public MainFrame() {
         initComponents();
     }
@@ -69,7 +69,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         digitDisplPanel.setPreferredSize(new java.awt.Dimension(350, 95));
 
-        digitDisplayTxt.setText("jTextField1");
+        digitDisplayTxt.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
 
         javax.swing.GroupLayout digitDisplPanelLayout = new javax.swing.GroupLayout(digitDisplPanel);
         digitDisplPanel.setLayout(digitDisplPanelLayout);
@@ -203,24 +203,54 @@ public class MainFrame extends javax.swing.JFrame {
         numPadPanel.add(zeroBtn);
 
         pointBtn.setText(".");
+        pointBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pointBtnActionPerformed(evt);
+            }
+        });
         numPadPanel.add(pointBtn);
 
         operationPanel.setMinimumSize(new java.awt.Dimension(80, 180));
         operationPanel.setLayout(new java.awt.GridLayout(5, 0, 5, 5));
 
         divideBtn.setText("/");
+        divideBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                divideBtnActionPerformed(evt);
+            }
+        });
         operationPanel.add(divideBtn);
 
         multiplyBtn.setText("*");
+        multiplyBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                multiplyBtnActionPerformed(evt);
+            }
+        });
         operationPanel.add(multiplyBtn);
 
         subtractBtn.setText("-");
+        subtractBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subtractBtnActionPerformed(evt);
+            }
+        });
         operationPanel.add(subtractBtn);
 
         addBtn.setText("+");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
         operationPanel.add(addBtn);
 
         resultBtn.setText("=");
+        resultBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultBtnActionPerformed(evt);
+            }
+        });
         operationPanel.add(resultBtn);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
@@ -350,6 +380,86 @@ public class MainFrame extends javax.swing.JFrame {
         display = digitDisplayTxt.getText();
         digitDisplayTxt.setText(display + "0");
     }//GEN-LAST:event_zeroBtnActionPerformed
+
+    private void pointBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pointBtnActionPerformed
+        if (!pointBool) {
+            String digitStr = digitDisplayTxt.getText();
+            if (!digitStr.isEmpty()) {
+                display = digitDisplayTxt.getText();
+                digitDisplayTxt.setText(display + ".");
+                pointBool = true;
+            }
+        }
+    }//GEN-LAST:event_pointBtnActionPerformed
+
+    private void divideBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideBtnActionPerformed
+        if (!digitDisplayTxt.getText().isEmpty()) {
+            TEMP = Double.parseDouble(digitDisplayTxt.getText());
+            digitDisplayTxt.setText("");
+            divBool = true;
+            if (pointBool) {
+                pointBool = false;
+            }
+        }
+    }//GEN-LAST:event_divideBtnActionPerformed
+
+    private void multiplyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyBtnActionPerformed
+        if (!digitDisplayTxt.getText().isEmpty()) {
+            TEMP = Double.parseDouble(digitDisplayTxt.getText());
+            digitDisplayTxt.setText("");
+            mulBool = true;
+            if (pointBool) {
+                pointBool = false;
+            }
+        }
+    }//GEN-LAST:event_multiplyBtnActionPerformed
+
+    private void subtractBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractBtnActionPerformed
+        if (!digitDisplayTxt.getText().isEmpty()) {
+            TEMP = Double.parseDouble(digitDisplayTxt.getText());
+            digitDisplayTxt.setText("");
+            subBool = true;
+            if (pointBool) {
+                pointBool = false;
+            }
+        }
+    }//GEN-LAST:event_subtractBtnActionPerformed
+
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        if (!digitDisplayTxt.getText().isEmpty()) {
+            TEMP = Double.parseDouble(digitDisplayTxt.getText());
+            digitDisplayTxt.setText("");
+            addBool = true;
+            if (pointBool) {
+                pointBool = false;
+            }
+        }
+    }//GEN-LAST:event_addBtnActionPerformed
+
+    private void resultBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultBtnActionPerformed
+        if (!digitDisplayTxt.getText().isEmpty()) {
+            SolveTEMP = Double.parseDouble(digitDisplayTxt.getText());
+            if (addBool == true) {
+                SolveTEMP = SolveTEMP + TEMP;
+            } else if (subBool == true) {
+                SolveTEMP = TEMP - SolveTEMP;
+            } else if (mulBool == true) {
+                SolveTEMP = SolveTEMP * TEMP;
+            } else if (divBool == true) {
+                SolveTEMP = TEMP / SolveTEMP;
+            }
+            digitDisplayTxt.setText(Double.toString(SolveTEMP));
+            addBool = false;
+            subBool = false;
+            mulBool = false;
+            divBool = false;
+            pointBool = true;
+        }else{
+            JOptionPane.showMessageDialog(this, "Second value is Nil");
+            pointBool = true;
+            return;
+        }
+    }//GEN-LAST:event_resultBtnActionPerformed
 
     /**
      * @param args the command line arguments
