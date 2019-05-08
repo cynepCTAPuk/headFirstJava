@@ -1,5 +1,6 @@
 package test;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class SortByMerge {
     private static final int INSERTIONSORT_THRESHOLD = 7;
@@ -50,9 +51,13 @@ public class SortByMerge {
     }
 
     public static void main(String[] args) {
-        Object[] list = {1, 4, 2, 3};
-        System.out.println(Arrays.toString(list));
-        sort(list);
-        System.out.println(Arrays.toString(list));
+        Integer[] integers = {1, 4, 2, 3};
+        String[] strings = {"a", "d", "b", "c"};
+
+        System.out.println(Arrays.toString(strings));
+        sort(strings);
+        System.out.println(Arrays.toString(strings));
+        Arrays.sort(strings, Comparator.reverseOrder());
+        System.out.println(Arrays.toString(strings));
     }
 }
