@@ -1,4 +1,4 @@
-package chap08_template_method;
+package chap08_template_method.coffee_tea_pattern;
 
 import java.io.BufferedReader;
 import java.io.IOException;

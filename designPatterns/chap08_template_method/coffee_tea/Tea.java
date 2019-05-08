@@ -1,4 +1,4 @@
-package chap08_template_method.ver1;
+package chap08_template_method.coffee_tea;
 
 public class Tea {
     void prepareRecipe() {
