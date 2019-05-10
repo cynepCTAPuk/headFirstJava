@@ -17,19 +17,19 @@ public class Waiter {
 //        System.out.println(breakfastItems);
         for (int i = 0; i < breakfastItems.size(); i++) {
             MenuItem menuItem = breakfastItems.get(i);
-            System.out.print(menuItem.getName() + " ");
-            System.out.print(menuItem.getPrice() + " ");
-            System.out.println(menuItem.getDescription());
+            System.out.print("\n" + menuItem.getName() + " " +
+                    menuItem.getPrice() + " " + menuItem.getDescription());
         }
     }
 
     void printLunchMenu() {
 //        System.out.println(Arrays.toString(lunchItems));
         for (int i = 0; i < lunchItems.length; i++) {
-            MenuItem menuItem = lunchItems[i];
-            System.out.print(menuItem.getName() + " ");
-            System.out.print(menuItem.getPrice() + " ");
-            System.out.println(menuItem.getDescription());
+            if (lunchItems[i] != null) {
+                MenuItem menuItem = lunchItems[i];
+                System.out.print("\n" + menuItem.getName() + " " +
+                        menuItem.getPrice() + " " + menuItem.getDescription());
+            } else return;
         }
     }
 
@@ -41,7 +41,6 @@ public class Waiter {
 
     public static void main(String[] args) {
         Waiter waiter = new Waiter();
-
         waiter.printBreakfastMenu();
         waiter.printLunchMenu();
     }
