@@ -1,4 +1,4 @@
-package chap08_template_method.jframe;
+package chap08_template_method;
 
 import javax.swing.*;
 import java.awt.*;
