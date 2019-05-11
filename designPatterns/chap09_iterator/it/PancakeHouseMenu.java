@@ -1,12 +1,14 @@
-package chap09_iterator;
+package chap09_iterator.it;
+
+import chap09_iterator.MenuItem;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class PancakeHouseMenuWithIterator {
-    ArrayList<MenuItem> menuItems;
+public class PancakeHouseMenu {
+    private ArrayList<MenuItem> menuItems;
 
-    public PancakeHouseMenuWithIterator() {
+    public PancakeHouseMenu() {
         menuItems = new ArrayList<>();
         addItem("K&B’s Pancake Breakfast",
                 "Pancakes with scrambled eggs, and toast",
@@ -35,6 +37,5 @@ public class PancakeHouseMenuWithIterator {
         return new PancakeHouseMenuIterator(menuItems);
     }
 
-
-//    другие методы
+    //    другие методы
 }

@@ -2,12 +2,12 @@ package chap09_iterator;
 
 import java.util.Iterator;
 
-public class DinerMenuWithIterator {
-    static final int MAX_ITEMS = 6;
-    int numberOfItems = 0;
-    MenuItem[] menuItems;
+public class DinerMenu implements Menu {
+    private static final int MAX_ITEMS = 6;
+    private int numberOfItems = 0;
+    private MenuItem[] menuItems;
 
-    public DinerMenuWithIterator() {
+    public DinerMenu() {
         menuItems = new MenuItem[MAX_ITEMS];
         addItem("Vegetarian BLT",
                 "(Fakin’) Bacon with lettuce & tomato on whole wheat",
