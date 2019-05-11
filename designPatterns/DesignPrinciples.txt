@@ -32,3 +32,9 @@ Depend upon abstractions. Do not depend upon concrete classes.
 Принцип минимальной информированности: общайтесь только с близкими друзьями.
 Principle of Least Knowledge: talk only to your immediate friends.
 
+Голливудский принцип: Не вызывайте нас — мы вас сами вызовем.
+The Hollywood Principle: Don’t call us, we’ll call you.
+
+Класс должен иметь только одну причину для изменения.
+A class should have only one reason to change.
+
