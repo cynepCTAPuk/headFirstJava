@@ -1,4 +1,6 @@
-package chap09_iterator;
+package chap09_iterator.old;
+
+import chap09_iterator.MenuItem;
 
 import java.util.ArrayList;
 

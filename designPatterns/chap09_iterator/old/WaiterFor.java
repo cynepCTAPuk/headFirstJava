@@ -1,8 +1,10 @@
-package chap09_iterator;
+package chap09_iterator.old;
+
+import chap09_iterator.MenuItem;
 
 import java.util.ArrayList;
 
-public class WaiterForEach {
+public class WaiterFor {
     PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
     ArrayList<MenuItem> breakfastItems = pancakeHouseMenu.getMenuItems();
 
@@ -15,15 +17,17 @@ public class WaiterForEach {
     }
 
     void printBreakfastMenu() {
-        for (MenuItem menuItem:breakfastItems) {
+        for (int i = 0; i < breakfastItems.size(); i++) {
+            MenuItem menuItem = breakfastItems.get(i);
             System.out.print("\n" + menuItem.getName() + " " +
                     menuItem.getPrice() + " " + menuItem.getDescription());
         }
     }
 
     void printLunchMenu() {
-        for (MenuItem menuItem:lunchItems) {
-            if (menuItem != null) {
+        for (int i = 0; i < lunchItems.length; i++) {
+            if (lunchItems[i] != null) {
+                MenuItem menuItem = lunchItems[i];
                 System.out.print("\n" + menuItem.getName() + " " +
                         menuItem.getPrice() + " " + menuItem.getDescription());
             } else return;
@@ -37,7 +41,7 @@ public class WaiterForEach {
     }
 
     public static void main(String[] args) {
-        WaiterForEach waiter = new WaiterForEach();
+        WaiterFor waiter = new WaiterFor();
         waiter.printBreakfastMenu();
         waiter.printLunchMenu();
     }
