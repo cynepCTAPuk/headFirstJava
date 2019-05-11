@@ -29,15 +29,15 @@ public class Waitress {
     }
 
     public void printBreakfastMenu() {
-        Iterator pancakeHouseMenuIterator = pancakeHouseMenu.createIterator();
+        Iterator pancakeIterator = pancakeHouseMenu.createIterator();
         System.out.println("MENU\n---\nBREAKFAST");
-        printMenu(pancakeHouseMenuIterator);
+        printMenu(pancakeIterator);
     }
 
     public void printLunchMenu() {
-        Iterator dinerMenuIterator = dinerMenu.createIterator();
+        Iterator dinerIterator = dinerMenu.createIterator();
         System.out.println("MENU\n---\nLUNCH");
-        printMenu(dinerMenuIterator);
+        printMenu(dinerIterator);
     }
 
     public void printVegetarianMenu() {
