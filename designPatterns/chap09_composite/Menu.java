@@ -1,6 +1,7 @@
 package chap09_composite;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Menu extends MenuComponent {
     ArrayList<MenuComponent> menuComponents = new ArrayList<>();
@@ -15,11 +16,9 @@ public class Menu extends MenuComponent {
     public void add(MenuComponent menuComponent) {
         menuComponents.add(menuComponent);
     }
-
     public void remove(MenuComponent menuComponent) {
         menuComponents.remove(menuComponent);
     }
-
     public MenuComponent getChild(int i) {
         return menuComponents.get(i);
     }
@@ -27,7 +26,6 @@ public class Menu extends MenuComponent {
     public String getName() {
         return name;
     }
-
     public String getDescription() {
         return description;
     }
@@ -36,5 +34,10 @@ public class Menu extends MenuComponent {
         System.out.print("\n" + getName());
         System.out.println(", " + getDescription());
         System.out.println("---------------------");
+        Iterator<MenuComponent> iterator = menuComponents.iterator();
+        while (iterator.hasNext()) {
+            MenuComponent menuComponent = iterator.next();
+            menuComponent.print();
+        }
     }
 }

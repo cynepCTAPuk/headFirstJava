@@ -13,21 +13,10 @@ public class MenuItem extends MenuComponent {
         this.price = price;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public boolean isVegetarian() {
-        return vegetarian;
-    }
+    public String getName() {return name;}
+    public String getDescription() {return description;}
+    public double getPrice() {return price;}
+    public boolean isVegetarian() {return vegetarian;}
 
     public void print() {
         System.out.print(" " + getName());
