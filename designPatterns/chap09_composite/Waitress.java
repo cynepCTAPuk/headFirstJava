@@ -1,7 +1,7 @@
 package chap09_composite;
 
 public class Waitress {
-    MenuComponent allMenus;
+    private MenuComponent allMenus;
 
     public Waitress(MenuComponent allMenus) {
         this.allMenus = allMenus;
