@@ -3,13 +3,8 @@ package chap07_facade.car;
 public class Car {
     Engine engine;
 
-    public Car() {
-
-    }
-
-    public void updateDashboardDisplay() {
-
-    }
+    public Car(Engine engine) {this.engine = engine;}
+    public void updateDashboardDisplay() {System.out.println("Dashboard Display");}
 
     public void start(Key key) {
         Doors doors = new Doors();
@@ -19,5 +14,10 @@ public class Car {
             updateDashboardDisplay();
             doors.lock();
         }
+    }
+
+    public static void main(String[] args) {
+        Car car = new Car(new Engine());
+        car.start(new Key());
     }
 }
