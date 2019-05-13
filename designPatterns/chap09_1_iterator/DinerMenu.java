@@ -1,13 +1,13 @@
-package chap09_iterator;
+package chap09_1_iterator;
 
 import java.util.Iterator;
 
-public class DinerMenuAlternating implements Menu {
+public class DinerMenu implements Menu {
     private static final int MAX_ITEMS = 6;
     private int numberOfItems = 0;
     private MenuItem[] menuItems;
 
-    public DinerMenuAlternating() {
+    public DinerMenu() {
         menuItems = new MenuItem[MAX_ITEMS];
         addItem("Vegetarian BLT",
                 "(Fakin’) Bacon with lettuce & tomato on whole wheat",
@@ -39,7 +39,7 @@ public class DinerMenuAlternating implements Menu {
     }
 
     public Iterator createIterator() {
-        return new AlternatingDinerMenuIterator(menuItems);
+        return new DinerMenuIterator(menuItems);
     }
 
 //    other menu methods here

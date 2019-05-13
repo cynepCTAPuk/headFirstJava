@@ -1,4 +1,4 @@
-package chap09_iterator;
+package chap09_1_iterator;
 
 import java.util.Calendar;
 import java.util.Iterator;

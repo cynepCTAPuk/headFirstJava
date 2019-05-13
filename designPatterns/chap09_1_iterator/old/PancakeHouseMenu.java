@@ -1,10 +1,11 @@
-package chap09_iterator;
+package chap09_1_iterator.old;
+
+import chap09_1_iterator.MenuItem;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
-public class PancakeHouseMenu implements Menu {
-    private ArrayList<MenuItem> menuItems;
+public class PancakeHouseMenu {
+    ArrayList<MenuItem> menuItems;
 
     public PancakeHouseMenu() {
         menuItems = new ArrayList<>();
@@ -31,9 +32,9 @@ public class PancakeHouseMenu implements Menu {
         menuItems.add(menuItem);
     }
 
-    public Iterator createIterator() {
-        return menuItems.iterator();
+    public ArrayList<MenuItem> getMenuItems() {
+        return menuItems;
     }
 
-    //    другие методы
+//    другие методы
 }

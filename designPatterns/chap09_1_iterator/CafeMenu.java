@@ -1,8 +1,7 @@
-package chap09_iterator;
+package chap09_1_iterator;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 public class CafeMenu implements Menu{
     private HashMap<String, MenuItem> menuItems = new HashMap<>();

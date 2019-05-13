@@ -1,6 +1,6 @@
-package chap09_iterator.old;
+package chap09_1_iterator.old;
 
-import chap09_iterator.MenuItem;
+import chap09_1_iterator.MenuItem;
 
 public class DinerMenu {
     static final int MAX_ITEMS = 6;

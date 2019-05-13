@@ -1,4 +1,4 @@
-package chap09_iterator;
+package chap09_1_iterator;
 
 public class MenuItem {
     private String name;
