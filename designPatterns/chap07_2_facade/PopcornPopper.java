@@ -1,4 +1,4 @@
-package chap07_facade;
+package chap07_2_facade;
 
 public class PopcornPopper {
     String popcornPopper = "off";

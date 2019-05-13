@@ -1,4 +1,4 @@
-package chap07_facade.car;
+package chap07_2_facade.car;
 
 public class Key {
     public boolean turns() {
