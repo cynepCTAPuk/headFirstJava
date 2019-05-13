@@ -1,4 +1,4 @@
-package chap07_adapter.turkeyAndDuck;
+package chap07_1_adapter.turkeyAndDuck;
 
 public class WildTurkey implements Turkey {
     @Override

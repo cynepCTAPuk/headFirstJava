@@ -1,4 +1,4 @@
-package chap07_adapter.turkeyAndDuck;
+package chap07_1_adapter.turkeyAndDuck;
 
 public interface Duck {
     public void quack();

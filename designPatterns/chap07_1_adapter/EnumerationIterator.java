@@ -1,4 +1,4 @@
-package chap07_adapter;
+package chap07_1_adapter;
 
 import java.util.Enumeration;
 import java.util.Iterator;
