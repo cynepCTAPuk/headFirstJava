@@ -1,25 +1,26 @@
-package chap10_state;
+package chap10_state.ver1;
 
 public class GumballMachineTestDrive {
     public static void main(String[] args) {
         GumballMachine gumballMachine = new GumballMachine(5);
-        System.out.println("\n"+gumballMachine);
+        System.out.println(gumballMachine);
+
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
+        System.out.println(gumballMachine);
 
-        System.out.println("\n"+gumballMachine);
         gumballMachine.insertQuarter();
         gumballMachine.ejectQuarter();
         gumballMachine.turnCrank();
+        System.out.println(gumballMachine);
 
-        System.out.println("\n"+gumballMachine);
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
         gumballMachine.ejectQuarter();
+        System.out.println(gumballMachine);
 
-        System.out.println("\n"+gumballMachine);
         gumballMachine.insertQuarter();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
@@ -27,7 +28,6 @@ public class GumballMachineTestDrive {
         gumballMachine.turnCrank();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
-
-        System.out.println("\n"+gumballMachine);
+        System.out.println(gumballMachine);
     }
 }

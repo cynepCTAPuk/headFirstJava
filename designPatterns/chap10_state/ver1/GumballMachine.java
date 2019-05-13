@@ -1,4 +1,4 @@
-package chap10_state;
+package chap10_state.ver1;
 
 public class GumballMachine {
     final static int SOLD_OUT = 0;
@@ -71,5 +71,15 @@ public class GumballMachine {
             System.out.println("No gumball dispensed");
         }
     }
-// Другие методы: toString(), refill() и т.д.
+
+    @Override
+    public String toString() {
+        String st;
+        if (state != SOLD_OUT) st = "waiting for quarter";
+        else st = "sold out";
+        return "\nMighty Gumball, Inc.\nJava-enabled Standing Gumball Model #2004\n" +
+                "Inventory: " + count + " gumballs\n" +
+                "Machine is " + st + "\n";
+    }
+    // Другие методы: toString(), refill() и т.д.
 }
