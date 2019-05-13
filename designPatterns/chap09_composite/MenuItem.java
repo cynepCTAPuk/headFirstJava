@@ -22,6 +22,7 @@ public class MenuItem extends MenuComponent {
     public double getPrice() {return price;}
     public boolean isVegetarian() {return vegetarian;}
 
+    @Override
     public void print() {
         System.out.print(" " + getName());
         if (isVegetarian()) System.out.print("(v)");

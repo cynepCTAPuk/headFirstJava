@@ -37,6 +37,7 @@ public class Menu extends MenuComponent {
         return description;
     }
 
+    @Override
     public void print() {
         System.out.print("\n" + getName());
         System.out.println(", " + getDescription());
