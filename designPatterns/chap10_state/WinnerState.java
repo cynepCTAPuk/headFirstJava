@@ -1,6 +1,12 @@
 package chap10_state;
 
 public class WinnerState implements State {
+    GumballMachine gumballMachine;
+
+    public WinnerState(GumballMachine gumballMachine) {
+        this.gumballMachine = gumballMachine;
+    }
+
     @Override
     public void insertQuarter() {
 
