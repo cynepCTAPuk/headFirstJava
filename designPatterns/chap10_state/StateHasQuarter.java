@@ -1,9 +1,9 @@
 package chap10_state;
 
-public class HasQuarterState implements State {
+public class StateHasQuarter implements State {
     GumballMachine gumballMachine;
 
-    public HasQuarterState(GumballMachine gumballMachine) {
+    public StateHasQuarter(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
     }
 

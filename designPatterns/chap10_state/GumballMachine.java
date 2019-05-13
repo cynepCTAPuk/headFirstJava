@@ -10,10 +10,10 @@ public class GumballMachine {
     int count = 0;
 
     public GumballMachine(int numberGumballs) {
-        soldOutState = new SoldOutState(this);
-        soldState = new SoldState(this);
-        noQuarterState = new NoQuarterState(this);
-        hasQuarterState = new HasQuarterState(this);
+        soldOutState = new StateSoldOut(this);
+        soldState = new StateSold(this);
+        noQuarterState = new StateNoQuarter(this);
+        hasQuarterState = new StateHasQuarter(this);
         this.count = numberGumballs;
         if (numberGumballs > 0) state = noQuarterState;
         else state = soldOutState;
@@ -67,18 +67,11 @@ public class GumballMachine {
 
     @Override
     public String toString() {
-        return "GumballMachine{" + ", state=" + state + ", count=" + count + "\n";
-    }
-
-    public static void main(String[] args) {
-        GumballMachine gumballMachine = new GumballMachine(2);
-        System.out.println(gumballMachine);
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        System.out.println(gumballMachine);
-
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        System.out.println(gumballMachine);
+        String st;
+        if (state != soldOutState) st = "waiting for quarter";
+        else st = "sold out";
+        return "\nMighty Gumball, Inc.\nJava-enabled Standing Gumball Model #2004\n" +
+                "Inventory: " + count + " gumballs\n" +
+                "Machine is " + st + "\n";
     }
 }

@@ -1,9 +1,9 @@
 package chap10_state;
 
-public class WinnerState implements State {
+public class StateWinner implements State {
     GumballMachine gumballMachine;
 
-    public WinnerState(GumballMachine gumballMachine) {
+    public StateWinner(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
     }
 

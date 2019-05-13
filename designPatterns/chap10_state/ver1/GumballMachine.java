@@ -81,5 +81,4 @@ public class GumballMachine {
                 "Inventory: " + count + " gumballs\n" +
                 "Machine is " + st + "\n";
     }
-    // Другие методы: toString(), refill() и т.д.
 }
