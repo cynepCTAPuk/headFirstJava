@@ -28,4 +28,8 @@ public class WinnerState implements State {
     }
     @Override
     public void refill() {}
+    @Override
+    public String toString() {
+        return "dispensing two gumballs for your quarter, because YOU'RE A WINNER!";
+    }
 }
