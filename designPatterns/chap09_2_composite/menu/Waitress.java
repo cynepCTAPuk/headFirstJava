@@ -1,4 +1,4 @@
-package chap09_composite.menu;
+package chap09_2_composite.menu;
 
 public class Waitress {
     private MenuComponent allMenus;

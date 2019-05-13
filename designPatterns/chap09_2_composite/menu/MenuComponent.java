@@ -1,4 +1,4 @@
-package chap09_composite.menu;
+package chap09_2_composite.menu;
 
 public abstract class MenuComponent {
     public void add(MenuComponent menuComponent) {throw new UnsupportedOperationException();}

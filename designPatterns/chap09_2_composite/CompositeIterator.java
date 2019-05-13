@@ -1,4 +1,4 @@
-package chap09_composite;
+package chap09_2_composite;
 
 import java.util.Iterator;
 import java.util.Stack;

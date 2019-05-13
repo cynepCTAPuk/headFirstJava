@@ -1,4 +1,4 @@
-package chap09_composite;
+package chap09_2_composite.menu;
 
 public class MenuTestDrive {
     public static void main(String[] args) {
@@ -116,7 +116,6 @@ public class MenuTestDrive {
                 0.89));
 
         Waitress waitress = new Waitress(allMenus);
-//        waitress.printMenu();
-        waitress.printVegetarianMenu();
+        waitress.printMenu();
     }
 }
