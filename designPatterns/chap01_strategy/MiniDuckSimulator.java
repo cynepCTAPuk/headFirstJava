@@ -2,12 +2,12 @@ package chap01_strategy;
 
 public class MiniDuckSimulator {
     public static void main(String[] args) {
-        Duck mallard = new MallardDuck();
+        Duck mallard = new DuckMallard();
         mallard.display();
         mallard.performQuack();
         mallard.performFly();
 
-        Duck model = new ModelDuck();
+        Duck model = new DuckModel();
         model.display();
         model.performQuack();
         model.performFly();
@@ -24,7 +24,7 @@ public class MiniDuckSimulator {
         justDuck.swim();
         justDuck.setFlyBehavior(new FlyNoWay());
         justDuck.performFly();
-        justDuck.setQuackBehavior(new MuteQuack());
+        justDuck.setQuackBehavior(new QuackMute());
         justDuck.performQuack();
     }
 }

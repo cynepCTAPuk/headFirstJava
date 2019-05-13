@@ -1,11 +1,11 @@
 package chap01_strategy;
 
-public class MallardDuck extends Duck {
-    public MallardDuck() {
+public class DuckRedhead extends Duck {
+    public DuckRedhead() {
         flyBehavior = new FlyWithWings();
         quackBehavior = new Quack();
     }
     public void display() {
-        System.out.println("-I'm a real Mallard duck-");
+        System.out.println("-I'm a Readhead duck-");
     }
 }

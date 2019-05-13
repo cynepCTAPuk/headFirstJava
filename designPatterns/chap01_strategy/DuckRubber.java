@@ -1,9 +1,9 @@
 package chap01_strategy;
 
-public class RubberDuck extends Duck {
-    public RubberDuck() {
+public class DuckRubber extends Duck {
+    public DuckRubber() {
         flyBehavior = new FlyNoWay();
-        quackBehavior = new Squeak();
+        quackBehavior = new QuackSqueak();
     }
     public void display() {
         System.out.println("-I'm a Rubber duck-");

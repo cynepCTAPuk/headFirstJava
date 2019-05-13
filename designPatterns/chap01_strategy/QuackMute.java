@@ -1,6 +1,6 @@
 package chap01_strategy;
 
-public class MuteQuack implements QuackBehavior {
+public class QuackMute implements QuackBehavior {
     public void quack() {
         System.out.println("<<Silence>>");
     }

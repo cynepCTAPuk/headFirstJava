@@ -1,7 +1,7 @@
 package chap01_strategy;
 
-public class ModelDuck extends Duck {
-    public ModelDuck() {
+public class DuckModel extends Duck {
+    public DuckModel() {
         flyBehavior = new FlyNoWay();
         quackBehavior = new Quack();
     }
