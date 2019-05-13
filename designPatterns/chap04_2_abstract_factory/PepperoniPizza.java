@@ -1,9 +1,9 @@
-package chap04_factory.pizza_abstract_factory;
+package chap04_2_abstract_factory;
 
-public class VeggiePizza extends Pizza {
+public class PepperoniPizza extends Pizza {
     PizzaIngredientFactory ingredientFactory;
 
-    public VeggiePizza(PizzaIngredientFactory ingredientFactory) {
+    public PepperoniPizza(PizzaIngredientFactory ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
     }
 

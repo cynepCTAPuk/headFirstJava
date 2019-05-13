@@ -1,13 +1,12 @@
-package chap04_factory.pizza_abstract_factory.ny;
+package chap04_2_abstract_factory.ny;
 
-import chap04_factory.pizza_abstract_factory.Cheese;
-import chap04_factory.pizza_abstract_factory.Clams;
-import chap04_factory.pizza_abstract_factory.Dough;
-import chap04_factory.pizza_abstract_factory.Pepperoni;
-import chap04_factory.pizza_abstract_factory.PizzaIngredientFactory;
-import chap04_factory.pizza_abstract_factory.Sauce;
-import chap04_factory.pizza_abstract_factory.Veggies;
-import chap04_factory.pizza_abstract_factory.california.CaliforniaPizzaIngredientFactory;
+import chap04_2_abstract_factory.Cheese;
+import chap04_2_abstract_factory.Clams;
+import chap04_2_abstract_factory.Dough;
+import chap04_2_abstract_factory.Pepperoni;
+import chap04_2_abstract_factory.PizzaIngredientFactory;
+import chap04_2_abstract_factory.Sauce;
+import chap04_2_abstract_factory.Veggies;
 
 public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
     @Override

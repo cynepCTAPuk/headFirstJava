@@ -1,8 +1,8 @@
-package chap04_factory.pizza_abstract_factory.california;
+package chap04_2_abstract_factory.chicago;
 
-import chap04_factory.pizza_abstract_factory.*;
+import chap04_2_abstract_factory.*;
 
-public class CaliforniaPizzaIngredientFactory implements PizzaIngredientFactory {
+public class ChigagoPizzaIngredientFactory implements PizzaIngredientFactory {
     @Override
     public Dough createDough() {
         return new ThickCrustDough();

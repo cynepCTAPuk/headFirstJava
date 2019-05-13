@@ -1,25 +1,25 @@
-package chap04_factory.pizza_abstract_factory.california;
+package chap04_2_abstract_factory.chicago;
 
-import chap04_factory.pizza_abstract_factory.*;
+import chap04_2_abstract_factory.*;
 
-public class CaliforniaStylePizzaStore extends PizzaStore {
+public class ChicagoStylePizzaStore extends PizzaStore {
     @Override
     protected Pizza createPizza(String item) {
         Pizza pizza = null;
         PizzaIngredientFactory ingredientFactory =
-                new CaliforniaPizzaIngredientFactory();
+                new ChigagoPizzaIngredientFactory();
         if (item.equals("cheese")) {
             pizza = new CheesePizza(ingredientFactory);
-            pizza.setName("California Style Cheese Pizza");
+            pizza.setName("Chicago Style Cheese Pizza");
         } else if (item.equals("veggie")) {
             pizza = new VeggiePizza(ingredientFactory);
-            pizza.setName("California Style Veggie Pizza");
+            pizza.setName("Chicago Style Veggie Pizza");
         } else if (item.equals("clam")) {
             pizza = new ClamPizza(ingredientFactory);
-            pizza.setName("California Style Clam Pizza");
+            pizza.setName("Chicago Style Clam Pizza");
         } else if (item.equals("pepperoni")) {
             pizza = new PepperoniPizza(ingredientFactory);
-            pizza.setName("California Style Pepperoni Pizza");
+            pizza.setName("Chicago Style Pepperoni Pizza");
         }
         return pizza;
     }

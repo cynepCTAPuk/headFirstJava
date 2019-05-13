@@ -1,4 +1,4 @@
-package chap04_factory.pizza_abstract_factory;
+package chap04_2_abstract_factory;
 
 import java.util.Arrays;
 

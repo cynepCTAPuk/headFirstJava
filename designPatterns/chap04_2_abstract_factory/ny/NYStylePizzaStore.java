@@ -1,6 +1,6 @@
-package chap04_factory.pizza_abstract_factory.ny;
+package chap04_2_abstract_factory.ny;
 
-import chap04_factory.pizza_abstract_factory.*;
+import chap04_2_abstract_factory.*;
 
 public class NYStylePizzaStore extends PizzaStore {
     @Override
