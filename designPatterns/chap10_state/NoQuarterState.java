@@ -1,16 +1,14 @@
 package chap10_state;
 
-public class StateNoQuarter implements State {
+public class NoQuarterState implements State {
     GumballMachine gumballMachine;
 
-    public StateNoQuarter(GumballMachine gumballMachine) {
-        this.gumballMachine = gumballMachine;
-    }
+    public NoQuarterState(GumballMachine gumballMachine) {this.gumballMachine = gumballMachine;}
 
     @Override
     public void insertQuarter() {
         System.out.println("You inserted a quarter");
-        gumballMachine.setState(gumballMachine.getHasQuarterState());
+        gumballMachine.setState(gumballMachine.getStateHasQuarter());
     }
 
     @Override

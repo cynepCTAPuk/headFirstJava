@@ -1,4 +1,4 @@
-package chap10_state;
+package chap10_state.ver2;
 
 public class GumballMachine {
     State stateSoldOut;

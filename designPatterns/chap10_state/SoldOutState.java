@@ -1,9 +1,9 @@
 package chap10_state;
 
-public class StateSoldOut implements State {
+public class SoldOutState implements State {
     GumballMachine gumballMachine;
 
-    public StateSoldOut(GumballMachine gumballMachine) {
+    public SoldOutState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
     }
 
@@ -13,17 +13,11 @@ public class StateSoldOut implements State {
     }
 
     @Override
-    public void ejectQuarter() {
-
-    }
+    public void ejectQuarter() {}
 
     @Override
-    public void turnCrank() {
-        System.out.println("You turned, but there are no gumballs");
-    }
+    public void turnCrank() {System.out.println("You turned, but there are no gumballs");}
 
     @Override
-    public void dispense() {
-
-    }
+    public void dispense() {}
 }

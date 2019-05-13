@@ -1,11 +1,9 @@
-package chap10_state;
+package chap10_state.ver2;
 
-public class StateSold implements State {
+public class SoldState implements State {
     GumballMachine gumballMachine;
 
-    public StateSold(GumballMachine gumballMachine) {
-        this.gumballMachine = gumballMachine;
-    }
+    public SoldState(GumballMachine gumballMachine) {this.gumballMachine = gumballMachine;}
 
     @Override
     public void insertQuarter() {
@@ -26,10 +24,10 @@ public class StateSold implements State {
     public void dispense() {
         gumballMachine.releaseBall();
         if (gumballMachine.getCount() > 0) {
-            gumballMachine.setState(gumballMachine.getNoQuarterState());
+            gumballMachine.setState(gumballMachine.getStateNoQuarter());
         } else {
             System.out.println("Oops, out of gumballs!");
-            gumballMachine.setState(gumballMachine.getSoldOutState());
+            gumballMachine.setState(gumballMachine.getStateSoldOut());
         }
     }
 }
