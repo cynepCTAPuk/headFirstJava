@@ -64,5 +64,21 @@ public class GumballMachine {
     public int getCount() {
         return count;
     }
-    // Другие методы, включая get-методы для всех состояний...}
+
+    @Override
+    public String toString() {
+        return "GumballMachine{" + ", state=" + state + ", count=" + count + "\n";
+    }
+
+    public static void main(String[] args) {
+        GumballMachine gumballMachine = new GumballMachine(2);
+        System.out.println(gumballMachine);
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        System.out.println(gumballMachine);
+
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        System.out.println(gumballMachine);
+    }
 }
