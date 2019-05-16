@@ -2,7 +2,7 @@ package chap11_proxy.gumball;
 
 import java.util.Scanner;
 
-public class GumballMachineTestDrive {
+public class GumballMachineTest {
     public static void main(String[] args) {
         int count;
         if (args.length < 2) {
