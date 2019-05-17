@@ -1,4 +1,4 @@
-package chap11_proxy.gumball;
+package chap11_proxy.gumblemonitor;
 
 import java.util.Scanner;
 

@@ -1,24 +1,28 @@
 package chap11_proxy.gumblemonitor;
 
-public class GumballMachine {
-    State stateSoldOut;
-    State stateSold;
-    State stateNoQuarter;
-    State stateHasQuarter;
-    State stateWinner;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
-    State state = stateSoldOut;
-    int count = 0;
-    String location;
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
+    private State stateSoldOut;
+    private State stateSold;
+    private State stateNoQuarter;
+    private State stateHasQuarter;
+    private State stateWinner;
 
-    public GumballMachine(String location, int count) {
+    private State state = stateSoldOut;
+    private int count;
+    private String location;
+    private static final long serialVersionUID = 2L;
+
+    public GumballMachine(String location, int numberGumballs) throws RemoteException {
         stateSoldOut = new SoldOutState(this);
         stateSold = new SoldState(this);
         stateNoQuarter = new NoQuarterState(this);
         stateHasQuarter = new HasQuarterState(this);
         stateWinner = new WinnerState(this);
-        this.count = count;
-        if (count > 0) state = stateNoQuarter;
+        count = numberGumballs;
+        if (numberGumballs > 0) state = stateNoQuarter;
         this.location = location;
     }
 
@@ -36,16 +40,17 @@ public class GumballMachine {
         state.refill();
     }
 
-    public void setState(State state) {this.state = state;}
-    public State getState() {return state;}
     public int getCount() {return count;}
+    public String getLocation() {return location;}
+    public State getState() {return state;}
+
+    public void setState(State state) {this.state = state;}
 
     public State getStateSoldOut() {return stateSoldOut;}
     public State getStateSold() {return stateSold;}
     public State getStateNoQuarter() {return stateNoQuarter;}
     public State getStateHasQuarter() {return stateHasQuarter;}
     public State getStateWinner() {return stateWinner;}
-    public String getLocation() {return location;}
 
     @Override
     public String toString() {
