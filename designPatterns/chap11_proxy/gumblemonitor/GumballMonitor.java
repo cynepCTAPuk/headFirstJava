@@ -1,15 +1,21 @@
 package chap11_proxy.gumblemonitor;
 
-public class GumballMonitor {
-    GumballMachine gumballMachine;
+import java.rmi.*;
 
-    public GumballMonitor(GumballMachine gumballMachine) {
-        this.gumballMachine = gumballMachine;
+public class GumballMonitor {
+    GumballMachineRemote machine;
+
+    public GumballMonitor(GumballMachineRemote machine) {
+        this.machine = machine;
     }
 
     public void report() {
-        System.out.println("Gumball Machine: " + gumballMachine.getLocation());
-        System.out.println("Current inventory: " + gumballMachine.getCount() + " gumballs");
-        System.out.println("Current state: " + gumballMachine.getState());
+        try {
+            System.out.println("Gumball Machine: " + machine.getLocation());
+            System.out.println("Current inventory: " + machine.getCount() + " gumballs");
+            System.out.println("Current state: " + machine.getState());
+        } catch (RemoteException ex) {
+            ex.printStackTrace();
+        }
     }
 }

@@ -6,7 +6,7 @@ public class GumballMachineTestDrive {
     public static void main(String[] args) {
         int count;
         if (args.length < 2) {
-            System.out.println("GumballMachineTest <name> <inventory>");
+            System.out.println("GumballMachineTestDrive <name> <inventory>");
             System.exit(1);
         }
         count = Integer.parseInt(args[1]);

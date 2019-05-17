@@ -1,7 +1,6 @@
 package chap11_proxy.gumblemonitor;
 
-import java.rmi.Remote;
-import java.rmi.RemoteException;
+import java.rmi.*;
 
 public interface GumballMachineRemote extends Remote {
     public int getCount() throws RemoteException;

@@ -1,9 +1,10 @@
 package chap11_proxy.gumblemonitor;
 
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
+import java.rmi.*;
+import java.rmi.server.*;
 
 public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
+    private static final long serialVersionUID = 2L;
     private State stateSoldOut;
     private State stateSold;
     private State stateNoQuarter;
@@ -13,23 +14,25 @@ public class GumballMachine extends UnicastRemoteObject implements GumballMachin
     private State state = stateSoldOut;
     private int count;
     private String location;
-    private static final long serialVersionUID = 2L;
 
-    public GumballMachine(String location, int numberGumballs) throws RemoteException {
+    public GumballMachine(String location, int count) throws RemoteException {
         stateSoldOut = new SoldOutState(this);
         stateSold = new SoldState(this);
         stateNoQuarter = new NoQuarterState(this);
         stateHasQuarter = new HasQuarterState(this);
         stateWinner = new WinnerState(this);
-        count = numberGumballs;
-        if (numberGumballs > 0) state = stateNoQuarter;
+        this.count = count;
+        if (count > 0) state = stateNoQuarter;
         this.location = location;
     }
+
+    public int getCount() {return count;}
+    public String getLocation() {return location;}
+    public State getState() {return state;}
 
     public void insertQuarter() {state.insertQuarter();}
     public void ejectQuarter() {state.ejectQuarter();}
     public void turnCrank() {state.turnCrank();state.dispense();}
-
     public void releaseBall() {
         System.out.println("A gumball comes rolling out the slot...");
         if (count != 0) count--;
@@ -39,10 +42,6 @@ public class GumballMachine extends UnicastRemoteObject implements GumballMachin
         System.out.println("The gumball machine was just refilled; it's new count is: " + this.count);
         state.refill();
     }
-
-    public int getCount() {return count;}
-    public String getLocation() {return location;}
-    public State getState() {return state;}
 
     public void setState(State state) {this.state = state;}
 
