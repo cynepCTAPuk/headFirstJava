@@ -37,5 +37,6 @@ The Composite Pattern allows you to compose objects into tree structures to repr
 Паттерн Состояние управляет изменением поведения объекта при изменении его внутреннего состояния. Внешне это выглядит так, словно объект меняет свой класс.
 The State Pattern allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
 
+Паттерн Заместитель предоставляет суррогатный объект, управляющий доступом к другому объекту.
 The Proxy Pattern provides a surrogate or placeholder for another object to control access to it.
 
