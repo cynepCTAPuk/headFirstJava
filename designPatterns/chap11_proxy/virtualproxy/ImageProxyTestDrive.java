@@ -14,7 +14,7 @@ public class ImageProxyTestDrive {
     Hashtable<String, String> cds = new Hashtable<>();
 
     public static void main(String[] args) throws Exception {
-        ImageProxyTestDrive testDrive = new ImageProxyTestDrive();
+        ImageProxyTestDrive xtestDrive = new ImageProxyTestDrive();
     }
 
     public ImageProxyTestDrive() throws Exception {
@@ -57,8 +57,7 @@ public class ImageProxyTestDrive {
     }
 
     URL getCDUrl(String name) {
-        try {
-            return new URL(cds.get(name));
+        try {return new URL(cds.get(name));
         } catch (MalformedURLException e) {
             e.printStackTrace();
             return null;
