@@ -23,7 +23,8 @@ public class ImageProxyTestDrive {
         cds.put("Karma", "http://images.amazon.com/images/P/B000005DCB.01.LZZZZZZZ.gif");
         cds.put("MCMXC A.D.", "http://images.amazon.com/images/P/B000002URV.01.LZZZZZZZ.jpg");
         cds.put("Northern Exposure", "http://images.amazon.com/images/P/B000003SFN.01.LZZZZZZZ.jpg");
-        cds.put("Selected Ambient Works, Vol. 2", "http://images.amazon.com/images/P/B000002MNZ.01.LZZZZZZZ.jpg");
+        cds.put("Selected Ambient Works, Vol. 2",
+                "http://images.amazon.com/images/P/B000002MNZ.01.LZZZZZZZ.jpg");
 
         URL initialURL = new URL(cds.get("Selected Ambient Works, Vol. 2"));
         menuBar = new JMenuBar();
