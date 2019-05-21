@@ -30,14 +30,15 @@ public class ImageProxyTestDrive2 {
         treeMap.put("Selected Ambient Works, Vol. 2", "http://images.amazon.com/images/P/B000002MNZ.01.LZZZZZZZ.jpg");
 
         URL initialURL = new URL(treeMap.get("Selected Ambient Works, Vol. 2"));
+
         menuBar = new JMenuBar();
         menu = new JMenu("Favorite CDs");
         menuBar.add(menu);
         frame.setJMenuBar(menuBar);
 
-        for(Map.Entry<String,String> entry : treeMap.entrySet()) {
+        for (Map.Entry<String, String> entry : treeMap.entrySet()) {
             String key = entry.getKey();
-            String value = entry.getValue();
+//            String value = entry.getValue();
             JMenuItem jMenuItem = new JMenuItem(key);
             menu.add(jMenuItem);
             jMenuItem.addActionListener(event -> {
@@ -60,7 +61,8 @@ public class ImageProxyTestDrive2 {
     }
 
     URL getCDUrl(String name) {
-        try {return new URL(treeMap.get(name));
+        try {
+            return new URL(treeMap.get(name));
         } catch (MalformedURLException e) {
             e.printStackTrace();
             return null;

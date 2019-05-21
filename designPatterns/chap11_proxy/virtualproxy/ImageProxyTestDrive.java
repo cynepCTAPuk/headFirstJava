@@ -27,6 +27,7 @@ public class ImageProxyTestDrive {
                 "http://images.amazon.com/images/P/B000002MNZ.01.LZZZZZZZ.jpg");
 
         URL initialURL = new URL(cds.get("Selected Ambient Works, Vol. 2"));
+
         menuBar = new JMenuBar();
         menu = new JMenu("Favorite CDs");
         menuBar.add(menu);
