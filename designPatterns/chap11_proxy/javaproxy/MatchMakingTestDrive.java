@@ -4,19 +4,19 @@ import java.lang.reflect.*;
 import java.util.*;
 
 public class MatchMakingTestDrive {
-	HashMap<String, PersonBean> datingDB = new HashMap<String, PersonBean>();
- 	
-	public static void main(String[] args) {
-		MatchMakingTestDrive test = new MatchMakingTestDrive();
-		test.drive();
-	}
- 
+	HashMap<String, PersonBean> datingDB = new HashMap<>();
 	public MatchMakingTestDrive() {
 		initializeDatabase();
 	}
 
+	public static void main(String[] args) {
+		MatchMakingTestDrive test = new MatchMakingTestDrive();
+		test.drive();
+	}
+
 	public void drive() {
-		PersonBean joe = getPersonFromDatabase("Joe Javabean"); 
+		PersonBean joe = getPersonFromDatabase("Joe Javabean");
+
 		PersonBean ownerProxy = getOwnerProxy(joe);
 		System.out.println("Name is " + ownerProxy.getName());
 		ownerProxy.setInterests("bowling, Go");
@@ -41,23 +41,19 @@ public class MatchMakingTestDrive {
 	}
 
 	PersonBean getOwnerProxy(PersonBean person) {
- 		
-        return (PersonBean) Proxy.newProxyInstance( 
+        return (PersonBean) Proxy.newProxyInstance(
             	person.getClass().getClassLoader(),
             	person.getClass().getInterfaces(),
                 new OwnerInvocationHandler(person));
 	}
-
 	PersonBean getNonOwnerProxy(PersonBean person) {
-		
         return (PersonBean) Proxy.newProxyInstance(
             	person.getClass().getClassLoader(),
             	person.getClass().getInterfaces(),
                 new NonOwnerInvocationHandler(person));
 	}
-
 	PersonBean getPersonFromDatabase(String name) {
-		return (PersonBean)datingDB.get(name);
+		return datingDB.get(name);
 	}
 
 	void initializeDatabase() {
