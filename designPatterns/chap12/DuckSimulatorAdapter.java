@@ -1,8 +1,8 @@
 package chap12;
 
-public class DuckSimulator {
+public class DuckSimulatorAdapter {
     public static void main(String[] args) {
-        DuckSimulator simulator = new DuckSimulator();
+        DuckSimulatorAdapter simulator = new DuckSimulatorAdapter();
         simulator.simulate();
     }
     void simulate() {
