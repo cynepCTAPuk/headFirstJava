@@ -1,4 +1,4 @@
-package chap12.observer;
+package chap12_ducks.observer;
 
 import java.util.ArrayList;
 import java.util.Iterator;

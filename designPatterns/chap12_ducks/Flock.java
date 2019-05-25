@@ -1,4 +1,4 @@
-package chap12;
+package chap12_ducks;
 
 import java.util.ArrayList;
 import java.util.Iterator;

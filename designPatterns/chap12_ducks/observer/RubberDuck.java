@@ -1,17 +1,15 @@
-package chap12.observer;
+package chap12_ducks.observer;
 
-public class GooseAdapter implements Quackable {
-    Goose goose;
+public class RubberDuck implements Quackable {
     Observable observable;
 
-    public GooseAdapter(Goose goose) {
-        this.goose = goose;
+    public RubberDuck() {
         observable = new Observable(this);
     }
 
     @Override
     public void quack() {
-        goose.honk();
+        System.out.println("Squeak");
         notifyObservers();
     }
 
@@ -27,6 +25,6 @@ public class GooseAdapter implements Quackable {
 
     @Override
     public String toString() {
-        return "Goose pretending to b e a Duck";
+        return "Rubber Duck";
     }
 }

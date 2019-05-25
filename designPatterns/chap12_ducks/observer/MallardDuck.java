@@ -1,15 +1,15 @@
-package chap12.observer;
+package chap12_ducks.observer;
 
-public class DuckCall implements Quackable {
+public class MallardDuck implements Quackable {
     Observable observable;
 
-    public DuckCall() {
+    public MallardDuck() {
         observable = new Observable(this);
     }
 
     @Override
     public void quack() {
-        System.out.println("Kwak");
+        System.out.println("Quack");
         notifyObservers();
     }
 
@@ -25,6 +25,6 @@ public class DuckCall implements Quackable {
 
     @Override
     public String toString() {
-        return "Duck Call";
+        return "Mallard Duck";
     }
 }

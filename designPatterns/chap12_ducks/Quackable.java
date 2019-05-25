@@ -1,4 +1,4 @@
-package chap12;
+package chap12_ducks;
 
 public interface Quackable {
     void quack();

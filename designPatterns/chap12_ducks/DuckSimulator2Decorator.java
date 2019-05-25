@@ -1,4 +1,4 @@
-package chap12;
+package chap12_ducks;
 
 public class DuckSimulator2Decorator {
     public static void main(String[] args) {

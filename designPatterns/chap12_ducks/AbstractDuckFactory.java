@@ -1,4 +1,4 @@
-package chap12.observer;
+package chap12_ducks;
 
 public abstract class AbstractDuckFactory {
     public abstract Quackable createMallardDuck();
