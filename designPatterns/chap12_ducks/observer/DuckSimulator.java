@@ -1,6 +1,4 @@
-package chap12.observer;
-
-import chap01_strategy.Quack;
+package chap12_ducks.observer;
 
 public class DuckSimulator {
     public static void main(String[] args) {
