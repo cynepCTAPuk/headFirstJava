@@ -1,8 +1,8 @@
 package chap12;
 
-public class DuckSimulatorFactory {
+public class DuckSimulator3Factory {
     public static void main(String[] args) {
-        DuckSimulatorFactory simulator = new DuckSimulatorFactory();
+        DuckSimulator3Factory simulator = new DuckSimulator3Factory();
         AbstractDuckFactory duckFactory = new CountingDuckFactory();
         simulator.simulate(duckFactory);
     }
