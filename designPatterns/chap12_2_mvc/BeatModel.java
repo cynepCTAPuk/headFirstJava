@@ -32,6 +32,7 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     public void off() {
         setBPM(0);
         sequencer.stop();
+        System.out.println("Stop the sequencer");
     }
 
     public void setBPM(int bpm) {
@@ -43,16 +44,12 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     public int getBPM() {
         return bpm;
     }
-
     void beatEvent() {
         notifyBeatObservers();
     }
-
-
     public void registerObserver(BeatObserver o) {
         beatObservers.add(o);
     }
-
     public void notifyBeatObservers() {
         for (int i = 0; i < beatObservers.size(); i++) {
             BeatObserver observer = (BeatObserver) beatObservers.get(i);
@@ -63,7 +60,6 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     public void registerObserver(BPMObserver o) {
         bpmObservers.add(o);
     }
-
     public void notifyBPMObservers() {
         for (int i = 0; i < bpmObservers.size(); i++) {
             BPMObserver observer = (BPMObserver) bpmObservers.get(i);
@@ -74,17 +70,13 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
 
     public void removeObserver(BeatObserver o) {
         int i = beatObservers.indexOf(o);
-        if (i >= 0) {
-            beatObservers.remove(i);
-        }
+        if (i >= 0) beatObservers.remove(i);
     }
 
 
     public void removeObserver(BPMObserver o) {
         int i = bpmObservers.indexOf(o);
-        if (i >= 0) {
-            bpmObservers.remove(i);
-        }
+        if (i >= 0) bpmObservers.remove(i);
     }
 
 
@@ -143,7 +135,6 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
             ShortMessage a = new ShortMessage();
             a.setMessage(comd, chan, one, two);
             event = new MidiEvent(a, tick);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
