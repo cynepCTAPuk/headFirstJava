@@ -6,6 +6,7 @@ public class MiniDuckSimulator {
         mallard.display();
         mallard.performQuack();
         mallard.performFly();
+        System.out.println();
 
         Duck model = new DuckModel();
         model.display();
@@ -13,6 +14,7 @@ public class MiniDuckSimulator {
         model.performFly();
         model.setFlyBehavior(new FlyRocketPowered());
         model.performFly();
+        System.out.println();
 
         Duck justDuck = new Duck() {
             @Override
