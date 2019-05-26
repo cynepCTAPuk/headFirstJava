@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 public class BeatModel implements BeatModelInterface, MetaEventListener {
     Sequencer sequencer;
-    ArrayList<BeatObserver> beatObservers = new ArrayList<BeatObserver>();
-    ArrayList<BPMObserver> bpmObservers = new ArrayList<BPMObserver>();
+    ArrayList<BeatObserver> beatObservers = new ArrayList<>();
+    ArrayList<BPMObserver> bpmObservers = new ArrayList<>();
     int bpm = 90;
     Sequence sequence;
     Track track;
