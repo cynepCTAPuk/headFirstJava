@@ -120,7 +120,6 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
 
         controlFrame.getRootPane().setDefaultButton(setBPMButton);
         controlFrame.getContentPane().add(controlPanel, BorderLayout.CENTER);
-
         controlFrame.pack();
         controlFrame.setLocationRelativeTo(null);
         controlFrame.setVisible(true);
@@ -138,7 +137,6 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
     public void disableStartMenuItem() {
         startMenuItem.setEnabled(false);
     }
-
     public void actionPerformed(ActionEvent event) {
         if (event.getSource() == setBPMButton) {
             int bpm = Integer.parseInt(bpmTextField.getText());
@@ -149,14 +147,11 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
             controller.decreaseBPM();
         }
     }
-
     public void updateBPM() {
         if (model != null) {
             int bpm = model.getBPM();
             if (bpm == 0) {
-                if (bpmOutputLabel != null) {
-                    bpmOutputLabel.setText("offline");
-                }
+                if (bpmOutputLabel != null) bpmOutputLabel.setText("offline");
             } else {
                 if (bpmOutputLabel != null) {
                     bpmOutputLabel.setText("Current BPM: " + model.getBPM());
@@ -164,7 +159,6 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
             }
         }
     }
-
     public void updateBeat() {
         if (beatBar != null) beatBar.setValue(100);
     }

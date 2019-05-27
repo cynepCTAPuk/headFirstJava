@@ -1,13 +1,24 @@
 package chap12_3_mvc;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class DJView implements ActionListener, BeatObserver, BPMObserver {
-    HeartAdapter model;
-    HeartController controller;
+    BeatModelInterface model;
+    ControllerInterface controller;
 
     JFrame viewFrame;
     JPanel viewPanel;
@@ -27,7 +38,7 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
     JMenuItem startMenuItem;
     JMenuItem stopMenuItem;
 
-    public DJView(HeartController controller, HeartAdapter model) {
+    public DJView(ControllerInterface controller, BeatModelInterface model) {
         this.controller = controller;
         this.model = model;
         model.registerObserver((BeatObserver) this);
@@ -143,9 +154,7 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         if (model != null) {
             int bpm = model.getBPM();
             if (bpm == 0) {
-                if (bpmOutputLabel != null) {
-                    bpmOutputLabel.setText("offline");
-                }
+                if (bpmOutputLabel != null) bpmOutputLabel.setText("offline");
             } else {
                 if (bpmOutputLabel != null) {
                     bpmOutputLabel.setText("Current BPM: " + model.getBPM());
