@@ -44,15 +44,18 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     public int getBPM() {
         return bpm;
     }
+
     void beatEvent() {
         notifyBeatObservers();
     }
+
     public void registerObserver(BeatObserver o) {
         beatObservers.add(o);
     }
+
     public void notifyBeatObservers() {
         for (int i = 0; i < beatObservers.size(); i++) {
-            BeatObserver observer = (BeatObserver) beatObservers.get(i);
+            BeatObserver observer = beatObservers.get(i);
             observer.updateBeat();
         }
     }
@@ -60,9 +63,10 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     public void registerObserver(BPMObserver o) {
         bpmObservers.add(o);
     }
+
     public void notifyBPMObservers() {
         for (int i = 0; i < bpmObservers.size(); i++) {
-            BPMObserver observer = (BPMObserver) bpmObservers.get(i);
+            BPMObserver observer = bpmObservers.get(i);
             observer.updateBPM();
         }
     }
@@ -118,7 +122,6 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     }
 
     public void makeTracks(int[] list) {
-
         for (int i = 0; i < list.length; i++) {
             int key = list[i];
 

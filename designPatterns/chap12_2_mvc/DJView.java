@@ -48,16 +48,18 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         // Create all Swing components here
         viewFrame = new JFrame("View");
         viewFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        viewFrame.setSize(new Dimension(100, 80));
+        viewFrame.setSize(new Dimension(200, 80));
 
         viewPanel = new JPanel(new GridLayout(1, 2));
         bpmPanel = new JPanel(new GridLayout(2, 1));
 
-        bpmOutputLabel = new JLabel("offline", SwingConstants.CENTER);
         beatBar = new BeatBar();
         beatBar.setValue(0);
         bpmPanel.add(beatBar);
+
+        bpmOutputLabel = new JLabel("offline", SwingConstants.CENTER);
         bpmPanel.add(bpmOutputLabel);
+
         viewPanel.add(bpmPanel);
 
         viewFrame.getContentPane().add(viewPanel, BorderLayout.CENTER);
