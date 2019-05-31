@@ -1,17 +1,26 @@
 package ru.otus.l51;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Created by tully.
  */
 public class ReflectionHelperTest {
+
+    private TestClass testClass;
+
+    @Before
+    public void setUp() throws Exception {
+        testClass = ReflectionHelper.instantiate(TestClass.class);
+    }
+
     @SuppressWarnings("ConstantConditions")
     @Test
     public void instantiate() {
-        TestClass testClass = ReflectionHelper.instantiate(TestClass.class);
-        Assert.assertEquals(0, testClass.getA());
+        Assert.assertEquals(TestClass.DEFAULT_A, testClass.getA());
+        Assert.assertEquals(TestClass.DEFAULT_S, testClass.getS());
 
         Assert.assertEquals(1, ReflectionHelper.instantiate(TestClass.class, 1).getA());
         Assert.assertEquals("A", ReflectionHelper.instantiate(TestClass.class, 1, "A").getS());
@@ -25,18 +34,20 @@ public class ReflectionHelperTest {
 
     @Test
     public void setFieldValue() {
-        TestClass test = new TestClass(1, "A");
-        Assert.assertEquals("A", test.getS());
-        ReflectionHelper.setFieldValue(test, "s", "B");
-        Assert.assertEquals("B", test.getS());
+        testClass = new TestClass(1, "A");
+        Assert.assertEquals("A", testClass.getS());
+
+        ReflectionHelper.setFieldValue(testClass, "s", "B");
+        Assert.assertEquals("B", testClass.getS());
     }
 
     @Test
     public void callMethod() {
-        Assert.assertEquals("A", ReflectionHelper.callMethod(new TestClass(1, "A"), "getS"));
+        testClass = new TestClass(1, "A");
+        Assert.assertEquals("A", ReflectionHelper.callMethod(testClass, "getS"));
 
-        TestClass test = new TestClass(1, "A");
-        ReflectionHelper.callMethod(test, "setDefault");
-        Assert.assertEquals("", test.getS());
+        ReflectionHelper.callMethod(testClass, "setDefault");
+        Assert.assertEquals("", testClass.getS());
     }
+
 }

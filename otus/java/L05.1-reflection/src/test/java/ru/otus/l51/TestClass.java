@@ -5,17 +5,29 @@ package ru.otus.l51;
  */
 @SuppressWarnings("unused")
 public class TestClass {
-    private int a = 0;
-    private String s = "";
+    public static final int DEFAULT_A = 0;
+    public static final String DEFAULT_S = "";
+
+    private int a;
+    private String s;
 
     public TestClass() {
+        this(DEFAULT_A, DEFAULT_S);
+    }
+
+    public TestClass(int a) {
+        this(a, DEFAULT_S);
     }
 
     public TestClass(Integer a) {
-        this.a = a;
+        this(a, DEFAULT_S);
     }
 
-    TestClass(int a, String s) {
+    public TestClass(String s) {
+        this(DEFAULT_A, s);
+    }
+
+    TestClass(Integer a, String s) {
         this.a = a;
         this.s = s;
     }
@@ -29,7 +41,7 @@ public class TestClass {
     }
 
     private void setDefault() {
-        a = 0;
-        s = "";
+        a = DEFAULT_A;
+        s = DEFAULT_S;
     }
 }
