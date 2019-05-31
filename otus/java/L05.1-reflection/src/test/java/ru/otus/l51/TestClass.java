@@ -28,7 +28,7 @@ public class TestClass {
         return s;
     }
 
-    private void setDefault(){
+    private void setDefault() {
         a = 0;
         s = "";
     }

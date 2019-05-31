@@ -1,6 +1,5 @@
 package ru.otus.l51;
 
-
 import com.sun.istack.internal.NotNull;
 import ru.otus.l51.annotations.Email;
 import ru.otus.l51.annotations.Immutable;

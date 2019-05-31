@@ -39,5 +39,4 @@ public class ReflectionHelperTest {
         ReflectionHelper.callMethod(test, "setDefault");
         Assert.assertEquals("", test.getS());
     }
-
 }
