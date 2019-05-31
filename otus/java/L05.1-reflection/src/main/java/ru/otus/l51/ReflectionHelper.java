@@ -17,11 +17,8 @@ class ReflectionHelper {
 
     static <T> T instantiate(Class<T> type, Object... args) {
         try {
-            if (args.length == 0) {
-                return type.newInstance();
-            } else {
-                return type.getConstructor(toClasses(args)).newInstance(args);
-            }
+            if (args.length == 0) return type.newInstance();
+            else return type.getConstructor(toClasses(args)).newInstance(args);
         } catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
         }
@@ -57,9 +54,7 @@ class ReflectionHelper {
         } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
         } finally {
-            if (field != null && !isAccessible) {
-                field.setAccessible(false);
-            }
+            if (field != null && !isAccessible) field.setAccessible(false);
         }
     }
 
@@ -74,9 +69,7 @@ class ReflectionHelper {
         } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
         } finally {
-            if (method != null && !isAccessible) {
-                method.setAccessible(false);
-            }
+            if (method != null && !isAccessible) method.setAccessible(false);
         }
         return null;
     }

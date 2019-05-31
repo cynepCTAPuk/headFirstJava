@@ -33,7 +33,6 @@ public class Main<T extends @Email String> {                  //ElementType.TYPE
     public static void main(@NotNull String... args) {        //ElementType.PARAMETER
         @NotNull List<String> list =                          //ElementType.LOCAL_VARIABLE
                 new @NonEmpty ArrayList<>();                  //ElementType.TYPE_USE
-
         Main.<@Email String>cast(list);                       //ElementType.TYPE_USE
     }
 
