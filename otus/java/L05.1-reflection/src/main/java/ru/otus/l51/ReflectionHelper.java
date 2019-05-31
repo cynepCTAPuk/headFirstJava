@@ -16,6 +16,7 @@ class ReflectionHelper {
     static <T> T instantiate(Class<T> type, Object... args) {
         try {
             if (args.length == 0) {
+//                return type.newInstance(); // deprecated in 9.0
                 return type.getDeclaredConstructor().newInstance();
             } else {
                 Class<?>[] classes = toClasses(args);
