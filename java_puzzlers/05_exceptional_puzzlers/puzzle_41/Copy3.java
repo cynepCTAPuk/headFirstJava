@@ -2,7 +2,7 @@ package puzzle_41;
 
 import java.io.*;
 
-public class NewCopy {
+public class Copy3 {
     static void copy(String src, String dest) throws IOException {
         try (FileInputStream in = new FileInputStream(src)) {
             try (FileOutputStream out = new FileOutputStream(dest)) {
@@ -17,6 +17,6 @@ public class NewCopy {
     public static void main(String[] args) throws IOException {
 //        if (args.length != 2) System.out.println("Usage: java Copy <source> <dest>");
 //        else copy(args[0], args[1]);
-        copy("c:/000/content.txt", "c:/000/content2.txt");
+        copy("c:/000/40.txt", "c:/000/41.txt");
     }
 }

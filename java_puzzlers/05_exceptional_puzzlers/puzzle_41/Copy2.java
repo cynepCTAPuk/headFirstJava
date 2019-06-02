@@ -32,6 +32,6 @@ public class Copy2 {
         if (args.length != 2) System.out.println("Usage: java Copy <source> <dest>");
         else copy(args[0], args[1]);
 */
-        copy("c:/000/1.txt", "c:/000/22.txt");
+        copy("c:/000/30.txt", "c:/000/31.txt");
     }
 }
