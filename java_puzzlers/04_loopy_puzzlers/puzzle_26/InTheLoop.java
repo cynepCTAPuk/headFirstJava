@@ -9,11 +9,11 @@ public class InTheLoop {
 /*
         for (int i = START; i <= END; i++) // infinity loop
             count++;
-        System.out.println(count);
+        System.out.println("count = " + count);
 */
 
         int i = START;
         do count++; while (i++ != END);
-        System.out.println(count);
+        System.out.println("count = " + count);
     }
 }
