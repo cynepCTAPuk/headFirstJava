@@ -17,6 +17,6 @@ public class Copy3 {
     public static void main(String[] args) throws IOException {
 //        if (args.length != 2) System.out.println("Usage: java Copy <source> <dest>");
 //        else copy(args[0], args[1]);
-        copy("c:/000/40.txt", "c:/000/41.txt");
+        copy("c:/000/30.txt", "c:/000/31.txt");
     }
 }
