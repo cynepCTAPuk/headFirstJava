@@ -7,10 +7,11 @@ public class Indecisive {
 
     static boolean decision() {
         try {
-            System.out.println(true);
-//            return true;
+            return true;
+//        } catch (Exception e) {
+//            e.printStackTrace();
         } finally {
             return false;
         }
-    } 
+    }
 }
