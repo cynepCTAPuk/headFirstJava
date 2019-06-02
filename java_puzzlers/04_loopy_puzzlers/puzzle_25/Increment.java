@@ -7,6 +7,7 @@ public class Increment {
             j = j++;
             k = ++k;
         }
-        System.out.println(j + " " + k);
+        System.out.println("j = " + j);
+        System.out.println("k = " + k);
     }
 }
