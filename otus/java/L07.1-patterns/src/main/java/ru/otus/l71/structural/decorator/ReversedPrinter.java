@@ -16,7 +16,7 @@ public class ReversedPrinter extends PrinterDecorator {
 
     private static List<Character> string2CharList(String str) {
         char[] chars = str.toCharArray();
-        List<Character> reversed = new ArrayList<>();
+        List<Character> reversed = new ArrayList<Character>();
         for (char character : chars) {
             reversed.add(character);
         }

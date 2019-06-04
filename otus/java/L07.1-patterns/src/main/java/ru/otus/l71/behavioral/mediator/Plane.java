@@ -10,7 +10,7 @@ public class Plane implements Aircraft {
     private final String name;
 
     private AirportControl control;
-    private Set<Integer> dangerous = new HashSet<>();
+    private Set<Integer> dangerous = new HashSet<Integer>();
 
     private int selfSector;
 

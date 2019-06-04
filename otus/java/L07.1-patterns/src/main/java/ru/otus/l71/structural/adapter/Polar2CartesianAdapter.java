@@ -13,8 +13,9 @@ public class Polar2CartesianAdapter implements Polar {
         this.cartesian = cartesian;
     }
 
-    @Override
     public void setPoint(double r, double theta) {
-        cartesian.setPoint(r * Math.cos(theta), r * Math.sin(theta));
+        cartesian.setPoint(
+                r * Math.cos(theta),
+                r * Math.sin(theta));
     }
 }
