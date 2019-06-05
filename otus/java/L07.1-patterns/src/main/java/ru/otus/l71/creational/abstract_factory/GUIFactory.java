@@ -7,8 +7,6 @@ package ru.otus.l71.creational.abstract_factory;
  */
 public interface GUIFactory {
     Button createButton();
-
     //Window createWindow();
-
     //Menu createMenu();
 }

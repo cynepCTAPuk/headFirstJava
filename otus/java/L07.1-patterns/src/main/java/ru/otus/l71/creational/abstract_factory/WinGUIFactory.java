@@ -5,7 +5,5 @@ package ru.otus.l71.creational.abstract_factory;
  */
 public class WinGUIFactory implements GUIFactory {
     @Override
-    public Button createButton() {
-        return new WinButton();
-    }
+    public Button createButton() {return new WinButton();}
 }

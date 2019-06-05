@@ -5,6 +5,4 @@ package ru.otus.l71.creational.abstract_factory;
  * <p>
  * Abstract product.
  */
-public interface Button {
-    void printName();
-}
+public interface Button {void printName();}

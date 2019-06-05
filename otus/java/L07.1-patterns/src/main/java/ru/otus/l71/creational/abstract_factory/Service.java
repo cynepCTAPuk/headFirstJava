@@ -10,11 +10,6 @@ public class Service {
     //private final Window window;
     //private final Menu menu;
 
-    public Service(GUIFactory factory) {
-        this.button = factory.createButton();
-    }
-
-    public void pressButton() {
-        button.printName();
-    }
+    public Service(GUIFactory factory) {this.button = factory.createButton();}
+    public void pressButton() {button.printName();}
 }
