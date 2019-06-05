@@ -8,7 +8,7 @@ import java.util.List;
  */
 class Caretaker {
     public static void main(String[] args) {
-        List<Memento> savedStates = new ArrayList<Memento>();
+        List<Memento> savedStates = new ArrayList<>();
 
         Originator originator = new Originator();
         originator.set("A");
