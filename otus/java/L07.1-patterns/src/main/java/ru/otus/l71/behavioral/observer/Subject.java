@@ -16,18 +16,14 @@ public class Subject {
      *
      * @param observer to register
      */
-    public void register(Observer observer) {
-        observers.add(observer);
-    }
+    public void register(Observer observer) {observers.add(observer);}
 
     /**
      * remove observer from the list
      *
      * @param observer to remove
      */
-    public void unregister(Observer observer) {
-        observers.remove(observer);
-    }
+    public void unregister(Observer observer) {observers.remove(observer);}
 
     /**
      * Send notifications
@@ -35,7 +31,5 @@ public class Subject {
      * @param event
      */
 
-    public void notify(Event event) {
-        observers.forEach(observer -> observer.notify(event));
-    }
+    public void notify(Event event) {observers.forEach(observer -> observer.notify(event));}
 }
