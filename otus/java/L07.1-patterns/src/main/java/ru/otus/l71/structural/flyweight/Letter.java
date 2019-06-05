@@ -8,9 +8,7 @@ package ru.otus.l71.structural.flyweight;
 public class Letter {
     private TypeParameters parameters;
 
-    public Letter() {
-        parameters = TypeParameters.DEFAULT;
-    }
+    public Letter() {parameters = TypeParameters.DEFAULT;}
 
     public Letter(String typeName) {
         if (typeName.equals(TypeParameters.DEFAULT.getName())) {
