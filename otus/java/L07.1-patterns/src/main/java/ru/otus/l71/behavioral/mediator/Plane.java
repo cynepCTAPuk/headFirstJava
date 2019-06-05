@@ -10,8 +10,7 @@ public class Plane implements Aircraft {
     private final String name;
 
     private AirportControl control;
-    private Set<Integer> dangerous = new HashSet<Integer>();
-
+    private Set<Integer> dangerous = new HashSet<>();
     private int selfSector;
 
     public Plane(String name, int selfSector) {
@@ -27,28 +26,17 @@ public class Plane implements Aircraft {
 
     @Override
     public void moveTo(int sector) {
-        if (dangerous.contains(sector)) {
-            System.out.println("Can't move to: " + sector);
-        } else {
-            selfSector = sector;
-        }
+        if (dangerous.contains(sector)) System.out.println("Can't move to: " + sector);
+        else selfSector = sector;
         control.moved(this);
     }
 
     @Override
-    public void addDangerousSector(int sector) {
-        dangerous.add(sector);
-    }
-
+    public void addDangerousSector(int sector) {dangerous.add(sector);}
     @Override
-    public void removeDangerousSector(int sector) {
-        dangerous.remove(sector);
-    }
-
+    public void removeDangerousSector(int sector) {dangerous.remove(sector);}
     @Override
-    public int getSector() {
-        return selfSector;
-    }
+    public int getSector() {return selfSector;}
 
     @Override
     public boolean equals(Object o) {
@@ -63,9 +51,7 @@ public class Plane implements Aircraft {
     }
 
     @Override
-    public int hashCode() {
-        return name != null ? name.hashCode() : 0;
-    }
+    public int hashCode() {return name != null ? name.hashCode() : 0;}
 
     @Override
     public String toString() {

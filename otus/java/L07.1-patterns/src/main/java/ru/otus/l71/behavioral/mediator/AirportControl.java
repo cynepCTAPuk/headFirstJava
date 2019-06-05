@@ -25,7 +25,6 @@ public class AirportControl {
                 key.addDangerousSector(aircraft.getSector());
             }
         });
-
         positions.put(aircraft, aircraft.getSector());
     }
 
@@ -40,7 +39,6 @@ public class AirportControl {
             key.addDangerousSector(aircraft.getSector());
             aircraft.addDangerousSector(value);
         });
-
         positions.put(aircraft, aircraft.getSector());
     }
 }
