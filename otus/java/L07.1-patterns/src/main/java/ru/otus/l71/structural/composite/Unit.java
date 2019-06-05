@@ -7,8 +7,6 @@ package ru.otus.l71.structural.composite;
  */
 public interface Unit {
     void move();
-
     void attack();
-
     void hold();
 }
