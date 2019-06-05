@@ -8,10 +8,7 @@ package ru.otus.l71.structural.proxy;
 public final class Proxy implements Subject {
     private final Subject subject;
 
-    public Proxy(Subject subject) {
-        this.subject = subject;
-    }
-
+    public Proxy(Subject subject) {this.subject = subject;}
     @Override
     public void doIt() {
         System.out.println("doIt() call logged");

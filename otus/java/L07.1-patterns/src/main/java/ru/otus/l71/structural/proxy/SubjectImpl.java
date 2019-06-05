@@ -7,7 +7,5 @@ package ru.otus.l71.structural.proxy;
  */
 public class SubjectImpl implements Subject {
     @Override
-    public void doIt() {
-        System.out.println("Done");
-    }
+    public void doIt() {System.out.println("Done");}
 }
