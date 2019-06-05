@@ -10,24 +10,18 @@ import java.util.List;
  * This class adds "reversed" functionality to the Printer with help of Decorator.
  */
 public class ReversedPrinter extends PrinterDecorator {
-    public ReversedPrinter(Printer printer) {
-        super(printer);
-    }
+    public ReversedPrinter(Printer printer) {super(printer);}
 
     private static List<Character> string2CharList(String str) {
         char[] chars = str.toCharArray();
-        List<Character> reversed = new ArrayList<Character>();
-        for (char character : chars) {
-            reversed.add(character);
-        }
-        return reversed;
+        List<Character> list = new ArrayList<>();
+        for (char character : chars) list.add(character);
+        return list;
     }
 
-    private static String list2String(List<Character> reversed) {
+    private static String list2String(List<Character> list) {
         StringBuilder builder = new StringBuilder();
-        for (char character : reversed) {
-            builder.append(character);
-        }
+        for (char character : list) builder.append(character);
         return builder.toString();
     }
 
