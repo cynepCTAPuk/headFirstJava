@@ -10,8 +10,7 @@ public class Main {
         StateContext context = new StateContext(new UpperCaseState());
 
         String str = "MAY the force BE WiTh you";
-        for (Character character : str.toCharArray()) {
-            context.print(character);
-        }
+        System.out.println(str);
+        for (Character character : str.toCharArray()) context.print(character);
     }
 }

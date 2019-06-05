@@ -12,11 +12,9 @@ public class StateContext {
     public StateContext(State state) {
         this.state = state;
     }
-
     public void print(char letter) {
        state.print(this, letter);
     }
-
     public void setState(State state) {
         this.state = state;
     }
