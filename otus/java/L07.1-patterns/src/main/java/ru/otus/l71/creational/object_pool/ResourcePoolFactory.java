@@ -11,30 +11,18 @@ public class ResourcePoolFactory implements ResourceFactory {
 
     @Override
     public Resource get() {
-        if (pool.isEmpty()) {
-            return new PoolResource();
-        } else {
-            return pool.poll();
-        }
+        if (pool.isEmpty()) return new PoolResource();
+        else return pool.poll();
     }
-
 
     public class PoolResource implements Resource {
         //Real Resource
         private final long creationTime;
-
-        public PoolResource() {
-            creationTime = System.nanoTime();
-        }
+        public PoolResource() {creationTime = System.nanoTime();}
 
         @Override
-        public void print() {
-            System.out.println(creationTime);
-        }
-
+        public void print() {System.out.println(creationTime);}
         @Override
-        public void close() {
-            pool.add(this);
-        }
+        public void close() {pool.add(this);}
     }
 }

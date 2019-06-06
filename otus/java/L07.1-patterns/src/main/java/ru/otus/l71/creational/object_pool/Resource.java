@@ -6,8 +6,6 @@ package ru.otus.l71.creational.object_pool;
  * Object for the pool.
  */
 public interface Resource {
-
     void print();
-
     void close();
 }
