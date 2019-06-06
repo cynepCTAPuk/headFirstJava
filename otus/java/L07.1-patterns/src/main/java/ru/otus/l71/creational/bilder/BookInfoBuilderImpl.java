@@ -18,29 +18,22 @@ public class BookInfoBuilderImpl implements BookInfoBuilder {
         this.author = author;
         return this;
     }
-
     public BookInfoBuilderImpl setName(String name) {
         this.name = name;
         return this;
     }
-
     public BookInfoBuilderImpl setEdition(int edition) {
         this.edition = edition;
         return this;
     }
-
     public BookInfoBuilderImpl setIndex(int index) {
         this.index = index;
         return this;
     }
 
     public BookInfo build() {
-        if (author == null) {
-            throw new IllegalStateException();
-        }
-        if (name == null) {
-            throw new IllegalStateException();
-        }
+        if (author == null) throw new IllegalStateException("Author is required");
+        if (name == null) throw new IllegalStateException("Name is required");
 
         return new BookInfo(author, name, edition, index);
     }

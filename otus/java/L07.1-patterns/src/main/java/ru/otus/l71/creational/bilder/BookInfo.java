@@ -18,21 +18,10 @@ public class BookInfo {
         this.index = index;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getEdition() {
-        return edition;
-    }
-
-    public int getIndex() {
-        return index;
-    }
+    public String getAuthor() {return author;}
+    public String getName() {return name;}
+    public int getEdition() {return edition;}
+    public int getIndex() {return index;}
 
     @Override
     public String toString() {
