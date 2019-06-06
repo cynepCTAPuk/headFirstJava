@@ -7,7 +7,7 @@ package ru.otus.l71.creational.singleton;
  */
 public class Singleton {
     private static Singleton singleton;
-    private String message;
+    private String message = "Vitaly Chebrikov";
 
     private Singleton() {}
 
