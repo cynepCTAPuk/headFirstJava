@@ -9,21 +9,13 @@ public class Singleton {
     private static Singleton singleton;
     private String message;
 
-    private Singleton() {
-    }
+    private Singleton() {}
 
     public static Singleton instance() {
-        if (singleton == null) {
-            singleton = new Singleton();
-        }
+        if (singleton == null) singleton = new Singleton();
         return singleton;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
+    public String getMessage() {return message;}
+    public void setMessage(String message) {this.message = message;}
 }
