@@ -9,13 +9,8 @@ package ru.otus.l71.creational.prototype;
 public class StringPrototype implements Prototype {
     private final String name;
 
-    public StringPrototype(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
+    public StringPrototype(String name) {this.name = name;}
+    public String getName() {return name;}
 
     @Override
     public StringPrototype clone() {
