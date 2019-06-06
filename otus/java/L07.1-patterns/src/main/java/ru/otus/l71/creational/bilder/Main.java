@@ -8,8 +8,7 @@ package ru.otus.l71.creational.bilder;
 public class Main {
     public static void main(String... args) {
         BookInfoBuilder builder = new BookInfoBuilderImpl();
-        BookInfo info = builder
-                .setAuthor("Tully")
+        BookInfo info = builder.setAuthor("Tully")
                 .setName("Java before and after")
                 .setEdition(1)
                 .build();
@@ -29,7 +28,7 @@ public class Main {
         System.out.println(info1);
 
         BookInfoBuilder builder2 = new BookInfoBuilderImpl();
-        BookInfo info2 = builder2.build();
+//        BookInfo info2 = builder2.build();
 //        System.out.println(info2);
     }
 }
