@@ -24,8 +24,7 @@ public class Main {
     private static void saxExample() {
         Person object = (Person) ReadXMLFileSAX.readXML("person.xml", LogSaxHandler::new);
         //Person object = (Person) ReadXMLFileSAX.readXML("person.xml", ObjectBuilderSaxHandler::new);
-        if (object != null)
-            System.out.println(object.toString());
+        if (object != null) System.out.println(object.toString());
     }
 
     private static void domExample() throws ParserConfigurationException, IOException, SAXException {
