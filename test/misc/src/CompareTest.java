@@ -1,13 +1,20 @@
 public class CompareTest {
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
-        Integer a = 100;
-        Integer b = 100;
-        System.out.println(a == b);
-        System.out.println(a.compareTo(b));
+        Integer a, b;
+        int z1 = 127;
+        int z2 = -128;
 
-        Integer c = new Integer(100);
-        Integer d = new Integer(100);
-        System.out.println(c == d);
-        System.out.println(c.compareTo(d));
+        a = z1;
+        b = z1;
+        System.out.println(z1 + " - " + (a == b) + " " + a.compareTo(b));
+
+        a = z2;
+        b = z2;
+        System.out.println(z2 + " - " + (a == b) + " " + a.compareTo(b));
+
+        a = new Integer(z1);
+        b = new Integer(z1);
+        System.out.println(z1 + " - " + (a == b) + " " + a.compareTo(b));
     }
 }
