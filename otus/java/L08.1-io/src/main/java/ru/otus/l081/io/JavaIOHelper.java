@@ -1,32 +1,25 @@
 package ru.otus.l081.io;
-
 import java.io.*;
 
-/**
- * Created by tully.
- */
 class JavaIOHelper {
     static void writeObject(String file, Serializable student) {
         try (FileOutputStream fos = new FileOutputStream(file)) {
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            ObjectOutputStream oos = new ObjectOutputStream(bos);
             oos.writeObject(student);
             oos.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } catch (IOException e) {e.printStackTrace();}
     }
 
     @SuppressWarnings("unchecked")
     static <T> T readObject(String file, Class<T> clazz) {
         try (FileInputStream fis = new FileInputStream(file)) {
-            ObjectInputStream ois = new ObjectInputStream(fis);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            ObjectInputStream ois = new ObjectInputStream(bis);
 
             Object object = ois.readObject();
-            if (clazz.isAssignableFrom(object.getClass())) {
-                return (T) object;
-            } else {
-                throw new RuntimeException(object.getClass() + " can't be casted to " + clazz);
-            }
+            if (clazz.isAssignableFrom(object.getClass())) return (T) object;
+            else throw new RuntimeException(object.getClass() + " can't be casted to " + clazz);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
             return null;

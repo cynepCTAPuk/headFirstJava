@@ -16,9 +16,7 @@ public class Student extends Person {
         this.courses = Collections.singletonList(course);
     }
 
-    public String getCourse() {
-        return courses.get(0);
-    }
+    public String getCourse() {return courses.get(0);}
 
     public String toString() {
         return super.toString() + " course: " + getCourse();
