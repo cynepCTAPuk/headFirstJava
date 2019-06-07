@@ -15,8 +15,8 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
-        JSONObject jsonObject = (JSONObject) jsonParser.parse((new FileReader("jsondata.txt")));
-
+        JSONObject jsonObject = (JSONObject) jsonParser.parse(
+                (new FileReader("jsondata.txt")));
         navigateTree(jsonObject, "root");
     }
 

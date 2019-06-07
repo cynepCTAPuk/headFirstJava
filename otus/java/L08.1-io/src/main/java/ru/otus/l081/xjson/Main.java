@@ -12,11 +12,11 @@ import java.io.StringWriter;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         JsonReader jsonReader = Json.createReader(new FileReader("jsondata.txt"));
-        JsonStructure jsonst = jsonReader.read();
+        JsonStructure jsonStructure = jsonReader.read();
 
-        navigateTree(jsonst, "base");
+        navigateTree(jsonStructure, "base");
 
-        String jsonData = writeToString((JsonObject) jsonst);
+        String jsonData = writeToString((JsonObject) jsonStructure);
         System.out.println(jsonData);
     }
 
