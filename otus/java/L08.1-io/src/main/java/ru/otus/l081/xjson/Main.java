@@ -11,8 +11,8 @@ import java.io.StringWriter;
  */
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        JsonReader reader = Json.createReader(new FileReader("jsondata.txt"));
-        JsonStructure jsonst = reader.read();
+        JsonReader jsonReader = Json.createReader(new FileReader("jsondata.txt"));
+        JsonStructure jsonst = jsonReader.read();
 
         navigateTree(jsonst, "base");
 
