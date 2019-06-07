@@ -22,7 +22,6 @@ public class Main {
 
     @SuppressWarnings("unchecked")
     private static void navigateTree(Object aware, String key) {
-        // System.out.println(key + ": " + aware);
 
         String awareClassName = aware.getClass().getSimpleName();
         switch (awareClassName) {
