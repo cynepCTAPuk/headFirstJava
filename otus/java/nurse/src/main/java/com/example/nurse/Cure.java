@@ -6,8 +6,8 @@ import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.*;
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target(value={FIELD})
-public @interface Inject {
 
+@Retention(RetentionPolicy.RUNTIME)
+@Target(value={TYPE})
+public @interface Cure {
 }
