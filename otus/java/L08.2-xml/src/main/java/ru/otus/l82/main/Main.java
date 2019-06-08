@@ -39,7 +39,7 @@ public class Main {
 
         for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);
-            System.out.println(i + " " + node.getPrefix() + ":" + node.getTextContent());
+            System.out.println(i + " " + node.getNodeName() + ":" + node.getTextContent());
         }
 
     }
