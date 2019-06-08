@@ -18,7 +18,8 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         saxExample();
-        //domExample();
+        System.out.println("-".repeat(20));
+        domExample();
     }
 
     private static void saxExample() {
@@ -38,7 +39,7 @@ public class Main {
 
         for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);
-            System.out.println(i + " " + node.getTextContent());
+            System.out.println(i + " " + node.getPrefix() + ":" + node.getTextContent());
         }
 
     }
