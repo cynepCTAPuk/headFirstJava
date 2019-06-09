@@ -16,13 +16,9 @@ class ConnectionHelper {
                     "db_example?" +              //db name
                     "user=tully&" +              //login
                     "password=tully&" +          //password
-
                     "useSSL=false";             //do not use Secure Sockets Layer
 
-
             return DriverManager.getConnection(url);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        } catch (SQLException e) {throw new RuntimeException(e);}
     }
 }
