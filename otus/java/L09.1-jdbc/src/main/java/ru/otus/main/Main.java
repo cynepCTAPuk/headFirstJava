@@ -25,20 +25,20 @@ public class Main {
     }
 
     private void run() throws Exception {
-        try(DBService dbService = new DBServiceConnection()) {
-        //try (DBService dbService = new DBServiceUpdate()) {
-        //try (DBService dbService = new DBServiceLog()) {
-        //try (DBService dbService = new DBServiceSimple()) {
-        //try (DBService dbService = new DBServicePrepared()) {
-        //try (DBService dbService = new DBServicePreparedTransactional()) {
-            System.out.println(dbService.getMetaData());
+//        try(DBService dbService = new DBServiceConnection()) {
+//        try (DBService dbService = new DBServiceUpdate()) {
+//        try (DBService dbService = new DBServiceLog()) {
+        try (DBService dbService = new DBServiceSimple()) {
+//        try (DBService dbService = new DBServicePrepared()) {
+//        try (DBService dbService = new DBServicePreparedTransactional()) {
+            System.out.println("-1 " + dbService.getMetaData());                             // 1
             dbService.prepareTables();
             dbService.addUsers("tully", "sully");
-            System.out.println("UserName with id = 1: " + dbService.getUserName(1));
+            System.out.println("-2 UserName with id = 2: " + dbService.getUserName(2));  // 2
             List<String> names = dbService.getAllNames();
-            System.out.println("All names: " + names.toString());
+            System.out.println("-3 All names: " + names.toString());                         // 3
             List<UsersDataSet> users = dbService.getAllUsers();
-            System.out.println("All users: " + users.toString());
+            System.out.println("-4 All users: " + users.toString());                         // 4
             dbService.deleteTables();
         }
     }
