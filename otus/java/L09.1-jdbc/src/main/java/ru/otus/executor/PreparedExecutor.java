@@ -6,9 +6,7 @@ import java.sql.SQLException;
 
 public class PreparedExecutor extends LogExecutor {
 
-    public PreparedExecutor(Connection connection) {
-        super(connection);
-    }
+    public PreparedExecutor(Connection connection) {super(connection);}
 
     public void execUpdate(String update, ExecuteHandler prepare) {
         try {

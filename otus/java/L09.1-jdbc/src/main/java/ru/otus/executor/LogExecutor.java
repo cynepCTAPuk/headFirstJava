@@ -11,9 +11,7 @@ import java.sql.Statement;
 public class LogExecutor {
     private final Connection connection;
 
-    public LogExecutor(Connection connection) {
-        this.connection = connection;
-    }
+    public LogExecutor(Connection connection) {this.connection = connection;}
 
     public void execQuery(String query, ResultHandler handler) throws SQLException {
         try (Statement stmt = connection.createStatement()) {
@@ -30,7 +28,5 @@ public class LogExecutor {
         }
     }
 
-    Connection getConnection() {
-        return connection;
-    }
+    Connection getConnection() {return connection;}
 }

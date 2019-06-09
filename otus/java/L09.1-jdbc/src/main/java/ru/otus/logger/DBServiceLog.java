@@ -32,7 +32,6 @@ public class DBServiceLog extends DBServiceUpdate {
                     result.next();
                     System.out.println("Read user: " + result.getString("name"));
                 });
-
         return null;
     }
 
