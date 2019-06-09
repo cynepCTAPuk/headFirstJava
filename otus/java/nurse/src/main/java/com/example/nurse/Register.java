@@ -16,14 +16,10 @@ public class Register {
     }
 
     void add(String name, Object something) {
-        if (register.containsKey(name)) {
-            throw new RuntimeException();
-        }
+        if (register.containsKey(name)) throw new RuntimeException();
         Field[] fields = something.getClass().getDeclaredFields();
         for (Field field : fields) {
-            if (field.isAnnotationPresent(Inject.class)) {
-                injectionsPlaces.put(field, something);
-            }
+            if (field.isAnnotationPresent(Inject.class)) injectionsPlaces.put(field, something);
         }
         register.put(name, something);
     }
@@ -42,9 +38,7 @@ public class Register {
         add(type.getName(), instance);
     }
 
-    public <T> Optional<T> get(Class<T> type) {
-        return (Optional<T>) get(type.getName());
-    }
+    public <T> Optional<T> get(Class<T> type) {return (Optional<T>) get(type.getName());}
 
     void inject() {
         for (Field field : injectionsPlaces.keySet()) {
@@ -57,9 +51,7 @@ public class Register {
             } catch (IllegalAccessException e) {
                 throw new RuntimeException(e);
             }
-
         }
-
     }
 
     public Infirmary createInfirmary() {
@@ -68,7 +60,8 @@ public class Register {
             Inmate inmate = new Inmate();
             inmate.setName(thingName);
             injectionsPlaces.keySet().stream()
-                    .filter(field -> injectionsPlaces.get(field).getClass() == thingObject.getClass())
+                    .filter(field ->
+                            injectionsPlaces.get(field).getClass() == thingObject.getClass())
                     .forEach(field -> {
                         Injection injection = new Injection();
                         injection.setName(field.getName());

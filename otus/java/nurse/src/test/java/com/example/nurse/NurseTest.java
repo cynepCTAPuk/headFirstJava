@@ -9,10 +9,7 @@ public class NurseTest {
     Nurse nurse;
 
     @Before
-    public void setUp() {
-        this.nurse = new Nurse();
-    }
-
+    public void setUp() {this.nurse = new Nurse();}
 
     @Test
     public void shouldBuildRegister() {
@@ -28,8 +25,7 @@ public class NurseTest {
 
     @Test
     public void shouldScanPackagesForCures() {
-
-        nurse.scan("ru.klimakov.nurse");
+        nurse.scan("com.example.nurse");
 
         Register reg = nurse.build();
         Assert.assertTrue(reg.get(Glucose.class).isPresent());
@@ -38,7 +34,7 @@ public class NurseTest {
     @Test
     public void shouldScanPackagesRecursivelyForCures() {
 
-        nurse.scan("ru.klimakov");
+        nurse.scan("com.example");
 
         Register reg = nurse.build();
         Assert.assertTrue(reg.get(Glucose.class).isPresent());

@@ -9,10 +9,7 @@ import java.util.List;
 public class Infirmary {
 
     private List<Inmate> inmates = new ArrayList<>();
-
-    public List<Inmate> getInmates() {
-        return inmates;
-    }
+    public List<Inmate> getInmates() {return inmates;}
 
     @XmlElement(name = "inmate")
     public void setInmates(List<Inmate> inmates) {

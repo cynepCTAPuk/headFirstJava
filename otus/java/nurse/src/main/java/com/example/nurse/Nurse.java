@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Nurse {
 
-
     private Register register = new Register();
 
     public Nurse register(Class typeOfSomething) {
@@ -22,7 +21,6 @@ public class Nurse {
     }
 
     public Nurse scan(String packageName) {
-
         final ClassLoader loader = Thread.currentThread().getContextClassLoader();
 
         try {
@@ -32,9 +30,7 @@ public class Nurse {
                     .map(ClassPath.ClassInfo::load)
                     .filter(clazz -> clazz.isAnnotationPresent(Cure.class))
                     .forEach(info -> register.add(info));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        } catch (IOException e) {throw new RuntimeException(e);}
 
         return this;
     }

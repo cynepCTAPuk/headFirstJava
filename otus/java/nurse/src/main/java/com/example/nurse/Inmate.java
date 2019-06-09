@@ -8,24 +8,13 @@ import java.util.List;
 public class Inmate {
 
     private String name;
-
     private List<Injection> injections = new ArrayList<>();
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return name;}
+    public List<Injection> getInjections() {return injections;}
 
     @XmlAttribute
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Injection> getInjections() {
-        return injections;
-    }
-
+    public void setName(String name) {this.name = name;}
     @XmlElement(name = "injection")
-    public void setInjections(List<Injection> injections) {
-        this.injections = injections;
-    }
+    public void setInjections(List<Injection> injections) {this.injections = injections;}
 }
