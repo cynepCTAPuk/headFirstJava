@@ -11,6 +11,8 @@ class ConnectionHelper {
         try {
             DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 
+            System.out.print("Enter user: ");
+            String user = new Scanner(System.in).next();
             System.out.print("Enter password: ");
             String password = new Scanner(System.in).next();
 
@@ -19,7 +21,7 @@ class ConnectionHelper {
                     "3306/" +                       //port
                     "db_example?" +                 //db name
 //                    "user=tully&" +                 //login
-                    "user=root&" +                 //login
+                    "user=" + user + "&" +          //login
 //                    "password=tully&" +             //password
                     "password=" + password + "&" +  //password
                     "useSSL=false";                 //do not use Secure Sockets Layer

@@ -33,8 +33,16 @@ public class Main {
 //        try (DBService dbService = new DBServicePreparedTransactional()) {
             System.out.println("-1 " + dbService.getMetaData());                             // 1
             dbService.prepareTables();
-            dbService.addUsers("tully", "sully");
-            System.out.println("-2 UserName with id = 2: " + dbService.getUserName(2));  // 2
+            dbService.addUsers("tully", "sully", "fully");
+            for (int i = 1; ;i++) {
+                try {
+                    System.out.println("-2 UserName with id = " + i + ": " + dbService.getUserName(i));
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                    break;
+                }
+            }
+            System.out.println(" UserName with id = 1: " + dbService.getUserName(1));  // 2
             List<String> names = dbService.getAllNames();
             System.out.println("-3 All names: " + names.toString());                         // 3
             List<UsersDataSet> users = dbService.getAllUsers();
