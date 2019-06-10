@@ -4,7 +4,7 @@ import org.apache.ibatis.jdbc.SQL;
 
 public class CityQueries {
 
-    public String findCityByCountry(String country) {
+    public String findCityByCountry(final String country) {
         return new SQL() {{
             SELECT("*");
             FROM("city");
