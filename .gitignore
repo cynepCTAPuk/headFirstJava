@@ -2,10 +2,10 @@
 **/bin/
 **/doc/
 **.classpath
+**.metadata
 **.project
 **.prefs
-**.metadata/
-**.settings/
+**.settings
 
 # Gradle
 **/.gradle/
@@ -21,17 +21,23 @@
 **.iws
 
 # Maven
+**/.mvn/
 **/log/
 **/target/
 **.ec
 
+# NetBean
+**/private/
+
 # common
 **/out/
+**.bat
 **.class
+**.cmd
 **.jar
 **.ser
 **.zip
+**.war
 
 #**.log
 #**.xml
-/calculator/JobMe/nbproject/private/
