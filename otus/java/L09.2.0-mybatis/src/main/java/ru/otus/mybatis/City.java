@@ -18,7 +18,7 @@ public class City {
 
     @Override
     public String toString() {
-        return "City{" +
+        return "\nCity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", state='" + state + '\'' +
