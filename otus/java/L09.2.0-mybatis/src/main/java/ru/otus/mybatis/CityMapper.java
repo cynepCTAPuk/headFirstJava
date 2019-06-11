@@ -10,7 +10,7 @@ import java.util.List;
 @Mapper
 public interface CityMapper {
 
-    @Select("select * from city where state=#{state}")
+    @Select("select * from city where state=#{state} order by name")
     List<City> findCityByState(@Param("state") String state);
 
     @SelectProvider(type = CityQueries.class, method = "findCityByCountry")

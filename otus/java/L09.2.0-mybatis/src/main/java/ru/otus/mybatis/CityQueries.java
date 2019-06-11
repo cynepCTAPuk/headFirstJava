@@ -5,12 +5,23 @@ import org.apache.ibatis.jdbc.SQL;
 public class CityQueries {
 
     public String findCityByCountry(final String country) {
-        return new SQL() {{
-            SELECT("*");
-            FROM("city");
-            if (country != null) {
-                WHERE("country = #{country}");
+        return new SQL() {
+            {
+                SELECT("*");
+                FROM("city");
+                if (country != null) WHERE("country = #{country}");
+                ORDER_BY("name");
             }
-        }}.toString();
+        }.toString();
     }
+/*
+    public String findCityByCountry(final String country) {
+        return new SQL()
+                .SELECT("*")
+                .FROM("city")
+                .WHERE("country = #{country}")
+                .ORDER_BY("name")
+                .toString();
+    }
+*/
 }
