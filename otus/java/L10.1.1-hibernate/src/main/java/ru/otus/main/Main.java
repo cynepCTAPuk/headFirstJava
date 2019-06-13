@@ -7,6 +7,13 @@ import ru.otus.dbService.DBServiceImpl;
 
 import java.util.List;
 
+/**
+ CREATE USER 'tully'@'localhost' IDENTIFIED BY 'tully';
+ GRANT ALL PRIVILEGES ON * . * TO 'tully'@'localhost';
+ select user, host from mysql.user;
+ create database db_example;
+ SET GLOBAL time_zone = '+3:00';
+ */
 
 public class Main {
     public static void main(String[] args) {
