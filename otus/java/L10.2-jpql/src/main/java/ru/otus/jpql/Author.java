@@ -10,23 +10,13 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String name;
 
-    protected Author() {
-    }
+    protected Author() {}
+    public Author(String name) {this.name = name;}
 
-    public Author(String name) {
-        this.name = name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
+    public Long getId() {return id;}
+    public String getName() {return name;}
 
     @Override
     public String toString() {
