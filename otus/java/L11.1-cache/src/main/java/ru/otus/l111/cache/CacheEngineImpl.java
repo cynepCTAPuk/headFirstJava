@@ -4,7 +4,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.*;
 import java.util.function.Function;
 
 /**
@@ -63,18 +62,12 @@ public class CacheEngineImpl<K, V> implements CacheEngine<K, V> {
         return element;
     }
 
-    public int getHitCount() {
-        return hit;
-    }
+    public int getHitCount() {return hit;}
 
-    public int getMissCount() {
-        return miss;
-    }
+    public int getMissCount() {return miss;}
 
     @Override
-    public void dispose() {
-        timer.cancel();
-    }
+    public void dispose() {timer.cancel();}
 
     private TimerTask getTimerTask(final K key, Function<MyElement<K, V>, Long> timeFunction) {
         return new TimerTask() {

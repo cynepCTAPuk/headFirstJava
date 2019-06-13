@@ -10,7 +10,6 @@ public interface CacheEngine<K, V> {
     MyElement<K, V> get(K key);
 
     int getHitCount();
-
     int getMissCount();
 
     void dispose();

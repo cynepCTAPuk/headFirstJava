@@ -20,28 +20,28 @@ class EhcacheHelper {
         return createCache(
                 manager,
                 name,
-                configuration -> configuration.memoryStoreEvictionPolicy(MemoryStoreEvictionPolicy.FIFO)
-                        .timeToLiveSeconds(LIFE_TIME_SEC));
+                configuration -> configuration.memoryStoreEvictionPolicy(
+                        MemoryStoreEvictionPolicy.FIFO).timeToLiveSeconds(LIFE_TIME_SEC));
     }
 
     static Cache createIdleCache(CacheManager manager, String name) {
         return createCache(
                 manager,
                 name,
-                configuration -> configuration.memoryStoreEvictionPolicy(MemoryStoreEvictionPolicy.FIFO)
-                        .timeToIdleSeconds(IDLE_TIME_SEC));
+                configuration -> configuration.memoryStoreEvictionPolicy(
+                        MemoryStoreEvictionPolicy.FIFO).timeToIdleSeconds(IDLE_TIME_SEC));
     }
 
     static Cache createEternalCache(CacheManager manager, String name) {
         return createCache(
                 manager,
                 name,
-                configuration -> configuration.memoryStoreEvictionPolicy(MemoryStoreEvictionPolicy.FIFO)
-                        .eternal(true));
-
+                configuration -> configuration.memoryStoreEvictionPolicy(
+                        MemoryStoreEvictionPolicy.FIFO).eternal(true));
     }
 
-    private static Cache createCache(CacheManager manager, String name, Consumer<CacheConfiguration> configurationConsumer) {
+    private static Cache createCache(
+            CacheManager manager, String name, Consumer<CacheConfiguration> configurationConsumer) {
         CacheConfiguration configuration = new CacheConfiguration(name, MAX_ENTRIES);
         configurationConsumer.accept(configuration);
 
