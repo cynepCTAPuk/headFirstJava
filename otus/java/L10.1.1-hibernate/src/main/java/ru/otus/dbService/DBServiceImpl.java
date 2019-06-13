@@ -13,6 +13,7 @@ import ru.otus.base.dataSets.UserDataSet;
 import ru.otus.dbService.dao.UserDataSetDAO;
 
 import java.util.List;
+import java.util.Scanner;
 import java.util.function.Function;
 
 /**
@@ -28,11 +29,18 @@ public class DBServiceImpl implements DBService {
         configuration.addAnnotatedClass(PhoneDataSet.class);
         configuration.addAnnotatedClass(EmptyDataSet.class);
 
+        System.out.print("Enter user: ");
+        String user = new Scanner(System.in).next();
+        System.out.print("Enter password: ");
+        String password = new Scanner(System.in).next();
+
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         configuration.setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver");
         configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/db_example");
-        configuration.setProperty("hibernate.connection.username", "tully");
-        configuration.setProperty("hibernate.connection.password", "tully");
+//        configuration.setProperty("hibernate.connection.username", "tully");
+        configuration.setProperty("hibernate.connection.username", user);
+//        configuration.setProperty("hibernate.connection.password", "tully");
+        configuration.setProperty("hibernate.connection.password", password);
         configuration.setProperty("hibernate.show_sql", "true");
         configuration.setProperty("hibernate.hbm2ddl.auto", "create");
         configuration.setProperty("hibernate.connection.useSSL", "false");
@@ -87,9 +95,7 @@ public class DBServiceImpl implements DBService {
         });
     }
 
-    public void shutdown() {
-        sessionFactory.close();
-    }
+    public void shutdown() {sessionFactory.close();}
 
     private <R> R runInSession(Function<Session, R> function) {
         try (Session session = sessionFactory.openSession()) {

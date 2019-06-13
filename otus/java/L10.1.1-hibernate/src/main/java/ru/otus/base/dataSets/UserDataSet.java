@@ -13,8 +13,7 @@ public class UserDataSet extends DataSet {
     private PhoneDataSet phone;
 
     //Important for Hibernate
-    public UserDataSet() {
-    }
+    public UserDataSet() {}
 
     public UserDataSet(String name, PhoneDataSet phone) {
         this.setId(-1);
@@ -22,21 +21,10 @@ public class UserDataSet extends DataSet {
         this.phone = phone;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    private void setName(String name) {
-        this.name = name;
-    }
-
-    public PhoneDataSet getPhone() {
-        return phone;
-    }
-
-    private void setPhone(PhoneDataSet phone) {
-        this.phone = phone;
-    }
+    public String getName() {return name;}
+    private void setName(String name) {this.name = name;}
+    public PhoneDataSet getPhone() {return phone;}
+    private void setPhone(PhoneDataSet phone) {this.phone = phone;}
 
     @Override
     public String toString() {
