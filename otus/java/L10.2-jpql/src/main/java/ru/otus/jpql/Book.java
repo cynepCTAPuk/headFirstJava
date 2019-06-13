@@ -31,7 +31,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "\n\tBook{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", author=" + author +
