@@ -6,8 +6,8 @@ package ru.otus.l111.cache;
 public class CacheMain {
 
     public static void main(String[] args) throws InterruptedException {
-//        new CacheMain().eternalCacheExample();
-        new CacheMain().lifeCacheExample();
+        new CacheMain().eternalCacheExample();
+//        new CacheMain().lifeCacheExample();
     }
 
     private void eternalCacheExample() {

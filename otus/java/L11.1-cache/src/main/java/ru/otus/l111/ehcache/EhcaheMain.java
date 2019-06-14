@@ -14,12 +14,8 @@ import java.util.concurrent.TimeUnit;
  * Created by tully.
  */
 public class EhcaheMain {
-
     private final CacheManager manager;
-
-    private EhcaheMain(CacheManager manager) {
-        this.manager = manager;
-    }
+    private EhcaheMain(CacheManager manager) {this.manager = manager;}
 
     public static void main(String[] args) throws InterruptedException {
         org.apache.log4j.BasicConfigurator.configure();

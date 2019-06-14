@@ -1,9 +1,6 @@
 package ru.otus.l111.cache;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 import java.util.function.Function;
 
 /**
@@ -41,11 +38,13 @@ public class CacheEngineImpl<K, V> implements CacheEngine<K, V> {
 
         if (!isEternal) {
             if (lifeTimeMs != 0) {
-                TimerTask lifeTimerTask = getTimerTask(key, lifeElement -> lifeElement.getCreationTime() + lifeTimeMs);
+                TimerTask lifeTimerTask = getTimerTask(key,
+                        lifeElement -> lifeElement.getCreationTime() + lifeTimeMs);
                 timer.schedule(lifeTimerTask, lifeTimeMs);
             }
             if (idleTimeMs != 0) {
-                TimerTask idleTimerTask = getTimerTask(key, idleElement -> idleElement.getLastAccessTime() + idleTimeMs);
+                TimerTask idleTimerTask = getTimerTask(key,
+                        idleElement -> idleElement.getLastAccessTime() + idleTimeMs);
                 timer.schedule(idleTimerTask, idleTimeMs, idleTimeMs);
             }
         }
@@ -63,7 +62,6 @@ public class CacheEngineImpl<K, V> implements CacheEngine<K, V> {
     }
 
     public int getHitCount() {return hit;}
-
     public int getMissCount() {return miss;}
 
     @Override
@@ -74,7 +72,8 @@ public class CacheEngineImpl<K, V> implements CacheEngine<K, V> {
             @Override
             public void run() {
                 MyElement<K, V> element = elements.get(key);
-                if (element == null || isT1BeforeT2(timeFunction.apply(element), System.currentTimeMillis())) {
+                if (element == null ||
+                        isT1BeforeT2(timeFunction.apply(element), System.currentTimeMillis())) {
                     elements.remove(key);
                     this.cancel();
                 }
