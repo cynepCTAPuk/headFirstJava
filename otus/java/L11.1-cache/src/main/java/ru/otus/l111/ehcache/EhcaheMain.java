@@ -29,7 +29,7 @@ public class EhcaheMain {
                 false, true);
 //        cacheNamesExample();
 //        evictedExample();
-//        lifeExample();
+        lifeExample();
 //        idleExample();
     }
 
