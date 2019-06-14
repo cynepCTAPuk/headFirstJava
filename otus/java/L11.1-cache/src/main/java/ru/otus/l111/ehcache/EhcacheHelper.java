@@ -40,8 +40,8 @@ class EhcacheHelper {
                         MemoryStoreEvictionPolicy.FIFO).eternal(true));
     }
 
-    private static Cache createCache(
-            CacheManager manager, String name, Consumer<CacheConfiguration> configurationConsumer) {
+    private static Cache createCache(CacheManager manager,String name,
+            Consumer<CacheConfiguration> configurationConsumer) {
         CacheConfiguration configuration = new CacheConfiguration(name, MAX_ENTRIES);
         configurationConsumer.accept(configuration);
 
