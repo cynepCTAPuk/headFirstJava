@@ -28,12 +28,13 @@ public class EhcaheMain {
 
     private void run() throws InterruptedException {
         MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
-        ManagementService.registerMBeans(manager, mBeanServer, false, true, false, true);
-
-        //cacheNamesExample();
-        //evictedExample();
-        lifeExample();
-        //idleExample();
+        ManagementService.registerMBeans(manager, mBeanServer,
+                false, true,
+                false, true);
+//        cacheNamesExample();
+//        evictedExample();
+//        lifeExample();
+//        idleExample();
     }
 
     private void cacheNamesExample() {

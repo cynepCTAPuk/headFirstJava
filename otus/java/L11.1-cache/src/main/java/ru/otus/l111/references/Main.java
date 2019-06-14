@@ -71,7 +71,6 @@ public class Main {
         System.out.println("Soft references: " + sum);
     }
 
-
     private static void phantom() throws InterruptedException {
         //Strong Reference
         BigObject a = new BigObject();
