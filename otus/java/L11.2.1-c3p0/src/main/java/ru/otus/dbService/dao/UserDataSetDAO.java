@@ -12,17 +12,11 @@ import java.util.List;
 public class UserDataSetDAO {
     private Session session;
 
-    public UserDataSetDAO(Session session) {
-        this.session = session;
-    }
+    public UserDataSetDAO(Session session) {this.session = session;}
 
-    public void save(UserDataSet dataSet) {
-        session.save(dataSet);
-    }
+    public void save(UserDataSet dataSet) {session.save(dataSet);}
 
-    public UserDataSet read(long id) {
-        return session.load(UserDataSet.class, id);
-    }
+    public UserDataSet read(long id) {return session.load(UserDataSet.class, id);}
 
     public UserDataSet readByName(String name) {
         CriteriaBuilder builder = session.getCriteriaBuilder();

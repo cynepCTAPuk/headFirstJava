@@ -20,6 +20,7 @@ import java.lang.management.ManagementFactory;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.function.Function;
 
 /**
@@ -29,7 +30,6 @@ public class DBServiceImpl implements DBService {
     private final SessionFactory sessionFactory;
 
     public DBServiceImpl() {
-
         StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
 
         Map<String, Object> settings = new HashMap<>();
@@ -69,11 +69,18 @@ public class DBServiceImpl implements DBService {
     }
 
     private void configureHibernate(Map<String, Object> settings) {
+        System.out.print("Enter user: ");
+        String user = new Scanner(System.in).next();
+        System.out.print("Enter password: ");
+        String password = new Scanner(System.in).next();
+
         settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
         settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
         settings.put(Environment.URL, "jdbc:mysql://localhost:3306/db_example?useSSL=false");
-        settings.put(Environment.USER, "tully");
-        settings.put(Environment.PASS, "tully");
+//        settings.put(Environment.USER, "tully");
+        settings.put(Environment.USER, user);
+//        settings.put(Environment.PASS, "tully");
+        settings.put(Environment.PASS, password);
         settings.put(Environment.HBM2DDL_AUTO, "create");
         settings.put(Environment.SHOW_SQL, true);
         settings.put(Environment.FORMAT_SQL, true);
@@ -118,9 +125,7 @@ public class DBServiceImpl implements DBService {
         });
     }
 
-    public void shutdown() {
-        sessionFactory.close();
-    }
+    public void shutdown() {sessionFactory.close();}
 
     private <R> R runInSession(Function<Session, R> function) {
         try (Session session = sessionFactory.openSession()) {

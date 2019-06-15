@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
  * for mysql:
  * SET GLOBAL time_zone = '+3:00';
  */
-
 public class Main {
     private static final long WORK_TIME_MS = TimeUnit.MINUTES.toMillis(2);
     private static final long STEP_MIME_MS = TimeUnit.SECONDS.toMillis(5);

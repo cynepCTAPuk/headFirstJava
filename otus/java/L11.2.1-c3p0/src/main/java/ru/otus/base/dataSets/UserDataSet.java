@@ -12,7 +12,6 @@ import java.util.List;
 @Table(name = "user")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class UserDataSet extends DataSet {
-
     @Column(name = "name")
     private String name;
 
@@ -25,9 +24,7 @@ public class UserDataSet extends DataSet {
     private List<PhoneDataSet> phones = new ArrayList<>();
 
     //Important for Hibernate
-    public UserDataSet() {
-    }
-
+    public UserDataSet() {}
     public UserDataSet(long id, String name, PhoneDataSet... phones) {
         this.setId(id);
         this.setName(name);
@@ -36,25 +33,11 @@ public class UserDataSet extends DataSet {
         userPhones.forEach(phone -> phone.setUser(this));
     }
 
-    public UserDataSet(String name, PhoneDataSet... phones) {
-        this(-1, name, phones);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<PhoneDataSet> getPhones() {
-        return phones;
-    }
-
-    public void setPhones(List<PhoneDataSet> phones) {
-        this.phones.addAll(phones);
-    }
+    public UserDataSet(String name, PhoneDataSet... phones) {this(-1, name, phones);}
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
+    public List<PhoneDataSet> getPhones() {return phones;}
+    public void setPhones(List<PhoneDataSet> phones) {this.phones.addAll(phones);}
 
     @Override
     public String toString() {
