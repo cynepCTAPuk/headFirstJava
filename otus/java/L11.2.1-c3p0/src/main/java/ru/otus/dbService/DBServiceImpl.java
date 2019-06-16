@@ -38,7 +38,7 @@ public class DBServiceImpl implements DBService {
         configureCache(settings);
 
         //statistics of L2 cache
-        //settings.put(Environment.GENERATE_STATISTICS, "true");
+        settings.put(Environment.GENERATE_STATISTICS, "true");
 
         registryBuilder.applySettings(settings);
 
@@ -57,14 +57,16 @@ public class DBServiceImpl implements DBService {
     private void configureCache(Map<String, Object> settings) {
         settings.put(Environment.USE_SECOND_LEVEL_CACHE, true);
         settings.put(Environment.USE_QUERY_CACHE, true);
-        settings.put(Environment.CACHE_REGION_FACTORY, "org.hibernate.cache.ehcache.EhCacheRegionFactory");
+        settings.put(Environment.CACHE_REGION_FACTORY,
+                "org.hibernate.cache.ehcache.EhCacheRegionFactory");
         settings.put("net.sf.ehcache.configurationResourceName", "ehcache.xml");
     }
 
     private void configurePool(Map<String, Object> settings) {
         settings.put(Environment.C3P0_MIN_SIZE, 5);         //Minimum size of pool
         settings.put(Environment.C3P0_MAX_SIZE, 20);        //Maximum size of pool
-        settings.put(Environment.C3P0_ACQUIRE_INCREMENT, 1);//Number of connections acquired at a time when pool is exhausted
+        //Number of connections acquired at a time when pool is exhausted
+        settings.put(Environment.C3P0_ACQUIRE_INCREMENT, 1);
         settings.put(Environment.C3P0_TIMEOUT, 1800);       //Connection idle time
     }
 
@@ -90,7 +92,9 @@ public class DBServiceImpl implements DBService {
     private void registerCacheMBean() {
         CacheManager manager = CacheManager.getCacheManager(CacheManager.DEFAULT_NAME);
         MBeanServer mBeanServer = ManagementFactory.getPlatformMBeanServer();
-        ManagementService.registerMBeans(manager, mBeanServer, false, false, true, true);
+        ManagementService.registerMBeans(manager, mBeanServer,
+                false, false,
+                true, true);
     }
 
     public String getLocalStatus() {

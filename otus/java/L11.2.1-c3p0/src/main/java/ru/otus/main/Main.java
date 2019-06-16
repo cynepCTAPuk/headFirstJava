@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Starting pid: " + ManagementFactory.getRuntimeMXBean().getName());
 
-        DBService dbService = new DBServiceImpl();
+        DBServiceImpl dbService = new DBServiceImpl();
 
         String status = dbService.getLocalStatus();
         System.out.println("Status: " + status);
