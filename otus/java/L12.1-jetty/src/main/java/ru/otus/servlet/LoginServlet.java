@@ -31,13 +31,13 @@ public class LoginServlet extends HttpServlet {
         return templateProcessor.getPage(LOGIN_PAGE_TEMPLATE, pageVariables);
     }
 
-    public void doGet(HttpServletRequest request,
-                      HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         doPost(request, response);
     }
 
-    public void doPost(HttpServletRequest request,
-                       HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String requestLogin = request.getParameter(LOGIN_PARAMETER_NAME);
 
         if (requestLogin != null) {

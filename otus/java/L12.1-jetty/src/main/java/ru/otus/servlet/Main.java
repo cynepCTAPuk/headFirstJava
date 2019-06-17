@@ -20,7 +20,8 @@ public class Main {
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         TemplateProcessor templateProcessor = new TemplateProcessor();
 
-        context.addServlet(new ServletHolder(new LoginServlet(templateProcessor, "anonymous")), "/login");
+        context.addServlet(new ServletHolder(
+                new LoginServlet(templateProcessor, "anonymous")), "/login");
         context.addServlet(AdminServlet.class, "/admin");
         context.addServlet(TimerServlet.class, "/timer");
 

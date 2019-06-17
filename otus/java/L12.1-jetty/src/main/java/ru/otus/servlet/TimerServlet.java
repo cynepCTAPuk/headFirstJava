@@ -16,7 +16,7 @@ public class TimerServlet extends HttpServlet {
     private static final String TIME_VARIABLE_NAME = "time";
     private static final String TIMER_PAGE_TEMPLATE = "timer.html";
 
-    private static final int PERIOD_MS = 1000;
+    private static final int PERIOD_MS = 5_000;
 
     private final TemplateProcessor templateProcessor;
 
