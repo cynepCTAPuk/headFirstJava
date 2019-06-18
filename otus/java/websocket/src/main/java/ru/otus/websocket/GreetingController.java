@@ -38,9 +38,8 @@ public class GreetingController {
         thread.start();
     }
 
-
     public void garbage() {
-        this.template.convertAndSend("/topic/garbage", new Greeting("Garbage #" + random.nextInt()));
+        this.template.convertAndSend(
+                "/topic/garbage", new Greeting("Garbage #" + random.nextInt()));
     }
-
 }
