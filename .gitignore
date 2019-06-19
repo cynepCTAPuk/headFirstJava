@@ -10,7 +10,7 @@
 # Gradle
 **/.gradle/
 **/build/
-#**/gradle/
+**.properties
 
 # Intellij IDEA
 **/.idea/
