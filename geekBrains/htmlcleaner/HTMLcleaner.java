@@ -1,9 +1,11 @@
 package htmlcleaner;
 
-import org.htmlcleaner.*;
+import org.htmlcleaner.HtmlCleaner;
+import org.htmlcleaner.TagNode;
+import org.htmlcleaner.XPatherException;
 
-import java.io.*;
-import java.net.*;
+import java.io.IOException;
+import java.net.URL;
 
 public class HTMLcleaner {
 
