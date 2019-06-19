@@ -15,7 +15,6 @@ public class GreetingController {
     @Autowired
     private SimpMessagingTemplate template;
 
-
     @MessageMapping("/hello")
     @SendTo("/topic/greetings")
     public Greeting greeting(HelloMessage message) throws Exception {
