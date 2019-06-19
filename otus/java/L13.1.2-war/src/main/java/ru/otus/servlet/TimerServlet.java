@@ -22,14 +22,16 @@ public class TimerServlet extends HttpServlet {
 
     private final TimeServiceSingleton timeService = TimeServiceSingleton.instance();
 
-    public void doGet(HttpServletRequest request,
-                      HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         Map<String, Object> pageVariables = new HashMap<>();
         pageVariables.put(REFRESH_VARIABLE_NAME, String.valueOf(PERIOD_MS));
         pageVariables.put(TIME_VARIABLE_NAME, timeService.getTime());
 
         response.setContentType("text/html;charset=utf-8");
-        response.getWriter().println(TemplateProcessor.instance().getPage(TIMER_PAGE_TEMPLATE, pageVariables));
+        response.getWriter()
+                .println(TemplateProcessor.instance()
+                        .getPage(TIMER_PAGE_TEMPLATE, pageVariables));
         response.setStatus(HttpServletResponse.SC_OK);
     }
 

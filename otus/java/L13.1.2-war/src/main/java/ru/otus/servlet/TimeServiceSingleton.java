@@ -18,9 +18,7 @@ class TimeServiceSingleton {
     }
 
     static TimeServiceSingleton instance() {
-        if (timeService == null) {
-            timeService = new TimeServiceSingleton(DEFAULT_PATTERN);
-        }
+        if (timeService == null) timeService = new TimeServiceSingleton(DEFAULT_PATTERN);
         return timeService;
     }
 
