@@ -1,4 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <title>Timer</title>
     <script>
@@ -20,12 +21,16 @@
 </head>
 
 <body onload='setInterval(function(){refresh()}, ${refreshPeriod} ); setClientTime();'>
+
 <div class="top">
     <img src="logo.png"/>
     <br/>
     <a href="timer">Timer</a>
 </div>
+
 <p>Client time: <span id='ClientTime'></span></p>
 <p>Server time: ${time}</p>
+
 </body>
+
 </html>

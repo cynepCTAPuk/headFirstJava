@@ -39,6 +39,4 @@ public class TimerServlet extends HttpServlet {
 
         response.setStatus(HttpServletResponse.SC_OK);
     }
-
-
 }
