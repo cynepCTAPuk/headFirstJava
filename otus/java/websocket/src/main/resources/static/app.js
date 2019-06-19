@@ -38,9 +38,9 @@ function showGreeting(message) {
 }
 
 $(function () {
-    $("form").on('submit', function (e) { e.preventDefault(); });
-    $( "#spam" ).click(function() { stompClient.send("/app/spam"); });
+    $( "form").on('submit', function (e) { e.preventDefault(); });
     $( "#connect" ).click(function() { connect(); });
     $( "#disconnect" ).click(function() { disconnect(); });
+    $( "#spam" ).click(function() { stompClient.send("/app/spam"); });
     $( "#send" ).click(function() { sendName(); });
 });
