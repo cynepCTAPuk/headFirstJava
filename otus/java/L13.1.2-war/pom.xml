@@ -30,7 +30,6 @@
 
     <build>
         <finalName>L13.1.2-war</finalName>
-
         <plugins>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
