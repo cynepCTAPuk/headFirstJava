@@ -10,12 +10,11 @@
 # Gradle
 **/.gradle/
 **/build/
-**/gradle/
+#**/gradle/
 
 # Intellij IDEA
 **/.idea/
 **/.out/
-**/target/
 **.iml
 **.ipr
 **.iws
