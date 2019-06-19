@@ -8,7 +8,7 @@ import java.util.Date;
  * Created by tully.
  */
 class TimeServiceSingleton {
-    private static final String DEFAULT_PATTERN = "HH:mm:ss";
+    private static final String DEFAULT_PATTERN = "HH#mm#ss";
     private static TimeServiceSingleton timeService;
 
     private final String pattern;

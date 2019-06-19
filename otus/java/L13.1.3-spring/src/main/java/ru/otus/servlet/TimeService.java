@@ -9,7 +9,6 @@ import java.util.Date;
  */
 public class TimeService {
     private static final String DEFAULT_PATTERN = "HH.mm.ss";
-
     private final String pattern;
 
     public TimeService() {

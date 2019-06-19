@@ -14,7 +14,6 @@ import java.util.Map;
  */
 class TemplateProcessor {
     private static TemplateProcessor instance = new TemplateProcessor();
-
     private final Configuration configuration;
 
     private TemplateProcessor() {
