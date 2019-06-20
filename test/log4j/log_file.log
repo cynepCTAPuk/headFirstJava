@@ -2,3 +2,15 @@
 2019-06-20 13:56:52 ERROR OrderLogic:24 - Это сообщение ошибки
 2019-06-20 13:56:52 WARN  OrderLogic:25 - Warn Message
 2019-06-20 13:56:52 FATAL OrderLogic:26 - Fatal Message
+2019-06-20 14:01:18 INFO  OrderLogic:16 - Это информационное сообщение!
+2019-06-20 14:01:18 ERROR OrderLogic:24 - Это сообщение ошибки
+2019-06-20 14:01:18 WARN  OrderLogic:25 - Warn Message
+2019-06-20 14:01:18 FATAL OrderLogic:26 - Fatal Message
+2019-06-20 14:02:45 INFO  OrderLogic:16 - Это информационное сообщение!
+2019-06-20 14:02:45 ERROR OrderLogic:25 - Это сообщение ошибки
+2019-06-20 14:02:45 WARN  OrderLogic:26 - Warn Message
+2019-06-20 14:02:45 FATAL OrderLogic:27 - Fatal Message
+2019-06-20 14:03:28 INFO  OrderLogic:16 - Это информационное сообщение!
+2019-06-20 14:03:28 ERROR OrderLogic:25 - Это сообщение ошибки
+2019-06-20 14:03:28 FATAL OrderLogic:26 - Fatal Message
+2019-06-20 14:03:28 WARN  OrderLogic:28 - Warn Message

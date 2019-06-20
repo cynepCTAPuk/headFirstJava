@@ -20,10 +20,13 @@ public class OrderLogic {
     private void addToCart() {
         // добавление товара в корзину
         System.out.println("Товар добавлен в корзину");
+
         // логируем ошибку
-        log.error("Это сообщение ошибки");
-        log.warn("Warn Message");
+        log.error("Error message");
         log.fatal("Fatal Message");
+        log.warn("Warn Message");
+
+        System.out.println();
     }
 
 }
