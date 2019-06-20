@@ -1,2 +1,4 @@
-2019-06-20 13:43:06 INFO  OrderLogic:16 - Это информационное сообщение!
-2019-06-20 13:43:06 ERROR OrderLogic:24 - Это сообщение ошибки
+2019-06-20 13:56:52 INFO  OrderLogic:16 - Это информационное сообщение!
+2019-06-20 13:56:52 ERROR OrderLogic:24 - Это сообщение ошибки
+2019-06-20 13:56:52 WARN  OrderLogic:25 - Warn Message
+2019-06-20 13:56:52 FATAL OrderLogic:26 - Fatal Message
