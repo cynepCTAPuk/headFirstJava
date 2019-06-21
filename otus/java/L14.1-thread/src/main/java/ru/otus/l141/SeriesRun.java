@@ -6,7 +6,6 @@ package ru.otus.l141;
  */
 class SeriesRun {
     private static final int MAX_THREADS_COUNT = 100;
-
     private int currentMax = 1;
 
     void start() {
@@ -33,5 +32,4 @@ class SeriesRun {
             ).start();
         }
     }
-
 }
