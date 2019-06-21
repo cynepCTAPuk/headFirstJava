@@ -8,7 +8,8 @@ class RandomRun {
         long startTimeNS = System.nanoTime();
         for (int i = 0; i < MAX_THREADS_COUNT; ++i) {
             new Thread(() -> System.out.println(
-                    Thread.currentThread().getName() + ": " + (System.nanoTime() - startTimeNS) + "ns")
+                    Thread.currentThread()
+                            .getName() + ": " + (System.nanoTime() - startTimeNS) + "ns")
             ).start();
         }
     }
