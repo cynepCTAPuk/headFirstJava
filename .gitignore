@@ -15,6 +15,7 @@
 # Intellij IDEA
 **/.idea/
 **/.out/
+**/out/
 **.iml
 **.ipr
 **.iws
@@ -26,19 +27,37 @@
 **.ec
 
 # NetBean
+**/.nb-gradle/
 **/private/
+**/dist/
+**/nbbuild/
+**/nbdist/
+**/Makefile-*.mk
+**/Package-*.bash
+
+# Package Files #
+*.ear
+*.jar
+*.nar
+*.rar
+*.tar.gz
+*.war
+*.zip
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.jso
 
 # common
-**/out/
+**.bak
 **.bat
+**.cache
 **.class
 **.cmd
-**.jar
 **.ser
 **.sh
-**.zip
-**.war
-
-#**.log
-#**.txt
-#**.xml
+**.swp
+**.tmp
