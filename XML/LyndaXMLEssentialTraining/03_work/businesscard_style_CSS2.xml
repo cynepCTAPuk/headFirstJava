@@ -9,7 +9,7 @@
 		<phone type="fax">(510) 555-1234</phone>
 		<email>joe@joe.com</email>
 	</BusinessCard>
-   
+
 	<BusinessCard>
 		<Name>Someone Else</Name>
 		<phone type="mobile">(415) 555-0000</phone>

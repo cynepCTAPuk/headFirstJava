@@ -17,10 +17,6 @@ Name {
 	margin-bottom: 3%;
 }
 
-email::before {
-	content:"email:"
-}
-
 email {
 	color: #0D3427;
 	font-size: 90%;
@@ -29,12 +25,8 @@ email {
 	margin-top: 3%;
 }
 
-phone::before {
-	content: attr(type) ": "
-}
-
-phone[primary]::after {
-	content: "("attr(primary)")"
+email::before {
+	content: "email: "
 }
 
 phone {
@@ -42,4 +34,12 @@ phone {
 	color: #523819;
 	font-size: 90%;
 	display: block;
+}
+
+phone::before {
+	content: attr(type) ": "
+}
+
+phone[primary]::after {
+	content: " ("attr(primary) ")"
 }
