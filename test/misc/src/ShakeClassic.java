@@ -1,5 +1,3 @@
-package src;
-
 class ShakeClassic {
     static void sort(int[] array) {
         int left = 0;

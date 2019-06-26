@@ -1,5 +1,3 @@
-package src;
-
 class BubbleObjectSort implements SortAlgorithm {
   /**
    * @param array The array to be sorted

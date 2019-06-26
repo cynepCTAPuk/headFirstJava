@@ -1,4 +1,3 @@
-package src;
 // chapter 14
 
 import java.awt.*;

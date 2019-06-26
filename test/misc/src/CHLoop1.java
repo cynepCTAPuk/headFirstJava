@@ -1,5 +1,3 @@
-package src;
-
 public class CHLoop1 {
     public static void main(String[] args) {
         int i = 1500;

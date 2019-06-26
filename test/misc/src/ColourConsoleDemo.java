@@ -1,5 +1,3 @@
-package src;
-
 public class ColourConsoleDemo {
     /**
      * @param args "\033[0m BLACK" will colour the whole line

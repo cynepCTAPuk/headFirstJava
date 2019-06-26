@@ -1,5 +1,3 @@
-package src;
-
 class OddEven {
     static void sort(int[] array) {
         int left;

@@ -1,5 +1,3 @@
-package src;
-
 /**
  * @author CTAPuk :
  */
@@ -9,6 +7,7 @@ public class BeQuadratic_equation {
         int a = 1, b = 2, c = -3;
         double D = b * b - 4 * a * c;
         double y, y1, y2, x1, x2, x3, x4;
+        System.out.printf("%d*x^4 + %dx^2 + c = 0\n", a, b);
         System.out.println("a = " + a + " b = " + b + " c = " + c + " D = " + D);
         y1 = (double) -c / b;
 
