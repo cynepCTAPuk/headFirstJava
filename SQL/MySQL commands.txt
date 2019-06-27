@@ -1,0 +1,38 @@
+net stop "MySQL80"
+net start "MySQL80"
+
+set global time_zone = '+03:00';
+set @@session.time_zone = '+03:00';
+
+select @@global.time_zone, @@session.time_zone;
+select count(*) from mysql.time_zone_name;
+
+show databases;
+show tables;
+
+CREATE DATABASE databasename;
+DROP DATABASE databasename;
+BACKUP DATABASE databasename TO DISK = 'filepath';
+BACKUP DATABASE databasename TO DISK = 'filepath' WITH DIFFERENTIAL;
+
+CREATE TABLE newtable LIKE oldtable; INSERT newtable SELECT * FROM oldtable; (with indexes and triggers)
+CREATE TABLE tbl_new AS SELECT * FROM tbl_old; (copy just structure and data)
+
+CREATE TABLE table_name ( column1 datatype, column2 datatype, column3 datatype, ....);
+
+SELECT column1, column2, ... FROM table_name WHERE condition1 AND condition2 AND condition3 ...;
+SELECT column1, column2, ... FROM table_name WHERE condition1 OR condition2 OR condition3 ...;
+SELECT column1, column2, ... FROM table_name WHERE NOT condition;
+SELECT column1, column2, ... FROM table_name ORDER BY column1, column2, ... ASC|DESC;
+
+INSERT INTO table_name (column1, column2, column3, ...) VALUES (value1, value2, value3, ...);
+INSERT INTO table_name VALUES (value1, value2, value3, ...);
+
+UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;
+
+DELETE FROM table_name WHERE condition;
+
+insert into users(name, email, password, isAdmin) values('Pete','pete@hotmail.com','123',false);
+update users set name = 'Anna' where userID = 4;
+
+SELECT posts.postID as num, users.name, posts.post FROM posts, users WHERE users.userID=posts.userID;
