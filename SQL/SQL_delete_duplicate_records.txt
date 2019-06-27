@@ -1,0 +1,17 @@
+﻿DROP DATABASE test_db;
+CREATE DATABASE test_db;
+USE test_db;
+CREATE TABLE test(id int NOT NULL AUTO_INCREMENT, value char(255) NOT NULL, PRIMARY KEY (id));
+INSERT INTO test(value) values ('A');
+INSERT INTO test(value) values ('AA');
+INSERT INTO test(value) values ('B');
+INSERT INTO test(value) values ('AA');
+SELECT * FROM test;
+
+CREATE TABLE temp_test LIKE test;
+INSERT INTO temp_test SELECT DISTINCT * FROM test GROUP BY value HAVING COUNT(value) > 1;
+DELETE FROM test WHERE value IN (SELECT value FROM temp_test);
+SELECT * FROM test;
+INSERT test SELECT * FROM temp_test;
+DROP TABLE temp_test;
+SELECT * FROM test;

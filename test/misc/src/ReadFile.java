@@ -1,15 +1,15 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 
-class ReadAFile {
+class ReadFile {
 	public static void main (String[] args){
+		String unsortedText = "C:/000/tam.txt";
+		File file = new File(unsortedText);
 		try{
-			File file = new File("src/Text.txt");
 			FileReader fileReader = new FileReader(file);
-
 			BufferedReader reader = new BufferedReader(fileReader);
-
 			String line = null;
-
 			while((line = reader.readLine()) !=null){
 				System.out.println(line);
 			}
