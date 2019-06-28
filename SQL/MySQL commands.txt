@@ -12,13 +12,28 @@ show tables;
 
 CREATE DATABASE databasename;
 DROP DATABASE databasename;
-BACKUP DATABASE databasename TO DISK = 'filepath';
-BACKUP DATABASE databasename TO DISK = 'filepath' WITH DIFFERENTIAL;
 
+CREATE TABLE table_name ( column1 datatype, column2 datatype, column3 datatype, ....);
+
+CREATE TABLE table_name ( column1 datatype constraint, column2 datatype constraint, column3 datatype constraint, ....);
+	The following constraints are commonly used in SQL:
+NOT NULL - Ensures that a column cannot have a NULL value
+UNIQUE - Ensures that all values in a column are different
+PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+FOREIGN KEY - Uniquely identifies a row/record in another table
+CHECK - Ensures that all values in a column satisfies a specific condition
+DEFAULT - Sets a default value for a column when no value is specified
+INDEX - Used to create and retrieve data from the database very quickly
+
+	copy table
 CREATE TABLE newtable LIKE oldtable; INSERT newtable SELECT * FROM oldtable; (with indexes and triggers)
 CREATE TABLE tbl_new AS SELECT * FROM tbl_old; (copy just structure and data)
 
-CREATE TABLE table_name ( column1 datatype, column2 datatype, column3 datatype, ....);
+DROP TABLE table_name;
+ALTER TABLE table_name ADD column_name datatype;
+ALTER TABLE table_name DROP COLUMN column_name;
+ALTER TABLE table_name MODIFY COLUMN column_name datatype;
+
 
 SELECT column1, column2, ... FROM table_name WHERE condition1 AND condition2 AND condition3 ...;
 SELECT column1, column2, ... FROM table_name WHERE condition1 OR condition2 OR condition3 ...;
