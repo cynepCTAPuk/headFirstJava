@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?xml-stylesheet type="text/xsl" href="cd_catalog.xsl"?>
 <catalog>
 	<cd>
@@ -181,9 +182,9 @@
 		<title>The dock of the bay</title>
 		<artist>Otis Redding</artist>
 		<country>USA</country>
-		<COMPANY>Stax Records</COMPANY>
-		<PRICE>7.90</PRICE>
-		<YEAR>1968</YEAR>
+		<company>Stax Records</company>
+		<price>7.90</price>
+		<year>1968</year>
 	</cd>
 	<cd>
 		<title>Picture book</title>
@@ -209,4 +210,5 @@
 		<price>8.20</price>
 		<year>1987</year>
 	</cd>
+
 </catalog>
