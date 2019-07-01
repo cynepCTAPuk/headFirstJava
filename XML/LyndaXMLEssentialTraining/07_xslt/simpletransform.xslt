@@ -11,7 +11,7 @@
 		<body>
 			<img src="photos/javaco_tea_logo.gif" />
 			<h1>
-
+				<xsl:value-of select="text()"/>
 			</h1>
 		</body>
 		</html>
