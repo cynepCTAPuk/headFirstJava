@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?xml-stylesheet type="text/xsl" href="cd_catalog.xsl"?>
+<?xml-stylesheet type="text/xsl" href="cd_catalog_if.xsl"?>
 <catalog>
 	<cd>
 		<title>Empire Burlesque</title>
