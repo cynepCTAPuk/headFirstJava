@@ -13,7 +13,6 @@ body {
 
 .container {
     max-width: 1107;
-    // border: 1px solid red;
     margin: auto
 }
 
@@ -71,16 +70,8 @@ body {
     position: relative;
 }
 
-/* .tabs-menu__item:after {
-    content: '';
-    display: block;
-    height: 1px;
-    width: 100%;
-    background-color: #fcde29;
-} */
-
 .tabs-content {
-    background-color: #f2f4ff;
+    background: #f2f4ff url('https://i.imgur.com/iBd59zk.png') no-repeat bottom right 135px;
     border-radius: 10px;
     padding-top: 40px;
     padding-left: 45px;
