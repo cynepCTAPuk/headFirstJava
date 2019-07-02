@@ -76,6 +76,22 @@ body {
     position: relative;
 }
 
+.tabs-menu__item:hover::after {
+    width: 100%;
+}
+
+.tabs-menu__item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: #fcde29;
+    transition: width 0.2s;
+}
+
 .tabs-content {
     background: #f2f4ff url('https://i.imgur.com/iBd59zk.png') no-repeat bottom right 135px;
     border-radius: 10px;
@@ -151,12 +167,47 @@ body {
     display: block;
     text-align: center;
     font-size: 16px;
+    margin-bottom: 32px;
 }
 
 .best__title {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .best-card {
-    width: 240;
+    width: 240px;
+    height: 260px;
+    padding: 0;
+    position: relative;
+}
+
+.best-card__image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.best-card__image_left {
+    left: 0;
+    transform: translateX(0);
+}
+
+.best-card__image_3 {
+    background-image: url('https://imgur.com/Qs5ytIv.png');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+.best-card__image_4 {
+    background-image: url('https://imgur.com/fw19w7u.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.best-card__text {
+    max-width: 200px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
 }
