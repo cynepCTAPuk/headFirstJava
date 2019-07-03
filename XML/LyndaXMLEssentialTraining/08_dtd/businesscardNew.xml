@@ -1,11 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE BusinessCard [
-<!ELEMENT BusinessCard (Name, phone+, email?)>
-<!ELEMENT Name (#PCDATA)>
-<!ELEMENT phone (#PCDATA)>
-<!ATTLIST phone type (mobile|fax|work|home) #REQUIRED>
-<!ELEMENT email (#PCDATA)>
-]>
+<!DOCTYPE BusinessCard SYSTEM "businesscard.dtd">
 <BusinessCard>
 	<Name>Joe Marini</Name>
 	<phone type="mobile">(415) 555-4567</phone>
