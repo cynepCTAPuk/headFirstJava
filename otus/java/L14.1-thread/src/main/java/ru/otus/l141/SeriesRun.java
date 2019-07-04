@@ -11,25 +11,23 @@ class SeriesRun {
     void start() {
         for (int i = currentMax; i <= MAX_THREADS_COUNT; ++i) {
             int threadId = i; // effectively final
-            new Thread(
-                    () -> {
-                        try {
-                            synchronized (SeriesRun.this) {
-                                while (threadId > currentMax) {
+            new Thread(() -> {
+                try {
+                    synchronized (SeriesRun.this) {
+                        while (threadId > currentMax) {
 //                                    System.out.println("Waiting id: " + threadId);
-                                    SeriesRun.this.wait();
-                                }
-
-                                System.out.println("Thread id: " + threadId);
-                                currentMax++;
-
-                                SeriesRun.this.notifyAll();
-                            }
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
+                            SeriesRun.this.wait();
                         }
+
+                        System.out.println("Thread id: " + threadId);
+                        currentMax++;
+
+                        SeriesRun.this.notifyAll();
                     }
-            ).start();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }).start();
         }
     }
 }
