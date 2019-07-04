@@ -12,8 +12,6 @@ class NonBlockingLogger {
     }
 
     private void log(long message) {
-        new Thread(() -> {
-            System.out.println(System.nanoTime() - message);
-        }).start();
+        new Thread(() -> System.out.println(System.nanoTime() - message)).start();
     }
 }

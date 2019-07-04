@@ -12,14 +12,19 @@ class ThreadInfo {
 
         //create new thread with runnable lambda
         Thread thread2 = new Thread(() ->
-                System.out.println("Hello from the thread: " + Thread.currentThread().getName())
-        );
+        {
+            try {
+                Thread.sleep(10);
+                System.out.println("Hello from the thread: " + Thread.currentThread().getName());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
         //set daemon
-        //thread2.setDaemon(true);
-
+        thread2.setDaemon(true);
         thread2.start();
         thread2.setPriority(10);
-        System.out.println(thread2.getName()+ " Thread priority: " + thread2.getPriority());
+        System.out.println(thread2.getName() + " Thread priority: " + thread2.getPriority());
 
         //join to a the main thread
         //thread2.join();
