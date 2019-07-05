@@ -23,6 +23,7 @@ public class Counter {
             ts[i].start();
         }
         for (int i = 0; i < N; i++) ts[i].join();
+
         long t2 = System.currentTimeMillis();
         double d = ((N * J - c.value.longValue()) * 100.00) / (N * J);
         System.out.printf("Time: %,d\n", t2-t1);
