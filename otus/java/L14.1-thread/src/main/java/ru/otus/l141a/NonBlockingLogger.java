@@ -1,4 +1,4 @@
-package ru.otus.l141;
+package ru.otus.l141a;
 
 class NonBlockingLogger {
 

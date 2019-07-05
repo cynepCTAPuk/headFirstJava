@@ -1,4 +1,4 @@
-package ru.otus.l142;
+package ru.otus.l141b;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
