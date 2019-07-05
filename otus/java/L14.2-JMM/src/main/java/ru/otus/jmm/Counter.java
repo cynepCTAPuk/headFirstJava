@@ -5,10 +5,10 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Counter {
     static final int N = 2;
     static final int J = 1_000_000_000;
-    static AtomicLong val = new AtomicLong(0);
+    static AtomicLong value = new AtomicLong(0);
 
     void inc() {
-        val.incrementAndGet();
+        value.incrementAndGet();
     }
 
     public static void main(String[] args) throws InterruptedException {
@@ -24,9 +24,9 @@ public class Counter {
         }
         for (int i = 0; i < N; i++) ts[i].join();
         long t2 = System.currentTimeMillis();
-        double d = ((N * J - c.val.longValue()) * 100.00) / (N * J);
+        double d = ((N * J - c.value.longValue()) * 100.00) / (N * J);
         System.out.printf("Time: %,d\n", t2-t1);
-        System.out.printf("Count: %,d\n", c.val.longValue());
+        System.out.printf("Count: %,d\n", c.value.longValue());
         System.out.printf("Процент потери данных: %.2f%s\n", d, "%");
     }
 }
