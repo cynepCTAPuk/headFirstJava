@@ -12,7 +12,6 @@ class CounterSemaphore {
     private final static CounterSemaphore instance = new CounterSemaphore();
 
     private CounterSemaphore() {
-
     }
 
     static CounterSemaphore instance() {
@@ -23,4 +22,9 @@ class CounterSemaphore {
         return count.incrementAndGet() > HUNDRED_MILLION;
     }
 
+    public static void main(String[] args) {
+        System.out.println(new CounterSemaphore());
+        System.out.println(new CounterSemaphore());
+        System.out.println(instance());
+    }
 }

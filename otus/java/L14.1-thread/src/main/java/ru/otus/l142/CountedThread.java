@@ -11,14 +11,21 @@ package ru.otus.l142;
  */
 
 public final class CountedThread extends BaseThread {
-    private int i;
+//    private  static int i;
+//    private static final Object lock = new Object();
+    private static final StateObject i = new StateObject();
 
-    protected synchronized void doSomething() {
-        super.doSomething();
-        i++;
+    protected void doSomething() {
+//        synchronized (CountedThread.class) {
+//        synchronized (lock) {
+            super.doSomething();
+//            i++;
+//        }
+        i.increment();
     }
 
     int getI() {
-        return i;
+//        return i;
+        return i.getI();
     }
 }

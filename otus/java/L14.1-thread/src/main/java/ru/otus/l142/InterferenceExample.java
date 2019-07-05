@@ -14,7 +14,8 @@ class InterferenceExample {
 
         thread1.join();
         thread2.join();
-        System.out.println("Expected: " + CounterSemaphore.HUNDRED_MILLION);
-        System.out.println("Result: " + thread1.getI());
+        System.out.printf("Expected: %,d\n", CounterSemaphore.HUNDRED_MILLION);
+        System.out.printf("Result 1: %,d\n", thread1.getI());
+        System.out.printf("Result 2: %,d\n", thread2.getI());
     }
 }

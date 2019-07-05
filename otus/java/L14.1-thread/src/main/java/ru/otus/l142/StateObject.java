@@ -7,7 +7,7 @@ public class StateObject {
     private int i;
 
     public synchronized void increment() {
-            i++;
+        i++;
     }
 
     public synchronized int getI() {

@@ -6,13 +6,10 @@ package ru.otus.l142;
 public class BaseThread extends Thread {
 
     public void run() {
-        while (!CounterSemaphore.instance().stop()) {
-            doSomething();
-        }
+        while (!CounterSemaphore.instance().stop()) doSomething();
     }
 
     protected void doSomething() {
-       //business logic
+        //business logic
     }
-
 }
