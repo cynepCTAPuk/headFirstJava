@@ -2,15 +2,24 @@ package ru.otus.jmm;
 
 public class Factory {
     static class Item {
-        int i = 1;
-        String s = "string";
+        int i;
+        String s;
+
+        public Item(int i, String s) {
+            this.i = i;
+            this.s = s;
+        }
     }
 
-    static Item instance;
+    static volatile Item instance;
 
-    public static Item get() {
+    public static Item get(int i, String s) {
         if (instance == null) {
-            instance = new Item();
+            synchronized (Factory.class) {
+                if (instance == null) {
+                    instance = new Item(i, s);
+                }
+            }
         }
         return instance;
     }
