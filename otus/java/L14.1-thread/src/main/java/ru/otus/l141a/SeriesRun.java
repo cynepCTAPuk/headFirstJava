@@ -19,11 +19,13 @@ class SeriesRun {
                             System.out.println("---Waiting id: " + threadId + " idx: " + ++idx);
                             SeriesRun.this.wait();
                         }
-                        System.out.println("Thread id: " + threadId);
+                        System.out.println("Thread id: " + threadId + " idx: " + ++idx);
                         currentMax++;
                         SeriesRun.this.notifyAll();
                     }
-                } catch (InterruptedException e) {e.printStackTrace();}
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }).start();
         }
     }
