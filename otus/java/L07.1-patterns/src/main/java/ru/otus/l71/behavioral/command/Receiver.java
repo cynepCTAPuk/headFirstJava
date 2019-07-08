@@ -1,8 +1,6 @@
 package ru.otus.l71.behavioral.command;
 
 /**
- * Created by tully.
- * <p>
  * Receiver of the Command pattern.
  */
 public class Receiver {

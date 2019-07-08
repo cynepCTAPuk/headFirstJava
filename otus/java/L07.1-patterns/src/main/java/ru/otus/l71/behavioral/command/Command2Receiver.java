@@ -1,12 +1,9 @@
 package ru.otus.l71.behavioral.command;
 
-/**
- * Created by tully.
- */
 public class Command2Receiver implements Command {
-    /*
-    Variables are "state" of the command
-    */
+    /**
+     * Variables are "state" of the command
+     */
     private final String msg;
     private final Receiver receiver;
 
