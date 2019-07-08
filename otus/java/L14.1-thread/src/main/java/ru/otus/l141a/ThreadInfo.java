@@ -11,11 +11,11 @@ class ThreadInfo {
         System.out.println("Thread priority: " + mainThread.getPriority() + "\n");
 
         //create new thread with runnable lambda
-        Thread thread2 = new Thread(() ->
-        {
+        Thread thread2 = new Thread(() -> {
             try {
                 Thread.sleep(10);
-                System.out.println("Hello from the thread: " + Thread.currentThread().getName());
+                System.out.println("Hello from the thread: "
+                        + Thread.currentThread().getName());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

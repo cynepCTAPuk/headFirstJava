@@ -16,7 +16,8 @@ class SeriesRun {
                 try {
                     synchronized (SeriesRun.this) {
                         while (threadId > currentMax) {
-                            System.out.println("---Waiting id: " + threadId + " idx: " + ++idx);
+                            ++idx;
+//                            System.out.println("---Waiting id: " + threadId + " idx: " + idx);
                             SeriesRun.this.wait();
                         }
                         System.out.println("Thread id: " + threadId + " idx: " + ++idx);
