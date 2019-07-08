@@ -8,9 +8,6 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author tully
- */
 public final class MessageSystem {
     private final static Logger logger = Logger.getLogger(MessageSystem.class.getName());
     private static final int DEFAULT_STEP_TIME = 10;
@@ -40,7 +37,6 @@ public final class MessageSystem {
             String name = "MS-worker-" + entry.getKey().getId();
             Thread thread = new Thread(() -> {
                 while (true) {
-
                     ConcurrentLinkedQueue<Message> queue = messagesMap.get(entry.getKey());
                     while (!queue.isEmpty()) {
                         Message message = queue.poll();

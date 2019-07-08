@@ -4,9 +4,6 @@ import ru.otus.l151.app.FrontendService;
 import ru.otus.l151.app.MsgToFrontend;
 import ru.otus.l151.messageSystem.Address;
 
-/**
- * Created by tully.
- */
 public class MsgGetUserIdAnswer extends MsgToFrontend {
     private final String name;
     private final int id;

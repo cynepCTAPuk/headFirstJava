@@ -1,8 +1,5 @@
 package ru.otus.l151.messageSystem;
 
-/**
- * @author tully
- */
 public abstract class Message {
     private final Address from;
     private final Address to;
@@ -12,13 +9,8 @@ public abstract class Message {
         this.to = to;
     }
 
-    public Address getFrom() {
-        return from;
-    }
-
-    public Address getTo() {
-        return to;
-    }
+    public Address getFrom() {return from;}
+    public Address getTo() {return to;}
 
     public abstract void exec(Addressee addressee);
 }

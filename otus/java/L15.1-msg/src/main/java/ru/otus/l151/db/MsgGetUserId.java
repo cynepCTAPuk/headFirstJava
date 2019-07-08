@@ -3,11 +3,7 @@ package ru.otus.l151.db;
 import ru.otus.l151.app.DBService;
 import ru.otus.l151.app.MsgToDB;
 import ru.otus.l151.messageSystem.Address;
-import ru.otus.l151.messageSystem.MessageSystem;
 
-/**
- * Created by tully.
- */
 public class MsgGetUserId extends MsgToDB {
     private final String login;
 

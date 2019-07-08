@@ -1,6 +1,5 @@
 package ru.otus.l151;
 
-
 import ru.otus.l151.app.DBService;
 import ru.otus.l151.app.FrontendService;
 import ru.otus.l151.app.MessageSystemContext;

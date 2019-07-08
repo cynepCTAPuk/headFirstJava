@@ -4,9 +4,6 @@ import ru.otus.l151.messageSystem.Address;
 import ru.otus.l151.messageSystem.Addressee;
 import ru.otus.l151.messageSystem.Message;
 
-/**
- * Created by tully.
- */
 public abstract class MsgToFrontend extends Message {
     public MsgToFrontend(Address from, Address to) {
         super(from, to);

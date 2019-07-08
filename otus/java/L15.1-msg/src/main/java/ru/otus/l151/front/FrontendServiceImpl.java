@@ -10,9 +10,6 @@ import ru.otus.l151.messageSystem.MessageSystem;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by tully.
- */
 public class FrontendServiceImpl implements FrontendService {
     private final Address address;
     private final MessageSystemContext context;
@@ -29,9 +26,7 @@ public class FrontendServiceImpl implements FrontendService {
     }
 
     @Override
-    public Address getAddress() {
-        return address;
-    }
+    public Address getAddress() {return address;}
 
     public void handleRequest(String login) {
         Message message = new MsgGetUserId(getAddress(), context.getDbAddress(), login);
@@ -44,7 +39,5 @@ public class FrontendServiceImpl implements FrontendService {
     }
 
     @Override
-    public MessageSystem getMS() {
-        return context.getMessageSystem();
-    }
+    public MessageSystem getMS() {return context.getMessageSystem();}
 }
