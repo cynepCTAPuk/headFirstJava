@@ -10,7 +10,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ScreenShot {
+public class Screenshot {
     public static void main(String[] args) throws AWTException, IOException {
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
         System.out.println(dateFormat.format(new Date()));
