@@ -1,3 +1,5 @@
+package test;
+
 class Ideone {
     public static void main(String[] args) throws Exception {
         System.out.println("Кофе-машина");

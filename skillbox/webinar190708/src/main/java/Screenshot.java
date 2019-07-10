@@ -11,6 +11,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Screenshot {
+
+    public static final String ACCESS_TOKEN = "_uAHwPs06v8AAAAAAABJr6SRc4XzHAG6ufeTVjUaLNwJ5yJa3Sq9VZc8cYL8a76n";
+
     public static void main(String[] args) throws AWTException, IOException {
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
         System.out.println(dateFormat.format(new Date()));
@@ -18,6 +21,7 @@ public class Screenshot {
 
         BufferedImage image = new Robot().createScreenCapture(
                 new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+
 
         ImageIO.write(image, "png", new File(fileName));
 
