@@ -2,9 +2,9 @@ import java.util.concurrent.TimeUnit;
 
 public class Thread22 {
     public static void main(String[] args) {
-        long t1 = System.currentTimeMillis();
         Runnable task = () -> {
             try {
+                long t1 = System.currentTimeMillis();
                 TimeUnit.SECONDS.sleep(60);
                 System.out.printf("Waked up: %,d ms", (System.currentTimeMillis() - t1));
             } catch (InterruptedException e) {

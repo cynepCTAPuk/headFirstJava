@@ -2,8 +2,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Thread24 {
     public static void main(String[] args) throws InterruptedException {
-        long t1 = System.currentTimeMillis();
         Runnable task = () -> {
+            long t1 = System.currentTimeMillis();
             try {
                 TimeUnit.SECONDS.sleep(5);
             } catch (InterruptedException ex) {
