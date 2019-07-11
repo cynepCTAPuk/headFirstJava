@@ -6,7 +6,7 @@ public class Thread21 {
         Runnable task = () -> {
             try {
                 long t1 = System.currentTimeMillis();
-                Thread.currentThread().sleep(1_000 * 60);
+                Thread.sleep(1_000 * 60);
                 System.out.printf("Waked up: %,d ms", (System.currentTimeMillis() - t1));
             } catch (InterruptedException e) {
                 e.printStackTrace();
