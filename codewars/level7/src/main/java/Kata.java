@@ -1,9 +1,13 @@
+import java.util.Arrays;
+
 public class Kata {
     public static int findEvenIndex(int[] arr) {
         int l = 0;
         int r = arr.length - 1;
         int sumLeft = arr[l];
         int sumRite = arr[r];
+        int sumAll = Arrays.stream(arr).sum();
+        System.out.println(sumAll);
         while (l != (r - 2)) {
             if (sumLeft <= sumRite) sumLeft += arr[++l];
             else sumRite += arr[--r];
