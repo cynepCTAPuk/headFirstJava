@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Kata1 {
+public class FindEvenIndex1 {
     public static int findEvenIndex(int[] arr) {
         if (arr.length == 1) return 0;
         if (arr.length == 2) return -1;

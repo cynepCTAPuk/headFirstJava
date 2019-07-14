@@ -1,4 +1,4 @@
-public class Kata {
+public class FindEvenIndex {
     public static int findEvenIndex(int[] arr) {
         if (arr.length == 1) return 0;
         if (arr.length == 2) return -1;
