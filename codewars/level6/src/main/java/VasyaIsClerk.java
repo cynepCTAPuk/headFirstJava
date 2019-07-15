@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class VasyaIsClerk {
     public static String Tickets(int[] peopleInLine) {
         int b25 = 0;
