@@ -1,36 +1,14 @@
 public class DeclareWinner {
     public static String declareWinner(Fighter fighter1, Fighter fighter2, String firstAttacker) {
-        Fighter attack;
-        Fighter defend;
-        Fighter medium;
-        if (firstAttacker == fighter1.name) {
-            attack = fighter1;
-            defend = fighter2;
-        } else if (firstAttacker == fighter2.name) {
-            attack = fighter2;
-            defend = fighter1;
-        } else {
-            System.out.println("Check first attacker's name");
-            throw new UnsupportedOperationException();
+        Fighter a = fighter1, b = fighter2;
+        if (firstAttacker.equals(fighter2.name)) {
+            a = fighter2;
+            b = fighter1;
         }
-        while (fighter1.health > 0 && fighter2.health > 0) {
-            defend.health = defend.health - attack.damagePerAttack;
-            medium = attack;
-            attack = defend;
-            defend = medium;
+        while (true) {
+            if ((b.health -= a.damagePerAttack) <= 0) return a.name;  // a wins
+            if ((a.health -= b.damagePerAttack) <= 0) return b.name;  // b wins
         }
-        return defend.name;
     }
 }
 
-class Fighter {
-    String name;
-    int health;
-    int damagePerAttack;
-
-    public Fighter(String name, int health, int damagePerAttack) {
-        this.name = name;
-        this.health = health;
-        this.damagePerAttack = damagePerAttack;
-    }
-}
