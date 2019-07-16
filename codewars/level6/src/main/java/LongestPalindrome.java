@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Palindromes {
+public class LongestPalindrome {
     public static int longestPalindrome(final String s) {
         List<String> list = getStrings(s);
         int result = 0;
