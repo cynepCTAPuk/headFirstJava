@@ -1,4 +1,4 @@
-public class Solution1 {
+public class ValidatePin1 {
     public static boolean validatePin(String pin) {
         int pinLenght = pin.length();
         if (pinLenght == 4 | pinLenght == 6) {
