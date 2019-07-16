@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Order {
+public class SortStringByNumberInWord {
     public static String order(String words) {
         String result = "";
         String[] list = words.split(" ");
