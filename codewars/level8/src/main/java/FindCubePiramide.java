@@ -1,4 +1,4 @@
-public class ASum {
+public class FindCubePiramide {
 
     public static long findNb(long m) {
         long i = 0L;
