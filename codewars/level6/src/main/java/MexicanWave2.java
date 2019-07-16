@@ -11,7 +11,10 @@ public class MexicanWave2 {
             else continue;
             list.add(String.valueOf(chars));
         }
-        return list.toArray(new String[0]);
+        String[] result = new String[list.size()];
+        for (int i = 0; i < list.size() ; i++) result[i] = list.get(i);
+        return result;
+//        return list.toArray(new String[0]);
     }
 
     public static void main(String[] args) {
