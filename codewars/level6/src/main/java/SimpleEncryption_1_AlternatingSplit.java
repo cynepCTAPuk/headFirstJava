@@ -1,6 +1,7 @@
-public class Kata {
+public class SimpleEncryption_1_AlternatingSplit {
     public static String encrypt(final String text, final int n) {
         String result = text;
+        if (result == null) return null;
         int m = n;
         while (m-- > 0) {
             String first = "", second = "";
@@ -16,6 +17,7 @@ public class Kata {
 
     public static String decrypt(final String encryptedText, final int n) {
         String result = encryptedText;
+        if (result == null) return null;
         int m = n;
         int length = result.length();
         while (m-- > 0) {
@@ -39,6 +41,7 @@ public class Kata {
         System.out.println(encrypt("This is a test!", 4));
         System.out.println(encrypt("This is a test!", -1));
         System.out.println(encrypt("This kata is very interesting!", 1));
+        System.out.println(encrypt("", 1));
         System.out.println();
         System.out.println(decrypt("This is a test!", 0));
         System.out.println(decrypt("hsi  etTi sats!", 1));
@@ -47,5 +50,6 @@ public class Kata {
         System.out.println(decrypt("This is a test!", 4));
         System.out.println(decrypt("This is a test!", -1));
         System.out.println(decrypt("hskt svr neetn!Ti aai eyitrsig", 1));
+        System.out.println(decrypt(null, 1));
     }
 }
