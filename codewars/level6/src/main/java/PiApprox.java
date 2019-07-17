@@ -10,11 +10,13 @@ public class PiApprox {
             divider += 2;
             pi = pi + sign / divider;
         }
-        return String.format("[%d, %.10f]", iteration, 4 * pi);
+        return String.format("[%,d, %.10f]", iteration, 4 * pi);
     }
 
     public static void main(String[] args) {
-        System.out.println(iterPi2String(0.1));
+        int n = 1_000_000;
+        double epsilon = 1.0 / n;
+        System.out.println(iterPi2String(epsilon));
 
     }
 }
