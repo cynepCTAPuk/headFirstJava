@@ -16,9 +16,9 @@ public class Word_a10n_abbreviation3 {
     }
 
     public static void main(String[] args) {
-        System.out.println(abbreviate("internationalization"));
-        System.out.println(abbreviate("*= internationalization"));
-        System.out.println(abbreviate("abc  internationalization"));
+//        System.out.println(abbreviate("internationalization"));
+//        System.out.println(abbreviate("*= internationalization"));
+//        System.out.println(abbreviate("abc  internationalization"));
         System.out.println(abbreviate("abcd abcde"));
     }
 }
