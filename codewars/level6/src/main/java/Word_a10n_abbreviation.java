@@ -1,4 +1,4 @@
-public class Abbreviator {
+public class Word_a10n_abbreviation {
     public static String abbreviate(String string) {
         String result = "";
         int i = 0;
