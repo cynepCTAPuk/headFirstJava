@@ -10,7 +10,7 @@ public class IntPart {
 
     public static List eNum(long n){
         List<Integer> list = new ArrayList<>();
-        
+
         return null;
     }
 }
