@@ -1,27 +1,36 @@
-public class SimpleEncryption_1_AlternatingSplit {
+public class SimpleEncryption_1_AlternatingSplit1 {
     public static String encrypt(final String text, final int n) {
-        String out = text;
-        if (out == null) return null; //vk
-        for (int i = 0; i < n; i++) {
-            String temp = "";
-            for (int j = 1; j < out.length(); j += 2) temp += out.charAt(j);
-            for (int j = 0; j < out.length(); j += 2) temp += out.charAt(j);
-            out = temp;
+        String result = text;
+        if (result == null) return null;
+        int m = n;
+        while (m-- > 0) {
+            String first = "", second = "";
+            char[] chars = result.toCharArray();
+            for (int i = 0; i < chars.length; i += 2) {
+                first += chars[i];
+                if (i + 1 < chars.length) second += chars[i + 1];
+            }
+            result = second + first;
         }
-        return out;
+        return result;
     }
 
     public static String decrypt(final String encryptedText, final int n) {
-        String out = encryptedText;
-        if (out == null) return null; //vk
-        for (int i = 0; i < n; i++) {
-            String temp = "";
-            for (int j = 0; j < out.length() / 2; j += 1) {
-                temp += "" + out.charAt(out.length() / 2 + j) + out.charAt(j);
+        String result = encryptedText;
+        if (result == null) return null;
+        int m = n;
+        int length = result.length();
+        while (m-- > 0) {
+            String second = result.substring(0, length / 2);
+            String first = result.substring(length / 2, length);
+            char[] chars = new char[length];
+            for (int i = 0; i < chars.length; i += 2) {
+                chars[i] = first.charAt(i / 2);
+                if (i + 1 < chars.length) chars[i + 1] = second.charAt(i / 2);
             }
-            out = temp + encryptedText.substring(encryptedText.length() / 2 * 2);
+            result = String.valueOf(chars);
         }
-        return out;
+        return result;
     }
 
     public static void main(String[] args) {
