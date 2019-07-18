@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class IntPart {
+public class GettingAlongWithIntegerPartitions {
     static List<Integer> list = new ArrayList<>();
 
     public static String part(long n) {
