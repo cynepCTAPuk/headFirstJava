@@ -1,4 +1,4 @@
-class Persist {
+class PersistentBugger {
     public static int persistence(long n) {
         long m = n;
         int steps = 0;
