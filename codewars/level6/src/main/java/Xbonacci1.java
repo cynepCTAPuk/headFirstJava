@@ -1,18 +1,17 @@
 import java.util.Arrays;
-public class Xbonacci {
+
+public class Xbonacci1 {
     public double[] xbonacci(double[] signature, int n) {
-        int length = signature.length;
-        if (length > n) length = n;
-        double[] result = new double[n];
-        for (int i = 0; i < length; i++) result[i] = signature[i];
-        for (int i = 0; i < n - length; i++)
-            for (int j = i; j < i + length; j++)
-                result[i + length] += result[j] * 1;
-        return result;
+        double[] xbonacci = Arrays.copyOf(signature, n);
+        for (int i = signature.length; i < n; i++) {
+            for (int j = i; j >= i - signature.length; j--)
+                xbonacci[i] += xbonacci[j];
+        }
+        return xbonacci;
     }
 
     public static void main(String[] args) {
-        Xbonacci xb = new Xbonacci();
+        Xbonacci1 xb = new Xbonacci1();
         System.out.println(Arrays.toString(xb.xbonacci(new double[]{0, 1}, 10)));
         System.out.println(Arrays.toString(xb.xbonacci(new double[]{1, 1}, 10)));
         System.out.println(Arrays.toString(xb.xbonacci(new double[]{0, 0, 0, 0, 1}, 10)));
