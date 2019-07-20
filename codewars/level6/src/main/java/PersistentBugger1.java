@@ -7,9 +7,9 @@ class PersistentBugger1 {
     }
 
     public static void main(String[] args) {
-        System.out.println(persistence(39));
-        System.out.println(persistence(4));
-        System.out.println(persistence(25));
+//        System.out.println(persistence(39));
+//        System.out.println(persistence(4));
+//        System.out.println(persistence(25));
         System.out.println(persistence(999));
     }
 }
