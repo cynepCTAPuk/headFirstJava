@@ -1,13 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class SumSquaredDivisors {
 
     public static String listSquared(long m, long n) {
-
-        String listSum = "[";
+        List<String> list = new ArrayList<>();
         for (int i = 0; i <= n - m; i++) {
             if (isSquared(sumSquaredDivisors(m + i)))
-                listSum += String.format("[%d, %d], ", (m + i), sumSquaredDivisors(m + i));
+                list.add(String.format("[%d, %d]", (m + i), sumSquaredDivisors(m + i)));
         }
-        return listSum.substring(0, listSum.length() - 2) + "]";
+        return list.toString();
     }
 
     private static long sumSquaredDivisors(long n) {
@@ -29,7 +31,7 @@ public class SumSquaredDivisors {
 
     public static void main(String args[]) {
         System.out.println(listSquared(1, 246));
-//        System.out.println(listSquared(50, 60));
+        System.out.println(listSquared(50, 60));
 //        System.out.println(listSquared(240, 250));
 //        System.out.println(isSquared(2));
     }
