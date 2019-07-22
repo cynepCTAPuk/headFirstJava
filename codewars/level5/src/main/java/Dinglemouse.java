@@ -1,31 +1,69 @@
 import java.util.Arrays;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class Dinglemouse {
-    private static final String[] units = {"", "one", "two", "three", "four", "five", "six", "seven",
-            "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen",
+    private static final String[] units = {"", "one", "two", "three", "four", "five",
+            "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen",
             "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
     private static final String[] tens = {"", "", "twenty", "thirty", "forty", "fifty",
             "sixty", "seventy", "eighty", "ninety"};
 
+    private static class Pair implements Comparable {
+        String string;
+        Integer integer;
+
+        public Pair(String string, Integer integer) {
+            this.string = string;
+            this.integer = integer;
+        }
+
+        public Integer getInteger() {
+            return integer;
+        }
+
+        @Override
+        public String toString() {
+            return string;
+        }
+
+        @Override
+        public int compareTo(Object o) {
+            return this.toString().compareTo(o.toString());
+        }
+    }
+
     private static String convertNumberToWord(final int n) {
+//        if (n == 0) return "zero";
         if (n < 20) return units[n];
         if (n < 100) return tens[n / 10] + ((n % 10 != 0) ? " " : "") + units[n % 10];
-        return units[n / 100] + " hundred" + ((n % 100 != 0) ? " " : "") + convertNumberToWord(n % 100);
+        return units[n / 100]
+                + " hundred" + ((n % 100 != 0) ? " " : "") + convertNumberToWord(n % 100);
     }
 
     public static int[] sort(final int[] array) {
-        Map<String, Integer> map = new TreeMap<>();
-        for (int value : array) map.put(convertNumberToWord(value), value);
-        int i = 0;
+        Pair[] pairs = new Pair[array.length];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 0) {
+                pairs[i] = new Pair("zero", array[i]);
+            } else pairs[i] = new Pair(convertNumberToWord(array[i]), array[i]);
+        }
+        Arrays.sort(pairs);
         int[] ints = new int[array.length];
-        for (Integer integer : map.values()) ints[i++] = integer;
+        for (int i = 0; i < array.length; i++)
+            ints[i] = pairs[i].getInteger();
         return ints;
     }
 
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(sort(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9})));
+//        System.out.println(Arrays.toString(sort(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9})));
+//        System.out.println(Arrays.toString(sort(new int[]{8, 8, 9, 9, 10, 10})));
+//        System.out.println(Arrays.toString(sort(new int[]{1, 2, 3, 4})));
+//        System.out.println(Arrays.toString(sort(new int[]{9, 99, 999})));
+        System.out.println(convertNumberToWord(90));
+        System.out.println(convertNumberToWord(920));
+        System.out.println(convertNumberToWord(929));
+        System.out.println(convertNumberToWord(800));
+        System.out.println(convertNumberToWord(808));
+
     }
 }

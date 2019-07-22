@@ -14,7 +14,8 @@ public class NumberWordConverter {
         if (n < 0) return "minus " + convert(-n);
         if (n < 20) return units[n];
         if (n < 100) return tens[n / 10] + ((n % 10 != 0) ? " " : "") + units[n % 10];
-        if (n < 1000) return units[n / 100] + " hundred" + ((n % 100 != 0) ? " " : "") + convert(n % 100);
+        if (n < 1000) return units[n / 100] + " hundred" + ((n % 100 != 0) ? " " : "")
+                + convert(n % 100);
         if (n < 1000000)
             return convert(n / 1000) + " thousand" + ((n % 1000 != 0) ? " " : "")
                     + convert(n % 1000);
@@ -35,7 +36,7 @@ public class NumberWordConverter {
             System.out.printf("%10d = '%s'%n", n, convert(n));
         }
 */
-        n = 10;
+        n = 0;
         System.out.printf("%10d = '%s'%n", n, convert(n));
         n = 1234;
         System.out.printf("%10d = '%s'%n", n, convert(n));
