@@ -1,12 +1,13 @@
 public class VolTank {
     public static int tankVol(int h, int d, int vt) {
-        if (h >= d) return vt;
+        if (h < 0 | h > d)
+            throw new RuntimeException("H must be positive and not more than D");
         double pi = Math.PI;
-        double sqr = pi * d * d / 4;
-        double tankDepth = vt / sqr;
+        double squareRound = pi * d * d / 4;
+        double tankDepth = vt / squareRound;
         double result;
         if (h <= d / 2) result = squareSegment(h, d);
-        else result = sqr - squareSegment(h, d);
+        else result = squareRound - squareSegment(h, d);
         return (int) (result * tankDepth);
     }
 
@@ -23,5 +24,8 @@ public class VolTank {
     public static void main(String[] args) {
         System.out.println(tankVol(5, 7, 3848));
         System.out.println(tankVol(2, 7, 3848));
+
+        System.out.println(tankVol(7, 7, 3848));
+        System.out.println(tankVol(0, 7, 3848));
     }
 }
