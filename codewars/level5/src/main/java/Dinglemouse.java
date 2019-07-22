@@ -32,7 +32,6 @@ public class Dinglemouse {
     }
 
     private static String convertNumberToWord(final int n) {
-//        if (n == 0) return "zero";
         if (n < 20) return units[n];
         if (n < 100) return tens[n / 10] + ((n % 10 != 0) ? " " : "") + units[n % 10];
         return units[n / 100]
@@ -55,15 +54,10 @@ public class Dinglemouse {
 
 
     public static void main(String[] args) {
-//        System.out.println(Arrays.toString(sort(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9})));
-//        System.out.println(Arrays.toString(sort(new int[]{8, 8, 9, 9, 10, 10})));
-//        System.out.println(Arrays.toString(sort(new int[]{1, 2, 3, 4})));
-//        System.out.println(Arrays.toString(sort(new int[]{9, 99, 999})));
-        System.out.println(convertNumberToWord(90));
-        System.out.println(convertNumberToWord(920));
-        System.out.println(convertNumberToWord(929));
-        System.out.println(convertNumberToWord(800));
-        System.out.println(convertNumberToWord(808));
+        System.out.println(Arrays.toString(sort(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9})));
 
+        System.out.println(Arrays.toString(sort(new int[]{8, 8, 9, 9, 10, 10})));
+        System.out.println(Arrays.toString(sort(new int[]{1, 2, 3, 4})));
+        System.out.println(Arrays.toString(sort(new int[]{9, 99, 999})));
     }
 }
