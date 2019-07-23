@@ -4,8 +4,6 @@ public class ConvergentsOfE {
     public static int convergentsOfE(int m) {
         double mm = m * 1.0;
         double result;
-        int[] n = {1, 3, 1, 8};
-
         return 0;
     }
 
@@ -19,23 +17,35 @@ public class ConvergentsOfE {
         return result;
     }
 
-    public static double calcRoot(int num) {
+    public static double calcRoot(double num) {
         double guess = 0;
-        double result = 6;
-        int i =0;
+        double result = 2;
         while (Math.abs(guess - result) != 0) {
-            i++;
             guess = result;
             result = (guess + (num / guess)) / 2;
+            System.out.println(result);
         }
-        System.out.println(i);
         return result;
     }
 
+    public static double rootOfTwo(int iteration) {
+        long[] top = new long[iteration];
+        long[] bottom = new long[iteration];
+        top[0] = 1;
+        bottom[0] = 1;
+        for (int i = 1; i < iteration; i++) {
+            bottom[i] = top[i - 1] + bottom[i - 1];
+            top[i] = bottom[i - 1] + bottom[i];
+        }
+        for (int j = 0; j < iteration; j++) System.out.printf("(%,d/%,d)", top[j], bottom[j]);
+        System.out.println();
+        return top[iteration - 1] * 1.0 / bottom[iteration - 1];
+    }
+
     public static void main(String[] args) {
-        int n = 2;
-//        System.out.println(exp(n) + " +++");
-        System.out.println(calcRoot(n));
-        System.out.println(Math.sqrt(n) + " ---");
+        int iteration = 50;
+        System.out.println(rootOfTwo(iteration));
+        System.out.println(Math.sqrt(2) + " --- Math.sqrt(2)");
+//        System.out.println(rootOfTwo(iteration) - Math.sqrt(2));
     }
 }
