@@ -10,7 +10,11 @@ public class PrimesInNumbers {
     }
 
     public static void main(String[] args) {
-        System.out.println(factors(86240));
-        System.out.println(factors(7775460));
+//        System.out.println(factors(86240));
+//        System.out.println(factors(7775460));
+        System.out.println(factors(1089));
+        System.out.println(factors(9801));
+        System.out.println(factors(2178));
+        System.out.println(factors(8712));
     }
 }
