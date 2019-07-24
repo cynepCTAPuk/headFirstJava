@@ -1,7 +1,7 @@
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class ExampleTests {
+public class BirdMountainTest {
 
     @Test
     public void ex() {
@@ -14,7 +14,7 @@ public class ExampleTests {
                 "  ^^^^^^      ".toCharArray(),
                 "  ^^^^        ".toCharArray()
         };
-        assertEquals(3, Dinglemouse.peakHeight(mountain));
+        assertEquals(3, BirdMountain.peakHeight(mountain));
     }
 
 }
