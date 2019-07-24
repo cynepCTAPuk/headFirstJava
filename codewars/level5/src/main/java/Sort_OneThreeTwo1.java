@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Dinglemouse1 {
+public class Sort_OneThreeTwo1 {
     private static final String[] units = {"", "one", "two", "three", "four", "five", "six", "seven",
             "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen",
             "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};

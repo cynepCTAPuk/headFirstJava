@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Dinglemouse2 {
+public class Sort_OneThreeTwo2 {
     private static String[] UNITS = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
     private static String[] TENS = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
 
@@ -9,7 +9,7 @@ public class Dinglemouse2 {
         return Arrays
                 .stream(array)
                 .boxed()
-                .sorted(Comparator.comparing(Dinglemouse2::toName))
+                .sorted(Comparator.comparing(Sort_OneThreeTwo2::toName))
                 .map(String::valueOf)
                 .mapToInt(Integer::valueOf)
                 .toArray();
