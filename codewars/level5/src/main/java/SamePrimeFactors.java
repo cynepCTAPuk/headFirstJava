@@ -7,7 +7,9 @@ public class SamePrimeFactors {
     public static int[] sameFactRev(int nMax) {
         int a = 2 * 3 * 3 + 1;
         int b = 3 * 3 * 3;
-        int c = a / b;
+        int c = nMax * a / b;
+        System.out.println(c);
+
         Thread thread1 = new Thread(() -> getPrimeFactor(0, c));
         Thread thread2 = new Thread(() -> getPrimeFactor(c, nMax));
         thread1.start();
@@ -57,21 +59,6 @@ public class SamePrimeFactors {
             n /= 10;
         }
         return reverse;
-    }
-
-    public static Set<Integer> factorsSet(int n) {
-        Set<Integer> set = new TreeSet<>();
-        for (int factor = 2; factor <= n; ++factor) {
-            while (n % factor == 0) {
-                set.add(factor);
-                n = n / factor;
-            }
-        }
-        return set;
-    }
-
-    public static int reverseByString(int n) {
-        return Integer.parseInt(new StringBuilder().append(n).reverse().toString());
     }
 
     public static void main(String[] args) {
