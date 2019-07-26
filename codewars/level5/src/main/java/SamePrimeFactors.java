@@ -1,14 +1,12 @@
 import java.util.*;
 
 public class SamePrimeFactors {
-    static long time = System.currentTimeMillis();
     static Set<Integer> set = new TreeSet<>();
 
     public static int[] sameFactRev(int nMax) {
         int a = 2 * 3 * 3 + 1;
         int b = 3 * 3 * 3;
         int c = nMax * a / b;
-        System.out.println(c);
 
         Thread thread1 = new Thread(() -> getPrimeFactor(0, c));
         Thread thread2 = new Thread(() -> getPrimeFactor(c, nMax));
@@ -20,9 +18,11 @@ public class SamePrimeFactors {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        List<Integer> list = new ArrayList<>(set);
-        int[] ints = new int[list.size()];
-        for (int i = 0; i < ints.length; i++) ints[i] = list.get(i);
+//        List<Integer> list = new ArrayList<>(set);
+        int[] ints = new int[set.size()];
+//        for (int i = 0; i < ints.length; i++) ints[i] = list.get(i);
+        int j = 0;
+        for(Integer el:set) ints[j++] = el;
         return ints;
     }
 
@@ -31,13 +31,7 @@ public class SamePrimeFactors {
             if (i % 10 == 0) continue;
             if (i == reverse(i)) continue;
             int j = reverse(i);
-            List list1 = factors(i);
-            List list2 = factors(j);
-            if (list1.equals(list2)) {
-                set.add(i);
-                System.out.printf("%,8d ms ", System.currentTimeMillis() - time);
-                System.out.printf("%,8d %,8d %s\n", i, j, list1);
-            }
+            if (factors(i).equals(factors(j))) set.add(i);
         }
     }
 
