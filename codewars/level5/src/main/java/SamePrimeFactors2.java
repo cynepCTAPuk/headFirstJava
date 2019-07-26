@@ -1,15 +1,14 @@
 import java.util.*;
 
-public class SamePrimeFactors {
+public class SamePrimeFactors2 {
     static long time = System.currentTimeMillis();
     static Set<Integer> set = new TreeSet<>();
 
     public static int[] sameFactRev(int nMax) {
         int a = 2 * 3 * 3 + 1;
         int b = 3 * 3 * 3;
-        int c = a / b;
-        Thread thread1 = new Thread(() -> getPrimeFactor(0, c));
-        Thread thread2 = new Thread(() -> getPrimeFactor(c, nMax));
+        Thread thread1 = new Thread(() -> getPrimeFactor(0, nMax * a / b));
+        Thread thread2 = new Thread(() -> getPrimeFactor(nMax * a / b, nMax));
         thread1.start();
         thread2.start();
         try {
@@ -21,11 +20,12 @@ public class SamePrimeFactors {
         List<Integer> list = new ArrayList<>(set);
         int[] ints = new int[list.size()];
         for (int i = 0; i < ints.length; i++) ints[i] = list.get(i);
+//        Arrays.sort(ints);
         return ints;
     }
 
-    private static void getPrimeFactor(int start, int finish) {
-        for (int i = start; i < finish; i++) {
+    private static void getPrimeFactor(int i1, int i2) {
+        for (int i = i1; i < i2; i++) {
             if (i % 10 == 0) continue;
             if (i == reverse(i)) continue;
             int j = reverse(i);
@@ -75,7 +75,8 @@ public class SamePrimeFactors {
     }
 
     public static void main(String[] args) {
-        long t1 = System.nanoTime();
+        long t1;
+        t1 = System.nanoTime();
         int nMax = 100_000;
         int[] ints = sameFactRev(nMax);
         System.out.println(Arrays.toString(ints));
