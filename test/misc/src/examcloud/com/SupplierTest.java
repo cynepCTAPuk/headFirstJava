@@ -12,7 +12,5 @@ public class SupplierTest {
         };
 //        System.out.println(s.getAsBoolean());
         System.out.println(s.get().booleanValue());
-
-        (int a) -> {--a; return a};
     }
 }
