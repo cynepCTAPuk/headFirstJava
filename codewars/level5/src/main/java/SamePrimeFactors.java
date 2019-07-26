@@ -2,10 +2,10 @@ import java.util.*;
 
 public class SamePrimeFactors {
     static long time = System.currentTimeMillis();
+    static Set<Integer> set = new TreeSet<>();
 
     public static int[] sameFactRev(int nMax) {
 /*
-        Set<Integer> set = new TreeSet<>();
         for (int i = 0; i < nMax; i++) {
             if (i % 10 == 0) continue;
             if (i == reverse(i)) continue;
@@ -21,20 +21,32 @@ public class SamePrimeFactors {
                 System.out.printf("%,8d %,8d %s\n", i, j, list);
             }
         }
+*/
+        new Thread(() -> getPrimeFactor(0, nMax / 2)).start();
+        new Thread(() -> getPrimeFactor(nMax / 2, nMax)).start();
+
         List<Integer> list = new ArrayList<>(set);
         int[] ints = new int[list.size()];
         for (int i = 0; i < ints.length; i++) ints[i] = list.get(i);
         System.out.println(set);
         System.out.println("Size of ints: " + ints.length);
         System.out.printf("All elements: %,d\n", nMax);
-*/
-        List<List<Integer>> list = new ArrayList<>();
-        for (int i = 0; i < nMax; i++) {
+        return ints;
+    }
+
+    private static void getPrimeFactor(int i1, int i2) {
+        for (int i = i1; i < i2; i++) {
             if (i % 10 == 0) continue;
             if (i == reverse(i)) continue;
-            list.add(factors(i));
+            int j = reverse(i);
+            List list1 = factors(i);
+            List list2 = factors(j);
+            if (list1.equals(list2)) {
+                set.add(i);
+                System.out.printf("%,8d ms ", System.currentTimeMillis() - time);
+                System.out.printf("%,8d %,8d %s\n", i, j, list1);
+            }
         }
-        return new int[0];
     }
 
     public static List<Integer> factors(int n) {
@@ -74,11 +86,9 @@ public class SamePrimeFactors {
 
     public static void main(String[] args) {
         long t1;
-        long t2;
         t1 = System.nanoTime();
-        int n = 10_000;
+        int n = 100_000;
         sameFactRev(n);
-//        for (int i = 0; i < n; i++) factors(i);
         System.out.printf("%,16d nanosecond\n", System.nanoTime() - t1);
     }
 }
