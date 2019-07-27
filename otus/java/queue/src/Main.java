@@ -29,6 +29,7 @@ public class Main {
         System.out.printf("sum2 = %,d%n", sum2);
         System.out.flush();
 
+/*
         List<Future<Integer>> results = new ArrayList<>();
         ExecutorService executorService = Executors.newFixedThreadPool(2);
 
@@ -41,5 +42,6 @@ public class Main {
             Future<Integer> future = executorService.submit(() -> queue.poll());
             results.add(future);
         }
+*/
     }
 }
