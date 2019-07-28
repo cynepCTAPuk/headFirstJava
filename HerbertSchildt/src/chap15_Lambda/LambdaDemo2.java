@@ -6,7 +6,7 @@ public class LambdaDemo2 {
         if (isEven.test(10)) System.out.println("Number 10 is even");
         if (!isEven.test(9)) System.out.println("Number 9 is odd");
 
-        NumbericTest isNonNeg = (n) -> n >= 0;
+        NumbericTest isNonNeg = n -> n >= 0;
         if (isNonNeg.test(1)) System.out.println("Number 1 is non negative");
         if (!isNonNeg.test(-1)) System.out.println("Number -1 is negative");
     }
