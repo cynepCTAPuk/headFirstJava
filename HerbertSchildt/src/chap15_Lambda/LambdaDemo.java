@@ -1,5 +1,9 @@
 package chap15_Lambda;
 
+interface MyNumber {
+    double getValue();
+}
+
 public class LambdaDemo {
     public static void main(String[] args) {
         MyNumber myNum;

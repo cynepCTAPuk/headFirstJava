@@ -1,5 +1,9 @@
 package chap15_Lambda;
 
+interface NumericFunc {
+    int func(int n);
+}
+
 public class BlockLambdaDemo {
     public static void main(String[] args) {
         NumericFunc factorial = n -> {
