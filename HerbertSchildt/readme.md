@@ -1,9 +1,3 @@
-Herbert Schildt
-Java 8
-The Complete Reference
-Ninth Edition
-2014
-
 Герберт Шилдт
 Java 8
 Полное руководство
@@ -16,4 +10,18 @@ Java. Полное руководство, 10-е изд.
 
 Шилдт, Герберт
 Java: руководство для начинающих, 7-е изд.
+2019
+
+Herbert Schildt
+Java
+The Complete Reference
+Eleventh Edition
+Comprehensive Coverage of the Java language
+2019
+
+Herbert Schildt
+Java
+A Beginner's Guide
+Eleventh Edition
+Create, Compile, and Run java Program Today
 2019
