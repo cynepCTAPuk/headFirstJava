@@ -1,26 +1,25 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
+import java.util.function.Supplier;
 
 public class Main {
     final static int SEED = 42;
     final static int SIZE = 1_000;
 
     public static void main(String[] args) {
-        MyQueue<Integer> queue = new MyQueue<>(0);
+        MyQueue<Integer> queue = new MyQueue<>(0, 100);
         Random random = new Random(SEED);
 
+/*
         int sum1 = 0;
         for (int i = 0; i < SIZE; i++) {
             int element = random.nextInt();
             queue.add(element);
             sum1 += element;
         }
-        System.out.printf("sum1 = %,d%n", sum1);
+        System.out.printf("sum1 = %,d\n", sum1);
 
         int sum2 = 0;
         for (int i = 0; i < SIZE; i++) {
@@ -28,8 +27,9 @@ public class Main {
             if (element == null) break;
             sum2 += element;
         }
-        System.out.printf("sum2 = %,d%n", sum2);
+        System.out.printf("sum2 = %,d\n", sum2);
         System.out.flush();
+*/
 
         List<Future<Integer>> results = new ArrayList<>();
         ExecutorService executorService = Executors.newFixedThreadPool(2);
@@ -52,6 +52,15 @@ public class Main {
                 e.printStackTrace();
             }
         }
-        System.out.printf("sum3 = %,d%n", sum3);
+        System.out.printf("sum3 = %,d\n", sum3);
+        executorService.shutdown();
+
+        CompletableFuture
+                .supplyAsync(new Supplier<Object>() {
+                    @Override
+                    public Object get() {
+                        return null;
+                    }
+                }, executorService);
     }
 }
