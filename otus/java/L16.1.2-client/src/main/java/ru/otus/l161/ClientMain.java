@@ -9,9 +9,6 @@ import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Created by tully.
- */
 public class ClientMain {
     private static final Logger logger = Logger.getLogger(ClientMain.class.getName());
 

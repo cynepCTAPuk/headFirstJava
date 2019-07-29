@@ -38,7 +38,6 @@ public class ProcessRunnerImpl implements ProcessRunner {
 
     private class StreamListener extends Thread {
         private final Logger logger = Logger.getLogger(StreamListener.class.getName());
-
         private final InputStream is;
         private final String type;
 

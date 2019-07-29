@@ -5,9 +5,6 @@ import ru.otus.l161.channel.SocketMsgWorker;
 import java.io.IOException;
 import java.net.Socket;
 
-/**
- * Created by tully.
- */
 class ClientSocketMsgWorker extends SocketMsgWorker {
 
     private final Socket socket;
