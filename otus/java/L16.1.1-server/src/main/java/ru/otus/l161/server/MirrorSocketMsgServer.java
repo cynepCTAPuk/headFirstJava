@@ -14,9 +14,6 @@ import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Created by tully.
- */
 public class MirrorSocketMsgServer implements MirrorSocketMsgServerMBean {
     private static final Logger logger = Logger.getLogger(MirrorSocketMsgServer.class.getName());
 

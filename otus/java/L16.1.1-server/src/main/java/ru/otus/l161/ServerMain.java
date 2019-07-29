@@ -13,12 +13,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * Created by tully.
- */
 public class ServerMain {
     private static final Logger logger = Logger.getLogger(ServerMain.class.getName());
-
     private static final String CLIENT_START_COMMAND = "java -jar ../L16.1.2-client/target/client.jar";
     private static final int CLIENT_START_DELAY_SEC = 5;
 
