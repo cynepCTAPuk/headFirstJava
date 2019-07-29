@@ -1,6 +1,7 @@
 /*
 https://javarush.ru/groups/posts/2060-threadom-java-ne-isportishjh--chastjh-iii---vzaimodeystvie
  */
+// Deadlock https://docs.oracle.com/javase/tutorial/essential/concurrency/deadlock.html
 public class Thread30 {
     static class Friend {
         private final String name;

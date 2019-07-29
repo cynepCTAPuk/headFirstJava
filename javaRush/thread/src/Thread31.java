@@ -1,7 +1,7 @@
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
+// Livelock
 public class Thread31 {
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_PURPLE = "\u001B[35m";
@@ -9,10 +9,9 @@ public class Thread31 {
     public static void log(String text) {
         String name = Thread.currentThread().getName(); //like Thread-1 or Thread-0
         String color = ANSI_BLUE;
-        int val = Integer.valueOf(name.substring(name.lastIndexOf("-") + 1)) + 1;
-        if (val != 0) {
+        int val = Integer.parseInt(name.substring(name.lastIndexOf("-") + 1)) + 1;
+        if (val != 0)
             color = ANSI_PURPLE;
-        }
         System.out.println(color + name + ": " + text + color);
         try {
             System.out.println(color + name + ": wait for " + val + " sec" + color);
