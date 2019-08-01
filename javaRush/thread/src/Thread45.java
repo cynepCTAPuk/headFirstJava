@@ -4,9 +4,9 @@ import java.util.function.Supplier;
 
 public class Thread45 {
     public static class NewsService {
-        public static String getMessage() {
+        static String getMessage() {
             try {
-                Thread.currentThread().sleep(3_000);
+                Thread.sleep(3_000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -25,7 +25,7 @@ public class Thread45 {
 
         CompletableFuture.completedFuture(2L)
                 .thenCompose(val -> CompletableFuture.completedFuture(val + 2))
-                .thenAccept(result -> System.out.println(result));
+                .thenAccept(System.out::println);
 
         CompletableFuture.completedFuture(2L)
                 .thenApply(a -> {
@@ -33,7 +33,7 @@ public class Thread45 {
                 })
                 .thenApply(a -> 3L)
                 .exceptionally(ex -> 0L)
-                .thenAccept(val -> System.out.println(val));
+                .thenAccept(System.out::println);
 
     }
 }
