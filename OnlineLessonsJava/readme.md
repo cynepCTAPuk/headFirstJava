@@ -1,6 +1,6 @@
 Yuri Tkach
 https://www.youtube.com/user/ytkach/
 
-Онлайн уроки по Java
+РћРЅР»Р°Р№РЅ СѓСЂРѕРєРё РїРѕ Java
 
 1. Advanced Java. Collection
