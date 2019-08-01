@@ -8,7 +8,7 @@ import java.util.concurrent.*;
 public class CopyOnWriteArrayListTest {
     private static List<Integer> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
     private static List<Integer> synchronizedList = Collections.synchronizedList(new ArrayList<>());
-    private static final int SIZE = 100_000;
+    private static final int SIZE = 10_000;
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         fillList(synchronizedList);
@@ -23,13 +23,13 @@ public class CopyOnWriteArrayListTest {
 
     private static void checkList(List<Integer> list) throws ExecutionException, InterruptedException {
         CountDownLatch latch = new CountDownLatch(1);
-        ExecutorService ex = Executors.newFixedThreadPool(2);
-        Future<Long> f1 = ex.submit(new ListRunner(0, SIZE / 2, list, latch));
-        Future<Long> f2 = ex.submit(new ListRunner(SIZE / 2, SIZE, list, latch));
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        Future<Long> f1 = executorService.submit(new ListRunner(0, SIZE / 2, list, latch));
+        Future<Long> f2 = executorService.submit(new ListRunner(SIZE / 2, SIZE, list, latch));
         latch.countDown();
         System.out.printf("Thread 1: %,8d\n", f1.get() / 1_000);
         System.out.printf("Thread 2: %,8d\n", f2.get() / 1_000);
-        ex.shutdown();
+        executorService.shutdown();
     }
 
     private static void fillList(List<Integer> list) {
