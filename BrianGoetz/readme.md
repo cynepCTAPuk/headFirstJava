@@ -1,6 +1,7 @@
+Параллельное программирование в JAVA на практике
+
 Брайан Гоетс
 при участии Тима Перлса, Джошуа Блоха, Джозева Боубира, Дэвида Холмса и Дага Ли
-Параллельное программирование в JAVA на практике
 Перевод: Сорокин А.В.
 Екатеринбург, июнь 2018 - декабрь 2018
 
@@ -8,5 +9,6 @@
 git@github.com:Lulay82/JavaConcurrencyInPracticeTranslation.git
 
 Java Concurrency in Practice
+
 Brian Goetz with Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes and Doug Lea
 2006 Pearson Education, Inc.
