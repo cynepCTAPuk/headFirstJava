@@ -8,5 +8,6 @@ public class DefaultMethodDemo {
 
         // Can also call getString(), because of default implemention:
         System.out.println(obj.getString());
+        System.out.println(MyIF.getDefaultNumber());
     }
 }
