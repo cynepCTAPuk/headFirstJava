@@ -9,5 +9,6 @@ interface IntStack {
     // implemented by a preexisting class that uses IntStack.
     default void clear() {
         System.out.println("clear() not implemented");
+        throw new UnsupportedOperationException();
     }
 }
