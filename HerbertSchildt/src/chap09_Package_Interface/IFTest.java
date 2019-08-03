@@ -8,9 +8,9 @@ class IFTest {
         for (int i = 0; i < 5; i++) mystack1.push(i);
         for (int i = 0; i < 8; i++) mystack2.push(i);
         // pop those numbers off the stack
-        System.out.println("Stack in mystack1");
+        System.out.println("Stack in mystack1:");
         for (int i = 0; i < 5; i++) System.out.println(mystack1.pop());
-        System.out.println("Stack in mystack2");
+        System.out.println("Stack in mystack2:");
         for (int i = 0; i < 8; i++) System.out.println(mystack2.pop());
     }
 }
