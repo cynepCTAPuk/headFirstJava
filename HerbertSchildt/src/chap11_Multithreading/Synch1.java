@@ -1,7 +1,7 @@
 package chap11_Multithreading;
 
-// This program is not synchronized
-class Callme {
+// This program uses a synchronized block
+class Callme1 {
     void call(String msg) { // method can be "synchronized"
         System.out.print("[" + msg);
         try {
@@ -13,12 +13,12 @@ class Callme {
     }
 }
 
-class Caller implements Runnable {
+class Caller1 implements Runnable {
     String msg;
-    Callme target;
+    Callme1 target;
     Thread t;
 
-    public Caller(Callme target, String msg) {
+    public Caller1(Callme1 target, String msg) {
         this.msg = msg;
         this.target = target;
         t = new Thread(this);
@@ -26,16 +26,18 @@ class Caller implements Runnable {
 
     @Override
     public void run() {
-        target.call(msg);
+        synchronized (target) { // synchronized block
+            target.call(msg);
+        }
     }
 }
 
-public class Synch {
+public class Synch1 {
     public static void main(String[] args) {
-        Callme target = new Callme();
-        Caller ob1 = new Caller(target, "Hello");
-        Caller ob2 = new Caller(target, "Synchronized");
-        Caller ob3 = new Caller(target, "World");
+        Callme1 target = new Callme1();
+        Caller1 ob1 = new Caller1(target, "Hello");
+        Caller1 ob2 = new Caller1(target, "Synchronized");
+        Caller1 ob3 = new Caller1(target, "World");
         // Start the threads
         ob1.t.start();
         ob2.t.start();
