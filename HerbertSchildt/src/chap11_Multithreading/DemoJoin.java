@@ -1,11 +1,11 @@
 package chap11_Multithreading;
 
-// Create a multiple thread
-class NewThread3 implements Runnable {
+// Using join() to wait for threads to finish
+class NewThread4 implements Runnable {
     String name; // name of thread
     Thread t;
 
-    NewThread3(String name) {
+    NewThread4(String name) {
         this.name = name;
         t = new Thread(this, name);
         System.out.println("New thread: " + t);
@@ -26,21 +26,30 @@ class NewThread3 implements Runnable {
     }
 }
 
-public class MultiThreadDemo {
+public class DemoJoin {
     public static void main(String[] args) {
-        NewThread3 nt1 = new NewThread3("One");
-        NewThread3 nt2 = new NewThread3("Two");
-        NewThread3 nt3 = new NewThread3("Three");
+        NewThread4 nt1 = new NewThread4("One");
+        NewThread4 nt2 = new NewThread4("Two");
+        NewThread4 nt3 = new NewThread4("Three");
         // Start the threads
         nt1.t.start();
         nt2.t.start();
         nt3.t.start();
+        System.out.println("Thread One is alive: " + nt1.t.isAlive());
+        System.out.println("Thread Two is alive: " + nt2.t.isAlive());
+        System.out.println("Thread Three is alive: " + nt3.t.isAlive());
+        // wait for threads to finish
         try {
-            // wait for other threads to end
-            Thread.sleep(10_000);
+            System.out.println("Waiting for threads to finish");
+            nt1.t.join();
+            nt2.t.join();
+            nt3.t.join();
         } catch (InterruptedException e) {
             System.out.println("Main thread interrupted");
         }
+        System.out.println("Thread One is alive: " + nt1.t.isAlive());
+        System.out.println("Thread Two is alive: " + nt2.t.isAlive());
+        System.out.println("Thread Three is alive: " + nt3.t.isAlive());
         System.out.println("Main thread exiting");
     }
 }
