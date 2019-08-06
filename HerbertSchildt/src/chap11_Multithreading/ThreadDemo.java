@@ -1,10 +1,10 @@
 package chap11_Multithreading;
 
 // Create a second thread
-class NewThread implements Runnable {
+class NewThread1 implements Runnable {
     Thread t;
 
-    NewThread() {
+    NewThread1() {
         // Create a new, second thread
         t = new Thread(this, "Demo Thread");
         System.out.println("Chile thread: " + t);
@@ -27,7 +27,7 @@ class NewThread implements Runnable {
 
 public class ThreadDemo {
     public static void main(String[] args) {
-        NewThread nt = new NewThread(); // create a new thread
+        NewThread1 nt = new NewThread1(); // create a new thread
         nt.t.start(); // Start the thread
         try {
             for (int i = 5; i > 0; i--) {
