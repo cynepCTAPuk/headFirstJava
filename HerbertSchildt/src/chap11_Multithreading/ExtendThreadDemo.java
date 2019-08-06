@@ -2,7 +2,7 @@ package chap11_Multithreading;
 
 // Create a second thread by extending Thread
 class NewThread1 extends Thread {
-    public NewThread1() {
+    NewThread1() {
         // Create a new, second thread
         super("Demo Thread");
         System.out.println("Child thread: " + this);
