@@ -29,6 +29,7 @@ class MyThread1 implements Runnable {
         System.out.println(name);
         try {
             cyclicBarrier.await();
+//            System.out.println(name);
         } catch (BrokenBarrierException e) {
             System.out.println(e);
         } catch (InterruptedException e) {
