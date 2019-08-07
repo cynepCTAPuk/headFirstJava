@@ -24,9 +24,10 @@ class MakeString implements Runnable {
     @Override
     public void run() {
         char ch = 'A';
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             // Fill Buffer
-            for (int j = 0; j < 5; j++) string += ch++;
+            for (int j = 0; j < 5; j++)
+                string += ch++;
             try {
                 // Exchange a full buffer for an empty one
                 string = exchanger.exchange(string);
@@ -48,7 +49,7 @@ class UseString implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             try {
                 // Exchange an empty buffer for a full one
                 string = exchanger.exchange(new String());
