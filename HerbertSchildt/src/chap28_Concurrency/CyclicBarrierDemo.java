@@ -11,6 +11,9 @@ public class CyclicBarrierDemo {
         new Thread(new MyThread1(cyclicBarrier,"A")).start();
         new Thread(new MyThread1(cyclicBarrier,"B")).start();
         new Thread(new MyThread1(cyclicBarrier,"C")).start();
+        new Thread(new MyThread1(cyclicBarrier,"X")).start();
+        new Thread(new MyThread1(cyclicBarrier,"Y")).start();
+        new Thread(new MyThread1(cyclicBarrier,"Z")).start();
     }
 }
 
