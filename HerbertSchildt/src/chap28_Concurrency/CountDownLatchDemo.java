@@ -8,7 +8,7 @@ public class CountDownLatchDemo {
         CountDownLatch countDownLatch = new CountDownLatch(5);
         System.out.println("Starting");
         new Thread(new MyThread(countDownLatch)).start();
-        System.out.println("countDownLatch.getCount(): " + countDownLatch.getCount());
+        System.out.println("countDownLatch.getCount(): " + countDownLatch);
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
