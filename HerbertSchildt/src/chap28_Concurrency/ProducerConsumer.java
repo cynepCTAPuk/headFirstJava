@@ -4,37 +4,37 @@ import java.util.concurrent.Semaphore;
 
 // An implementation of a producer and consumer that use semaphore to control synchronization
 class Q {
-    int n;
+    private int n;
     // Start with consumer semaphore unavailable
-    static Semaphore semCon = new Semaphore(0);
-    static Semaphore semPro = new Semaphore(1);
+    private static Semaphore semaphoreConsumer = new Semaphore(0);
+    private static Semaphore semaphoreProducer = new Semaphore(1);
 
     void get() {
         try {
-            semCon.acquire();
+            semaphoreConsumer.acquire();
         } catch (InterruptedException e) {
             System.out.println("InterruptedException caught");
         }
         System.out.println("Got: " + n);
-        semPro.release();
+        semaphoreProducer.release();
     }
 
     void put(int n) {
         try {
-            semPro.acquire();
+            semaphoreProducer.acquire();
         } catch (InterruptedException e) {
             System.out.println("InterruptedException caught");
         }
         this.n = n;
         System.out.println("Put: " + n);
-        semCon.release();
+        semaphoreConsumer.release();
     }
 }
 
 class Producer implements Runnable {
-    Q q;
+    private Q q;
 
-    public Producer(Q q) {
+    Producer(Q q) {
         this.q = q;
     }
 
@@ -45,9 +45,9 @@ class Producer implements Runnable {
 }
 
 class Consumer implements Runnable {
-    Q q;
+    private Q q;
 
-    public Consumer(Q q) {
+    Consumer(Q q) {
         this.q = q;
     }
 
