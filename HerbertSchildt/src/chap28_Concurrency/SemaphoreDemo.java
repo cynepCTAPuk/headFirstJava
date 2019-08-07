@@ -8,6 +8,8 @@ public class SemaphoreDemo {
         Semaphore semaphore = new Semaphore(1);
         new Thread(new IncThread(semaphore, "A")).start();
         new Thread(new DecThread(semaphore, "B")).start();
+        new Thread(new IncThread(semaphore, "AA")).start();
+        new Thread(new DecThread(semaphore, "BB")).start();
     }
 }
 
