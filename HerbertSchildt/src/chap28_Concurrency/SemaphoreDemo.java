@@ -41,7 +41,7 @@ class IncThread implements Runnable {
                 Shared.count++;
                 System.out.println(name + ": " + Shared.count);
                 // Now, allow a context swithc -- if possible
-                Thread.sleep(10);
+                Thread.sleep(100);
             }
         } catch (InterruptedException e) {
             System.out.println(e);
@@ -75,7 +75,7 @@ class DecThread implements Runnable {
                 Shared.count--;
                 System.out.println(name + ": " + Shared.count);
                 // Now, allow a context swithc -- if possible
-                Thread.sleep(10);
+                Thread.sleep(100);
             }
         } catch (InterruptedException e) {
             System.out.println(e);
