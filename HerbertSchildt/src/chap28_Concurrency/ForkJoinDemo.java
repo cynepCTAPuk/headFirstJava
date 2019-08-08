@@ -36,7 +36,7 @@ class SqrtTransform extends RecursiveAction {
             // Find the midpoint
             int middle = (start + end) / 2;
             // Invoke new tasks, using the subdivided data
-            invokeAll(new SqrtTransform(data,start,middle),new SqrtTransform(data,middle,end));
+            invokeAll(new SqrtTransform(data, start, middle), new SqrtTransform(data, middle, end));
         }
     }
 }
@@ -45,20 +45,22 @@ class SqrtTransform extends RecursiveAction {
 class ForkJoinDemo {
     public static void main(String[] args) {
         // Create a task pool
-        ForkJoinPool fjp = new ForkJoinPool();
+//        ForkJoinPool fjp = new ForkJoinPool(); // вариант 1
+//        ForkJoinPool fjp = ForkJoinPool.commonPool(); // вариант 2
         double[] nums = new double[100_000];
         // Give nums some values
         for (int i = 0; i < nums.length; i++) nums[i] = (double) i;
         System.out.println("A portion of the original sequence: ");
-        for (int i = 10; i < 24; i++) System.out.printf("%6.0f ", nums[i]);
+        for (int i = 4; i < 17; i++) System.out.printf("%6.0f ", nums[i]);
         System.out.println("\n");
 
         SqrtTransform task = new SqrtTransform(nums, 0, nums.length);
         // Start the main ForkJoinTask
-        fjp.invoke(task);
-        
+//        fjp.invoke(task); // использовать в обоих вариантах 1 и 2
+        task.invoke();  // вариант 3
+
         System.out.println("A portion of the transformed sequence (to four decimal places): ");
-        for (int i = 10; i < 24; i++) System.out.printf("%6.4f ", nums[i]);
+        for (int i = 4; i < 17; i++) System.out.printf("%6.4f ", nums[i]);
         System.out.println();
     }
 }
