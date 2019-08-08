@@ -56,6 +56,7 @@ class ForkJoinDemo {
         SqrtTransform task = new SqrtTransform(nums, 0, nums.length);
         // Start the main ForkJoinTask
         fjp.invoke(task);
+        
         System.out.println("A portion of the transformed sequence (to four decimal places): ");
         for (int i = 10; i < 24; i++) System.out.printf("%6.4f ", nums[i]);
         System.out.println();
