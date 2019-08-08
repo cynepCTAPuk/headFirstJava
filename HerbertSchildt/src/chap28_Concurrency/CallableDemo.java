@@ -5,10 +5,11 @@ import java.util.concurrent.*;
 
 public class CallableDemo {
     public static void main(String[] args) {
-        ExecutorService es = Executors.newFixedThreadPool(3);
+        ExecutorService es = Executors.newFixedThreadPool(2);
         Future<Integer> f1;
         Future<Double> f2;
         Future<Integer> f3;
+
         System.out.println("Starting");
 
         f1 = es.submit(new Sum(10));
