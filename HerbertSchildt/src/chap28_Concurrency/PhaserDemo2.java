@@ -60,5 +60,4 @@ public class PhaserDemo2 {
         while (!myPhaser.isTerminated()) myPhaser.arriveAndAwaitAdvance();
         System.out.println("The Phase is terminated");
     }
-
 }

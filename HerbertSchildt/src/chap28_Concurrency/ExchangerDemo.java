@@ -1,8 +1,8 @@
 package chap28_Concurrency;
+// An example of Exchanger
 
 import java.util.concurrent.Exchanger;
 
-// An example of Exchanger
 public class ExchangerDemo {
     public static void main(String[] args) {
         Exchanger<String> exchanger = new Exchanger<>();
