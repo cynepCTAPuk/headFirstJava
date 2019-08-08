@@ -16,7 +16,7 @@ public class CallableDemo {
         f3 = es.submit(new Factorial(5));
 
         try {
-            System.out.println("Sum of 10 first numbers: " + f1.get());
+            System.out.println("Sum of first 10 numbers: " + f1.get());
             System.out.println("Triangle hypotenuse with sides 3 and 4: " + f2.get());
             System.out.println("Factorial! 5: " + f3.get());
         } catch (InterruptedException | ExecutionException e) {
