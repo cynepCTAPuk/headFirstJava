@@ -35,10 +35,10 @@ public class PhaserDemo {
 
 // A thread of execution that uses a Phaser
 class MyThread2 implements Runnable {
-    Phaser phaser;
-    String name;
+    private Phaser phaser;
+    private String name;
 
-    public MyThread2(Phaser phaser, String name) {
+    MyThread2(Phaser phaser, String name) {
         this.phaser = phaser;
         this.name = name;
         phaser.register();

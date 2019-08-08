@@ -5,7 +5,7 @@ import java.util.concurrent.Phaser;
 
 // Extend MyPhaser to allow only a specific number of phases to be executed
 class MyPhaser extends Phaser {
-    int numPhases;
+    private int numPhases;
 
     MyPhaser(int parties, int phaseCount) {
         super(parties);
@@ -19,16 +19,15 @@ class MyPhaser extends Phaser {
         // Normally, onAdvance() will not display output.
         System.out.println("Phase " + phase + " completed\n");
         // if all phases have completed, return true
-        if (phase == numPhases || registeredParties == 0) return true;
-        return false;
+        return phase == numPhases || registeredParties == 0;
     }
 }
 
 class MyThread3 implements Runnable {
-    Phaser phaser;
-    String name;
+    private Phaser phaser;
+    private String name;
 
-    public MyThread3(Phaser phaser, String name) {
+    MyThread3(Phaser phaser, String name) {
         this.phaser = phaser;
         this.name = name;
         phaser.register();
