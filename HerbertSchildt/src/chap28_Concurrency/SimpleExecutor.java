@@ -14,7 +14,6 @@ public class SimpleExecutor {
         ExecutorService es = Executors.newFixedThreadPool(2);
 
         System.out.println("Starting");
-
         // Start the threads
         es.execute(new MyThread4(cdl1, "A"));
         es.execute(new MyThread4(cdl2, "B"));
