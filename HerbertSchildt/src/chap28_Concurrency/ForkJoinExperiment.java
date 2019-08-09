@@ -52,14 +52,38 @@ class Transform extends RecursiveAction {
 class ForkJoinExperiment {
     public static void main(String[] args) {
         int pLevel;
-        int threshold;
+        int threshold = 50; // qtyCalculations/(pLevel*10-1000)
+/*
         if (args.length != 2) {
             System.out.println("Usage: ForkJoinDemoExperiment parallelism threshold");
             return;
         }
         pLevel = Integer.parseInt(args[0]);
         threshold = Integer.parseInt(args[1]);
-        // These variables are used to time the task
+*/
+        long time = 0;
+        int count = 20;
+
+        pLevel = 1;
+        for (int i = 0; i < count; i++) time += getTime(pLevel, threshold);
+        System.out.printf(
+                "Level of parallelism: %d Sequential threshold: %,d\n", pLevel, threshold);
+        System.out.printf("Elapsed time: %,d ns\n", time /= count);
+
+        pLevel = 2;
+        for (int i = 0; i < count; i++) time += getTime(pLevel, threshold);
+        System.out.printf(
+                "Level of parallelism: %d Sequential threshold: %,d\n", pLevel, threshold);
+        System.out.printf("Elapsed time: %,d ns\n", time /= count);
+/*
+        System.out.println();
+        int availableProcessors = Runtime.getRuntime().availableProcessors();
+        System.out.println("Runtime.getRuntime().availableProcessors(): " + availableProcessors);
+*/
+    }
+
+    private static long getTime(int pLevel, int threshold) {
+        long time;// These variables are used to time the task
         long beginT, endT;
         // Create a task pool. Notice that the parallelism level is set
 
@@ -70,19 +94,10 @@ class ForkJoinExperiment {
 
         Transform task = new Transform(nums, 0, nums.length, threshold);
 
-        // Starting timing
-        beginT = System.nanoTime();
-        // Start the main ForkJoinTask
-        forkJoinPool.invoke(task);
-        // End timing
-        endT = System.nanoTime();
+        beginT = System.nanoTime();        // Starting timing
+        forkJoinPool.invoke(task);         // Start the main ForkJoinTask
+        endT = System.nanoTime();        // End timing
 
-        System.out.println("Level of parallelism: " + pLevel);
-        System.out.printf("Sequential threshold: %,d\n", threshold);
-        System.out.printf("Elapsed time: %,d ns", endT - beginT);
-        System.out.println();
-        int availableProcessors = Runtime.getRuntime().availableProcessors();
-        System.out.println("Runtime.getRuntime().availableProcessors(): " + availableProcessors);
-
+        return endT - beginT;
     }
 }
