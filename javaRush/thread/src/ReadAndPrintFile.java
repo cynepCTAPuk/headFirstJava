@@ -10,9 +10,7 @@ public class ReadAndPrintFile {
         StringBuilder stringBuilder = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String string;
-            while ((string = reader.readLine()) != null) {
-                stringBuilder.append(string).append("\n");
-            }
+            while ((string = reader.readLine()) != null) stringBuilder.append(string).append("\n");
         } catch (Exception e) {
             e.printStackTrace();
         }
