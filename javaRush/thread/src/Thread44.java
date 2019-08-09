@@ -6,20 +6,24 @@ import java.util.function.Function;
 
 public class Thread44 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         AtomicLong longValue = new AtomicLong(0);
         Runnable task = () -> longValue.set(new Date().getTime());
+
         Function<Long, Date> dateConverter = Date::new;
         Consumer<Date> printer = date -> {
             System.out.println(date);
             System.out.flush();
         };
-        CompletableFuture.runAsync(task)
+
+        CompletableFuture
+                .runAsync(task)
                 .thenApply(v -> longValue.get())
                 .thenApply(dateConverter)
                 .thenAccept(printer);
 
-        CompletableFuture.runAsync(() -> longValue.set(0))
+        CompletableFuture
+                .runAsync(() -> longValue.set(0))
                 .thenApply(v -> longValue.get())
                 .thenApply(dateConverter)
                 .thenAccept(printer);
