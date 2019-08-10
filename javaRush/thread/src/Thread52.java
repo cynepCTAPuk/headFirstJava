@@ -1,3 +1,7 @@
+/*
+https://javarush.ru/groups/posts/2078-threadom-java-ne-isportishjh--chastjh-v---executor-threadpool-fork-join-pool
+Thread'ом Java не испортишь: Часть V — Executor, ThreadPool, Fork Join
+ */
 import java.util.concurrent.*;
 
 public class Thread52 {
