@@ -2,15 +2,15 @@ package chap12_Enums_Annotations;
 
 public class EnumDemo {
     public static void main(String[] args) {
-        Apple apple;
-        apple = Apple.RedDel;
+        Apple1 apple;
+        apple = Apple1.RedDel;
         // Output an enum value
         System.out.println("Value of apple: " + apple);
         System.out.println();
 
-        apple = Apple.GoldenDel;
+        apple = Apple1.GoldenDel;
         // Compare two enum values
-        if (apple == Apple.GoldenDel)
+        if (apple == Apple1.GoldenDel)
             System.out.println("apple contains GoldenDel\n");
 
         //Use an enum to control a switch statement
