@@ -12,5 +12,8 @@ public class AutoBox5 {
         Character ch = 'x'; // box a char
         char ch2 = ch;      // unbox a char
         System.out.println("ch2 is " + ch2);
+
+        System.out.println(Boolean.TRUE.hashCode());    // 1231
+        System.out.println(Boolean.FALSE.hashCode());   // 1237
     }
 }
