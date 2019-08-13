@@ -4,20 +4,21 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.reflect.Method;
 
-// An annotation type declaration that include defaults
+// A marker annotation
 @Retention(RetentionPolicy.RUNTIME)
-@interface MyMarker {}
+@interface MyMarker {
+}
 
 class Marker {
+    // Annotate a method using a marker. Notice that no () is needed
     @MyMarker
     public static void myMethod() {
-        Meta3 meta = new Meta3();
-        // Obtain the annotation for this method and display the values of the members
+        Marker marker = new Marker();
         try {
-            Class<?> obClass = meta.getClass();
-            Method method = obClass.getMethod("myMethod");
-            MyAnno1 annotation = method.getAnnotation(MyAnno1.class);
-            System.out.println(annotation.str() + " " + annotation.val());
+            Method method = marker.getClass().getMethod("myMethod");
+            // Determine if the annotation is present
+            if (method.isAnnotationPresent(MyMarker.class))
+                System.out.println("MyMarker is present");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
