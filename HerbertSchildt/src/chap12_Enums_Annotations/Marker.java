@@ -6,17 +6,10 @@ import java.lang.reflect.Method;
 
 // An annotation type declaration that include defaults
 @Retention(RetentionPolicy.RUNTIME)
-@interface MyAnno1 {
-    String str() default "Testing";
+@interface MyMarker {}
 
-    int val() default 9000;
-}
-
-class Meta3 {
-    @MyAnno1 // both str and val default
-//    @MyAnno1(str = "some string") // val defaults
-//    @MyAnno1(val = 100) // str defaults
-//    @MyAnno1(str = "Testing", val = 100) // no defaults
+class Marker {
+    @MyMarker
     public static void myMethod() {
         Meta3 meta = new Meta3();
         // Obtain the annotation for this method and display the values of the members
