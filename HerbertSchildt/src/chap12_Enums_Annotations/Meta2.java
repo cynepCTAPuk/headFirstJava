@@ -2,7 +2,6 @@ package chap12_Enums_Annotations;
 // Show all annotations for a class and a method
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
 
 @What(description = "An annotation test class")
 @MyAnno(str = "Meta2", val = 99)
