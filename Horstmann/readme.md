@@ -1,13 +1,15 @@
 Cay S. Horstmann
-Core Java
-volume I - Fundamentals
-Volume II - Advanced Features
-Tenth Edition
-2016
+Core Java, Volume I - Fundamentals
+Eleventh Edition
+2018
+Core Java, Volume II - Advanced Features
+2019
 
-Кей Хорстманн
+Кей С. Хорстманн
 Java
 Библиотека профессионала
-Том 1. Основы
 10-е издание
+Том 1. Основы
 2016
+Том 2. Расширенные средства программирования
+2017
