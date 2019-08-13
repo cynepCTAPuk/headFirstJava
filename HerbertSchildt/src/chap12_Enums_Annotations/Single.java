@@ -12,11 +12,11 @@ import java.lang.annotation.RetentionPolicy;
 public class Single {
     // Annotate a method using a single-member annotation
     @MySingle(100)
-    public static void MyMethod() {
+    public static void myMethod() {
         Single single = new Single();
         try {
             MySingle anno = single.getClass()
-                    .getMethod("MyMethod").getAnnotation(MySingle.class);
+                    .getMethod("myMethod").getAnnotation(MySingle.class);
             System.out.println(anno.value());
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
@@ -24,6 +24,6 @@ public class Single {
     }
 
     public static void main(String[] args) {
-        MyMethod();
+        myMethod();
     }
 }
