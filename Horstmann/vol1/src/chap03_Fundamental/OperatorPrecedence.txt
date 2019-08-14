@@ -1,0 +1,17 @@
+Operator Precedence
+
+Operators                                       Associativity
+[] . () (method call)                           Left to right
+! ~ ++ -- + (unary) - (unary) () (cast) new     Right to left
+* / %                                           Left to right
++ -                                             Left to right
+<< >> >>>                                       Left to right
+< <= > >= instanceof                            Left to right
+== !=                                           Left to right
+&                                               Left to right
+^                                               Left to right
+|                                               Left to right
+&&                                              Left to right
+||                                              Left to right
+?:                                              Right to left
+= += -= *= /= %= &= |= ^= <<= >>= >>>=          Right to left
