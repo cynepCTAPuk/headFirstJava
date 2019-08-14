@@ -31,14 +31,16 @@ public class StringTest {
         String str = "string";
         if (str != null && str.length() != 0) System.out.println("String is not null or empty");
 
-        char ch = '\uffff';
-        greeting = ch + " щавель"; // initialize greeting to a string
+        greeting = "\uD83D\uDC95 щавель"; // initialize greeting to a string
         System.out.println(greeting.length() + " " + greeting.codePointCount(0, greeting.length()));
         for (int i = 0; i < greeting.length(); i++) System.out.print(greeting.charAt(i));
         System.out.println();
 
-        int index = greeting.offsetByCodePoints(2, 5);
+        int index = greeting.offsetByCodePoints(0, 0);
         int cp = greeting.codePointAt(index);
         System.out.println(index + " : " + cp);
+
+//        for (char i = '\u3400'; i <= '\u4DB5'; i++) System.out.println(i + " " + (int) i);
+//        System.out.println((char) 19893);
     }
 }
