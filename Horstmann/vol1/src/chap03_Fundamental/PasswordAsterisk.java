@@ -1,6 +1,6 @@
 package chap03_Fundamental;
 /**
-http://www.cse.chalmers.se/edu/year/2018/course/TDA602/Eraserlab/pwdmasking.html
+ http://www.cse.chalmers.se/edu/year/2018/course/TDA602/Eraserlab/pwdmasking.html
  */
 
 import java.io.BufferedReader;
