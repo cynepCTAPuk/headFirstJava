@@ -8,7 +8,7 @@ package chap03_Fundamental.LotteryArray;
  */
 public class LotteryArray {
     public static void main(String[] args) {
-        final int NMAX = 14;
+        final int NMAX = 8;
 
         // allocate triangular array
         int[][] odds = new int[NMAX + 1][];
