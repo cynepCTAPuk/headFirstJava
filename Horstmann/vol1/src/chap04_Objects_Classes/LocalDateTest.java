@@ -1,5 +1,6 @@
 package chap04_Objects_Classes;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -12,6 +13,8 @@ public class LocalDateTest {
         LocalDate date = LocalDate.of(2018, 6, 1);
         System.out.println("Java begin: " + date);
 
+        DayOfWeek dayOfWeek = now.getDayOfWeek();
+        System.out.println(dayOfWeek.getValue() + ":" + dayOfWeek);
         System.out.println("Now until date: " + now.until(date) + "\n");
 
         int year = date.getYear();
@@ -30,11 +33,9 @@ public class LocalDateTest {
         GregorianCalendar someDay = new GregorianCalendar(2018, 6, 1);
         System.out.println(someDay.get(Calendar.YEAR) + "-"
                 + someDay.get(Calendar.MONTH) + "-" + someDay.get(Calendar.DAY_OF_MONTH));
-/*
         someDay.add(Calendar.DAY_OF_YEAR, 1_000);
         System.out.println(someDay.get(Calendar.YEAR) + "-"
                 + someDay.get(Calendar.MONTH) + "-" + someDay.get(Calendar.DAY_OF_MONTH));
-*/
 
         System.out.println("\n" + someDay.toString().replace(",", "\n"));
     }
