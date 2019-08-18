@@ -25,13 +25,17 @@ public class LocalDateTest {
         month = aThousandDaysLater.getMonthValue();
         day = aThousandDaysLater.getDayOfMonth();
         System.out.println(year + "/" + (month < 10 ? "0" : "") + month
-                + "/" + (day < 10 ? "0" : "") + day);
+                + "/" + (day < 10 ? "0" : "") + day + "\n");
 
         GregorianCalendar someDay = new GregorianCalendar(2018, 6, 1);
         System.out.println(someDay.get(Calendar.YEAR) + "-"
                 + someDay.get(Calendar.MONTH) + "-" + someDay.get(Calendar.DAY_OF_MONTH));
+/*
         someDay.add(Calendar.DAY_OF_YEAR, 1_000);
         System.out.println(someDay.get(Calendar.YEAR) + "-"
                 + someDay.get(Calendar.MONTH) + "-" + someDay.get(Calendar.DAY_OF_MONTH));
+*/
+
+        System.out.println("\n" + someDay.toString().replace(",", "\n"));
     }
 }
