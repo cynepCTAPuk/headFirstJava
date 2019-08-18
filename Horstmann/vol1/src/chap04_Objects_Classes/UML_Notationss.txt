@@ -1,0 +1,15 @@
+UML Notation for Class Relationships
+
+The most common relationships between classes are
+Dependence (“uses–a”)
+Aggregation (“has–a”)
+Inheritance (“is–a”)
+
+Relationship                UML Connector
+Inheritance                 ――――――――――――|>
+Interface implementation    ------------|>
+Dependency                  ------------->
+Aggregation                 <>――――――――――――
+Association                 ――――――――――――――
+Directed association        ―――――――――――――>
+
