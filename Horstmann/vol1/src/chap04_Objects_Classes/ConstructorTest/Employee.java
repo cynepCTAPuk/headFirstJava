@@ -13,7 +13,6 @@ class Employee {
         var generator = new Random();
         // set nextId to a random number between 0 and 9999
         nextId = generator.nextInt(10_000);
-        System.out.println(nextId);
     }
 
     // object initialization block
@@ -23,14 +22,14 @@ class Employee {
     }
 
     // three overloaded constructors
-    public Employee(String n, double s) {
-        name = n;
-        salary = s;
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
     }
 
-    public Employee(double s) {
+    public Employee(double salary) {
         // calls the Employee(String, double) constructor
-        this("Employee #" + nextId, s);
+        this("Employee #" + nextId, salary);
     }
 
     // the default constructor
