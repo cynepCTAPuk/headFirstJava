@@ -8,11 +8,28 @@ import java.time.LocalDate;
 public class Calendar {
     public static void main(String[] args) {
         LocalDate date = LocalDate.now();
-        System.out.println(date);
-        int month = date.getMonthValue();
-        int today = date.getDayOfMonth();
+        Integer month = date.getMonthValue();
+        Integer day = date.getDayOfMonth();
 
-        date = date.minusDays(today - 1); // set to start of month
+        if (args.length == 3) {
+            for (String str : args)
+                if (!str.matches("-?\\d+"))
+                    System.exit(0);
+
+            Integer year = Integer.parseInt(args[0]);
+            month = Integer.parseInt(args[1]);
+            day = Integer.parseInt(args[2]);
+
+            if (month == 0 | day == 0) System.exit(0);
+
+            date = LocalDate.of(year, month, day);
+        }
+
+        System.out.print(date + " ");
+        System.out.print(date.getMonth() + " ");
+        System.out.println(date.getDayOfWeek());
+
+        date = date.minusDays(day - 1); // set to start of month
         DayOfWeek weekday = date.getDayOfWeek();
         int value = weekday.getValue(); // 1 = Monday, . . . , 7 = Sunday
 
@@ -21,7 +38,7 @@ public class Calendar {
 
         while (date.getMonthValue() == month) {
             System.out.printf("%3d", date.getDayOfMonth());
-            if (date.getDayOfMonth() == today) System.out.print("*");
+            if (date.getDayOfMonth() == day) System.out.print("*");
             else System.out.print(" ");
 
             date = date.plusDays(1);
