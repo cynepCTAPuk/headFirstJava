@@ -11,6 +11,14 @@ package chap04_Objects_Classes;
  *
  * @author Cay Horstmann
  * @version 1.13 2018-04-10
+ * @since 2019-08-20
+ *
+ * @deprecated
+ *
+ * @see <a href="www.horstmann.com/corejava.html">The Core Java home page</a>
+ * @see "Core Java volume 1"
+ *
+ * @link chap04_Objects_Classes.CalendarTest
  */
 public class Card {
     /**
@@ -30,4 +38,10 @@ public class Card {
      */
     public static final int CLUB = 3;
 
+    /**
+     * {@link chap04_Objects_Classes.EmployeeTest.EmployeeTest)}
+     */
+    public void getCard() {
+
+    }
 }
