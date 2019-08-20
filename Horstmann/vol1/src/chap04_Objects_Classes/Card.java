@@ -12,5 +12,9 @@ package chap04_Objects_Classes;
  * ( 1=туз, 2...10, 11=валет, 12=дама, 13=король).
  */
 public class Card {
+    /**
+     * The "Hearts" card suit
+     */
+    public static final int HEARTS = 1;
 
 }
