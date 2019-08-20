@@ -13,7 +13,7 @@ public class Calendar {
 
         if (args.length == 3) {
             for (String str : args)
-                if (!str.matches("-?\\d+"))
+                if (!str.matches("-?\\d+")) // str.matches("-?(0|[1-9]\\d*)");
                     System.exit(0);
 
             Integer year = Integer.parseInt(args[0]);
