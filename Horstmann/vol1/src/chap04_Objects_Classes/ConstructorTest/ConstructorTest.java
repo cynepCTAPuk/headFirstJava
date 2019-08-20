@@ -1,7 +1,5 @@
 package chap04_Objects_Classes.ConstructorTest;
 
-import java.util.*;
-
 /**
  * This program demonstrates object construction.
  *
