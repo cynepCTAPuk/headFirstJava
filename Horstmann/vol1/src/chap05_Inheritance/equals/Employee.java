@@ -45,8 +45,8 @@ public class Employee {
         var other = (Employee) otherObject;
 
         // test whether the fields have identical values
-        return Objects.equals(name, other.name)
-                && salary == other.salary && Objects.equals(hireDay, other.hireDay);
+        return Objects.equals(name, other.name) &&
+                salary == other.salary && Objects.equals(hireDay, other.hireDay);
     }
 
     public int hashCode() {
@@ -54,7 +54,7 @@ public class Employee {
     }
 
     public String toString() {
-        return getClass().getName() + "[name=" + name + ",salary=" + salary + ",hireDay="
-                + hireDay + "]";
+        return getClass().getName() +
+                "[name=" + name + ",salary=" + salary + ",hireDay=" + hireDay + "]";
     }
 }
