@@ -1,5 +1,7 @@
 package chap05_Inheritance.arrayList;
 
+import com.sun.javafx.image.IntPixelGetter;
+
 import java.util.ArrayList;
 
 /**
@@ -34,9 +36,19 @@ public class ArrayListTest {
         System.out.println("Remove: " + staff.remove(0).getName());
         print(staff);
 
-        var list = new ArrayList<Integer>();
-        list.add(30);
-        System.out.println(list.get(0));
+        Integer a = 999;
+        Integer b = 999;
+        System.out.println(a == b); // false
+        String c = "hello";
+        String d = "hello";
+        System.out.println(c == d); // true
+        System.out.println(c.compareTo(d)); // 0
+        System.out.println(new String("hello") == "hello"); // false
+        System.out.println(new String("hello").compareTo("hello")); // 0
+        for (int i = 128; i < 256; i++) {
+            Character ch = (char) i;
+            System.out.print(" " + i + ":" + ch);
+        }
     }
 
     private static void print(ArrayList<Employee> staff) {
