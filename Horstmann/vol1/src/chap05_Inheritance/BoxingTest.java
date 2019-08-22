@@ -1,4 +1,4 @@
-package chap05_Inheritance.arrayList;
+package chap05_Inheritance;
 
 public class BoxingTest {
     public static void main(String[] args) {
