@@ -44,6 +44,10 @@ public class EqualsTest {
         System.out.println("Binary: " + 0b1111_1111);
         System.out.println("Octal:  " + 0377);
         System.out.println("Hex:    " + 0xf_f);
+
+        System.out.println("Hello".hashCode());
+        System.out.println("Harry".hashCode());
+        System.out.println("Hacker".hashCode());
     }
 }
 
