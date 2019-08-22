@@ -61,9 +61,9 @@ public class NutritionFacts {
     }
 
     public static void main(String[] args) {
-        NutritionFacts cocaCola = new NutritionFacts
-                .Builder(240, 8)
+        NutritionFacts cocaCola = new Builder(240, 8)
                 .calories(100)
+//                .fat(0)
                 .sodium(35)
                 .carbohydrate(27)
                 .build();
