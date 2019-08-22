@@ -38,9 +38,12 @@ public class EqualsTest {
 
         System.out.printf("CTAPuk: %,d\n", Objects.hash("CTAPuk", "Hi", "!"));
         System.out.printf("CTAPuk: %,d\n", Objects.hash("!", "Hi", "CTAPuk"));
+
         System.out.printf("%,d\n", Integer.MAX_VALUE);
+
         System.out.println("Binary: " + 0b1111_1111);
         System.out.println("Octal:  " + 0377);
         System.out.println("Hex:    " + 0xf_f);
+        }
     }
 }
