@@ -45,8 +45,24 @@ public class Employee {
                 salary == other.salary && Objects.equals(hireDay, other.hireDay);
     }
 
+/*
     public int hashCode() {
         return Objects.hash(name, salary, hireDay);
+    }
+*/
+
+    @Override
+/*
+    public int hashCode() {
+        return 7 * name.hashCode()
+                + 11 * new Double(salary).hashCode()
+                + 13 * hireDay.hashCode();
+    }
+*/
+    public int hashCode() {
+        return 7 * Objects.hashCode(name)
+                + 11 * Double.hashCode(salary)
+                + 13 * Objects.hashCode(hireDay);
     }
 
     public String toString() {
