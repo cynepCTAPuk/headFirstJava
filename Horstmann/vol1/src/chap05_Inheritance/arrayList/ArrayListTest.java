@@ -1,7 +1,6 @@
 package chap05_Inheritance.arrayList;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * This program demonstrates the ArrayList class.
