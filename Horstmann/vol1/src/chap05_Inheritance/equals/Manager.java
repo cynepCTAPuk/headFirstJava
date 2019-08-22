@@ -1,5 +1,7 @@
 package chap05_Inheritance.equals;
 
+import java.util.Objects;
+
 public class Manager extends Employee {
     private double bonus;
 
@@ -25,7 +27,7 @@ public class Manager extends Employee {
     }
 
     public int hashCode() {
-        return java.util.Objects.hash(super.hashCode(), bonus);
+        return Objects.hash(super.hashCode(), bonus);
     }
 
     public String toString() {
