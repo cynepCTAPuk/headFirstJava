@@ -68,5 +68,9 @@ public class NutritionFacts {
                 .carbohydrate(27)
                 .build();
         System.out.println(cocaCola);
+
+        NutritionFacts nutritionFacts = new NutritionFacts(
+                new Builder(100, 50)
+                .calories(50));
     }
 }
