@@ -53,7 +53,6 @@ public class Employee {
                         + 13 * hireDay.hashCode();
             }
         */
-
     /*
         public int hashCode() {
             return 7 * Objects.hashCode(name)
@@ -61,14 +60,21 @@ public class Employee {
                     + 13 * Objects.hashCode(hireDay);
         }
     */
-    
     @Override
     public int hashCode() {
         return Objects.hash(name, salary, hireDay);
     }
 
+    /*
+        @Override
+        public String toString() {
+            return "Employee{" + "name='" + name + '\'' +
+                    ", salary=" + salary + ", hireDay=" + hireDay + '}';
+        }
+    */
+    @Override
     public String toString() {
-        return getClass().getName() +
+        return getClass().getSimpleName() +
                 "[name=" + name + ",salary=" + salary + ",hireDay=" + hireDay + "]";
     }
 }
