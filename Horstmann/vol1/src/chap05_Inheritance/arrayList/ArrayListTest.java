@@ -1,6 +1,7 @@
 package chap05_Inheritance.arrayList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * This program demonstrates the ArrayList class.
@@ -18,9 +19,9 @@ public class ArrayListTest {
         staff.add(new Employee("Carl Cracker", 75000, 1987, 12, 15));
 
 //        staff.sort(Comparator.comparing(Employee::getName));
-        staff.sort((o1, o2) -> (int) (o2.getSalary() - o1.getSalary()));
-//        staff.sort((o1, o2) -> o1.getHireDay().compareTo(o2.getHireDay()));
+//        staff.sort((o1, o2) -> (int) (o2.getSalary() - o1.getSalary()));
 //        staff.sort((o1, o2) -> o2.getHireDay().compareTo(o1.getHireDay()));
+        staff.sort(ArrayListTest::compare);
 
         // raise everyone's salary by 5%
         for (Employee e : staff) e.raiseSalary(5);
@@ -30,5 +31,13 @@ public class ArrayListTest {
             System.out.println(
                     "name=" + e.getName() + ",salary=" + e.getSalary() + ",hireDay=" + e.getHireDay());
 
+        var backup = new Employee[staff.size()];
+        staff.toArray(backup);
+        for (Employee e : backup)
+            System.out.printf("%-13s - %,9.1f\n", e.getName(), e.getSalary());
+    }
+
+    private static int compare(Employee o1, Employee o2) {
+        return o1.getHireDay().compareTo(o2.getHireDay());
     }
 }
