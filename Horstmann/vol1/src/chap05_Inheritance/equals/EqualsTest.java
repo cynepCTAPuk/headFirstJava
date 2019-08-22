@@ -44,6 +44,6 @@ public class EqualsTest {
         System.out.println("Binary: " + 0b1111_1111);
         System.out.println("Octal:  " + 0377);
         System.out.println("Hex:    " + 0xf_f);
-        }
     }
 }
+
