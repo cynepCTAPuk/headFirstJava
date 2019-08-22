@@ -1,7 +1,6 @@
-package Appendix_A;
+package chap02.it02;
 
 // Builder Pattern
-// from Bloch Joshua - Effective Java (3rd)
 public class NutritionFacts {
     // Required parameters
     private final int servingSize;
