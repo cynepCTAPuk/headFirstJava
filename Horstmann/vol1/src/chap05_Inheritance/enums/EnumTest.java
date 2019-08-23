@@ -18,6 +18,8 @@ public class EnumTest {
         System.out.println("abbreviation=" + size.getAbbreviation());
         if (size == Size.EXTRA_LARGE)
             System.out.println("Good job--you paid attention to the _.");
+        System.out.println("hashCode: " + size.hashCode());
+        System.out.println("ordinal:  " + size.ordinal());
     }
 }
 
