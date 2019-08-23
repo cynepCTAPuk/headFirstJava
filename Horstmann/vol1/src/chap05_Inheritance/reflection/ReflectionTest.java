@@ -62,7 +62,8 @@ public class ReflectionTest {
             // print parameter types
             Class[] paramTypes = c.getParameterTypes();
             for (int j = 0; j < paramTypes.length; j++) {
-                if (j > 0) System.out.print(", ");
+                if (j > 0)
+                    System.out.print(", ");
                 System.out.print(paramTypes[j].getName());
             }
             System.out.println(");");
