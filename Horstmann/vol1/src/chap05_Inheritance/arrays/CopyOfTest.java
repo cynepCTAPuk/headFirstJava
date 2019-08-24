@@ -31,8 +31,7 @@ public class CopyOfTest {
      * @return a larger array that contains all elements of a. However, the returned
      * array has type Object[], not the same type as a
      */
-    public static Object[] badCopyOf(Object[] a, int newLength) // not useful
-    {
+    public static Object[] badCopyOf(Object[] a, int newLength) {
         var newArray = new Object[newLength];
         System.arraycopy(a, 0, newArray, 0, Math.min(a.length, newLength));
         return newArray;
@@ -48,7 +47,8 @@ public class CopyOfTest {
      */
     public static Object goodCopyOf(Object a, int newLength) {
         Class cl = a.getClass();
-        if (!cl.isArray()) return null;
+        if (!cl.isArray())
+            return null;
         Class componentType = cl.getComponentType();
         int length = Array.getLength(a);
         Object newArray = Array.newInstance(componentType, newLength);
