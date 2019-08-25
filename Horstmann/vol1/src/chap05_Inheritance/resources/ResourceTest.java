@@ -16,16 +16,16 @@ public class ResourceTest
    public static void main(String[] args) throws IOException
    {
       Class cl = ResourceTest.class;
-      URL aboutURL = cl.getResource("/chap05_Inheritance/resources/about.gif");
-      var icon = new ImageIcon(aboutURL);
+      URL aboutGIF = cl.getResource("/chap05_Inheritance/resources/about.gif");
+      var icon = new ImageIcon(aboutGIF);
 
       InputStream stream = cl.getResourceAsStream("/chap05_Inheritance/resources/data/about.txt");
-      var about = new String(stream.readAllBytes(), "UTF-8");
+      var aboutTXT = new String(stream.readAllBytes(), "UTF-8");
 
       InputStream stream2 = cl.getResourceAsStream("/chap05_Inheritance/corejava/title.txt");
       var title = new String(stream2.readAllBytes(), StandardCharsets.UTF_8).trim();
 
-      JOptionPane.showMessageDialog(null, about, title,
+      JOptionPane.showMessageDialog(null, aboutTXT, title,
               JOptionPane.INFORMATION_MESSAGE, icon);
    }
 }
