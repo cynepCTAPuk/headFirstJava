@@ -49,6 +49,7 @@ public class ReflectionTest {
      * @param cl a class
      */
     public static void printConstructors(Class cl) {
+        System.out.println("-".repeat(10) + "printConstructors");
         Constructor[] constructors = cl.getDeclaredConstructors();
 
         for (Constructor c : constructors) {
@@ -76,6 +77,7 @@ public class ReflectionTest {
      * @param cl a class
      */
     public static void printMethods(Class cl) {
+        System.out.println("-".repeat(10) + "printMethods");
         Method[] methods = cl.getDeclaredMethods();
 
         for (Method m : methods) {
@@ -106,6 +108,7 @@ public class ReflectionTest {
      * @param cl a class
      */
     public static void printFields(Class cl) {
+        System.out.println("-".repeat(10) + "printFields");
         Field[] fields = cl.getDeclaredFields();
 
         for (Field f : fields) {
