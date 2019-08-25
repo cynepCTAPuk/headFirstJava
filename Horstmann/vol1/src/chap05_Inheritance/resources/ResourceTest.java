@@ -8,24 +8,25 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
- * @version 1.5 2018-03-15
  * @author Cay Horstmann
+ * @version 1.5 2018-03-15
  */
-public class ResourceTest
-{
-   public static void main(String[] args) throws IOException
-   {
-      Class cl = ResourceTest.class;
-      URL aboutGIF = cl.getResource("/chap05_Inheritance/resources/about.gif");
-      var icon = new ImageIcon(aboutGIF);
+public class ResourceTest {
+    public static void main(String[] args) throws IOException {
+        String path = "/chap05_Inheritance/";
+        Class cl = ResourceTest.class;
 
-      InputStream stream = cl.getResourceAsStream("/chap05_Inheritance/resources/data/about.txt");
-      var aboutTXT = new String(stream.readAllBytes(), "UTF-8");
+        URL aboutGIF = cl.getResource(path + "resources/about.gif");
+        var icon = new ImageIcon(aboutGIF);
 
-      InputStream stream2 = cl.getResourceAsStream("/chap05_Inheritance/corejava/title.txt");
-      var title = new String(stream2.readAllBytes(), StandardCharsets.UTF_8).trim();
+        InputStream stream = cl.getResourceAsStream(path + "resources/data/about.txt");
+        var aboutTXT = new String(stream.readAllBytes(), "UTF-8");
+        System.out.println(aboutTXT);
 
-      JOptionPane.showMessageDialog(null, aboutTXT, title,
-              JOptionPane.INFORMATION_MESSAGE, icon);
-   }
+        InputStream stream2 = cl.getResourceAsStream(path + "corejava/title.txt");
+        var title = new String(stream2.readAllBytes(), StandardCharsets.UTF_8).trim();
+
+        JOptionPane.showMessageDialog(
+                null, aboutTXT, title, JOptionPane.INFORMATION_MESSAGE, icon);
+    }
 }

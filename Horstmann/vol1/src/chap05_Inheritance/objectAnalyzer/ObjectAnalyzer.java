@@ -16,24 +16,19 @@ public class ObjectAnalyzer {
      * @return a string with the object's class name and all field names and values
      */
     public String toString(Object obj) throws ReflectiveOperationException {
-        if (obj == null)
-            return "null";
-        if (visited.contains(obj))
-            return "...";
+        if (obj == null) return "null";
+        if (visited.contains(obj)) return "...";
         visited.add(obj);
 
         Class cl = obj.getClass();
-        if (cl == String.class)
-            return (String) obj;
+        if (cl == String.class) return (String) obj;
 
         if (cl.isArray()) {
             String result = cl.getComponentType() + "[]{";
             for (int i = 0; i < Array.getLength(obj); i++) {
-                if (i > 0)
-                    result += ",";
+                if (i > 0) result += ",";
                 Object val = Array.get(obj, i);
-                if (cl.getComponentType().isPrimitive())
-                    result += val;
+                if (cl.getComponentType().isPrimitive()) result += val;
                 else result += toString(val);
             }
             return result + "}";
@@ -48,13 +43,11 @@ public class ObjectAnalyzer {
             // get the names and values of all fields
             for (Field f : fields) {
                 if (!Modifier.isStatic(f.getModifiers())) {
-                    if (!result.endsWith("["))
-                        result += ",";
+                    if (!result.endsWith("[")) result += ",";
                     result += f.getName() + "=";
                     Class t = f.getType();
                     Object val = f.get(obj);
-                    if (t.isPrimitive())
-                        result += val;
+                    if (t.isPrimitive()) result += val;
                     else result += toString(val);
                 }
             }
