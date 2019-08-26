@@ -6,9 +6,6 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.net.URI;
-import java.net.URL;
-import java.util.ArrayList;
 
 /**
  * This program uses reflection to print all features of a class.
@@ -19,11 +16,11 @@ import java.util.ArrayList;
 public class ReflectTest {
     public static void main(String[] args) {
 
-//        String name = "java.lang.Class";    // 1 method
-//        Class cl = Class.forName(name);     // 1 method
-//        var clazz = new Random();         // 2 method
+//        String name = "java.lang.Class";  // 1 method by String
+//        Class cl = Class.forName(name);   // 1 method
+//        var clazz = new Random();         // 2 method by object
 //        Class cl = clazz.getClass();      // 2 method
-        Class cl = InputStream.class;           // 3 method
+        Class cl = InputStream.class;     // 3 method by class, needs to be import
 
 //        Object obj = cl.getConstructor().newInstance();
         Class supercl = cl.getSuperclass();
