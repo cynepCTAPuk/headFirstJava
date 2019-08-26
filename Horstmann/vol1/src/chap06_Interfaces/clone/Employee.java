@@ -14,13 +14,12 @@ public class Employee implements Cloneable {
         hireDay = new Date();
     }
 
+    @Override
     public Employee clone() throws CloneNotSupportedException {
         // call Object.clone()
         Employee cloned = (Employee) super.clone();
-
         // clone mutable fields
         cloned.hireDay = (Date) hireDay.clone();
-
         return cloned;
     }
 
@@ -33,7 +32,6 @@ public class Employee implements Cloneable {
      */
     public void setHireDay(int year, int month, int day) {
         Date newHireDay = new GregorianCalendar(year, month - 1, day).getTime();
-
         // example of instance field mutation
         hireDay.setTime(newHireDay.getTime());
     }
@@ -43,7 +41,9 @@ public class Employee implements Cloneable {
         salary += raise;
     }
 
+    @Override
     public String toString() {
-        return "Employee[name=" + name + ",salary=" + salary + ",hireDay=" + hireDay + "]";
+        return "Employee[name=" + name +
+                String.format(", salary=%,.1f", salary) + ", hireDay=" + hireDay + "]";
     }
 }
