@@ -1,6 +1,6 @@
-package serviceLoader.impl;
+package chap06_Interfaces.serviceLoader.impl;
 
-import serviceLoader.Cipher;
+import chap06_Interfaces.serviceLoader.Cipher;
 
 public class CaesarCipher implements Cipher
 {

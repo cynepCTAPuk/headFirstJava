@@ -1,4 +1,4 @@
-package serviceLoader;
+package chap06_Interfaces.serviceLoader;
 
 public interface Cipher
 {
