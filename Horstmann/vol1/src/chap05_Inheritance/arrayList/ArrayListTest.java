@@ -1,7 +1,5 @@
 package chap05_Inheritance.arrayList;
 
-import com.sun.javafx.image.IntPixelGetter;
-
 import java.util.ArrayList;
 
 /**
