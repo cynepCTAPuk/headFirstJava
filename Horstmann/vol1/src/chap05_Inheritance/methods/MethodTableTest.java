@@ -9,15 +9,14 @@ import java.lang.reflect.Method;
  * @version 1.2 2012-05-04
  */
 public class MethodTableTest {
-    public static void main(String[] args)
-            throws ReflectiveOperationException {
+    public static void main(String[] args) throws ReflectiveOperationException {
         // get method pointers to the square and sqrt methods
         Method square = MethodTableTest.class.getMethod("square", double.class);
         Method sqrt = Math.class.getMethod("sqrt", double.class);
 
         // print tables of x- and y-values
-        printTable(1, 10, 10, square);
-        printTable(1, 10, 10, sqrt);
+        printTable(1, 10, 20, square);
+        printTable(1, 10, 20, sqrt);
     }
 
     /**
@@ -43,11 +42,11 @@ public class MethodTableTest {
         // print out the method as table header
         System.out.println(f);
 
-        double dx = (to - from) / (n - 1);
-
+        double dx = (to - from + 1) / n;
+        int i = 1;
         for (double x = from; x <= to; x += dx) {
             double y = (Double) f.invoke(null, x);
-            System.out.printf("%10.4f | %10.4f%n", x, y);
+            System.out.printf("%2d %10.4f | %10.4f%n", i++, x, y);
         }
     }
 }
