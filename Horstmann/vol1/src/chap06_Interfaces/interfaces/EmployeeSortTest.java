@@ -1,5 +1,7 @@
 package chap06_Interfaces.interfaces;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
 /**
@@ -24,5 +26,10 @@ public class EmployeeSortTest {
         Arrays.sort(staff, (o1, o2) -> o1.getName().compareTo(o2.getName()));
         for (Employee e : staff)
            System.out.println("name=" + e.getName() + ", salary=" + e.getSalary());
+
+       Path path = Paths.get("jdk", "jre", "bin");
+       System.out.println(path);
+       path = Path.of("c:", "V", "java");
+       System.out.println(path);
     }
 }
