@@ -5,18 +5,19 @@ package chap06_Interfaces.timer;
  * @author Cay Horstmann
  */
 
-import java.awt.*;
-import java.awt.event.*;
-import java.time.*;
-import javax.swing.*;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.Instant;
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 public class TimerTest {
     public static void main(String[] args) {
         var listener = new TimePrinter();
 
-        // construct a timer that calls the listener
-        // once every second
-        var timer = new Timer(1000, listener);
+        // construct a timer that calls the listener once every second
+        var timer = new Timer(2_000, listener);
         timer.start();
 
         // keep program running until the user selects "OK"
@@ -27,8 +28,7 @@ public class TimerTest {
 
 class TimePrinter implements ActionListener {
     public void actionPerformed(ActionEvent event) {
-        System.out.println("At the tone, the time is "
-                + Instant.ofEpochMilli(event.getWhen()));
+        System.out.println("At the tone, the time is " + Instant.ofEpochMilli(event.getWhen()));
         Toolkit.getDefaultToolkit().beep();
     }
 }
