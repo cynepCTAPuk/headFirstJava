@@ -2,6 +2,7 @@ package chap06_Interfaces.clone;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.Arrays;
 
 /**
  * This program demonstrates cloning.
@@ -34,5 +35,10 @@ public class CloneTest {
             if (modifiers.length() > 0) System.out.print(modifiers + " ");
             System.out.println(type.getSimpleName() + " " + name + ";");
         }
+        int[] luckyNumbers = {2, 3, 5, 7, 11, 13};
+        int[] clonedNumber = luckyNumbers.clone();
+        System.out.println(Arrays.toString(clonedNumber));
+        clonedNumber[0] = 1;
+        System.out.println(Arrays.toString(clonedNumber));
     }
 }
