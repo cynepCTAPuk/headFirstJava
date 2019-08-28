@@ -1,8 +1,8 @@
 package chap06_Interfaces.serviceLoader;
 
-import java.io.*;
-import java.nio.charset.*;
-import java.util.*;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.util.ServiceLoader;
 
 /**
  * @author Cay Horstmann
@@ -10,8 +10,7 @@ import java.util.*;
  */
 
 public class ServiceLoaderTest {
-    public static ServiceLoader<Cipher> cipherLoader
-            = ServiceLoader.load(Cipher.class);
+    public static ServiceLoader<Cipher> cipherLoader = ServiceLoader.load(Cipher.class);
 
     public static void main(String[] args) throws UnsupportedEncodingException {
         Cipher cipher = getCipher(1);
