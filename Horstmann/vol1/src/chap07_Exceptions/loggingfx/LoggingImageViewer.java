@@ -1,4 +1,4 @@
-package loggingfx;
+package chap07_Exceptions.loggingfx;
 
 import java.io.*;
 import java.nio.file.*;
