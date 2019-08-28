@@ -1,6 +1,5 @@
 package chap06_Interfaces.serviceLoader;
 
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.ServiceLoader;
 
@@ -12,7 +11,7 @@ import java.util.ServiceLoader;
 public class ServiceLoaderTest {
     public static ServiceLoader<Cipher> cipherLoader = ServiceLoader.load(Cipher.class);
 
-    public static void main(String[] args) throws UnsupportedEncodingException {
+    public static void main(String[] args) {
         Cipher cipher = getCipher(1);
         var message = "Meet me at the toga party.";
         byte[] bytes = cipher.encrypt(message.getBytes(), new byte[]{3});
