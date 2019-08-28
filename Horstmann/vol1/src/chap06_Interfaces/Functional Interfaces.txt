@@ -1,0 +1,52 @@
+﻿Functional Interfaca,Parameter Types,Return Type,Abstact Method Name,Description,Other Methods
+
+BiConsumer,T U,void,accept,Consumes a values of types T and U,andThen
+BiFunction,T U,R,apply,A function with argument of type T and U,andThen
+BinaryOperator,T T,T,apply,A binary operator on the type T,andThen maxBy minBy
+BiPredicate,T U,boolean,test,A boolean-valued function with two arguments,and or negative
+
+BooleanSupplier,none,boolean,getAsBoolean
+
+Consumer,T,void,accept,Consumes a value of type T,andThen
+
+DoubleBinaryOperator
+DoubleConsumer
+DoubleFunction
+DoublePredicate
+DoubleSupplier
+DoubleToIntFunction
+DoubleToLongFunction
+DoubleUnaryOperator
+ObjDoubleConsumer
+ToDoubleBiFunction
+ToDoubleFunction
+
+Function,T,R,apply,A function with argument of type T,compose andThen identity
+
+IntBinaryOperator
+IntConsumer
+IntFunction
+IntPredicate
+IntSupplier
+IntToDoubleFunction
+IntToLongFunction
+IntUnaryOperator
+ObjIntConsumer
+ToIntBiFunction
+ToIntFunction
+
+LongBinaryOperator
+LongConsumer
+LongFunction
+LongPredicate
+LongSupplier
+LongToDoubleFunction
+LongToIntFunction
+LongUnaryOperator
+ObjLongConsumer
+ToLongBiFunction
+ToLongFunction
+
+Predicate,T,boolean,test,A boolean-valued function,and or negate isEqual
+Supplier,none,T,get,Supplies a value of type T,-
+UnaryOperator,T,T,apply,A unary operator on the type T,compose andThen identity

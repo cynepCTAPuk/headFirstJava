@@ -1,0 +1,12 @@
+﻿Functional Interface,Parameter Types,Return Type,Abstract Method Name
+BooleanSupplier,none,boolean,getAsBoolean
+PSupplier,none,p,getAsP
+PConsumer,p,void,accept
+ObjPConsumer<T>,T p,void,accept
+PFunction<T>,p,T,apply
+PToQFunction,p,q,applyAsQ
+ToPFunction<T>,T,p,applyAsP
+ToPBiFunction<T, U>,T U,p,applyAsP
+PUnaryOperator,p,p,applyAsP
+PBinaryOperator,p p,p,applyAsP
+PPredicate,p,boolean,test
