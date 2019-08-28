@@ -15,22 +15,17 @@ import java.util.Random;
 public class ProxyTest {
     public static void main(String[] args) {
         var elements = new Object[1_000];
-
         // fill elements with proxies for the integers 1 . . . 1000
         for (int i = 0; i < elements.length; i++) {
             Integer value = i + 1;
             var handler = new TraceHandler(value);
-            Object proxy = Proxy.newProxyInstance(
-                    ClassLoader.getSystemClassLoader(),
+            Object proxy = Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),
                     new Class[]{Comparable.class}, handler);
             elements[i] = proxy;
         }
-        // construct a random integer
-        Integer key = new Random().nextInt(elements.length) + 1;
-        // search for the key
-        int result = Arrays.binarySearch(elements, key);
-        // print match if found
-        if (result >= 0) System.out.println(elements[result]);
+        Integer key = new Random().nextInt(elements.length) + 1; // construct a random integer
+        int result = Arrays.binarySearch(elements, key); // search for the key
+        if (result >= 0) System.out.println(elements[result]); // print match if found
     }
 }
 
@@ -51,19 +46,15 @@ class TraceHandler implements InvocationHandler {
     }
 
     public Object invoke(Object proxy, Method m, Object[] args) throws Throwable {
-        // print implicit argument
-        System.out.print(target);
-        // print method name
-        System.out.print("." + m.getName() + "(");
-        // print explicit arguments
-        if (args != null) {
+        System.out.print(target);   // print implicit argument
+        System.out.print("." + m.getName() + "(");  // print method name
+        if (args != null) { // print explicit arguments
             for (int i = 0; i < args.length; i++) {
                 System.out.print(args[i]);
                 if (i < args.length - 1) System.out.print(", ");
             }
         }
         System.out.println(")");
-        // invoke actual method
-        return m.invoke(target, args);
+        return m.invoke(target, args); // invoke actual method
     }
 }
