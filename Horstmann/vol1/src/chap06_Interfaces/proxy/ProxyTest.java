@@ -1,7 +1,10 @@
 package chap06_Interfaces.proxy;
 
-import java.lang.reflect.*;
-import java.util.*;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  * This program demonstrates the use of proxies.
@@ -11,7 +14,7 @@ import java.util.*;
  */
 public class ProxyTest {
     public static void main(String[] args) {
-        var elements = new Object[1000];
+        var elements = new Object[1_000];
 
         // fill elements with proxies for the integers 1 . . . 1000
         for (int i = 0; i < elements.length; i++) {
@@ -22,13 +25,10 @@ public class ProxyTest {
                     new Class[]{Comparable.class}, handler);
             elements[i] = proxy;
         }
-
         // construct a random integer
         Integer key = new Random().nextInt(elements.length) + 1;
-
         // search for the key
         int result = Arrays.binarySearch(elements, key);
-
         // print match if found
         if (result >= 0) System.out.println(elements[result]);
     }
@@ -63,7 +63,6 @@ class TraceHandler implements InvocationHandler {
             }
         }
         System.out.println(")");
-
         // invoke actual method
         return m.invoke(target, args);
     }
