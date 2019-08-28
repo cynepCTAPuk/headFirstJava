@@ -1,6 +1,6 @@
 package chap07_Exceptions.stackTrace;
 
-import java.util.*;
+import java.util.Scanner;
 
 /**
  * A program that displays a trace feature of a recursive method call.
