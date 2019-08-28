@@ -4,6 +4,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.Instant;
+import java.util.Date;
 
 import javax.swing.*;
 
@@ -37,8 +38,8 @@ class TalkingClock {
     public void start(int interval, boolean beep) {
         class TimePrinter implements ActionListener {
             public void actionPerformed(ActionEvent event) {
-                System.out.println(
-                        "At the tone, the time is " + Instant.ofEpochMilli(event.getWhen()));
+                System.out.println("At the tone, the time is " + new Date());
+//                        "At the tone, the time is " + Instant.ofEpochMilli(event.getWhen()));
                 if (beep) Toolkit.getDefaultToolkit().beep();
             }
         }

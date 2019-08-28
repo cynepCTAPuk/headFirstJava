@@ -1,10 +1,10 @@
 package chap06_Interfaces.innerClass;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.time.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Date;
 
 /**
  * This program demonstrates the use of inner classes.
@@ -14,9 +14,8 @@ import javax.swing.*;
  */
 public class InnerClassTest {
     public static void main(String[] args) {
-        var clock = new TalkingClock(1000, true);
+        var clock = new TalkingClock(1_000, true);
         clock.start();
-
         // keep program running until the user selects "OK"
         JOptionPane.showMessageDialog(null, "Quit program?");
         System.exit(0);
@@ -50,11 +49,12 @@ class TalkingClock {
         timer.start();
     }
 
-    public class TimePrinter implements ActionListener {
+    private class TimePrinter implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-            System.out.println("At the tone, the time is "
-                    + Instant.ofEpochMilli(event.getWhen()));
+            System.out.println("At the tone, the time is " + new Date());
+//                    + Instant.ofEpochMilli(event.getWhen()));
             if (beep) Toolkit.getDefaultToolkit().beep();
+//            if (TalkingClock.this.beep) Toolkit.getDefaultToolkit().beep();
         }
     }
 }
