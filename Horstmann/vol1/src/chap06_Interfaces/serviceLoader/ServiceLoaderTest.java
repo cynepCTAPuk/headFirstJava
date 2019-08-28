@@ -14,6 +14,8 @@ public class ServiceLoaderTest {
     public static void main(String[] args) {
         Cipher cipher = getCipher(1);
         var message = "Meet me at the toga party.";
+//        char ch = ' ';
+//        for (int i = 0; i < 95; i++) System.out.print(ch++);
         byte[] bytes = cipher.encrypt(message.getBytes(), new byte[]{3});
         var encrypted = new String(bytes, StandardCharsets.UTF_8);
         System.out.println(encrypted);
