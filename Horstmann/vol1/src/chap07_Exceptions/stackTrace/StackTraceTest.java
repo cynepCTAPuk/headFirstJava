@@ -1,7 +1,5 @@
 package chap07_Exceptions.stackTrace;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.Scanner;
 
 /**
@@ -25,6 +23,11 @@ public class StackTraceTest {
         t.printStackTrace(new PrintWriter(out));
         String description = out.toString();
         System.out.println(description);
+*/
+/*
+        var t = new Throwable();
+        var out = t.getStackTrace();
+        for (StackTraceElement e : out) System.out.println(e);
 */
         var walker = StackWalker.getInstance();
         walker.forEach(System.out::println);
