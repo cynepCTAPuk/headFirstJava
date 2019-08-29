@@ -1,6 +1,7 @@
 package chap07_Exceptions.exceptional;
 
-import java.util.*;
+import java.util.EmptyStackException;
+import java.util.Stack;
 
 /**
  * @author Cay Horstmann
@@ -9,7 +10,7 @@ import java.util.*;
 public class ExceptionalTest {
     public static void main(String[] args) {
         int i = 0;
-        int ntry = 10000000;
+        int ntry = 10_000_000;
         var stack = new Stack<String>();
 
         // test a stack for emptiness ntry times
@@ -18,7 +19,7 @@ public class ExceptionalTest {
         for (i = 0; i <= ntry; i++)
             if (!stack.empty()) stack.pop();
         long end = System.currentTimeMillis();
-        System.out.println((end - start) + " milliseconds");
+        System.out.printf("%,10d milliseconds\n", (end - start));
 
         // pop an empty stack ntry times and catch the resulting exception
         System.out.println("Catching EmptyStackException");
@@ -30,6 +31,6 @@ public class ExceptionalTest {
             }
         }
         end = System.currentTimeMillis();
-        System.out.println((end - start) + " milliseconds");
+        System.out.printf("%,10d milliseconds\n", (end - start));
     }
 }
