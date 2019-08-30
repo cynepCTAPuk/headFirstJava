@@ -1,17 +1,18 @@
 package chap07_Exceptions.baselogging;
 
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.IOException;
+import java.util.logging.*;
 
 public class LoggerTest {
     //    private static final Logger LOGGER = Logger.getLogger("com.example");
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Logger LOGGER = Logger.getLogger("com.example");
         LOGGER.setLevel(Level.ALL);
         LOGGER.setUseParentHandlers(false);
 
-        var handler = new ConsoleHandler();
+//        var handler = new ConsoleHandler();   // log to console
+//        var handler = new SocketHandler(host, port); // log throw network
+        var handler = new FileHandler();        // log to file %HOMEPATH%\java0.log
         handler.setLevel(Level.ALL);
 
         LOGGER.addHandler(handler);
