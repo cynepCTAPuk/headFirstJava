@@ -1,4 +1,4 @@
-package pair3;
+package chap08_Generic.pair3;
 
 /**
  * @version 1.01 2012-01-26
