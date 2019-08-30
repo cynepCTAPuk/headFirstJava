@@ -18,6 +18,8 @@ public class PairTest2 {
         Pair<LocalDate> mm = ArrayAlg.minmax(birthdays);
         System.out.println("min = " + mm.getFirst());
         System.out.println("max = " + mm.getSecond());
+
+        System.out.println(ArrayAlg.getMiddle(birthdays));
     }
 }
 
@@ -37,5 +39,9 @@ class ArrayAlg {
             if (max.compareTo(a[i]) < 0) max = a[i];
         }
         return new Pair<>(min, max);
+    }
+
+    public static <T> T getMiddle(T... a) {
+        return a[a.length / 2];
     }
 }

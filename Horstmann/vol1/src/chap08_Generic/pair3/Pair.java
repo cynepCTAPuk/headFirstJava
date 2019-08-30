@@ -5,6 +5,7 @@ package chap08_Generic.pair3;
  * @version 1.00 2004-05-10
  */
 public class Pair<T> {
+
     private T first;
     private T second;
 
