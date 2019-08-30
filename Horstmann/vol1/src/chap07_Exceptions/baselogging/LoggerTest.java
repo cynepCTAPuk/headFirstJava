@@ -11,10 +11,10 @@ public class LoggerTest {
         LOGGER.setUseParentHandlers(false);
 
 //        var handler = new ConsoleHandler();   // log to console
-//        var handler = new SocketHandler(host, port); // log throw network
         var handler = new FileHandler();        // log to file %HOMEPATH%\java0.log
-        handler.setLevel(Level.ALL);
+//        var handler = new SocketHandler(host, port); // log throw network
 
+        handler.setLevel(Level.ALL);
         LOGGER.addHandler(handler);
 /*
         Logger.getGlobal().info("File->Open menu item selected");

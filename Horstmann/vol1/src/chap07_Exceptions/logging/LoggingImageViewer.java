@@ -14,31 +14,35 @@ import javax.swing.*;
  */
 public class LoggingImageViewer {
     public static void main(String[] args) {
-        if (System.getProperty("java.util.logging.config.class") == null
-                && System.getProperty("java.util.logging.config.file") == null) {
+        if (System.getProperty(
+                "java.util.logging.config.class") == null &&
+                System.getProperty("java.util.logging.config.file") == null) {
             try {
                 Logger.getLogger("com.horstmann.corejava").setLevel(Level.ALL);
                 final int LOG_ROTATION_COUNT = 10;
-                var handler = new FileHandler("%h/LoggingImageViewer.log", 0, LOG_ROTATION_COUNT);
+                var handler = new FileHandler(
+                        "%h/LoggingImageViewer.log", 0, LOG_ROTATION_COUNT);
                 Logger.getLogger("com.horstmann.corejava").addHandler(handler);
             } catch (IOException e) {
-                Logger.getLogger("com.horstmann.corejava").log(Level.SEVERE,
-                        "Can't create log file handler", e);
+                Logger.getLogger("com.horstmann.corejava")
+                        .log(Level.SEVERE, "Can't create log file handler", e);
             }
         }
 
-        EventQueue.invokeLater(() ->
-        {
-            var windowHandler = new WindowHandler();
-            windowHandler.setLevel(Level.ALL);
-            Logger.getLogger("com.horstmann.corejava").addHandler(windowHandler);
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                var windowHandler = new WindowHandler();
+                windowHandler.setLevel(Level.ALL);
+                Logger.getLogger("com.horstmann.corejava").addHandler(windowHandler);
 
-            var frame = new ImageViewerFrame();
-            frame.setTitle("LoggingImageViewer");
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                var frame = new ImageViewerFrame();
+                frame.setTitle("LoggingImageViewer");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-            Logger.getLogger("com.horstmann.corejava").fine("Showing frame");
-            frame.setVisible(true);
+                Logger.getLogger("com.horstmann.corejava").fine("Showing frame");
+                frame.setVisible(true);
+            }
         });
     }
 }
@@ -70,11 +74,9 @@ class ImageViewerFrame extends JFrame {
 
         var exitItem = new JMenuItem("Exit");
         menu.add(exitItem);
-        exitItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent event) {
-                logger.fine("Exiting.");
-                System.exit(0);
-            }
+        exitItem.addActionListener(event -> {
+            logger.fine("Exiting.");
+            System.exit(0);
         });
 
         // use a label to display the images
@@ -85,7 +87,8 @@ class ImageViewerFrame extends JFrame {
 
     private class FileOpenListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-            logger.entering("ImageViewerFrame.FileOpenListener", "actionPerformed", event);
+            logger.entering("ImageViewerFrame.FileOpenListener",
+                    "actionPerformed", event);
 
             // set up file chooser
             var chooser = new JFileChooser();
@@ -94,6 +97,7 @@ class ImageViewerFrame extends JFrame {
             // accept all files ending with .gif
             chooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
                 public boolean accept(File f) {
+
                     return f.getName().toLowerCase().endsWith(".gif") || f.isDirectory();
                 }
 
@@ -111,7 +115,8 @@ class ImageViewerFrame extends JFrame {
                 logger.log(Level.FINE, "Reading file {0}", name);
                 label.setIcon(new ImageIcon(name));
             } else logger.fine("File open dialog canceled.");
-            logger.exiting("ImageViewerFrame.FileOpenListener", "actionPerformed");
+            logger.exiting("ImageViewerFrame.FileOpenListener",
+                    "actionPerformed");
         }
     }
 }
@@ -126,10 +131,12 @@ class WindowHandler extends StreamHandler {
         frame = new JFrame();
         var output = new JTextArea();
         output.setEditable(false);
+
         frame.setSize(200, 200);
         frame.add(new JScrollPane(output));
         frame.setFocusableWindowState(false);
         frame.setVisible(true);
+
         setOutputStream(new OutputStream() {
             public void write(int b) {
             } // not called
