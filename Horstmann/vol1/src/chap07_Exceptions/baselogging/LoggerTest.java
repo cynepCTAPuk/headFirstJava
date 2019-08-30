@@ -5,22 +5,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LoggerTest {
-    private static final Logger LOGGER = Logger.getLogger("com.example");
-    
-
+    //    private static final Logger LOGGER = Logger.getLogger("com.example");
     public static void main(String[] args) {
+        Logger LOGGER = Logger.getLogger("com.example");
+        LOGGER.setLevel(Level.ALL);
+        LOGGER.setUseParentHandlers(false);
+
+        var handler = new ConsoleHandler();
+        handler.setLevel(Level.ALL);
+
+        LOGGER.addHandler(handler);
 /*
         Logger.getGlobal().info("File->Open menu item selected");
         Logger.getGlobal().setLevel(Level.OFF);
         Logger.getGlobal().info("File->Open menu item selected");
 */
-//        LOGGER.setLevel(Level.ALL);
-        LOGGER.setLevel(Level.ALL);
-        LOGGER.setUseParentHandlers(false);
-        var handler = new ConsoleHandler();
-        handler.setLevel(Level.ALL);
-        LOGGER.addHandler(handler);
-
         LOGGER.severe("severe");
         LOGGER.warning("warning");
         LOGGER.info("инфо");
