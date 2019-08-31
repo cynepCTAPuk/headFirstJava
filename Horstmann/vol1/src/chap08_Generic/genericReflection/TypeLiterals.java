@@ -10,8 +10,7 @@ import java.util.*;
 import java.util.function.*;
 
 /**
- * A type literal describes a type that can be generic, such as 
- * ArrayList<String>. 
+ * A type literal describes a type that can be generic, such as ArrayList<String>.
  */
 class TypeLiteral<T> {
     private Type type;
@@ -63,7 +62,8 @@ class Formatter {
 
     /**
      * Add a formatting rule to this formatter.
-     * @param type the type to which this rule applies
+     *
+     * @param type             the type to which this rule applies
      * @param formatterForType the function that formats objects of this type
      */
     public <T> void forType(TypeLiteral<T> type, Function<T, String> formatterForType) {
@@ -72,6 +72,7 @@ class Formatter {
 
     /**
      * Formats all fields of an object using the rules of this formatter.
+     *
      * @param obj an object
      * @return a string with all field names and formatted values
      */

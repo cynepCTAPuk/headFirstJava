@@ -38,7 +38,8 @@ public class GenericReflectionTest {
             System.out.print(" extends ");
             printType(sc, false);
         }
-        printTypes(cl.getGenericInterfaces(), " implements ", ", ", "", false);
+        printTypes(cl.getGenericInterfaces(), " implements ", ", ", "",
+                false);
         System.out.println();
     }
 
@@ -58,8 +59,7 @@ public class GenericReflectionTest {
 
     public static void printTypes(Type[] types, String pre, String sep, String suf,
                                   boolean isDefinition) {
-        if (pre.equals(" extends ") && Arrays.equals(types, new Type[]{Object.class}))
-            return;
+        if (pre.equals(" extends ") && Arrays.equals(types, new Type[]{Object.class})) return;
         if (types.length > 0) System.out.print(pre);
         for (int i = 0; i < types.length; i++) {
             if (i > 0) System.out.print(sep);

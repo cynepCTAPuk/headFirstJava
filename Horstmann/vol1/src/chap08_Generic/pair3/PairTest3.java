@@ -13,12 +13,13 @@ public class PairTest3 {
 
         ceo.setBonus(1_000_000);
         cfo.setBonus(500_000);
-        Manager[] managers = {ceo, cfo};
 
+        Manager[] managers = {ceo, cfo};
         var result = new Pair<Employee>();
         minmaxBonus(managers, result);
         System.out.println("first: " + result.getFirst().getName()
                 + ", second: " + result.getSecond().getName());
+
         maxminBonus(managers, result);
         System.out.println("first: " + result.getFirst().getName()
                 + ", second: " + result.getSecond().getName());
