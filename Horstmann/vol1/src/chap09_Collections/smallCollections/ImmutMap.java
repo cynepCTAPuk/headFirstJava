@@ -1,4 +1,4 @@
-package chap09_Collections.immutableCollections;
+package chap09_Collections.smallCollections;
 
 import java.util.Map;
 

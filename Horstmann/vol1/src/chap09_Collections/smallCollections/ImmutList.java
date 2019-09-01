@@ -1,4 +1,4 @@
-package chap09_Collections.immutableCollections;
+package chap09_Collections.smallCollections;
 
 import java.util.List;
 
@@ -9,9 +9,7 @@ public class ImmutList {
         //Preserve the elements order
         System.out.println(names);
 //        Collections.sort(names); //UnsupportedOperationException
-
 //        names.add("Brian"); //UnsupportedOperationException
-
         //java.lang.NullPointerException
 //        List<String> names2 = List.of("Lokesh", "Amit", "John", null);
 
