@@ -1,4 +1,4 @@
-package properties;
+package chap09_Collections.properties;
 
 import java.awt.EventQueue;
 import java.awt.event.*;

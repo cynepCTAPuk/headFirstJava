@@ -1,4 +1,4 @@
-package shuffle;
+package chap09_Collections.shuffle;
 
 import java.util.*;
 

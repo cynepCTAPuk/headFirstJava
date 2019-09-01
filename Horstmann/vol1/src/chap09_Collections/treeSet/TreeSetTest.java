@@ -1,4 +1,4 @@
-package treeSet;
+package chap09_Collections.treeSet;
 
 import java.util.*;
 

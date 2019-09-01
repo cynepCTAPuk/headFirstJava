@@ -1,4 +1,4 @@
-package linkedList;
+package chap09_Collections.linkedList;
 
 import java.util.*;
 

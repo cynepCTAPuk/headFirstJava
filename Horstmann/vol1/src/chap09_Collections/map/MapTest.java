@@ -1,4 +1,4 @@
-package map;
+package chap09_Collections.map;
 
 import java.util.*;
 
