@@ -26,7 +26,6 @@ public class LinkedListTest {
         // merge the words from b into a
         ListIterator<String> aIter = a.listIterator();
         Iterator<String> bIter = b.iterator();
-
         while (bIter.hasNext()) {
             if (aIter.hasNext()) aIter.next();
             aIter.add(bIter.next());
