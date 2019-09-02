@@ -16,10 +16,11 @@ public class CircularArrayQueueTest {
         q.add("Carl");
         q.add("Deedee");
         q.add("Emile");
+        System.out.println(q.remove());
+        System.out.println(q.add("Fifi"));
+        System.out.println(q.peek());
         q.remove();
-        q.add("Fifi");
-        q.remove();
-        for (String s : q) System.out.println(s);
+        for (String s : q) System.out.print(s + " ");
     }
 }
 
