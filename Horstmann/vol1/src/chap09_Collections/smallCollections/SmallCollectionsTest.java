@@ -25,5 +25,14 @@ public class SmallCollectionsTest {
         System.out.println(numbers2);
         numbers2.add(4);
         System.out.println(numbers2);
+
+        Map<String, Integer> scores = Map.ofEntries(
+                Map.entry("Peter", 2),
+                Map.entry("Paul", 3),
+                Map.entry("Mary", 5));
+//        scores.put("CTAPuk", 7); // java.lang.UnsupportedOperationException
+        System.out.println(scores);
+
+        List<String> settings = Collections.nCopies(100, "DEFAULT");
     }
 }
