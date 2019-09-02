@@ -7,6 +7,6 @@ public class SmallCollectionsTest {
     public static void main(String[] args) {
         List<String> names = List.of("Peter", "Paul", "Mary");
         Set<Integer> numbers = Set.of(2, 3, 5);
-        
+
     }
 }
