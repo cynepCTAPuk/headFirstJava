@@ -20,4 +20,5 @@ public class Employee {
     public String toString() {
         return "[name=" + name + ", salary=" + salary + "]";
     }
+//    public String toString() {return "name:" + name + ", salary:" + salary;}
 }
