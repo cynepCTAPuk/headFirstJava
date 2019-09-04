@@ -21,7 +21,7 @@ public class LinkedListTest {
         b.add("Doug");
         b.add("Frances");
         b.add("Gloria");
-       System.out.println("b: " + b);
+        System.out.println("b: " + b);
 
         // merge the words from b into a
         ListIterator<String> aIter = a.listIterator();

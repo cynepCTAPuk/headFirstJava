@@ -1,4 +1,4 @@
-package chap09_Collections.map;
+package chap09_Collections;
 
 import java.io.File;
 import java.io.FileNotFoundException;
