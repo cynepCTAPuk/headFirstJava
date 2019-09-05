@@ -22,7 +22,7 @@ public class EnumSetTest {
         var personInCharge = new EnumMap<Weekday, Employee>(Weekday.class);
         personInCharge.put(Weekday.MONDAY, new Employee("Ivan"));
         personInCharge.put(Weekday.TUESDAY, new Employee("Vladimir"));
-        
+
         System.out.println(personInCharge);
     }
 }

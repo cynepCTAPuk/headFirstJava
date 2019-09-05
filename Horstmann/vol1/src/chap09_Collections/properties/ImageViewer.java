@@ -42,6 +42,8 @@ class ImageViewerFrame extends JFrame {
 
         String userDir = System.getProperty("user.home");
         var propertiesDir = new File(userDir, ".corejava");
+        System.out.println(propertiesDir);
+
         if (!propertiesDir.exists()) propertiesDir.mkdir();
         propertiesFile = new File(propertiesDir, "ImageViewer.properties");
 
@@ -91,21 +93,24 @@ class ImageViewerFrame extends JFrame {
 
         // set up the file chooser
         var chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File("."));
+//        chooser.setCurrentDirectory(new File("."));
+        chooser.setCurrentDirectory(new File(userDir));
 
         // set up the menu bar
         var menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
         var menu = new JMenu("File");
+        menu.setMnemonic(KeyEvent.VK_F);
         menuBar.add(menu);
 
         var openItem = new JMenuItem("Open");
+        openItem.setMnemonic(KeyEvent.VK_O);
         menu.add(openItem);
+
         openItem.addActionListener(event -> {
             // show file chooser dialog
             int result = chooser.showOpenDialog(null);
-
             // if file selected, set it as icon of the label
             if (result == JFileChooser.APPROVE_OPTION) {
                 image = chooser.getSelectedFile().getPath();
@@ -114,7 +119,9 @@ class ImageViewerFrame extends JFrame {
         });
 
         var exitItem = new JMenuItem("Exit");
+        exitItem.setMnemonic(KeyEvent.VK_X);
         menu.add(exitItem);
+
         exitItem.addActionListener(event -> System.exit(0));
     }
 }
