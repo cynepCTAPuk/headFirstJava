@@ -12,6 +12,12 @@ public class SimpleFrameTest {
         EventQueue.invokeLater(() -> {
             var frame = new SimpleFrame();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setUndecorated(true); // default false
+//            frame.setLocation(0, 0); // default 0,0
+//            frame.setBounds(0,0,300,200);
+//            frame.setTitle("title"); // default empty
+//            frame.setResizable(false); // default true
+           
             frame.setVisible(true);
         });
     }
