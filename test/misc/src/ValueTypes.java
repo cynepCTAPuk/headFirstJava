@@ -1,6 +1,4 @@
-package com.example;
-
-public class Main {
+public class ValueTypes {
 
 	public static void main(String[] args) {
 		int n = 0;
