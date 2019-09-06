@@ -28,7 +28,7 @@ public class MyBenchmark {
                 Person person = new Person();
                 person.setName("N" + random.nextInt());
                 person.setAge(random.nextInt(50));
-                person.setChildern(random.nextInt(100));
+                person.setChildren(random.nextInt(100));
                 array[i] = person;
             }
         }
@@ -39,7 +39,7 @@ public class MyBenchmark {
         List<Person> result = Arrays
                 .stream(state.array)
                 .filter(person -> person.getAge() > 18)
-                .filter(person -> person.getChildern() > 50)
+                .filter(person -> person.getChildren() > 50)
                 .collect(Collectors.toList());
         return result;
     }
@@ -48,7 +48,7 @@ public class MyBenchmark {
     public static List<Person> streamApiOneFilter(BenchmarkState state) {
         List<Person> result = Arrays
                 .stream(state.array)
-                .filter(person -> (person.getAge() > 18) & (person.getChildern() > 50))
+                .filter(person -> (person.getAge() > 18) & (person.getChildren() > 50))
                 .collect(Collectors.toList());
         return result;
     }
@@ -57,7 +57,7 @@ public class MyBenchmark {
     public static List<Person> guava(BenchmarkState state) {
         List<Person> list = Arrays.asList(state.array);
         Iterable result = Iterables.filter(
-                list, person -> (person.getAge() > 18) & (person.getChildern() > 50));
+                list, person -> (person.getAge() > 18) & (person.getChildren() > 50));
         return Lists.newArrayList(result);
     }
 }

@@ -3,7 +3,7 @@ package org.sample;
 public class Person {
     private String name;
     private int age;
-    private int childern;
+    private int children;
 
     public String getName() {
         return name;
@@ -21,20 +21,16 @@ public class Person {
         this.age = age;
     }
 
-    public int getChildern() {
-        return childern;
+    public int getChildren() {
+        return children;
     }
 
-    public void setChildern(int childern) {
-        this.childern = childern;
+    public void setChildren(int children) {
+        this.children = children;
     }
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", childern=" + childern +
-                '}';
+        return "Person{" + "name='" + name + '\'' + ", age=" + age + ", childern=" + children + '}';
     }
 }
