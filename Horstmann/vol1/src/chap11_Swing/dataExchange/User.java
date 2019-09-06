@@ -1,4 +1,4 @@
-package dataExchange;
+package chap11_Swing.dataExchange;
 
 /**
  * A user has a name and password. For security reasons, the password is stored as a char[], not a

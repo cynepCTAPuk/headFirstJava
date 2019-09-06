@@ -1,4 +1,4 @@
-package synch2;
+package chap12_Concurrency.synch2;
 
 import java.util.*;
 

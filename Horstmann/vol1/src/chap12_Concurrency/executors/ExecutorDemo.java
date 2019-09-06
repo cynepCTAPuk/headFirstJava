@@ -1,4 +1,4 @@
-package executors;
+package chap12_Concurrency.executors;
 
 import java.io.*;
 import java.nio.file.*;
@@ -12,7 +12,8 @@ import java.util.stream.*;
  * @version 1.0 2018-01-04
  * @author Cay Horstmann
  */
-public class ExecutorDemo
+public class
+ExecutorDemo
 {
    /**
     * Counts occurrences of a given word in a file.

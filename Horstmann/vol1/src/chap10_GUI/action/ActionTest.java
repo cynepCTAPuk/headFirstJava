@@ -1,4 +1,4 @@
-package action;
+package chap10_GUI.action;
 
 import java.awt.*;
 import javax.swing.*;

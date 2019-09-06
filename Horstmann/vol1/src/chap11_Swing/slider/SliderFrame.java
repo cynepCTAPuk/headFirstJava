@@ -1,4 +1,4 @@
-package slider;
+package chap11_Swing.slider;
 
 import java.awt.*;
 import java.util.*;

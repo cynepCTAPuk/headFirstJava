@@ -1,4 +1,4 @@
-package button;
+package chap10_GUI.button;
 
 import java.awt.*;
 import javax.swing.*;

@@ -1,4 +1,4 @@
-package sizedFrame;
+package chap10_GUI.sizedFrame;
 
 import java.awt.*;
 import javax.swing.*;

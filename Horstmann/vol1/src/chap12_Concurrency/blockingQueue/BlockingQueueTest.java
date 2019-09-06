@@ -1,4 +1,4 @@
-package blockingQueue;
+package chap12_Concurrency.blockingQueue;
 
 import java.io.*;
 import java.nio.charset.*;

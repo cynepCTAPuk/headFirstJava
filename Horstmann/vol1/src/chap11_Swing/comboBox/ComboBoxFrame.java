@@ -1,4 +1,4 @@
-package comboBox;
+package chap11_Swing.comboBox;
 
 import java.awt.BorderLayout;
 import java.awt.Font;

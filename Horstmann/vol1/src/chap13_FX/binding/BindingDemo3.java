@@ -1,4 +1,4 @@
-package binding;
+package chap13_FX.binding;
 
 import static javafx.beans.binding.Bindings.*;
 

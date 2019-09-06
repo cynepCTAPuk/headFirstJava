@@ -1,4 +1,4 @@
-package text;
+package chap11_Swing.text;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;

@@ -1,4 +1,4 @@
-package notHelloWorld;
+package chap10_GUI.notHelloWorld;
 
 import javax.swing.*;
 import java.awt.*;

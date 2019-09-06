@@ -1,4 +1,4 @@
-package listFonts;
+package chap10_GUI.listFonts;
 
 import java.awt.*;
 

@@ -1,4 +1,4 @@
-package completableFutures;
+package chap12_Concurrency.completableFutures;
 
 import java.awt.image.*;
 import java.io.*;

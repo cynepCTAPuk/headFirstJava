@@ -1,4 +1,4 @@
-package font;
+package chap10_GUI.font;
 
 import java.awt.*;
 import java.awt.font.*;

@@ -1,4 +1,4 @@
-package mouse;
+package chap10_GUI.mouse;
 
 import java.awt.*;
 import java.awt.event.*;

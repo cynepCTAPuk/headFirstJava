@@ -1,4 +1,4 @@
-package preferences;
+package chap10_GUI.preferences;
 
 import java.awt.EventQueue;
 import java.awt.event.*;

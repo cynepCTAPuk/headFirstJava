@@ -1,4 +1,4 @@
-package draw;
+package chap10_GUI.draw;
 
 import java.awt.*;
 import java.awt.geom.*;

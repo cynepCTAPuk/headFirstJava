@@ -1,4 +1,4 @@
-package dialogs;
+package chap13_FX.dialogs;
 
 import java.io.*;
 

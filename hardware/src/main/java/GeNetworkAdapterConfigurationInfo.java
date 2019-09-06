@@ -15,7 +15,11 @@ public class GeNetworkAdapterConfigurationInfo {
 
     public static void printComputerSystemProductInfo() {
         String vbClassName = "Win32_NetworkAdapterConfiguration";
-        String vbScript = Utilities.makeVbScript(vbClassName);
+        String[] propNames = new String[]{
+                "Caption", "Description", "SettingID", "DatabasePath", "DHCPServer",
+                "DNSDomain", "DNSHostName", "IPXAddress","MACAddress","ServiceName"};
+        String vbScript = MyUtility.makeVbScript(vbClassName, propNames);
+
         System.out.println("----------------------------------------");
         System.out.println(vbScript);
         System.out.println("----------------------------------------");
@@ -35,13 +39,20 @@ public class GeNetworkAdapterConfigurationInfo {
             Process p = Runtime.getRuntime().exec("cscript //NoLogo " + file.getPath());
             // Create Input stream to read data returned after execute vb script file.
             BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
-            var list = new ArrayList<String>();
+//            Map<String, String> map = new HashMap<String, String>();
+            Map<String, String> map = new TreeMap<String, String>();
             String line;
+            int i = 0;
             while ((line = input.readLine()) != null) {
-                System.out.println(line);
-                list.add(line);
+                if (i >= propNames.length) break;
+                String key = propNames[i];
+                map.put(key, line);
+                i++;
             }
             input.close();
+
+//            for (String propName : propNames) System.out.println(propName + " : " + map.get(propName));
+            map.forEach((k, v) -> System.out.println(k + " : " + v));
         } catch (Exception e) {
             e.printStackTrace();
         }

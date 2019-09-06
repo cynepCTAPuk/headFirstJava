@@ -1,4 +1,4 @@
-package synch;
+package chap12_Concurrency.synch;
 
 import java.util.*;
 import java.util.concurrent.locks.*;

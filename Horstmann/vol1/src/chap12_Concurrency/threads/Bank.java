@@ -1,4 +1,4 @@
-package threads;
+package chap12_Concurrency.threads;
 
 import java.util.*;
 

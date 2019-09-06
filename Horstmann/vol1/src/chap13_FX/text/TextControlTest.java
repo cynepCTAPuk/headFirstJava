@@ -1,4 +1,4 @@
-package text;
+package chap13_FX.text;
 
 import javafx.application.*;
 import javafx.geometry.*;

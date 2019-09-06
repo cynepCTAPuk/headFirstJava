@@ -1,4 +1,4 @@
-package swingWorker;
+package chap12_Concurrency.swingWorker;
 
 import java.awt.*;
 import java.io.*;

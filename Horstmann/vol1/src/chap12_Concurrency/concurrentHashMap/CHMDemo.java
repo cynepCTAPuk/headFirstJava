@@ -1,4 +1,4 @@
-package concurrentHashMap;
+package chap12_Concurrency.concurrentHashMap;
 
 import java.io.*;
 import java.nio.file.*;

@@ -1,4 +1,4 @@
-package gridPane;
+package chap13_FX.gridPane;
 
 import javafx.application.*;
 import javafx.geometry.*;

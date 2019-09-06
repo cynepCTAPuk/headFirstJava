@@ -1,4 +1,4 @@
-package gridbag;
+package chap11_Swing.gridbag;
 
 import java.awt.*;
 

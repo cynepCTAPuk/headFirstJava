@@ -1,4 +1,4 @@
-package optionDialog;
+package chap11_Swing.optionDialog;
 
 import java.awt.*;
 import java.awt.event.*;

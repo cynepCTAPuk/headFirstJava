@@ -1,4 +1,4 @@
-package calculator;
+package chap11_Swing.calculator;
 
 import java.awt.*;
 import java.awt.event.*;

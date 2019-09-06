@@ -1,4 +1,4 @@
-package image;
+package chap11_Swing.image;
 
 import java.awt.*;
 import javax.swing.*;
