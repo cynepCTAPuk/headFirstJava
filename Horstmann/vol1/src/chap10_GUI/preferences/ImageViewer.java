@@ -7,8 +7,8 @@ import java.util.prefs.*;
 import javax.swing.*;
 
 /**
- * A program to test preference settings. The program remembers the
- * frame position, size, and last selected file.
+ * A program to test preference settings. The program remembers the frame position, size
+ * , and last selected file.
  *
  * @author Cay Horstmann
  * @version 1.10 2018-04-10
@@ -25,8 +25,8 @@ public class ImageViewer {
 }
 
 /**
- * An image viewer that restores position, size, and image from user
- * preferences and updates the preferences upon exit.
+ * An image viewer that restores position, size, and image from user preferences and updates
+ * the preferences upon exit.
  */
 class ImageViewerFrame extends JFrame {
     private static final int DEFAULT_WIDTH = 300;
@@ -36,8 +36,6 @@ class ImageViewerFrame extends JFrame {
     public ImageViewerFrame() {
         Preferences root = Preferences.userRoot();
         Preferences node = root.node("/com/horstmann/corejava/ImageViewer");
-        System.out.println(root.absolutePath());
-        System.out.println(node.absolutePath());
         // get position, size, title from properties
         int left = node.getInt("left", 0);
         int top = node.getInt("top", 0);
@@ -75,10 +73,9 @@ class ImageViewerFrame extends JFrame {
         var openItem = new JMenuItem("Open");
         menu.add(openItem);
         openItem.addActionListener(event -> {
-            // show file chooser dialog
+//             show file chooser dialog
             int result = chooser.showOpenDialog(null);
-
-            // if file selected, set it as icon of the label
+//             if file selected, set it as icon of the label
             if (result == JFileChooser.APPROVE_OPTION) {
                 image = chooser.getSelectedFile().getPath();
                 label.setIcon(new ImageIcon(image));
