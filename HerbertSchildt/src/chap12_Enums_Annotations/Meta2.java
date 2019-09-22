@@ -15,14 +15,12 @@ class Meta2 {
 
             // Display all annotations for Meta2
             annotations = meta.getClass().getAnnotations();
-            System.out.println("All annotations for Meta2:");
+            System.out.println("\nAll annotations for Meta2:");
             for (Annotation a : annotations) System.out.println(a);
-
-            System.out.println();
 
             // Display all annotations for myMethod
             annotations = meta.getClass().getMethod("myMethod").getAnnotations();
-            System.out.println("All annotations for myMethod:");
+            System.out.println("\nAll annotations for myMethod:");
             for (Annotation a : annotations) System.out.println(a);
 
         } catch (NoSuchMethodException e) {
