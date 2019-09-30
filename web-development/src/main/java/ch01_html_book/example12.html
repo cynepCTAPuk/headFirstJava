@@ -1,33 +1,34 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Моя первая веб-страница</title>
+	<meta charset="utf-8">
+	<title>Моя первая веб-страница</title>
 </head>
 
 <body>
 	<h1>Заголовок страницы</h1>
 	<p>Основной текст.</p>
 
-	<canvas id = "my_canvas" width = "200" height = "200">
-	    <p>Ваш браузер не поддерживает canvas, а жаль.</p>
+	<canvas id="my_canvas" width="200" height="200">
+		<p>Ваш браузер не поддерживает canvas, а жаль.</p>
 	</canvas>
 	<script>
-	    /* находим наш холст */
-	    var canvas = document.getElementById("my_canvas");
-	    var ctx = canvas.getContext("2d");
-	    /* рисуем */
-	    ctx.fillStyle = "rgb(200,0,0)";
-	    ctx.fillRect (0, 0, 85, 150);
+		/* находим наш холст */
+		var canvas = document.getElementById("my_canvas");
+		var ctx = canvas.getContext("2d");
+		/* рисуем */
+		ctx.fillStyle = "rgb(200,0,0)";
+		ctx.fillRect(0, 0, 85, 150);
 	</script>
 	<br>
 	<audio autoplay="5" loop="2"> audio
 		<source src="click.mp3" type="">
 	</audio>
 	<br>
-	<video controls width ="400" height ="200">
-	    <video src="/src/vidosiki/html.mp4" type="video/mp4">
-	</video>
+	<video controls width="400" height="200">
+		<video src="/src/vidosiki/html.mp4" type="video/mp4">
+		</video>
 
 </body>
 
