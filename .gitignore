@@ -57,12 +57,12 @@
 **.cache
 **.class
 **.cmd
+**.exe
 **.ser
 **.sh
 **.swp
 **.tmp
 
 # cpp
-**.exe
 **.cproject
 **.o
