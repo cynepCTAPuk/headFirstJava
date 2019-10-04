@@ -61,3 +61,8 @@
 **.sh
 **.swp
 **.tmp
+
+# cpp
+**.exe
+**.cproject
+**.o
