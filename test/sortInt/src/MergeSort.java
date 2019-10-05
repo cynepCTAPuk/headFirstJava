@@ -9,6 +9,7 @@ public class MergeSort {
         System.out.println(Arrays.toString(sort(arr)));
     }
 
+
     public static int[] sort(int[] arr) {
         int n = arr.length;
         if (n < 2) return arr;

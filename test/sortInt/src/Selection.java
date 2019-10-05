@@ -6,15 +6,15 @@ public class Selection {
         int n = 0;
         while (left < right) {
             int min = left;
-            System.out.format("%-2d = %s%n",n++, Arrays.toString(array));
+//            System.out.format("%-2d = %s%n",n++, Arrays.toString(array));
 
             for (int i = left; i < right; i++) {
                 if (array[min] > array[i + 1]) {
                     min = i + 1;
-                    System.out.format("\tmin = %d",array[min]);
+//                    System.out.format("\tmin = %d",array[min]);
                 }
             }
-            System.out.println();
+//            System.out.println();
             int temp = array[left];
             array[left] = array[min];
             array[min] = temp;
