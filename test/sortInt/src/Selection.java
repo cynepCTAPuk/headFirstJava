@@ -1,8 +1,4 @@
-package sortInt;
-
-import tools.*;
-
-import java.util.*;
+import java.util.Arrays;
 
 public class Selection {
     public static void sort(int[] array) {

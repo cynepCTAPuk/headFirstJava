@@ -1,7 +1,3 @@
-package sortInt;
-
-import tools.Utils;
-
 import java.util.Arrays;
 
 public class Shake {

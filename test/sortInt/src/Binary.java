@@ -1,7 +1,3 @@
-package sortInt;
-
-import tools.*;
-
 import java.util.*;
 
 public class Binary {

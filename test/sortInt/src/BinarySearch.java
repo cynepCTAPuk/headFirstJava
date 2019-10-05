@@ -1,20 +1,3 @@
-package sortInt;
-
-import static java.lang.String.format;
-
-/**
- * Binary search is one of the most popular algorithms
- * The algorithm finds the position of a target value within a sorted array
- * <p>
- * Worst-case performance	O(log n)
- * Best-case performance	O(1)
- * Average performance	O(log n)
- * Worst-case space complexity	O(1)
- *
- * @see SearchAlgorithm
- * @see IterativeBinarySearch
- */
-
 public class BinarySearch implements SearchAlgorithm {
 
     /**

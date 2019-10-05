@@ -1,5 +1,3 @@
-package sortInt;
-
 /**
  *  The common interface of most searching algorithms
  *

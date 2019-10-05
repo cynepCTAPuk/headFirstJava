@@ -1,5 +1,3 @@
-package sortInt;
-
 class Tree {
     public Tree left;            // левое и правое поддеревья и ключ
     public Tree right;
