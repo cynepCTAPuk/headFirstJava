@@ -1,10 +1,13 @@
+import java.util.Arrays;
+
 public class TestSort {
-  public static void main(String[] args) {
-    double t0;
-    int nElements = 1_000_000;
-    int[] array = new int[nElements];
-    Utils.fillRandom100(array);
-    System.out.println(String.format("Кол-во элементов = %,d", nElements));
+    public static void main(String[] args) {
+        double t0;
+//    int nElements = 1_000_000;
+        int nElements = 25;
+        int[] array = new int[nElements];
+        Utils.fillRandom100(array);
+        System.out.println(String.format("Кол-во элементов = %,d", nElements));
 
 /*
     int arrayBubble[] = array.clone();
@@ -41,9 +44,15 @@ public class TestSort {
     System.out.println(String.format("Shake\t\ttime nanoseconds\t%,12.0f", System.nanoTime() - t0));
 */
 
+/*
     int arrayMerge[] = array.clone();
     t0 = System.currentTimeMillis();
     MergeSort.sort(arrayMerge);
     System.out.println(String.format("Merge\t\ttime milliseconds\t%,18.0f", System.currentTimeMillis() - t0));
-  }
+*/
+
+        System.out.println(Arrays.toString(array));
+        Insertion.sort1(array);
+        System.out.println(Arrays.toString(array));
+    }
 }
