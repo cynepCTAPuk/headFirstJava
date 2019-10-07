@@ -1,6 +1,5 @@
-net stop "MySQL80"
 net start "MySQL80"
-
+net stop "MySQL80"
 "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqladmin.exe" -u root -p shutdown
 
 set global time_zone = '+03:00';
