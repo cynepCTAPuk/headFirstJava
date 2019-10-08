@@ -34,18 +34,31 @@ public class ShowImage extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ShowImage</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>" + "<img src='images/check.png'>" + "Servlet ShowImage at " + request.getContextPath() + "<img src='images/check.png'>" + "</h1>");
-            out.println("<img src='images/Duke transp measure .png'>");
-            out.println("<img src='images/check.png'>");
-            out.println("<img src='" + request.getContextPath() + "/images/Java circle.png" + "'/>");
-            out.println("</body>");
-            out.println("</html>");
+            out.println("<!DOCTYPE html>"
+                    + "<html>"
+                    + "<head>"
+                    + "<title>Servlet ShowImage</title>"
+                    + "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">"
+                    + "</head>"
+                    + "<body>"
+                    + "<h1>"
+                    + "<img src='images/check.png'>" + "Servlet ShowImage at " + request.getContextPath() + "<img src='images/check.png'>" + "</h1>"
+                    + "<img src='images/Duke transp measure .png'>"
+                    + "<img src='images/check.png'>"
+                    + "<img src='" + request.getContextPath() + "/images/Java circle.png" + "'/>"
+                    + "<table>"
+                    + "<tr>"
+                    + "<th>Имя</th><th>Телефон</th>"
+                    + "</tr>"
+                    + "<tr>"
+                    + "<td>Петр</td><td>555444</td>"
+                    + "</tr>"
+                    + "<tr>"
+                    + "<td>Иван</td><td>111222</td>"
+                    + "</tr>"
+                    + "</table>"
+                    + "</body>"
+                    + "</html>");
         }
     }
 
