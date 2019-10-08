@@ -34,27 +34,25 @@ public class Clusters {
     }
 
     public void findNext(int i, int j) {
-        int current = arr[i][j];
-        list.add(current);
+        list.add(arr[i][j]);
         arr[i][j] = 0;
 
         if (j + 1 < arr[i].length && arr[i][j + 1] != 0) findNext(i, j + 1);
         if (i + 1 < arr.length && arr[i + 1][j] != 0) findNext(i + 1, j);
         if (j - 1 >= 0 && arr[i][j - 1] != 0) findNext(i, j - 1);
         if (i - 1 >= 0 && arr[i - 1][j] != 0) findNext(i - 1, j);
-//        System.out.print(current + " ");
-    }
-
-    public int findSum(List<Integer> list) {
-        int sum = 0;
-        for (Integer i : list) sum += i;
-        return sum;
     }
 
     public int findMax(List<Integer> list) {
         int max = 0;
         for (Integer i : list) if (i > max) max = i;
         return max;
+    }
+
+    public int findSum(List<Integer> list) {
+        int sum = 0;
+        for (Integer i : list) sum += i;
+        return sum;
     }
 
     public void printMatrix() {
