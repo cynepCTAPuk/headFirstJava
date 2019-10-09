@@ -35,16 +35,13 @@ public class CheckOperationsServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet CheckAttributeServlet</title>");
             out.println("</head>");
             out.println("<body>");
 
-
             HttpSession session = request.getSession(true);
-
             Object attr = session.getAttribute("formula");
 
             if (attr instanceof ArrayList){
@@ -53,13 +50,10 @@ public class CheckOperationsServlet extends HttpServlet {
                 for (Object str : list) {
                     out.println("<h3>"+str+"</h3>");
                 }
-                
             }else{
                 out.println("<h1>Операции не найдены</h1>");
             }
             out.println("<h1>"+((TestObject)request.getServletContext().getAttribute("obj")).getName()+"</h1>");
-
-
         } finally {
             out.println("</body>");
             out.println("</html>");

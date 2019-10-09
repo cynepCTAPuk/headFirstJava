@@ -11,7 +11,4 @@ public class TestObject {
     public String getName() {
         return name;
     }
-    
-    
-
 }
