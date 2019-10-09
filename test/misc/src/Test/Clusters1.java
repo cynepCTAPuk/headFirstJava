@@ -14,37 +14,33 @@ public class Clusters1 {
                 {0, 0, 0, 0, 0, 8, 0, 9, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         };
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if (arr[i][j] == 0) System.out.print("  ");
-                else System.out.print(arr[i][j] + " ");
-            }
-            System.out.println();
-        }
+        printMatrix(arr);
+        List<Integer> max = new ArrayList<>();
+        List<Integer> sum = new ArrayList<>();
 
-        List<Point> list = new ArrayList();
+        List<Point> list = createList(arr);
+        System.out.println(list);
+   }
+
+    private static List<Point> createList(int[][] arr) {
+        List<Point> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 if (arr[i][j] != 0) {
-                    System.out.println(
-                            "(" + i + ", " + j + ") = " + (i * i + j * j) + " - " + arr[i][j]);
                     list.add(new Point(i, j, arr[i][j]));
                 }
             }
         }
-        System.out.println(list);
-
-        ArrayList maxValues = new ArrayList();
-        ArrayList sums = new ArrayList();
-        int max = list.get(0).getValue();
-        int sum = list.get(0).getValue();
-
-        for (int i = 1; i < list.size(); i++) {
-        }
-
-        System.out.println(maxValues);
-        System.out.println(sums);
+        return list;
     }
 
+    public static void printMatrix(int[][] arr) {
+        for (int[] rows : arr) {
+            for (int v : rows) {
+                if (v == 0) System.out.print("  ");
+                else System.out.print(v + " ");
+            }
+            System.out.println();
+        }
+    }
 }
-
