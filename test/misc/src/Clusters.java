@@ -28,7 +28,6 @@ public class Clusters {
                     sum.add(findSum(list));
                     System.out.println(list);
                 }
-//                bit[i][j] = true;
             }
         }
         System.out.println(max);
