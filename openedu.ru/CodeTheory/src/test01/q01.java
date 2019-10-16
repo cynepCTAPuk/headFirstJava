@@ -1,4 +1,10 @@
-public class t01 {
+package test01;
+
+/**
+ *
+ * ответ: 110110100110011001011110101000101010
+ */
+public class q01 {
     public static void main(String[] args) {
         String кульбит = "1101101001100110010";
         String битовый = "011001011110101000101010";
