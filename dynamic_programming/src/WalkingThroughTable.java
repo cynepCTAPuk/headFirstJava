@@ -6,8 +6,8 @@
  */
 public class WalkingThroughTable {
     public static void main(String[] args) {
-        int i = 36;
-        int j = 36;
+        int i = 15;
+        int j = 15;
         long t0;
 
         t0 = System.nanoTime();
