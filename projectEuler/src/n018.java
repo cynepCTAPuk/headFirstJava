@@ -37,7 +37,7 @@ import java.util.Scanner;
  * However, Problem 67, is the same challenge with a triangle containing one-hundred rows;
  * it cannot be solved by brute force, and requires a clever method! ;o)
  */
-public class n018___ {
+public class n018 {
     public static void main(String[] args) {
 //        String s = "3\n" + "7 4\n" + "2 4 6\n" + "8 5 9 3";
         String s = "75\n" +
@@ -65,21 +65,21 @@ public class n018___ {
                 array[i][j] = sc.nextInt();
             }
         }
-//        for (int i = 0; i < h; i++) System.out.println(Arrays.toString(array[i])); // print array
-        printTriangle(array);
+        for (int i = 0; i < h; i++) System.out.println(Arrays.toString(array[i])); // print array
+//        printTriangle(array);
         long t0;
-
+/*
         t0 = System.nanoTime();
         System.out.println(findLargestPath(array, 0, 0));
         System.out.printf("%,10d\n", System.nanoTime() - t0);
-
+*/
         t0 = System.nanoTime();
-        System.out.println(maxPathSum(array));
-        System.out.printf("%,10d\n", System.nanoTime() - t0);
+        System.out.println("Max sum: " + maxPathSum(array));
+        System.out.printf("Running time: %,10d\n", System.nanoTime() - t0);
 
-//        for (int i = 0; i < h; i++) System.out.println(Arrays.toString(array[i])); // print array
+        for (int i = 0; i < h; i++) System.out.println(Arrays.toString(array[i])); // print array
 //        printTriangle(array);
-//        path(array);
+        path(array);
     }
 
     static int findLargestPath(int[][] triangle, int row, int col) {
@@ -108,7 +108,6 @@ public class n018___ {
                 } else if (current < right && right + top > top) {
                     tri[i - 1][j] += right;
                 }
-//                printTriangle(tri);
 /*
                 if (tri[i][j] > tri[i][j + 1] && tri[i][j] + tri[i - 1][j] > tri[i - 1][j]) {
                     tri[i - 1][j] += tri[i][j];
