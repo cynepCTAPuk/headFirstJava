@@ -23,7 +23,10 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:28.0-jre'
-    implementation 'com.h2database:h2:1.4.197'
+    implementation 'com.h2database:h2:1.4.200'
+    implementation 'com.zaxxer:HikariCP:3.4.1'
+    implementation 'org.slf4j:slf4j-api:1.7.28'
+    implementation 'org.slf4j:slf4j-simple:1.7.28'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }

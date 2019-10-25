@@ -3,128 +3,14 @@
  */
 package jdbc;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import javax.sql.rowset.*;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 public class AppTest {
-    private static Connection connection;
-
-    private Connection getNewConnection() throws SQLException {
-        String url = "jdbc:h2:file:C:/0/test";
-//        String url = "jdbc:h2:mem:test";
-//        String url = "jdbc:h2:~/test";
-        String user = "sa";
-        String passwd = "password";
-        return DriverManager.getConnection(url, user, passwd);
-    }
-
-    private int executeUpdate(String query) throws SQLException {
-        Statement statement = connection.createStatement();
-        // Для Insert, Update, Delete
-        int result = statement.executeUpdate(query);
-        return result;
-    }
-
-    private void createCustomerTable() throws SQLException {
-//        String customerTableQuery = "CREATE TABLE customers (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)";
-//        String customerEntryQuery = "INSERT INTO customers VALUES (73, 'Brian', 33)";
-        String customerEntryQuery = "INSERT INTO customers VALUES (76, 'CTAPuk', 25)";
-//        executeUpdate(customerTableQuery);
-        executeUpdate(customerEntryQuery);
-    }
-
-
-    @Before
-    public void init() throws SQLException {
-        connection = getNewConnection();
-    }
-
-    @After
-    public void close() throws SQLException {
-        connection.close();
-    }
-
-/*
     @Test
     public void testAppHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
-    }
-*/
-
-/*
-    @Test
-    public void shouldGetJdbcConnection() throws SQLException {
-        try (Connection connection = getNewConnection()) {
-            assertTrue(connection.isValid(1));
-            assertFalse(connection.isClosed());
-        }
-    }
-*/
-
-    @Test
-    public void shouldCreateCustomerTable() throws SQLException {
-        createCustomerTable();
-        connection.createStatement().execute("SELECT * FROM customers");
-    }
-
-/*
-    @Test
-    public void shouldSelectData() throws SQLException {
-//        createCustomerTable();
-        String query = "SELECT * FROM customers WHERE name = ?";
-        PreparedStatement statement = connection.prepareStatement(query);
-        statement.setString(1, "Brian");
-        boolean hasResult = statement.execute();
-        assertTrue(hasResult);
-    }
-*/
-
-    @Test
-    public void shouldSelectData() throws SQLException {
-        String query = "SELECT * FROM customers WHERE name = ?";
-        PreparedStatement statement = connection.prepareStatement(query);
-        statement.setString(1, "Brian");
-        boolean hasResult = statement.execute();
-        assertTrue(hasResult);
-        // Обработаем результат
-        ResultSet resultSet = statement.getResultSet();
-        resultSet.next();
-        int age = resultSet.getInt("age");
-        assertEquals(33, age);
-    }
-
-    @Test
-    public void shouldInsertInResultSet() throws SQLException {
-        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-        ResultSet resultSet = statement.executeQuery("SELECT * FROM customers");
-        resultSet.moveToInsertRow();
-        resultSet.updateLong("id", 3L);
-        resultSet.updateString("name", "John");
-        resultSet.updateInt("age", 18);
-        resultSet.insertRow();
-        resultSet.moveToCurrentRow();
-    }
-
-    @Test
-    public void shoudGetMetadata() throws SQLException {
-        // У нас URL = "jdbc:h2:mem:test", где test - название БД
-        // Название БД = catalog
-        DatabaseMetaData metaData = connection.getMetaData();
-        ResultSet result = metaData.getTables
-                ("TEST", "PUBLIC", "%", null);
-        List<String> tables = new ArrayList<>();
-        while (result.next())
-            tables.add(result.getString(2) + "." + result.getString(3));
-//        System.out.println(tables);
-        assertTrue(tables.contains("PUBLIC.CUSTOMERS"));
     }
 }
