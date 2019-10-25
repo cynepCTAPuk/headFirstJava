@@ -1,17 +1,18 @@
 # Java Rush
 
+gradle
 Краткое знакомство с Gradle
 https://javarush.ru/groups/posts/2126-kratkoe-znakomstvo-s-gradle
 
-
+jdbc
 JDBC или с чего всё начинается
 https://javarush.ru/groups/posts/2172-jdbc-ili-s-chego-vsje-nachinaetsja
 
-
+jpa
 JPA : Знакомство с технологией
 https://javarush.ru/groups/posts/2259-jpa--znakomstvo-s-tekhnologiey
 
-
+thread
 Thread'ом Java не испортишь:
 Часть I — потоки
 https://javarush.ru/groups/posts/2047-threadom-java-ne-isportishjh--chastjh-i---potoki
@@ -25,3 +26,7 @@ https://javarush.ru/groups/posts/2065-threadom-java-ne-isportishjh--chastjh-iv--
 https://javarush.ru/groups/posts/2078-threadom-java-ne-isportishjh--chastjh-v---executor-threadpool-fork-join-pool
 Часть VI — К барьеру!
 https://javarush.ru/groups/posts/2111-threadom-java-ne-isportishjh--chastjh-vi---k-barjheru
+
+webapp
+Веб-приложение на Java
+https://javarush.ru/groups/posts/2125-veb-prilozhenie-na-java
