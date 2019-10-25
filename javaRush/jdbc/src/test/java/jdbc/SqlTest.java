@@ -133,18 +133,21 @@ public class SqlTest {
         resultSet.next();
         int age = resultSet.getInt("age");
         assertEquals(23, age);
+        showAllDataFromCustomers();
     }
 
     @Test
     public void shouldInsertOneRecord() throws SQLException {
+        createCustomerTable();
         Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
         ResultSet resultSet = statement.executeQuery("SELECT * FROM customers");
         resultSet.moveToInsertRow();
-        resultSet.updateLong("id", 1L);
-        resultSet.updateString("name", "DeadMoroz");
-        resultSet.updateInt("age", 99);
+        resultSet.updateLong("id", 7L);
+        resultSet.updateString("name", "EverYoung");
+        resultSet.updateInt("age", 17);
         resultSet.insertRow();
         resultSet.moveToCurrentRow();
+        showAllDataFromCustomers();
     }
 
     @Test
