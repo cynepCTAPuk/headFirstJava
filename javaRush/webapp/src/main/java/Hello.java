@@ -14,14 +14,18 @@ public class Hello extends HttpServlet {
         return "Hello world.";
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-    }
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         out.println(this.getGreeting());
         out.close();
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String name = request.getParameter("name");
+        if (name == null) name = "World";
+        request.setAttribute("user", name);
+        request.getRequestDispatcher("response.jsp").forward(request, response);
     }
 }
