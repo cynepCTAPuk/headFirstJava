@@ -5,7 +5,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
 
-
     <display-name>A Simple Web Application</display-name>
 
     <listener>
@@ -15,6 +14,7 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/app-context.xml</param-value>
     </context-param>
+
     <servlet>
         <servlet-name>app</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -22,12 +22,19 @@
             <param-name>contextConfigLocation</param-name>
             <param-value></param-value>
         </init-param>
-        <load-on-startup>1</load-on-startup>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>app</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/app</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>hello</servlet-name>
+        <servlet-class>com.example.Hello</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hello</servlet-name>
+        <url-pattern>/hello</url-pattern>
     </servlet-mapping>
 
 </web-app>

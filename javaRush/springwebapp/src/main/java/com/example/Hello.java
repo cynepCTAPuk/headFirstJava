@@ -1,8 +1,10 @@
+package com.example;
 /**
  * https://javarush.ru/groups/posts/2125-veb-prilozhenie-na-java
  */
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +13,7 @@ import java.io.PrintWriter;
 
 public class Hello extends HttpServlet {
     public String getGreeting() {
-        return "Hello world.";
+        return "Hello Spring.";
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
