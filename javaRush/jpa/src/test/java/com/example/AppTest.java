@@ -10,6 +10,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import java.util.List;
 
@@ -33,15 +36,35 @@ public class AppTest {
     }
 
     @Test
-    public void shouldPerformQuery() {
+    public void shouldFindWithCriteriaAPI() {
         Category cat = new Category();
-        cat.setTitle("kitty");
+        cat.setTitle("Category");
         em.persist(cat);
-        em.flush();
-        Category dog = new Category();
-        dog.setTitle("doggy");
-        em.persist(dog);
-//        Query query = em.createQuery("SELECT c from Category c WHERE c.title = 'kitty'");
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Category> cq = cb.createQuery(Category.class);
+
+        Root<Category> r = cq.from(Category.class);
+        cq.select(r);
+
+        List<Category> resultList = em.createQuery(cq).getResultList();
+        for (Category c : resultList) System.out.println(c.getId() + ": " + c.getTitle());
+
+        em.createQuery(cq).getResultList().forEach(x -> System.out.println(x.getId() + ": " + x.getTitle()));
+
+        assertEquals(1, resultList.size());
+    }
+
+    @Test
+    public void shouldPerformQuery() {
+        Category path = new Category();
+        path.setTitle("Path");
+        em.persist(path);
+//        em.flush();
+        Category way = new Category();
+        way.setTitle("Way");
+        em.persist(way);
+//        Query query = em.createQuery("SELECT c from Category c WHERE c.title = 'Path'");
         Query query = em.createQuery("SELECT c from Category c");
         List<Category> resultList = query.getResultList();
         for (Category c : resultList) System.out.println(c.getId() + ": " + c.getTitle());
