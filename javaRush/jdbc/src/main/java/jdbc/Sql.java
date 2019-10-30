@@ -5,6 +5,7 @@ import java.sql.*;
 public class Sql {
     public static void main(String[] args) throws SQLException {
         Sql sql = new Sql();
+        sql.createCustomerTable();
 //        sql.createNewRecord();
 //        sql.createNewRecord();
 //        sql.deleteOneRecord(1);
@@ -15,21 +16,19 @@ public class Sql {
     private static Connection connection;
 
     private Connection getNewConnection() throws SQLException {
-        String url = "jdbc:h2:file:C:/0/test";
-//        String url = "jdbc:h2:mem:test";
+//        String url = "jdbc:h2:file:C:/0/test";
 //        String url = "jdbc:h2:~/test";
+        String url = "jdbc:h2:mem:test";
         String user = "sa";
         String passwd = "sa";
         return DriverManager.getConnection(url, user, passwd);
     }
 
     private int executeUpdate(String query) throws SQLException {
-        init();
         Statement statement = connection.createStatement();
         // Для Insert, Update, Delete
         int result = statement.executeUpdate(query);
-        System.out.println("statement.executeUpdate(query): " + result);
-        close();
+//        System.out.println("statement.executeUpdate(query): " + result);
         return result;
     }
 
@@ -108,9 +107,18 @@ public class Sql {
 
     private void createCustomerTable() throws SQLException {
         init();
-        String customerTableQuery = "CREATE TABLE customers (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)";
-        executeUpdate(customerTableQuery);
-        close();
-    }
+        String createTableQuery = "CREATE TABLE customers (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)";
+        executeUpdate(createTableQuery);
 
+        String createRecordQuery = "INSERT INTO customers VALUES (2, 'Brian', 23)";
+        executeUpdate(createRecordQuery);
+
+        createRecordQuery = "INSERT INTO customers VALUES (4, 'Elena', 33)";
+        executeUpdate(createRecordQuery);
+
+        createRecordQuery = "INSERT INTO customers VALUES (6, 'CTAPuk', 43)";
+        executeUpdate(createRecordQuery);
+
+//        close();
+    }
 }

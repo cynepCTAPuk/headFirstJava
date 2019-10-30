@@ -38,11 +38,11 @@ public class SqlTest {
     private void createCustomerTable() throws SQLException {
         String customerTableQuery = "CREATE TABLE customers (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)";
         executeUpdate(customerTableQuery);
-        String customerEntryQuery = "INSERT INTO customers VALUES (1, 'Brian', 23)";
+        String customerEntryQuery = "INSERT INTO customers VALUES (2, 'Brian', 23)";
         executeUpdate(customerEntryQuery);
-        customerEntryQuery = "INSERT INTO customers VALUES (2, 'Elena', 33)";
+        customerEntryQuery = "INSERT INTO customers VALUES (4, 'Elena', 33)";
         executeUpdate(customerEntryQuery);
-        customerEntryQuery = "INSERT INTO customers VALUES (3, 'CTAPuk', 43)";
+        customerEntryQuery = "INSERT INTO customers VALUES (6, 'CTAPuk', 43)";
         executeUpdate(customerEntryQuery);
     }
 
@@ -62,7 +62,7 @@ public class SqlTest {
 
         // Обработаем результат
         ResultSet resultSet = statement.getResultSet();
-        System.out.println(resultSet.getStatement());
+//        System.out.println(resultSet.getStatement());
 
         String format = "%3s %3s %10s %3s\n";
         System.out.printf(format, "row", "id", "name", "age");
@@ -156,13 +156,13 @@ public class SqlTest {
         // У нас URL = "jdbc:h2:mem:test", где test - название БД
         // Название БД = catalog
         DatabaseMetaData metaData = connection.getMetaData();
-        ResultSet result = metaData.getTables
-                ("TEST", "PUBLIC", "%", null);
+        ResultSet rs = metaData.getTables("TEST", "PUBLIC", "%", null);
+
         List<String> tables = new ArrayList<>();
-        while (result.next())
-            tables.add(result.getString(2) + "." + result.getString(3));
+        while (rs.next()) tables.add(rs.getString(2) + "." + rs.getString(3));
         System.out.println(tables);
         assertTrue(tables.contains("PUBLIC.CUSTOMERS"));
+
         showAllDataFromCustomers();
     }
 
