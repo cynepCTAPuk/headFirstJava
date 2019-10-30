@@ -21,10 +21,10 @@ public class SqlTest {
 
     private Connection getNewConnection() throws SQLException {
 //        String url = "jdbc:h2:file:C:/0/test";
-        String url = "jdbc:h2:mem:test";
 //        String url = "jdbc:h2:~/test";
+        String url = "jdbc:h2:mem:test";
         String user = "sa";
-        String passwd = "sa";
+        String passwd = "";
         return DriverManager.getConnection(url, user, passwd);
     }
 
