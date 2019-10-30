@@ -84,12 +84,12 @@ public class AppTest {
     @Test
     public void shouldFindCategory() {
         Category cat = new Category();
-        cat.setTitle("Kitty");
+        cat.setTitle("---------------------Test---------------------");
 //        System.out.println(cat.getTitle());
         em.persist(cat);
         Category result = em.find(Category.class, 1L);
         assertNotNull(result);
-//        System.out.println("result.getTitle(): "+result.getTitle());
+        System.out.println("result.getTitle(): "+result.getTitle());
     }
 
     @Test
