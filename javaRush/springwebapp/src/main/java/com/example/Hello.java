@@ -1,10 +1,9 @@
-package com.example;
 /**
  * https://javarush.ru/groups/posts/2125-veb-prilozhenie-na-java
  */
+package com.example;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,6 +25,7 @@ public class Hello extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name");
+        System.out.println("String name: " + name);
         if (name == null) name = "World";
         request.setAttribute("user", name);
         request.getRequestDispatcher("response.jsp").forward(request, response);

@@ -9,11 +9,13 @@ import java.util.List;
 
 @Stateless
 public class ExampleEJB {
-    @PersistenceContext(unitName = "examplePU")
+        @PersistenceContext(unitName = " ")
+//    @PersistenceContext(name = "examplePU")
     private EntityManager entityManager;
 
     public boolean checkPassword(String login, String password) {
         if (StringUtils.isEmpty(login) || StringUtils.isEmpty(password)) return false;
+
         UserEntity userEntity = entityManager.find(UserEntity.class, login);
         if (userEntity == null) return false;
         if (password.equals((userEntity.getPassword()))) return true;
