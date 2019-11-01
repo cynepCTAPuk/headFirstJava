@@ -1,5 +1,10 @@
 # Java Rush
 
+filmography 
+Знакомство с Maven, Spring, MySQL, Hibernate и первое CRUD приложение (часть 1)
+https://javarush.ru/groups/posts/2253-znakomstvo-s-maven-spring-mysql-hibernate-i-pervoe-crud-prilozhenie-chastjh-1
+
+
 gradle
 Краткое знакомство с Gradle
 https://javarush.ru/groups/posts/2126-kratkoe-znakomstvo-s-gradle
