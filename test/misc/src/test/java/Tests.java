@@ -2,11 +2,41 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Comparator;
-import java.util.function.Function;
-import java.util.function.IntUnaryOperator;
-import java.util.function.Predicate;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.*;
 
 public class Tests {
+    @Test
+    public void threadLocalLegacy() {
+        final AtomicInteger counter = new AtomicInteger(1);
+        ThreadLocal<Integer> t1Number = new ThreadLocal<>() {
+            @Override
+            protected Integer initialValue() {
+                return counter.incrementAndGet();
+            }
+        };
+        Assert.assertEquals(t1Number.get(), (Integer) 2);
+        Assert.assertEquals(t1Number.get(), (Integer) 2);
+    }
+
+    @Test
+    public void threadLocalLambda() {
+        AtomicInteger counter = new AtomicInteger(0);
+//        ThreadLocal<Integer> t1Number = new ThreadLocal<>(() -> counter.incrementAndGet());
+//        Assert.assertEquals(t1Number.get(), (Integer) 1);
+//        Assert.assertEquals(t1Number.get(), (Integer) 1);
+    }
+
+    @Test
+    public void threadLocalMRef() {
+        AtomicInteger counter = new AtomicInteger(0);
+        Supplier<Integer> factory = counter::incrementAndGet;
+        ThreadLocal<Integer> t1Number = new ThreadLocal<>(factory);
+        Assert.assertEquals(t1Number.get(), (Integer) 1);
+        Assert.assertEquals(t1Number.get(), (Integer) 1);
+    }
+
     @Test
     public void testParseInt() {
         Function<String, Integer> f = Integer::parseInt;
