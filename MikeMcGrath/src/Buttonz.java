@@ -1,14 +1,22 @@
+package src;
+
 import javax.swing.*;
 
-public class Buttons extends JFrame {
+public class Buttonz extends JFrame {
     JPanel jPanel = new JPanel();
-    ImageIcon tick = new ImageIcon( "c:/000/529.gif" ) ;
-    ImageIcon cross = new ImageIcon( "c:/000/539.gif" ) ;
+    ClassLoader ldr = this.getClass().getClassLoader() ;
+    java.net.URL tickURL = ldr.getResource( "c:/000/529.gif" ) ;
+    java.net.URL crossURL = ldr.getResource( "c:/000/539.gif" +
+            ".0" ) ;
+
+    ImageIcon tick = new ImageIcon( tickURL ) ;
+    ImageIcon cross = new ImageIcon( crossURL ) ;
+
     JButton btn = new JButton( "Нажми меня" ) ;
     JButton tickBtn = new JButton( tick ) ;
     JButton crossBtn = new JButton( "СТОП" , cross ) ;
 
-    public Buttons() {
+    public Buttonz() {
         super("Окно Swing");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(200, 400);
@@ -21,6 +29,6 @@ public class Buttons extends JFrame {
     }
 
     public static void main(String[] args) {
-        Buttons gui = new Buttons();
+        Buttonz gui = new Buttonz();
     }
 }

@@ -1,3 +1,5 @@
+package src;
+
 import java.io.*;
 public class WriteFile {
     public static void main(String[] args) {

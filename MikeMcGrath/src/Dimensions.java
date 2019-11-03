@@ -1,3 +1,5 @@
+package src;
+
 class Dimensions {
     public static void main(String[] args) {
         boolean[][] points = new boolean[5][20];

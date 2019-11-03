@@ -1,3 +1,5 @@
+package src;
+
 import javafx.scene.paint.*;
 
 import javax.swing.*;
