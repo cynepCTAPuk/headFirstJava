@@ -45,6 +45,6 @@ public class SupplierDemo {
                 names.stream().collect(Collectors.joining(", "))))); // 
 
         System.out.println(first.orElseGet(() -> String.format("Ничего не найдено в %s",
-                names.stream().collect(Collectors.joining(", "))))); // 
+                names.stream().collect(Collectors.joining(", ","[","]"))))); // 
     }
 }
