@@ -18,13 +18,26 @@ public class PredicateDemo {
 
         String[] names = {"Mal", "Wash", "Kaylee", "Inara", "Zoё", "Jayne", "Simon", "River", "Shepherd Book"};
         System.out.println(getNamesOfLength(5, names));
+        System.out.println(getNamesStartingWith("S", names));
+        System.out.println(getNamesSatisfyingCondition(s -> s.length() == 5, names));
+        System.out.println(getNamesSatisfyingCondition(s -> s.startsWith("S"), names));
     }
 
     public static String getNamesOfLength(int length, String... names) {
         return Arrays.stream(names)
                 .filter(s -> s.length() == length)
                 .collect(Collectors.joining(", "));
-
     }
 
+    public static String getNamesStartingWith(String str, String... names) {
+        return Arrays.stream(names)
+                .filter(s -> s.startsWith(str))
+                .collect(Collectors.joining(", "));
+    }
+
+    public static String getNamesSatisfyingCondition(Predicate<String> condition, String... names) {
+        return Arrays.stream(names)
+                .filter(condition)
+                .collect(Collectors.joining(", "));
+    }
 }
