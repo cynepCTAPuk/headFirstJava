@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class RefLinkMethodTest {
+public class RefLinkMethodDemo {
     public static void main(String[] args) {
         Stream.of(3, 1, 4, 1, 5, 9).filter(new Predicate<Integer>() {
             @Override

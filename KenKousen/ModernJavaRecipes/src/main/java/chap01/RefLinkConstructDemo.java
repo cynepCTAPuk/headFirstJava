@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RefLinkConstructTest {
+public class RefLinkConstructDemo {
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
         Person alice = new Person("Alice");
