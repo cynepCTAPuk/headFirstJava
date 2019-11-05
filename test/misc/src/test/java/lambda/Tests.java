@@ -1,10 +1,9 @@
-package Lamda;
+package lambda;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Comparator;
-import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.*;
 
