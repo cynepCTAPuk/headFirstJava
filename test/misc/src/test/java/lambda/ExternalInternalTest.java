@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ExternalInternalTest {
     @Test
@@ -12,6 +13,7 @@ public class ExternalInternalTest {
         StringBuilder sb = new StringBuilder();
         List<String> strings = Arrays.asList("Foo", "Bar", "Baz");
         for (String s : strings) sb.append(s);
+//        String s = strings.stream().collect(Collectors.joining());
         Assert.assertEquals("FooBarBaz", sb.toString());
     }
 
