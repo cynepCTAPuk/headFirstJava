@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ExternalInternalTest {
+public class IterateExternalInternalTest {
     @Test
     public void testExternal() {
         StringBuilder sb = new StringBuilder();

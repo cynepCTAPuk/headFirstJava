@@ -53,11 +53,11 @@ public class CreateStreamDemo {
 //        collection.parallelStream()
         Stream<String> stream = collection.parallelStream();
 
-//        8. Создание бесконечных стрима с помощью Stream.iterate
+//        8. Создание бесконечного стрима с помощью Stream.iterate
 //        Stream.iterate(начальное_условие, выражение_генерации)
         Stream<Integer> streamFromIterate = Stream.iterate(1, n -> n + 1);
 
-//        9. Создание бесконечных стрима с помощью Stream.generate
+//        9. Создание бесконечного стрима с помощью Stream.generate
 //        Stream.generate(выражение_генерации)
         Stream<Double> streamFromGenerate1 = Stream.generate(Math::random);
         Stream<String> streamFromGenerate2 = Stream.generate(() -> "a1");

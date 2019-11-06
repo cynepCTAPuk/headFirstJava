@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.*;
 
-public class Tests {
+public class LambdaTests {
     @Test
     public void threadLocalLegacy() {
         final AtomicInteger counter = new AtomicInteger(1);
