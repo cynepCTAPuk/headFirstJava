@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StreamDemo {
+public class Demo {
     public static void main(String[] args) {
         AtomicInteger aint = new AtomicInteger(0);
         List<Integer> list = Stream
