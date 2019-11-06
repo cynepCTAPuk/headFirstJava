@@ -3,13 +3,16 @@
  */
 package stream;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class IntermediateOperationDemo {
     public static void main(String[] args) {
         Collection<String> collection = Arrays.asList("a1", "a2", "a3");
+        List<Integer> integers = new ArrayList<>();
 
 //        filter	Отфильтровывает записи, возвращает только записи, соответствующие условию
         collection.stream()
@@ -51,5 +54,11 @@ public class IntermediateOperationDemo {
         collection.stream()
                 .flatMap((p) -> Arrays.asList(p.split(",")).stream())
                 .toArray(String[]::new);
+
+//        mapToObj	Преобразует числовой стрим обратно в объектный intStream.mapToObj((id) -> new Key(id)).toArray();
+
+//        isParallel	Узнать является ли стрим параллельным
+//        parallel	Вернуть параллельный стрим, если стрим уже параллельный, то может вернуть самого себя
+//        sequential	Вернуть последовательный стрим, если стрим уже последовательный, то может вернуть самого себя
     }
 }

@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class TerminalOperationsDemo {
     public static void main(String[] args) {
-        Collection<String> collection = Arrays.asList("a1", "a2", "a3");
+        Collection<String> collection = Arrays.asList("a1", "a2", "a3", "a1");
         List<StringBuilder> list = new ArrayList<>();
         Set<StringBuilder> set = new TreeSet<>();
         List<Integer> integers = new ArrayList<>();
@@ -57,5 +57,14 @@ public class TerminalOperationsDemo {
 //        reduce Позволяет выполнять агрегатные функции на всей коллекцией и возвращать один результат
         integers.stream()
                 .reduce((s1, s2) -> s1 + s2).orElse(0);
+
+//        sum	Возвращает сумму всех чисел
+        collection.stream()
+                .mapToInt((s) -> Integer.parseInt(s))
+                .sum();
+//        average	Возвращает среднее арифметическое всех чисел
+        collection.stream()
+                .mapToInt((s) -> Integer.parseInt(s))
+                .average();
     }
 }
