@@ -1,10 +1,11 @@
 /**
  * https://vertex-academy.com/tutorials/ru/java-8-stream-flatmap/
  */
-package lambda;
+package stream;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,24 +28,48 @@ public class FlatMapDemo {
         System.out.println(petNames);
 
         petNames = humans.stream()
+                .map(Human::getPets)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+        System.out.println(petNames);
+
+        petNames = humans.stream()
                 .flatMap(human -> human.getPets().stream())
                 .collect(Collectors.toList());
         System.out.println(petNames);
 
-        int[][] arr = {{1, 2}, {3, 4, 5}, {6, 7, 8, 9}};
-        int length = 0;
-        for (int[] ints : arr) length += ints.length;
-        int[] arr1 = new int[length];
+        int[][] arr = {{1, 2, 1, 2, 1}, {3, 4, 5}, {6, 7, 8, 9}};
+        int size = 0;
+        for (int[] ints : arr) size += ints.length;
+
+        int[] arr1 = new int[size];
         for (int i = 0, idx = 0; i < arr.length; i++)
             for (int j = 0; j < arr[i].length; j++)
                 arr1[idx++] = arr[i][j];
         System.out.println(Arrays.toString(arr1));
 
-        int[] arr2 = Arrays.stream(arr).flatMapToInt(i -> Arrays.stream(i)).toArray();
+        int[] arr2 = Arrays.stream(arr)
+                .flatMapToInt(i -> Arrays.stream(i))
+                .toArray();
         System.out.println(Arrays.toString(arr2));
 
-        int[] arr3 = Arrays.stream(arr).flatMapToInt(Arrays::stream).toArray();
+        int[] arr3 = Arrays.stream(arr)
+                .flatMapToInt(Arrays::stream)
+                .distinct()
+                .toArray();
         System.out.println(Arrays.toString(arr3));
+
+        System.out.println(Arrays.stream(arr)
+                .flatMapToInt(Arrays::stream)
+                .count());
+
+        List<String> lst = Arrays.asList("STAAAACK", "OOOVEER");
+        System.out.println(lst);
+        System.out.println(lst.stream()
+                .map(w -> w.split(""))
+                .flatMap(Arrays::stream)
+                .distinct()
+                .collect(Collectors.joining()));
     }
 }
 
