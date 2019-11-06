@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -30,10 +31,14 @@ public class CreateStreamDemo {
 
 //        4. Создание стрима из файла (каждая строка в файле будет отдельным элементом в стриме)
 //        Files.lines(путь_к_файлу)
-        Stream<String> streamFromFiles = Files.lines(Paths.get("c:/000/file.txt"));
-        System.out.println(streamFromFiles
+        Stream<String> streamFromFiles1 = Files.lines(Paths.get("c:/000/file.txt"));
+        System.out.println(streamFromFiles1
                 .map(w -> w.split(" "))
                 .flatMap(Arrays::stream)
+                .collect(Collectors.toList()));
+        Stream<String> streamFromFiles2 = Files.lines(Paths.get("c:/000/file.txt"));
+        System.out.println(streamFromFiles2
+                .sorted((o1, o2) -> o1.split(" ")[1].compareTo(o2.split(" ")[1]))
                 .collect(Collectors.toList()));
 
 //        5. Создание стрима из строки
@@ -42,8 +47,7 @@ public class CreateStreamDemo {
 
 //        6. С помощью Stream.builder
 //        Stream.builder().add(...)....build()
-        System.out.println(Stream.builder().add("a1").add("a2").add("a3").build()
-                .collect(Collectors.toList()));
+        Stream.builder().add("a1").add("a2").add("a3").build();
 
 //        7. Создание параллельного стрима
 //        collection.parallelStream()
