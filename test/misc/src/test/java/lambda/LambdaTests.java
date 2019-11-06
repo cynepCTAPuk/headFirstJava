@@ -55,12 +55,12 @@ public class LambdaTests {
         Assert.assertEquals(-1, cmp.compare(-100, 100));
         Assert.assertEquals(1, cmp.compare(100, -100));
 
-//        Comparator<String> cmp1 = (cs1, cs2) -> cs1.compareTo(cs2);
-        Comparator<String> cmp1 = String::compareTo;
+        Comparator<String> cmp1 = (cs1, cs2) -> cs1.compareTo(cs2);
+        Comparator<String> cmp2 = String::compareTo;
 
-        Assert.assertEquals(0, cmp1.compare("a", "a"));
-        Assert.assertEquals(-1, cmp1.compare("a", "b"));
-        Assert.assertEquals(1, cmp1.compare("b", "a"));
+        Assert.assertEquals(0, cmp2.compare("a", "a"));
+        Assert.assertEquals(-1, cmp2.compare("a", "b"));
+        Assert.assertEquals(1, cmp2.compare("b", "a"));
     }
 
     private IntUnaryOperator fib =
@@ -69,7 +69,6 @@ public class LambdaTests {
     @Test
     public void testFib() {
         for (int i = 1; i < 12; i++) System.out.print(fib.applyAsInt(i) + " ");
-
         Assert.assertEquals(55, fib.applyAsInt(10));
     }
 
