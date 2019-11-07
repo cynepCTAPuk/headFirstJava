@@ -25,20 +25,25 @@ public class StreamCollectorExamples {
         strings.stream()
                 .distinct()
                 .collect(Collectors.toList());
-        strings.stream()
-                .distinct()
-                .map(String::toUpperCase)
-                .toArray(String[]::new);
-        strings.stream()
-                .collect(Collectors.joining(": ", "<b> ", " </b>"));
-        strings.stream()
-                .distinct()
-                .collect(Collectors.toMap((p) -> p.substring(0, 1), (p) -> p.substring(1, 2)));
-        strings.stream()
-                .collect(Collectors.groupingBy((p) -> p.substring(0, 1)));
-        strings.stream()
-                .collect(Collectors.groupingBy((p) -> p.substring(0, 1),
-                        Collectors.mapping((p) -> p.substring(1, 2),
-                                Collectors.joining(":"))));
+        System.out.println(Arrays.toString(
+                strings.stream()
+                        .distinct()
+                        .map(String::toUpperCase)
+                        .toArray(String[]::new)));
+        System.out.println(
+                strings.stream()
+                        .collect(Collectors.joining(": ", "<b> ", " </b>")));
+        System.out.println(
+                strings.stream()
+                        .distinct()
+                        .collect(Collectors.toMap((p) -> p.substring(0, 1), (p) -> p.substring(1, 2))));
+        System.out.println(
+                strings.stream()
+                        .collect(Collectors.groupingBy((p) -> p.substring(0, 1))));
+        System.out.println(
+                strings.stream()
+                        .collect(Collectors.groupingBy((p) -> p.substring(0, 1),
+                                Collectors.mapping((p) -> p.substring(1, 2),
+                                        Collectors.joining(":")))));
     }
 }
