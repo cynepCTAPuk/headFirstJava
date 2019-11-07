@@ -1,7 +1,5 @@
 package stream;
 
-import java.util.Set;
-
 public class People {
     private String name;
     private Integer age;
@@ -23,5 +21,14 @@ public class People {
 
     public Sex getSex() {
         return sex;
+    }
+
+    @Override
+    public String toString() {
+        return "People{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", sex=" + sex +
+                '}';
     }
 }
