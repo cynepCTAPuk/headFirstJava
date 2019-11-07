@@ -11,12 +11,26 @@ class Point {
         this.value = value;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     public int getValue() {
         return value;
     }
 
     @Override
     public String toString() {
-        return "Pair{" + "x=" + x + ", y=" + y + ", value=" + value + '}';
+        return "Point{" + "x=" + x + ", y=" + y + ", value=" + value + '}';
+    }
+
+    public boolean near(Point point) {
+        if (getX() == point.getX() && Math.abs(getY() - point.getY()) == 1 ||
+                getY() == point.getY() && Math.abs(getX() - point.getX()) == 1) return true;
+        return false;
     }
 }

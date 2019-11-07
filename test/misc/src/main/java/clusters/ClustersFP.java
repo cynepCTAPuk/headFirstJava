@@ -2,12 +2,9 @@ package clusters;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
-import java.util.function.Function;
+import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class ClustersFP {
 
@@ -21,17 +18,26 @@ public class ClustersFP {
                 {0, 0, 0, 0, 0, 8, 0, 9, 0, 0},
                 {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
         };
-        Stream stream = Arrays.stream(arr);
+        List<Point> points = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++)
+            for (int j = 0; j < arr[i].length; j++)
+                points.add(new Point(i, j, arr[i][j]));
+        System.out.println(points);
+        System.out.println(points.size());
 
+        List<Point> pointList = points.stream()
+                .filter((e) -> e.getValue() != 0)
+                .collect(Collectors.toList());
+        System.out.println(pointList);
+        System.out.println(pointList.size());
 
+//        printArr(arr);
+    }
+
+    private static void printArr(int[][] arr) {
         System.out.println(Arrays.toString(
                 Arrays.stream(arr)
-                .flatMapToInt(new Function<int[], IntStream>() {
-                    @Override
-                    public IntStream apply(int[] array) {
-                        return Arrays.stream(array);
-                    }
-                })
-                .toArray()));
+                        .flatMapToInt(Arrays::stream)
+                        .toArray()));
     }
 }

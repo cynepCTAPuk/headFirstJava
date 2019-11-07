@@ -20,7 +20,7 @@ public class Clusters1 {
 
         List<Point> list = createList(arr);
         System.out.println(list);
-   }
+    }
 
     private static List<Point> createList(int[][] arr) {
         List<Point> list = new ArrayList<>();

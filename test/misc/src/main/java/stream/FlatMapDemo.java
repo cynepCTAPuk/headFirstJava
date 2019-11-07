@@ -63,9 +63,9 @@ public class FlatMapDemo {
                 .flatMapToInt(Arrays::stream)
                 .count());
 
-        List<String> lst = Arrays.asList("STAAAACK", "OOOVEER");
-        System.out.println(lst);
-        System.out.println(lst.stream()
+        List<String> list = Arrays.asList("STAAAACK", "OOOVEER");
+        System.out.println(list);
+        System.out.println(list.stream()
                 .map(w -> w.split(""))
                 .flatMap(Arrays::stream)
                 .distinct()
