@@ -1,4 +1,4 @@
-package com.example.point;
+package clusters;
 
 class Point {
     private int x;

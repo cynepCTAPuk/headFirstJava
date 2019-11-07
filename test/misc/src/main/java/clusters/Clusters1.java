@@ -1,4 +1,4 @@
-package com.example.point;
+package clusters;
 
 import java.util.ArrayList;
 import java.util.List;
