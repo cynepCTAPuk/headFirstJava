@@ -1,3 +1,5 @@
+package p010;
+
 /**
  * Smallest multiple
  * 2520 is the smallest number that can be divided by each of the numbers

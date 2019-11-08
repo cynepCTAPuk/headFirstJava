@@ -1,3 +1,5 @@
+package p010;
+
 /**
  *
  * Largest product in a series

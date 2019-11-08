@@ -1,3 +1,5 @@
+package p030;
+
 /**
  * Number spiral diagonals
  * Problem 28

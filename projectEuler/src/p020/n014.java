@@ -1,3 +1,5 @@
+package p020;
+
 /**
  * Longest Collatz sequence
  * <p>

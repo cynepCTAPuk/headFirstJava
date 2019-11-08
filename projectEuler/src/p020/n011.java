@@ -1,3 +1,5 @@
+package p020;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -29,7 +31,7 @@ import java.util.Scanner;
  * (up, down, left, right, or diagonally) in the 20×20 grid?
  * (6,15) = 66 Down 51267216
  */
-public class n011_1 {
+public class n011 {
     public static void main(String[] args) {
         String s = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08\n" +
                 "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00\n" +
@@ -51,36 +53,67 @@ public class n011_1 {
                 "20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16\n" +
                 "20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54\n" +
                 "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
-        int n = 4;
+/*
+        String[] strings = s.split("\n");
+        int[][] array = new int[20][20];
+        for (int i = 0; i < 20; i++) {
+            String[] string = strings[i].split(" ");
+            for (int j = 0; j < 20; j++) array[i][j] = Integer.parseInt(string[j]);
+        }
+        for (int i = 0; i < 20; i++) System.out.println(Arrays.toString(array[i]));
+        System.out.println();
+*/
         Scanner sc = new Scanner(s);
         int[][] array = new int[20][20];
         for (int i = 0; i < 20; i++) for (int j = 0; j < 20; j++) array[i][j] = sc.nextInt();
         for (int i = 0; i < 20; i++) System.out.println(Arrays.toString(array[i]));
 
-        int max = getMax(array);
-        System.out.println(max);
-    }
-
-    private static int getMax(int[][] array) {
         int max = 1;
-        int prod;
+        int tmp = 1;
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 20; j++) {
-                if (i < 17) {
-                    prod = array[i][j] * array[i + 1][j] * array[i + 2][j] * array[i + 3][j];
-                    if (prod > max) max = prod;
-                }
                 if (j < 17) {
-                    prod = array[i][j] * array[i][j + 1] * array[i][j + 2] * array[i][j + 3];
-                    if (prod > max) max = prod;
+                    tmp = productRight(i, j, array);
+                    if (tmp > max) max = tmp;
                 }
-                if (j < 17 && i < 17) {
-                    prod = array[i][j] * array[i + 1][j + 1] * array[i + 2][j + 2] * array[i + 3][j + 3];
-                    if (prod > max) max = prod;
+                if (i < 17) {
+                    tmp = productDown(i, j, array);
+                    if (tmp > max) max = tmp;
+                }
+                if (i < 17 && j < 17) {
+                    tmp = productDiagDown(i, j, array);
+                    if (tmp > max) max = tmp;
+                }
+                if (i < 17 && j > 2) {
+                    tmp = productDiagTop(i, j, array);
+                    if (tmp > max) max = tmp;
                 }
             }
+            System.out.println(max);
         }
+    }
 
-        return max;
+    static int productRight(int x, int y, int[][] array) {
+        int product = 1;
+        for (int i = 0; i < 4; i++) product *= array[x][y + i];
+        return product;
+    }
+
+    static int productDown(int x, int y, int[][] array) {
+        int product = 1;
+        for (int i = 0; i < 4; i++) product *= array[x + i][y];
+        return product;
+    }
+
+    static int productDiagDown(int x, int y, int[][] array) {
+        int product = 1;
+        for (int i = 0; i < 4; i++) product *= array[x + i][y + i];
+        return product;
+    }
+
+    static int productDiagTop(int x, int y, int[][] array) {
+        int product = 1;
+        for (int i = 0; i < 4; i++) product *= array[x + i][y - i];
+        return product;
     }
 }

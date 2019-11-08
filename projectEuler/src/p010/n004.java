@@ -1,3 +1,5 @@
+package p010;
+
 /**
  * Largest palindrome product
  * A palindromic number reads the same both ways.

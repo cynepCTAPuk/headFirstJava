@@ -1,3 +1,5 @@
+package p010;
+
 /**
  * Sum square difference
  * The sum of the squares of the first ten natural numbers is,
