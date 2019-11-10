@@ -1,7 +1,6 @@
 package com.example.springboot;
 
 public class PaymentRequest {
-
     private int userId;
     private String itemId;
     private double discount;

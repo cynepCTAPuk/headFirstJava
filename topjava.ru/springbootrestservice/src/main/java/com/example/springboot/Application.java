@@ -1,3 +1,6 @@
+/**
+ * https://topjava.ru/blog/introducing-spring-boot
+ */
 package com.example.springboot;
 
 import org.springframework.boot.SpringApplication;

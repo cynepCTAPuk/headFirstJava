@@ -1,7 +1,6 @@
 package com.example.springboot;
 
 public class BaseResponse {
-
     private final String status;
     private final Integer code;
 
