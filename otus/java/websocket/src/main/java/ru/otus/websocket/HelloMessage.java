@@ -1,7 +1,6 @@
 package ru.otus.websocket;
 
 public class HelloMessage {
-
     private String name;
 
     public HelloMessage() {
