@@ -11,6 +11,10 @@ select count(*) from mysql.time_zone_name;
 show databases;
 show tables;
 
+mysql> create database db_example; -- Creates the new database
+mysql> create user 'springuser'@'%' identified by 'ThePassword'; -- Creates the user
+mysql> grant all on db_example.* to 'springuser'@'%'; -- Gives all privileges to the new user on the newly created database
+
 CREATE DATABASE databasename;
 DROP DATABASE databasename;
 
@@ -35,7 +39,6 @@ ALTER TABLE table_name ADD column_name datatype;
 ALTER TABLE table_name DROP COLUMN column_name;
 ALTER TABLE table_name MODIFY COLUMN column_name datatype;
 
-
 SELECT column1, column2, ... FROM table_name WHERE condition1 AND condition2 AND condition3 ...;
 SELECT column1, column2, ... FROM table_name WHERE condition1 OR condition2 OR condition3 ...;
 SELECT column1, column2, ... FROM table_name WHERE NOT condition;
@@ -52,3 +55,4 @@ insert into users(name, email, password, isAdmin) values('Pete','pete@hotmail.co
 update users set name = 'Anna' where userID = 4;
 
 SELECT posts.postID as num, users.name, posts.post FROM posts, users WHERE users.userID=posts.userID;
+
