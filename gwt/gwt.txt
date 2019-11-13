@@ -1,0 +1,2 @@
+c:\v\java\gwt-2.8.2\
+webAppCreator -out MyWebApp -maven com.example.mywebapp.MyWebApp
