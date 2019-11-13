@@ -22,12 +22,11 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class MyWebApp implements EntryPoint {
     /**
-     * The message displayed to the user when the server cannot be reached or
-     * returns an error.
+     * The message displayed to the user when the server cannot be reached or returns an error.
      */
     private static final String SERVER_ERROR =
             "An error occurred while attempting to contact the server. " +
-            "Please check your network connection and try again.";
+                    "Please check your network connection and try again.";
 
     /**
      * Create a remote service proxy to talk to the server-side Greeting service.
@@ -39,8 +38,10 @@ public class MyWebApp implements EntryPoint {
      */
     public void onModuleLoad() {
         final Button sendButton = new Button("Send");
+
         final TextBox nameField = new TextBox();
         nameField.setText("GWT User");
+
         final Label errorLabel = new Label();
 
         // We can add style names to widgets
@@ -60,11 +61,14 @@ public class MyWebApp implements EntryPoint {
         final DialogBox dialogBox = new DialogBox();
         dialogBox.setText("Remote Procedure Call");
         dialogBox.setAnimationEnabled(true);
+
         final Button closeButton = new Button("Close");
         // We can set the id of a widget by accessing its Element
         closeButton.getElement().setId("closeButton");
+
         final Label textToServerLabel = new Label();
         final HTML serverResponseLabel = new HTML();
+
         VerticalPanel dialogVPanel = new VerticalPanel();
         dialogVPanel.addStyleName("dialogVPanel");
         dialogVPanel.add(new HTML("<b>Sending name to the server:</b>"));
