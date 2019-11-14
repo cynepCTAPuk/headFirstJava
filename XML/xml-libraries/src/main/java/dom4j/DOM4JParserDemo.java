@@ -38,7 +38,7 @@ public class DOM4JParserDemo {
 
         List<Node> nodes = document.selectNodes("/class/student");
 //        List<Node> nodes = document.content();
-        nodes.forEach(n -> System.out.println(n.asXML()));
+        nodes.forEach(node -> System.out.println(node.asXML()));
 //        System.out.println("----------------------------");
 
         for (Node node : nodes) {
