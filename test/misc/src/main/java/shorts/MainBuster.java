@@ -1,4 +1,4 @@
-package unsort;
+package shorts;
 
 public class MainBuster {
     public static void main() {
