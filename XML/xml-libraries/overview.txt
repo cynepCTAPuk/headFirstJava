@@ -1,0 +1,26 @@
+https://www.baeldung.com/java-xml-libraries
+
+Now we’re going to dig deeper into the XML world support and for that we’re going
+ to start by explaining as simple as possible all the subject-related initials.
+
+In Java XML support we can find few API definitions, each one has its pros and cons.
+
+• SAX: It is an event based parsing API, it provides a low level access,
+ is memory efficient and faster than DOM since it doesn’t load the whole document tree
+ in memory but it doesn’t provide support for navigation like the one provided by XPath,
+ although it is more efficient it is harder to use too.
+
+• DOM: It as model based parser that loads a tree structure document in memory, so we
+ have the original elements order, we can navigate our document both directions,
+ it provides an API for reading and writing, it offers XML manipulation and it is
+ very easy to use although the price is high strain on memory resources.
+
+• StAX: It offers the ease of DOM and the efficiency of SAX but it lacks of some
+ functionality provided by DOM like XML manipulation and it only allows us to navigate the document forward.
+
+• JAXB: It allows us to navigate the document in both directions, it is more efficient
+ than DOM, it allows conversion from XML to java types and it supports XML manipulation
+  but it can only parse a valid XML document.
+
+You could still find some references to JAXP but last release of this project is from
+ March 2013 and it is practically dead.

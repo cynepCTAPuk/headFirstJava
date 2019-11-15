@@ -13,16 +13,16 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
-public class DOM4JParserDemo {
+public class Dom4JParserDemo {
     private File file;
 
-    public DOM4JParserDemo(File file) {
+    public Dom4JParserDemo(File file) {
         this.file = file;
     }
 
     public static void main(String[] args) throws DocumentException, IOException {
         String file = "input.xml";
-        DOM4JParserDemo parser = new DOM4JParserDemo(new File(file));
+        Dom4JParserDemo parser = new Dom4JParserDemo(new File(file));
 //        String newFile = parser.createNewFile();
 //        parser = new DOM4JParserDemo(new File(newFile));
         parser.printXML();
