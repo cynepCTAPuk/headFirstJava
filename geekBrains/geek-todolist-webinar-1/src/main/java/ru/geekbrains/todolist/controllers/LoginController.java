@@ -16,9 +16,7 @@ import javax.validation.Valid;
 
 @Controller
 public class LoginController {
-
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
-
     private final UserService userService;
 
     @Autowired
@@ -38,8 +36,7 @@ public class LoginController {
     }
 
     @PostMapping("/register")
-    public String registerNewUser(@ModelAttribute("user") @Valid UserRepr userRepr,
-                                  BindingResult result) {
+    public String registerNewUser(@ModelAttribute("user") @Valid UserRepr userRepr, BindingResult result) {
         logger.info("New user {}", userRepr);
 
         if (result.hasErrors()) {
