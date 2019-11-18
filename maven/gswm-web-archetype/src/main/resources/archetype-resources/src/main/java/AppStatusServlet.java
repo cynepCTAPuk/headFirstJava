@@ -1,4 +1,7 @@
-package com.apress.gswmbook.web.servlet;
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package};
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.∗;
 import javax.servlet.http.∗;
