@@ -1,11 +1,8 @@
-#set( $symbol_pound = '#' )
-#set( $symbol_dollar = '$' )
-#set( $symbol_escape = '\' )
-package ${package};
+package com.apress.gswmbook.web.servlet;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.∗;
-import javax.servlet.http.∗;
-import java.io.∗;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
 @WebServlet("/status")
 public class AppStatusServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request,
