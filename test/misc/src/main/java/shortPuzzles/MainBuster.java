@@ -1,4 +1,4 @@
-package shorts;
+package shortPuzzles;
 
 public class MainBuster {
     public static void main() {
