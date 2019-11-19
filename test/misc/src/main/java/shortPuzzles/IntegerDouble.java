@@ -10,6 +10,5 @@ public class IntegerDouble {
         System.out.println(d1 == d2);
 
         // TODO: 19-Nov-19
-        
     }
 }
