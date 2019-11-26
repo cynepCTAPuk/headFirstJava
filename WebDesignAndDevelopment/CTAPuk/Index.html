@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<title>Путешествия</title>
+			<style>
+				.wrapper{
+					width: 1200px;
+					height: 2400px;
+					border: 1px solid #0048BA;
+					background-color: PaleTurquoise;
+					margin: 0 auto;
+				}
+				.heder{
+					width: 100%;
+					height: 265px;
+					border: 1px solid #0048BA;
+					background-color: LightSeaGreen;
+					<!-- background-image: url(img/1200px-Moscow_pano.jpg); -->
+					<!-- background-size: cover; -->
+				}
+				.logo{
+					width: 140px;
+					height: 140px;
+					margin-top: 50px;
+					margin-left: 20px;
+					border-radius: 50%;
+					background-color: bisque;
+					background-image: url(img/train.png);
+					background-size: cover;
+					float: left;
+				}
+				.names{
+					width: 440px;
+					height: 100px;
+					border: 4px double #0048BA;
+					background-color: lime;
+					margin-top: 65px;
+					margin-left: 10px;
+					float: left;
+				}
+				.tel{
+					width: 180px;
+					height: 35px;
+					float: left;
+					margin-top: 100px;
+					margin-left: 20px;
+					font-size: 35px;
+					color: red;
+					font-weight: 700;
+					font-style: oblique;
+				}
+				.soceti{
+					width: 140px;
+					height: 45px;
+					float: right;
+				}
+				.soceti i{
+					width: 30px;
+					height: 30px;
+					float: left;
+					padding: 5px;
+					border: 2px solid black;
+					border-radius: 50%;
+					background-color: White;
+				}
+			</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="heder">
+				<div class="logo"></div>
+				<div class="names"></div>
+				<div class="tel">8 999 99 99</div>
+				<div class="soceti">
+					<i class="fa fa-facebook fa-2x"></i>
+					<i class="fa fa-twitter fa-2x"></i>
+					<i class="fa fa-instagram fa-2x"></i>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#">Главная</a></li>
+						<li><a href="#">Туризм</a>
+							<ul>
+								<li><a href="#">Чехия</a></li>
+								<li><a href="#">Куба</a></li>
+								<li><a href="#">Италия</a></li>
+								<li><a href="#">Греция</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Цена</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
+				</nav>
+			</div>
+			<style>
+				nav{
+					margin:200px 0;
+					background-color: SpringGreen;
+				}
+				nav ul{
+					padding: 0;
+					margin: 0;
+					list-style: none;
+					position: relative;
+				}
+				nav ul li{
+					margin: 0 -7px 0 0;
+					display: inline-block;
+					background-color: ChartReUse;
+				}
+				nav a{
+					display: block;
+					padding: 0 10px;
+					color: blue;
+					font-size: 18px;
+					line-height: 60ps;
+					text-decoration: none;
+				}
+				nav a:hover{
+					background-color: BurlyWood;
+				}
+				nav ul ul{
+					display: none;
+					position: absolute;
+					top: 100%;
+				}
+				nav ul li:hover>ul{
+					display:inherit;
+				}
+				nav ul ul li{
+					min-width: 180px;
+					float: none;
+					display: list-item;
+					position: relative;
+				}
+			</style>
+
+
+		</div>
+	</body>
+</html>
