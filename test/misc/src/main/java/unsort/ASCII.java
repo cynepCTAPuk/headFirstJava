@@ -1,6 +1,6 @@
 package unsort;
 
-import java.util.*;
+import java.util.Random;
 
 /*
  * ASCII (англ. American standard code for information interchange,
@@ -11,22 +11,22 @@ import java.util.*;
  */
 public class ASCII {
     public static void main(String[] args) {
-        int a = 33; // start symbol (33 - start printable symbols)
-        int b = 150; // qty all symbols
-        int c = 12; // qty symbols in row
+        int a = 32; // start symbol (33 - start printable symbols)
+        int b = 128 - a;
+        int c = 16; // qty symbols in row
         int n = 0;
-        System.out.println("Space = " + (int) (' '));
 
         for (int i = a; i < a + b; i++) {
-            System.out.format("%3d :", i);
-            System.out.format(" %-2c", (char) i);
+            System.out.format("%4d:%2c", i, (char) i);
             if (++n % c == 0) System.out.format("%n");
         }
 
+        System.out.println("_".repeat(60));
         String s = String.join(",", "a", "b", "c");
+        System.out.println(s);
         int size = 30;
         int[] ints = new int[size];
-        // new Random().ints(30, 10, 100).forEach(result -> System.out.format("%2d ",
-        // result));
+        new Random().ints(30, 10, 100)
+                .forEach(result -> System.out.format("%2d ", result));
     }
 }
