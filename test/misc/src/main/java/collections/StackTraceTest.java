@@ -1,3 +1,5 @@
+package collections;
+
 public class StackTraceTest {
     public static void main(String[] args) {
         method1();
