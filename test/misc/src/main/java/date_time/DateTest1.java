@@ -8,9 +8,12 @@ import java.util.Locale;
 public class DateTest1 {
     public static void main(String[] args) throws Exception {
         System.out.println("-".repeat(60));
-        String string = "January 2, 2010";
-        DateFormat format = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
+//        String string = "January 2, 2010";
+//        DateFormat format = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
+        String string = "2010 01 02";
+        DateFormat format = new SimpleDateFormat("yyyy MM dd", Locale.ENGLISH);
         Date date = format.parse(string);
         System.out.println(date);
+        System.out.println("-".repeat(60));
     }
 }
