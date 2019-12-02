@@ -1,4 +1,6 @@
-package unsort;
+package collections;
+
+import unsort.Person;
 
 import java.util.*;
 

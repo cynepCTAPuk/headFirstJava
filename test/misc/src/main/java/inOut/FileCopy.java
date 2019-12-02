@@ -1,4 +1,4 @@
-package unsort;
+package inOut;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

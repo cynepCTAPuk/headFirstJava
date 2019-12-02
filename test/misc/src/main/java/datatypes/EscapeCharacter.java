@@ -13,7 +13,7 @@
  * (only if the next character is not a decimal digit; else it is an octal escape sequence)
  * \xFF character represented by the hexadecimal byte "FF"
  */
-package unsort;
+package datatypes;
 
 public class EscapeCharacter {
     public static void main(String[] args) throws InterruptedException {

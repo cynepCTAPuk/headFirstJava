@@ -1,4 +1,4 @@
-package unsort;
+package inOut;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,7 +13,7 @@ public class FileTimeEx {
     }
 
     private void proceed() throws IOException {
-        String pathToFile = "src/unsort.FileTimeEx.java";
+        String pathToFile = "src/main/java/inOut/FileTimeEx.java";
 
         Path filePath = Paths.get(pathToFile);
         FileTime fileTime = Files.getLastModifiedTime(filePath);

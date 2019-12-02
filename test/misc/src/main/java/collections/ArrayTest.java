@@ -1,4 +1,4 @@
-package unsort;
+package collections;
 
 class ArrayTest {
     public static void main(String[] args) {
