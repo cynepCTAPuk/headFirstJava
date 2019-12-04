@@ -8,6 +8,6 @@ public class MapTest {
     public static void main(String[] args) {
         Map<Character, Integer> hashMap = new HashMap<>();
         Map<Character, Integer> treeMap = new TreeMap<>();
-        
+
     }
 }
