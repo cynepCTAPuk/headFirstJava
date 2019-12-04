@@ -1,19 +1,19 @@
-package com.example.interfaces;
+package oop;
 
-class A implements B {
+interface A {
+    int methodB(int i);
+}
+
+class B implements A {
     @Override
     public int methodB(int i) {
         return i = +i * i;
     }
 }
 
-interface B {
-    int methodB(int i);
-}
-
-public class A_B {
+public class InterfaceTest {
     public static void main(String[] args) {
-        B b = new A();
+        A b = new B();
         System.out.println(b.methodB(2));
     }
 }
