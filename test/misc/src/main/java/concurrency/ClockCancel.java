@@ -6,7 +6,7 @@ public class ClockCancel {
         Thread clockThread = new Thread(clock);
         clockThread.start();
 
-        Thread.sleep(10000);
+        Thread.sleep(10_000);
         clock.cancel();
     }
 }
@@ -21,7 +21,7 @@ class Clock1 implements Runnable {
     public void run() {
         while (!isCancel) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(1_000);
                 System.out.println("Tik");
             } catch (InterruptedException e) {
                 e.printStackTrace();
