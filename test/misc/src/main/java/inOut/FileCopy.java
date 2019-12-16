@@ -8,7 +8,6 @@ import java.io.OutputStream;
 
 public class FileCopy {
     public static void main(String[] args) {
-
         try (
                 InputStream fileInputStream = new FileInputStream("c:/000/data.txt");
                 OutputStream fileOutputStream = new FileOutputStream("c:/000/result1.txt")) {

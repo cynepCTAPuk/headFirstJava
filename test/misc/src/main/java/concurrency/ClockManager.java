@@ -4,7 +4,7 @@ public class ClockManager {
     public static boolean isClockRun = true;
 
     public static void main(String[] args) throws InterruptedException {
-        Clock clock = new Clock();
+        Clock2 clock = new Clock2();
         Thread clockThread = new Thread(clock);
         clockThread.start();
 
@@ -14,7 +14,7 @@ public class ClockManager {
 
 }
 
-class Clock implements Runnable {
+class Clock2 implements Runnable {
     public void run() {
         while (true) {
             try {
