@@ -12,7 +12,7 @@ public class ClockCancel {
 }
 
 class Clock1 implements Runnable {
-    private boolean isCancel = false;
+    private volatile boolean isCancel = false;
 
     public void cancel() {
         this.isCancel = true;
