@@ -1,4 +1,4 @@
-package inOut;
+package unsort;
 
 public class LogicalTest {
     public static void main(String[] args) {
