@@ -1,4 +1,4 @@
-package unsort;
+package inOut;
 
 import java.io.FileWriter;
 import java.io.IOException;

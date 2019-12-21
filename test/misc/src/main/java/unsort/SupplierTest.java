@@ -10,7 +10,6 @@ public class SupplierTest {
             int n = generator.nextInt(1);
             return n % 2 == 0;
         };
-//        System.out.println(s.getAsBoolean());
         System.out.println(s.get().booleanValue());
     }
 }
