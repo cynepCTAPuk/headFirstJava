@@ -7,7 +7,7 @@ import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 
-public class LocalDateTest {
+public class JavaRush {
     public static void main(String[] args) {
         Locale ruLocale = new Locale("ru");
 //        LocalDate startJavaRush = LocalDate.of(2019, 11, 19);
