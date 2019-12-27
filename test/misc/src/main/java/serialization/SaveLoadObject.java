@@ -1,9 +1,6 @@
 package serialization;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class SaveLoadObject {
     public static void main(String[] args) throws Exception {
@@ -29,7 +26,7 @@ public class SaveLoadObject {
     }
 }
 
-class Cat {
+class Cat implements Serializable {
     public String name;
     public int age;
     public int weight;
