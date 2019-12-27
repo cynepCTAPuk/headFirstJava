@@ -13,12 +13,14 @@ import java.util.List;
 public class ParsingHmtlTag {
     public static void main(String[] args) throws IOException {
         BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
-        String file = console.readLine();
-//        String file = "c:/000/1.txt";
+//        String file = console.readLine();
+        String file = "c:/000/1.txt";
         console.close();
-        String tag = args[0];
-        BufferedReader reader = new BufferedReader(new FileReader(file));
+        String tag;
+        if (args.length > 0) tag = args[0];
+        else tag = "span";
 
+        BufferedReader reader = new BufferedReader(new FileReader(file));
         StringBuilder builder = new StringBuilder("");
         while (reader.ready()) builder.append(reader.readLine());
         reader.close();
@@ -37,7 +39,7 @@ public class ParsingHmtlTag {
 
             if (startIdx < endIdx) swap = true;
 
-            endIdx = builder.indexOf("</" + tag + ">", endIdx);
+            endIdx = builder.indexOf("</" + tag, endIdx);
             if (endIdx == -1) break;
             else {
                 endList.add(endIdx++);
