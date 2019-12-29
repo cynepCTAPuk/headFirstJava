@@ -15,10 +15,10 @@ public class JavaRush {
 //        LocalDate startJavaRush = LocalDate.parse("20191119", DateTimeFormatter.ofPattern("yyyyMMdd"));
         LocalDate startJavaRush = LocalDate.parse("2019-11-19");
         LocalDate now = LocalDate.now();
-        System.out.print("\n" +
-                LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy, dd MMMM", ruLocale)) + " " +
-                LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")) + ", ");
-        System.out.println(now.getDayOfWeek().getDisplayName(TextStyle.FULL, ruLocale));
+        System.out.println("\nСегодня - " +
+                LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy, dd MMMM, EEEE, ", ruLocale)) +
+                LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm")));
+//        System.out.println(now.getDayOfWeek().getDisplayName(TextStyle.FULL, ruLocale));
 //        System.out.print(Duration.between(startJavaRush.atStartOfDay(), now.atStartOfDay()).toDays() + 1);
 //        System.out.print(now.toEpochDay() - startJavaRush.toEpochDay() + 1);
 //        System.out.print(Period.between(startJavaRush, now).getDays() + 1);
@@ -26,8 +26,8 @@ public class JavaRush {
         System.out.println("\t" +
                 (startJavaRush.until(now, ChronoUnit.DAYS) + 1) + "-й день с начала курса JavaRush");
         System.out.println("\t\tЭто было " +
-                startJavaRush.format(DateTimeFormatter.ofPattern("yyyy, dd MMMM", ruLocale)) + ", "
-                + startJavaRush.getDayOfWeek().getDisplayName(TextStyle.FULL, ruLocale)
+                startJavaRush.format(DateTimeFormatter.ofPattern("yyyy, dd MMMM, EEEE", ruLocale))
+//                + startJavaRush.getDayOfWeek().getDisplayName(TextStyle.FULL, ruLocale)
         );
     }
 }

@@ -32,18 +32,22 @@ public class SerializeObject {
         obj.string1 = str1;
         obj.string2 = str2;
         System.out.println(obj.string1.number + ":" + obj.string2.number);
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(byteArrayOutputStream);
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(baos);
         oos.writeObject(obj);
+        oos.close();
+        baos.close();
 
         obj.string1 = str2;
         obj.string2 = str1;
         System.out.println(obj.string1.number + ":" + obj.string2.number);
 
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
-        ObjectInputStream ois = new ObjectInputStream(byteArrayInputStream);
-        SerializeObject.Object newObj = new SerializeObject.Object();
-        newObj = (Object) ois.readObject();
+        ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+        ObjectInputStream ois = new ObjectInputStream(bais);
+        Object newObj = (Object) ois.readObject();
         System.out.println(newObj.string1.number + ":" + newObj.string2.number);
+        ois.close();
+        bais.close();
     }
 }
