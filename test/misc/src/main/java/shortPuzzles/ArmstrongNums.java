@@ -3,6 +3,7 @@ package shortPuzzles;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 /*
 Алгоритмы-числа
 N = Long.MAX_VALUE >> 32 = Integer.MAX_VALUE = 2,147,483,647
@@ -11,7 +12,21 @@ N = Long.MAX_VALUE >> 32 = Integer.MAX_VALUE = 2,147,483,647
 Time: 197,540 milliSeconds
 - need to improve!
 */
-public class ArmstrongNumbers {
+public class ArmstrongNums {
+    public static void main(String[] args) {
+//        long N = Long.MAX_VALUE >> 32;
+        long N = 100_000_000;
+//        System.out.printf("%,26d\n", Long.MAX_VALUE);
+//        System.out.printf("%,26d\n", Integer.MAX_VALUE);
+//        System.out.printf("%,26d\n", N);
+
+        long start = System.currentTimeMillis();
+        long[] result = getNumbers(N);
+        System.out.printf("%,d\n", System.currentTimeMillis() - start);
+
+        System.out.println(Arrays.toString(result));
+    }
+
     public static long[] getNumbers(long N) {
         List<Long> list = new ArrayList<>();
         for (long i = 0; i < N; i++) {
@@ -35,18 +50,5 @@ public class ArmstrongNumbers {
         return result;
     }
 
-    public static void main(String[] args) {
-//        long N = Long.MAX_VALUE >> 32;
-        long N = 100_000_000;
-        System.out.printf("%,26d\n", Long.MAX_VALUE);
-        System.out.printf("%,26d\n", Integer.MAX_VALUE);
-        System.out.printf("%,26d\n", N);
 
-        long start = System.currentTimeMillis();
-        long[] result = getNumbers(N);
-        System.out.printf("%,d\n", System.currentTimeMillis() - start);
-
-        System.out.println(Arrays.toString(result));
-
-    }
 }
