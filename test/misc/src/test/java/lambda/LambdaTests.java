@@ -58,9 +58,9 @@ public class LambdaTests {
         Comparator<String> cmp1 = (cs1, cs2) -> cs1.compareTo(cs2);
         Comparator<String> cmp2 = String::compareTo;
 
-        Assert.assertEquals(0, cmp2.compare("a", "a"));
-        Assert.assertEquals(-1, cmp2.compare("a", "b"));
-        Assert.assertEquals(1, cmp2.compare("b", "a"));
+        Assert.assertEquals(0, cmp2.compare("interfac", "interfac"));
+        Assert.assertEquals(-1, cmp2.compare("interfac", "b"));
+        Assert.assertEquals(1, cmp2.compare("b", "interfac"));
     }
 
     private IntUnaryOperator fib =

@@ -22,7 +22,7 @@ public class ASCII {
         }
 
         System.out.println("_".repeat(60));
-        String s = String.join(",", "a", "b", "c");
+        String s = String.join(",", "interfac", "b", "c");
         System.out.println(s);
         int size = 30;
         int[] ints = new int[size];

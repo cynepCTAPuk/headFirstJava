@@ -36,7 +36,7 @@ public class SerializeInnerClass implements Serializable{
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         SerializeInnerClass original = new SerializeInnerClass();
-        A a = original.new A("a");
+        A a = original.new A("interfac");
         B b = original.new B("b");
         C c = original.new C("c");
         System.out.println(a);
