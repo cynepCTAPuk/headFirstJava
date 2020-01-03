@@ -19,7 +19,7 @@ public class FilesWalkFileTreeTest2 {
             Files.walkFileTree(path, myFileVisitor);
             List<Path> folders = myFileVisitor.getFolders();
             List<Path> files = myFileVisitor.getFiles();
-            int size = myFileVisitor.getSize();
+            int size = myFileVisitor.getSize() - 1;
 
             System.out.println("Всего папок - " + folders.size());
             System.out.println("Всего файлов - " + files.size());
@@ -48,16 +48,15 @@ class MyFileVisitor2 extends SimpleFileVisitor<Path> {
     }
 
     @Override
-    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+    public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) throws IOException {
+        this.files.add(path);
+        this.size += Integer.parseInt(Files.getAttribute(path, "size").toString());
+//        this.size += Files.readAllBytes(path).length;
+        return FileVisitResult.CONTINUE;
+    }
 
-        if (Files.isDirectory(file)) {
-            this.folders.add(file);
-        } else {
-            this.files.add(file);
-            this.size += Files.readAllBytes(file).length;
-        }
-//        return FileVisitResult.CONTINUE;
-        return super.visitFile(file, attrs);
-
+    public FileVisitResult preVisitDirectory(Path path, BasicFileAttributes fileAttributes) {
+        this.folders.add(path);
+        return FileVisitResult.CONTINUE;
     }
 }
