@@ -1,21 +1,20 @@
 package file;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class FilesWalkFileTreeTest {
+/**
+ * Найти файл содержащий строку "This is the file we need"
+ */
+public class FilesWalkFileTreeTest1 {
     public static void main(String[] args) throws IOException {
-        Files.walkFileTree(Paths.get("c:/000/"), new MyFileVisitor());
+        Files.walkFileTree(Paths.get("c:/000/"), new MyFileVisitor1());
     }
 }
 
-class MyFileVisitor extends SimpleFileVisitor<Path> {
+class MyFileVisitor1 extends SimpleFileVisitor<Path> {
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
