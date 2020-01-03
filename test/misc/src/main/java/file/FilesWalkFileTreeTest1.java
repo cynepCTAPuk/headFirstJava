@@ -17,7 +17,7 @@ public class FilesWalkFileTreeTest1 {
 class MyFileVisitor1 extends SimpleFileVisitor<Path> {
 
     @Override
-    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
         try {
             List<String> lines = Files.readAllLines(file);
             for (String s : lines) {
@@ -33,6 +33,7 @@ class MyFileVisitor1 extends SimpleFileVisitor<Path> {
 //            e.printStackTrace();
         }
 
-        return FileVisitResult.CONTINUE;
+//        return FileVisitResult.CONTINUE;
+        return super.visitFile(file, attrs);
     }
 }
