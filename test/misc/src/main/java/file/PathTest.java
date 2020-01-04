@@ -10,27 +10,18 @@ import java.nio.file.StandardCopyOption;
 
 public class PathTest {
     public static void main(String[] args) throws IOException {
-/*
-        String url = "https://javarush.ru/testdata/secretPasswords.txt";
-        Path passwords = downloadFile(url, Paths.get("c:/000"));
-        for (String line : Files.readAllLines(passwords)) System.out.println(line);
-*/
         String file = "C:/000/passwords.txt";
         Path filePath = Paths.get(file);
         System.out.println(filePath.isAbsolute());
 
-        Path fileName = filePath.getFileName();
-        Path parent = filePath.getParent();
-        Path root = filePath.getRoot();
-        System.out.println(fileName);
-        System.out.println(parent);
-        System.out.println(root);
+        System.out.println(filePath.getFileName());
+        System.out.println(filePath.getParent());
+        System.out.println(filePath.getRoot());
 
         boolean endWithTxt = filePath.endsWith("000/passwords.txt");
         boolean startsWithLalala = filePath.startsWith("lalalala");
         System.out.println(endWithTxt);
         System.out.println(startsWithLalala);
-
 
         Path path5 = Paths.get("C:\\Users\\Java\\.\\examples");
         Path path6 = Paths.get("C:\\Users\\Java\\..\\examples");
@@ -39,7 +30,10 @@ public class PathTest {
 
         Path testFilePath1 = Paths.get("C:\\Users\\Users\\Users\\Users");
         Path testFilePath2 = Paths.get("C:\\Users\\Users\\Users\\Users\\Username\\Desktop\\testFile.txt");
-        System.out.println(testFilePath1.relativize(testFilePath2));
+        System.out.println("relativize: " + testFilePath1.relativize(testFilePath2));
+
+        Path path = Paths.get("\\");
+        System.out.println(Paths.get("c:/0/").relativize(Paths.get("c:/000/2")));
     }
 
     public static Path downloadFile(String urlString, Path downloadDirectory) throws IOException {

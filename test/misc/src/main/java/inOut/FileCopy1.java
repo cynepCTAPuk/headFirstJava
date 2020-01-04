@@ -11,7 +11,6 @@ public class FileCopy1 {
              OutputStream fileOutputStream = new FileOutputStream(destination)) {
 
             byte[] buffer = new byte[1_000];
-
             while (fileInputStream.available() > 0) {
                 int data = fileInputStream.read(buffer);
                 fileOutputStream.write(buffer, 0, data);
