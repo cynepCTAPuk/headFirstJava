@@ -18,6 +18,6 @@ public class PropertiesTest {
         properties.put("four", "4");
         System.out.println(properties.get("zero"));
         System.out.println(properties.getProperty("zero","000"));
-//        properties.store(new FileOutputStream("c:/000/2.properties"),"new comment");
+        properties.store(new FileOutputStream("c:/000/2.properties"),"new comment");
     }
 }
