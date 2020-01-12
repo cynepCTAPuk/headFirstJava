@@ -1,4 +1,4 @@
-package rmi.task3207.task3208;
+package rmi.task3208;
 
 import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;
