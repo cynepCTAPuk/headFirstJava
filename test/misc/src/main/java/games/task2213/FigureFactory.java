@@ -1,4 +1,4 @@
-package tetris;
+package games.task2213;
 
 /**
  * Класс FigureFactory отвечает за создание объектов-фигурок.

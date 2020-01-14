@@ -1,4 +1,4 @@
-package tetris.task2213;
+package games.task2213;
 
 
 /**
