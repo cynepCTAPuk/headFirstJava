@@ -7,16 +7,16 @@ public class StringToCalc {
     public static void main(String[] args) {
         String a = "5+20-15+8";
         System.out.println(a);
-        String numbers[] = a.split("[0-9]+");
-        String operands[] = a.split("[+-]");
-        double result = Double.parseDouble(operands[0]);
-        for (int i = 1; i < operands.length; i++) {
-            switch (numbers[i]) {
+        String operands[] = a.split("[0-9]+");
+        String operations[] = a.split("[+-]");
+        double result = Double.parseDouble(operations[0]);
+        for (int i = 1; i < operations.length; i++) {
+            switch (operands[i]) {
                 case "+":
-                    result += Integer.parseInt(operands[i]);
+                    result += Integer.parseInt(operations[i]);
                     break;
                 case "-":
-                    result -= Integer.parseInt(operands[i]);
+                    result -= Integer.parseInt(operations[i]);
                     break;
                 default:
                     break;
