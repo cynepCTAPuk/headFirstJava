@@ -6,7 +6,7 @@ import java.lang.ref.ReferenceQueue;
 
 public class PhantomReferenceTest2 {
     public static void main(String[] args) throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(10_000);
         ReferenceQueue<TestClass> queue = new ReferenceQueue<>();
         Reference ref = new MyPhantomReference<>(new TestClass(), queue);
 
@@ -31,7 +31,7 @@ class TestClass {
 
     public TestClass() {
         this.data = new StringBuffer();
-        for (long i = 0; i < 50000000; i++) this.data.append('x');
+        for (long i = 0; i < 50_000_000; i++) this.data.append('x');
     }
 
     @Override
