@@ -25,7 +25,7 @@ public class ListDirs {
     }
 
     public static void main(String[] args) throws IOException {
-        List<String> list = new ArrayList<>();
+        List<String> list;
         list = getFileTree("c:/000");
         list.forEach(System.out::println);
     }
