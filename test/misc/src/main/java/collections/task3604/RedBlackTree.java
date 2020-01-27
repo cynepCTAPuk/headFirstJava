@@ -1,4 +1,4 @@
-package collections.task3604_0;
+package collections.task3604;
 
 public class RedBlackTree {
     private static final Node EMPTY = new Node(0);
@@ -21,7 +21,7 @@ public class RedBlackTree {
     }
 
     public boolean isEmpty() {
-        return header.left == EMPTY;
+        return header.right == EMPTY;
     }
 
     public void clear() {
@@ -37,7 +37,7 @@ public class RedBlackTree {
             parent = current;
             current = item > current.element ? current.right : current.left;
 
-            if (current.left.color == Color.RED && current.right.color == Color.BLACK) {
+            if (current.left.color == Color.RED && current.right.color == Color.RED) {
                 reorient(item);
             }
         }
@@ -64,16 +64,12 @@ public class RedBlackTree {
 
         if (parent.color == Color.RED) {
             grand.color = Color.RED;
-            if (item < grand.element != item < parent.element) {
-                parent = rotate(item, grand);
-            }
+            if (item < grand.element != item < parent.element) parent = rotate(item, grand);
             current = rotate(item, great);
             current.color = Color.BLACK;
         }
-
         header.right.color = Color.BLACK;
     }
-
     private Node rotate(int item, Node parent) {
         if (item < parent.element) {
             Node node = parent.left;
@@ -87,21 +83,18 @@ public class RedBlackTree {
             return parent.right;
         }
     }
-
     private Node rotateWithLeftNode(Node element) {
         Node left = element.left;
         element.left = left.right;
         left.right = element;
         return left;
     }
-
     private Node rotateWithRightNode(Node element) {
-        Node left = element.left;
-        element.left = left.right;
-        left.right = element;
-        return left;
+        Node right = element.right;
+        element.right = right.left;
+        right.left = element;
+        return right;
     }
-
     public static enum Color {
         BLACK,
         RED
