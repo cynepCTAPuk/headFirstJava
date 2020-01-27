@@ -1,7 +1,7 @@
-package patterns.task3702;
+package patterns.abstract_factory.task3702;
 
-import patterns.task3702.female.FemaleFactory;
-import patterns.task3702.male.MaleFactory;
+import patterns.abstract_factory.task3702.female.FemaleFactory;
+import patterns.abstract_factory.task3702.male.MaleFactory;
 
 public class FactoryProducer {
     public static enum HumanFactoryType {

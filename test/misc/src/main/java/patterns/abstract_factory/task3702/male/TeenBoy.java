@@ -1,6 +1,6 @@
-package patterns.task3702.male;
+package patterns.abstract_factory.task3702.male;
 
-import patterns.task3702.Human;
+import patterns.abstract_factory.task3702.Human;
 
 public class TeenBoy implements Human {
     public static final int MAX_AGE = 19;

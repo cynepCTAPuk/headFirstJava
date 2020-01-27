@@ -1,7 +1,7 @@
-package patterns.task3702.male;
+package patterns.abstract_factory.task3702.male;
 
-import patterns.task3702.AbstractFactory;
-import patterns.task3702.Human;
+import patterns.abstract_factory.task3702.AbstractFactory;
+import patterns.abstract_factory.task3702.Human;
 
 public class MaleFactory implements AbstractFactory {
 

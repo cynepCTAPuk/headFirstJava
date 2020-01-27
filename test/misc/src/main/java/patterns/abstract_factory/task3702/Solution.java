@@ -1,4 +1,4 @@
-package patterns.task3702;
+package patterns.abstract_factory.task3702;
 
 public class Solution {
     public static void main(String[] args) {
