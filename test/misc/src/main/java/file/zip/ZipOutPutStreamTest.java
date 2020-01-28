@@ -1,4 +1,4 @@
-package file;
+package file.zip;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

@@ -21,15 +21,13 @@ public class Solution {
         System.out.println(allAnimals);
     }
 
-    public static Set<? extends Animal> getAllAnimals(String pathToAnimals)
-            throws ClassNotFoundException {
+    public static Set<? extends Animal> getAllAnimals(String pathToAnimals) throws ClassNotFoundException {
         Set<Animal> set = new HashSet();
         File[] files = new File(pathToAnimals).listFiles();
         if (files != null && files.length == 0) return null;
 
         for (File file : files) {
             if (file.isFile() && file.toString().endsWith(".class")) {
-
                 ClassLoader ucl = new ClassLoader() {
                     @Override
                     protected Class<?> findClass(String name) {

@@ -1,4 +1,4 @@
-package file;
+package file.zip;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -23,7 +23,7 @@ public class ZipInputStreamTest1 {
         String unzipDir = "c:/000/unzip";
         String format = "Entry: %s\tlen: %,8d\tadded: %TD\n";
 
-        byte[] buffer = new byte[2048];
+        byte[] buffer = new byte[1024];
         InputStream fis = new FileInputStream(zipFile);
         ZipInputStream zis = new ZipInputStream(fis);
 

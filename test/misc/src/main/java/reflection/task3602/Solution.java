@@ -15,7 +15,6 @@ public class Solution {
         System.out.println(getExpectedClass());
     }
 
-    @SuppressWarnings("unused")
     public static Class getExpectedClass() {
         Class[] clazzes = Collections.class.getDeclaredClasses();
         for (Class clazz : clazzes) {

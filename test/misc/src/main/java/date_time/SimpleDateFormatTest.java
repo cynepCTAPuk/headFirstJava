@@ -11,7 +11,7 @@ import java.util.Locale;
 public class SimpleDateFormatTest {
     public static void main(String[] args) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
-        System.out.println("date: " + dateFormat.format(new Date()));
+        System.out.println("Today and Now is: " + dateFormat.format(new Date()));
 
         System.out.println("-".repeat(60));
         Date currentDate = new Date();
