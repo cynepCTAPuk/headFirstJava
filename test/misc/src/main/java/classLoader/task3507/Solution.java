@@ -40,9 +40,7 @@ public class Solution {
                         return defineClass(null, buffer, 0, buffer.length);
                     }
                 };
-
                 Class clazz = ucl.loadClass(file.getPath());
-
                 if (Arrays.toString(clazz.getInterfaces()).contains("Animal")) {
                     try {
                         set.add((Animal) clazz.newInstance());

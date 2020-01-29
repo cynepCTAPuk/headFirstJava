@@ -1,4 +1,4 @@
-package interfac;
+package interfaces;
 
 interface Flyable {
     String name = "Flier";

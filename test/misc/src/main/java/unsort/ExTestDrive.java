@@ -10,7 +10,7 @@ public class ExTestDrive {
             doRisky(test);
             System.out.print("o");
         } catch (MyEx e) {
-            System.out.print("interfac");
+            System.out.print("interfaces");
         } finally {
             System.out.print("w");
         }

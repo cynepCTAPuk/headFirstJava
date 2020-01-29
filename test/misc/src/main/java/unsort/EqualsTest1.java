@@ -47,6 +47,6 @@ public class EqualsTest1 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new EqualsTest1(10, "interfac", "b").hashCode());
+        System.out.println(new EqualsTest1(10, "interfaces", "b").hashCode());
     }
 }
