@@ -37,6 +37,40 @@ public class ClassFinder {
     private List<Throwable> errors = new ArrayList<Throwable>();
     private boolean working = false;
 
+    public static void main(String[] args) {
+        //args = new String[] {"rcm.core.Any_String"};
+
+        ClassFinder finder = null;
+        Vector<Class<?>> v = null;
+        List<Throwable> errors = null;
+
+        if (args.length == 1) {
+            finder = new ClassFinder();
+            v = finder.findSubclasses(args[0]);
+            errors = finder.getErrors();
+        } else {
+            System.out.println("Usage: java ClassFinder <fully.qualified.superclass.name>");
+            return;
+        }
+
+        System.out.println("RESULTS:");
+        if (v != null && v.size() > 0) {
+            for (Class<?> cls : v) {
+                System.out.println(cls + " in " +
+                        ((finder != null) ? String.valueOf(finder.getLocationOf(cls)) : "?"));
+            }
+        } else {
+            System.out.println("No subclasses of " + args[0] + " found.");
+        }
+
+        // TODO: verbose mode
+//      if (errors != null && errors.size () > 0)
+//      {
+//          System.out.println ("ERRORS:");
+//          for (Throwable t : errors) System.out.println (t);
+//      }
+    }
+
     public ClassFinder() {
         refreshLocations();
     }
@@ -433,39 +467,5 @@ public class ClassFinder {
         //System.out.println ("package path=" + path);
 
         return path;
-    }
-
-    public static void main(String[] args) {
-        //args = new String[] {"rcm.core.Any_String"};
-
-        ClassFinder finder = null;
-        Vector<Class<?>> v = null;
-        List<Throwable> errors = null;
-
-        if (args.length == 1) {
-            finder = new ClassFinder();
-            v = finder.findSubclasses(args[0]);
-            errors = finder.getErrors();
-        } else {
-            System.out.println("Usage: java ClassFinder <fully.qualified.superclass.name>");
-            return;
-        }
-
-        System.out.println("RESULTS:");
-        if (v != null && v.size() > 0) {
-            for (Class<?> cls : v) {
-                System.out.println(cls + " in " +
-                        ((finder != null) ? String.valueOf(finder.getLocationOf(cls)) : "?"));
-            }
-        } else {
-            System.out.println("No subclasses of " + args[0] + " found.");
-        }
-
-        // TODO: verbose mode
-//      if (errors != null && errors.size () > 0)
-//      {
-//          System.out.println ("ERRORS:");
-//          for (Throwable t : errors) System.out.println (t);
-//      }
     }
 }
