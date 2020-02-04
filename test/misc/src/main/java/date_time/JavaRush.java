@@ -9,7 +9,7 @@ import java.util.Locale;
 public class JavaRush {
     public static void main(String[] args) {
         Locale ruLocale = new Locale("ru");
-        String dateFormat = "yyyy, dd MMMM, EEEE, ";
+        String dateFormat = "yyyy, dd MMMM, EEEE ";
         LocalDate startJavaRush = LocalDate.parse("2019-11-19");
         LocalDate now = LocalDate.now();
         System.out.println("\nСегодня - "
