@@ -12,7 +12,7 @@ public class ReservedWords {
     static final String keywords[] = {
             "abstract", "assert",
             "boolean", "break", "byte",
-            "case", "catch", "char", "class", "const", "continue",
+            "case", "catch", "chars", "class", "const", "continue",
             "default", "do", "double",
             "else", "enum", "exports", "extends",
             "false", "final", "finally", "float", "for",
