@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class ScanWeb {
     public static void main(String[] args) throws IOException {
-        InputStream is = new URL("https://www.rbc.ru").openStream();
+        InputStream is = new URL("https://minijug.ru").openStream();
         BufferedReader br = new BufferedReader(new InputStreamReader(is));
         StringBuffer sb = new StringBuffer();
         String s;
