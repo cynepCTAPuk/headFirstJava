@@ -19,13 +19,13 @@ class Clock2 implements Runnable {
         while (true) {
             try {
                 Thread.sleep(250);
-                System.out.print("\rTik |");
+                System.out.print("\r| Tik ┐ $"); // 191
                 Thread.sleep(250);
-                System.out.print("\rTak /");
+                System.out.print("\r/ Tak ┘ "); // 217
                 Thread.sleep(250);
-                System.out.print("\rTik -");
+                System.out.print("\r- Tik └ "); // 192
                 Thread.sleep(250);
-                System.out.print("\rTak \\");
+                System.out.print("\r\\ Tak ┌ "); // 218
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

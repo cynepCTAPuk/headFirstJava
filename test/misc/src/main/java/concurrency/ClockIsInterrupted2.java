@@ -1,27 +1,25 @@
 package concurrency;
 
-public class ClockIsInterrupted extends Thread {
-
+public class ClockIsInterrupted2 extends Thread {
     public static void main(String[] args) throws InterruptedException {
-        Clock3 clock = new Clock3();
+        Thread clock = new Thread(new Clock3());
         clock.start();
-        Thread.sleep(10000);
+        Thread.sleep(10_000);
         clock.interrupt();
     }
 
 }
 
-class Clock3 extends Thread {
+class Clock4 implements Runnable {
     public void run() {
         Thread current = Thread.currentThread();
         while (!current.isInterrupted()) {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(1_000);
+                System.out.println("Tik");
             } catch (InterruptedException e) {
-                System.out.println("Работа потока была прервана");
-                break;
+                e.printStackTrace();
             }
-            System.out.println("Tik");
         }
     }
 }
