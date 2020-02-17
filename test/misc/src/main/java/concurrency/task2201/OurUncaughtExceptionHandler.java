@@ -1,4 +1,4 @@
-package multiThread.task2201;
+package concurrency.task2201;
 
 public class OurUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     @Override

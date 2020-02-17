@@ -6,5 +6,6 @@ public class SingletonTest {
         Singleton1.INSTANCE.print();
         Singleton2.getInstance().print();
         Singleton3.INSTANCE.print();
+        Singleton4.getInstance().print();
     }
 }

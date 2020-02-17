@@ -1,4 +1,4 @@
-package multiThread.task2201;
+package concurrency.task2201;
 
 import java.util.Objects;
 
