@@ -1,20 +1,27 @@
 package date_time;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.*;
+import java.util.Locale;
 
 public class BirthDay {
-
     public static void main(String[] args) {
+        Locale ruLocale = new Locale("ru");
+        String dateFormat = "yyyy, dd MMMM, EEEE ";
 
         LocalDate bd = LocalDate.of(1962, Month.SEPTEMBER, 10);
         LocalDate today = LocalDate.now();
-        LocalTime time = LocalTime.now();
-        System.out.printf("Today is %s Time is %s\n", today, time);
+//        LocalTime time = LocalTime.now();
+//        System.out.printf("Today is %s Time is %s\n", today, time);
+        System.out.println("\nToday is "
+                + LocalDate.now().format(DateTimeFormatter.ofPattern(dateFormat, ruLocale))
+                + LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm"))
+        );
 
         Period p1 = Period.between(bd, today);
         long p2 = ChronoUnit.DAYS.between(bd, today);
-        System.out.printf("You are %d years, %d moths %d days old (%,d days)\n",
+        System.out.printf("You are %d years, %d months, %d days old (Total is %,d days)\n",
                 p1.getYears(), p1.getMonths(), p1.getDays(), p2);
 
         LocalDate nextBDay = bd.withYear(today.getYear());
