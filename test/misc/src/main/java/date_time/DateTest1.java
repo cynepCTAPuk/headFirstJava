@@ -15,5 +15,10 @@ public class DateTest1 {
         Date date = format.parse(string);
         System.out.println(date);
         System.out.println("-".repeat(60));
+
+        Date d = new Date(2013 - 1900, 0, 0);
+        System.out.println(d);
+        d = new Date();
+        System.out.println(d);
     }
 }
