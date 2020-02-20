@@ -7,4 +7,9 @@ public class ExecutorTest implements Executor {
     public void execute(Runnable command) {
 
     }
+
+    public static void main(String[] args) {
+        int[] array = new int[3];
+        System.out.println(array.length);
+    }
 }
