@@ -1,9 +1,9 @@
-package chat.task3008cmd.client;
+package chat.task3008.client;
 
-import chat.task3008cmd.Connection;
-import chat.task3008cmd.ConsoleHelper;
-import chat.task3008cmd.Message;
-import chat.task3008cmd.MessageType;
+import chat.task3008.Connection;
+import chat.task3008.ConsoleHelper;
+import chat.task3008.Message;
+import chat.task3008.MessageType;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -104,10 +104,6 @@ public class Client {
                     case NAME_REQUEST:
                         connection.send(new Message(MessageType.USER_NAME, getUserName()));
                         break;
-//                    case TEXT:
-//                    case USER_ADDED:
-//                    case USER_NAME:
-//                    case USER_REMOVED:
                     default:
                         throw new IOException("Unexpected MessageType");
                 }
@@ -130,9 +126,6 @@ public class Client {
                     case USER_REMOVED:
                         informAboutDeletingNewUser(data);
                         break;
-//                    case NAME_ACCEPTED:
-//                    case NAME_REQUEST:
-//                    case USER_NAME:
                     default:
                         throw new IOException("Unexpected MessageType");
                 }
@@ -147,6 +140,7 @@ public class Client {
                 clientHandshake();
                 clientMainLoop();
             } catch (IOException | ClassNotFoundException e) {
+                ConsoleHelper.writeMessage(e.toString());
                 notifyConnectionStatusChanged(false);
             }
         }

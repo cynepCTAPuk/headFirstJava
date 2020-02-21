@@ -1,4 +1,4 @@
-package chat.task3008cmd;
+package chat.task3008;
 
 import java.io.Closeable;
 import java.io.IOException;

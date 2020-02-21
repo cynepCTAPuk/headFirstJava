@@ -5,6 +5,7 @@ package date_time;
 
 import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -23,6 +24,13 @@ public class SimpleDateFormatTest {
         System.out.println("Constructor 3: " + dateFormat.format(currentDate));
         dateFormat = new SimpleDateFormat("dd MMMM", Locale.ENGLISH);
         System.out.println("Constructor 4: " + dateFormat.format(currentDate));
+
+        String[] strings = {"дата", "день", "месяц", "год", "время", "час", "минуты", "секунды"};
+        String[] formats = {"d MMMM YYYY H:mm:ss", "d", "MMMM", "YYYY", "H:mm:ss", "H", "mm", "ss"};
+        for (int i = 0; i < strings.length; i++) {
+            System.out.println(new SimpleDateFormat(formats[i])
+                    .format(Calendar.getInstance().getTime()));
+        }
     }
 
     private static DateFormatSymbols myDateFormatSymbols = new DateFormatSymbols() {

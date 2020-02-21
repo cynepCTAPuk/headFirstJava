@@ -1,4 +1,4 @@
-package chat.task3008cmd;
+package chat.task3008;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -20,17 +20,17 @@ public class Server {
     }
 
     public static void main(String[] args) throws IOException {
+        ConsoleHelper.writeMessage("Введи порт: ");
         ServerSocket serverSocket = new ServerSocket(ConsoleHelper.readInt());
-        System.out.println("Сервер запущен");
         try {
             while (true) {
+                System.out.println("Сервер запущен");
                 new Handler(serverSocket.accept()).start();
             }
         } catch (Exception e) {
-            serverSocket.close();
             ConsoleHelper.writeMessage(e.toString());
+            serverSocket.close();
         }
-
     }
 
     private static class Handler extends Thread {
@@ -40,8 +40,7 @@ public class Server {
             this.socket = socket;
         }
 
-        private String serverHandshake(Connection connection)
-                throws IOException, ClassNotFoundException {
+        private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
             Message message;
             MessageType messageType;
             String userName;
@@ -50,19 +49,16 @@ public class Server {
                 message = connection.receive();
                 messageType = message.getType();
                 userName = message.getData();
-                if (messageType == MessageType.USER_NAME
-                        && !userName.equals("")
+                if (messageType == MessageType.USER_NAME && !userName.equals("")
                         && !connectionMap.containsKey(userName)) {
                     connectionMap.put(userName, connection);
                     connection.send(new Message(MessageType.NAME_ACCEPTED));
-                    break;
+                    return userName;
                 }
             }
-            return userName;
         }
 
-        private void notifyUsers(Connection connection, String userName)
-                throws IOException {
+        private void notifyUsers(Connection connection, String userName) throws IOException {
             for (Map.Entry<String, Connection> entry : connectionMap.entrySet()) {
                 if (!entry.getKey().equals(userName)) {
                     Message message = new Message(MessageType.USER_ADDED, entry.getKey());
@@ -71,18 +67,16 @@ public class Server {
             }
         }
 
-        private void serverMainLoop(Connection connection, String userName)
-                throws IOException, ClassNotFoundException {
-            Message messageIn;
+        private void serverMainLoop(Connection connection, String userName) throws IOException, ClassNotFoundException {
+            Message message;
             MessageType messageType;
-            String string;
+            String text;
             while (true) {
-                messageIn = connection.receive();
-                messageType = messageIn.getType();
+                message = connection.receive();
+                messageType = message.getType();
                 if (messageType == MessageType.TEXT) {
-                    string = userName + ": " + messageIn.getData();
-                    Message messageOut = new Message(messageType, string);
-                    sendBroadcastMessage(messageOut);
+                    text = userName + ": " + message.getData();
+                    sendBroadcastMessage(new Message(messageType, text));
                 } else ConsoleHelper.writeMessage("Данное сообщение не текст");
             }
         }
