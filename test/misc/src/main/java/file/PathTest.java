@@ -12,21 +12,21 @@ public class PathTest {
     public static void main(String[] args) throws IOException {
         String file = "C:/000/passwords.txt";
         Path filePath = Paths.get(file);
-        System.out.println(filePath.isAbsolute());
+        System.out.println(filePath.isAbsolute());  // true
 
-        System.out.println(filePath.getFileName());
-        System.out.println(filePath.getParent());
-        System.out.println(filePath.getRoot());
+        System.out.println(filePath.getFileName()); // passwords.txt
+        System.out.println(filePath.getParent());   // C:\000
+        System.out.println(filePath.getRoot());     // C:\
 
         boolean endWithTxt = filePath.endsWith("000/passwords.txt");
         boolean startsWithLalala = filePath.startsWith("lalalala");
-        System.out.println(endWithTxt);
-        System.out.println(startsWithLalala);
+        System.out.println(endWithTxt);             // true
+        System.out.println(startsWithLalala);       // falsw
 
         Path path5 = Paths.get("C:\\Users\\Java\\.\\examples");
         Path path6 = Paths.get("C:\\Users\\Java\\..\\examples");
-        System.out.println(path5.normalize());
-        System.out.println(path6.normalize());
+        System.out.println(path5.normalize());      // C:\Users\Java\examples
+        System.out.println(path6.normalize());      // C:\Users\examples
 
         Path testFilePath1 = Paths.get("C:\\Users\\Users\\Users\\Users");
         Path testFilePath2 = Paths.get("C:\\Users\\Users\\Users\\Users\\Username\\Desktop\\testFile.txt");

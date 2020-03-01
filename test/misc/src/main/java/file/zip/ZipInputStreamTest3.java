@@ -14,10 +14,11 @@ import java.util.zip.ZipInputStream;
 public class ZipInputStreamTest3 {
     public static void main(String args[]) throws Exception {
         String zipFile = "c:/000/archive.zip";
-        String unzipDir = "c:/000/unzip";
+//        String unzipDir = "c:/000/unzip";
         String format = "Entry: %s len %d added %TD\n";
 
         byte[] buffer = new byte[2048];
+
         InputStream fis = new FileInputStream(zipFile);
         ZipInputStream zis = new ZipInputStream(fis);
 

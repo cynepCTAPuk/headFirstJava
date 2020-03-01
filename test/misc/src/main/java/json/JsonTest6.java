@@ -2,8 +2,6 @@ package json;
 
 import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import inOut.FileRead;
 
 import java.io.*;
 
