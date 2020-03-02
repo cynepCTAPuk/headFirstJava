@@ -31,6 +31,7 @@ public class ZipReader {
             LOGGER.info("Zip file: " + args[0] + " has been opened");
             ZipEntry entry;
             while ((entry = stream.getNextEntry()) != null) {
+
                 String fileInfo = String.format("Entry: [%s] len %d added %TD",
                         entry.getName(), entry.getSize(), new Date(entry.getTime()));
                 LOGGER.info(fileInfo);
