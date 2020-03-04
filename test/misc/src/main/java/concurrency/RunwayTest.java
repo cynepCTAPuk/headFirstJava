@@ -1,6 +1,6 @@
 package concurrency;
 
-public class RuwayTest {
+public class RunwayTest {
     public static volatile Runway RUNWAY = new Runway();   //1 взлетная полоса
 
     public static void main(String[] args) throws InterruptedException {
