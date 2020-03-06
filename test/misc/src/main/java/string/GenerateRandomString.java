@@ -5,6 +5,7 @@ package string;
 
 import java.math.BigInteger;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.security.Provider;
 import java.security.SecureRandom;
 import java.security.Security;
@@ -24,7 +25,7 @@ public class GenerateRandomString {
     public static void givenUsingPlainJava_whenGeneratingRandomStringUnbounded_thenCorrect() {
         byte[] array = new byte[60]; // length is bounded by 7
         new Random().nextBytes(array);
-        String generatedString = new String(array, Charset.forName("UTF-8"));
+        String generatedString = new String(array, StandardCharsets.UTF_8);
         System.out.println(generatedString);
     }
 

@@ -1,7 +1,7 @@
 package unsort;
 
 public class Quadratic_equation{
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         //a*x^2 + bx + c = 0; D = b^2 - 4ac
         //if D > 0 => x1 = (-b + sqrt(D))/(2a); x2 = (-b - sqrt(D))/(2a)
         //if D = 0 => x1 = x2 = -b/(2a)

@@ -4,7 +4,7 @@ package unsort;
  * @author CTAPuk :
  */
 public class BeQuadratic_equation {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         //a*x^4 + bx^2 + c = 0; D = b^2 - 4ac; y = x^2
         int a = 1, b = 2, c = -3;
         double D = b * b - 4 * a * c;

@@ -21,7 +21,7 @@ public class Solution {
     public static Double sum(List<? extends Number> list) {
         Double result = 0.0;
         for (int i = 0; i < list.size(); i++) {
-            Number numb = (Number) list.get(i);
+            Number numb = list.get(i);
             result += numb.doubleValue();
         }
         return result;
@@ -30,7 +30,7 @@ public class Solution {
     public static Double multiply(List<? extends Number> list) {
         Double result = 1.0;
         for (int i = 0; i < list.size(); i++) {
-            Number numb = (Number) list.get(i);
+            Number numb = list.get(i);
             result *= numb.doubleValue();
         }
         return result;
@@ -47,7 +47,7 @@ public class Solution {
     public static List combine(List<? extends Collection> list) {
         List result = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
-            Collection collection = (Collection) list.get(i);
+            Collection collection = list.get(i);
             result.addAll(collection);
         }
         return result;

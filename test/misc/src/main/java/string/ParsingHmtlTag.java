@@ -21,7 +21,7 @@ public class ParsingHmtlTag {
         else tag = "span";
 
         BufferedReader reader = new BufferedReader(new FileReader(file));
-        StringBuilder builder = new StringBuilder("");
+        StringBuilder builder = new StringBuilder();
         while (reader.ready()) builder.append(reader.readLine());
         reader.close();
 

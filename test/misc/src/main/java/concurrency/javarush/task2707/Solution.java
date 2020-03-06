@@ -31,8 +31,7 @@ public class Solution {
         thread1.start();
         thread2.start();
         Thread.sleep(1_000);
-        if(thread2.getState()!=Thread.State.BLOCKED) return true;
-        return false;
+        return thread2.getState() != Thread.State.BLOCKED;
     }
 
     public static void main(String[] args) throws Exception {

@@ -13,7 +13,7 @@ public class Solution {
     private static final ExecutorService threadpool = Executors.newFixedThreadPool(4);
     private static final int n = 16;
 
-    public static void main(String args[]) throws InterruptedException, ExecutionException {
+    public static void main(String[] args) throws InterruptedException, ExecutionException {
         FactorialCalculator task = new FactorialCalculator(n);
 
         System.out.println("Submitting Task ...");

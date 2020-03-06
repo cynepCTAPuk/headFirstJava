@@ -9,7 +9,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class ZipInputStreamTest3 {
-    public static void main(String args[]) throws Exception {
+    public static void main(String[] args) throws Exception {
         String zipFile = "c:/000/archive.zip";
         String unzipDir = "c:/000/unzip";
         if (Files.notExists(Paths.get(unzipDir))) Files.createDirectory(Paths.get(unzipDir));

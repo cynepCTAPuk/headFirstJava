@@ -81,8 +81,7 @@ public abstract class Car {
     public abstract int getMaxSpeed();
 
     public boolean isSummer(Date date, Date summerStart, Date summerEnd) {
-        if (date.before(summerStart) || date.after(summerEnd)) return false;
-        return true;
+        return !date.before(summerStart) && !date.after(summerEnd);
     }
 
     public double getWinterConsumption(int length) {

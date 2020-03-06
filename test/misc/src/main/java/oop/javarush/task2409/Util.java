@@ -113,7 +113,7 @@ public class Util {
         return jeansArray;
     }
 
-    static enum Company {
+    enum Company {
         Levis("Levi's"),
         Denim("Denim"),
         Colins("COLIN'S"),

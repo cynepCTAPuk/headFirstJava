@@ -13,8 +13,8 @@ public class SingletonSerialization {
         Singleton singleton = deserializeSingletonInstance(byteArrayOutputStream);
         Singleton singleton1 = deserializeSingletonInstance(byteArrayOutputStream);
 
-        System.out.println("Проверка ourInstance : " + singleton.getInstance());
-        System.out.println("Проверка ourInstance : " + singleton1.getInstance());
+        System.out.println("Проверка ourInstance : " + Singleton.getInstance());
+        System.out.println("Проверка ourInstance : " + Singleton.getInstance());
         System.out.println("=========================================================");
         System.out.println("Проверка singleton : " + singleton);
         System.out.println("Проверка singleton1 : " + singleton1);

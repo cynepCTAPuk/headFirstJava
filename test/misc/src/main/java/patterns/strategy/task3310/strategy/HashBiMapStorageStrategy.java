@@ -22,11 +22,11 @@ public class HashBiMapStorageStrategy implements StorageStrategy {
 
     @Override
     public Long getKey(String value) {
-        return (Long) data.inverse().get(value);
+        return data.inverse().get(value);
     }
 
     @Override
     public String getValue(Long key) {
-        return (String) data.get(key);
+        return data.get(key);
     }
 }

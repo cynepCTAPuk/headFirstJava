@@ -133,7 +133,7 @@ public class BeatBoxSaveOnly {  // implements MetaEventListener
          int key = instruments[i];
 
          for (int j = 0; j < 16; j++ ) {         
-               JCheckBox jc = (JCheckBox) checkboxList.get(j + (16*i));
+               JCheckBox jc = checkboxList.get(j + (16*i));
                
               if ( jc.isSelected()) {
                  trackList[j] = key;
@@ -193,7 +193,7 @@ public class BeatBoxSaveOnly {  // implements MetaEventListener
          boolean[] checkboxState = new boolean[256];
 
          for (int i = 0; i < 256; i++) {
-             JCheckBox check = (JCheckBox) checkboxList.get(i);
+             JCheckBox check = checkboxList.get(i);
              if (check.isSelected()) {
                 checkboxState[i] = true;
              }
@@ -228,7 +228,7 @@ public class BeatBoxSaveOnly {  // implements MetaEventListener
 
               // now reset the sequence to be this
           for (int i = 0; i < 256; i++) {
-             JCheckBox check = (JCheckBox) checkboxList.get(i);
+             JCheckBox check = checkboxList.get(i);
              if (checkboxState[i]) {
                 check.setSelected(true);
              } else {

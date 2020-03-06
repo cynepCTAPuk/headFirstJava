@@ -1,10 +1,10 @@
 package unsort;
 
 public class CustomHolderTest {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         CustomHolder<String> stringHolder = new CustomHolder<String>();
         CustomHolder<Object> objectHolder = new CustomHolder<Object>();
-        String str = new String("test string");
+        String str = "test string";
 
         stringHolder.putItem(str);
         objectHolder.putItem(str);

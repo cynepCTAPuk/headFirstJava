@@ -10,10 +10,10 @@ public class TestSort {
         int i = 0;
         for (int value : array) arrayBubbleSort[i++] = Integer.valueOf(value);
 
-        int arrayBubble[] = array.clone();
-        int arrayOddEven[] = array.clone();
-        int arrayShakeClassic[] = array.clone();
-        int arrayShake[] = array.clone();
+        int[] arrayBubble = array.clone();
+        int[] arrayOddEven = array.clone();
+        int[] arrayShakeClassic = array.clone();
+        int[] arrayShake = array.clone();
 
         t0 = System.nanoTime();
         Bubble.sort(arrayBubble);

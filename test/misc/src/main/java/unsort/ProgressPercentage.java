@@ -28,7 +28,7 @@ public class ProgressPercentage {
         bareDone.append("[");
 
         for (int i = 0; i < remainProcent; i++) bareDone.append(icon);
-        String bareRemain = bare.substring(remainProcent, bare.length());
+        String bareRemain = bare.substring(remainProcent);
         System.out.print("\r" + bareDone + bareRemain + " " + remainProcent * 10 + "%");
 
         if (remain == total) System.out.print("\n");

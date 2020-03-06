@@ -4,7 +4,7 @@ import patterns.abstract_factory.task3702.female.FemaleFactory;
 import patterns.abstract_factory.task3702.male.MaleFactory;
 
 public class FactoryProducer {
-    public static enum HumanFactoryType {
+    public enum HumanFactoryType {
         FEMALE,
         MALE
     }

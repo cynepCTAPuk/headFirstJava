@@ -18,7 +18,7 @@ public class ZipReader {
     private static final Logger LOGGER = Logger.getLogger("ZipReader");
 
     // Expands the zip file passed as argument 1, into the directory provided in argument 2
-    public static void main(String args[]) throws Exception {
+    public static void main(String[] args) throws Exception {
         if (args.length != 2) {
             LOGGER.severe("zipreader zipfile outputdir");
             return;

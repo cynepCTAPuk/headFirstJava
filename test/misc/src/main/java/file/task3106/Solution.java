@@ -23,7 +23,7 @@ public class Solution {
         byte[] buffer = new byte[1_024];
         int length = 0;
 
-        FileOutputStream fos = new FileOutputStream(resultFileName.toString(), true);
+        FileOutputStream fos = new FileOutputStream(resultFileName, true);
         for (String str : list) {
             System.out.println(str);
             ZipInputStream zis = new ZipInputStream(new FileInputStream(str));

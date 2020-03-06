@@ -9,7 +9,7 @@ package unsort;/*
 import java.util.*;
 
 public class ReservedWords {
-    static final String keywords[] = {
+    static final String[] keywords = {
             "abstract", "assert",
             "boolean", "break", "byte",
             "case", "catch", "chars", "class", "const", "continue",

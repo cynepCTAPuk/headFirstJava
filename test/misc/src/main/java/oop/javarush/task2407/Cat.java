@@ -35,7 +35,7 @@ public class Cat implements Pet {
             public String say() {
                 if (i < 1) return name + " спит.";
                 else {
-                    StringBuilder ya = new StringBuilder("");
+                    StringBuilder ya = new StringBuilder();
                     for (int j = 0; j < i; j++) ya.append("я");
                     return name + " говорит м" + ya + "у!";
                 }

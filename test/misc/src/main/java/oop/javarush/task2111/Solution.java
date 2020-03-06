@@ -23,7 +23,7 @@ public class Solution {
         List<User> result = new LinkedList();
 
         try (Statement stmt = connection.createStatement();
-             ResultSet rs = stmt.executeQuery(query);) {
+             ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
                 int id = rs.getInt("ID");
                 String name = rs.getString("DISPLAYED_NAME");

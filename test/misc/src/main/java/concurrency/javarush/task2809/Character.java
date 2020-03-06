@@ -13,7 +13,7 @@ public abstract class Character implements Runnable {
 
     private void doSomething() {
         try {
-            Thread.currentThread().sleep(ThreadLocalRandom.current().nextInt(10, 100));
+            Thread.sleep(ThreadLocalRandom.current().nextInt(10, 100));
         } catch (InterruptedException ignored) {
         }
     }

@@ -11,7 +11,7 @@ public class MessageDigestTest {
     public static void main(String... args) throws IOException, NoSuchAlgorithmException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeObject(new String("test string"));
+        oos.writeObject("test string");
         oos.flush();
 
         for (byte b : baos.toByteArray()) System.out.print((char)b);
@@ -53,7 +53,7 @@ public class MessageDigestTest {
 
             StringBuffer sb = new StringBuffer();
             for (byte b : digest) {
-                sb.append(Integer.toHexString((b & 0xFF) | 0x100).substring(1, 3));
+                sb.append(Integer.toHexString((b & 0xFF) | 0x100), 1, 3);
             }
             return sb.toString();
         } catch (java.security.NoSuchAlgorithmException e) {

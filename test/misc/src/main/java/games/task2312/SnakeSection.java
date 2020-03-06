@@ -26,9 +26,7 @@ public class SnakeSection {
         SnakeSection that = (SnakeSection) o;
 
         if (x != that.x) return false;
-        if (y != that.y) return false;
-
-        return true;
+        return y == that.y;
     }
 
     @Override

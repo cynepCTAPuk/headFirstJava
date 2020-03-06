@@ -7,7 +7,7 @@ import java.util.List;
 Машину на СТО не повезем!
 */
 public class Solution {
-    public static enum Wheel {
+    public enum Wheel {
         FRONT_LEFT,
         FRONT_RIGHT,
         BACK_LEFT,

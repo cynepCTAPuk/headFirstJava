@@ -42,7 +42,7 @@ public class JaxbTest4 {
     @XmlType
     @XmlEnum(Integer.class)
     @XmlRootElement
-    static enum Code {
+    enum Code {
         @XmlEnumValue ("1") START,
         @XmlEnumValue ("2") INPROGRESS,
         @XmlEnumValue ("3") FINISH,
@@ -51,7 +51,7 @@ public class JaxbTest4 {
 
     @XmlType
     @XmlEnum(String.class)
-    static enum Card {
+    enum Card {
         @XmlEnumValue("Пика") CLUBS,
         @XmlEnumValue("Бубна") DIAMONDS,
         @XmlEnumValue("Черва") HEARTS,

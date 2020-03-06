@@ -27,7 +27,7 @@ public class JWhich {
         }
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String className = "java.util.concurrent.DelayQueue";
         JWhich.which(className);
 //        System.err.println("Usage: java JWhich <classname>");

@@ -13,7 +13,7 @@ public class Solution {
         list.add("B");
         list.add("C");
         list.remove("B");
-        List<String> collection = Arrays.asList(new String[]{"B", "C", "D", "B"});
+        List<String> collection = Arrays.asList("B", "C", "D", "B");
 
         list.addAllAbsent(collection);
 

@@ -69,7 +69,7 @@ public class CompareModifiedFiles {
     }
 
 
-    public static enum Type {
+    public enum Type {
         ADDED,        //добавлена новая строка
         REMOVED,      //удалена строка
         SAME          //без изменений

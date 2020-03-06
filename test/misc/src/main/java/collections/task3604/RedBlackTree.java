@@ -95,7 +95,7 @@ public class RedBlackTree {
         right.left = element;
         return right;
     }
-    public static enum Color {
+    public enum Color {
         BLACK,
         RED
     }

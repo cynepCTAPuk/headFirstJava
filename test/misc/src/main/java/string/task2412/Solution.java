@@ -46,9 +46,9 @@ public class Solution {
         list.sort(new Comparator<Stock>() {
             public int compare(Stock stock1, Stock stock2) {
                 int comp = stock1.get("name").toString().compareTo(stock2.get("name").toString());
-                if (comp == 0) comp = (int) (((Date) stock2.get("date")).getYear() - ((Date) stock1.get("date")).getYear());
-                if (comp == 0) comp = (int) (((Date) stock2.get("date")).getMonth() - ((Date) stock1.get("date")).getMonth());
-                if (comp == 0) comp = (int) (((Date) stock2.get("date")).getDate() - ((Date) stock1.get("date")).getDate());
+                if (comp == 0) comp = ((Date) stock2.get("date")).getYear() - ((Date) stock1.get("date")).getYear();
+                if (comp == 0) comp = ((Date) stock2.get("date")).getMonth() - ((Date) stock1.get("date")).getMonth();
+                if (comp == 0) comp = ((Date) stock2.get("date")).getDate() - ((Date) stock1.get("date")).getDate();
                 return comp;
             }
         });

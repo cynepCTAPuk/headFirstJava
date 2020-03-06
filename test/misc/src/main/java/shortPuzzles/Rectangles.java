@@ -78,8 +78,7 @@ public class Rectangles {
     }
 
     public static boolean byteToBoolean(int input) {
-        if (input == 0) return false;
-        return true;
+        return input != 0;
     }
 
     public static boolean intToBooleanStrict(int input) {

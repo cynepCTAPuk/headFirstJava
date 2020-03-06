@@ -12,7 +12,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class ZipInputStreamTest2 {
-    public static void main(String args[]) throws Exception {
+    public static void main(String[] args) throws Exception {
         String zipFile = "c:/000/archive.zip";
         String unzipDir = "c:/000/unzip";
         String format = "Entry: %s\tlen: %,8d\tadded: %TD\n";

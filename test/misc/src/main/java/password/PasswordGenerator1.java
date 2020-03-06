@@ -38,7 +38,7 @@ public class PasswordGenerator1 {
 
     static String generatePassword(int len) {
         StringBuilder sb = new StringBuilder();
-        while (len-- != 0) sb.append((char) getSymbol());
+        while (len-- != 0) sb.append(getSymbol());
         return sb.toString();
     }
 

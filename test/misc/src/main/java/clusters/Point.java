@@ -29,8 +29,7 @@ class Point {
     }
 
     public boolean near(Point point) {
-        if (getX() == point.getX() && Math.abs(getY() - point.getY()) == 1 ||
-                getY() == point.getY() && Math.abs(getX() - point.getX()) == 1) return true;
-        return false;
+        return getX() == point.getX() && Math.abs(getY() - point.getY()) == 1 ||
+                getY() == point.getY() && Math.abs(getX() - point.getX()) == 1;
     }
 }

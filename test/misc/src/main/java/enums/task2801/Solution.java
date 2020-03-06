@@ -4,11 +4,11 @@ package enums.task2801;
 Осваиваем switch
 */
 public class Solution {
-    public static enum E1 {A, B, C, Y}
+    public enum E1 {A, B, C, Y}
 
-    public static enum E2 {D, E, F}
+    public enum E2 {D, E, F}
 
-    public static enum E3 {D, E, F}
+    public enum E3 {D, E, F}
 
     public static void main(String[] args) {
         Solution.switchTest(E1.C);

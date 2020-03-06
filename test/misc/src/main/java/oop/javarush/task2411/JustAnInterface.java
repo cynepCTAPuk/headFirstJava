@@ -1,7 +1,7 @@
 package oop.javarush.task2411;
 
 public interface JustAnInterface {
-    public static final B B = new B();
+    B B = new B();
 
     class B extends C{
         public B() {

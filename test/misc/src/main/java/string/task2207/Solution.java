@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class Solution {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         String path = bufferedReader.readLine();
         bufferedReader.close();
-        List<String> lines = Files.readAllLines(Paths.get(path), Charset.forName("UTF-8"));
+        List<String> lines = Files.readAllLines(Paths.get(path), StandardCharsets.UTF_8);
         List<String> words = new ArrayList<>();
         for (String line : lines) words.addAll(Arrays.asList(line.split(" ")));
         for (int i = 0; i < words.size(); i++) {

@@ -18,7 +18,7 @@ class Combination1 {
             for (int j = 0; j < r; j++) {
                 System.out.print(data[j] + " ");
             }
-            System.out.println("");
+            System.out.println();
             return;
         }
         for (int i = start; i <= end && end - i + 1 >= r - index; i++) {

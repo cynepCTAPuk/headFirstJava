@@ -14,7 +14,7 @@ public class OverrideTest1 {
         OverrideTest1.print((byte) 2);
         OverrideTest1.print("3");
         OverrideTest1.print((Integer) null);
-        OverrideTest1.print((String) null);
+        OverrideTest1.print(null);
         OverrideTest1.print( null);
     }
 }

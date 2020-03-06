@@ -13,14 +13,14 @@ class VarArgsExample {
         return (sum);
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         VarArgsExample va = new VarArgsExample();
         int sum = 0;
-        int a[] = new int[]{1, 2, 3, 4, 5};
-        int b[] = new int[]{1, 2, 3, 4, 5};
-        int c[] = new int[]{1, 2, 3, 4, 5};
-        int d[] = new int[]{1, 2, 3, 4, 5};
-        int e[] = new int[]{1, 2, 3, 4, 5};
+        int[] a = new int[]{1, 2, 3, 4, 5};
+        int[] b = new int[]{1, 2, 3, 4, 5};
+        int[] c = new int[]{1, 2, 3, 4, 5};
+        int[] d = new int[]{1, 2, 3, 4, 5};
+        int[] e = new int[]{1, 2, 3, 4, 5};
         sum = va.sumArrays(a, b, c, d, e);
 /*
         sum = va.sumArrays(

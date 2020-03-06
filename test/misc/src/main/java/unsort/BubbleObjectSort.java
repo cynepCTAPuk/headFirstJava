@@ -6,7 +6,7 @@ class BubbleObjectSort implements SortAlgorithm {
      *              Sorts the array in increasing order
      **/
 
-    public <T extends Comparable<T>> T[] sort(T array[]) {
+    public <T extends Comparable<T>> T[] sort(T[] array) {
         int last = array.length;
         boolean swap;
         int count = 0;

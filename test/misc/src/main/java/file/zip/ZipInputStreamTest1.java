@@ -9,7 +9,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class ZipInputStreamTest1 {
-    public static void main(String args[]) throws Exception {
+    public static void main(String[] args) throws Exception {
 /*
         if (args.length != 2) {
             System.err.println("zipreader zipfile outputdir");

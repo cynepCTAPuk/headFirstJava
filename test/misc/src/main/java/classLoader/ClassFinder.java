@@ -169,8 +169,7 @@ public class ClassFinder {
 
     private final static FileFilter DIRECTORIES_ONLY = new FileFilter() {
         public boolean accept(File f) {
-            if (f.exists() && f.isDirectory()) return true;
-            else return false;
+            return f.exists() && f.isDirectory();
         }
     };
 
@@ -264,7 +263,7 @@ public class ClassFinder {
         String s = entry.getName();
         if (s == null) return "";
         if (s.length() == 0) return s;
-        if (s.startsWith("/")) s = s.substring(1, s.length());
+        if (s.startsWith("/")) s = s.substring(1);
         if (s.endsWith("/")) s = s.substring(0, s.length() - 1);
         return s.replace('/', '.');
     }
@@ -450,7 +449,7 @@ public class ClassFinder {
 
     private final static String getPackagePath(String packageName) {
         // Translate the package name into an "absolute" path
-        String path = new String(packageName);
+        String path = packageName;
         if (!path.startsWith("/")) {
             path = "/" + path;
         }
@@ -462,7 +461,7 @@ public class ClassFinder {
         // for actual classloader interface (NOT Class.getResource() which
         //  hacks up the request string!) a resource beginning with a "/"
         //  will never be found!!! (unless it's at the root, maybe?)
-        if (path.startsWith("/")) path = path.substring(1, path.length());
+        if (path.startsWith("/")) path = path.substring(1);
 
         //System.out.println ("package path=" + path);
 
