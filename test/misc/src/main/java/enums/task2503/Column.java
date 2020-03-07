@@ -32,7 +32,8 @@ public enum Column implements Columnable {
             for (int i = 0; i < newOrder.length; i++) {
                 if (column == newOrder[i]) {
                     if (isFound) {
-                        throw new IllegalArgumentException("Column '" + column.columnName + "' is already configured.");
+                        throw new IllegalArgumentException("Column '" + column.columnName
+                                + "' is already configured.");
                     }
                     realOrder[column.ordinal()] = i;
                     isFound = true;
