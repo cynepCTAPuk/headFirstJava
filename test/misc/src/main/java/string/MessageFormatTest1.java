@@ -1,7 +1,6 @@
 package string;
 
 import java.text.MessageFormat;
-import java.util.Date;
 
 public class MessageFormatTest1 {
     public static void main(String[] args) {

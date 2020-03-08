@@ -6,7 +6,7 @@ public class ToStringTest {
         String text = "Mya cat is " + cat;
         System.out.println(text);
 
-        Object o = null;
+        Advertisement o = null;
         text = "Object is " + o;
         System.out.println(text);
 
