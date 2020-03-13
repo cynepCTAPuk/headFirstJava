@@ -22,9 +22,9 @@ class Fibonacci extends RecursiveTask<Integer> {
 
     public static void main(String[] args) {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
-        for (int i = 1; i < 26; i++) {
+        for (int i = 1; i < 25; i++) {
             Integer result = forkJoinPool.invoke(new Fibonacci(i));
-            System.out.print(result + " ");
+            System.out.format("%,d ", result);
         }
     }
 }
