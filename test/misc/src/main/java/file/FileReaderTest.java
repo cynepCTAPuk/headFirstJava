@@ -10,7 +10,7 @@ import java.util.List;
 public class FileReaderTest {
     public static void main(String[] args) throws IOException {
         //создаем список для хранения строк
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
 
         // открываем файл
         File file = new File("c:/000/berns.txt");
