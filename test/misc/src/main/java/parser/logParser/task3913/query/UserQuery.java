@@ -1,4 +1,4 @@
-package parserLogs.task3913test.query;
+package parser.logParser.task3913.query;
 
 import java.util.Date;
 import java.util.Set;

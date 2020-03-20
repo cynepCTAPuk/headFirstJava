@@ -1,4 +1,4 @@
-package parserLogs.task3913test;
+package parser.logParser.task3913;
 
 import java.nio.file.Paths;
 import java.text.ParseException;
@@ -58,13 +58,40 @@ public class Solution {
 //        System.out.println(logParser.execute("get event"));
 //        System.out.println(logParser.execute("get status"));
 
-        logParser.execute("get ip for user = \"Vasy Pupkin\"");
-//        System.out.println(logParser.execute("get ip for user = \"Vasy Pupkin\""));
-        logParser.execute("get ip for date = \"30.08.2012 16:08:40\"");
+//        System.out.println(logParser.execute("get ip for user = \"Vasya Pupkin\""));
+//        logParser.execute("get ip for date = \"30.08.2012 16:08:40\"");
 //        System.out.println(logParser.execute("get ip for date = \"30.08.2012 16:08:40\""));
-        logParser.execute("get ip for event = \"DONE_TASK\"");
+//        logParser.execute("get ip for event = \"DONE_TASK\"");
 //        System.out.println(logParser.execute("get ip for event = \"DONE_TASK\""));
-        logParser.execute("get ip for status = \"OK\"");
+//        logParser.execute("get ip for status = \"OK\"");
 
+//        System.out.println(logParser.execute("get ip for user = \"Vasya Pupkin\""));
+        System.out.println(logParser.execute("get ip for date = \"30.08.2012 16:08:40\""));
+//        System.out.println(logParser.execute("get ip for event = \"LOGIN\""));
+//        System.out.println(logParser.execute("get ip for status = \"ERROR\""));
+//
+//        System.out.println(logParser.execute("get user for ip = \"127.0.0.1\""));
+        System.out.println(logParser.execute("get user for date = \"30.08.2012 16:08:40\""));
+//        System.out.println(logParser.execute("get user for event = \"LOGIN\""));
+//        System.out.println(logParser.execute("get user for status = \"ERROR\""));
+
+//        System.out.println(logParser.execute("get date for ip = \"127.0.0.1\""));
+//        System.out.println(logParser.execute("get date for user = \"Vasya Pupkin\""));
+//        System.out.println(logParser.execute("get date for event = \"LOGIN\""));
+//        System.out.println(logParser.execute("get date for status = \"OK\""));
+
+//        System.out.println(logParser.execute("get event for ip = \"127.0.0.1\""));
+//        System.out.println(logParser.execute("get event for user = \"Vasya Pupkin\""));
+        System.out.println(logParser.execute("get event for date = \"30.08.2012 16:08:40\""));
+//        System.out.println(logParser.execute("get event for status = \"ERROR\""));
+//
+//        System.out.println(logParser.execute("get status for ip = \"127.0.0.1\""));
+//        System.out.println(logParser.execute("get status for user = \"Vasya Pupkin\""));
+        System.out.println(logParser.execute("get status for date = \"30.08.2012 16:08:40\""));
+//        System.out.println(logParser.execute("get status for event = \"LOGIN\""));
+
+        System.out.println(logParser.execute("get ip for user = \"Eduard Petrovich Morozko\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\""));
+        System.out.println(logParser.execute("get ip for user = \"Amigo\" and date between \"30.08.2012 16:08:12\" and \"30.08.2012 16:08:14\""));
+        System.out.println(logParser.execute("get ip for date = \"30.08.2012 16:08:40\" and date between \"30.08.2012 16:08:39\" and \"30.08.2012 16:08:41\""));
     }
 }

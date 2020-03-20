@@ -1,4 +1,4 @@
-package parserLogs.task3913test;
+package parser.logParser.task3913;
 
 public enum Status {
     OK,

@@ -1,6 +1,6 @@
-package parserLogs.task3913test.query;
+package parser.logParser.task3913.query;
 
-import parserLogs.task3913test.Event;
+import com.javarush.task.task39.task3913.Event;
 
 import java.util.Date;
 import java.util.Map;

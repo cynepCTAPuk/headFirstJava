@@ -1,4 +1,6 @@
-package parserLogs.task3913test;
+package parser.logParser.task3913;
+
+import java.util.Arrays;
 
 public enum Event {
     LOGIN,
