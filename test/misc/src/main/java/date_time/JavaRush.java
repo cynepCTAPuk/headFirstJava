@@ -24,7 +24,5 @@ public class JavaRush {
 //        System.out.print(ChronoUnit.DAYS.between(startJavaRush, now));
         System.out.println("\t" + (days + 1) + "-й день с начала прохождения курса JavaRush");
         System.out.println("\t\tЭто было " + startJavaRush.format(formatter1));
-
-//        System.out.println(ZoneId.getAvailableZoneIds());
     }
 }
