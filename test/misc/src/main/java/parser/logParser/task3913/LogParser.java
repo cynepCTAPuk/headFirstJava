@@ -1,6 +1,6 @@
 package parser.logParser.task3913;
 
-import com.javarush.task.task39.task3913.query.*;
+import parser.logParser.task3913.query.*;
 
 import java.io.File;
 import java.io.IOException;
