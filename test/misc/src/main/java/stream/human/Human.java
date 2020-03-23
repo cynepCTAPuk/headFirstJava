@@ -1,4 +1,4 @@
-package stream;
+package stream.human;
 
 import java.util.List;
 

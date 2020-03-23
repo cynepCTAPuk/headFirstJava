@@ -1,4 +1,4 @@
-package unsort;
+package enums;
 
 public class EnumTest {
     enum Country {

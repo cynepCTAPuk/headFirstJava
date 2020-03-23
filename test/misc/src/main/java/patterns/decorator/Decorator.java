@@ -1,4 +1,6 @@
-package unsort;
+package patterns.decorator;
+
+import unsort.InterfaceComponent;
 
 class MainComponent implements InterfaceComponent {
 

@@ -1,7 +1,7 @@
 /**
  * https://vertex-academy.com/tutorials/ru/java-8-stream-flatmap/
  */
-package stream;
+package stream.human;
 
 import java.util.ArrayList;
 import java.util.Arrays;

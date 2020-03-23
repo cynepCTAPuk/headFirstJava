@@ -1,4 +1,4 @@
-package functional;
+package stream;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
