@@ -30,6 +30,6 @@ public class FormatTest {
         System.out.format(ru, "%tD\n", c);    // -->  "03/04/19"
         System.out.println(c.getDisplayName(10,2,ru));
 
-        System.out.println("%s".formatted(c));
+//        System.out.println("%s".formatted(c));
     }
 }
