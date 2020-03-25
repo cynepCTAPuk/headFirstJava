@@ -23,11 +23,13 @@ public class BitMask1 {
         result = 0;
         System.out.println(Integer.toString(result, 2));
         result |= (1 << 6); // установить 6-й бит в 1
+        System.out.println("установить 6-й бит в 1");
         System.out.println(Integer.toString(result, 2));
 
         result = (int) Math.pow(2, 7) - 1;
         System.out.println(Integer.toString(result, 2));
         result &= ~(1 << 5); // установить 5-й бит в 1
+        System.out.println("установить 5-й бит в 0");
         System.out.println(Integer.toString(result, 2));
 
         c = result & (1 << 4); // прочитать значение 4-го бита
