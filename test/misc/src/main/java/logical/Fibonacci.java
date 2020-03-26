@@ -12,8 +12,7 @@ class Fibonacci extends RecursiveTask<Integer> {
 
     @Override
     protected Integer compute() {
-        if (n <= 1)
-            return n;
+        if (n <= 1) return n;
         Fibonacci f1 = new Fibonacci(n - 1);
         f1.fork();
         Fibonacci f2 = new Fibonacci(n - 2);

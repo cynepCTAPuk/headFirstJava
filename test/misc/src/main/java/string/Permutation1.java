@@ -2,24 +2,24 @@ package string;
 
 public class Permutation1 {
     public static void main(String[] args) {
-        String str = "ABC";
-        int n = str.length();
-        permute(str, 0, n - 1);
+        String string = "ABC";
+        int length = string.length();
+        permute(string, 0, length - 1);
     }
 
-    static void permute(String str, int l, int r) {
-        if (l == r)
-            System.out.println(str);
+    static void permute(String string, int left, int right) {
+        if (left == right)
+            System.out.println(string);
         else
-            for (int i = l; i <= r; i++) {
-                str = swap(str, l, i);
-                permute(str, l + 1, r);
-                str = swap(str, l, i);
+            for (int i = left; i <= right; i++) {
+                string = swap(string, left, i);
+                permute(string, left + 1, right);
+                string = swap(string, left, i);
             }
     }
 
-    static String swap(String str, int i, int j) {
-        char[] charArray = str.toCharArray();
+    static String swap(String string, int i, int j) {
+        char[] charArray = string.toCharArray();
         char temp = charArray[i];
         charArray[i] = charArray[j];
         charArray[j] = temp;
