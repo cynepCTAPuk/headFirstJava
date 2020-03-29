@@ -1,0 +1,30 @@
+<html>
+ <head></head>
+ <body>
+  <p> Ваша задача - рассчитать плотность вероятности ﻿<a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5" rel="nofollow noopener noreferrer">нормального распределения</a> по заданным математическому ожиданию <span class="math-tex">\( \mu \)</span>, среднеквадратичному отклонению <span class="math-tex">\( \sigma \)</span> и значению случайной величины ﻿<span class="math-tex">\( x \)</span>&nbsp;﻿по формуле:</p>
+  <p style="text-align: center;"><span class="math-tex">\( p = \frac{1}{\sigma\sqrt{2\pi}}\cdot e^{-\frac{(x - \mu)^2}{2\sigma^2}} \)</span> <br></p>
+  <p style="text-align: left;"> Реализуйте метод:<br></p>
+  <pre><code class="language-scala">def normalDistribution(mu: Double, sigma: Double, x: Double): Double = {
+ ...
+}</code></pre> 
+  <i>Замечание: в Scala&nbsp;﻿значение, возвращаемое функцией - просто последнее выражение, записанное в функции. Например в функции</i>
+  <div>
+   <i><pre><code class="language-scala">﻿def ﻿toSquare(i: Int): Int = {﻿
+﻿ val ﻿res = i*i
+ res
+}</code></pre>последним выражением является `res`, его значение и будет возвращено из функции.</i>
+  </div>
+  <div>
+   <i><br></i>
+  </div>
+  <div>
+   <i> Ничего считывать и выводить в консоль не нужно. Просто реализуйте метод.﻿<br></i>
+  </div>
+  <div>
+   <i><br></i>
+  </div>
+  <div>
+   <i>P.S. математические константы лучше брать из scala.math</i>
+  </div>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

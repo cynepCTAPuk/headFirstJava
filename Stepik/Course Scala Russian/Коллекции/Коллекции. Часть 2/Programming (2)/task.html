@@ -1,0 +1,22 @@
+<html>
+ <head></head>
+ <body>
+  <p>Некоторые генетические алгоритмы для генерации новых хромосом из старых используют приём под названием <b><a href="https://en.wikipedia.org/wiki/Crossover_(genetic_algorithm)" rel="nofollow noopener noreferrer">кроссинговер</a>. </b></p>
+  <p> Будем представлять хромосому с генами <code>[xxxxx]</code>&nbsp; &nbsp;в виде списка <code>List('x', 'x', 'x', 'x', 'x')</code> . Тогда суть приёма заключается в следующем:</p>
+  <ol>
+   <li>Берутся две хромосомы одинаковой длины, например <code>[xxxxx]</code> и <code>[yyyyy]</code>. Списки для них будут выглядеть так:<pre><code class="language-scala">List('x', 'x', 'x', 'x', 'x')
+List('y', 'y', 'y', 'y', 'y')</code></pre><br></li>
+   <li>Выбираются так называемые `точки кроссинговера`. В нашем случае это некоторые индексы в диапазоне [1, длина списка генов хромосомы]. Пусть выбраны индексы 1 и 3.<br></li>
+   <li>Для&nbsp; каждого индекса, по возрастанию, хромосомы обмениваются своими частями, стоящими <b>после </b>этого индекса. В&nbsp; нашем случае после кроссинговера по индексу 1:</li>
+  </ol>
+  <pre><code class="language-scala">List('x', 'y', 'y', 'y', 'y')
+List('y', 'x', 'x', 'x', 'x')</code></pre> А после дальнейшего кроссинговера по индексу 3:
+  <div>
+   <pre><code class="language-scala">List('x', 'y', 'y', 'x', 'x')
+List('y', 'x', 'x', 'y', 'y')</code></pre> Ничего считывать из ﻿консоли не надо. ﻿Вам даны:
+   <pre><code class="language-scala">val points: List[Int] = Lesson.points // точки кроссинговера
+val chr1: List[Char] = Lesson.chr1 // первая хромосома
+val chr2: List[Char] = Lesson.chr2 // вторая хромосома</code></pre> ﻿Выведите результат хромосомы после кроссинговера, сначала первую, затем вторую. Без пробелов и знаков препинания.
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>1 3<br>xxxxx<br>yyyyy<br><b>Sample Output:</b><br>xyyxx<br>yxxyy<br><br><b>Sample Input:</b><br>2 4 5<br>aaaaaaa<br>ddddddd<br><b>Sample Output:</b><br>aaddadd<br>ddaadaa<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

@@ -1,0 +1,68 @@
+<html>
+ <head></head>
+ <body>
+  Программист Олег решил выдавать кредиты. Для этого ему нужно реализовать класс 
+  <code>CreditBank</code> и его метод 
+  <code>issueCredit</code>, который выводит на консоль слово "CREDIT". К сожалению, у Олега нет своего капитала, и он решил собирать выдаваемый кредит по кусочкам в других банках. Имеется пять банков:
+  <div>
+   <pre><code class="language-scala">trait BankA extends AbstractBank {
+&nbsp; override val b = 'T'
+&nbsp; override val d = 'R'
+&nbsp; override val f = 'I'
+}
+
+trait BankB extends AbstractBank {
+&nbsp; override val a = 'E'
+&nbsp; override val f = 'D'
+}
+
+trait BankC extends AbstractBank {
+&nbsp; override val b = 'C'
+&nbsp; override val d = 'D'
+}
+
+trait BankD extends AbstractBank {
+&nbsp; override val b = 'C'
+&nbsp; override val c = 'R'
+&nbsp; override val d = 'E'
+}
+
+trait BankE extends AbstractBank {
+&nbsp; override val b = 'C'
+&nbsp; override val a = 'I'
+&nbsp; override val e = 'T'
+}</code></pre> 
+   <br>
+  </div>
+  <div>
+   Все они наследуют трейт:
+  </div>
+  <div>
+   <pre><code class="language-scala">trait AbstractBank {
+&nbsp; def a: Char
+&nbsp; def b: Char
+&nbsp; def c: Char
+&nbsp; def d: Char
+&nbsp; def e: Char
+&nbsp; def f: Char
+&nbsp; def issueCredit: Unit
+}</code></pre> 
+   <br>
+  </div>
+  <div>
+   <b>Задание: </b>помогите Олегу собрать кредит, подмешав в нужной последовательности банки в 
+   <code>CreditBank</code> и реализовав метод 
+   <code>issueCredit</code> ("CREDIT" должен собираться из кусочков a–f).
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <i><b>Справка. </b></i>
+   <i>Множественное наследование, линеизация:</i>
+  </div>
+  <div>
+   <i>Для того, чтобы выстроить зависимости в линию, компилятор идет по всем предкам класса, объявленным после ключевого слова <code>extends</code>, и назначает текущий найденный класс или трейт суперклассом всех следующих членов списка предков. Если текущий найденный класс, в свою очередь, имеет предков, к ним так же применяются правила линеизации. Полученная цепочка зависимостей становится в списке перед текущим найденным предком.<br>Следствия линеизации: <br>● Конструкторы классов выполняются в том порядке в котором были расставлены в <br>процессе линеизации. Последним будет выполнен конструктор создаваемого класса.<br>● Доступ к членам суперклассов через ключевое слово super происходит в обратном <br>порядке. Т.е. <code>super.memberName</code> обратится к <code>memberName</code> ближайшего суперкласса, <br>полученного в процессе линеизации.<br><br></i>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>CREDIT<br><b>Sample Output:</b><br>CREDIT<br><br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

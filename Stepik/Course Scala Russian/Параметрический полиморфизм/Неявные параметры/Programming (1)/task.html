@@ -1,0 +1,47 @@
+<html>
+ <head></head>
+ <body>
+  <p style="text-align: left;">                            <b>Часть 2</b></p>
+  <p style="text-align: left;"> В прошлом степе мы реализовали аппарат по вычислению математических выражений. Давайте теперь реализуем строковое представление этих выражений. <b><br></b></p>
+  <p style="text-align: left;"> Заведём вспомогательную сущность. Она будет помогать нам расставлять скобки, где нужно:<br></p>
+  <pre><pre><code class="language-scala">final case class Print(s: String, priority: Int, isLit: Boolean = false) {
+  def print(outer: Int = 0) = if (outer &lt;= priority) s else s"($s)"
+}</code></pre>&nbsp; <b>s</b> - математическое выражение, которому соответствует данный объект;
+ <b>priority</b> - приоритет математического выражения. Определяется приоритетом среди всех операций, переменных и литералов, содержащихся в нём.
+ <b>isLit</b> - является ли выражение литералом
+
+    Список приоритетов:
+
+   <ol>
+    <li>Унарный минус</li>
+    <li>Сложение и вычитание</li>
+    <li>Умножение</li>
+    <li>Литерал</li>
+    <li>Переменная</li>
+   </ol>   <i>Примеры:</i><i> </i>
+   <ol>
+    <li><i><b>X * Y * 2 </b> имеет приоритет <b>3</b></i><br></li>
+    <li><i><b>42 </b>имеет приоритет <b>4</b><br></i></li>
+    <li><b>X </b>имеет приоритет <b>5</b>
+4. <b>-X+Y*3 </b>имеет приоритет <b>1</b></li>
+   </ol> Необходимо реализовать тот же интерфейс, что и в прошлом степе:
+<pre><pre><code class="language-scala">implicit val stringOrderExpr: Expr[Print] = new Expr[Print] {  override def literalInt(value: Int) = ???
+  override def variable(name: String): Print = ???
+  override def times(x: Print, y: Print): Print = ???
+  override def plus(x: Print, y: Print): Print  = ???
+  override def minus(x: Print, y: Print): Print = ???
+  override def negate(x: Print): Print          = ???
+}</code></pre></pre></pre>
+  <p style="text-align: left;"> Использование выглядит так:<br></p>
+  <pre><code class="language-scala">def function[T: Expr]: T = X * X + 2.lit * (Y + Z * X * 2.lit) - 7.lit * Z + 4.lit
+println(function[Print].print()) // X*X+2(Y+Z*X*2)-7Z+4</code></pre>
+  <p style="text-align: left;"> Разделители операций:<br></p>
+  <ol>
+   <li>Сложение - "+"</li>
+   <li>Вычитание - "-"</li>
+   <li>Унарный минус - "-", например "-X"</li>
+   <li>Умножение - если первый множитель литерал, то пустая строка "", иначе - "*". Например "2X" и "X*Y"</li>
+  </ol>
+  <p style="text-align: left;"> Ничего выводить в консоль и считывать из неё не надо. просто реализуйте недостающие методы.<br></p>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

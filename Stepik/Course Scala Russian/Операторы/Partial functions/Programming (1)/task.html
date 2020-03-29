@@ -1,0 +1,38 @@
+<html>
+ <head></head>
+ <body>
+  В магазине красок проводится акция: на банки краски объемом от 5 до 10 литров скидка 5%, на банки больше 10 литров - 10%.
+  <br>Одна банка представлена кейс классом 
+  <span style="color: #000;"><code class="scala">Jar(name: String, value: Int, price: Double)</code></span>, где 
+  <span style="color: #000;"><code>name</code></span> - артикул, 
+  <span style="color: #000;"><code>value</code></span> - объем, 
+  <span style="color: #000;"><code>price</code></span> - цена в рублях.
+  <br> Напишите частичную функцию 
+  <span style="color: #000;"><code>discount</code></span>, которая при подстановке в метод 
+  <span style="color: #000;"><code>collect</code></span> списка банок, превратит его в список строк. Каждая строка должна состоять из артикула и размера скидки в рублях, записанных через пробел. В список должны входить 
+  <i>только товары с ненулевой скидкой</i>.
+  <div>
+   <br>
+  </div>
+  <div>
+   Пример использования функции:
+   <br> 
+   <pre><code class="language-scala">case class Jar(name: String, value: Int, price: Double) 
+val jars = List(Jar("Морской синий 6л", 6, 3000), Jar("Огненно-красный 12л", 12, 5000))
+jars.collect(discount)</code></pre>
+   <br>
+   <i>Ничего считывать и выводить в консоль не нужно. Просто реализуйте функцию.﻿</i>
+   <br>
+   <br> Начальный список: 
+   <pre><code class="language-scala">List(
+  Jar("Морской синий 6л", 6, 3000.0),
+  Jar("Огненно-красный 12л", 12, 5000.0),
+  Jar("Зеленый 1л", 1, 500.0)
+)</code></pre> После применения функции: 
+   <pre><code class="language-scala">List(
+  "Морской синий 6л 150.0",
+  "Огненно-красный 12л 500.0"
+)</code></pre> 
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>Морской синий 6л, 6, 3000.0<br>Огненно-красный 12л, 12, 5000.0<br>Зеленый 1л, 1, 500.0<br><b>Sample Output:</b><br>Морской синий 6л 150.0<br>Огненно-красный 12л 500.0<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

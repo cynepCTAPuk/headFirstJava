@@ -1,0 +1,9 @@
+<html>
+ <head></head>
+ <body>
+  <p><i></i>На вход программе подается имя пользователя, email и список его коммитов, возможно пустой (<i>коммит - одно из ключевых понятий системы контроля версий Git -</i> <a href="https://ru.wikipedia.org/wiki/Git" rel="nofollow noopener noreferrer" title="Link: https://ru.wikipedia.org/wiki/Git">https://ru.wikipedia.org/wiki/Git</a><i>. В данном контексте - это просто строка</i>).</p>
+  <p>Считанные построчно данные лежат в списке <code>input</code>. После имени мог стоять как пробел, так и перенос строки, каждый коммит был в отдельной строчке. Другими словами, первые два элемента списка это либо имя и электронная почта, либо имя с почтой через пробел и первый коммит. Используя pattern-matching и регулярные выражения напечатайте через пробел имя пользователя и домен электронной почты (все, что стоит после собаки). Для некорректных данных напачатайте "invalid".</p>
+  <p><i>Подсказка</i>: регулярное выражение для имени <code>[a-zA-Z]+</code>, для электронного адреса <code>\\w+@\\w+\.\\w+</code> . Для извлечения параметров используйте круглые скобки, чтобы объявить группы в нужных местах.</p>
+  <p><i>Считывать ничего не нужно, переменная <code>input</code> уже проинициализирована</i>.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>oleg<br>oleg@email.com<br>7bdaf0a1be3<br>a8af118b1a2<br>28d74b7a3fe<br><b>Sample Output:</b><br>oleg email.com<br><br><b>Sample Input:</b><br>oleg oleg@email.com<br>7bdaf0a1be3<br>a8af118b1a2<br>28d74b7a3fe<br><b>Sample Output:</b><br>oleg email.com<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 3 seconds</font><br><br>

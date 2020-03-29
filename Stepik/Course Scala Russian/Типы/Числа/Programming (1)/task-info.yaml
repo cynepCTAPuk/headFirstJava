@@ -1,0 +1,16 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.scala
+  visible: true
+  text: |-
+    import scala.io.StdIn
+
+    object Main {
+    def main(args: Array[String]) {
+
+    }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

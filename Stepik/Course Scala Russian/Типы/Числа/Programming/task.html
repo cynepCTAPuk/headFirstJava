@@ -1,0 +1,32 @@
+<html>
+ <head></head>
+ <body>
+  Дано:
+  <br>
+  <ul>
+   <li><code>weight: BigDecimal</code>&nbsp; - вес имеющегося картофеля. <br></li>
+   <li><code>potatoWaterRatio: Double</code>&nbsp; - (0,1), доля воды в картофеле до того, как из него сделали чипсы. <br></li>
+   <li><code>crispsWaterRatio: Double</code> - (0,1), доля воды в чипсах. <br></li>
+  </ul>
+  <p> Найдите массу чипсов, которая получится. </p>
+  <p>Для этого реализуйте следующий метод: <br></p>
+  <pre><code class="language-scala">def crispsWeight(weight: BigDecimal, potatoWaterRatio: Double, crispsWaterRatio: Double): BigDecimal</code></pre>
+  <div>
+   <br>
+  </div>Ответ нужно дать с точностью до 
+  <b>пяти</b> знаков после запятой.
+  <div>
+   Ничего считывать и выводить в консоль не нужно. Просто реализуйте метод.
+  </div>
+  <br>
+  <div>
+    
+  </div>
+  <div>
+   <i>Подсказка: у </i>
+   <code>BigDecimal</code> есть метод 
+   <code>.setScale</code>, позволяющий задавать точность числа и стратегию округления. Используйте стратегию округления 
+   <code>HALF_UP</code>.
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>90.0 0.9 0.1<br><b>Sample Output:</b><br>10.00000<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

@@ -1,0 +1,35 @@
+type: video
+custom_name: Video
+files:
+- name: src/Task.scala
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    object Task {
+      def main(args: Array[String]): Unit = {
+        // put your code here
+      }
+    }
+  learner_created: false
+thumbnail: https://stepikvideo.blob.core.windows.net/video/37100/thumbnail/90640901b6279843e1fc4a02629f8d76.jpg
+sources:
+- src: https://ucarecdn.com/b275fe20-82d0-4d65-80c6-b6462080b1bc/37100_1080_122cfe016b33883990a8002e89528a26.mp4
+  res: 1080
+  type: video/mp4
+  label: 1080p
+- src: https://ucarecdn.com/e360addc-98ca-40cd-8d9d-82ecfcaf7775/37100_720_0ce8cd6f5fab572678d75ae6a245a0b6.mp4
+  res: 720
+  type: video/mp4
+  label: 720p
+- src: https://ucarecdn.com/f4a35768-66ad-408f-97b5-3edabc921d42/37100_540_0c27345086c9f5cd7fb5c3270c6961f1.mp4
+  res: 540
+  type: video/mp4
+  label: 540p
+- src: https://ucarecdn.com/0f0f17e9-e8ce-46e0-a8c0-1350b0e84b91/37100_360_580b0d215ef2d043642e1fbfecafd1e7.mp4
+  res: 360
+  type: video/mp4
+  label: 360p
+currentTime: 0
+status: Unchecked
+record: -1

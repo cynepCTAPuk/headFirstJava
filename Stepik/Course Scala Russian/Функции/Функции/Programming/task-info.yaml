@@ -1,0 +1,8 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: val searchOdd = LessonData.searchInArray(_ % 2 == 1)
+  learner_created: false
+status: Unchecked
+record: -1

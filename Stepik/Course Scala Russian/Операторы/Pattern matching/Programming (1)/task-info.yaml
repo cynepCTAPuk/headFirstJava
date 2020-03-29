@@ -1,0 +1,14 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.scala
+  visible: true
+  text: |-
+    // Здесь можно объявить регулярные выражения
+    val result = input match {
+      // Напишите нужные case
+    }
+    println(result)
+  learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,8 @@
+<html>
+ <head></head>
+ <body>
+  <p>Исправьте определение класса <code>Pair</code>, чтобы он стал ковариантным.</p> 
+  <p>Метод <code>printNames</code>&nbsp;принимает на вход пары с объектами типа <code>Person</code> и печатает их имена. Однако нам хочется на вход этому методу передавать также и <code>Student</code>. Для этого нужна ковариантность пар: <code>Pair[Student] &lt;: Pair[Person]</code>.</p> 
+  <p><em>Подсказка: </em>в определении <code>Pair</code> в методе <code>replaceFirst</code> тип <code>T</code> стоит в контрвариантной позиции, что мешает быть <code>Pair</code> ковариантным по <code>T</code>.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>Pavel Oleg<br><b>Sample Output:</b><br>1: Oliver  2: Oleg<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

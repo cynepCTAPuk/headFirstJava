@@ -1,0 +1,11 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.scala
+  visible: true
+  text: "def sendGift(currentAmount: Int, gift: Int) = {\n    if (currentAmount >=\
+    \ 500) \n        currentAmount + gift\n    else\n        currentAmount\n}\n\n\
+    val accountAmounts = List(100, 200, 500, 300, 700)"
+  learner_created: false
+status: Unchecked
+record: -1

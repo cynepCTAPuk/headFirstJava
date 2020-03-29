@@ -1,0 +1,17 @@
+<html>
+ <head></head>
+ <body>
+  <p>Имеется трейт "Животное", в котором реализован метод "подать голос", а также поле "звук", который животное издает.</p>
+  <pre><code class="language-scala">trait Animal {
+&nbsp; val sound: String
+&nbsp; def voice: Unit = println("voice: " + sound)
+}</code></pre>
+  <b>Задание: </b>реализуйте классы "Кошка", "Собака" и "Рыба". В последнем случае метод 
+  <code>voice</code> должен печатать на экран фразу "Fishes are silent!". Программа будет запускаться следующим образом: 
+  <pre><code class="language-scala">object Main extends App {
+&nbsp; val animals = Seq(new Cat, new Dog, new Fish)
+&nbsp; animals.foreach(_.voice)
+}</code></pre>
+  <br>
+ </body>
+</html><br><b>Sample Input:</b><br><br><br><b>Sample Output:</b><br>voice: Meow!<br>voice: Woof!<br>Fishes are silent!<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

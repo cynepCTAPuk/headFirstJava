@@ -1,0 +1,1 @@
+val log: PartialFunction[Double, Double] = ???

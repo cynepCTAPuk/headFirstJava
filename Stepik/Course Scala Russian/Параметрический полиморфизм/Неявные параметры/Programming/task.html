@@ -1,0 +1,93 @@
+<html>
+ <head></head>
+ <body>
+  <pre></pre>
+  <pre> Данная задача состоит из двух частей.
+                           <b>Часть 1</b>
+ Мы написали трейт, представляющий собой часть математического выражения, использующего переменные, сложение, вычитание и умножение:
+
+<code class="language-scala">trait Expr[T] {
+  def literalInt(value: Int): T
+  def variable(name: String): T
+  def times(x: T, y: T): T
+  def plus(x: T, y: T): T
+  def minus(x: T, y: T): T = plus(x, negate(y))
+  def negate(x: T): T      = times(x, literalInt(-1))
+}</code></pre> 
+  <div>
+    Объект ExprSyntax содержит методы, добавляющие "синтаксический сахар":
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <pre></pre>
+   <pre><code class="language-scala">object exprSyntax {
+  def literalInt[T](value: Int)(implicit expr: Expr[T]): T = expr.literalInt(value)
+  def X[T](implicit expr: Expr[T]): T                      = expr.variable("x")
+  def Y[T](implicit expr: Expr[T]): T                      = expr.variable("y")
+  def Z[T](implicit expr: Expr[T]): T                      = expr.variable("z")
+
+  implicit class IntToExpr[T](x: Int)(implicit expr: Expr[T]) {
+    def lit: T = expr.literalInt(x)
+  }
+
+  implicit class NumOps[T](val x: T) extends AnyVal {
+    def +(y: T)(implicit expr: Expr[T]): T  = expr.plus(x, y)
+    def -(y: T)(implicit expr: Expr[T]): T   = expr.minus(x, y)
+    def *(y: T)(implicit expr: Expr[T]): T   = expr.times(x, y)
+    def unary_-(implicit expr: Expr[T]): T = expr.negate(x)
+  }
+}</code></pre>
+   <br>
+  </div>
+  <div>
+    В качестве примера написали одну реализацию:
+   <br>
+   <div>
+    <pre><pre><code class="language-scala">object Expr {
+  ﻿﻿implicit val stringExpr: Expr[String] = new Expr[String] {
+   ﻿ override def literalInt(value: Int): String = s"$value"
+    ﻿override def variable(name: String): String      = s"${name.toUpperCase}"
+    ﻿override def times(x: String, y: String): String = s"($x)*($y)"
+    ﻿override def plus(x: String, y: String): String  = s"($x)+($y)"
+    ﻿override def minus(x: String, y: String): String = s"($x)-($y)"
+    ﻿override def negate(x: String): String           = s"-($x)"
+  ﻿}
+﻿}</code></pre></pre> 
+   </div>
+   <div>
+     Она расставляет в выражении скобки согласно с приоритетами операций:
+    <br>
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    <pre><pre><code class="language-scala">def function[T: Expr]: T = X * X + 2.lit * (Y + Z * X * 2.lit) - 7.lit * Z + 4.lit
+println(function[String]) // ((((X)*(X))+((2)*((Y)+(((Z)*(X))*(2)))))-((7)*(Z)))+(4)</code></pre>&nbsp; 
+ Ваша задача - написать реализацию трейта, которая позволит вычислять подобные выражения на заданных значениях переменных. Подстановки переменных удобно хранить в виде функции из ассоциативного массива значений переменных в сами значения (<b>Calc </b>в коде ниже):
+
+</pre>
+   </div>
+   <div>
+    <pre><pre><code class="language-scala">type Calc[T] = Map[String, T] =&gt; T
+
+implicit def numericExpr[T: Numeric]: Expr[Calc[T]] = new Expr[Calc[T]] {
+  import Numeric.Implicits._
+ // methods
+}</code></pre>
+ Тогда наше выражение, записанное в function можно будет переиспользовать таким образом:
+
+<pre><pre><code class="language-scala">println(function[Calc[Double]].apply(Map("x" -&gt; 1, "y" -&gt; -1, "z" -&gt; 0.2))) // 2.4</code> 
+ Ничего выводить в консоль и считывать не надо. Просто реализуйте недостающие методы.
+
+<i>Дополнительная</i> <i>информация: </i>
+1) <i>Подсказка: </i>для реализации метода конвертации числа в литерал вам, скорее всего, понадобится посмотреть интерфейс <b>scala.math.Numeric.</b><i><b></b></i></pre>2) Почему выражение выполняется в правильном порядке? https://docs.scala-lang.org/tour/operators.html
+3) Context bounds <code>def g[A : B](a: A) = h(a)</code> https://docs.scala-lang.org/tutorials/FAQ/context-bounds.html
+</pre></pre>
+   </div>
+  </div>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

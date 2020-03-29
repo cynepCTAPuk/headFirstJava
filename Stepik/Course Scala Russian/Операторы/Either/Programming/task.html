@@ -1,0 +1,9 @@
+<html>
+ <head></head>
+ <body>
+  <p>Правильной называется дробь, у которой модуль числителя&nbsp; меньше модуля знаменателя. <span>Будем представлять дробь парой </span><code>(числитель, знаменатель)</code><span>. </span></p>
+  <p>Реализуйте операцию деления <code>divide(p: (Int, Int))(q: (Int, Int)): Either[String, (Int, Int)]</code>, возвращающую результат деления <code>p</code> на <code>q</code> или текст ошибки. <i>Проверьте корректность входных данных</i>, если входные дроби неправильные, верните ошибку <code>Left("Invalid input")</code>. Если делитель нулевой, верните <code>Left("Zero divisor")</code>. Если в результате получилась неправильная дробь, ошибка <code>Left("Improper result")</code>.</p>
+  <p><i>Сократите результат до простой дроби</i>. Воспользуйтесь <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%95%D0%B2%D0%BA%D0%BB%D0%B8%D0%B4%D0%B0" rel="nofollow noopener noreferrer" title="Link: https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%95%D0%B2%D0%BA%D0%BB%D0%B8%D0%B4%D0%B0">алгоритмом Евклида</a>, разобранным в модуле про кортежи, или методом <code>BigInt.gcd</code> .</p> 
+  <p><i>Ничего считывать и выводить в консоль не нужно, просто реализуйте функцию.</i></p>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

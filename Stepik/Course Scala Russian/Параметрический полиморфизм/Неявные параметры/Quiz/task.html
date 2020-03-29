@@ -1,0 +1,21 @@
+<html>
+ <head></head>
+ <body>
+  <p>Что будет выводить код при запуске?</p>
+  <pre><pre><pre><code class="language-scala">object Ops {
+  implicit class IntOps1(val x: Int) extends AnyVal {
+    def ::(y: Int): Int = (x.toString + y.toString).toInt
+  }
+  implicit class IntOps2(val x: Int) extends AnyVal {
+    def :: (y: Int): String = 3 + " :: " + 4
+  }
+}
+
+object imp extends App {
+  import Ops._
+  val res = 3 :: 4
+  println(res)
+}</code></pre> </pre></pre>
+  <br>
+ </body>
+</html>

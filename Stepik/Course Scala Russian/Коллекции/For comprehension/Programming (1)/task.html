@@ -1,0 +1,17 @@
+<html>
+ <head></head>
+ <body>
+  Вам даны четыре микросервиса
+  <pre><code>def service1: Either[String, Double]
+    def service2(res1: Double): Either[String, Int]
+    def service3: String
+    def service4(res1: Double, res2: Int, res3: String): Either[String, String]</code></pre> 
+  <div>
+   Первый, второй и четвертый возвращают 
+   <code>Either</code> с ошибкой слева или результатом справа. 
+   <code>service2</code> должен получить на вход результат работы первого сервиса, а четвертый - трех предыдущих. Используя 
+   <b>только for-comprehension</b> реализуйте функцию 
+   <code>result</code>, которая возвращает результат работы четвертого сервиса.
+  </div> 
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

@@ -1,0 +1,11 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: |-
+    def normalDistribution(mu: Double, sigma: Double, x: Double): Double = {
+        // put your code here
+    }
+  learner_created: false
+status: Unchecked
+record: -1

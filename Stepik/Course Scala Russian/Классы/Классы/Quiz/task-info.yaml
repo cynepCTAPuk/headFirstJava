@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Класс может содержать любые действия помимо объявлений методов и полей
+- text: При объявлении переменных в основном конструкторе класса необходимо написать
+    val перед ними, если они НЕ должны стать членами класса
+- text: При объявлении переменных в основном конструкторе класса необходимо написать
+    val перед ними, если они должны стать членами класса
+- text: Может иметь только один конструктор
+- text: Класс должен содержать только объявления методов и полей
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Task.scala
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    object Task {
+      def main(args: Array[String]): Unit = {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

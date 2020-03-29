@@ -1,0 +1,10 @@
+type: code
+custom_name: Programming
+files:
+- name: src/CreditBank.scala
+  visible: true
+  text: "class CreditBank {\n  def issueCredit = println(\"\" + ???) //for example:\
+    \ a + b + c + d + e + f \n}"
+  learner_created: false
+status: Unchecked
+record: -1

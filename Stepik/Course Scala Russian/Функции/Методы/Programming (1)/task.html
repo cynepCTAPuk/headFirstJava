@@ -1,0 +1,15 @@
+<html>
+ <head></head>
+ <body>
+  <p>Представьте, что банк решил подарить несколько долларов клиентам, которые держат на мультивалютном вкладе от 500$ и более. </p>
+  <ul>
+   <li>Функция <code>getGift: () =&gt; Int</code> возвращает размер подарка (при тестировании передается на вход программе), а также выводит на экран фразу "The gift is received". <br></li>
+   <li>Метод <code>sendGift</code> принимает два аргумента: текущую сумму на счете и размер подарка, а затем суммирует их в соответствии с условием выше. <br></li>
+   <li>В массиве <b>accountAmounts</b> лежат текущие суммы вкладов клиентов, которые отображаются на новые значения. <br></li>
+  </ul>
+  <p>Результат выводится в консоль:</p>
+  <pre><pre><code class="language-scala">val newAmounts = accountAmounts.map(amount =&gt; sendGift(amount, getGift()))
+println(newAmounts)</code></pre> </pre>
+  <p><b>Задание: </b>исправить код так, чтобы фраза&nbsp; "The gift is received" выводилась на экран только в том случае, если клиент получает подарок.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>100<br><b>Sample Output:</b><br>The gift is received<br>The gift is received<br>List(100, 200, 600, 300, 800)<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

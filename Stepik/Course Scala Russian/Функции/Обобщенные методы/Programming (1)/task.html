@@ -1,0 +1,19 @@
+<html>
+ <head></head>
+ <body>
+  <b>Задание:</b> напишите обобщенный метод 
+  <code>middle</code> возвращающий средний элемент из любого экземпляра 
+  <code>Iterable[T]</code> Если элементов четное число, необходимо выбрать элемент с бОльшим порядковым номером.
+  <div>
+   <b>Подсказка. </b>Один из возможных вариантов решения:
+  </div>
+  <div>
+   <ol>
+    <li>Узнать размер последовательности: метод <code>data.size: Int</code></li>
+    <li>Разбить последовательность на две по индексу: <code>data.splitAt(n: Int): (Iterable[T], Iterable[T])</code> </li>
+    <li>Из полученного кортежа взять правую последовательность (поле <code>tuple._2: Iterable[T]</code>)</li>
+    <li>Взять первый элемент последовательности (<code>iterable.head: T</code>)</li>
+   </ol>
+  </div>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

@@ -1,0 +1,28 @@
+<html>
+ <head></head>
+ <body>
+  В объекте LessonData определен метод searchInArray,&nbsp; который находит в массиве элементы, удовлетворяющие заданному условию:
+  <div></div>
+  <pre><code class="language-scala">object LessonData{
+    def searchInArray(cond: Int =&gt; Boolean, array: List[Int]): List[Int] = {
+&nbsp; &nbsp;     array.filter(cond)
+
+    }
+}</code></pre>
+  <div>
+   <br>
+  </div>
+  <div>
+   <b>Задание: </b>исправьте определение функции 
+   <code>searchOdd: List[Int] =&gt; List[Int]</code> так, чтобы программа стала компилироваться. Добавлять вывод на экран не нужно.
+   <br>
+  </div>
+  <div>
+   <b>Пример</b> использования:
+  </div>
+  <div>
+   <pre><code>println(searchOdd(List(8,11,12))) // List(11)</code></pre>
+   <br>
+  </div>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

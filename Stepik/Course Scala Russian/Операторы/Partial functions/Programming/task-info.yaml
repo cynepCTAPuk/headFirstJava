@@ -1,0 +1,8 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: 'val log: PartialFunction[Double, Double] = ???'
+  learner_created: false
+status: Unchecked
+record: -1

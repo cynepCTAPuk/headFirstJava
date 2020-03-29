@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: У обычных классов не определен метод copy
+- text: У case-класса переопределен метод equals, сравнивающий case-классы поэлементно
+- text: Case-классы имеют метод eq, позволяющий сравнивать их поэлементно
+- text: Case-классы имеют методы apply и unapply
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Task.scala
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    object Task {
+      def main(args: Array[String]): Unit = {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

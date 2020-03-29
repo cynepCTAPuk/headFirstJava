@@ -1,0 +1,14 @@
+<html>
+ <head></head>
+ <body>
+  <p>Объявления каких классов <b>не</b> нарушают ограничения, наложенные на type-параметр в трейте <code>Marker</code>?</p>
+  <pre><code class="language-scala">trait Marker[T &gt;: Null &lt;: AnyRef]
+
+case object A extends Marker[Any]
+case object B extends Marker[AnyRef]
+case object C extends Marker[Int]
+case object D extends Marker[String]
+case object E extends Marker[Null]
+case object F extends Marker[Nothing]</code></pre>
+ </body>
+</html>

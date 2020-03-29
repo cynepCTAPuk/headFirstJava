@@ -1,0 +1,14 @@
+<html>
+ <head></head>
+ <body>
+  <p> Объекты-компаньоны, в которых реализован метод <strong>unapply </strong>называются <strong>extractor objects</strong>. Этот метод позволяет "разбирать" объекты, получая аргументы, из которых он был создан. Например, в кейс-классах, с которыми вы уже немного сталкивались, он реализован по умолчанию. Это позволяет записывать подобные конструкции pattern matching для кейс-классов:</p> 
+  <pre><code class="language-scala">case class Dog(name: String, ownerName: String)
+val rex = Dog("Rex", "Josh")
+val match {
+ case Dog(name, ownerName) =&gt; println(s"My owner is $ownerName")
+ case _ =&gt; println("I am not a dog")
+}</code></pre> 
+  <p> Ваша задача - реализовать метод <strong>unapply </strong>у объекта <strong>FacedString</strong>﻿. Считать из потока ввода строку, сделать паттерн матчинг с ней, который определит, могла ли она быть результатом некоторого вызова apply. Если получилось выделить строку, от которой она была сконструирована, вывести эту строку на экран, если нет - вывести "Could not recognize string".</p> 
+  <p> Почитать про extractor objects можно <a href="https://docs.scala-lang.org/tour/extractor-objects.html" rel="nofollow noopener noreferrer">тут</a>.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>*_*test*_*<br><b>Sample Output:</b><br>test<br><br><b>Sample Input:</b><br>*_*test<br><b>Sample Output:</b><br>Could not recognize string<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

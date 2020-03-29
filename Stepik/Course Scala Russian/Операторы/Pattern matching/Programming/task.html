@@ -1,0 +1,34 @@
+<html>
+ <head></head>
+ <body>
+  <div>
+   Сase-класс 
+   <code>Pet(name: String, says: String)</code> описывает питомца, с именем 
+   <code>name</code>, издающего звук 
+   <code>says</code>.
+  </div>
+  <br>
+  <br> Известно, что все, кто говорит "meow" или "nya" - кошки, все, кого зовут "Rex" - собаки, а цифры "0" или "1" (обратите внимание, что нужно проверять наличие 
+  <i>символов</i>, а не целочисленных типов) в строке says есть только у роботов. (Кошек и роботов не могут звать "Rex", собаки не мяукают)
+  <br>
+  <br> 
+  <div>
+   Используя pattern-matching, определите вид питомца в переменной 
+   <code>pet</code>. Выведите "cat" для кошек, "dog" для собак, "robot" для роботов и "unknown" иначе.
+   <br>
+   <br>
+  </div> 
+  <pre><code class="language-scala">case class Pet(name: String, says: String)
+val pet = Pet(...)
+
+// Ваш код
+val kind = pet match {
+ // Напишите нужные case
+}
+println(kind)</code></pre>
+  <div>
+   <br>
+  </div> 
+  <i>Считывать ничего не нужно, переменная <code>pet</code> уже проинициализирована</i>.
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 3 seconds</font><br><br>

@@ -1,0 +1,73 @@
+<html>
+ <head></head>
+ <body>
+  <p> Многие играли в игру&nbsp; Морской бой (<a href="https://goo.gl/SMWykY" rel="nofollow noopener noreferrer">https://goo.gl/SMWykY</a>). В игре используется квадратное поле клеток, на которое перед началом игры каждый из игроков расставляет свои корабли.</p>
+  <p> Представим клетку корабля как пару координат этой клетки на поле. С ключевым словом <b>type </b>в<b></b>ы познакомитесь в скором времени, сейчас достаточно знать, что оно позволяет задать псевдоним для некоторого типа, который мы не хотим прописывать каждый раз, когда он встречается.<b></b></p>
+  <pre><code class="language-scala">type Point = (Int, Int)</code></pre> 
+  <div>
+    Игровое поле может быть представлено как двумерный массив, хранящий для каждой ячейки булево значение, о том стоит ли на этой клетке корабль:
+   <br>
+   <pre><code class="language-scala">type Field = Vector[Vector[Boolean]]</code></pre>
+   <p> Проинтерпретируем корабль как список точек:<br></p>
+   <pre><code class="language-scala">type Ship = List[Point]</code></pre>
+   <p><br></p>
+   <p> А множество всех кораблей на поле как ассоциативный массив. По строковому ключу (имени корабля) находится список точек корабля.<br></p>
+   <pre><code class="language-scala">type Fleet = Map[String, Ship]</code></pre> 
+  </div>
+  <div>
+    Игра описывается её игровым полем и списком кораблей:
+  </div>
+  <div>
+   <pre><code class="language-scala">type Game = (Field, Fleet)</code></pre>
+   <br>
+  </div>
+  <div>
+    Обращаем внимание на то, что все коллекции 
+   <b>иммутабельны</b>.
+   <br>
+  </div>
+  <div>
+    Данные типы объявлены в объекте 
+   <b>Naval </b>и уже импортированы в шаблоне.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div style="text-align: center;">
+   <b> Входные данные</b>
+   <br>
+  </div>
+  <div style="text-align: left;">
+   <b></b> На вход в первой строке вам даётся число кораблей, которые игрок хочет добавить на поле.
+   <b><br></b>
+  </div>
+  <div style="text-align: left;">
+    Далее мы задаем положения кораблей: первая строка - название корабля (одним словом) и число клеток, занимаемых им, последующие строки - координаты его клеток, по одной клетке (соответственно, по две координаты) на строку.
+   <br>
+  </div>
+  <div style="text-align: center;">
+   <b><br></b>
+  </div>
+  <div style="text-align: center;">
+   <b>Задание</b>
+  </div>
+  <div style="text-align: left;">
+   <b></b> Корабли добавляются на поле 
+   <b>field </b>(квадратное поле размера 10 на 10 клеток, задано заранее, булево значение во всех его клетках проинициализировано как 
+   <b>false</b>, координаты нумеруются с нуля) в такой же очередности, как они подаются на вход.
+  </div>
+  <div style="text-align: left;">
+    Необходимо проверять условия:
+  </div>
+  <div style="text-align: left;">
+   <ol>
+    <li>Корабль не имеет изгибов (ширина корабля всегда единица). <br></li>
+    <li>Длина корабля не больше четырёх.<br></li>
+    <li>Корабли могут примыкать к границам поля, но не могут касаться друг друга, даже углами своих клеток.<br></li>
+   </ol>
+   <p><b> Выведите имена кораблей, которые получилось расставить на поле.</b></p>
+   <p> Для удобства предлагаем реализовать методы, сигнатуры которых написаны в шаблоне.<br></p>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>2<br>MillenniumFalcon 4<br>2 5<br>3 5<br>4 5<br>5 5<br>Varyag 1<br>9 9<br><b>Sample Output:</b><br>MillenniumFalcon<br>Varyag<br><br><b>Sample Input:</b><br>3<br>BlackPearl 3<br>1 6<br>1 7<br>1 8<br>MillenniumFalcon 4<br>2 5<br>3 5<br>4 5<br>5 5<br>Varyag 1<br>9 9<br><b>Sample Output:</b><br>BlackPearl<br>Varyag<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

@@ -1,0 +1,18 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: |-
+    import scala.io.StdIn
+
+    object Main {
+    def main(args: Array[String]) {
+        val tokenDeleter = new // ???
+
+        val shortener = new // ???
+
+        val toLowerConvertor = new // ???
+    }}
+  learner_created: false
+status: Unchecked
+record: -1

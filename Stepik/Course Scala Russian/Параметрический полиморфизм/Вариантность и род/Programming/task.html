@@ -1,0 +1,20 @@
+<html>
+ <head></head>
+ <body>
+  <p>Заданы тип A и его подтип B, а также функции, которые умеют распечатывать их поле value:</p>
+  <pre><code class="language-scala">val printA = FunctionPrint[A]("A-value:")
+val printB = FunctionPrint[B]("B-value:")
+
+class FunctionPrint[T &lt;: A](prefix: String) {
+&nbsp; def apply(t: T): Unit = println(prefix + " " + t.value)
+}</code></pre> Также существует важный метод 
+  <code>methodPrint</code>, который принимает на вход экземпляр типа B и функцию, которая умеет распечатывать его значение. 
+  <code>methodPrint(printB, objB)</code> компилируется без проблем, однако, иногда нужно задействовать функцию 
+  <code>printA</code>.
+  <p>Действительно: <code>B &lt;: A</code>, поэтому любая <code>f: A =&gt; Any</code> умеет работать и с B. Но есть один нюанс: в текущей реализации <code>printA</code> инвариантна к <code>printB</code> (не является ни родителем, ни наследником), поэтому эту функцию нельзя передать в метод <code>methodPrint</code>.</p>
+  <p><b>Задание: </b>исправьте компиляцию кода. В конце будет вызываться: <b></b></p>
+  <pre><code class="language-scala">methodPrint(printA, objB)</code></pre>
+  <br>
+  <p><b>Подсказка: </b>этот пример демонстрирует, почему функции в Scala контринвариантны по аргументам.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>A-value:<br>B-value:<br><b>Sample Output:</b><br>B-value: It is a B.value<br>A-value: It is a B.value<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

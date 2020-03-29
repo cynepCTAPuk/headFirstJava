@@ -1,0 +1,16 @@
+<html>
+ <head></head>
+ <body>
+  <p> Дан трейт</p>
+  <pre><code class="language-scala">trait StringProcessor {
+  def process(input: String): String
+}</code></pre> Напишите несколько его реализаций:
+  <br>
+  <ol>
+   <li><b>tokenDeleter </b>- в методе process обрабатывает строку, удаляя из неё все знаки препинания.<br></li>
+   <li><b>toLowerConvertor</b> - заменяет все прописные буквы на строчные.</li>
+   <li><b>shortener</b> - если строка имеет размер больше 20 символов, он оставляет первые 20 и добавляет к ней "...".</li>
+  </ol>
+  <p> Реализовав их, считайте из стандартного потока ввода строку и примените к ней все написанные преобразования вызовом <b>.process</b> у каждого из них. Порядок: перевести в нижний регистр, удалить знаки препинания, сократить<br></p>
+ </body>
+</html><br><b>Sample Input:</b><br>This is a Wonderful Test!<br><b>Sample Output:</b><br>this is a wonderful ...<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>

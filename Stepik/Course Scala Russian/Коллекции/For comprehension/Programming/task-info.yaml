@@ -1,0 +1,8 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: println((list1.head, list2.head))
+  learner_created: false
+status: Unchecked
+record: -1

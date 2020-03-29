@@ -1,0 +1,1 @@
+def swap3(tuple: (Int, Int, Int)): (Int, Int, Int) = ???

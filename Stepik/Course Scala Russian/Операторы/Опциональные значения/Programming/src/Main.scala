@@ -1,0 +1,1 @@
+def foo(list: List[Int]): Int = ???

@@ -1,0 +1,13 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: |-
+    import scala.math.BigDecimal.RoundingMode.HALF_UP
+
+    def crispsWeight(weight: BigDecimal, potatoWaterRatio: Double, crispsWaterRatio: Double): BigDecimal = {
+        // your code here
+    }
+  learner_created: false
+status: Unchecked
+record: -1

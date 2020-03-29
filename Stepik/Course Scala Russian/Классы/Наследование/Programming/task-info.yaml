@@ -1,0 +1,8 @@
+type: code
+files:
+- name: src/Cat.scala
+  visible: true
+  text: class Cat //...
+  learner_created: false
+status: Unchecked
+record: -1

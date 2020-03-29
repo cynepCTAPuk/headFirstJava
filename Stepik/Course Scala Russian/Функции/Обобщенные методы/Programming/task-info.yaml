@@ -1,0 +1,10 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: "import scala.annotation.tailrec\n@tailrec\ndef fibs(n: Int, currentNumber:\
+    \ Int = 1, f1: Long = 0, f2: Long = 1): Long = {\n    if (n == currentNumber)\n\
+    \        f2\n    else {\n        //put your code here  \n    }\n}\nprintln(fibs(n))"
+  learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,8 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: 'def swap3(tuple: (Int, Int, Int)): (Int, Int, Int) = ???'
+  learner_created: false
+status: Unchecked
+record: -1

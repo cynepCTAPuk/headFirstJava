@@ -1,0 +1,9 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: "// Main реализовывать не нужно    \n// напишите вашу реализацию класса Point\
+    \ и его компаньона"
+  learner_created: false
+status: Unchecked
+record: -1

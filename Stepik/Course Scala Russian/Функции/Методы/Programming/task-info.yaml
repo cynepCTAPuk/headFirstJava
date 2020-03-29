@@ -1,0 +1,13 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: |-
+    def fibs(num: Int) = {
+      if (num == 1) 1
+      else if (num == 2) 1
+      //else ???
+    }
+  learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,11 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: |-
+    def isCapital(word: String, pos: Int): Boolean = {
+        // your code here
+    }
+  learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,57 @@
+<html>
+ <head></head>
+ <body>
+  <p> <b>Aux</b> - паттерн может быть использован для создания обобщённых типов без использования тайп-параметров. Данная задача - пример такого использования.</p>
+  <p> Реализуем компактные представления массива <b>Char </b>и массивов <b>Boolean</b> (для Boolean массивы не больше 8 и 64 элементов) в памяти.<br></p>
+  <p> Заведём вспомогательный трейт:</p>
+  <pre><pre><pre><code class="language-scala">trait Vect extends Any{
+  type Item
+  def length: Int
+  def get(index: Int): Item
+  def set(index: Int, item: Item): Aux[Item]
+}
+
+object Vect {
+&nbsp; type Aux[I] = Vect { type Item = I }
+}</code></pre>
+ Реализуем оптимальный массив <b>Char</b>:<pre><code class="language-scala">final case class StringVect(str: String) extends  AnyVal with Vect {
+  type Item = Char
+  def length                                             = str.length
+  def get(index: Int)                                     = str.charAt(index)
+  def set(index: Int, item: Char): Aux[Char] = StringVect(str.updated(index, item))
+}</code></pre> Ваша задача - реализовать недостающие метода интерфейса <b>Vect </b>у <b>BoolVect64 </b>и <b>BoolVect8</b>:<pre><code class="language-scala">final case class BoolVect64(values: Long) extends AnyVal with Vect {
+  type Item = Boolean
+  def length          = 64
+  def get(index: Int) = ???
+  def set(index: Int, item: Boolean) = ???
+}
+
+final case class BoolVect8(values: Byte) extends AnyVal with Vect {
+  type Item = Boolean
+  def length = 8
+  def get(index: Int) = ???
+  def set(index: Int, item: Boolean) = ???
+}</code></pre><br></pre></pre>
+  <div>
+   &nbsp; &nbsp; Обратите внимание, что разряды в двоичной записи числа возрастают справа налево. Однако 
+   <code>BoolVect8(1)</code> должен представляться в виде 
+   <code>List(true, false, false, false, false, false, false, false).</code>
+   <div>
+    <i>&nbsp; &nbsp; </i>
+   </div>
+   <div>
+    <i>&nbsp; &nbsp; Подсказка: используйте битовые операции.</i>
+    <br>
+    <div>
+      Также реализуйте вспомогательный&nbsp; метод 
+     <b>toList</b>, возвращающий список элементов переданного массива:
+     <i><br></i>
+    </div>
+    <div>
+     <pre><code class="language-scala">def toList(vect: Vect): List[vect.Item] = ???</code></pre> Ничего считывать или выводить не надо. Просто реализуйте недостающие методы.
+     <br>
+    </div>
+   </div>
+  </div>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 9 seconds</font><br><br>
