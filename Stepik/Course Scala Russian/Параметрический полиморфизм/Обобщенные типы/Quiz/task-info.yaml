@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: A
+- text: B
+- text: C
+- text: D
+- text: E
+- text: F
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Task.scala
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    object Task {
+      def main(args: Array[String]): Unit = {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

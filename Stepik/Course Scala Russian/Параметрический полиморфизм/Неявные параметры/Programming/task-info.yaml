@@ -1,0 +1,13 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: |-
+    type Calc[T] = Map[String, T] => T
+    implicit def numericExpr[T: Numeric]: Expr[Calc[T]] = new Expr[Calc[T]] {
+      import Numeric.Implicits._
+      // implement all needed methods
+    }
+  learner_created: false
+status: Unchecked
+record: -1

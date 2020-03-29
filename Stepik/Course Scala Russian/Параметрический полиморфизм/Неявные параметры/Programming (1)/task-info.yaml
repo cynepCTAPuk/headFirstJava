@@ -1,0 +1,17 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.scala
+  visible: true
+  text: |-
+    implicit val stringOrderExpr: Expr[Print] = new Expr[Print] {
+      override def literalInt(value: Int) = ???
+      override def variable(name: String): Print = ???
+      override def times(x: Print, y: Print): Print = ???
+      override def plus(x: Print, y: Print): Print  = ???
+      override def minus(x: Print, y: Print): Print = ???
+      override def negate(x: Print): Print          = ???
+    }
+  learner_created: false
+status: Unchecked
+record: -1

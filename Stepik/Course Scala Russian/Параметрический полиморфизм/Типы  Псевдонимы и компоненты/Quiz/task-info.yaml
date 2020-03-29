@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: type Kleisli[F[_], A, B] = A =&gt; F[B]
+- text: type MyEither[A] = Either[A, B]
+- text: type Pair[A] = Tuple2[A, A]
+- text: type Error[A] = Either[String, A]
+- text: type Kleisli[F, A, B] = A =&gt; F[B]
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Task.scala
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    object Task {
+      def main(args: Array[String]): Unit = {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

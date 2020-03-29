@@ -1,0 +1,15 @@
+type: code
+files:
+- name: src/Main.scala
+  visible: true
+  text: |-
+    case class Pair (first: T, second: S) {
+        //...
+    }
+
+    val pair = Pair(123, "Oleg").swap
+    require(pair.first ==  "Oleg")
+    require(pair.second == 123)
+  learner_created: false
+status: Unchecked
+record: -1

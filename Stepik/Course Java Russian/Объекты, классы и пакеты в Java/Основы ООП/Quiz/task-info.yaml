@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Класс — это конкретный экземпляр объекта.
+- text: Объект — это конкретный экземпляр класса.
+- text: Разницы нет, это одно и то же.
+- text: В Java есть только классы, объектов не бывает.
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

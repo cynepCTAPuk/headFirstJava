@@ -1,0 +1,22 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: 'def f[M &lt;: IndexedSeq[_]](data: M) = println(data.head)'
+- text: 'def f(x: _) = println("ignored")'
+- text: 'def f(data: Seq[_]): List[_] = data.toList;  val x: Int = f(Seq(1,2,3)).head'
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Task.scala
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    object Task {
+      def main(args: Array[String]): Unit = {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
