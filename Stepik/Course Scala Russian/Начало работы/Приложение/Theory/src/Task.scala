@@ -3,5 +3,6 @@
 object Task {
   def main(args: Array[String]): Unit = {
     // put your code here
+    println("Hello World!");
   }
 }

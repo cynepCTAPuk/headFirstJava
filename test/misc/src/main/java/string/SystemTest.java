@@ -1,5 +1,7 @@
 package string;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 
 public class SystemTest {
@@ -17,5 +19,10 @@ public class SystemTest {
         System.out.println("Interim = " + version.interim());
         System.out.println("Update = " + version.update());
         System.out.println("Patch = " + version.patch());
+
+//        System.out.println(System.getProperties());
+
+        Path resourceDirectory = Paths.get("src","test","resources");
+        System.out.println(resourceDirectory);
     }
 }
