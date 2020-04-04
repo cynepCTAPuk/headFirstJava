@@ -1,7 +1,4 @@
 package date_time;
-/**
- *
- */
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
