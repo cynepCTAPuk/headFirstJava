@@ -30,7 +30,7 @@ public class SendMail {
 
 // Отправка сообщения
         //логин и пароль gmail пользователя
-        String userLogin = "CTAPuk@gmail.com";
+        String userLogin = "user@gmail.com";
         String userPassword = "password";
 
         //авторизуемся на сервере:

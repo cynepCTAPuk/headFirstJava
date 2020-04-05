@@ -1,30 +1,30 @@
 package web;
 /**
  * https://www.tutorialspoint.com/javamail_api/javamail_api_gmail_smtp_server.htm
+ * https://stackoverflow.com/questions/16117365/sending-mail-attachment-using-java
  * https://myaccount.google.com/lesssecureapps
  */
 
 import java.util.Properties;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 
 public class SendEmailUsingGMailSMTP {
     public static void main(String[] args) {
-        // Recipient's email ID needs to be mentioned.
-        String to = "vasily.kosyuk@yandex.ru";//change accordingly
+        String to = "to@gmail.com";             // Recipient's email ID needs to be mentioned.
+        String from = "from@gmail.com";         // Sender's email ID needs to be mentioned
+        String file = "c:/000/berns.txt";   // Attachment
 
-        // Sender's email ID needs to be mentioned
-        String from = "CTAPuk@gmail.com";//change accordingly
-        final String username = "CTAPuk@gmail.com";//change accordingly
-        final String password = "password";//change accordingly
+        final String user = "user@gmail.com";
+        final String password = "password";
 
-        // Assuming you are sending email through relay.jangosmtp.net
         String host = "smtp.gmail.com";
 
         Properties props = new Properties();
@@ -37,24 +37,30 @@ public class SendEmailUsingGMailSMTP {
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(username, password);
+                        return new PasswordAuthentication(user, password);
                     }
                 });
-
         try {
-            Message message = new MimeMessage(session);            // Create a default MimeMessage object.
-            message.setFrom(new InternetAddress(from));            // Set From: header field of the header.
-            // Set To: header field of the header.
+            Message message = new MimeMessage(session); // Create a default MimeMessage object.
+            message.setFrom(new InternetAddress(from)); // Set From: header field of the header.
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            message.setSubject("Testing Subject");            // Set Subject: header field
-            // Now set the actual message
-            message.setText("Hello, this is sample for to check send email using JavaMailAPI ");
+            message.setSubject("Testing Subject");      // Set Subject: header field
+            message.setText("Testing JavaMailAPI");     // Now set the actual message
+
+            Multipart multipart = new MimeMultipart();
+            MimeBodyPart attachmentBodyPart = new MimeBodyPart();
+
+            DataSource source = new FileDataSource(file);
+            attachmentBodyPart.setDataHandler(new DataHandler(source));
+            attachmentBodyPart.setFileName("Name of Attachment");
+            multipart.addBodyPart(attachmentBodyPart);
+            message.setContent(multipart);
 
             Transport.send(message);            // Send message
-
-            System.out.println("Sent message successfully....");
+//            System.out.println("Sent message successfully....");
+            System.out.println("Письмо было отправлено.");
         } catch (MessagingException e) {
-            throw new RuntimeException(e);
+            System.out.println("Ошибка при отправке: " + e.toString());
         }
     }
 }
