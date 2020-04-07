@@ -1,12 +1,4 @@
-// You can experiment here, it won’t be checked
-
-class Task {
-    public static void main(String[] args) {
-        Robot robot = new Robot(0, 0, Direction.UP);
-        Robot.moveRobot(robot, 3, -2);
-        System.out.println(robot.getX() + " " + robot.getY() + " " + robot.getDirection());
-    }
-}
+package robot;
 
 class Robot {
     private int x;
@@ -155,11 +147,4 @@ class Robot {
         if (direction == Direction.LEFT) x--;
         if (direction == Direction.RIGHT) x++;
     }
-}
-
-enum Direction {
-    UP,
-    DOWN,
-    LEFT,
-    RIGHT
 }
