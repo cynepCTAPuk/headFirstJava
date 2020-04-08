@@ -1,4 +1,4 @@
-package logical;
+package logical.shape;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +18,12 @@ public class SquareOfPolygon {
         for (int i = 0; i < polygon.size(); i++) {
             Point p1 = polygon.get(i);
             Point p2 = polygon.get(i == polygon.size() - 1 ? 0 : i + 1);
-            int x1 = p1.x;
-            int x2 = p2.x;
-            int y1 = p1.y;
-            int y2 = p1.y;
-            double width = p2.x - p1.x;
-            double height = p2.y + p1.y;
+            double x1 = p1.getX();
+            double x2 = p2.getX();
+            double y1 = p1.getY();
+            double y2 = p2.getY();
+            double width = p2.getX() - p1.getX();
+            double height = p2.getY() + p1.getY();
             double s = width * height;
             System.out.println(x1 + ":" + y1 + " " + x2 + ":" + y2 + " = " + s + " ");
             square += s;

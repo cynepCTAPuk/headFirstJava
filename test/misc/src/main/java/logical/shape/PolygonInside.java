@@ -1,4 +1,4 @@
-package logical;
+package logical.shape;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,7 +42,7 @@ public class PolygonInside {
         for (int i = 0; i < triAngle.size(); i++) {
             Point p1 = triAngle.get(i);
             Point p2 = triAngle.get(i == triAngle.size() - 1 ? 0 : i + 1);
-            double s = (p2.x - p1.x) * (p1.y + p2.y) / 2.0;
+            double s = (p2.getX() - p1.getX()) * (p1.getY() + p2.getY()) / 2.0;
             square += s;
         }
         return Math.abs(square);
