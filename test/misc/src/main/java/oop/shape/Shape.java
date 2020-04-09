@@ -1,6 +1,6 @@
-package logical.shape;
+package oop.shape;
 
-public class Shape {
+public abstract class Shape {
     private final Color color;
 
     public Shape(Color color) {
@@ -11,7 +11,10 @@ public class Shape {
         return color;
     }
 
+/*
     public double getArea() {
         return Double.NaN;
     }
+*/
+    public abstract double getArea();
 }

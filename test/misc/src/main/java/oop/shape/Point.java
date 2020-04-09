@@ -1,4 +1,4 @@
-package logical.shape;
+package oop.shape;
 
 class Point {
     private final double x;

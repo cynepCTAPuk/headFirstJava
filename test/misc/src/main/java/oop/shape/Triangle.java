@@ -1,4 +1,4 @@
-package logical.shape;
+package oop.shape;
 
 class Triangle extends Shape {
     private final Point a;

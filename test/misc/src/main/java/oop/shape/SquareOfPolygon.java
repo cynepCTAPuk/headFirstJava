@@ -1,22 +1,23 @@
-package logical.shape;
+package oop.shape;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SquareOfTriangle {
+public class SquareOfPolygon {
     public static void main(String[] args) {
-        List<Point> triangle = new ArrayList<>();
-        triangle.add(new Point(0, 0));
-        triangle.add(new Point(8, 3));
-        triangle.add(new Point(4, 0));
-        System.out.println(squareTriangle(triangle));
+        List<Point> polygon = new ArrayList<>();
+        polygon.add(new Point(0, -1));
+        polygon.add(new Point(0, 9));
+        polygon.add(new Point(10, 9));
+        polygon.add(new Point(10, -1));
+        System.out.println(squarePolygon(polygon));
     }
 
-    public static double squareTriangle(List<Point> triangle) {
+    public static double squarePolygon(List<Point> polygon) {
         double square = 0;
-        for (int i = 0; i < triangle.size(); i++) {
-            Point p1 = triangle.get(i);
-            Point p2 = triangle.get(i == triangle.size() - 1 ? 0 : i + 1);
+        for (int i = 0; i < polygon.size(); i++) {
+            Point p1 = polygon.get(i);
+            Point p2 = polygon.get(i == polygon.size() - 1 ? 0 : i + 1);
             double x1 = p1.getX();
             double x2 = p2.getX();
             double y1 = p1.getY();

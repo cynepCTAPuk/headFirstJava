@@ -1,4 +1,4 @@
-package logical.shape;
+package oop.shape;
 
 public class Square extends Shape {
     private final Point corner;

@@ -1,4 +1,4 @@
-package logical.shape;
+package oop.shape;
 
 import java.util.ArrayList;
 import java.util.Arrays;

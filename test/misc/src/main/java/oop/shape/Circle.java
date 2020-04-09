@@ -1,4 +1,4 @@
-package logical.shape;
+package oop.shape;
 
 public class Circle extends Shape {
     private final Point center;
