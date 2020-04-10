@@ -1,4 +1,4 @@
-package exceptions.task3806;
+package file.task3806;
 
 /* 
 Улучшения в Java 7 (try-with-resources)

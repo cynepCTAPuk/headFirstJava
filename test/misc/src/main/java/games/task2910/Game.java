@@ -6,7 +6,6 @@ import java.util.List;
 
 import static games.task2910.Constants.*;
 
-
 public class Game {
     private List<Sportsman> members;
     Sportsman controlSportsman;
