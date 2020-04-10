@@ -15,6 +15,7 @@ public class JavaRush {
         DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern(format2, ruLocale);
 
         LocalDateTime startJavaRush = LocalDate.parse("2019-11-19").atStartOfDay();
+        LocalDateTime finishJavaRush = LocalDate.parse("2020-04-10").atStartOfDay();
         LocalDateTime now = LocalDateTime.now();
         long days = startJavaRush.until(now, ChronoUnit.DAYS);
 
@@ -23,5 +24,6 @@ public class JavaRush {
 //        System.out.print(ChronoUnit.DAYS.between(startJavaRush, now));
         System.out.println("\t" + (days + 1) + "-й день с начала прохождения курса JavaRush");
         System.out.println("\t\tЭто было " + startJavaRush.format(formatter1));
+        System.out.println("Курс завершён - " + finishJavaRush.format(formatter1));
     }
 }
