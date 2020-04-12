@@ -1,28 +1,32 @@
-package robot;
+package org.stepic.java.robot;
 
-class Robot1 {
+class Robot2 {
     private int x;
     private int y;
     private Direction direction;
 
-    public Robot1(int x, int y, Direction direction) {
+    public Robot2(int x, int y, Direction direction) {
         this.x = x;
         this.y = y;
         this.direction = direction;
     }
 
-    public static void moveRobot(Robot1 robot, int toX, int toY) {
-        int steps = 1;
-        int s = 0;
-        while (robot.getX() != toX || robot.getY() != toY) {
-            if (s == 0) {
-                robot.turnLeft();
-                steps++;
-                s = steps / 2;
-            }
-            robot.stepForward();
-            s--;
-        }
+    public static void moveRobot(Robot2 robot, int toX, int toY) {
+        if (toX > robot.getX())
+            while (robot.getDirection() != Direction.RIGHT)
+                robot.turnRight();
+        else if (toX < robot.getX())
+            while (robot.getDirection() != Direction.LEFT)
+                robot.turnRight();
+        while (toX != robot.getX()) robot.stepForward();
+
+        if (toY > robot.getY())
+            while (robot.getDirection() != Direction.UP)
+                robot.turnRight();
+        else if (toY < robot.getY())
+            while (robot.getDirection() != Direction.DOWN)
+                robot.turnRight();
+        while (toY != robot.getY()) robot.stepForward();
     }
 
     public Direction getDirection() {
@@ -40,20 +44,20 @@ class Robot1 {
         return y;
     }
 
-    public void turnLeft() {
-        // повернуться на 90 градусов против часовой стрелки
+    public void turnRight() {
+        // повернуться на 90 градусов по часовой стрелке
         switch (direction) {
             case UP:
-                direction = Direction.LEFT;
+                this.direction = Direction.RIGHT;
                 break;
             case DOWN:
-                direction = Direction.RIGHT;
+                this.direction = Direction.LEFT;
                 break;
             case LEFT:
-                direction = Direction.DOWN;
+                this.direction = Direction.UP;
                 break;
             case RIGHT:
-                direction = Direction.UP;
+                this.direction = Direction.DOWN;
                 break;
             default:
         }

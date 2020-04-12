@@ -1,4 +1,4 @@
-package exceptions.calc;
+package org.stepic.java.calc;
 
 public class CalcutaltorException extends RuntimeException {
     public CalcutaltorException(String message) {

@@ -1,4 +1,4 @@
-package exceptions.calc;
+package org.stepic.java.calc;
 
 public class Test {
     public static double sqrt(double x) {

@@ -1,4 +1,4 @@
-package robot;
+package org.stepic.java.robot;
 
 enum Direction {
     UP,

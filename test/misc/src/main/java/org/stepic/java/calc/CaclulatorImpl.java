@@ -1,4 +1,4 @@
-package exceptions.calc;
+package org.stepic.java.calc;
 
 public class CaclulatorImpl implements Calculator {
     @Override

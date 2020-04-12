@@ -22,6 +22,9 @@ files:
       }
     }
   learner_created: false
-status: Unchecked
+status: Failed
 record: -1
+selected_options:
+- 4
+- 5
 custom_name: Quiz

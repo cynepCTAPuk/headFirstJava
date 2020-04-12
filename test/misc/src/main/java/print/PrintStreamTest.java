@@ -8,7 +8,7 @@ public class PrintStreamTest {
         PrintStream printStream = new PrintStream("c:/000/printStream.txt");
 
         printStream.println("Hello!");
-        printStream.println("I'm robot!");
+        printStream.println("I'm org.stepic.java.robot!");
         printStream.printf("My name is %s, my age is %d!", "Amigo", 18);
 
         printStream.close();
