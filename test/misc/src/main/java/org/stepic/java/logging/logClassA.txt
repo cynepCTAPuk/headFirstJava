@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-04-13T10:57:00.892895Z</date>
+  <millis>1586775420892</millis>
+  <nanos>895000</nanos>
+  <sequence>0</sequence>
+  <logger>org.stepic.java.logging.ClassA</logger>
+  <level>FINE</level>
+  <class>org.stepic.java.logging.ClassA</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>ConstructorA</message>
+</record>
+<record>
+  <date>2020-04-13T10:57:00.902868400Z</date>
+  <millis>1586775420902</millis>
+  <nanos>868400</nanos>
+  <sequence>2</sequence>
+  <logger>org.stepic.java.logging.ClassA</logger>
+  <level>INFO</level>
+  <class>org.stepic.java.logging.LogDemo1</class>
+  <method>configureLogging</method>
+  <thread>1</thread>
+  <message>ClassA-1</message>
+</record>
+<record>
+  <date>2020-04-13T10:57:00.942762Z</date>
+  <millis>1586775420942</millis>
+  <nanos>762000</nanos>
+  <sequence>3</sequence>
+  <logger>org.stepic.java.logging.ClassA</logger>
+  <level>INFO</level>
+  <class>org.stepic.java.logging.LogDemo1</class>
+  <method>configureLogging</method>
+  <thread>1</thread>
+  <message>ClassA-2</message>
+</record>
+</log>

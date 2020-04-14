@@ -6,5 +6,5 @@ files:
   text: "// write your answer here \n\nclass Task {\n  public static void main(String[]\
     \ args) {\n    // put your code here\n  }\n}\n"
   learner_created: false
-status: Solved
+status: Failed
 record: -1

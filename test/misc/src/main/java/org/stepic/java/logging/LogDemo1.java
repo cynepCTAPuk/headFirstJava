@@ -1,8 +1,11 @@
 package org.stepic.java.logging;
 
 
-import java.util.Arrays;
-import java.util.logging.Handler;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,34 +16,31 @@ import java.util.logging.Logger;
  */
 public class LogDemo1 {
     private static final Logger LOGGER = Logger.getLogger(LogDemo1.class.getName());
-    private static final Logger LOGGERA = Logger.getLogger("org.stepic.java.logging.ClassA");
-    private static final Logger LOGGERB = Logger.getLogger("org.stepic.java.logging.ClassB");
+    private static final Path pathPackage = Paths.get("./src/main/java/"
+            + LogDemo1.class.getPackage().getName().replace('.', '/'));
 
 
     public static void main(String[] args) {
-//        LOGGER.log(Level.INFO, "I'm logging");
-        // SEVERE , WARNING , INFO , CONFIG , FINE , FINER , FINEST
-//        LOGGER.warning("We have a problem!");
         configureLogging();
-//        LOGGER.log(Level.INFO, "Started with arguments: {0}", Arrays.toString(args));
     }
 
     private static void configureLogging() {
-        Logger A = Logger.getLogger("org.stepic.java.logging.ClassA");
-        Logger B = Logger.getLogger("org.stepic.java.logging.ClassB");
-        A.setLevel(Level.ALL);
-        B.setLevel(Level.WARNING);
-        A.setUseParentHandlers(true);
-        Handler[] handlers = A.getHandlers();
-        System.out.println(Arrays.toString(handlers));
+        Logger A = Logger.getLogger(org.stepic.java.logging.ClassA.class.getName());
+        Logger B = Logger.getLogger(org.stepic.java.logging.ClassB.class.getName());
+        A.setLevel(Level.FINE);
+        B.setLevel(Level.FINE);
+
+        try {
+            A.addHandler(new FileHandler(pathPackage + "/logClassA.txt"));
+            B.addHandler(new FileHandler(pathPackage + "/logClassB.txt"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        new ClassA();
+        new ClassB();
+        A.info("ClassA-1");
+        A.info("ClassA-2");
+        B.warning("ClassB");
     }
 }
 
-class ClassA {
-    private static final Logger LOGGER = Logger.getLogger(LogDemo1.class.getName());
-
-}
-
-class ClassB {
-    private static final Logger LOGGER = Logger.getLogger(LogDemo1.class.getName());
-}

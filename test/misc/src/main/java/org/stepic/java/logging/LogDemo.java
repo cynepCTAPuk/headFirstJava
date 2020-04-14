@@ -9,6 +9,10 @@ import java.util.logging.Logger;
  * To use this config start JVM with parameter:
  * -Djava.util.logging.config.file=logging.properties
  * file logging.properties is the root
+ *
+ * .level=ALL
+ * .handlers=java.util.logging.ConsoleHandler
+ * java.util.logging.ConsoleHandler.level=ALL
  */
 public class LogDemo {
     private static final Logger LOGGER = Logger.getLogger(LogDemo.class.getName());
