@@ -15,6 +15,7 @@ public class ReaderWriter {
 //        reader = new InputStreamReader(inputStream, Charset.forName("UTF-8"));
 
         Charset charset = StandardCharsets.UTF_8;
+        charset = StandardCharsets.US_ASCII;
         Writer writer = new OutputStreamWriter(outputStream, charset);
 
         int data;
