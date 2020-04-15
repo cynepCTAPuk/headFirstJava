@@ -11,7 +11,8 @@ import java.net.URL;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        getSite(new URL("http://javarush.ru/social.html"));
+//        getSite(new URL("http://javarush.ru/social.html"));
+        getSite(new URL("https://time.com"));
     }
 
     public static void getSite(URL url) {
@@ -28,12 +29,12 @@ public class Solution {
             OutputStreamWriter out = new OutputStreamWriter(outputStream);
             String write =
                     "GET "
-                            + path + " "
+//                            + path + " "
                             + protocol + "/1.1"
-                            + "\n"
-                            + "Host: "
-                            + host
-                            + "\n"
+                            + "\r\n"
+//                            + "Host: "
+//                            + host
+                            + "\r\n"
                     ;
             System.out.println(write);
             out.write(write);

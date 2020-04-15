@@ -12,8 +12,11 @@ public class FileFromWeb {
     public static void main(String[] args) {
         try {
             URL website = new URL("http://htmlbook.ru/html");
+            String outputFile = "c:/000/htmlbook_html.html";
+            website = new URL("http://htmlbook.ru/css");
+            outputFile = "c:/000/htmlbook_css.html";
             ReadableByteChannel rbc = Channels.newChannel(website.openStream());
-            FileOutputStream fos = new FileOutputStream("c:/000/information.html");
+            FileOutputStream fos = new FileOutputStream(outputFile);
             fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
             fos.close();
             rbc.close();

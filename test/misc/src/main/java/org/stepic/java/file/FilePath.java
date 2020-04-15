@@ -2,12 +2,9 @@ package org.stepic.java.file;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
+import java.nio.file.*;
 
-public class Main {
+public class FilePath {
     public static void main(String[] args) throws IOException {
         String separator = File.separator;
         char separatorChar = File.separatorChar;
@@ -25,7 +22,7 @@ public class Main {
 //        System.out.println(userDir);
 
         Path path = Paths.get("src/main/java/"
-                + Main.class.getPackage().getName().replace('.', '/')
+                + FilePath.class.getPackage().getName().replace('.', '/')
                 + "/Main.java");
         System.out.println(path);
         System.out.println(path.toAbsolutePath());
@@ -44,5 +41,25 @@ public class Main {
 //        File[] dirs = userDir.toFile().listFiles(File::isDirectory);
 //        Arrays.stream(dirs).forEach(System.out::println);
 
+/*
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(userDir, Main::dir)) {
+//        try (DirectoryStream<Path> stream = Files.newDirectoryStream(userDir, Main::file)) {
+            stream.forEach(System.out::println);
+        }
+*/
+        System.out.println(Paths.get("a\\..\\b\\c\\file.txt").toFile().getCanonicalPath());
+        System.out.println(Paths.get("a\\b\\..\\b\\c\\file.txt").toFile().getCanonicalPath());  // =
+        System.out.println(Paths.get("a\\b\\..\\file.txt").toFile().getCanonicalPath());
+        System.out.println(Paths.get("a\\b\\c\\file.txt").toFile().getCanonicalPath());         // =
+        System.out.println(Paths.get("a\\.\\b\\..\\c\\.file.txt").toFile().getCanonicalPath());
+
+    }
+
+    private static boolean dir(Path f) {
+        return Files.isDirectory(f);
+    }
+
+    private static boolean file(Path f) {
+        return Files.isRegularFile(f);
     }
 }
