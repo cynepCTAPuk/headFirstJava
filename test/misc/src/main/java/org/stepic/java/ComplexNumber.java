@@ -1,4 +1,4 @@
-package oop;
+package org.stepic.java;
 
 import java.util.Objects;
 
