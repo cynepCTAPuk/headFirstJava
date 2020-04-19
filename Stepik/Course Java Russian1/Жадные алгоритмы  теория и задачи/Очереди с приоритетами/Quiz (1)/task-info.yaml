@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Время работы операции ${\tt SiftUp}$ есть $\Theta(d\log_d n)$.
+- text: Время работы операции ${\tt SiftDown}$ есть $\Theta(\log_d n)$.
+- text: Время работы операции ${\tt SiftDown}$ есть $\Theta(d\log_d n)$.
+- text: Детьми вершины $i$ являются вершины $\{(i-1)d+2, \ldots, \min\{n, (i-1)d+d+1\}\}$.
+- text: Высота есть $\Theta(\log_dn)$.
+- text: Время работы операции ${\tt SiftUp}$ есть $\Theta(\log_d n)$.
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

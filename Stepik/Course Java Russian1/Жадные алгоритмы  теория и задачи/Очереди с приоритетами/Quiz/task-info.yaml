@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Массив $A[1..6]=[10, 1, 0, 0, 2, -3]$ является макс-кучей.
+- text: Массив $A[1..7]=[3, 8, 4, 9, 7, 5, 6]$ является мин-кучей.
+- text: Массив $A[1..12]=[3, 20, 4, 30, 21, 30, 5, 31, 60, 30, 21, 31]$ является мин-кучей.
+- text: Массив $A[1..12]=[3, 20, 6, 30, 21, 30, 5, 31, 60, 30, 31, 31]$ является мин-кучей.
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

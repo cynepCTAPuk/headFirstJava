@@ -15,20 +15,23 @@ public class CollectionMethods {
         System.out.println(list);
 */
 
-        Collection<?> collection = new LinkedList<>();
+        Collection<?> collection = new ArrayList<Object>();
         Object object = new Object();
 
 //        collection.addAll(Arrays.asList(object));
 //        collection.removeAll(object);
 //        collection.add(object);
 
-        collection.contains(object);
-        collection.toArray();
-
-        collection.size();
+        boolean contains = collection.contains(object);
+        Object[] array = collection.toArray();
+        int size = collection.size();
+        Iterator<?> iterator = collection.iterator();
         collection.clear();
 
-        Iterator iterator = collection.iterator();
+        System.out.println(contains);
+        System.out.println(Arrays.toString(array));
+        System.out.println(size);
+        System.out.println(iterator.hasNext());
 /*
         Set<Integer> set1 = new HashSet<>(Arrays.asList(1, 2, 3));
         Set<Integer> set2 = new HashSet<>(Arrays.asList(0, 1, 2));

@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: $\log_2n \cdot \log_32 = \log_3n$
+- text: $\log_3(2n)=\log_32\cdot\log_3n$
+- text: $2^{\log_2n}=n$
+- text: $n^{\log_37}=7^{\log_3n}$
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
