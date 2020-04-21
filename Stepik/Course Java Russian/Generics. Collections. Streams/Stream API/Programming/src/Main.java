@@ -1,7 +1,7 @@
-// write your answer here 
-
-class Task {
-  public static void main(String[] args) {
-    // put your code here
-  }
+public static IntStream pseudoRandomStream(int seed) {
+    return IntStream.iterate(seed, n -> n * n / 10 % 1000);
 }
+
+
+
+

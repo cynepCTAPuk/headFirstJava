@@ -1,7 +1,16 @@
-// write your answer here 
+public static <T> void findMinMax(
+        Stream<? extends T> stream,
+        Comparator<? super T> order,
+        BiConsumer<? super T, ? super T> minMaxConsumer) {
 
-class Task {
-  public static void main(String[] args) {
-    // put your code here
-  }
+    List<T> list = stream.collect(Collectors.toList());
+    if (list.isEmpty()) {
+        minMaxConsumer.accept(null,null);
+        return;
+    }
+    Optional<T> min = list.stream().min(order);
+    Optional<T> max = list.stream().max(order);
+    T a = min.get();
+    T b = max.get();
+    minMaxConsumer.accept(a, b);
 }

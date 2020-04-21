@@ -19,5 +19,9 @@ files:
       }
     }
   learner_created: false
-status: Unchecked
+status: Solved
 record: -1
+selected_options:
+- 0
+- 2
+- 3
