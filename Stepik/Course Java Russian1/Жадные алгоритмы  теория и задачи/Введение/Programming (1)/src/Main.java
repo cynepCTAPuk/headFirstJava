@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -25,12 +26,12 @@ class Main {
                     break;
                 }
             } else {
-                sum += w / volume * value;
+                sum += Math.round(w * value * 10.0 / volume) / 10;
                 break;
             }
         }
 //        Failed test #11 of 11. got: 1,232,250.998 expected: 1,232,251.0
-        System.out.printf("%d.%03d%n", sum / 1000, sum % 1000);
+        System.out.printf("%d.%03d%n", sum / 1_000, sum % 1_000);
     }
 
     private static class Item implements Comparable<Item> {
@@ -38,7 +39,7 @@ class Main {
         private final long volume;
 
         public Item(long value, long volume) {
-            this.value = value * 1000;
+            this.value = value * 1_000;
             this.volume = volume;
         }
 

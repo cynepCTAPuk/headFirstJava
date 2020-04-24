@@ -1,4 +1,4 @@
-package lafore.chap08.tree;// tree.java
+package chap08.tree;// tree.java
 // demonstrates binary tree
 // to run this program: C>java TreeApp
 

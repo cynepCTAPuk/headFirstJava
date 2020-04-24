@@ -1,4 +1,4 @@
-package lafore.chap08.tree;
+package chap08.tree;
 
 public class TreeTest {
     public static void main(String[] args) {

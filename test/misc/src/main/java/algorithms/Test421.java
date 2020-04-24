@@ -1,12 +1,36 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Scanner;
+package algorithms;
 
-class Main {
+import java.util.*;
+
+/**
+ * Stepik: кодирование Хаффмана
+ * По данной непустой строке ss длины не более 10^4, состоящей из строчных букв
+ * латинского алфавита, постройте оптимальный беспрефиксный код.
+ * В первой строке выведите количество различных букв kk, встречающихся в строке,
+ * и размер получившейся закодированной строки. В следующих kk строках запишите коды букв
+ * в формате "letter: code". В последней строке выведите закодированную строку.<p>
+ * Sample Input 1:<p>
+ * a<p>
+ * Sample Output 1:<p>
+ * 1 1<p>
+ * a: 0<p>
+ * 0<p>
+ * Sample Input 2:<p>
+ * abacabad<p>
+ * Sample Output 2:<p>
+ * 4 14<p>
+ * a: 0<p>
+ * b: 10<p>
+ * c: 110<p>
+ * d: 111<p>
+ * 01001100100111
+ */
+public class Test421 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+//        Scanner scanner = new Scanner(System.in);
+//        String input = scanner.nextLine();
+//        String input = "abacabad";
+        String input = "characternodemap";
 
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < input.length(); i++) {
@@ -46,8 +70,8 @@ class Main {
         System.out.println(characterNodeMap.size() + " " + sum);
         characterNodeMap.entrySet()
                 .stream()
-                .sorted((o1, o2) -> o1.getKey() - o2.getKey())
-                .forEach(a -> System.out.println(a.getKey() + ": " + a.getValue().code));
+                .sorted((o1, o2) -> o1.getValue().code.compareTo(o2.getValue().code))
+                .forEach(a -> System.out.println(a.getKey() + ":" + a.getValue().code));
         System.out.println(stringBuilder);
     }
 
@@ -70,7 +94,7 @@ class Main {
 
         @Override
         public String toString() {
-            return "{freq=" + freq + ", code='" + code + '\'' + '}';
+            return "{freq=" + freq + ", code=" + code + '}';
         }
     }
 

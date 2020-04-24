@@ -1,4 +1,4 @@
-package lafore.chap08.tree;
+package chap08.tree;
 
 import java.io.*;
 import java.util.*;

@@ -1,4 +1,4 @@
-package lafore.chap08.tree;
+package chap08.tree;
 
 import java.io.*;
 import java.util.*;
@@ -8,12 +8,12 @@ public class HuffmanCode {
         final int sum;
         String code;
 
-        void buildCode(String code) {
-            this.code = code;
-        }
-
         public Node(int sum) {
             this.sum = sum;
+        }
+
+        void buildCode(String code) {
+            this.code = code;
         }
 
         @Override
@@ -57,20 +57,26 @@ public class HuffmanCode {
         int count;
     }
 
+    public static void main(String[] args) throws FileNotFoundException {
+        long startTime = System.currentTimeMillis();
+        new HuffmanCode().run();
+        long finishTime = System.currentTimeMillis();
+        System.out.println(finishTime - startTime + " ms");
+    }
+
     private void run() throws FileNotFoundException {
 //        String string = "SUSIE SAYS IT IS EASY";
-//        String string = "abacabad";
+        String string = "abacabad";
 //        String string = "abccccccc";
-        Scanner scanner = new Scanner(new File("C:/000/input.txt"));
-        String string = scanner.next();
-//        System.out.println(string);
+//        Scanner scanner = new Scanner(new File("C:/000/input.txt"));
+//        String string = scanner.next();
+        System.out.println(string);
 
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < string.length(); i++) { // fill
             char c = string.charAt(i);
-            if (map.containsKey(c)) {
-                map.put(c, map.get(c) + 1);
-            } else map.put(c, 1);
+            if (map.containsKey(c)) map.put(c, map.get(c) + 1);
+            else map.put(c, 1);
         }
 /*
         for (Character character : map.keySet()) {
@@ -79,16 +85,16 @@ public class HuffmanCode {
         System.out.println();
 */
         System.out.print("Sort by Value\t");
-        map.entrySet().stream().
-                sorted(Collections.reverseOrder
-                        (Map.Entry.comparingByValue())).
-                forEach(result -> System.out.print(result + "\t"));
+        map.entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                .forEach(result -> System.out.print(result + "\t"));
         System.out.println();
 
         System.out.print("Sort by Key  \t");
-        map.entrySet().stream().
-                sorted(Map.Entry.comparingByKey()).
-                forEach(result -> System.out.print(result + "\t"));
+        map.entrySet()
+                .stream().sorted(Map.Entry.comparingByKey())
+                .forEach(result -> System.out.print(result + "\t"));
         System.out.println();
 /*
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
@@ -120,16 +126,14 @@ public class HuffmanCode {
 
         System.out.println(map.size() + " " + sum);
         Node root = priorityQueue.poll();
-        if (map.size() == 1) {
-            root.buildCode("0");
-        } else root.buildCode("");
+        root.buildCode(map.size() == 1 ? "0" : "");
 
         PrintWriter printWriter = new PrintWriter("C:/000/output.txt");
-        String encodeString = "";
+        StringBuilder encodeString = new StringBuilder();
         for (int i = 0; i < string.length(); i++) {
             char c = string.charAt(i);
             printWriter.print(characterNodeMap.get(c).code);
-            encodeString += characterNodeMap.get(c).code;
+            encodeString.append(characterNodeMap.get(c).code);
         }
         printWriter.close();
 //        System.out.println(encodeString);
@@ -154,12 +158,5 @@ public class HuffmanCode {
             printWriter.print(string.charAt(i));
         }
         printWriter.close();
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        long startTime = System.currentTimeMillis();
-        new HuffmanCode().run();
-        long finishTime = System.currentTimeMillis();
-        System.out.println(finishTime - startTime + " ms");
     }
 }

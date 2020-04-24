@@ -22,47 +22,47 @@ import java.util.*;
 public class Test412 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        double w = scanner.nextDouble();
-
+        scanner.nextInt();
+        long w = scanner.nextLong();
         List<Item> items = new ArrayList<>();
         while (scanner.hasNext()) {
-            items.add(new Item(scanner.nextDouble(), scanner.nextDouble()));
+            items.add(new Item(scanner.nextLong(), scanner.nextLong()));
         }
-//        System.out.println(goods);
         Collections.sort(items);
-//        System.out.println(n);
-//        System.out.println(goods);
-//        Failed test #11 of 11. got: 1232250.998 expected: 1232251.0
-        double sum = 0;
+//        System.out.println(items);
+        long sum = 0;
         for (Item item : items) {
-            double value = item.getValue();
-            double volume = item.getVolume();
-            if (w > volume) {
+            long value = item.getValue();
+            long volume = item.getVolume();
+            if (volume <= w) {
                 sum += value;
                 w -= volume;
+                if (w == 0) {
+                    break;
+                }
             } else {
                 sum += w * value / volume;
                 break;
             }
         }
-        System.out.printf("%.3f%n", sum);
+//        Failed test #11 of 11. got: 1,232,250.998 expected: 1,232,251.0
+        System.out.printf("%d.%03d%n", sum / 1_000, sum % 1_000);
     }
 
     private static class Item implements Comparable<Item> {
-        private final double value;
-        private final double volume;
+        private final long value;
+        private final long volume;
 
-        public Item(double value, double volume) {
-            this.value = value;
+        public Item(long value, long volume) {
+            this.value = value * 1_000;
             this.volume = volume;
         }
 
-        public double getValue() {
+        public long getValue() {
             return value;
         }
 
-        public double getVolume() {
+        public long getVolume() {
             return volume;
         }
 
@@ -73,7 +73,7 @@ public class Test412 {
 
         @Override
         public int compareTo(Item o) {
-            return (int) (1000 * (o.getValue() / o.getVolume() - getValue() / getVolume()));
+            return (int) (o.getValue() / o.getVolume() - getValue() / getVolume());
         }
     }
 }
