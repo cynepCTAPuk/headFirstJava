@@ -2,103 +2,147 @@ package algorithms;
 
 import java.util.*;
 
-/**
- * Stepik: кодирование Хаффмана
- * По данной непустой строке ss длины не более 10^4, состоящей из строчных букв
- * латинского алфавита, постройте оптимальный беспрефиксный код.
- * В первой строке выведите количество различных букв kk, встречающихся в строке,
- * и размер получившейся закодированной строки. В следующих kk строках запишите коды букв
- * в формате "letter: code". В последней строке выведите закодированную строку.<p>
- * Sample Input 1:<p>
- * a<p>
- * Sample Output 1:<p>
- * 1 1<p>
- * a: 0<p>
- * 0<p>
- * Sample Input 2:<p>
- * abacabad<p>
- * Sample Output 2:<p>
- * 4 14<p>
- * a: 0<p>
- * b: 10<p>
- * c: 110<p>
- * d: 111<p>
- * 01001100100111
- */
 //  https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/
 public class Test421a {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+//        Scanner scanner = new Scanner(System.in);
+//        String input = scanner.nextLine();
+        String input = "abacabad";
+        String code = "4 14\n" + "a: 0\n" + "b: 10\n" + "c: 110\n" + "d: 111\n" + "01001100100111";
 
-        Node treeHuffman = generateTreeHuffman(input);
-        String codeHuffman = generateCodeHuffman(input, treeHuffman);
+        Node treeHuffman = generateTreeHuffmanFromString(input);
+        Map<Character, String> tableHuffman = new HashMap<>();
+        createTableHuffman(treeHuffman, String.valueOf(treeHuffman.ch), tableHuffman);
+        StringBuilder codeHuffman = printCodeHuffman(input, tableHuffman);
 
-        System.out.println(input.length() + " " + codeHuffman.length());
-        printTableHuffman(treeHuffman);
+        System.out.println(tableHuffman.size() + " " + codeHuffman.length());
+        tableHuffman.entrySet().stream()
+                .sorted((o1, o2) -> o1.getKey().compareTo(o2.getKey()))
+//                .sorted((o1, o2) -> o1.getValue().compareTo(o2.getValue()))
+                .forEach(a -> System.out.println(a.getKey() + ": " + a.getValue()));
         System.out.println(codeHuffman);
+
+//        System.out.println(decodeHuffmanFromTreeHuffman("01001100100111", treeHuffman));
+        Map<String, Character> map = new HashMap<>();
+        map.put("0", 'a');
+        map.put("10", 'b');
+        map.put("110", 'c');
+        map.put("111", 'd');
+        System.out.println(decodeFromTableHuffman("01001100100111",map));
     }
 
-    private static String generateCodeHuffman(String input, Node treeHuffman) {
-        for (char c : input.toCharArray()) {
-
+    public static String decodeFromTableHuffman(String codeHuffman, Map<String, Character> table) {
+        char[] chars = codeHuffman.toCharArray();
+        int index = 0;
+        StringBuilder result = new StringBuilder();
+        while (index < chars.length) {
+            String code = "" + chars[index++];
+            while (!table.containsKey(code) && index < chars.length) {
+                code += chars[index++];
+            }
+            result.append(table.get(code));
         }
-        return "test";
+        return result.toString();
     }
 
-    public static void printTableHuffman(Node root) {
-        tableHuffman(root, "");
-    }
+    public static String decodeFromTreeHuffman(String codeHuffman, Node treeHuffman) {
+        if (treeHuffman == null) return "";
 
-    public static void tableHuffman(Node root, String string) {
-        if (root.left == null && root.right == null && Character.isLetter(root.c)) {
-            System.out.println(root.c + ":" + string);
-            return;
+        char[] chars = codeHuffman.toCharArray();
+        int index = 0;
+        StringBuilder result = new StringBuilder();
+        while (index < chars.length) {
+            Node node = treeHuffman;
+            while (node != null) {
+                if (node.left == null && node.right == null) {
+                    result.append(node.ch);
+                    break;
+                } else {
+                    char c = chars[index];
+                    if (c == '0') node = node.left;
+                    else node = node.right;
+                    index++;
+                }
+            }
         }
-        tableHuffman(root.left, string + "0");
-        tableHuffman(root.right, string + "1");
+        return result.toString();
     }
 
-    public static Node generateTreeHuffman(String input) {
-        int n = input.length();
+    public static Node generateTreeHuffmanFromString(String input) {
         Map<Character, Integer> map = new HashMap<>();
         for (char c : input.toCharArray()) map.merge(c, 1, Integer::sum);
 
-        // creating a priority queue queue, makes a min-priority queue(min-heap)
-        PriorityQueue<Node> queue = new PriorityQueue<>(n, (o1, o2) -> o1.data - o2.data);
+        PriorityQueue<Node> queue = new PriorityQueue<>((o1, o2) -> o1.freq - o2.freq);
         for (Character c : map.keySet()) {
             Node node = new Node(c, map.get(c), null, null);
             queue.add(node);
         }
-        // create a root node
         Node root = null;
-        // Here we will extract the two minimum value from the heap each time until
-        // its size reduces to 1, extract until all the nodes are extracted.
         while (queue.size() > 1) {
-            Node x = queue.poll();  // first min extract.
-            Node y = queue.poll();  // second min extarct.
-            // newNode value is equal to the sum of the frequency of the two nodes values.
-            // first extracted node as left child, second extracted node as the right child.
-            Node newNode = new Node('-', x.data + y.data, x, y);
-            root = newNode;               // marking the newNode node as the root node.
-            queue.add(newNode);           // add this node to the priority-queue.
+            Node x = queue.poll();
+            Node y = queue.poll();
+            Node newNode = new Node('\0', x.freq + y.freq, x, y);
+            root = newNode;
+            queue.add(newNode);
         }
         return root;
     }
 
+    public static void createTableHuffman(
+            Node root, String string, Map<Character, String> output) {
+        if (root.left == null && root.right == null) {
+//            System.out.println(root.ch + ":" + string);
+            output.put(root.ch, string);
+            return;
+        }
+        createTableHuffman(root.left, string + "0", output);
+        createTableHuffman(root.right, string + "1", output);
+    }
+
+    public static StringBuilder printCodeHuffman(String input, Map<Character, String> table) {
+        StringBuilder sb = new StringBuilder();
+        for (char ch : input.toCharArray()) sb.append(table.get(ch));
+        return sb;
+    }
+
     static class Node {
-        char c;
-        int data;
+        char ch;
+        int freq;
         Node left;
         Node right;
 
-        public Node(char c, int data, Node left, Node right) {
-            this.c = c;
-            this.data = data;
+        public Node(char ch, int freq, Node left, Node right) {
+            this.ch = ch;
+            this.freq = freq;
             this.left = left;
             this.right = right;
         }
+
+        private boolean isLeaf() {
+            assert ((left == null) && (right == null)) || ((left != null) && (right != null));
+            return (left == null) && (right == null);
+        }
+
+        int depth() {
+            return (size() + 1) / 2;
+        }
+
+        int size() {
+            return size(this);
+        }
+
+        private int size(Node n) {
+            return n == null ? 0 : size(n.left) + 1 + size(n.right);
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                           "ch=" + ch +
+                           ", freq=" + freq +
+                           ", left=" + left +
+                           ", right=" + right +
+                           '}';
+        }
     }
 }
-
-

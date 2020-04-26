@@ -27,18 +27,34 @@ import java.util.*;
  */
 public class Test422 {
     public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
+        String line = readData(map);
+        System.out.println(decodeFromTableHuffman(line, map));
+    }
+
+    public static String readData(Map<String, String> output) {
         Scanner scanner = new Scanner(System.in);
-        String data = scanner.nextLine();
-//        String[] numbers = data.split(" ");
-        Map<String, String> map = new TreeMap<>();
+        scanner.nextLine();
         String line = scanner.nextLine();
         while (line.contains(":")) {
-            String[] strings = line.split(":");
-            map.put(strings[1].trim(), strings[0]);
+            String[] word = line.split(":");
+            output.put(word[1].trim(), word[0]);
             line = scanner.nextLine();
         }
-        System.out.println(map);
+        return line;
+    }
 
-
+    public static String decodeFromTableHuffman(String codeHuffman, Map<String, String> table) {
+        char[] chars = codeHuffman.toCharArray();
+        int i = 0;
+        StringBuilder result = new StringBuilder();
+        while (i < chars.length) {
+            String code = "" + chars[i++];
+            while (!table.containsKey(code) && i < chars.length) {
+                code += chars[i++];
+            }
+            result.append(table.get(code));
+        }
+        return result.toString();
     }
 }

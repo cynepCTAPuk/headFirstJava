@@ -58,7 +58,9 @@ class Main {
 
         @Override
         public int compareTo(Item o) {
-            return (int) (o.getValue() / o.getVolume() - getValue() / getVolume());
+            double r1 = (double) this.value / this.volume;
+            double r2 = (double) o.value / o.volume;
+            return -Double.compare(r1, r2);
         }
     }
 }
