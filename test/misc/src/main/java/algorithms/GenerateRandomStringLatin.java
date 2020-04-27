@@ -4,9 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Random;
 
-public class Generate {
+public class GenerateRandomStringLatin {
     public static void main(String[] args) throws FileNotFoundException {
-        new Generate().run();
+        new GenerateRandomStringLatin().run();
     }
 
     private void run() throws FileNotFoundException {

@@ -1,16 +1,31 @@
-import java.io.FileNotFoundException;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+package algorithms;
 
-class Main {
-    static long sum = 0L;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+
+/**
+ * Stepik: число инверсий
+ * Первая строка содержит число 1≤n≤10<sup>5</sup>, вторая — массив A[1…n],
+ * содержащий натуральные числа, не превосходящие 10<sup>9</sup>. Необходимо посчитать число пар
+ * индексов 1≤i<j≤n, для которых A[i]>A[j]. (Такая пара элементов называется инверсией массива.
+ * Количество инверсий в массиве является в некотором смысле его мерой неупорядоченности:
+ * например, в упорядоченном по неубыванию массиве инверсий нет вообще, а в массиве,
+ * упорядоченном по убыванию, инверсию образуют каждые два элемента.)<p>
+ * Sample Input:<p>
+ * 5<p>
+ * 2 3 9 2 9<p>
+ * Sample Output:<p>
+ * 2
+ */
+public class Test641 {
+    static int sum = 0;
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(new File("c:/000/input.txt"));
         int n = scanner.nextInt();
 
-        int maxN = (int) Math.pow(2, (int) Math.ceil((Math.log(n) / Math.log(2))));
+        int maxN = (int) Math.pow(2, (int) Math.ceil(Math.log(n) / Math.log(2)));
         int[] array = new int[maxN];
 
         for (int i = maxN - n; i < maxN; i++) {

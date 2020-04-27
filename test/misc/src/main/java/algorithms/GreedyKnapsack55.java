@@ -57,7 +57,7 @@ public class GreedyKnapsack55 {
         int W = scanner.nextInt();
         Item[] items = new Item[n];
         for (int i = 0; i < n; i++) items[i] = new Item(scanner.nextInt(), scanner.nextInt());
-//        for (int i = 0; i < n; i++) System.out.println(items[i]);
+        for (int i = 0; i < n; i++) System.out.println(items[i]);
 /*
         Arrays.sort(items, (o1, o2) -> {
             double r1 = (double) o1.cost / o1.weight;
