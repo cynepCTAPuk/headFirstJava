@@ -10,12 +10,10 @@ public class GenerateRandomStringLatin {
     }
 
     private void run() throws FileNotFoundException {
-        PrintWriter printWriter = new PrintWriter("c:/000/HuffmanCode1.txt");
+        PrintWriter printWriter = new PrintWriter("c:/000/input.txt");
         int n = 10_000;
         Random random = new Random();
-        for (int i = 0; i < n; i++) {
-            printWriter.print((char) ('a' + random.nextInt(26)));
-        }
+        for (int i = 0; i < n; i++) printWriter.print((char) ('a' + random.nextInt(26)));
         printWriter.close();
     }
 }

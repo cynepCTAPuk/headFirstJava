@@ -19,17 +19,16 @@ public class Test681 {
         Scanner scanner = new Scanner(new File("c:/000/input.txt"));
         int n = scanner.nextInt();
         int[] A = new int[n];
-        for (int i = 0; i < n; i++) A[i] = scanner.nextInt();
-        printArray(A);
-
-        int k = 11;
+        int k = 10;
         int[] B = new int[k];
         for (int i = 0; i < n; i++) {
+            A[i] = scanner.nextInt();
             B[A[i]]++;
         }
+        printArray(A);
 
         for (int i = 1; i < k; i++) {
-            B[i] = B[i] + B[i - 1];
+            B[i] += B[i - 1];
         }
 
         int[] result = new int[n];
