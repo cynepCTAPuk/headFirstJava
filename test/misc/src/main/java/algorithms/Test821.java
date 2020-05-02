@@ -1,13 +1,8 @@
-import java.util.Scanner;
+package algorithms;
 
-class Main {
+public class Test821 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = scanner.nextInt();
-        }
+        int[] a = {3, 6, 7, 6};
         System.out.println(lisBottomUp(a));
     }
 
@@ -21,9 +16,19 @@ class Main {
                 if (a[i] >= a[j] && d[i] < d[j] + 1 && a[i] % a[j] == 0)
                     d[i] = d[j] + 1;
         }
+        printArray(a);
+        printArray(d);
 
         int result = 0;
         for (int i = 0; i < size; i++) result = Math.max(result, d[i]);
         return result;
+    }
+
+    private static void printArray(int[] array) {
+        System.out.print("[");
+        for (int i = 0; i < array.length; i++) {
+            if (i < array.length - 1) System.out.printf("%3d,", array[i]);
+            else System.out.printf("%3d]%n", array[i]);
+        }
     }
 }

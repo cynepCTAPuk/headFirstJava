@@ -5,9 +5,9 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Random;
 
-public class GenerateRandomInt {
+public class GenerateTwoRandomIntArrays {
     public static void main(String[] args) throws FileNotFoundException {
-        new GenerateRandomInt().run();
+        new GenerateTwoRandomIntArrays().run();
     }
 
     private void run() throws FileNotFoundException {

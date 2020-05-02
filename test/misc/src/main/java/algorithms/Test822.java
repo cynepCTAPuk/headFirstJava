@@ -1,14 +1,11 @@
-import java.io.File;
-import java.util.Scanner;
+package algorithms;
 
-class Main {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test822 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = scanner.nextInt();
-        }
+        int[] a = {5, 3, 4, 4, 2};
         lisBottomUp(a);
     }
 
@@ -25,12 +22,14 @@ class Main {
                     prev[i] = j;
                 }
         }
+        printArray(a);
+        printArray(d);
+        printArray(prev);
         int result = 0;
         for (int i = 0; i < size; i++) {
             result = Math.max(result, d[i]);
         }
         System.out.println(result);
-
         int[] idxs = new int[result];
         int j = result - 1;
         while (result >= 0) {
@@ -38,8 +37,15 @@ class Main {
             j--;
             result = prev[result];
         }
-        for (int idx : idxs) {
-            System.out.print(idx + " ");
+        printArray(idxs);
+
+    }
+
+    private static void printArray(int[] array) {
+        System.out.print("[");
+        for (int i = 0; i < array.length; i++) {
+            if (i < array.length - 1) System.out.printf("%3d,", array[i]);
+            else System.out.printf("%3d]%n", array[i]);
         }
     }
 }
