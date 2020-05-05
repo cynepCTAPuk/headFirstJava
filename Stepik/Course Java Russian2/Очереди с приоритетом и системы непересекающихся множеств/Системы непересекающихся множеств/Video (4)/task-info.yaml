@@ -1,0 +1,35 @@
+type: video
+custom_name: Video
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+thumbnail: https://i.vimeocdn.com/video/default_640
+sources:
+- src: https://ucarecdn.com/1cfcfe98-8d65-4b01-a606-245f79c81787/16489_1080_f3598052e0fffb6458bd5ac28c4363d2.mp4
+  res: 1080
+  type: video/mp4
+  label: 1080p
+- src: https://ucarecdn.com/0bbec33a-4c5c-41ff-bb17-7402b31985b7/16489_720_f776fa90ba89d86a68b4a93e7da923e3.mp4
+  res: 720
+  type: video/mp4
+  label: 720p
+- src: https://ucarecdn.com/20bac486-93c2-4895-bf6e-8294570d6d87/16489_540_3350bc6db900928bb8dacecd78870e8f.mp4
+  res: 540
+  type: video/mp4
+  label: 540p
+- src: https://ucarecdn.com/411b706e-358d-4ea4-a382-5e72e035e9ec/16489_360_b75cdd89210c4ac6af5b6c06570ef728.mp4
+  res: 360
+  type: video/mp4
+  label: 360p
+currentTime: 0
+status: Unchecked
+record: -1

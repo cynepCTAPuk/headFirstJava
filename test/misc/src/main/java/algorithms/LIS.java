@@ -6,7 +6,7 @@ package algorithms;
  * https://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
  * http://e-maxx.ru/algo/longest_increasing_subseq_log
  *
- * Наибольшая возрастающая подпоследовательность<p>
+ * Stepik Algorithm1: Наибольшая возрастающая подпоследовательность<p>
  * Вход: последовательность A [1. . .n] = [a<sub>1</sub>, a<sub>2</sub>, . . . , a<sub>n</sub>].<p>
  * Выход: наибольшая возрастающая подпоследовательность (НВП),
  * то есть a<sub>i1</sub>, a<sub>i2</sub>, . . . ,a<sub>ik</sub> такие что

@@ -1,5 +1,8 @@
 package algorithms;
 
+/**
+ * Stepik Algorithm1
+ */
 public class MatrixMultiply {
     public static void main(String[] args) {
         int[][] a = {

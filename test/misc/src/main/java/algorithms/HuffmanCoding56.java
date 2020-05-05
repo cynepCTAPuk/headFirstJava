@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 /**
- * Stepik: 5.6
+ * Stepik Algorithm1: 5.6
  */
 public class HuffmanCoding56 {
     class Node implements Comparable<Node> {

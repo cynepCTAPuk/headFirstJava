@@ -1,12 +1,11 @@
 package algorithms;
 
-import java.io.File;
+import util.Util;
+
 import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
 
 /**
- * Stepik: Задача о рюкзаке (8.4)<p>
+ * Stepik Algorithm1: Задача о рюкзаке (8.4)<p>
  * Вход: веса w<sub>1</sub>, ..., w<sub>n</sub> N и стоимости c<sub>1</sub>, ..., c<sub>n</sub> N
  * данных n предметов; вместимость рюкзака W<p>
  * Выход: максимальная стоимость предметов суммарного веса не более W<p>
@@ -16,40 +15,51 @@ import java.util.Scanner;
  */
 public class Knapsack {
     public static void main(String[] args) throws FileNotFoundException {
+/*
         int weight = 10;
         int[] n = {6, 3, 4, 2};
         int[] c = {30, 14, 16, 9};
+*/
+        int weight = 10;
+        int[] n = {1, 4, 8};
+        int[] c = {1, 4, 8};
 
+/*
         int[] d = knapsackWithRepsBU(weight, n, c);
-        printArray(d);
+        Util.printArray(d);
+*/
+        int[][] d = knapsackWithoutRepsBU(weight, n, c);
+        Util.print2dArray(d);
     }
 
-    private static int[] knapsackWithRepsBU(int weight, int[] n, int[] c) {
-        int[] d = new int[weight + 1];
-        for (int w = 1; w < d.length; w++) {
-            for (int i = 0; i < n.length; i++) {
-                if (n[i] <= w) {
-                    d[w] = Math.max(d[w], d[w - n[i]] + c[i]);
+    private static int[][] knapsackWithoutRepsBU(int weight, int[] n, int[] c) {
+        int[][] result = new int[n.length + 1][weight + 1];
+
+        for (int i = 1; i < result.length; i++) {
+            for (int j = 1; j < result[0].length; j++) {
+                result[i][j] = result[i - 1][j];
+                if (n[i - 1] <= j) {
+                    result[i][j] = Math.max(result[i][j], result[i - 1][j - n[i - 1]] + c[i - 1]);
+//                    System.out.println(i + ":" + j);
+//                    Util.print2dArray(result);
                 }
             }
         }
-        return d;
+        return result;
     }
 
-    private static void print2dArray(int[][] array) {
-        for (int[] rows : array) {
-            for (int element : rows) System.out.printf("%3d", element);
-            System.out.println();
+    private static int[] knapsackWithRepsBU(int weight, int[] n, int[] c) {
+        int[] result = new int[weight + 1];
+
+        for (int i = 1; i < result.length; i++) {
+            for (int j = 0; j < n.length; j++) {
+                if (n[j] <= i) {
+                    result[i] = Math.max(result[i], result[i - n[j]] + c[j]);
+//                    Util.printArray(result);
+                }
+            }
         }
+        return result;
     }
 
-    private static void printArray(int[] array, String... comment) {
-        System.out.print("[");
-        for (int i = 0; i < array.length; i++) {
-            if (i < array.length - 1) System.out.printf("%3d,", array[i]);
-            else System.out.printf("%3d]", array[i]);
-        }
-        if (comment.length == 0) System.out.println();
-        else System.out.println(" " + comment[0]);
-    }
 }

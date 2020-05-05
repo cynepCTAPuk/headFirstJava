@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Util {
-    //Util отлично работает со всеми классами Cat, Mouse. А ведь Mouse отличается от Cat.
+    //util.Util отлично работает со всеми классами Cat, Mouse. А ведь Mouse отличается от Cat.
     public static void printDialog(List<Sayable> pets) {
         for (int i = 0; i < pets.size(); i++) {
             System.out.println(pets.get(i).say());
