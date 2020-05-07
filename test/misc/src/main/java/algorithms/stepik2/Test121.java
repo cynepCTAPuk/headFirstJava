@@ -1,8 +1,25 @@
+package algorithms.stepik2;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
-class Main {
+/**
+ * Stepik Algorithm2: Расстановка скобок в коде<p>
+ * Sample Input 1:<p>
+ * ([](){([])})<p>
+ * Sample Output 1:<p>
+ * Success<p>
+ * Sample Input 2:<p>
+ * ()[]}<p>
+ * Sample Output 2:<p>
+ * 5<p>
+ * Sample Input 3:<p>
+ * {{[()]]<p>
+ * Sample Output 3:<p>
+ * 7
+ */
+public class Test121 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String brackets = scanner.nextLine();
