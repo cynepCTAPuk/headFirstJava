@@ -1,4 +1,4 @@
-package algorithms.stepik2;
+package algorithms;
 
 import java.io.FileNotFoundException;
 
