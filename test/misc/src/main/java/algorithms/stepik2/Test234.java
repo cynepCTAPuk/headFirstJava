@@ -1,5 +1,7 @@
 package algorithms.stepik2;
 
+import util.Util;
+
 import java.util.Scanner;
 
 /**
@@ -32,9 +34,11 @@ public class Test234 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();  // qty numbers
-        int[] number = new int[n];
         int e = scanner.nextInt();  // qty equal
         int d = scanner.nextInt();  // qty notequal
+
+        int[] parents = new int[n];
+        for (int i = 0; i < n; i++) parents[i] = i;
 
         int[] leftN = new int[e + d];
         int[] rightN = new int[e + d];
@@ -43,30 +47,32 @@ public class Test234 {
             rightN[i] = scanner.nextInt() - 1;
         }
 
-        int result = 1;
-        for (int i = 0; i < e + d; i++) {
+        Util.printArray(parents, " original");
+        for (int i = 0; i < e; i++) {
             int left = leftN[i];
             int right = rightN[i];
-            if (i < e) {
-                if (number[left] == 0 && number[right] == 0) {
-                    number[left] = i;
-                    number[right] = i;
-                } else if (number[left] == 0) {
-                    number[left] = number[right];
-                } else if (number[right] == 0) {
-                    number[right] = number[left];
-                }
-                if (number[left] != number[right]) {
-                    result = 0;
-                    break;
-                }
-            } else {
-                if (number[left] == number[right]) {
-                    result = 0;
-                    break;
-                }
+            System.out.print((left + 1) + ":" + (right + 1) + " ");
+            left = parent(left, parents);
+            right = parent(right, parents);
+            if (right != left) parents[right] = left;
+            parent(rightN[i], parents);
+//            if (right != left) parents[left] = right;
+            Util.printArray(parents);
+        }
+        int result = 1;
+        for (int i = e; i < e + d; i++) {
+            if (parents[leftN[i]] == parents[rightN[i]]) {
+                result = 0;
+                break;
             }
         }
         System.out.println(result);
+    }
+
+    private static int parent(int i, int[] array) {
+        if (i != array[i]) {
+            array[i] = parent(array[i], array);
+        }
+        return array[i];
     }
 }
