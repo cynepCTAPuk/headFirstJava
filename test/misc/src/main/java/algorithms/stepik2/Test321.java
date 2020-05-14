@@ -13,7 +13,7 @@ import java.util.Scanner;
  * Вход: Последовательность запросов вида add number name, del number и find number,
  * где number - телефонный номер, содержащий не более семи знаков, а name - короткая строка.
  * Первая строка содержит число запросов n. Каждая из следующих n строк задаёт запрос в одном
- * из трёх описанных выше форматовю<p>
+ * из трёх описанных выше форматов.<p>
  * Выход: Для каждого запроса find number выведите соответствующее имя или сообщите,
  * что такой записи нет. Для каждого запроса find выведите в отдельной строке либо имя,
  * либо "not found".<p>
@@ -68,7 +68,7 @@ public class Test321 {
                     System.out.println(findName == null ? "not found" : findName);
                     break;
                 case "del":
-                    String removeName = phoneBook.remove(number);
+                    phoneBook.remove(number);
                     break;
             }
         }

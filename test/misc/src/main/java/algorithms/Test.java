@@ -16,6 +16,6 @@ public class Test {
         Scanner scanner = new Scanner(new File("c:/000/input.txt"));
         while (scanner.hasNext()) System.out.print(scanner.nextInt() + " ");
 */
-        System.out.println(Math.ceil(2.0));
+        System.out.println(Integer.MIN_VALUE - 10);
     }
 }
