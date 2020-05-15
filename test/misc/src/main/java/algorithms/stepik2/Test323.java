@@ -15,10 +15,10 @@ import java.util.LinkedList;
  * Обе стороны содержат буквы латинского алфавита.<p>
  * Пример.<p>
  * Вход:<p>
- * aba
- * abacaba
+ * aba<p>
+ * abacaba<p>
  * Выход:<p>
- * o 4
+ * 0 4<p>
  * "abcdefghijklmnoprqstuwxyz"
  */
 public class Test323 {

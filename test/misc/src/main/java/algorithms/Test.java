@@ -16,6 +16,11 @@ public class Test {
         Scanner scanner = new Scanner(new File("c:/000/input.txt"));
         while (scanner.hasNext()) System.out.print(scanner.nextInt() + " ");
 */
-        System.out.println(Integer.MIN_VALUE - 10);
+//        System.out.printf("%e",(double)Integer.MIN_VALUE);
+//        System.out.println((int) '\u2260');
+        int n = 8700;
+        for (int i = n; i < n + 100; i++) {
+            System.out.print(i + ":" + (char) i + " ");
+        }
     }
 }
