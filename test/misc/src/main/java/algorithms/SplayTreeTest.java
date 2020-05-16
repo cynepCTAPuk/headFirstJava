@@ -3,6 +3,7 @@ package algorithms;
 /**
  * https://www.geeksforgeeks.org/splay-tree-set-1-insert/
  * https://www.geeksforgeeks.org/splay-tree-set-2-insert-delete/
+ * https://www.geeksforgeeks.org/splay-tree-set-3-delete/
  */
 public class SplayTreeTest {
     public static void main(String[] args) {
@@ -14,19 +15,20 @@ public class SplayTreeTest {
         tree.root.left.left.left = new Node(30);
         tree.root.left.left.left.left = new Node(20);
 
-        System.out.println("Preorder traversal of the Splay tree is:");
         tree.preOrder(tree.root);
-        System.out.println();
+        System.out.println(" PreOrder traversal of the Splay tree is:");
+        tree.inOrder(tree.root);
+        System.out.println(" InOrder traversal of the Splay tree is:");
+        tree.postOrder(tree.root);
+        System.out.println(" PostOrder traversal of the Splay tree is:");
 
         tree.root = tree.search(tree.root, 20);
-        System.out.println("Preorder traversal of the modified Splay tree after search is:");
         tree.preOrder(tree.root);
-        System.out.println();
+        System.out.println(" Preorder traversal of the modified Splay tree after search 20 is:");
 
         tree.root = tree.insert(tree.root, 25);
-        System.out.println("Preorder traversal of the modified Splay tree after insert is:");
         tree.preOrder(tree.root);
-        System.out.println();
+        System.out.println(" Preorder traversal of the modified Splay tree after insert 25 is:");
     }
 
     private static class Node {
@@ -35,7 +37,7 @@ public class SplayTreeTest {
 
         public Node(int key) {
             this.key = key;
-            left = right = null;
+//            left = right = null;
         }
     }
 
@@ -145,12 +147,25 @@ public class SplayTreeTest {
         }
 
         // A utility function to print preorder traversal of the tree.
-        // The function also prints height of every node
         void preOrder(Node root) {
             if (root != null) {
                 System.out.print(root.key + " ");
                 preOrder(root.left);
                 preOrder(root.right);
+            }
+        }
+        void inOrder(Node root) {
+            if (root != null) {
+                inOrder(root.left);
+                System.out.print(root.key + " ");
+                inOrder(root.right);
+            }
+        }
+        void postOrder(Node root) {
+            if (root != null) {
+                postOrder(root.left);
+                postOrder(root.right);
+                System.out.print(root.key + " ");
             }
         }
     }

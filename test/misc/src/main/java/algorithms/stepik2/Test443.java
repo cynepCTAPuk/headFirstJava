@@ -1,8 +1,6 @@
 package algorithms.stepik2;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Stepik Algorithm2: Проверка более общего свойства дерева поиска<p>
@@ -11,19 +9,19 @@ import java.util.Scanner;
  * Формально, двоичное дерево называется деревом поиска, если для
  * любой вершины её ключ больше всех ключей из её левого поддерева
  * и не меньше всех ключей из правого поддерева.<p>
- *
+ * <p>
  * Вход: Двоичное дерево.
  * Первая строка содержит число вершин n. Вершины дерева пронумерованы числами от 0 до n-1.
  * Вершина 0 является корнем. Каждая из следующих n строк содержит информацию о вершинах:
  * i-я строка задаёт числа key<sub>i</sub>, left<sub>i</sub>, и right<sub>i</sub>, где
  * key<sub>i</sub> - ключ вершины i, left<sub>i</sub> - индекс левого сыны вершины i,
  * а right<sub>i</sub> - индекс правого сына вершины i. -1 - нет сына.<p>
- *
+ * <p>
  * Выход: Проверить, является ли данное дерево корректным деревом поиска:
  * верно ли, что для любой вершины дерева её ключ больше всех ключе в левом поддереве
  * и меньше всех ключей в правом поддереве
  * Выведите "CORRECT" или "INCORRECT".<p>
- *
+ * <p>
  * Ограничения: 0 ≤ n ≤ 10<sup>5</sup>; −2<sup>31</sup> ≤ key<sub>i</sub> ≤ 2<sup>31</sup>−1
  * (таким образом, в качестве ключей допустимы минимальное и максимальное значение 32-битного
  * целого типа, будьте осторожны с переполнением); −1 ≤ left<sub>i</sub>, right<sub>i</sub> ≤ n − 1.
@@ -38,52 +36,55 @@ import java.util.Scanner;
  * 3 -1 -2<p>
  * Выход:<p>
  * CORRECT<p>
- * "abcdefghijklmnoprqstuwxyz"  \u2260
+ * "abcdefghijklmnoprqstuwxyz"  \u2260<p>
+ * https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
  */
 public class Test443 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         Node[] nodes = new Node[n];
-        int[] key = new int[n];
-        int[] left = new int[n];
-        int[] right = new int[n];
+        int[] keys = new int[n];
+        int[] lefts = new int[n];
+        int[] rights = new int[n];
         for (int i = 0; i < n; i++) {
-            key[i] = scanner.nextInt();
-            left[i] = scanner.nextInt();
-            right[i] = scanner.nextInt();
+            keys[i] = scanner.nextInt();
+            lefts[i] = scanner.nextInt();
+            rights[i] = scanner.nextInt();
         }
 
         for (int i = 0; i < n; i++) nodes[i] = new Node();
         for (int i = 0; i < n; i++) {
-            nodes[i].key = key[i];
-            if (left[i] > -1) nodes[i].left = nodes[left[i]];
-            if (right[i] > -1) nodes[i].right = nodes[right[i]];
+            nodes[i].key = keys[i];
+            if (lefts[i] > -1) nodes[i].left = nodes[lefts[i]];
+            if (rights[i] > -1) nodes[i].right = nodes[rights[i]];
         }
-
-        List<Integer> arrayList = new ArrayList<>();
-        if (n > 0) Node.inOrderTree(nodes[0], arrayList);
-        System.out.println(arrayList);
-        System.out.println(isSortedList(arrayList) ? "CORRECT" : "INCORRECT");
+        System.out.println(nodes.length == 0
+                                   ? "CORRECT" : isBST(nodes[0], Long.MIN_VALUE, Long.MAX_VALUE)
+                                                         ? "CORRECT" : "INCORRECT");
     }
 
-    public static boolean isSortedList(List<Integer> arrayList) {
-        for (int i = 1; i < arrayList.size(); i++)
-            if (arrayList.get(i - 1) > arrayList.get(i))
-                return false;
-        return true;
+    static boolean isBST(Node node, long min, long max) {
+        /* an empty tree is BST */
+        if (node == null) return true;
+        /* false if this node violates the min/max constraints */
+//        if (node.key < min || node.key > max) return false;
+        if (node.key < min || node.key >= max) return false;
+        /* otherwise check the subtrees recursively tightening the min/max constraints */
+        // Allow only distinct values
+//        return (isBSTUtil(node.left, min, node.key - 1) && isBSTUtil(node.right, node.key + 1, max));
+        return isBST(node.left, min, node.key) && isBST(node.right, node.key, max);
     }
 
     private static class Node {
         int key;
-        Node left, right;
+        int parentKey;
+        Node left;
+        Node right;
 
-        static void inOrderTree(Node node, List<Integer> list) {
-            if (node != null) {
-                inOrderTree(node.left, list);
-                list.add(node.key);
-                inOrderTree(node.right, list);
-            }
+        @Override
+        public String toString() {
+            return key + ":" + parentKey;
         }
     }
 }

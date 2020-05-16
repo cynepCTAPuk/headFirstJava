@@ -60,8 +60,10 @@ public class Test442a {
     private static void in_order(int i, int min, int max) {
         if (left[i] > -1)
             in_order(left[i], min, key[i]);
+
         if (key[i] <= min || key[i] >= max)
             result = false;
+
         if (right[i] > -1)
             in_order(right[i], key[i], max);
     }

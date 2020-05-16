@@ -19,7 +19,6 @@ public class AVLTreeTest {
         tree.root = tree.insert(tree.root, 40);
         tree.root = tree.insert(tree.root, 50);
         tree.root = tree.insert(tree.root, 25);
-        System.out.println("Preorder traversal of constructed tree is : ");
         /* The constructed AVL Tree would be
              30
             /  \
@@ -28,7 +27,7 @@ public class AVLTreeTest {
         10  25    50
         */
         tree.preOrder(tree.root);
-        System.out.println();
+        System.out.println(" - Preorder traversal of constructed tree is : ");
         tree.print(tree.root);
 
 
@@ -43,7 +42,6 @@ public class AVLTreeTest {
         tree.root = tree.insert(tree.root, -1);
         tree.root = tree.insert(tree.root, 1);
         tree.root = tree.insert(tree.root, 2);
-        System.out.println("Preorder traversal of constructed tree is : ");
         /* The constructed AVL Tree would be
               9
              / \
@@ -54,11 +52,10 @@ public class AVLTreeTest {
         -1  2   6
         */
         tree.preOrder(tree.root);
-        System.out.println();
+        System.out.println(" - Preorder traversal of constructed tree is : ");
         tree.print(tree.root);
 
-        tree.root = tree.deleteNode(tree.root, 10);
-        System.out.println("Preorder traversal after deletion of 10 :");
+        tree.root = tree.delete(tree.root, 10);
         /* The AVL Tree after deletion of 10
               1
              / \
@@ -69,15 +66,17 @@ public class AVLTreeTest {
             2   6
         */
         tree.preOrder(tree.root);
-        System.out.println();
+        System.out.println(" - Preorder traversal after deletion of 10 :");
         tree.print(tree.root);
 
         System.out.println(tree.find(7));
     }
 
     private static class Node {
-        int key, height;
-        Node left, right;
+        int key;
+        int height;
+        Node left;
+        Node right;
 
         Node(int d) {
             key = d;
@@ -93,19 +92,17 @@ public class AVLTreeTest {
         }
 
         // A utility function to get the height of the tree
-        int height(Node N) {
-            if (N == null) return 0;
-            return N.height;
+        private int height(Node N) {
+            return N == null ? 0 : N.height;
         }
 
         // Get Balance factor of node N
-        int getBalance(Node N) {
-            if (N == null) return 0;
-            return height(N.left) - height(N.right);
+        private int getBalance(Node N) {
+            return N == null ? 0 : height(N.left) - height(N.right);
         }
 
         // A utility function to right rotate subtree rooted with y
-        Node rightRotate(Node y) {
+        private Node rightRotate(Node y) {
             Node x = y.left;
             Node z = x.right;
 
@@ -120,7 +117,7 @@ public class AVLTreeTest {
         }
 
         // A utility function to left rotate subtree rooted with x
-        Node leftRotate(Node y) {
+        private Node leftRotate(Node y) {
             Node x = y.right;
             Node z = x.left;
 
@@ -134,18 +131,27 @@ public class AVLTreeTest {
             return x;
         }
 
+        /* Given a non-empty binary search tree, return the node with minimum key
+            value found in that tree. Note that the entire tree does not need to be searched. */
+        private Node minValueNode(Node node) {
+            Node current = node;
+            /* loop down to find the leftmost leaf */
+            while (current.left != null) current = current.left;
+            return current;
+        }
+
         Node insert(Node node, int key) {
-            /* 1.  Perform the normal BST insertion */
+    /* 1.  Perform the normal BST insertion */
             if (node == null) return (new Node(key));
 
             if (key < node.key) node.left = insert(node.left, key);
             else if (key > node.key) node.right = insert(node.right, key);
             else return node;   // Duplicate keys not allowed
 
-            /* 2. Update height of this ancestor node */
+    /* 2. Update height of this ancestor node */
             updateHeight(node);
 
-            /* 3. Get the balance factor of this ancestor node to check whether this node became unbalanced */
+    /* 3. Get the balance factor of this ancestor node to check whether this node became unbalanced */
             int balance = getBalance(node);
             // If this node becomes unbalanced, then there are 4 cases:
 
@@ -171,56 +177,37 @@ public class AVLTreeTest {
             return node;
         }
 
-        /* Given a non-empty binary search tree, return the node with minimum key
-            value found in that tree. Note that the entire tree does not need to be searched. */
-        Node minValueNode(Node node) {
-            Node current = node;
-            /* loop down to find the leftmost leaf */
-            while (current.left != null) current = current.left;
-            return current;
-        }
-
-        Node deleteNode(Node root, int key) {
-            // STEP 1: PERFORM STANDARD BST DELETE
+        Node delete(Node root, int key) {
+    // STEP 1: PERFORM STANDARD BST DELETE
             if (root == null) return null;
-            // If the key to be deleted is smaller than the root's key,
-            // then it lies in left subtree
-            if (key < root.key) root.left = deleteNode(root.left, key);
-                // If the key to be deleted is greater than the root's key,
-                // then it lies in right subtree
-            else if (key > root.key) root.right = deleteNode(root.right, key);
+            // If the key to be deleted is smaller than the root's key,  then it lies in left subtree
+            if (key < root.key) root.left = delete(root.left, key);
+                // If the key to be deleted is greater than the root's key, then it lies in right subtree
+            else if (key > root.key) root.right = delete(root.right, key);
                 // if key is same as root's key, then this is the node to be deleted
             else {
                 // node with only one child or no child
                 if ((root.left == null) || (root.right == null)) {
                     Node temp = null;
-                    if (temp == root.left)
-                        temp = root.right;
-                    else
-                        temp = root.left;
-                    // No child case
-                    if (temp == null) {
-                        temp = root;
-                        root = null;
-                    } else // One child case
-                        root = temp; // Copy the contents of
-                    // the non-empty child
+                    if (root.left == null) temp = root.right;
+                    else temp = root.left;
+                    root = temp; // No child case or One child case. Copy the contents of the non-empty child
                 } else {
                     // node with two children: Get the inorder successor (smallest in the right subtree)
                     Node temp = minValueNode(root.right);
                     // Copy the inorder successor's data to this node
                     root.key = temp.key;
                     // Delete the inorder successor
-                    root.right = deleteNode(root.right, temp.key);
+                    root.right = delete(root.right, temp.key);
                 }
             }
             // If the tree had only one node then return
             if (root == null) return null;
 
-            // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE
+    // STEP 2: UPDATE HEIGHT OF THE CURRENT NODE
             updateHeight(root);
 
-            // STEP 3: GET THE BALANCE FACTOR OF THIS NODE (to check whether
+    // STEP 3: GET THE BALANCE FACTOR OF THIS NODE (to check whether
             // this node became unbalanced)
             int balance = getBalance(root);
 
@@ -249,7 +236,7 @@ public class AVLTreeTest {
         Node find(int key) {
             Node current = root;
             while (current != null) {
-                System.out.println(current.key);
+//                System.out.println(current.key);
                 if (current.key == key) break;
                 current = current.key < key ? current.right : current.left;
             }
