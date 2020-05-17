@@ -1,37 +1,45 @@
+package algorithms.stepik2;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-class Main {
+/**
+ * <b>Stepik Algorithm2:</b> Rope<p>
+ * Ваша цель в данной задаче — реализовать структуру данных Rope.
+ * Данная структура данных хранит строку и позволяет эффективно вырезать кусок строки
+ * и переставить его в другое место.<p>
+ * <b>Вход</b>: Первая строка содержит исходную строку S, вторая — число запросов q. Каждая из
+ * последующих q строк задаёт запрос тройкой чисел i, j, k и означает следующее:
+ * вырезать подстроку S[i..j] (где i и j индексируются с нуля) и вставить её после
+ * k-го символа оставшейся строки (где k индексируется с единицы), при этом если k = 0,
+ * то вставить вырезанный кусок надо в начало.<p>
+ * <b>Выход:</b>
+ * Выведите полученную (после всех q запросов) строку.<p>
+ * <b>Ограничения:</b> S содержит только буквы латинского алфавита.
+ * 1 ≤ * |S| ≤ 300 000; 1 ≤ q ≤ 100 000; 0 ≤ i ≤ j ≤ n−1; 0 ≤ k ≤ n−(j−i+1).<p>
+ * Пример.<p>
+ * <b>Вход</b>:<p>
+ * hlelowrold
+ * 2
+ * 1 1 2
+ * 6 6 7
+ * <b>Выход</b>:<p>
+ * helloworld
+ * hlelowrold → hellowrold → helloworld<p>
+ */
+public class Test445 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
-        SplayTree tree = new SplayTree();
+        int[] a = new int[n];
+        int[] b = new int[n];
+        int[] c = new int[n];
         for (int i = 0; i < n; i++) {
             String[] line = scanner.nextLine().split(" ");
-            char ch = line[0].charAt(0);
-            int a = tree.func(Integer.parseInt(line[1]));
-            switch (ch) {
-                case '+':
-                    tree.root = tree.insert(tree.root, a);
-                    break;
-                case '-':
-                    tree.root = tree.delete(tree.root, a);
-                    break;
-                case '?':
-                    tree.root = tree.find(tree.root, a);
-                    if (tree.root == null) System.out.println(
-                                    "Not found");
-                    else System.out.println(
-                                    (tree.root.key == a ? "Found" : "Not found"));
-                    break;
-                case 's':
-                    int b = tree.func(Integer.parseInt(line[2]));
-                    tree.s = tree.sum(a, b);
-                    System.out.println(
-                                    tree.s);
-                    break;
-            }
+            a[i] = Integer.parseInt(line[0]);
+            b[i] = Integer.parseInt(line[1]);
+            c[i] = Integer.parseInt(line[2]);
         }
     }
 
