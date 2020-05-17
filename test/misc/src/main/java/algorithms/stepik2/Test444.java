@@ -88,13 +88,12 @@ public class Test444 {
 
     private static class Node {
         int key;
-        int parentKey;
         Node left;
         Node right;
 
         @Override
         public String toString() {
-            return key + ":" + parentKey;
+            return "" + key;
         }
     }
 }

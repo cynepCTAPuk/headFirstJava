@@ -22,23 +22,19 @@ public class SplayTreeTest {
         tree.postOrder(tree.root);
         System.out.println(" PostOrder traversal of the Splay tree is:");
 
-        tree.root = tree.search(tree.root, 20);
+/*
+        tree.root = tree.find(tree.root, 20);
         tree.preOrder(tree.root);
         System.out.println(" Preorder traversal of the modified Splay tree after search 20 is:");
 
         tree.root = tree.insert(tree.root, 25);
         tree.preOrder(tree.root);
         System.out.println(" Preorder traversal of the modified Splay tree after insert 25 is:");
-    }
+*/
 
-    private static class Node {
-        int key;
-        Node left, right;
-
-        public Node(int key) {
-            this.key = key;
-//            left = right = null;
-        }
+        tree.root = tree.delete(tree.root, 50);
+        tree.preOrder(tree.root);
+        System.out.println(" Preorder traversal of the modified Splay tree after delete 50 is:");
     }
 
     private static class SplayTree {
@@ -67,8 +63,7 @@ public class SplayTreeTest {
             // Base cases: root is null or key is present at root
             if (root == null || root.key == key) return root;
 
-            // Key lies in left subtree
-            if (root.key > key) {
+            if (root.key > key) { // Key lies in left subtree
                 // Key is not in tree, we are done
                 if (root.left == null) return root;
 
@@ -112,7 +107,6 @@ public class SplayTreeTest {
         Node insert(Node root, int key) {
             // Simple Case: If tree is empty
             if (root == null) return new Node(key);
-
             // Bring the closest leaf node to root
             root = splay(root, key);
 
@@ -140,20 +134,45 @@ public class SplayTreeTest {
             return newNode; // newNode becomes new root
         }
 
+        // The delete function for Splay tree.
+        // Note that this function returns the new root of Splay Tree after removing the key
+        Node delete(Node root, int key) {
+            if (root == null) return null;
+            // Splay the given key
+            root = splay(root, key);
+            // If key is not present, then return root
+            if (key != root.key) return root;
+            // If key is present. If left child of root does not exist make root.right as root
+            if (root.left == null) root = root.right;
+            // Else if left child exits
+            else {
+                Node temp = root;
+                /* Note: Since key == root.key, so after Splay(root.left, key),
+                 the tree we get will have no right child tree and maximum node in
+                 left subtree will get splayed */
+                root = splay(root.left, key); // New root
+                // Make right child of previous root  as new root's right child
+                root.right = temp.right;
+            }
+            // return root of the new Splay Tree
+            return root;
+        }
+
         // The search function for Splay tree. Note that this function returns the
         // new root of Splay Tree. If key is present in tree then, it is moved to root.
-        Node search(Node root, int key) {
+        Node find(Node root, int key) {
             return splay(root, key);
         }
 
         // A utility function to print preorder traversal of the tree.
         void preOrder(Node root) {
             if (root != null) {
-                System.out.print(root.key + " ");
+                System.out.printf("%d ", root.key);
                 preOrder(root.left);
                 preOrder(root.right);
             }
         }
+
         void inOrder(Node root) {
             if (root != null) {
                 inOrder(root.left);
@@ -161,12 +180,22 @@ public class SplayTreeTest {
                 inOrder(root.right);
             }
         }
+
         void postOrder(Node root) {
             if (root != null) {
                 postOrder(root.left);
                 postOrder(root.right);
                 System.out.print(root.key + " ");
             }
+        }
+    }
+
+    private static class Node {
+        int key;
+        Node left, right;
+
+        public Node(int key) {
+            this.key = key;
         }
     }
 }
