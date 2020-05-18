@@ -21,7 +21,7 @@ public class Main {
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
 
         context.addServlet(new ServletHolder(allRequestsServlet), "/*");
-        context.addServlet(new ServletHolder(mirror), "/mirror");
+        context.addServlet(new ServletHolder(mirror), "/mirror/*");
 
         Server server = new Server(8080);
         server.setHandler(context);
