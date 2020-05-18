@@ -11,11 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ * @author v.chibrikov<p>Пример кода для курса на https://stepic.org/<p>
+ * Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
 public class SessionsServlet extends HttpServlet {
     private final AccountService accountService;
@@ -25,8 +22,7 @@ public class SessionsServlet extends HttpServlet {
     }
 
     //get logged user profile
-    public void doGet(HttpServletRequest request,
-                      HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String sessionId = request.getSession().getId();
         UserProfile profile = accountService.getUserBySessionId(sessionId);
         if (profile == null) {
@@ -42,8 +38,7 @@ public class SessionsServlet extends HttpServlet {
     }
 
     //sign in
-    public void doPost(HttpServletRequest request,
-                       HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         String pass = request.getParameter("pass");
 
@@ -82,6 +77,5 @@ public class SessionsServlet extends HttpServlet {
             response.getWriter().println("Goodbye!");
             response.setStatus(HttpServletResponse.SC_OK);
         }
-
     }
 }
