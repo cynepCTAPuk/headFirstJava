@@ -1,0 +1,83 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Функциональные интерфейсы (ФИ), лямбды</h2> 
+  <p>ФИ считается такой интерфейс, у которого есть только один&nbsp;абстрактный метод.</p> 
+  <pre><code>@FunctionalInterface // необязательно
+    interface MyPredicate&lt;T&gt;{
+        boolean test(T t);
+    }</code></pre> 
+  <p>@FunctionalInterface носит необязательный характер, однако если мы поставим эту аннотацию и добавим второй абстрактный метод, то будет ошибка компиляции.</p> 
+  <p>При помощи ФИ мы можем&nbsp;параметризовать поведение метода и тем самым сделать его более гибким.</p> 
+  <p>Ниже&nbsp;приведены примеры лямбд и ссылок на методы:</p> 
+  <pre><code>// применение лямбды
+filter(e -&gt; e % 2 == 0) 
+
+// применение ссылки на метод
+filter(this::check) 
+
+boolean check(Integer i) {
+    return i % 2 == 0;
+}
+
+// применение анонимного класса
+// так выглядела параметризация методов до java 8
+filter(new Predicate&lt;Integer&gt;(){ 
+   @Override
+   boolean test(Integer i){
+     return i % 2 == 0;
+   }
+})</code></pre> 
+  <p>Рассмотрим основные ФИ, расположенные в пакете java.util.function.*</p> 
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 800px;"> 
+   <thead> 
+    <tr> 
+     <th style="text-align: center;">Интерфейс</th> 
+     <th style="text-align: center;">Лямбда</th> 
+     <th style="text-align: center;">Описание</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td style="text-align: center;">Predicate&lt;T&gt;</td> 
+     <td style="text-align: center;">x -&gt; x%2 == 0</td> 
+     <td style="text-align: center;">описывает условие</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">Consumer&lt;T&gt;</td> 
+     <td style="text-align: center;">x -&gt; System.out.println(x)</td> 
+     <td style="text-align: center;">потребитель</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">Supplier&lt;T&gt;</td> 
+     <td style="text-align: center;">() -&gt; 42</td> 
+     <td style="text-align: center;">поставщик</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">Function&lt;T, R&gt;</td> 
+     <td style="text-align: center;">x -&gt; x * 1.5</td> 
+     <td style="text-align: center;">функция, возвращаемый тип может отличаться</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">UnaryOperator&lt;T&gt;</td> 
+     <td style="text-align: center;">x -&gt; -x</td> 
+     <td style="text-align: center;">функция, возвращаемый тип совпадает</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">BinaryOperator&lt;T&gt;</td> 
+     <td style="text-align: center;">(x, y) -&gt; x+y</td> 
+     <td style="text-align: center;">функция, возвращаемый тип совпадает</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>В большинстве случаев Вам не потребуется писать свои ФИ, Вам просто нужно выбрать ФИ из существующих в стандартной библиотеке.</p> 
+  <p>Поначалу применение лямбд и ссылок на методы может показаться чем-то неудобным. Однако с практикой Вы быстро поймете, что это не что-то второго сорта. Программисты, уже применяющие элементы функционального программирования&nbsp;на практике, вряд ли захотят перейти в проект или на язык программирования, где таких возможностей языка нет.</p> 
+  <p>Применение лямбд и ФИ зачастую позволяет создавать&nbsp;достаточно компактные, хорошо читаемые API. Один из ярких примеров такого&nbsp;API является Stream API.</p> 
+  <p>Пример использования ФИ в&nbsp;Stream API:</p> 
+  <pre><code>Stream.iterate(0, i -&gt; ++i) // UnaryOperator
+                .filter(x -&gt; x%2 == 0) // Predicate
+                .map(x -&gt; x * 1.5)// Function
+                .limit(10)
+                .forEach(x -&gt; System.out.println(x)); // Consumer</code></pre>
+ </body>
+</html>

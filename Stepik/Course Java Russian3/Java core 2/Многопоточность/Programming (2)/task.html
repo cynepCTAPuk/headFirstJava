@@ -1,0 +1,16 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Создание гарантированного DeadLock</h2> 
+  <p>Необходимо реализовать функции&nbsp;&nbsp;method1() и method2():&nbsp;</p> 
+  <ul> 
+   <li> <p>считается, что&nbsp;job1() и job2() используют общий ресурс;</p> </li> 
+   <li>необходимо реализовать двухуровневую блокировку;</li> 
+   <li> <p>расположите вызовы блокировок в методах таким образом, чтобы получился deadlock;</p> </li> 
+   <li> <p>каждая блокировка в конце метода должна освобождаться, иначе получите минус к карме;</p> </li> 
+   <li> <p>нельзя использовать sleep,&nbsp;иначе получите минус к карме;</p> </li> 
+   <li> <p>оба метода&nbsp;будут вызваны всего один раз;</p> </li> 
+   <li> <p>если Вам надо синхронизировать момент старта в функциях, используйте экземпляр&nbsp;AtomicInteger.</p> </li> 
+  </ul>
+ </body>
+</html><br><b>Sample Input:</b><br>waitTimeMilliseconds: 1000<br><b>Sample Output:</b><br>After 1.0 second:<br>lockA locked<br>lockB locked<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>

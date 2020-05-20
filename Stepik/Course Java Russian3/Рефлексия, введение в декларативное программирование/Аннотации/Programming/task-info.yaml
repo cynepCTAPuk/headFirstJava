@@ -1,0 +1,17 @@
+type: code
+files:
+- name: src/Weight.java
+  visible: true
+  text: |-
+    void callMethodByWeight(Object object) throws Exception {
+        //enter your code
+    }
+
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface Weight {
+        int value();
+    }
+  learner_created: false
+status: Unchecked
+record: -1

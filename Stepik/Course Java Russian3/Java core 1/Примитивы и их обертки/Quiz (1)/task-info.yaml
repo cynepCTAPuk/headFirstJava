@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: 42 преобразуется в класс Integer, затем сгенерируется IllegalArgumentException
+- text: Ошибка компиляции
+- text: 42 сначала преобразуется в примитив long, затем в класс Long
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

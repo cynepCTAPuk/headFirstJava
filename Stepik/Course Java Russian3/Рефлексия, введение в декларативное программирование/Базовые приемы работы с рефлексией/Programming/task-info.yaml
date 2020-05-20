@@ -1,0 +1,11 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    <T> void printAllClassFields(Class<T> aClass) {
+        //enter your code
+    }
+  learner_created: false
+status: Unchecked
+record: -1

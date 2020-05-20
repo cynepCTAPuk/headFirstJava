@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: 'можно менять значения элементов массива, помеченного final '
+- text: если применить final к классу, то от него нельзя будет отнаследоваться
+- text: если final применить к методу, то этот метод нельзя переопределить в классе-наследнике
+- text: не инициализированные поля класса, помеченные final, должны инициализироваться
+    в конструкторе
+- text: 'нельзя создать анонимный класс для класса, помеченного final '
+- text: final можно применить к статическому методу
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

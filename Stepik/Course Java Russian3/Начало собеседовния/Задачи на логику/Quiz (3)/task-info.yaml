@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: вода в бассейне поднимется на больший уровень, по сравнению со случаем, когда
+    в бассейн просто погрузится гиря
+- text: вода в бассейне поднимется на меньший уровень, по сравнению со случаем, когда
+    в бассейн просто погрузится гиря
+- text: 'при определённых условиях может возникнуть ситуация, когда при опускании
+    гири в лодку уровень воды не изменится '
+- text: при определённых условиях может возникнуть ситуация, когда при опускании гири
+    в лодку уровень воды понизится
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

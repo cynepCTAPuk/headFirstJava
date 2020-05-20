@@ -1,0 +1,13 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    Map<Integer, Organization> actual = organizations.stream()
+            .collect(
+                // enter your code
+            );
+  learner_created: false
+status: Unchecked
+record: -1

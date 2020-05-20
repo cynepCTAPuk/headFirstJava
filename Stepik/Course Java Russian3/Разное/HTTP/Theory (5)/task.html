@@ -1,0 +1,85 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Спецификации rest и soap</h2> 
+  <p>Спецификации служат для унификации api сервисов.</p> 
+  <p>В спецификации описывается формат бизнес-данных.</p> 
+  <p>На основе файлов спецификаций, как правило, можно генерировать код для клиентов.</p> 
+  <p><strong>OpenAPI (swagger)</strong>&nbsp; является одной из наиболее популярных спецификаций для REST. Описывается в формате yml.</p> 
+  <p>Пример:</p> 
+  <pre><code>paths:
+  /users:
+    post:
+      summary: Adds a new user
+      requestBody:
+        content:
+          application/json:     # Media type
+            schema:             # Request body contents
+              $ref: '#/components/schemas/User'   # Reference to an object
+            examples:    # Child of media type
+              Jessica:   # Example 1
+                value:
+                  id: 10
+                  name: Jessica Smith
+              Ron:       # Example 2
+                value:
+                  id: 11
+                  name: Ron Stewart
+      responses:
+        '200':
+          description: OK</code></pre> 
+  <p><strong>WSDL (Web&nbsp;Services&nbsp;Description&nbsp;Language)</strong>&nbsp; является спецификацией для SOAP. Описывается в формате wsdl.</p> 
+  <p>Пример:</p> 
+  <pre><code class="language-xml">&lt;definitions name = "HelloService"
+   targetNamespace = "http://www.examples.com/wsdl/HelloService.wsdl"
+   xmlns = "http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns = "http://www.examples.com/wsdl/HelloService.wsdl"
+   xmlns:xsd = "http://www.w3.org/2001/XMLSchema"&gt;
+ 
+   &lt;message name = "SayHelloRequest"&gt;
+      &lt;part name = "firstName" type = "xsd:string"/&gt;
+   &lt;/message&gt;
+	
+   &lt;message name = "SayHelloResponse"&gt;
+      &lt;part name = "greeting" type = "xsd:string"/&gt;
+   &lt;/message&gt;
+
+   &lt;portType name = "Hello_PortType"&gt;
+      &lt;operation name = "sayHello"&gt;
+         &lt;input message = "tns:SayHelloRequest"/&gt;
+         &lt;output message = "tns:SayHelloResponse"/&gt;
+      &lt;/operation&gt;
+   &lt;/portType&gt;
+
+   &lt;binding name = "Hello_Binding" type = "tns:Hello_PortType"&gt;
+      &lt;soap:binding style = "rpc"
+         transport = "http://schemas.xmlsoap.org/soap/http"/&gt;
+      &lt;operation name = "sayHello"&gt;
+         &lt;soap:operation soapAction = "sayHello"/&gt;
+         &lt;input&gt;
+            &lt;soap:body
+               encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+               namespace = "urn:examples:helloservice"
+               use = "encoded"/&gt;
+         &lt;/input&gt;
+		
+         &lt;output&gt;
+            &lt;soap:body
+               encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+               namespace = "urn:examples:helloservice"
+               use = "encoded"/&gt;
+         &lt;/output&gt;
+      &lt;/operation&gt;
+   &lt;/binding&gt;
+
+   &lt;service name = "Hello_Service"&gt;
+      &lt;documentation&gt;WSDL File for HelloService&lt;/documentation&gt;
+      &lt;port binding = "tns:Hello_Binding" name = "Hello_Port"&gt;
+         &lt;soap:address
+            location = "http://www.examples.com/SayHello/" /&gt;
+      &lt;/port&gt;
+   &lt;/service&gt;
+&lt;/definitions</code></pre>
+ </body>
+</html>

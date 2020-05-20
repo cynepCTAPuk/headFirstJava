@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: до 500
+- text: от 500 до 1000
+- text: от 1000 до 2000
+- text: от 2000
+- text: я не стал бы записываться на платный курс
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

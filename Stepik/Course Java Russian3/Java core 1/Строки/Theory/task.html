@@ -1,0 +1,58 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Как устроен класс String изнутри</h2> 
+  <p>&nbsp;</p> 
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 700px;"> 
+   <thead> 
+    <tr> 
+     <td style="text-align: center;"><strong>java 7,8</strong></td> 
+    </tr> 
+    <tr> 
+     <th>Название поля</th> 
+     <th>Описание</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td>int hash</td> 
+     <td>cache переменная с хешем строки</td> 
+    </tr> 
+    <tr> 
+     <td><strong>char </strong>value[]</td> 
+     <td>массив символов строки</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>hash,&nbsp;пока у строки ни разу не вызван метод hashCode, равен нулю.</p> 
+  <p>Таким&nbsp;образом,&nbsp;реальный хеш для строки высчитывается 1 раз.</p> 
+  <p>&nbsp;</p> 
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 700px;"> 
+   <thead> 
+    <tr> 
+     <td style="text-align: center;"><strong>java 9+</strong></td> 
+    </tr> 
+    <tr> 
+     <th>Название поля</th> 
+     <th>Описание</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td>int hash</td> 
+     <td>Кеш переменная с хешем строки</td> 
+    </tr> 
+    <tr> 
+     <td><strong>byte</strong>[] value</td> 
+     <td>Массив символов строки</td> 
+    </tr> 
+    <tr> 
+     <td>byte coder</td> 
+     <td>Указывает на кодировку текста (UTF-16 или Latin-1)</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>В зависимости от кодировки символы будут занимать один или два байта.</p> 
+  <p>Компактные&nbsp;строки 1 байт/символ предназначены исключительно для англоязычного текста.</p>
+ </body>
+</html>

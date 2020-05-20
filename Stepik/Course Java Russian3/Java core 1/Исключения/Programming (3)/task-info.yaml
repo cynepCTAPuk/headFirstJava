@@ -1,0 +1,12 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    void genConcurrentModificationException(List<Integer> integers) {
+        // enter your code
+    }
+  learner_created: false
+status: Unchecked
+record: -1

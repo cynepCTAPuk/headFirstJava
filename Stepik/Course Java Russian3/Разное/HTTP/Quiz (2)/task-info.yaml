@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: BASE64 может использоваться для кодирования бинарного файла в виде обычной
+    строки
+- text: в REST сервер отслеживает состояние клиента
+- text: протестировать rest-сервис можно только вручную, например, при помощи программы
+    Postman
+- text: в теле rest-ответа json нельзя передавать бинарные файлы
+- text: REST реализован по клиент-серверной архитектуре
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

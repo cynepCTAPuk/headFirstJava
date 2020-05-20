@@ -1,0 +1,19 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    abstract class Factory<T> {
+        public Factory() {
+
+        }
+
+        public T generateInstance() throws Exception {
+            // enter you code
+            return null;
+        }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

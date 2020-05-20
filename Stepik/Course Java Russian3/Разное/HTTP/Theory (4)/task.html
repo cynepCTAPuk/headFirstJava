@@ -1,0 +1,40 @@
+<html>
+ <head></head>
+ <body>
+  <h2>SOAP</h2> 
+  <p>Так же, как и <strong>REST</strong>,&nbsp;является протоколом передачи данных. По сути эти две технологии конкурируют друг с&nbsp;другом.</p> 
+  <p>Вот так будет выглядеть тело запроса, чтобы узнать детали продукта с номером 12345:</p> 
+  <pre><code class="language-xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Body&gt;
+     &lt;getProductDetails xmlns="http://warehouse.example.com/ws"&gt;
+       &lt;productID&gt;12345&lt;/productID&gt;
+     &lt;/getProductDetails&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</code></pre> 
+  <p>ответ:</p> 
+  <pre><code class="language-xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+   &lt;soap:Body&gt;
+     &lt;getProductDetailsResponse xmlns="http://warehouse.example.com/ws"&gt;
+       &lt;getProductDetailsResult&gt;
+         &lt;productID&gt;12345&lt;/productID&gt;
+         &lt;productName&gt;Стакан граненый&lt;/productName&gt;
+         &lt;description&gt;Стакан граненый. 250 мл.&lt;/description&gt;
+         &lt;price&gt;9.95&lt;/price&gt;
+         &lt;currency&gt;
+             &lt;code&gt;840&lt;/code&gt;
+             &lt;alpha3&gt;USD&lt;/alpha3&gt;
+             &lt;sign&gt;$&lt;/sign&gt;
+             &lt;name&gt;US dollar&lt;/name&gt;
+             &lt;accuracy&gt;2&lt;/accuracy&gt;
+         &lt;/currency&gt;
+         &lt;inStock&gt;true&lt;/inStock&gt;
+       &lt;/getProductDetailsResult&gt;
+     &lt;/getProductDetailsResponse&gt;
+   &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;</code></pre> 
+  <p>По сравнению с REST, запросы являются более громоздкими и,&nbsp;как следствие, более медленными.</p> 
+  <p>Программа, заточенная для ручного тестирования таких сервисов, – soapUI.</p>
+ </body>
+</html>

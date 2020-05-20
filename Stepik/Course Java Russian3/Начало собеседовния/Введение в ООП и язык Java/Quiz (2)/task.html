@@ -1,0 +1,34 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Наследование</h2> 
+  <p>Приведен участок кода:</p> 
+  <pre><code class="language-java">class A {
+        public String sayWhoIAm() {
+            return "I'm A";
+        }
+
+        public static String sayWhoWeAre() {
+            return "We are A";
+        }
+    }
+
+    class B extends A {
+        public String sayWhoIAm() {
+            return "I'm B";
+        }
+
+        public static String sayWhoWeAre() {
+            return "We are B";
+        }
+    }
+
+
+    public static void main(String[] args) {
+        A b = new B();
+        System.out.println(b.sayWhoIAm());
+        System.out.println(b.sayWhoWeAre());  
+    }</code></pre> 
+  <p>Что будет выведено на консоль?</p>
+ </body>
+</html>

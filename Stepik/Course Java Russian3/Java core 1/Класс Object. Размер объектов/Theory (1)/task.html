@@ -1,0 +1,74 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Сколько места в памяти занимают объекты?</h2> 
+  <p>Любой Java объект&nbsp;в памяти состоит из следующих частей:</p> 
+  <ul> 
+   <li>заголовок объекта;</li> 
+   <li>память для примитивных типов и ссылок;</li> 
+   <li>для массивов еще 4 байта для хранения размерности массива.</li> 
+  </ul> 
+  <p>Заголовок объекта, в свою очередь, включает:</p> 
+  <ul> 
+   <li>указатель на class definition (вся информация о классе);</li> 
+   <li>машинное слово mark word, где, в зависимости от состояния объекта, может храниться информация для сборщика мусора, используемая&nbsp;в многопоточности информация и другое.</li> 
+  </ul> 
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 750px;"> 
+   <caption>
+    Размер заголовка
+   </caption> 
+   <thead> 
+    <tr> 
+     <th>разрядность&nbsp;</th> 
+     <th>mark word, байт</th> 
+     <th>указатель на class definition, байт</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <th>32&nbsp;</th> 
+     <td style="text-align: center;">4</td> 
+     <td style="text-align: center;">4</td> 
+    </tr> 
+    <tr> 
+     <th>64&nbsp;</th> 
+     <td style="text-align: center;">8</td> 
+     <td style="text-align: center;">8</td> 
+    </tr> 
+    <tr> 
+     <th>64, со сжатием указателей</th> 
+     <td style="text-align: center;">8</td> 
+     <td style="text-align: center;">4</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>&nbsp;</p> 
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 500px;"> 
+   <caption>
+    Размер ссылок
+   </caption> 
+   <thead> 
+    <tr> 
+     <th>Разрядность&nbsp;</th> 
+     <th>размер ссылки, байт</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <th>32&nbsp;</th> 
+     <td style="text-align: center;">4</td> 
+    </tr> 
+    <tr> 
+     <th>64&nbsp;</th> 
+     <td style="text-align: center;">8</td> 
+    </tr> 
+    <tr> 
+     <th>64, со сжатием указателей</th> 
+     <td style="text-align: center;">4</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>Итоговый размер Java объекта всегда кратен 8 байтам.&nbsp;Например, для 32-разрядной системы:</p> 
+  <p>заголовок 8 байт + примитивы и ссылки 12 байт = 20 байт, после выравнивания получаем 24 байта.</p>
+ </body>
+</html>

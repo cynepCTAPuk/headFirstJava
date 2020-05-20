@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: 'ArrayList всегда быстрее, чем LinkedList '
+- text: в основе ArrayList лежит массив
+- text: добавление элемента в середину  LinkedList будет быстрее, чем в ArrayList
+- text: если размер массива ArrayList равен 10, то после добавления 11 элемента размер
+    массива будет 11
+- text: добавление элемента в середину LinkedList будет выполнено за O(1)
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,36 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Generics</h2> 
+  <p>Под Generics в Java понимают способ задания обобщенных классов&nbsp;и методов.</p> 
+  <pre><code>class Box&lt;T&gt; { // Generic type
+        private final T value;
+
+        Box(T value) {
+            this.value = value;
+        }
+
+        static &lt;R&gt; Box&lt;R&gt; of(R value) { // Generic method
+            return new Box&lt;&gt;(value);
+        }
+    }
+    
+    public static void main(String[] args) {
+        Box&lt;String&gt; stringBox = new Box&lt;&gt;("str");
+        Box&lt;Integer&gt; integerBox = new Box&lt;&gt;(42);
+
+        Box&lt;Integer&gt; integerBox2 = Box.of(42);
+        Box&lt;String&gt; stringBox2 = Box.of("str");
+    }</code></pre> 
+  <p>В угловых скобках &lt;&gt;&nbsp;задается метасимвол, который обозначает подставляемый тип.</p> 
+  <p>При задании generic типа или метода&nbsp;можно ограничить подставляемые типы базовым родителем&nbsp;при помощи слова extend.</p> 
+  <pre><code>class Box&lt;T extend Number&gt;{
+  // class definition
+}</code></pre> 
+  <p>Специальный метасимвол ?,&nbsp;также называемый&nbsp;wildcard, обозначает любой тип.&nbsp;</p> 
+  <pre><code>Box&lt;?&gt; box = new Box&lt;&gt;(42);</code></pre> 
+  <p>При создании экземпляра generic класса&nbsp;для создания диапазона подставляемых типов&nbsp;можно использовать вместе с символом&nbsp;?&nbsp;слова&nbsp;extend и super.</p> 
+  <pre><code>Box&lt;? super Number&gt; box = new Box&lt;&gt;(42); // Integer
+box = new Box&lt;&gt;(42.0); // Double</code></pre>
+ </body>
+</html>

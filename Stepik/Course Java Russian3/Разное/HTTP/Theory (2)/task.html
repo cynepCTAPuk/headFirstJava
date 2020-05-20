@@ -1,0 +1,89 @@
+<html>
+ <head></head>
+ <body>
+  <h2>REST</h2> 
+  <p>REST API&nbsp;— это один из самых популярных протоколов передачи данных, реализованный на базе протокола HTTP.</p> 
+  <p>Для описания сетевого ресурса,&nbsp;как правило, используется формат json (реже xml).</p> 
+  <pre><code class="language-json">{
+  "id": 10000011,
+  "first_name": "Иван",
+  "last_name": "Иванов",
+  "phone": "123123",
+  "address": {
+    "street": "ул. ленина, д. 4",
+    "city": "москва"
+  }
+}</code></pre> 
+  <p>Рассмотрим типичные rest-операции.</p> 
+  <h3>Получение списка&nbsp;всех сотрудников</h3> 
+  <p>запрос:</p> 
+  <pre><code class="language-http">GET http://www.test.edu/employee/</code></pre> 
+  <p>ответ:</p> 
+  <pre><code class="language-http">HTTP/1.1 200 ok
+Content-Type: application/json
+
+[
+  {
+    "id": 10000011,
+    "first_name": "Иван",
+    "last_name": "Иванов",
+    "phone": "123123",
+    "address": {
+      "street": "ул. ленина, д. 4",
+      "city": "москва",
+      "zip": "612613"
+    }
+  },
+  {
+    "id": 10000012,
+    "first_name": "Петр",
+    "last_name": "Петров",
+    "phone": "123123",
+    "address": {
+      "street": "ул. ленина, д. 4",
+      "city": "москва",
+      "zip": "612613"
+    }
+  }
+]</code></pre> 
+  <h3>Получение одного сотрудника</h3> 
+  <p>запрос:</p> 
+  <pre><code class="language-http">GET http://www.test.edu/employee/10000011</code></pre> 
+  <p>ответ:</p> 
+  <pre><code class="language-json">HTTP/1.1 200 ok
+Content-Type: application/json
+
+{
+  "id": 10000011,
+  "first_name": "Иван",
+  "last_name": "Иванов",
+  "phone": "123123",
+  "address": {
+    "street": "ул. ленина, д. 4",
+    "city": "москва"
+  }
+}</code></pre> 
+  <h3>Создание нового сотрудника</h3> 
+  <p>запрос:</p> 
+  <pre><code class="language-http">POST http://www.test.edu/employee/10000017
+Content-Type: application/json
+
+{
+  "id": 10000017,
+  "first_name": "Маргарита",
+  "last_name": "Иванова",
+  "phone": "123777",
+  "address": {
+    "street": "ул. ленина, д. 11",
+    "city": "москва"
+  }
+}</code></pre> 
+  <p>ответ:</p> 
+  <pre><code class="language-http">HTTP/1.1 201 created</code></pre> 
+  <h3>Удаление сотрудника</h3> 
+  <p>запрос:</p> 
+  <pre><code class="language-http">DELETE http://www.test.edu/employee/10000017</code></pre> 
+  <p>ответ:</p> 
+  <pre><code class="language-http">HTTP/1.1 200 ok</code></pre>
+ </body>
+</html>

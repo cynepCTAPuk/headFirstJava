@@ -1,0 +1,22 @@
+type: code
+files:
+- name: src/Autowired.java
+  visible: true
+  text: |-
+    void dependencyInjection(List<Object> objects) throws Exception {
+        //enter your code
+    }
+
+
+    @Target(ElementType.FIELD)
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface Autowired {
+
+    }
+
+    class CandidateNotFindException extends RuntimeException {
+
+    }
+  learner_created: false
+status: Unchecked
+record: -1

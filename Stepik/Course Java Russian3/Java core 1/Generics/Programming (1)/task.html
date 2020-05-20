@@ -1,0 +1,31 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Создание экземпляров подставляемого типа T</h2> 
+  <p>Необходимо реализовать класс-фабрику:</p> 
+  <ul> 
+   <li> <p>класс обобщен параметром T;</p> </li> 
+   <li> <p>необходимо реализовать функцию, которая будет создавать экземпляры класса T;</p> </li> 
+   <li> <p>в задании применить методы рефлексии;</p> </li> 
+   <li> <p>гарантируется, что у класса Т есть конструктор по умолчанию;</p> </li> 
+   <li> <p>если Вам будет сложно, вернитесь к заданию&nbsp;после прохождения модуля по рефлексии.</p> </li> 
+  </ul> 
+  <p>Пример целевой фабрики для класса:</p> 
+  <pre><code class="language-java">class FactoryA extends Factory&lt;A&gt; {
+
+    }</code></pre> 
+  <p>Рекомендуемая операция для создания экземпляра:</p> 
+  <pre><code>Class&lt;T&gt; aClass = ...
+
+aClass.getDeclaredConstructor().newInstance()</code></pre> 
+  <p>&nbsp;</p> 
+  <p>Импортированные библиотеки&nbsp;в этом задании:</p> 
+  <pre><code>import java.io.*;
+import java.lang.reflect.*;
+import java.lang.annotation.*;
+import java.util.*;
+import java.util.stream.*;
+import java.util.function.*;
+import java.math.*;</code></pre>
+ </body>
+</html><br><b>Sample Input:</b><br>className A<br><b>Sample Output:</b><br>Expected instance: {A}, Actual instance: {A}<br><br><b>Sample Input:</b><br>className B<br><b>Sample Output:</b><br>Expected instance: {B}, Actual instance: {B}<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>

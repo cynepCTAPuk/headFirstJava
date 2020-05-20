@@ -1,0 +1,30 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: LinkedList
+- text: ArrayList
+- text: HashSet
+- text: HashMap
+- text: 'задам уточняющий вопрос: <br> элементы будут добавляться в середину, начало,
+    конец?'
+- text: 'задам уточняющий вопрос: <br> как часто из коллекции будет производиться
+    чтение по сравнению с записью?'
+- text: 'задам уточняющий вопрос: <br> поиск элемента будет по индексу, по значению,
+    по значению поля элемента?'
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

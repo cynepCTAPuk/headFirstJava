@@ -1,0 +1,93 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Протокол HTTP</h2> 
+  <h3>Построение URL для произвольного сетевого ресурса</h3> 
+  <p><img alt="" src="https://ucarecdn.com/8ea1c904-c482-4dc8-980a-07767fc3a6af/"></p> 
+  <pre>         &nbsp;</pre> 
+  <ul> 
+   <li>scheme — протокол передачи данных (http, https, ftp etc.)</li> 
+   <li>host — наименование сервера в интернете (можно указать явно ip 192.168.0.1, localhost)</li> 
+   <li>port — порт, на котором расположен данный сетевой&nbsp;ресурс, для http по дефолту равен 80</li> 
+   <li>path — путь к сетевому ресурсу внутри сервера</li> 
+   <li>parameters — параметры, передаваемые вместе с запросом</li> 
+   <li>type request — в браузере не указывается,&nbsp;всегда подразумевается GET</li> 
+  </ul> 
+  <h3>Структура протокола&nbsp;HTTP. Запрос</h3> 
+  <p>Запрос представляет собой обычный текст, состоящий из следующих&nbsp;строк:</p> 
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 700px;"> 
+   <thead> 
+    <tr> 
+     <th style="text-align: center;">строка http запроса</th> 
+     <th style="text-align: center;">формат</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td style="text-align: center;">стартовая строка</td> 
+     <td style="text-align: center;">метод URI HTTP/версия</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">заголовки</td> 
+     <td style="text-align: center;">название заголовка: значение</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">пустая строка</td> 
+     <td style="text-align: center;">отделяет заголовки от тела запроса</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">тело запроса&nbsp;</td> 
+     <td style="text-align: center;">зависит от значения заголовка&nbsp;Content-Type</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>Пример типичного запроса с заголовком и телом:</p> 
+  <pre><code class="language-http">POST /api/client-token HTTP/1.1
+Host: www.test.edu
+Content-Type: application/json
+cache-control: no-cache
+
+{
+ "seed": 298122,
+ "mode": "y"
+}</code></pre> 
+  <h3>Структура протокола&nbsp;HTTP. Ответ</h3> 
+  <p>Ответ представляет собой обычный текст, состоящий из следующих&nbsp;строк:</p> 
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 700px;"> 
+   <thead> 
+    <tr> 
+     <th style="text-align: center;">часть http ответа</th> 
+     <th style="text-align: center;">формат</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td style="text-align: center;">стартовая строка</td> 
+     <td style="text-align: center;">HTTP/версия статус описание</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">заголовки</td> 
+     <td style="text-align: center;">название заголовка: значение</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">пустая строка</td> 
+     <td style="text-align: center;">отделяет заголовки от тела ответа</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">тело ответа&nbsp;</td> 
+     <td style="text-align: center;">зависит от значения заголовка&nbsp;Content-Type</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>Пример типичного ответа с заголовком и телом:</p> 
+  <pre><code class="language-http">HTTP/1.1 200 ok
+Content-Type: application/json;charset=UTF-8
+Date: Thu, 21 Nov 2019 08:35:08 GMT
+
+{
+    "token": "eyJ2ZXIiOjEsInR5cCI6IkpXVCIsInNidCI6",
+    "type": "Bearer",
+    "expiresIn": 51400
+}</code></pre>
+ </body>
+</html>

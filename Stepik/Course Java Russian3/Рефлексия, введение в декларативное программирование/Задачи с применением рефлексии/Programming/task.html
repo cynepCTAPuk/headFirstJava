@@ -1,0 +1,54 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Dependency Injection (DI)</h2> 
+  <p>Необходимо реализовать функцию:</p> 
+  <ul> 
+   <li> <p>на вход функция получает список объектов (пул объектов);</p> </li> 
+   <li> <p>гарантируется, что&nbsp;каждый класс представлен единственным объектом;</p> </li> 
+   <li> <p>в объектах могут встречаться поля, помеченные аннотацией&nbsp;@Autowired;</p> </li> 
+   <li> <p>для полей со стереотипом&nbsp;@Autowired Вам нужно&nbsp;выбрать из пула объектов подходящий объект по типу&nbsp;и засетить его;</p> </li> 
+   <li> <p>если подходящий объект по типу&nbsp;не найден, то нужно бросить исключение CandidateNotFindException.</p> </li> 
+  </ul> 
+  <p>Пример тестового пула объектов (case 1):</p> 
+  <pre><code class="language-java">class A {
+        @Autowired
+        B b;
+
+        C c;
+
+        public B getB() {
+            return b;
+        }
+
+        public void setB(B b) {
+            this.b = b;
+        }
+
+        public C getC() {
+            return c;
+        }
+
+        public void setC(C c) {
+            this.c = c;
+        }
+    }
+
+    class B {
+        @Autowired
+        C c;
+
+        public C getC() {
+            return c;
+        }
+
+        public void setC(C c) {
+            this.c = c;
+        }
+    }
+
+    class C {
+
+    }</code></pre>
+ </body>
+</html><br><b>Sample Input:</b><br>case 1<br><b>Sample Output:</b><br>good<br><br><b>Sample Input:</b><br>case 2<br><b>Sample Output:</b><br>CandidateNotFindException<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>

@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: В интерфейсе, в отличие от абстрактного класса, не может быть объявлен конструктор.
+- text: И в интерфейсе, и в абстрактном классе могут быть статические поля.
+- text: Для абстрактного класса, в отличие от интерфейса, можно создать экземпляр,
+    вызвав реализованный конструктор.
+- text: В абстрактном классе, в отличие от интерфейса, не может быть объявлен конструктор.
+- text: В абстрактном классе, по сравнению с интерфейсом, не может быть переменных.
+- text: В интерфейсе, по сравнению с абстрактным классом, не может быть переменных.
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

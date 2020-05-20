@@ -1,0 +1,24 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Домашний проект — Создание отчета</h2> 
+  <p>Для этого задания Вам потребуется подключить в Ваш проект библиотеку для генерации отчетов в Excel —&nbsp;Apache POI.</p> 
+  <p>Вам нужно разработать библиотеку для генерации&nbsp;отчетов в Excel поверх библиотеки&nbsp;Apache POI.</p> 
+  <p>Ваша библиотека должна уметь открывать Excel-шаблоны&nbsp;вида:</p> 
+  <p><img alt="" src="https://ucarecdn.com/9600beec-180b-4534-9900-c1cd7249d3fc/"></p> 
+  <p>где ~{nameColumn} — ячейка с шаблоном (координаты колонки, стили ячейки) для колонки с названием&nbsp;nameColumn.</p> 
+  <p>Вашей библиотеке&nbsp;передаются списки объектов&nbsp;вида:</p> 
+  <pre><code>class Worker {
+        @ExelColumn("name")
+        private String name;
+
+        @ExelColumn("salary")
+        private int salary;
+
+        @ExelColumn("birthday")
+        private LocalDate birthday;
+
+    }</code></pre> 
+  <p>Необходимо из шаблона Excel и входящего списка объектов сгенерировать отчет.</p>
+ </body>
+</html>

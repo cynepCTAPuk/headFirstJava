@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Вид отдохнувшего человека.
+- text: В Вашем внешнем виде присутствует множество различной атрибутики (значки с
+    логотипом футбольной команды, байкерские нашивки, готические браслеты и пр.).
+- text: Вид человека, страдающего от недосыпа.
+- text: Ваша одежда имеет совершенно нейтральный вид, вы не отличаетесь от среднестатистического
+    офисного работника.
+- text: Вид человека, которому пришлось бежать, чтобы успеть на собеседование.
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

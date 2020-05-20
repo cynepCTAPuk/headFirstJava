@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: для операции перезагрузки сервера лучше всего использовать метод post
+- text: 500 статус говорит, что на сервере произошел сбой при обработке запроса клиента
+- text: 404 статус говорит, что сетевой ресурс не найден
+- text: 400 статус говорит, что клиент передал серверу неправильные параметры или
+    некорректное тело запроса
+- text: для обновления сетевого ресурса рекомендуется использовать метод put
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

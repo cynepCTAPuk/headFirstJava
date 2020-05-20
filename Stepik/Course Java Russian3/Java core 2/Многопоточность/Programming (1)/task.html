@@ -1,0 +1,14 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Безопасный инкремент переменной. Атомики. Практика использования&nbsp;CAS</h2> 
+  <p>CAS — compareAndSet, один из самых популярных методов всех атомиков. Попробуйте при помощи&nbsp;CAS сделать макрооперацию атомарной.</p> 
+  <p>Необходимо реализовать функцию safeIncrement():</p> 
+  <ul> 
+   <li> <p>в теле функции&nbsp;safeIncrement() производится инкремент переменной count;</p> </li> 
+   <li> <p>известно, что функция&nbsp;safeIncrement() одновременно вызывается во множестве потоков;</p> </li> 
+   <li> <p>используя экземпляр&nbsp;AtomicBoolean, добиться, чтобы конечное значение переменной count было равно количеству вызовов функции&nbsp;safeIncrement();</p> </li> 
+   <li> <pre>блокировками из пакета java.util.concurrent.locks.* и другими средствами синхронизации пользоваться нельзя.</pre> </li> 
+  </ul>
+ </body>
+</html><br><b>Sample Input:</b><br>thread: 1<br><b>Sample Output:</b><br>actual: 10000<br>expected: 10000<br><br><b>Sample Input:</b><br>thread: 5<br><b>Sample Output:</b><br>actual: 50000<br>expected: 50000<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>

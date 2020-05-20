@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: если на объект ссылается только SoftReference, то этот объект никогда не будет
+    удален
+- text: если вызвать System.gc(), то гарантированно запустится сборка мусора
+- text: GC гарантированно удалит из кучи все объекты, доступные только по soft-ссылке,
+    перед тем как бросить OutOfMemoryError
+- text: ссылки SoftReference используются для создания программных кешей
+- text: если во время сборки метод finalize() сгенерирует исключение, то оно будет
+    игнорироваться
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

@@ -1,0 +1,17 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Регулярные выражения</h2> 
+  <p>Необходимо реализовать функцию:</p> 
+  <ul> 
+   <li> <p>на вход функция получает строку &nbsp;с произвольным многострочным текстом;</p> </li> 
+   <li> <p>нужно при помощи регулярного выражения определить все url, которые встречаются в тексте;</p> </li> 
+   <li> <p>в одной строке предполагается наличие как мусорного текста, так и url;</p> </li> 
+   <li> <p>нужно найти все url и печатать их в консоль&nbsp;по мере нахождения;</p> </li> 
+   <li> <p>url должны печататься в консоль в том же порядке, что и в исходном тексте;</p> </li> 
+   <li> <p>для выполнения задачи требуется использовать регулярное выражение.</p> </li> 
+  </ul> 
+  <p>По сравнению с другими задачами на строки добавлен дополнительно импорт:</p> 
+  <pre><code>import java.util.regex.*;</code></pre>
+ </body>
+</html><br><b>Sample Input:</b><br>rhrthr https://stepik.org edtrhert r113223@12 https://wererwg.ru erwg3rg@123009https<br>rhrthr http://sfrgeee.org/ewfef/wqewrg<br>5476y65yyyyyh$%&$<br>https://makedreamprofits.ru/?utm_source=ewqee&utm_medium=qew<br><b>Sample Output:</b><br>https://stepik.org<br>https://wererwg.ru<br>http://sfrgeee.org/ewfef/wqewrg<br>https://makedreamprofits.ru/?utm_source=ewqee&utm_medium=qew<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>

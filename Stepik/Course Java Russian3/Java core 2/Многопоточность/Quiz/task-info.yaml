@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: для синхронизации потоков в ConcurrentHashMap по возможности используются
+    CAS операции
+- text: при выполнении любого метода у ConcurrentHashMap другие методы блокируются,
+    пока гарантированно не завершится выполняемый метод
+- text: ConcurrentHashMap поддерживает null ключ
+- text: производительность Collections.synchronizedMap(HashMap()) и ConcurrentHashMap
+    одинаковая
+- text: concurrencyLevel — это параметр, делящий  ConcurrentHashMap  на сегменты;
+    в один момент времени в сегмент может записывать лишь один поток
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,21 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    ReentrantLock lockA = new ReentrantLock();
+    ReentrantLock lockB = new ReentrantLock();
+
+    AtomicInteger count = new AtomicInteger(2);
+
+    void method1() {
+        job1();
+    }
+
+    void method2() {
+        job2();
+    }
+  learner_created: false
+status: Unchecked
+record: -1

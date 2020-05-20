@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: статический инициализирующий блок будет запущен в момент загрузки класса ClassLoader
+- text: static можно применять к полям класса
+- text: static можно применять к переменным внутри метода
+- text: статический метод можно переопределить в классе наследнике
+- text: в интерфейсах любые поля по умолчанию являются статическими
+- text: не рекомендуется использовать статические методы в экземплярах классa (object.staticMethod())
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

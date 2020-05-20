@@ -1,0 +1,31 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Иерархия исключений</h2> 
+  <p>Есть набор классов исключений:</p> 
+  <pre><code>class A extends Exception{
+        
+}
+
+class B extends A{
+
+}
+
+class C extends B{
+
+}
+
+class D extends B{
+
+}</code></pre> 
+  <p>и есть некоторый участок кода, где может быть проброшено одно из этих исключений:</p> 
+  <pre><code>try {
+    method();
+} catch (? e) {
+    
+} catch (? e) {
+    
+}</code></pre> 
+  <p>В каком порядке следует обрабатывать эти исключения в блоке try-catch?</p>
+ </body>
+</html>

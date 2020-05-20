@@ -1,0 +1,17 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    volatile int count = 0;
+
+    ReentrantLock lock = new ReentrantLock();
+
+    void safeIncrement() {
+        // enter your code
+        count++;
+        // enter your code
+    }
+  learner_created: false
+status: Unchecked
+record: -1

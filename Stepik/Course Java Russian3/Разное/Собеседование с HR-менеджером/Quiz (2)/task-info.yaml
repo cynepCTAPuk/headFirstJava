@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Если у меня есть увлечение, связанное с риском для здоровья, обязательно об
+    этом сообщу.
+- text: Расскажу, что основная цель текущего этапа моей жизни - успешная карьера и
+    обустройство собственного быта.
+- text: Скажу, что всё на данный момент в моей жизни хорошо и нет таких проблем, которые
+    бы могли отвлекать от рабочего процесса.
+- text: Расскажу подробно о всех аспектах своей личной жизни.
+- text: Расскажу о своих проблемах, чтобы вызвать сочувствие и сострадание.
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

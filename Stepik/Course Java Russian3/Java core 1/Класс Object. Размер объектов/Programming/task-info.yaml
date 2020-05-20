@@ -1,0 +1,26 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    Complex createComplex(double real, double image) {
+        // enter your code
+        return null;
+    }
+
+
+    interface Complex {
+
+        Complex sum(Complex other);
+
+        Complex sub(Complex other);
+
+        Complex mul(Complex other);
+
+        double getReal();
+
+        double getImage();
+    }
+  learner_created: false
+status: Unchecked
+record: -1

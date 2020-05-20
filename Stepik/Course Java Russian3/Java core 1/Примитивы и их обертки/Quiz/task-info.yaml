@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Будет ошибка компиляции
+- text: В переменную i будет записано число 10
+- text: В переменную i будет записан мусор
+- text: Во время исполнения сгенерируется исключение IllegalArgumentException
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

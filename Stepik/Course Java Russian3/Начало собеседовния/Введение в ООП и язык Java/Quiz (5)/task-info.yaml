@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Если объект, помеченный final, является аргументом метода, то гарантируется,
+    что он не будет модифицироваться внутри метода
+- text: Объекты передаются по ссылке
+- text: Значения примитивов копируются
+- text: Если модифицировать объект, который является аргументом метода, то эти изменения
+    будут видны как внутри метода, так и вне метода
+- text: Объекты клонируются, внутрь метода передается копия объекта
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

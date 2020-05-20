@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: в комнате должна гореть одна лампочка
+- text: в комнате должны гореть две лампочки
+- text: в комнате должны гореть три лампочки
+- text: задам уточняющий вопрос:<br>могу ли я дождаться, пока одна лампочка перегорит?
+- text: задам уточняющий вопрос:<br>а лампочки нагреваются?
+- text: задам уточняющий вопрос:<br>могу ли я снять выключатель и добавить в цепь
+    вместо него доп. нагрузку, чтобы лампочки горели с разной яркостью?
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

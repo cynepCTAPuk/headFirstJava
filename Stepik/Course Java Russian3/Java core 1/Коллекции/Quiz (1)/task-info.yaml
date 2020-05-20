@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: дерево будет перестраиваться, когда глубина любых двух листьев будет отличаться
+    более чем на единицу
+- text: в основе TreeSet лежит красно-черное дерево, оно будет автоматически самобалансироваться
+- text: при самобалансировке дерево всегда будет перестраиваться целиком
+- text: дерево будет перестраиваться, когда глубина любых двух листьев будет отличаться
+    более чем на два
+- text: при самобалансировке будет перестраиваться поддерево
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

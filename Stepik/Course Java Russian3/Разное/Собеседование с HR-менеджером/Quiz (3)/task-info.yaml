@@ -1,0 +1,28 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Очень много расскажу о тех вещах, о которых знаю только поверхностно.
+- text: Расскажу о проектах, в которых принимал(а) участие во время обучения (в вузе,
+    в колледже, на курсах).
+- text: Расскажу только о тех сторонах своего опыта, в которых хорошо разбираюсь и
+    в которых хотел(а) бы разбираться.
+- text: Расскажу о нескольких успешно решённых кейсах или успешно завершённых проектах.
+- text: Расскажу коротко и ясно о своих задачах, которые решал на предыдущем месте
+    работы.
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

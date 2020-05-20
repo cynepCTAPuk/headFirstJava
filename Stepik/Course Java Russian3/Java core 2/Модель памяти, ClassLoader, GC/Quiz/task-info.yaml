@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: многопоточная программа состоит из нескольких стеков и одной кучи
+- text: 'программа на Java делится на следующие области памяти: стек, куча'
+- text: 'программа на Java делится на следующие области памяти: стек, куча, metaspace
+    (permgen)'
+- text: metaspace (permgen) — это область памяти, где хранится описание классов
+- text: однопоточная программа состоит из одного стека и одной кучи
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

@@ -1,0 +1,19 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    void setParents(List<Node> nodes) {
+        // enter your code
+    }
+
+    interface Node{
+        Node getLeft();
+        Node getRight();
+        Node getParent();
+        void setParent(Node parent);
+    }
+  learner_created: false
+status: Unchecked
+record: -1

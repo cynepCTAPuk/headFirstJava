@@ -1,0 +1,54 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Загрузка классов, ClassLoader</h2> 
+  <p>ClassLoader позволяет динамически загружать классы во время работы JVM.</p> 
+  <p>В любой программе присутствуют следующие стандартные загрузчики:</p> 
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 500px;"> 
+   <thead> 
+    <tr> 
+     <th>Загрузчик</th> 
+     <th>Загружаемые классы</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td style="text-align: center;">Bootstrap&nbsp;</td> 
+     <td style="text-align: center;">$JAVA_HOME/lib</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">Extension Classloader</td> 
+     <td style="text-align: center;">$JAVA_HOME/lib/ext</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">System Classloader</td> 
+     <td style="text-align: center;">CLASSPATH</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>Загрузка классов производится, как правило, лениво, по необходимости.</p> 
+  <p>Вот так можно создать экземпляр класса&nbsp;ClassLoaderStep, явно используя&nbsp;загрузчик классов:</p> 
+  <pre><code>ClassLoader loader = ClassLoader.getSystemClassLoader();
+Class&lt;?&gt; aClass = loader.loadClass("ru.course.lessons.ClassLoaderStep");
+Object obj = aClass.newInstance();
+System.out.println(obj);</code></pre> 
+  <p>Алгоритм поиска классов в загрузчике:</p> 
+  <ul> 
+   <li>ищем класс в&nbsp;текущем загрузчике;</li> 
+   <li>если не нашли, ищем в&nbsp;родительском загрузчике, если он не null.</li> 
+  </ul> 
+  <pre><code>ClassLoader parent = loader.getParent();</code></pre> 
+  <p><strong>Кастомный загрузчик классов</strong></p> 
+  <p>Иногда требуется реализовывать свои загрузчики классов, когда необходимо решать нестандартные задачи:</p> 
+  <ul> 
+   <li>динамическая перезагрузка классов (Hot Reload);</li> 
+   <li>одновременное наличие двух и более классов с одинаковым именем;</li> 
+   <li>загрузка классов из нестандартных каталогов и нестандартных jar-файлов.</li> 
+  </ul> 
+  <p>Примеры использования Hot Reload:</p> 
+  <ul> 
+   <li>в некоторых IDE, где после сохранения текста класса&nbsp;в программе без ее перезапуска, автоматически подгрузится новая реализация класса;</li> 
+   <li>обновление серверов, сервер получает jar-файл с обновлениями&nbsp;и пытается обновить свои классы из этого джарника.</li> 
+  </ul>
+ </body>
+</html>

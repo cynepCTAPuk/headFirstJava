@@ -1,0 +1,14 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    String actual = workers.stream()
+            // enter your code
+            .collect(
+                    // enter your code
+            );
+  learner_created: false
+status: Unchecked
+record: -1

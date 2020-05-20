@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: class GenericException&lt;T&gt; extend Exception{}, параметризованные исключения
+- text: для Box&lt;Integer&gt; и для Box&lt;Double&gt;  одна скомпилированная реализация
+    класса Box
+- text: T data = new T(), создание экземпляра
+- text: Box&lt;?&gt; box, вызов параметризованного сеттера
+- text: private static T data, статическое поле класса
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

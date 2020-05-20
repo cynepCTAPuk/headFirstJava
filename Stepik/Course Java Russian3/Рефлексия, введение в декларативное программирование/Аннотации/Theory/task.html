@@ -1,0 +1,34 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Аннотации</h2> 
+  <p>Аннотации&nbsp;— это некоторая дополнительная информация о классе, методе, поле и т.д.</p> 
+  <p>В некоторых источниках аннотации называют стереотипами.</p> 
+  <p>Для создания нового стереотипа, как правило, применяют стандартные аннотации:</p> 
+  <ul> 
+   <li>@Target</li> 
+   <li>@Retention</li> 
+   <li>@Documented</li> 
+   <li>@Inherited</li> 
+  </ul> 
+  <p>Пример создания новой аннотации:</p> 
+  <pre><code class="language-java">@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Inherited
+public @interface MyFirstAnnotation {
+
+}</code></pre> 
+  <p>Пример использования аннотации:</p> 
+  <pre><code class="language-java">@MyFirstAnnotation 
+public class MyClass {
+
+}</code></pre> 
+  <p>Жизненный цикл аннотаций:</p> 
+  <ul> 
+   <li>доступны только в исходниках (доступно для IDE, инструментов кодогенерации типа Lombok);</li> 
+   <li>доступны в исходниках&nbsp;и в байт-коде (доступно для внешних инструментов работы с байт-кодом);</li> 
+   <li>доступны в исходниках, в байт-коде и во время исполнения (может использоваться в рефлексии).</li> 
+  </ul>
+ </body>
+</html>

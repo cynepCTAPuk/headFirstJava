@@ -1,0 +1,56 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Класс&nbsp;Object</h2> 
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 700px;"> 
+   <thead> 
+    <tr> 
+     <th>Название метода</th> 
+     <th>Описание</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td style="text-align: center;">equals</td> 
+     <td>проверяет, равен ли один объект другому</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">hashCode</td> 
+     <td>числовая функция, используется для быстрого сравнения объектов</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">toString</td> 
+     <td>возвращает строку,&nbsp;описывающую объект</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">getClass</td> 
+     <td>возвращает спец. класс с описанием данного класса</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">finalize</td> 
+     <td>вызывается перед удалением объекта сборщиком мусора</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">clone</td> 
+     <td>используется для создания копии объекта</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">wait</td> 
+     <td>ожидает, пока другой поток не разбудит данный поток</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">notify</td> 
+     <td>будит другой поток, спящий на wait</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">notifyAll</td> 
+     <td>будит все потоки, спящие на wait</td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <p>Типичный вопрос на собеседовании: назовите все методы класса Object.</p> 
+  <p>Методы&nbsp;equals и&nbsp;hashCode неразрывно связаны. Существует правило: два равных объекта должны иметь одинаковый&nbsp;hashCode, но при этом два объекта, у которых равный&nbsp;hashCode, не обязательно равны между собой.</p> 
+  <p>Самые часто используемые методы:&nbsp;equals,&nbsp;hashCode,&nbsp;toString,&nbsp;getClass.</p> 
+  <p>Считается, что все классы в Java унаследованы от класса Object, даже если у класса&nbsp;явно не указан родитель.</p>
+ </body>
+</html>

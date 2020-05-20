@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: 'перед соединением сертификат открытого ключа передается от сервера клиенту  '
+- text: 'перед соединением сертификат открытого ключа передается от клиента серверу  '
+- text: 'HTTPS больше защищен от прослушивания трафика по сравнению с HTTP '
+- text: HTTPS – это отдельный протокол передачи данных, не имеет ничего общего с HTTP
+- text: 'HTTPS – это тот же протокол HTTP, упакованный в ssl или tsl '
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

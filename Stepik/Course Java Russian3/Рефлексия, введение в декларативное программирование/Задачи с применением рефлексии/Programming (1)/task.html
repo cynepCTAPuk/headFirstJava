@@ -1,0 +1,33 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Контейнер операций</h2> 
+  <p>Необходимо реализовать функцию:</p> 
+  <ul> 
+   <li> <p>на вход функция получает список объектов&nbsp;(пул объектов);</p> </li> 
+   <li> <p>в некоторых объектах будут встречаться методы с аннотацией @BotRequestMapping;</p> </li> 
+   <li> <p>в аннотации @BotRequestMapping представлен url некоторой операции;</p> </li> 
+   <li> <p>необходимо&nbsp;сформировать HashMap с операциями, где ключом будет url операции, а значением —&nbsp;сама операция;</p> </li> 
+   <li> <p>в дальнейшем вызов операций будет производиться произвольно, без Вашего участия;</p> </li> 
+   <li> <p>при вызове операции по url должен вызываться метод с таким же url;</p> </li> 
+   <li> <p>гарантируется, что все методы будут без аргументов;</p> </li> 
+   <li> <p>гарантируется, что&nbsp;каждый класс представлен единственным объектом.</p> </li> 
+  </ul> 
+  <p>Пример тестового пула объектов (case 1):</p> 
+  <pre><code class="language-java">class A {
+        @BotRequestMapping("hello")
+        void methodA1() {
+            System.out.println("hello world!!!");
+        }
+
+        @BotRequestMapping("goodbye")
+        void methodA2() {
+            System.out.println("goodbye my friend!!!");
+        }
+
+        void methodA3() {
+            System.out.println("bad call!!");
+        }
+    }</code></pre>
+ </body>
+</html><br><b>Sample Input:</b><br>case 1<br><b>Sample Output:</b><br>hello world!!!<br>hello world!!!<br>goodbye my friend!!!<br><br><b>Sample Input:</b><br>case 2<br><b>Sample Output:</b><br>hello world!!!<br>madam I'm adam<br>A cat may look at a king<br>A barking dog never bites<br>goodbye my friend!!!<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>

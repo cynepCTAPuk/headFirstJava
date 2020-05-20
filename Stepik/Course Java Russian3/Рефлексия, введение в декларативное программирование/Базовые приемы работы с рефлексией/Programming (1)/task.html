@@ -1,0 +1,22 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Вызов метода средствами рефлексии</h2> 
+  <p>Необходимо реализовать функцию:&nbsp;</p> 
+  <ul> 
+   <li> <p>на вход функция получает объект;</p> </li> 
+   <li> <p>на вход функция получает название метода;</p> </li> 
+   <li> <p>на вход функция получает аргументы вызываемого метода;</p> </li> 
+   <li> <p>требуется у объекта вызвать метод&nbsp;с соответствующим названием;</p> </li> 
+   <li> <p>гарантируется, что у объекта названия всех методов уникальны.</p> </li> 
+  </ul> 
+  <p>Пример объекта с методом, который должен будет вызываться:</p> 
+  <pre><code>class A {
+        public void sayHello() {
+            System.out.println("Hello world!!!");
+        }
+    }</code></pre> 
+  <p>Подсказка:</p> 
+  <p><em>Проще всего взять&nbsp;у класса все методы&nbsp;и из них выбрать подходящий по названию.</em></p>
+ </body>
+</html><br><b>Sample Input:</b><br>methodName sayHello<br><b>Sample Output:</b><br>Hello world!!!<br><br><b>Sample Input:</b><br>methodName sayHello2 the best world<br><b>Sample Output:</b><br>Hello the best world!!!<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>

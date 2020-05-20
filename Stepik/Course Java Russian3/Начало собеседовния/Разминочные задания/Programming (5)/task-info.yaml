@@ -1,0 +1,19 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    Node reverse(Node head){
+        // enter your code
+        return null;
+    }
+
+    interface Node{
+        Node getNext();
+
+        void setNext(Node next);
+    }
+  learner_created: false
+status: Unchecked
+record: -1

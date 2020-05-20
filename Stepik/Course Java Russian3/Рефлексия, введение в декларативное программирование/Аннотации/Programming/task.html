@@ -1,0 +1,36 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Получение аннотаций и их параметров</h2> 
+  <p>Необходимо реализовать функцию:&nbsp;</p> 
+  <ul> 
+   <li> <p>на вход функция получает объект;</p> </li> 
+   <li> <p>необходимо вызвать все методы, помеченные аннотацией&nbsp;@Weight, в порядке возрастания их весов;</p> </li> 
+   <li> <p>гарантируется, что значения весов&nbsp;у методов уникальны;</p> </li> 
+   <li> <p>гарантируется, что у всех вызываемых методов отсутствуют аргументы.</p> </li> 
+  </ul> 
+  <p>Аннотация&nbsp;@Weight:</p> 
+  <pre><code class="language-java">@Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface Weight {
+        int value();
+    }</code></pre> 
+  <p>Пример объекта:</p> 
+  <pre><code class="language-java">class A {
+        @Weight(10)
+        void method1() {
+            System.out.println("method1");
+        }
+
+        @Weight(3)
+        void method2() {
+            System.out.println("method2");
+        }
+
+        @Weight(21)
+        void method3() {
+            System.out.println("method3");
+        }
+    }</code></pre>
+ </body>
+</html><br><b>Sample Input:</b><br>class A<br><b>Sample Output:</b><br>method2<br>method1<br>method3<br><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 8 seconds</font><br><br>

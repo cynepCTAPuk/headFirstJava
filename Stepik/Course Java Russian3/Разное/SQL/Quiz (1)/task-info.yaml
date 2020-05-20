@@ -1,0 +1,27 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: 'атака на БД через sql инъекции возможна через запрос statement '
+- text: в statement запросе значения параметров передаются отдельно от запроса
+- text: 'для однократного запроса statement быстрее, чем preparedStatement '
+- text: 'если запрос preparedStatement будет скомпилирован на сервере и закеширован,
+    то при следующем таком же запросе вместо новой компиляции будет использоваться
+    закешированная версия, даже если параметры запроса будут отличаться '
+- text: в preparedStatement запросе  значения параметров передаются отдельно от запроса
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1
+custom_name: Quiz

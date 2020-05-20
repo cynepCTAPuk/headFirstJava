@@ -1,0 +1,72 @@
+<html>
+ <head></head>
+ <body>
+  <h2>Старое API&nbsp;vs новое API</h2> 
+  <h3>Старое API:</h3> 
+  <ul> 
+   <li>java.util.Date – по сути long, где записано время в миллисекундах,&nbsp;ноль соответствует&nbsp;1 января 1970 года</li> 
+   <li>java.util.Calendar – универсальный рембо класс, который включает в себя экземпляр&nbsp;Date, а также информацию о временных зонах</li> 
+  </ul> 
+  <p>Date, как и&nbsp;Calendar, имеет ужасное название, не отражающее суть его&nbsp;поведения. Оба этих класса не иммутабельны.</p> 
+  <p>В настоящее время очень много старого кода написано с применением&nbsp;java.util.Date.</p> 
+  <p>При работе со временем, если явно не указывать временную зону, она берется по умолчанию. Например, для жителей Москвы разрабатывали приложение в Москве, разработчики тестировали систему в Москве, запустили конечный продукт в облаке в США –&nbsp;разница будет&nbsp;12 часов.&nbsp;</p> 
+  <h3>Новое API:</h3> 
+  <ul> 
+   <li>java.time.Clock –&nbsp;часы, могут&nbsp;быть не идущими, опаздывающими, идущими с различной степенью точности</li> 
+   <li>java.time.ZoneId –&nbsp;обозначает временную зону</li> 
+   <li>java.time.Instant –&nbsp;аналог&nbsp;java.util.Date, ничего не знает про временную зону,&nbsp;toString() вернет время в формате&nbsp;ISO-8601</li> 
+   <li>java.time.LocalTime –&nbsp;это кортеж (час, минуты, секунды, наносекунды)</li> 
+   <li>java.time.LocalDate –&nbsp;это кортеж (год, месяц, день месяца)</li> 
+   <li>java.time.LocalDateTime –&nbsp;оба кортежа вместе</li> 
+  </ul> 
+  <p>Для новых классов практически нет ограничения по времени:</p> 
+  <pre><code>LocalDateTime.MIN.toInstant(ZoneOffset.UTC); // -999999999-01-01T00:00:00Z
+LocalDateTime.MAX.toInstant(ZoneOffset.UTC); //&nbsp;+999999999-12-31T23:59:59.999999999Z</code></pre> 
+  <p>Полезные&nbsp;enum и классы:</p> 
+  <ul> 
+   <li>java.time.DayOfWeek –&nbsp;перечисление с днями недели, можно получить названия дней недели на русском</li> 
+   <li>java.time.Month –&nbsp;перечисление с месяцами года, можно получить названия месяцев на русском</li> 
+   <li>java.time.format.DateTimeFormatter –&nbsp;служит для преобразования даты в текст и обратно</li> 
+   <li>java.time.format.ZoneName –&nbsp;не публичный класс, в нем, например, можно посмотреть, как правильно пишется название временной зоны для Москвы или для Минска&nbsp;</li> 
+  </ul> 
+  <p>В DateTimeFormatter уже есть много предопределенных форматеров, например:</p> 
+  <table border="1" cellpadding="1" cellspacing="1" style="width: 700px;"> 
+   <thead> 
+    <tr> 
+     <th>Форматер</th> 
+     <th>Пример</th> 
+    </tr> 
+   </thead> 
+   <tbody> 
+    <tr> 
+     <td style="text-align: center;">BASIC_ISO_DATE</td> 
+     <td style="text-align: center;">20191001</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">ISO_DATE_TIME</td> 
+     <td style="text-align: center;">2019-10-01T18:04:15.5671387</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">ISO_DATE</td> 
+     <td style="text-align: center;">2019-10-01</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">ISO_TIME</td> 
+     <td style="text-align: center;">18:04:15.5671387</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">ISO_WEEK_DATE</td> 
+     <td style="text-align: center;">2019-W40-2 // 2019 год, 40-я неделя, вторник</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">ISO_ZONED_DATE_TIME</td> 
+     <td style="text-align: center;">2011-12-03T10:15:30+01:00[Europe/Paris]</td> 
+    </tr> 
+    <tr> 
+     <td style="text-align: center;">ofPattern("yyyy-MM-dd'T'HH:mm:ss")</td> 
+     <td style="text-align: center;">2019-10-02T11:03:00</td> 
+    </tr> 
+   </tbody> 
+  </table>
+ </body>
+</html>

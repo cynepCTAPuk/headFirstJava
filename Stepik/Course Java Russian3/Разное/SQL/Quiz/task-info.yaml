@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Foreign key — это первичный ключ.
+- text: Если какой-то столбец объявить ключом, то поиск по этому столбцу будет производиться
+    быстрее.
+- text: Один или несколько foreign key можно считать первичным ключом для некоторых
+    таблиц.
+- text: Первичный ключ — столбец или набор столбцов, которые однозначно идентифицируют
+    каждую строку в таблице.
+message_correct: Congratulations!
+message_incorrect: Incorrect solution
+files:
+- name: src/Main.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+status: Unchecked
+record: -1

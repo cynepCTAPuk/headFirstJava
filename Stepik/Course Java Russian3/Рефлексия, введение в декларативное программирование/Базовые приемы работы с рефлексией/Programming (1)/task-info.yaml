@@ -1,0 +1,12 @@
+type: code
+custom_name: Programming
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    void callMethodByName(Object object, String methodName, Object... params) throws Exception {
+        //enter your code
+    }
+  learner_created: false
+status: Unchecked
+record: -1
