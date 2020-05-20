@@ -64,8 +64,8 @@ public class SessionsServlet extends HttpServlet {
     }
 
     //sign out
-    public void doDelete(HttpServletRequest request,
-                         HttpServletResponse response) throws ServletException, IOException {
+    public void doDelete(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String sessionId = request.getSession().getId();
         UserProfile profile = accountService.getUserBySessionId(sessionId);
         if (profile == null) {
