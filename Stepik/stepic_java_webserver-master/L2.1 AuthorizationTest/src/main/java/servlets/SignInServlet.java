@@ -29,7 +29,7 @@ public class SignInServlet extends HttpServlet {
         if (profile != null && password.equals(profile.getPassword())) {
 //            accountService.addSession(request.getSession().getId(), profile);
             response.setContentType("text/html;charset=utf-8");
-            response.getWriter().println("Authorized: login");
+            response.getWriter().println("Authorized: " + login);
             response.setStatus(HttpServletResponse.SC_OK);
         } else {
             response.setContentType("text/html;charset=utf-8");
