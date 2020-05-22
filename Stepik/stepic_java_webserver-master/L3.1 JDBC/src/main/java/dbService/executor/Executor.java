@@ -6,11 +6,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ * @author v.chibrikov<p>Пример кода для курса на https://stepic.org/<p>
+ * Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
 public class Executor {
     private final Connection connection;
@@ -25,9 +22,7 @@ public class Executor {
         stmt.close();
     }
 
-    public <T> T execQuery(String query,
-                           ResultHandler<T> handler)
-            throws SQLException {
+    public <T> T execQuery(String query, ResultHandler<T> handler) throws SQLException {
         Statement stmt = connection.createStatement();
         stmt.execute(query);
         ResultSet result = stmt.getResultSet();

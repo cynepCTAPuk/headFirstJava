@@ -9,11 +9,8 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 /**
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ * @author v.chibrikov<p>Пример кода для курса на https://stepic.org/<p>
+ * Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
 public class DBService {
     private final Connection connection;
@@ -75,17 +72,26 @@ public class DBService {
     @SuppressWarnings("UnusedDeclaration")
     public static Connection getMysqlConnection() {
         try {
-            DriverManager.registerDriver((Driver) Class.forName("com.mysql.jdbc.Driver").newInstance());
+//            DriverManager.registerDriver((Driver) Class.forName("com.mysql.jdbc.Driver").newInstance());
+            DriverManager.registerDriver((Driver) Class.forName("com.mysql.cj.jdbc.Driver").newInstance());
 
             StringBuilder url = new StringBuilder();
-
             url.
                     append("jdbc:mysql://").        //db type
                     append("localhost:").           //host name
                     append("3306/").                //port
                     append("db_example?").          //db name
                     append("user=tully&").          //login
-                    append("password=tully");       //password
+                    append("password=tully")       //password
+//                    append("useUnicode=true&").
+//                    append("useJDBCCompliantTimezoneShift=true&").
+//                    append("useLegacyDatetimeCode=false&").
+//                    append("serverTimezone=UTC&").
+//                    append("verifyServerCertificate=false&").
+//                    append("useSSL=true&").
+//                    append("requireSSL=true")
+            ;
+
 
             System.out.println("URL: " + url + "\n");
 
