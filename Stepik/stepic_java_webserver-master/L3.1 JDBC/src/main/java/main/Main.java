@@ -15,10 +15,10 @@ public class Main {
         dbService.printConnectInfo();
         try {
             long userId = dbService.addUser("tully");
-            System.out.println("Added user id: " + userId);
+            System.out.println("\nAdded user id: " + userId);
 
             UsersDataSet dataSet = dbService.getUser(userId);
-            System.out.println("User data set: " + dataSet);
+            System.out.println("\nUser data set: " + dataSet);
 
             dbService.cleanUp();
         } catch (DBException e) {

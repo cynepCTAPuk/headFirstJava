@@ -8,28 +8,31 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.internal.SessionFactoryImpl;
 import org.hibernate.service.ServiceRegistry;
 
-import java.sql.Connection;
-import java.sql.SQLException;
+import java.util.List;
 
 /**
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ * @author v.chibrikov<p>Пример кода для курса на https://stepic.org/<p>
+ * Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
 public class DBService {
     private static final String hibernate_show_sql = "true";
-    private static final String hibernate_hbm2ddl_auto = "create";
+//    private static final String hibernate_hbm2ddl_auto = "update"; // обновляет схему, если находит различия
+//    private static final String hibernate_hbm2ddl_auto = "validate"; // проверяет схему, не внося изменения
+    private static final String hibernate_hbm2ddl_auto = "create";  // пересоздаёт схему
+//    private static final String hibernate_hbm2ddl_auto = "create-drop";   // уничтожает схему при закрытии
 
     private final SessionFactory sessionFactory;
 
     public DBService() {
-        Configuration configuration = getH2Configuration();
+//        Configuration configuration = getH2Configuration();
+        Configuration configuration = getMySqlConfiguration();
         sessionFactory = createSessionFactory(configuration);
+    }
+
+    public void closeSessionFactory() {
+        sessionFactory.close();
     }
 
     @SuppressWarnings("UnusedDeclaration")
@@ -37,11 +40,12 @@ public class DBService {
         Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(UsersDataSet.class);
 
-        configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-        configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/db_example");
-        configuration.setProperty("hibernate.connection.username", "tully");
-        configuration.setProperty("hibernate.connection.password", "tully");
+        configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
+//        configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
+        String url = "jdbc:mysql://localhost:3306/db_example?serverTimezone=UTC"; // added by CTAPuk
+        configuration.setProperty("hibernate.connection.url", url);
+        configuration.setProperty("hibernate.connection.username", "admin");
+        configuration.setProperty("hibernate.connection.password", "pa$$w0rd");
         configuration.setProperty("hibernate.show_sql", hibernate_show_sql);
         configuration.setProperty("hibernate.hbm2ddl.auto", hibernate_hbm2ddl_auto);
         return configuration;
@@ -56,48 +60,61 @@ public class DBService {
         configuration.setProperty("hibernate.connection.url", "jdbc:h2:./h2db");
         configuration.setProperty("hibernate.connection.username", "tully");
         configuration.setProperty("hibernate.connection.password", "tully");
-        configuration.setProperty("hibernate.show_sql", hibernate_show_sql);
+//        configuration.setProperty("hibernate.show_sql", hibernate_show_sql);
         configuration.setProperty("hibernate.hbm2ddl.auto", hibernate_hbm2ddl_auto);
         return configuration;
     }
 
-
-    public UsersDataSet getUser(long id) throws DBException {
-        try {
-            Session session = sessionFactory.openSession();
+    public UsersDataSet getUserById(long id) throws DBException {
+        try (Session session = sessionFactory.openSession()) {
             UsersDAO dao = new UsersDAO(session);
-            UsersDataSet dataSet = dao.get(id);
-            session.close();
-            return dataSet;
+            return dao.getUserById(id);
+        } catch (HibernateException e) {
+            throw new DBException(e);
+        }
+    }
+
+    public List<UsersDataSet> getAllRecords() throws DBException {    // added by CTAPuk
+        try (Session session = sessionFactory.openSession()) {
+            UsersDAO dao = new UsersDAO(session);
+            return dao.readAll();
         } catch (HibernateException e) {
             throw new DBException(e);
         }
     }
 
     public long addUser(String name) throws DBException {
-        try {
-            Session session = sessionFactory.openSession();
+        try (Session session = sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             UsersDAO dao = new UsersDAO(session);
             long id = dao.insertUser(name);
             transaction.commit();
-            session.close();
             return id;
         } catch (HibernateException e) {
             throw new DBException(e);
         }
     }
 
+    public long getUserIdByName(String name) throws DBException { // added by CTAPuk
+        try (Session session = sessionFactory.openSession()) {
+            UsersDAO dao = new UsersDAO(session);
+            return dao.getUserIdByName(name);
+        } catch (HibernateException e) {
+            throw new DBException(e);
+        }
+    }
+
     public void printConnectInfo() {
-        try {
-            SessionFactoryImpl sessionFactoryImpl = (SessionFactoryImpl) sessionFactory;
-            Connection connection = sessionFactoryImpl.getConnectionProvider().getConnection();
-            System.out.println("DB name: " + connection.getMetaData().getDatabaseProductName());
-            System.out.println("DB version: " + connection.getMetaData().getDatabaseProductVersion());
-            System.out.println("Driver: " + connection.getMetaData().getDriverName());
-            System.out.println("Autocommit: " + connection.getAutoCommit());
-        } catch (SQLException e) {
-            e.printStackTrace();
+//            SessionFactoryImpl sessionFactoryImpl = (SessionFactoryImpl) sessionFactory;
+//            Connection connection = sessionFactoryImpl.getConnectionProvider().getConnection();
+        try (Session session = sessionFactory.openSession()) {
+            session.doWork(connection -> {
+                System.out.println("DB name: " + connection.getMetaData().getDatabaseProductName());
+                System.out.println("DB version: " + connection.getMetaData().getDatabaseProductVersion());
+                System.out.println("Driver: " + connection.getMetaData().getDriverName());
+                System.out.println("Catalog: " + connection.getCatalog());
+                System.out.println("Autocommit: " + connection.getAutoCommit());
+            });
         }
     }
 
