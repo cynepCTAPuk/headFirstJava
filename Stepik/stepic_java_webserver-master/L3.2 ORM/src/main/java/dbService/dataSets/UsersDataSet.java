@@ -20,6 +20,8 @@ public class UsersDataSet implements Serializable { // Serializable Important to
     @Column(name = "name", unique = true, updatable = false)
     private String name;
 
+    private String password;
+
     //Important to Hibernate!
     @SuppressWarnings("UnusedDeclaration")
     public UsersDataSet() {
@@ -56,8 +58,8 @@ public class UsersDataSet implements Serializable { // Serializable Important to
     @Override
     public String toString() {
         return "UserDataSet{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
+                       "id=" + id +
+                       ", name='" + name + '\'' +
+                       '}';
     }
 }
