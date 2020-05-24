@@ -20,8 +20,6 @@ public class UsersDataSet implements Serializable { // Serializable Important to
     @Column(name = "name", unique = true, updatable = false)
     private String name;
 
-    private String password;
-
     //Important to Hibernate!
     @SuppressWarnings("UnusedDeclaration")
     public UsersDataSet() {
