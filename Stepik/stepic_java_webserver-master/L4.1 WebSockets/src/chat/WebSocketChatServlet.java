@@ -6,11 +6,8 @@ import org.eclipse.jetty.websocket.servlet.WebSocketServletFactory;
 import javax.servlet.annotation.WebServlet;
 
 /**
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ * @author v.chibrikov<p>Пример кода для курса на https://stepic.org/<p>
+ * Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
 @WebServlet(name = "WebSocketChatServlet", urlPatterns = {"/chat"})
 public class WebSocketChatServlet extends WebSocketServlet {

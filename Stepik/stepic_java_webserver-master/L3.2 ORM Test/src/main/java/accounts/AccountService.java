@@ -32,10 +32,12 @@ public class AccountService {
         if (profile == null) {
             try {
                 UsersDataSet dataSet = dbService.getUserByLogin(login);
-                String name = dataSet.getLogin();
-                String password = dataSet.getPassword();
-                profile = new UserProfile(name, password);
-            } catch (DBException | NullPointerException e) {
+                if (dataSet != null) {
+                    String name = dataSet.getLogin();
+                    String password = dataSet.getPassword();
+                    profile = new UserProfile(name, password);
+                }
+            } catch (DBException e) {
 //                e.printStackTrace();
             }
         }
