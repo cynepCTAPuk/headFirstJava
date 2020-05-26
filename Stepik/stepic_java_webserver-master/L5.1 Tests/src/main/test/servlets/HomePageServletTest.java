@@ -2,8 +2,10 @@ package servlets;
 
 import accountServer.AccountServer;
 import accountServer.AccountServerI;
+import org.junit.Assert;
 import org.junit.Test;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,32 +18,24 @@ import static org.mockito.Mockito.*;
 
 /**
  * @author a.akbashev
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ * @author v.chibrikov<p>Пример кода для курса на https://stepic.org/<p>
+ * Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
 public class HomePageServletTest {
     private AccountServerI accountServer = mock(AccountServer.class);
 
     private HttpServletResponse getMockedResponse(StringWriter stringWriter) throws IOException {
         HttpServletResponse response = mock(HttpServletResponse.class);
-
         final PrintWriter writer = new PrintWriter(stringWriter);
-
         when(response.getWriter()).thenReturn(writer);
-
         return response;
     }
 
     private HttpServletRequest getMockedRequest(String url) {
         HttpSession httpSession = mock(HttpSession.class);
         HttpServletRequest request = mock(HttpServletRequest.class);
-
         when(request.getSession()).thenReturn(httpSession);
         when(request.getPathInfo()).thenReturn(url);
-
         return request;
     }
 
@@ -53,10 +47,27 @@ public class HomePageServletTest {
         when(request.getParameter("remove")).thenReturn("");
 
         HomePageServlet homePage = new HomePageServlet(accountServer);
-
         homePage.doGet(request, response);
 
         assertEquals("Hasta la vista!", stringWriter.toString().trim());
         verify(accountServer, times(1)).removeUser();
     }
+
+/*
+    @Test
+    public void doGet() throws IOException, ServletException {
+        final StringWriter stringWriter = new StringWriter();
+        HttpServletResponse response = getMockedResponse(stringWriter);
+        HttpServletRequest request = getMockedRequest(HomePageServlet.PAGE_URL);
+
+        when(response.getWriter()).thenReturn(new PrintWriter(stringWriter));
+        when(request.getPathInfo()).thenReturn("/login");
+
+        HomePageServlet homePage = new HomePageServlet(accountServer);
+        homePage.doGet(request, response);
+
+        verify(request, atLeastOnce()).getParameter("username");
+        Assert.assertTrue(stringWriter.toString().contains("Welcome"));
+    }
+*/
 }
