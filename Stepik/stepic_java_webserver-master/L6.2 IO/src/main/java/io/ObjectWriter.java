@@ -8,7 +8,7 @@ import java.io.*;
 public class ObjectWriter {
     public static void main(String[] args) {
         stringExample();
-        descriptorExample();
+//        descriptorExample();
     }
 
     private static void stringExample() {

@@ -5,15 +5,11 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ * @author v.chibrikov<p>Пример кода для курса на https://stepic.org/<p>
+ * Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
 public class LogSaxHandler extends DefaultHandler {
     private static final String CLASSNAME = "class";
-
     private boolean inElement = false;
 
     public void startDocument() throws SAXException {
@@ -30,7 +26,6 @@ public class LogSaxHandler extends DefaultHandler {
             inElement = true;
         else
             System.out.println("Class name: " + attributes.getValue(0));
-
     }
 
     public void endElement(String uri, String localName, String qName) throws SAXException {

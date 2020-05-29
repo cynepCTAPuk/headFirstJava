@@ -3,11 +3,8 @@ package reflection;
 import java.lang.reflect.Field;
 
 /**
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ * @author v.chibrikov<p>Пример кода для курса на https://stepic.org/<p>
+ * Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
 public class ReflectionHelper {
     public static Object createInstance(String className) {
@@ -19,9 +16,7 @@ public class ReflectionHelper {
         return null;
     }
 
-    public static void setFieldValue(Object object,
-                                     String fieldName,
-                                     String value) {
+    public static void setFieldValue(Object object, String fieldName, String value) {
         try {
             Field field = object.getClass().getDeclaredField(fieldName);
             field.setAccessible(true);
@@ -55,7 +50,6 @@ public class ReflectionHelper {
                 case STRING:
                     field.set(object, value);
             }
-
             field.setAccessible(false);
         } catch (SecurityException | NoSuchFieldException | IllegalArgumentException | IllegalAccessException e) {
             e.printStackTrace();

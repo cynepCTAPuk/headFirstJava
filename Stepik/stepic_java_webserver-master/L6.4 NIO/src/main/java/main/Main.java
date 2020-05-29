@@ -6,22 +6,18 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 /**
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ * @author v.chibrikov<p>Пример кода для курса на https://stepic.org/<p>
+ * Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
 public class Main {
     public static void main(String[] args) throws Exception {
-        RandomAccessFile aFile = new RandomAccessFile("data/data.txt", "rw");
-        FileChannel inChannel = aFile.getChannel();
+        RandomAccessFile raf = new RandomAccessFile("data/data.txt", "rw");
+        FileChannel inChannel = raf.getChannel();
 
         ByteBuffer buf = ByteBuffer.allocate(64);
 
         int bytesRead = inChannel.read(buf);
         while (bytesRead != -1) {
-
             System.out.println("Read " + bytesRead);
             buf.flip();
 
@@ -32,6 +28,6 @@ public class Main {
             buf.clear();
             bytesRead = inChannel.read(buf);
         }
-        aFile.close();
+        raf.close();
     }
 }
