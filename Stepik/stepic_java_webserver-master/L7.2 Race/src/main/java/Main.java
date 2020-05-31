@@ -3,11 +3,8 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author v.chibrikov
- *         <p>
- *         Пример кода для курса на https://stepic.org/
- *         <p>
- *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ * @author v.chibrikov<p>Пример кода для курса на https://stepic.org/<p>
+ * Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
 public class Main {
     private static final int HUNDRED_MILLION = 100_000_000;
@@ -22,17 +19,16 @@ public class Main {
         RaceExample callable01 = new RaceExample(counter, realCountNumber);
         RaceExample callable02 = new RaceExample(counter, realCountNumber);
 
-        long startTime = (new Date()).getTime();
-
+        long startTime = System.nanoTime();
         Future<Integer> future01 = executorService.submit(callable01);
         Future<Integer> future02 = executorService.submit(callable02);
+        long finishTime = System.nanoTime();
 
         System.out.println("Future01: " + future01.get());
         System.out.println("Future02: " + future02.get());
         System.out.println("RealCountNumber: " + realCountNumber);
+        System.out.printf("Time spent: %,d nano%n", finishTime - startTime);
 
-        long finishTime = (new Date()).getTime();
-        System.out.println("Time spent: " + (finishTime - startTime));
         executorService.shutdown();
     }
 
@@ -47,7 +43,8 @@ public class Main {
 
         @Override
         public Integer call() throws Exception {
-            while (realCountNumber.incrementAndGet() < HUNDRED_MILLION) {
+            while (realCountNumber.get() < HUNDRED_MILLION) {
+                realCountNumber.incrementAndGet();
                 counter.increment();
             }
             return counter.getCount();
