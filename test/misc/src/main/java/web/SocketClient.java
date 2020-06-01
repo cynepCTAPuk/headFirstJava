@@ -12,8 +12,8 @@ public class SocketClient {
         //отправляем строку в OutputStream
         OutputStream outputStream = clientSocket.getOutputStream();
         PrintWriter out = new PrintWriter(outputStream, true);
-        out.println("Kiss my shiny metal ass!");
-//        out.println("exit");
+//        out.println("Kiss my shiny metal ass!");
+        out.println("exit");
 //        out.flush();
 
         //читаем ответ
