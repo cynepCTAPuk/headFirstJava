@@ -15,20 +15,48 @@ package interview;
  */
 public class Test116 {
     public static void main(String[] args) {
+        NodeI head = new NodeI(0);
+        Node current = head;
+        for (int i = 1; i < 5; i++) {
+            Node temp = new NodeI(i);
+            current.setNext(temp);
+            current = temp;
+        }
 
+        System.out.println(traverse(head));
+        System.out.println(traverse(reverse(head)));
     }
-    Node reverse(Node head) {
-        Node tmp;
+
+    static Node reverse(Node head) {
+        if (head == null) return null;
+        Node tmp = head;
+        head = head.getNext();
+        tmp.setNext(null);
         while (head != null) {
-            tmp = head.getNext();
+            tmp = head;
+            head = head.getNext();
             head.setNext(tmp);
         }
         return head;
     }
+
+    static String traverse(Node head) {
+        String result = "";
+        while (head != null) {
+            result += head.getI() + ", ";
+            head = head.getNext();
+        }
+        return result.substring(0, result.length() - 2);
+    }
 }
 
 class NodeI implements Node {
-    Node next;
+    private Node next;
+    private int i;
+
+    public NodeI(int i) {
+        this.i = i;
+    }
 
     @Override
     public Node getNext() {
@@ -39,10 +67,17 @@ class NodeI implements Node {
     public void setNext(Node next) {
         this.next = next;
     }
+
+    @Override
+    public int getI() {
+        return i;
+    }
 }
 
 interface Node {
     Node getNext();
 
     void setNext(Node next);
+
+    int getI();
 }
