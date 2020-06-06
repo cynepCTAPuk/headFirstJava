@@ -6,7 +6,6 @@ import ru.otus.spring03.domain.Person;
 
 @Service
 public class PersonServiceImpl implements PersonService {
-
     private final PersonDao dao;
 
     public PersonServiceImpl(PersonDao dao) {
