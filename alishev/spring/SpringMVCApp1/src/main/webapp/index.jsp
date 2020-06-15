@@ -1,5 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>Main page</h2>
+<p>web.xml</p>
 </body>
 </html>
