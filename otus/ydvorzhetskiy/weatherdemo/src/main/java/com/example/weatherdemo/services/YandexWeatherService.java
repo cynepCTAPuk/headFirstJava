@@ -1,7 +1,6 @@
-package com.example.wheatherapp.services;
+package com.example.weatherdemo.services;
 
-import com.example.wheatherapp.model.Weather;
-import lombok.RequiredArgsConstructor;
+import com.example.weatherdemo.model.Weather;
 import lombok.SneakyThrows;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -11,12 +10,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Service
 public class YandexWeatherService implements WeatherService {
 
-    @Value("${app.city-name}")
+    //    @Value("${app.city-name}")
     private String cityName;
+
+    public YandexWeatherService(@Value("${app.city-name}") String cityName) {
+        this.cityName = cityName;
+    }
 
     @SneakyThrows
     @Override

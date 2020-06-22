@@ -1,6 +1,6 @@
-package com.example.wheatherapp.services;
+package com.example.weatherdemo.services;
 
-import com.example.wheatherapp.model.Weather;
+import com.example.weatherdemo.model.Weather;
 
 import java.util.List;
 

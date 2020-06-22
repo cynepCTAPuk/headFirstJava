@@ -1,4 +1,4 @@
-package com.example.wheatherapp.config;
+package com.example.weatherdemo.config;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
