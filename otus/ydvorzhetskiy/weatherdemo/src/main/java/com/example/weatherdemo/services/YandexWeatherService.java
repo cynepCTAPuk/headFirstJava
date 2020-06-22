@@ -14,12 +14,14 @@ import java.util.List;
 @Service
 public class YandexWeatherService implements WeatherService {
 
-    //    @Value("${app.city-name}")
+        @Value("${app.city-name}")
     private String cityName;
 
+/*
     public YandexWeatherService(@Value("${app.city-name}") String cityName) {
         this.cityName = cityName;
     }
+*/
 
     @SneakyThrows
     @Override

@@ -9,5 +9,4 @@ public class Weather {
     private String source;
     private String city;
     private String temperature;
-
 }
