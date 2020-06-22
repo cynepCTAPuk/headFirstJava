@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 @Service("weatherService")
 public class WeatherAggregationService implements WeatherServiceAggregation {
     private static Logger logger = LoggerFactory.getLogger(WeatherAggregationService.class);
-
     private final List<WeatherService> weatherServices;
     private final WeatherCache weatherCache;
     private static final List<Weather> EMPTY_LIST = new ArrayList<>();

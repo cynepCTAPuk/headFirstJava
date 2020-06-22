@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class WeatherCache implements Cache<List<Weather>> {
     private static Logger logger = LoggerFactory.getLogger(WeatherCache.class);
-
     private List<Weather> weatherCached;
 
     public WeatherCache() {
@@ -27,11 +26,9 @@ public class WeatherCache implements Cache<List<Weather>> {
         weatherCached = null;
     }
 
-
     @Override
     public synchronized void putValue(List<Weather> value) {
         this.weatherCached = value;
-
     }
 
     @Override

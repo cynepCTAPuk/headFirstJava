@@ -1,0 +1,12 @@
+2020-06-22 14:54:24,913 INFO [main] [StartupInfoLogger.java:55] Starting WeatherdemoApplicationTest on gu62ql7 with PID 22092 (started by CTAPuk in C:\v\java\GitHub\cynepCTAPuk\headFirstJava\otus\webinar20191213\weaterdemo)
+2020-06-22 14:54:24,916 INFO [main] [SpringApplication.java:651] No active profile set, falling back to default profiles: default
+2020-06-22 14:54:27,106 INFO [pool-2-thread-1] [WeatherCache.java:26] resetCache
+2020-06-22 14:54:27,795 INFO [main] [StartupInfoLogger.java:61] Started WeatherdemoApplicationTest in 3.266 seconds (JVM running for 4.854)
+2020-06-22 14:54:28,025 INFO [http-nio-auto-1-exec-1] [WeatherRestController.java:30] get weather
+2020-06-22 14:54:28,187 INFO [http-nio-auto-1-exec-2] [WeatherRestController.java:36] get weatherNull
+2020-06-22 15:06:50,751 INFO [main] [StartupInfoLogger.java:55] Starting WeatherdemoApplicationTest on gu62ql7 with PID 7764 (started by CTAPuk in C:\v\java\GitHub\cynepCTAPuk\headFirstJava\otus\webinar20191213\weaterdemo)
+2020-06-22 15:06:50,754 INFO [main] [SpringApplication.java:651] No active profile set, falling back to default profiles: default
+2020-06-22 15:06:53,059 INFO [pool-2-thread-1] [WeatherCache.java:26] resetCache
+2020-06-22 15:06:53,837 INFO [main] [StartupInfoLogger.java:61] Started WeatherdemoApplicationTest in 3.482 seconds (JVM running for 5.101)
+2020-06-22 15:06:54,060 INFO [http-nio-auto-1-exec-1] [WeatherRestController.java:30] get weather
+2020-06-22 15:06:54,193 INFO [http-nio-auto-1-exec-2] [WeatherRestController.java:36] get weatherNull

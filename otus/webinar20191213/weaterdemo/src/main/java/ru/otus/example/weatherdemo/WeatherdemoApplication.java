@@ -13,7 +13,6 @@ import ru.otus.example.weatherdemo.services.WeatherAggregationService;
 О формате логов
 http://openjdk.java.net/jeps/158
 
-
 -Xms256m
 -Xmx256m
 -Xlog:gc=debug:file=./logs/gc-%p-%t.log:tags,uptime,time,level:filecount=5,filesize=10m
@@ -26,16 +25,15 @@ http://openjdk.java.net/jeps/158
 
 @SpringBootApplication
 public class WeatherdemoApplication {
-	private static Logger logger = LoggerFactory.getLogger(WeatherAggregationService.class);
+    private static Logger logger = LoggerFactory.getLogger(WeatherAggregationService.class);
 
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder.build();
+    }
 
-	public static void main(String[] args) {
-		logger.info("starting app...");
-		SpringApplication.run(WeatherdemoApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        logger.info("starting app...");
+        SpringApplication.run(WeatherdemoApplication.class, args);
+    }
 }

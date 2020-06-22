@@ -12,13 +12,10 @@ import ru.otus.example.weatherdemo.models.Weather;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public class YandexWeatherService implements WeatherService {
     private static Logger logger = LoggerFactory.getLogger(YandexWeatherService.class);
-
     private static final List<Weather> EMPTY_LIST = new ArrayList<>();
-
 
     @Value("${app.city-name}")
     private String cityName;
@@ -27,8 +24,9 @@ public class YandexWeatherService implements WeatherService {
     public List<Weather> getWeather() {
         try {
             logger.info("Yandex performing request...");
-            Thread.sleep(1000);
-            Document doc = Jsoup.connect(String.format("https://yandex.ru/pogoda/%s", cityName)).get();
+//            Thread.sleep(100);
+            Document doc = Jsoup.connect(String.format(
+                    "https://yandex.ru/pogoda/%s", cityName)).get();
             Element tempValue = doc.selectFirst(".temp__value");
             logger.info("Yandex request done.");
             return List.of(new Weather("YandexWeather", cityName, tempValue.text()));

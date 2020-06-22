@@ -73,12 +73,11 @@ public class WeatherdemoApplicationTest {
 
         List<Weather> result = gson.fromJson(response.getBody(), listType);
 
-        assertThat(result).isNotEmpty()
+        assertThat(result)
+                .isNotEmpty()
                 .satisfiesAnyOf(
                         wl -> assertThat(wl).isEqualTo(openWeather),
                         wl -> assertThat(wl).isEqualTo(yandexWeather)
                 );
     }
-
-
 }

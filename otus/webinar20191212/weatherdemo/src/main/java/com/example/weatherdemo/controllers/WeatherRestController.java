@@ -14,7 +14,8 @@ public class WeatherRestController {
 
 //    public WeatherRestController(@Qualifier("yandexWeatherService") WeatherService weatherService) {
 //    public WeatherRestController(@Qualifier("openWeatherService") WeatherService weatherService) {
-    public WeatherRestController(@Qualifier("weatherAggregationService") WeatherService weatherService) {
+    public WeatherRestController(
+            @Qualifier("weatherAggregationService") WeatherService weatherService) {
         this.weatherService = weatherService;
     }
 

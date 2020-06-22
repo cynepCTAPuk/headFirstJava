@@ -10,7 +10,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class WeatherAggregationService implements WeatherService {
-
     private final List<WeatherService> weatherServices;
 
     @Override

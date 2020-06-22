@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class YandexWeatherService implements WeatherService {
 
-        @Value("${app.city-name}")
+    @Value("${app.city-name}")
     private String cityName;
 
 /*
@@ -26,7 +26,8 @@ public class YandexWeatherService implements WeatherService {
     @SneakyThrows
     @Override
     public List<Weather> gWeather() {
-        Document doc = Jsoup.connect(String.format("https://yandex.ru/pogoda/%s", cityName)).get();
+        Document doc = Jsoup.connect(String.format(
+                "https://yandex.ru/pogoda/%s", cityName)).get();
         Element tempValue = doc.selectFirst(".temp__value");
         return List.of(new Weather("YandexWeather", cityName, tempValue.text()));
     }

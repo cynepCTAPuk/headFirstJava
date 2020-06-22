@@ -25,8 +25,8 @@ public class OpenWeatherService implements WeatherService {
     @Override
     public List<Weather> gWeather() {
         val url = String.format(
-                "https://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&lang=ru&appid=%s",
-                cityName, apiKey);
+                "https://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&lang=ru&appid=%s"
+                , cityName, apiKey);
         val dto = restTemplate.getForObject(url, OpenWeatherDto.class);
         return Collections.singletonList(toModel(dto));
     }

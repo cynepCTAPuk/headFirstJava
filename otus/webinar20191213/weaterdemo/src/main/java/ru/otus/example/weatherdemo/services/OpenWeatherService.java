@@ -16,12 +16,12 @@ import ru.otus.example.weatherdemo.models.Weather;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import static java.util.Collections.EMPTY_LIST;
+
 @Service
 public class OpenWeatherService implements WeatherService {
     private static Logger logger = LoggerFactory.getLogger(OpenWeatherService.class);
-
     private final RestTemplate restTemplate;
-
 
     public OpenWeatherService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -33,21 +33,31 @@ public class OpenWeatherService implements WeatherService {
     @Value("${app.city-name}")
     private String cityName;
 
-    private final Gson gson = new GsonBuilder().registerTypeAdapter(Weather.class, new JsonDeserializer<Weather>() {
-        @Override
-        public Weather deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
-            JsonObject main = jsonElement.getAsJsonObject().getAsJsonObject("main");
-            return new Weather("OpenWeatherMap", cityName, main.get("temp").getAsString());
-        }
-    }).create();
+    private final Gson gson =
+            new GsonBuilder().registerTypeAdapter(Weather.class, new JsonDeserializer<Weather>() {
+                @Override
+                public Weather deserialize(
+                        JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) {
+                    JsonObject main = jsonElement.getAsJsonObject().getAsJsonObject("main");
+                    return new Weather("OpenWeatherMap", cityName, main.get("temp").getAsString());
+                }
+            }).create();
 
     @Override
     public List<Weather> getWeather() {
-        logger.info("Open performing request...");
-        String url = String.format("https://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&lang=ru&appid=%s", cityName, apiKey);
-        String weatherString = restTemplate.getForObject(url, String.class);
-        logger.info("Open request done.");
-        return List.of(gson.fromJson(weatherString, Weather.class));
+        try {
+            logger.info("OpenWeather performing request...");
+//            Thread.sleep(100);
+            String url = String.format(
+                    "https://api.openweathermap.org/data/2.5/weather?q=%s&units=metric&lang=ru&appid=%s"
+                    , cityName, apiKey);
+            String weatherString = restTemplate.getForObject(url, String.class);
+            logger.info("OpenWeather request done.");
+            return List.of(gson.fromJson(weatherString, Weather.class));
+        } catch (Exception ex) {
+            logger.error(ex.getMessage(), ex);
+            return EMPTY_LIST;
+        }
     }
 
 }
