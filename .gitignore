@@ -44,6 +44,9 @@
 *.war
 *.zip
 
+# Scala
+**.sbt
+
 # Visual Studio Code
 .vscode/*
 !.vscode/settings.json
