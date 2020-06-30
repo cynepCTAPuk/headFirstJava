@@ -1,4 +1,4 @@
-package com.example.web;
+package com.example.web.model;
 
 public class Employee {
     String name;
