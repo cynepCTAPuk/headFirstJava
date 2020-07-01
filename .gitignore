@@ -53,6 +53,7 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.jso
+.history/*
 
 # common
 **.bak
