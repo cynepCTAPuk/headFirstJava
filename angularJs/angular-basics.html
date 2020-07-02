@@ -1,0 +1,26 @@
+<script src="c://v/java/angular-1.8.0/angular.min.js"></script>
+
+<body ng-app>
+    expression
+    <p>The number is {{3 + 4}}.</p>
+    expression-equality
+    <p>Are strings and numbers equal? {{'2' == 2}}</p>
+    expression-string
+    <p>{{"Angular" + "js".toUpperCase()}}</p>
+
+    <!-- Invalid code! This function call is not permitted in an expression. -->
+    <p>{{alert("Hello world")}}</p>
+
+    expression-variable
+    <p>{{a = 1; a + a}}</p>
+    expression-variable-use
+    <p>{{a = 1}} remains {{a}}</p>
+    expression-conditional
+    <p>There {{count = 1; (count == 1 ? "is " : "are ") + count}} of them.</p>
+    expression-increment
+    <p>{{a = 1; ++a}}</p>
+    
+    expression-loop.html
+    <p>{{for (i = 0; i < 10; i = i + 1) {i}}}</p>
+
+</body>
