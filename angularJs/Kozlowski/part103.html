@@ -1,0 +1,17 @@
+<html>
+
+<head>
+    <script src="c://v/java/angular-1.8.0/angular.min.js"></script>
+</head>
+
+<body ng-app>
+    <div ng-controller="HelloCtrl">
+        var HelloCtrl = function($scope){
+            $scope.name = 'World';
+        }
+        Say hello to: <input type="text" ng-model="name">
+        <h1>Hello, {{name}}!</h1>
+    </div>
+</body>
+
+</html>
