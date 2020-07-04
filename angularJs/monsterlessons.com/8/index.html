@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
+
 <head>
   <meta charset="UTF-8">
   <title>Lesson 6</title>
@@ -7,14 +8,19 @@
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script> -->
   <script src="main.js"></script>
 </head>
-<body>
-  <a href="https://monsterlessons.com/project/lessons/pishiem-prostuiu-diriektivu-v-angularjs">Lesson 7</a>
 
-  <div foo>foo</div>
-  <div foo>foo</div>
-  <div foo>foo</div>
-  <div foo>foo</div>
-  <div foo>foo</div>
+<body>
+  <a href="https://monsterlessons.com/project/lessons/filtry-v-angularjs">Lesson 8</a>
+
+<!--   <div ng-controller="mainCtrl">
+    {{money | moneyFilter}}
+  </div> -->
+  <div ng-controller="mainCtrl">
+    {{money1 | moneyFilter}}<br>
+    {{money2 | moneyFilter}}<br>
+    {{money3 | moneyFilter}}
+  </div>
+
 
 </body>
 
