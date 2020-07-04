@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 5</title>
+    <script src="c://v/java/angular-1.8.0/angular.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script> -->
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <a href="https://monsterlessons.com/project/lessons/vlozhiennyie-kontrolliery-v-angularjs">Lesson 5</a>
+
+    <div ng-controller='myBooksCtrl'>
+
+        <div ng-controller='angularBookCtrl'>
+            <button ng-click='showBook()'>Show AngularBook</button>
+        </div>
+        
+        <hr>
+        
+        <div ng-controller='emberBookCtrl'>
+            <button ng-click='showBook()'>Show EmberBook</button>
+        </div>
+
+    </div>
+    <hr>
+    <script>console.log('test')</script>
+</body>
+
+</html>
