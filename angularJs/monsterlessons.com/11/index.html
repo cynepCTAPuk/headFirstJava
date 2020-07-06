@@ -13,7 +13,11 @@
   <a href="https://monsterlessons.com/project/lessons/transclude-v-diriektivakh-angularjs">
     Lesson 11</a><br>
 
-  <foo-bar>FooBar</foo-bar>
+  <!-- <foo-bar>FooBar</foo-bar> -->
+  
+  <div ng-controller="mainCtrl">
+    <foo-bar>This is {{name}}</foo-bar>
+  </div>
 
 </body>
 
