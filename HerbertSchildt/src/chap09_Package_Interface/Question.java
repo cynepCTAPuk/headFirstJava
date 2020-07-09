@@ -8,9 +8,9 @@ public class Question implements SharedConstants {
     int ask() {
         int prob = (int) (100 * rand.nextDouble());
         if (prob < 30) return NO; // 30%
-        else if (prob < 60) return YES; // 30%
-        else if (prob < 75) return LATER; // 15%
-        else if (prob < 98) return SOON; // 13%
-        else return NEVER; // 2%
+        if (prob < 60) return YES; // 30%
+        if (prob < 75) return LATER; // 15%
+        if (prob < 98) return SOON; // 13%
+        return NEVER; // 2%
     }
 }
