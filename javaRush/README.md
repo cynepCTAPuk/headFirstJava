@@ -4,7 +4,6 @@ filmography
 Знакомство с Maven, Spring, MySQL, Hibernate и первое CRUD приложение (часть 1)
 https://javarush.ru/groups/posts/2253-znakomstvo-s-maven-spring-mysql-hibernate-i-pervoe-crud-prilozhenie-chastjh-1
 
-
 gradle
 Краткое знакомство с Gradle
 https://javarush.ru/groups/posts/2126-kratkoe-znakomstvo-s-gradle
@@ -12,6 +11,8 @@ https://javarush.ru/groups/posts/2126-kratkoe-znakomstvo-s-gradle
 hellowebservice
 Веб-сервисы. Шаг 1. Что такое веб-сервис и как с ним работать?
 https://javarush.ru/groups/posts/1168-veb-servisih-shag-1-chto-takoe-veb-servis-i-kak-s-nim-rabotatjh
+Веб-сервисы. Шаг 2. Как упростить написание клиента?
+https://javarush.ru/groups/posts/1176-veb-servisih-shag-2-kak-uprostitjh-napisanie-klienta
 
 jdbc
 JDBC или с чего всё начинается

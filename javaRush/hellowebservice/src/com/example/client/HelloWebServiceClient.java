@@ -1,4 +1,4 @@
-package ru.javarush.client;
+package com.example.client;
 
 import java.net.URL; // нужно, чтобы получить wsdl описание и через него дотянуться до самого веб-сервиса
 import java.net.MalformedURLException; // такой эксепшн возникнет при работе с объектом URL
@@ -6,7 +6,7 @@ import java.net.MalformedURLException; // такой эксепшн возник
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
-import ru.javarush.ws.HelloWebService; // интерфейс нашего веб-сервиса (нам больше и нужно)
+import com.example.ws.HelloWebService;
 
 public class HelloWebServiceClient {
     public static void main(String[] args) throws MalformedURLException {
@@ -16,10 +16,11 @@ public class HelloWebServiceClient {
         // Параметры следующего конструктора смотрим в самом первом теге WSDL описания - definitions
         // 1-ый аргумент смотрим в атрибуте targetNamespace
         // 2-ой аргумент смотрим в атрибуте name
-        QName qname = new QName("http://ws.javarush.ru/", "HelloWebServiceImplService");
+        QName qname = new QName("http://ws.example.com/", "HelloWebServiceImplService");
 
         // Теперь мы можем дотянуться до тега service в wsdl описании,
         Service service = Service.create(url, qname);
+
         // а далее и до вложенного в него тега port, чтобы получить ссылку на удаленный от нас объект веб-сервиса
         HelloWebService hello = service.getPort(HelloWebService.class);
 
