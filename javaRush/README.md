@@ -9,6 +9,10 @@ gradle
 Краткое знакомство с Gradle
 https://javarush.ru/groups/posts/2126-kratkoe-znakomstvo-s-gradle
 
+hellowebservice
+Веб-сервисы. Шаг 1. Что такое веб-сервис и как с ним работать?
+https://javarush.ru/groups/posts/1168-veb-servisih-shag-1-chto-takoe-veb-servis-i-kak-s-nim-rabotatjh
+
 jdbc
 JDBC или с чего всё начинается
 https://javarush.ru/groups/posts/2172-jdbc-ili-s-chego-vsje-nachinaetsja
