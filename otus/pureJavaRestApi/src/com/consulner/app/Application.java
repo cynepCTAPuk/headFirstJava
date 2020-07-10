@@ -16,18 +16,21 @@ import com.sun.net.httpserver.BasicAuthenticator;
 import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpServer;
 
+/**
+ * https://habr.com/ru/company/otus/blog/480564/
+ * REST API на Java без фреймворков
+ */
 class Application {
-
     public static void main(String[] args) throws IOException {
         int serverPort = 8000;
         HttpServer server = HttpServer.create(new InetSocketAddress(serverPort), 0);
 
-        RegistrationHandler registrationHandler = new RegistrationHandler(getUserService(), getObjectMapper(),
-                getErrorHandler());
+        RegistrationHandler registrationHandler = new RegistrationHandler(
+                getUserService(), getObjectMapper(), getErrorHandler());
+
         server.createContext("/api/users/register", registrationHandler::handle);
 
-        HttpContext context =server.createContext("/api/hello", (exchange -> {
-
+        HttpContext context = server.createContext("/api/hello", (exchange -> {
             if ("GET".equals(exchange.getRequestMethod())) {
                 Map<String, List<String>> params = splitQuery(exchange.getRequestURI().getRawQuery());
                 String noNameText = "Anonymous";
@@ -42,6 +45,7 @@ class Application {
             }
             exchange.close();
         }));
+
         context.setAuthenticator(new BasicAuthenticator("myrealm") {
             @Override
             public boolean checkCredentials(String user, String pwd) {
