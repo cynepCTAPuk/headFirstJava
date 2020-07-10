@@ -15,6 +15,7 @@ https://javarush.ru/groups/posts/1168-veb-servisih-shag-1-chto-takoe-veb-servis-
 https://javarush.ru/groups/posts/1176-veb-servisih-shag-2-kak-uprostitjh-napisanie-klienta
 
 https://javarush.ru/groups/posts/1182-bez-pafosa-pogovorim-o-javaee-servletakh-i-ikh-konteynerakh
+https://javarush.ru/groups/posts/1196-obzor-serverov-prilozheniy-i-konechno-zhe-tomcat
 
 jdbc
 JDBC или с чего всё начинается
