@@ -19,7 +19,7 @@ class Application2 {
             exchange.close();
         }));
         server.setExecutor(null); // creates a default executor
-        System.out.println("WebServer running: " + "http://localhost:" + serverPort + "/api/hello");
+        System.out.println("WebServer 2 running: " + "http://localhost:" + serverPort + "/api/hello");
         server.start();
     }
 }

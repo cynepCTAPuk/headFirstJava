@@ -11,7 +11,6 @@ class Application3 {
         int serverPort = 8000;
         HttpServer server = HttpServer.create(new InetSocketAddress(serverPort), 0);
         server.createContext("/api/hello", (exchange -> {
-
             if ("GET".equals(exchange.getRequestMethod())) {
                 String respText = "Hello!";
                 exchange.sendResponseHeaders(200, respText.getBytes().length);
@@ -24,7 +23,7 @@ class Application3 {
             exchange.close();
         }));
         server.setExecutor(null); // creates a default executor
-        System.out.println("WebServer running: " + "http://localhost:" + serverPort + "/api/hello");
+        System.out.println("WebServer 3 running: " + "http://localhost:" + serverPort + "/api/hello");
         server.start();
     }
 }
