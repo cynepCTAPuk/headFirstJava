@@ -1,28 +1,33 @@
-package com.consulner.api;
+package com.consulner.app;
 
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.mapping;
-import static java.util.stream.Collectors.toList;
+import static com.consulner.app.Configuration.getErrorHandler;
+import static com.consulner.app.Configuration.getObjectMapper;
+import static com.consulner.app.Configuration.getUserService;
+import static com.consulner.app.api.ApiUtils.splitQuery;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
-import java.net.URLDecoder;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Pattern;
 
+import com.consulner.app.api.user.RegistrationHandler;
+import com.sun.net.httpserver.BasicAuthenticator;
+import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpServer;
 
-class Application4 {
+class Application {
+
     public static void main(String[] args) throws IOException {
         int serverPort = 8000;
         HttpServer server = HttpServer.create(new InetSocketAddress(serverPort), 0);
-        server.createContext("/api/hello", (exchange -> {
+
+        RegistrationHandler registrationHandler = new RegistrationHandler(getUserService(), getObjectMapper(),
+                getErrorHandler());
+        server.createContext("/api/users/register", registrationHandler::handle);
+
+        HttpContext context =server.createContext("/api/hello", (exchange -> {
+
             if ("GET".equals(exchange.getRequestMethod())) {
                 Map<String, List<String>> params = splitQuery(exchange.getRequestURI().getRawQuery());
                 String noNameText = "Anonymous";
@@ -37,21 +42,15 @@ class Application4 {
             }
             exchange.close();
         }));
+        context.setAuthenticator(new BasicAuthenticator("myrealm") {
+            @Override
+            public boolean checkCredentials(String user, String pwd) {
+                return user.equals("admin") && pwd.equals("admin");
+            }
+        });
+
         server.setExecutor(null); // creates a default executor
-        System.out.println("WebServer 4 running: " + "http://localhost:" + serverPort + "/api/hello");
+        System.out.println("WebServer running: " + "http://localhost:" + serverPort + "/api/hello");
         server.start();
-    }
-
-    public static Map<String, List<String>> splitQuery(String query) {
-        if (query == null || "".equals(query)) {
-            return Collections.emptyMap();
-        }
-        return Pattern.compile("&").splitAsStream(query)
-                .map(s -> Arrays.copyOf(s.split("="), 2))
-                .collect(groupingBy(s -> decode(s[0]), mapping(s -> decode(s[1]), toList())));
-    }
-
-    private static String decode(final String encoded) {
-        return encoded == null ? null : URLDecoder.decode(encoded, StandardCharsets.UTF_8);
     }
 }

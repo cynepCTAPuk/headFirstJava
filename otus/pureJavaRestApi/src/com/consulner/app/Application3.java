@@ -1,4 +1,4 @@
-package com.consulner.api;
+package com.consulner.app;
 
 import java.io.IOException;
 import java.io.OutputStream;

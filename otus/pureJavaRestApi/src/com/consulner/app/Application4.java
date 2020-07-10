@@ -1,8 +1,8 @@
-package com.consulner.api;
+package com.consulner.app;
 
-import com.sun.net.httpserver.BasicAuthenticator;
-import com.sun.net.httpserver.HttpContext;
-import com.sun.net.httpserver.HttpServer;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toList;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -15,14 +15,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import static java.util.stream.Collectors.*;
+import com.sun.net.httpserver.HttpServer;
 
-class Application5 {
+class Application4 {
     public static void main(String[] args) throws IOException {
         int serverPort = 8000;
         HttpServer server = HttpServer.create(new InetSocketAddress(serverPort), 0);
-        HttpContext context =server.createContext("/api/hello", (exchange -> {
-
+        server.createContext("/api/hello", (exchange -> {
             if ("GET".equals(exchange.getRequestMethod())) {
                 Map<String, List<String>> params = splitQuery(exchange.getRequestURI().getRawQuery());
                 String noNameText = "Anonymous";
@@ -37,15 +36,8 @@ class Application5 {
             }
             exchange.close();
         }));
-        context.setAuthenticator(new BasicAuthenticator("myrealm") {
-            @Override
-            public boolean checkCredentials(String user, String pwd) {
-                return user.equals("admin") && pwd.equals("admin");
-            }
-        });
-
         server.setExecutor(null); // creates a default executor
-        System.out.println("WebServer 5 running: " + "http://localhost:" + serverPort + "/api/hello");
+        System.out.println("WebServer 4 running: " + "http://localhost:" + serverPort + "/api/hello");
         server.start();
     }
 
