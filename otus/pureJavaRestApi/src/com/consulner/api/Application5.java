@@ -1,23 +1,21 @@
 package com.consulner.api;
 
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.mapping;
-import static java.util.stream.Collectors.toList;
+import com.sun.net.httpserver.BasicAuthenticator;
+import com.sun.net.httpserver.HttpContext;
+import com.sun.net.httpserver.HttpServer;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.sun.net.httpserver.BasicAuthenticator;
-import com.sun.net.httpserver.HttpContext;
-import com.sun.net.httpserver.HttpServer;
+import static java.util.stream.Collectors.*;
 
 class Application5 {
     public static void main(String[] args) throws IOException {
@@ -61,10 +59,6 @@ class Application5 {
     }
 
     private static String decode(final String encoded) {
-        try {
-            return encoded == null ? null : URLDecoder.decode(encoded, "UTF-8");
-        } catch (final UnsupportedEncodingException e) {
-            throw new RuntimeException("UTF-8 is a required encoding", e);
-        }
+        return encoded == null ? null : URLDecoder.decode(encoded, StandardCharsets.UTF_8);
     }
 }
