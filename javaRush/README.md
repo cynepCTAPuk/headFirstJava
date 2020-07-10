@@ -14,6 +14,8 @@ https://javarush.ru/groups/posts/1168-veb-servisih-shag-1-chto-takoe-veb-servis-
 Веб-сервисы. Шаг 2. Как упростить написание клиента?
 https://javarush.ru/groups/posts/1176-veb-servisih-shag-2-kak-uprostitjh-napisanie-klienta
 
+https://javarush.ru/groups/posts/1182-bez-pafosa-pogovorim-o-javaee-servletakh-i-ikh-konteynerakh
+
 jdbc
 JDBC или с чего всё начинается
 https://javarush.ru/groups/posts/2172-jdbc-ili-s-chego-vsje-nachinaetsja
