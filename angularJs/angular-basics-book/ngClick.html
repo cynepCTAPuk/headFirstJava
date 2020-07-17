@@ -1,39 +1,38 @@
 <!doctype html>
-<html ng-app>
+<html ng-app lang="en">
 
 <head>
     <link rel="stylesheet" href="c:/v/java/bootstrap-4.5.0-dist/css/bootstrap.css">
     <script src="c:/v/java/jquery-3.5.1.js"></script>
     <script src="c:/v/java/bootstrap-4.5.0-dist/js/bootstrap.js"></script>
     <script src="c:/v/java/angular-1.8.0/angular.min.js"></script>
+    <title>Test</title>
 </head>
 
 <body>
-    <button ng-click="count = count + 1" ng-init="count=0">
-        Increment
-    </button>
-    count: {{count}}
+<button ng-click="count = count + 1" ng-init="count=0">
+    Increment
+</button>
+count: {{count}}
 
-    <div class="row no-print" id="primaryButtons">
-        <div class="col-md-2 col-sm-12 col-xs-12" ng-show='tabs.activeTab !=3'>
-            <input type="submit" value="Расчет" ng-click="submited=true" />
-        </div>
-        <div class="col-md-2 col-sm-12 col-xs-12" ng-show='tabs.activeTab !=3'>
-            <input type="submit" value="Очистить всё" ng-click="submited=false" />
-        </div>
-        <div class="col-md-2 col-sm-12 col-xs-12" ng-show='tabs.activeTab !=3'>
-            <input type="submit" value="Принт" ng-click="submited=false" />
-        </div>
-        <div class="col-md-2 col-sm-12 col-xs-12" ng-show='tabs.activeTab !=3'>
-            <input type="submit" value="Принт" ng-click="submited=false" />
-        </div>
-        <div class="col-md-2 col-sm-12 col-xs-12" ng-show='tabs.activeTab !=3'>
-            <input type="submit" value="Принт" ng-click="submited=false" />
-        </div>
-        <div class="col-md-2 col-sm-12 col-xs-12" ng-show='tabs.activeTab !=3'>
-            <input type="submit" value="Принт" ng-click="submited=false" />
-        </div>
+<div class="row no-print" id="primaryButtons">
+    <div class="col-md-2 col-sm-12 col-xs-12" ng-show='tabs.activeTab !=3'>
+        <input style="min-width: 120px"
+               type="submit" value="Расчет" ng-click="submited=true"/>
     </div>
+    <div class="col-md-2 col-sm-12 col-xs-12" ng-show='tabs.activeTab !=3'>
+        <input style="min-width: 120px"
+                type="submit" value="Очистить всё" ng-click="submited=false"/>
+    </div>
+    <div class="col-md-2 col-sm-12 col-xs-12" ng-show='tabs.activeTab !=3'>
+        <input style="min-width: 120px"
+                type="submit" value="Принт" ng-click="submited=false"/>
+    </div>
+    <div class="col-md-2 col-sm-12 col-xs-12" ng-show='tabs.activeTab !=3'>
+        <input style="min-width: 120px"
+                type="submit" value="Принт" ng-click="submited=false"/>
+    </div>
+</div>
 
 </body>
 
