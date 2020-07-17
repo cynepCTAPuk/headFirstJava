@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Изменить содержимое HTML</h1>
+    <h2>Что может сделать JavaScript?</h2>
+    <p id="demo">JavaScript может изменять содержимое HTML.</p>
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Привет JavaScript!"'>Нажмите Меня!</button>
+    <p id="demo1">Кавычки в коде ' и " можно менять местами друг с другом</p>
+    <button type="button" onclick="document.getElementById('demo1').innerHTML = 'Test passed'">Нажмите Меня!</button>
+
+    <p>JavaScript может изменять значения атрибутов HTML.</p>
+    <p>В этом случае JavaScript изменяет значение атрибута src (source) изображения.</p>
+    <button onclick="document.getElementById('myImage').src='https://schoolsw3.com/js/pic_bulbon.gif'">Включить свет</button>
+    <img id="myImage" src="https://schoolsw3.com/js/pic_bulboff.gif" style="width:50px">
+    <button onclick="document.getElementById('myImage').src='https://schoolsw3.com/js/pic_bulboff.gif'">Выключить свет</button>
+
+</body>
+
+</html>
