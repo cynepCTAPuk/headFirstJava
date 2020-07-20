@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript числа точные до 15 знаков</h2>
+    <p>Целые числа (числа без точки или экспоненты) являются точными до 15 цифр:</p>
+    <p id="demo00"></p>
+    <script>
+        var x = 999999999999999;
+        var y = 9999999999999999;
+        document.getElementById("demo00").innerHTML = x + "<br>" + y;
+    </script>
+
+    <h2>JavaScript число разделенное строкой</h2>
+    <p>Число, разделенное нечисловой строкой, становится NaN (не числом):</p>
+    <p id="demo0" style="display: inline;"></p> <br>
+    <script>
+        document.getElementById("demo0").innerHTML = 100 / "Apple";
+    </script>
+
+    <h2>JavaScript строки числа</h2>
+    <p>Вы можете использовать глобальную функцию JavaScript isNaN (), чтобы узнать, является ли значение числом:</p>
+    <p id="demo1"></p>
+    <script>
+        var x = 100 / "Apple";
+        document.getElementById("demo1").innerHTML = isNaN(x);
+    </script>
+
+    <p>typeof NaN - это число:</p>
+    <p id="demo2"></p>
+    <script>
+        var x = NaN;
+        document.getElementById("demo2").innerHTML = typeof x;
+    </script>
+
+    <p>Infinity - это число:</p>
+    <p id="demo02"></p>
+    <script>
+        var x = Infinity;
+        document.getElementById("demo02").innerHTML = typeof x;
+    </script>
+
+    <h2>JavaScript генерировать бесконечность</h2>
+    <p>Бесконечность возвращается, если вычислить число за пределами максимально возможного чисел:</p>
+    <p id="demo3"></p>
+    <script>
+        var myNumber = 2;
+        var txt = "";
+        while (myNumber != Infinity) {
+            myNumber = myNumber * myNumber;
+            txt = txt + myNumber + "<br>";
+        }
+        document.getElementById("demo3").innerHTML = txt;
+    </script>
+
+    <h2>JavaScript деление на ноль</h2>
+    <p>Деление на ноль генерирует бесконечность:</p>
+    <p id="demo4"></p>
+    <script>
+        var x = 2 / 0;
+        var y = -2 / 0;
+        document.getElementById("demo4").innerHTML = x + "<br>" + y;
+    </script>
+
+    <h1>JavaScript константы шестнадцатеричные</h1>
+    <p>Числовые константы, которым предшествует 0x, интерпретируются как шестнадцатеричные:</p>
+    <p id="demo5" style="display: inline;"></p><br>
+    <script>
+        var x = 0xFF;
+        document.getElementById("demo5").innerHTML = "0xFF = " + x;
+    </script>
+    <p style="border: solid; border-color: red;">Никогда не записывайте число с начальным нулем (например, 07). <br>
+        Некоторые версии JavaScript интерпретируют числа как восьмеричные, если они записаны с ведущим нулем.</p>
+
+    <h1>JavaScript вывести числа в шестнадцатеричные, восьмеричные и двоичные</h1>
+    <p>Метод toString() позволяет вывод числа по основанию 2 и до 36:</p>
+    <p id="demo6"></p>
+    <script>
+        var myNumber = 33;
+        document.getElementById("demo6").innerHTML =
+            myNumber + " = "  +
+            " Десятичное число " + myNumber.toString(10) + "<br>" +
+            " Тридцатидвухричное " + myNumber.toString(32) + "<br>" +
+            " Шестнадцатиричное " + myNumber.toString(16) + "<br>" +
+            " Восьмеричное " + myNumber.toString(8) + "<br>" +
+            " Двоичное " + myNumber.toString(2);
+    </script>
+
+</body>
+
+</html>

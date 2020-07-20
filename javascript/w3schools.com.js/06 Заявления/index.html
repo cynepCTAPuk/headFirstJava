@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript заявления являются командами в браузер</h1>
+    <p>В HTML, заявления JavaScript выполняются в браузере.</p>
+    <p id="demo0"></p>
+    <script>
+        document.getElementById("demo0").innerHTML = "Привет Андрей.";
+    </script>
+
+    <h1>JavaScript код последовательность заявлений</h1>
+    <p>Код JavaScript (или просто JavaScript) - последовательность заявлений JavaScript.</p>
+    <p id="demo1"></p>
+    <script>
+        var x, y, z;
+        x = 5;
+        y = 6;
+        z = x + y;
+        document.getElementById("demo1").innerHTML = z;
+    </script>
+
+    <h1>JavaScript заявления могут быть сгруппированы в блоки кода</h1>
+    <p>Блоки кода JavaScript записываются между { здесь }</p>
+    <button type="button" onclick="myFunction()">Нажмите Меня!</button>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script>
+        function myFunction() {
+            document.getElementById("demo2").innerHTML = "Привет Андрей!";
+            document.getElementById("demo3").innerHTML = "Как дела?";
+        }
+    </script>
+
+</body>
+
+</html>
