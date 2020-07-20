@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript событие onclick изменяет элемент HTML</h1>
+    <p>Нажмите кнопку для отображения даты.</p>
+    <button onclick="document.getElementById('demo0').innerHTML=Date()">Время?</button>
+    <p id="demo0"></p>
+
+    <h1>JavaScript событие onclick меняет свой элемент</h1>
+    <p>Нажмите кнопку для отображения даты.</p>
+    <button onclick="this.innerHTML=Date()">Время?</button><br>
+
+    <h1>JavaScript событие onmouseover меняет свой элемент</h1>
+    <p>Наведите мышку на кнопку для отображения даты/обновления даты</p>
+    <button onmouseover="this.innerHTML=Date()">Время?</button>
+
+    <h1>JavaScript событие onclick вызывает функцию</h1>
+    <p>Нажмите кнопку для отображения даты.</p>
+    <button onclick="displayDate()">Время?</button>
+    <script>
+        function displayDate() {
+            document.getElementById("demo1").innerHTML = Date();
+        }
+    </script>
+    <p id="demo1"></p>
+
+</body>
+
+</html>

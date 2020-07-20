@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript создание объекта</h1>
+    <p id="demo0"></p>
+    <script>
+        var car = { type: "Фиат", model: "500", color: "белый" };
+        document.getElementById("demo0").innerHTML
+            = 'Car type: ' + car.type + '<br>' + 'Car model: ' + car.model;
+    </script>
+
+    <h1>JavaScript создание объекта person в несколько строк</h1>
+    <p id="demo1"></p>
+    <script>
+        var person = {
+            firstName: "Андрей",
+            lastName: "Щипунов",
+            age: 49,
+            eyeColor: "зеленый"
+        };
+        document.getElementById("demo1").innerHTML =
+            person.firstName + " " + person.lastName + " мне " + person.age + " лет, цвет глаз" + " " + person.eyeColor + " .";
+    </script>
+
+    <h1>JavaScript доступ к свойствам объекта с помощью ['person']</h1>
+    <p>Существует два различных способа доступа к свойству объекта:</p>
+    <p>Вы можете использовать свойство .person или ['person'].</p>
+    <p id="demo2"></p>
+    <script>
+        var person = {
+            firstName: "Андрей",
+            lastName: "Щипунов",
+            id: 5566
+        };
+        document.getElementById("demo2").innerHTML =
+            person["firstName"] + " " + person["lastName"] + " id:" + person["id"];
+    </script>
+
+    <h1>JavaScript доступ к свойству функции как к методу</h1>
+    <p>Создание и использование метод объекта. <br>
+        Метод объекта является определением функции, сохраненным в качестве значения свойства.</p>
+    <p id="demo3"></p>
+    <script>
+        var person = {
+            firstName: "Андрей",
+            lastName: "Щипунов",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName + " id:" + this.id;
+            }
+        };
+        document.getElementById("demo3").innerHTML = person.fullName();
+    </script>
+
+    <h1>JavaScript доступ к свойству функции как к свойству</h1>
+    <p>Метод объект - определение функции, хранящееся в качестве значения свойства.</p>
+    <p>Если получить доступ к нему без function(), она вернет определение функции:</p>
+    <p id="demo4"></p>
+    <script>
+        document.getElementById("demo4").innerHTML = person.fullName;
+    </script>
+
+</body>
+
+</html>

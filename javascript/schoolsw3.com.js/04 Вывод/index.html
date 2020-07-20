@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Запись вывода в документ HTML</h1>
+
+    <h2>Моя первая веб страница</h2>
+    <p>Мой первый параграф</p>
+
+    <p>document.getElement()</p>
+    <p id="demo"></p>
+    <script>document.getElementById("demo").innerHTML = 5 + 6;</script>
+
+    <p>document.write(5 + 6)</p>
+    <script>document.write(5 + 6);</script>
+
+    <p>Метод document.write() следует использовать только для тестирования.</p>
+    <button onclick="document.write(5 + 6)">Вывод суммы 5 + 6 заменяет всё тело страницы</button>
+
+    <h1>Запись вывода в окно предупреждения</h1>
+    <script>window.alert(5 + 6);</script>
+
+    <h1>Запись вывода в консоль браузера</h1>
+    <h2>Активация отладки с помощью F12</h2>
+    <p>Выберите в меню отладчика "Console". Затем снова нажмите кнопку "Обновить".</p>
+    <script>console.log(5 + 6);</script>
+
+</body>
+
+</html>

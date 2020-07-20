@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript определить длину строки</h2>
+    <p>Свойство length возвращает длину строки:</p>
+    txt.length
+    <a id="demo0"></a>
+    <script>
+        var txt = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+        document.getElementById("demo0").innerHTML = txt.length;
+    </script>
+
+    <h2>JavaScript найти положение текста в строк - indexOf()</h2>
+    <p>Метод indexOf() возвращает позицию первого вхождения указанного текста (поиск производится слева):</p>
+    str.indexOf("locate")
+    <a id="demo1"></a>
+    <script>
+        var str = "Пожалуйста, найдите, где происходит 'locate'!";
+        var pos = str.indexOf("locate");
+        document.getElementById("demo1").innerHTML = pos;
+    </script>
+
+    <h2>JavaScript строковые методы</h2>
+    <p>Метод lastIndexOf() возвращает позицию последнего вхождения указанного текста (поиск производится справа):</p>
+    <p id="demo2"></p>
+    <script>
+        var str = "Пожалуйста, найдите, где происходит 'locate' or locate!";
+        var pos = str.lastIndexOf("locate");
+        document.getElementById("demo2").innerHTML = pos;
+    </script>
+
+    <p>Метод indexOf() принимает второй параметр в качестве последней позиции для поиска:</p>
+    <p id="demo3"></p>
+    <script>
+        var str = "Пожалуйста, найдите, где происходит 'locate'!";
+        var pos = str.lastIndexOf("locate", 45);
+        document.getElementById("demo3").innerHTML = pos;
+    </script>
+
+    <p>Метод search() возвращает позицию первого вхождения указанного текста в строке:</p>
+    <p id="demo4"></p>
+    <script>
+        var str = "Пожалуйста, найдите, где происходит 'locate'!";
+        var pos = str.search("locate");
+        document.getElementById("demo4").innerHTML = pos;
+    </script>
+
+    <p>Метод slice() извлечь часть строки и возвратить извлеченные части в новую строку:</p>
+    str.slice(7,13)
+    <a id="demo5"></a>
+    <script>
+        var str = "Яблоко, Банан, Киви";
+        var res = str.slice(7, 13);
+        document.getElementById("demo5").innerHTML = res; 
+    </script>
+
+    <br>
+    str.slice(-12,-6)
+    <a id="demo6"></a>
+    <script>
+        var str = "Яблоко, Банан, Киви";
+        var res = str.slice(-12, -6);
+        document.getElementById("demo6").innerHTML = res;
+    </script>
+
+    <br>
+    str.slice(6)
+    <a id="demo7"></a>
+    <script>
+        var str = "Яблоко, Банан, Киви";
+        var res = str.slice(7);
+        document.getElementById("demo7").innerHTML = res;
+    </script>
+
+    <br>
+    str.slice(-10)
+    <a id="demo8"></a>
+    <script>
+        var str = "Яблоко, Банан, Киви";
+        var res = str.slice(-11)
+        document.getElementById("demo8").innerHTML = res;
+    </script>
+
+    <p>Метод substr() извлечь часть строки и возвращает извлеченные части в новой строке:</p>
+    substring(7,13)
+    <a id="demo9"></a>
+    <script>
+        var str = "Яблоко, Банан, Киви";
+        var res = str.substring(7, 13);
+        document.getElementById("demo9").innerHTML = res;
+    </script>
+
+    <p>Метод substr() извлечь часть строки и возвращает извлеченные части в новой строке:</p>
+    str.substr(7,6)
+    <a id="demo10"></a>
+    <script>
+        var str = "Яблоко, Банан, Киви";
+        var res = str.substr(7, 6);
+        document.getElementById("demo10").innerHTML = res;
+    </script>
+    <hr>
+
+    <p>Заменять "Microsoft" на "Schoolsw3" в параграфе ниже:</p>
+
+    <button onclick="myFunction1()">Попробовать</button>
+    str.replace("Microsoft", "SchoolsW3")
+    <a id="demo11">Пожалуйста посетить Microsoft!</a>
+    <script>
+        function myFunction1() {
+            var str = document.getElementById("demo11").innerHTML;
+            var txt = str.replace("Microsoft", "Schoolsw3");
+            document.getElementById("demo11").innerHTML = txt;
+        }
+    </script>
+
+    <br>
+    <button onclick="myFunction2()">Попробовать</button>
+    str.replace(/Microsoft/g, "SchoolsW3")
+    <a id="demo12">Пожалуйста, посетите Microsoft и Microsoft!</a>
+    <script>
+        function myFunction2() {
+            var str = document.getElementById("demo12").innerHTML;
+            var txt = str.replace(/Microsoft/g, "SchoolsW3");
+            document.getElementById("demo12").innerHTML = txt;
+        }
+    </script>
+
+    <br>
+    <button onclick="myFunction3()">Попробовать</button>
+    str.replace("MICROSOFT", "SchoolsW3")
+    <a id="demo13">Пожалуйста, посетите Microsoft!</a>
+    <script>
+        function myFunction3() {
+            var str = document.getElementById("demo13").innerHTML;
+            var txt = str.replace("MICROSOFT", "SchoolsW3");
+            document.getElementById("demo13").innerHTML = txt;
+        }
+    </script>
+    <br>
+    <a>Пример не работает, поскольку MICROSOFT написана заглавными буквами.</a>
+
+    <br>
+    <button onclick="myFunction4()">Попробовать</button>
+    str.replace(/MICROSOFT/i, "SchoolsW3")
+    <a id="demo14">Пожалуйста, посетите Microsoft!</a>
+    <script>
+        function myFunction4() {
+            var str = document.getElementById("demo14").innerHTML;
+            var txt = str.replace(/MICROSOFT/i, "SchoolsW3");
+            document.getElementById("demo14").innerHTML = txt;
+        }
+    </script>
+
+    <hr>
+    <p>Метод charAt () возвращает символ в заданной позиции в строке:</p>
+    <p id="demo15"></p>
+    <script>
+        var str = "ПРИВЕТ МИР";
+        document.getElementById("demo15").innerHTML = str.charAt(0);
+    </script>
+
+    <p>Метод charCodeAt () возвращает юникод символа в заданной позиции в строке:</p>
+    <p id="demo16"></p>
+    <script>
+        var str = "ПРИВЕТ МИР";
+        document.getElementById("demo16").innerHTML = str.charCodeAt(0);
+    </script>
+
+    <h1>JavaScript разбить строку на массив - split()</h1>
+    <p>Нажать "Попробовать" для отображения элемента массива после разбиения строки</p>
+    <button onclick="myFunction()">Попробовать</button>
+    <p id="demo17"></p>
+    <script>
+        function myFunction() {
+            var str = "a,b,c,d,e,f";
+            var arr = str.split(",");
+            document.getElementById("demo17").innerHTML = arr[0];
+        }
+    </script>
+
+    <p id="demo18"></p>
+    <script>
+        var str = "Привет";
+        var arr = str.split("");
+        var text = "";
+        var i;
+        for (i = 0; i < arr.length; i++) {
+            text += arr[i] + "<br>"
+        }
+        document.getElementById("demo18").innerHTML = text;
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript Заявления</h2>
+    <p><b>JavaScript программа</b> список <b>заявлений</b> должен быть выполнен на компьютере.</p>
+    <p id="demo0"></p>
+    <script>
+        var x, y, z;  // Объявляем 3 переменные
+        x = 5;        // Присвойте x значение 5
+        y = 6;        // Присвойте y значение 6
+        z = x + y;    // Присвойте z сумму x + y
+        document.getElementById("demo0").innerHTML = "Значение z равно " + z + ".";
+    </script>
+
+    <h2>JavaScript Числа</h2>
+    <p>Число может быть записано с десятичными знаками или без них.</p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        document.getElementById("demo1").innerHTML = 10.50;
+        document.getElementById("demo2").innerHTML = 1001;
+    </script>
+
+    <h2>JavaScript Строки</h2>
+    <p>Строки могут быть записаны с двойными или одинарными кавычками.</p>
+    <p id="demo3"></p>
+    <script>
+        document.getElementById("demo3").innerHTML = '<b>Андрей Щипунов</b>';
+    </script>
+
+    <h2>JavaScript Переменные</h2>
+    <p>В этом примере <b>x</b> определяется как переменная. Затем к <b>x</b> присваивается значение 6:</p>
+    <p id="demo4"></p>
+    <script>
+        var x;
+        x = 6;
+        document.getElementById("demo4").innerHTML = x;
+    </script>
+
+    <h2>JavaScript Операторы</h2>
+    <p>JavaScript использует арифметические операторы для вычисления значений (так же, как в алгебре).</p>
+    <p id="demo5"></p>
+    <script>
+        document.getElementById("demo5").innerHTML = (5 + 6) * 10;
+    </script>
+
+    <h2>JavaScript выражения с использованием констант</h2>
+    <p>Выражения вычисляются по значениям.</p>
+    <p id="demo6"></p>
+    <script>
+        document.getElementById("demo6").innerHTML = 5 * 10;
+    </script>
+
+    <h2>JavaScript выражения с использованием переменных</h2>
+    <p>Выражения вычисляются по значениям.</p>
+    <p id="demo7"></p>
+    <script>
+        var x;
+        x = 5;
+        document.getElementById("demo7").innerHTML = x * 11;
+    </script>
+
+    <h2>JavaScript выражения с использованием строк</h2>
+    <p>Выражения вычисляются по значениям.</p>
+    <p id="demo8"></p>
+    <script>
+        document.getElementById("demo8").innerHTML = "Андрей" + " " + "Щипунов";
+    </script>
+
+    <h2>JavaScript зарезервированные слова</h2>
+    <p>var - зарезервированное слово, создает переменные</p>
+    <p id="demo9"></p>
+    <script>
+        var x, y;
+        x = 5 + 6;
+        y = x * 10;
+        document.getElementById("demo9").innerHTML = y;
+    </script>
+</body>
+
+</html>

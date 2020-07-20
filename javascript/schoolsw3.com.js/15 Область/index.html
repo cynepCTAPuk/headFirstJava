@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript глобальная область</h1>
+    <p>Доступ к глобальной переменной можно получить из любого скрипта или функции.</p>
+    <p id="demo0"></p>
+    <script>
+        var carName = "Вольво";
+        myFunction();
+        function myFunction() {
+            document.getElementById("demo0").innerHTML = "Я могу показать " + carName;
+        }
+    </script>
+
+    <h1>JavaScript автоматическая глобальная переменная</h1>
+    <p>Если присвоить значение переменной, которая не была объявлена,
+        она автоматически станет глобальной переменной:
+    </p>
+    <p id="demo1"></p>
+    <script>
+        myFunction();
+        // код здесь может использовать carName в качестве глобальной переменной
+        document.getElementById("demo1").innerHTML = "Я могу показать " + carName;
+        function myFunction() {
+            carName = "Тойота";
+        }
+    </script>
+    <p style="border: solid; border-color: red; padding: 10px;">
+        Do not create global variables unless you have planned. <br>
+        In "Strict mode" automatically global variables will fail.
+    </p>
+
+    <h1>JavaScript переменная window</h1>
+    <p>В HTML все глобальные переменные станут переменными window.</p>
+    <p id="demo2"></p>
+    <script>
+        var carName = "Пежо";
+        // код здесь можно использовать window.carName
+        document.getElementById("demo2").innerHTML = "Я могу показать " + window.carName;
+    </script>
+    <p style="border: solid; border-color: red; padding: 10px;">
+        Do not create global variables unless you intend. <br><br>
+        Global variables (or functions) can overwrite window variables (or functions). <br>
+        Any function, including the window object, can overwrite global variables and functions.
+    </p>
+
+</body>
+
+</html>

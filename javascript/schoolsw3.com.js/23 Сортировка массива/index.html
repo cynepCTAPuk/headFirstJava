@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>сортировать массив по алфавиту и возрастанию</h2>
+    <span style="color: blue;font-weight: bold;">
+        Метод sort() сортирует массив по алфавиту.</span><br>
+    <button onclick="myFunction0()">Попробовать</button><br>
+    <span id="demo0"></span>
+    <script>
+        var fruits0 = ["Банан", "Апельсин", "Яблоко", "Манго"];
+        document.getElementById("demo0").innerHTML = fruits0;
+        function myFunction0() {
+            fruits0.sort();
+            document.getElementById("demo0").innerHTML = fruits0;
+        }
+    </script>
+
+    <h2>обратная сортировка массива</h2>
+    <span style="color: blue;font-weight: bold;">
+        Метод reverse() инвертирует элементы в массиве.</span><br>
+    <span style="color: blue;font-weight: bold;">
+        Комбинируя sort() и reverse(), можно отсортировать массив в порядке убывания.</span><br>
+    <button onclick="myFunction1()">Попробовать</button><br>
+    <span id="demo1"></span>
+    <script>
+        // Создание и отображение массива:
+        var fruits1 = ["Банан", "Апельсин", "Яблоко", "Манго"];
+        document.getElementById("demo1").innerHTML = fruits1;
+        function myFunction1() {
+            // Сначала отсортируем массив
+            fruits1.sort();
+            // Затем инвертируем его:
+            fruits1.reverse();
+            document.getElementById("demo1").innerHTML = fruits1;
+        }
+    </script>
+
+    <h2>сортировать числа по возрастанию</h2>
+    <span style="color: blue;font-weight: bold;">
+        Нажмите кнопку, чтобы отсортировать массив.</span><br>
+    <button onclick="myFunction2()">По возрастанию</button>
+    <button onclick="myFunction21()">По убыванию</button>
+    <button onclick="myFunction22()">По алфавиту</button>
+    <button onclick="myFunction23()">Смешать в случайном порядке</button><br>
+    <span id="demo2"></span><br>
+    <script>
+        var points = [40, 100, 1, 5, 25, 10, 5.5];
+        document.getElementById("demo2").innerHTML = points;
+        function myFunction2() {
+            points.sort(function (a, b) { return a - b });
+            document.getElementById("demo2").innerHTML = points;
+        }
+        function myFunction21() {
+            points.sort(function (a, b) { return b - a });
+            document.getElementById("demo2").innerHTML = points;
+        }
+        function myFunction22() {
+            points.sort();
+            document.getElementById("demo2").innerHTML = points;
+        }
+        function myFunction23() {
+            points.sort(function (a, b) { return 0.5 - Math.random() });
+            document.getElementById("demo2").innerHTML = points;
+        }
+    </script>
+
+    <span>Наибольшее число - <b><span id="demo3"></span></b>.</span><br>
+    <script>
+        var points = [40, 100, 1, 5, 25, 10, 5.5];
+        document.getElementById("demo3").innerHTML = myArrayMax(points);
+        function myArrayMax(arr) {
+            return Math.max.apply(null, arr);
+        }
+    </script>
+
+    <span>Наибольшее число - <b><span id="demo4"></span></b>.</span>
+    <script>
+        var points = [40, 100, 1, 5, 25, 10, 5.5];
+        document.getElementById("demo4").innerHTML = myArrayMin(points);
+        function myArrayMin(arr) {
+            return Math.min.apply(null, arr);
+        }
+    </script>
+
+    <h2>Поиск наибольшего и наименьшего числа через цикл while</h2>
+    <span>Наибольшее число <span id="demo5"></span>.</span><br>
+    <span>Наименьшее число <span id="demo51"></span>.</span><br>
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo5").innerHTML = myArrayMax(points);
+        document.getElementById("demo51").innerHTML = myArrayMin(points);
+        function myArrayMax(arr) {
+            var len = arr.length;
+            var max = -Infinity;
+            while (len--) {
+                if (arr[len] > max) {
+                    max = arr[len];
+                }
+            }
+            return max;
+        }
+        function myArrayMin(arr) {
+            var len = arr.length;
+            var min = Infinity;
+            while (len--) {
+                if (arr[len] < min) {
+                    min = arr[len];
+                }
+            }
+            return min;
+        }
+    </script>
+
+    <h1>JavaScript сортировать объекты по числовым свойствам</h1>
+    <p>Нажмите кнопки для сортировки объектов автомобиля по годам.</p>
+    <button onclick="myFunction6()">Сортировать по годам</button>
+    <button onclick="myFunction61()">Сортировать по имени</button>
+    <p id="demo6"></p>
+    <script>
+        var cars = [
+            { type: "Вольво", year: 2016 },
+            { type: "Сааб", year: 2001 },
+            { type: "БМВ", year: 2010 }]
+
+        displayCars();
+        function myFunction6() {
+            cars.sort(function (a, b) { return a.year - b.year });
+            displayCars();
+        }
+        function myFunction61() {
+            cars.sort(function (a, b) {
+                var x = a.type.toLowerCase();
+                var y = b.type.toLowerCase();
+                if (x < y) { return -1; }
+                if (x > y) { return 1; }
+                return 0;
+            });
+            displayCars();
+        }
+        function displayCars() {
+            document.getElementById("demo6").innerHTML =
+                cars[0].type + " " + cars[0].year + "<br>" +
+                cars[1].type + " " + cars[1].year + "<br>" +
+                cars[2].type + " " + cars[2].year;
+        }
+    </script>
+
+
+</body>
+
+</html>

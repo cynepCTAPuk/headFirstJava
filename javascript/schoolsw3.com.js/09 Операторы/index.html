@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript добавление строк и чисел</h1>
+    <p>Добавление числа и строки возвращает строку.</p>
+    <p id="demo0"></p>
+    <script>
+        var x = 5 + 5;
+        var y = "5" + 5;
+        var z = "Привет" + 5;
+        document.getElementById("demo0").innerHTML = x + "<br>" + y + "<br>" + z;
+    </script>
+
+    <p>Добавление числа и строки возвращает строку.</p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script>
+        var x = 5 + 5;
+        var y = "5" + 5;
+        var z = ['start', 1, 2, 3, "end"];
+        document.getElementById("demo1").innerHTML = typeof(x) + "<br>" + typeof(y)+ "<br>" + typeof(z);
+        document.getElementById("demo2").innerHTML = z;
+        document.getElementById("demo3").innerHTML = Math.pow(3,2);
+    </script>
+</body>
+
+</html>
