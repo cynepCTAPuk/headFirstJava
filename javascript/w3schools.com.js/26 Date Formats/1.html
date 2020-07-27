@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <a href="https://www.w3schools.com/js/js_date_formats.asp">
+        https://www.w3schools.com/js/js_date_formats.asp
+    </a>
+    <h2>JavaScript ISO Dates</h2>
+    <p id="demo"></p>
+
+    <ul>
+        <li>
+            ISO dates can be written with added hours, minutes, and seconds (YYYY-MM-DDTHH:MM:SSZ):
+        </li>
+        <li>If you have a valid date string, you can use the Date.parse() method to convert it to milliseconds.
+            <br>
+            Date.parse() returns the number of milliseconds between the date and January 1, 1970:
+        </li>
+        <li>
+            You can then use the number of milliseconds to convert it to a date object
+        </li>
+    </ul>
+
+    <script>
+        var d = new Date("2015-03-25");
+        document.getElementById("demo").innerHTML = d;
+    </script>
+
+</body>
+
+</html>

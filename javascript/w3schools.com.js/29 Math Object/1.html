@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Set Date Methods</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>JavaScript Math.PI</h2>
+    <p>Math.PI returns the ratio of a circle's circumference to its diameter:</p>
+    <p id="demo"></p>
+
+    <h2>JavaScript Math.round()</h2>
+    <p>Math.round(x) returns the value of x rounded to its nearest integer:</p>
+    <p id="demo1"></p>
+
+
+    <h2>JavaScript Math.sqrt()</h2>
+    <p>Math.sqrt(x) returns the square root of x:</p>
+    <p id="demo2"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = Math.PI;
+        document.getElementById("demo1").innerHTML = Math.round(4.4);
+        document.getElementById("demo2").innerHTML = Math.sqrt(64);
+    </script>
+
+    <p>Math.abs(x) returns the absolute (positive) value of x</p>
+    <p>Math.ceil(x) returns the value of x rounded up to its nearest integer</p>
+    <p>Math.floor(x) returns the value of x rounded down to its nearest integer</p>
+    <p>
+        Math.sin(x) returns the sine (a value between -1 and 1) of the angle x (given in radians).
+        If you want to use degrees instead of radians, you have to convert degrees to radians:
+        Angle in radians = Angle in degrees x PI / 180.
+    </p>
+    <p>
+        Math.cos(x) returns the cosine (a value between -1 and 1) of the angle x (given in radians).
+        If you want to use degrees instead of radians, you have to convert degrees to radians:
+        Angle in radians = Angle in degrees x PI / 180.
+    </p>
+    <p>
+        Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments: <br>
+        Math.min(0, 150, 30, 20, -8, -200); // returns -200 <br>
+        Math.max(0, 150, 30, 20, -8, -200); // returns 150
+    </p>
+    <p>Math.random() returns a random number between 0 (inclusive), and 1 (exclusive):</p>
+
+    <h2>JavaScript Math Constants</h2>
+
+    <p id="demo3"></p>
+    <script>
+        document.getElementById("demo3").innerHTML =
+            "<p><b>Math.E:</b> " + Math.E + "</p>" +
+            "<p><b>Math.PI:</b> " + Math.PI + "</p>" +
+            "<p><b>Math.SQRT2:</b> " + Math.SQRT2 + "</p>" +
+            "<p><b>Math.SQRT1_2:</b> " + Math.SQRT1_2 + "</p>" +
+            "<p><b>Math.LN2:</b> " + Math.LN2 + "</p>" +
+            "<p><b>Math.LN10:</b> " + Math.LN10 + "</p>" +
+            "<p><b>Math.LOG2E:</b> " + Math.LOG2E + "</p>" +
+            "<p><b>Math.Log10E:</b> " + Math.LOG10E + "</p>";
+    </script>
+
+    <h2> Math Object Methods </h2>
+    <table>
+        <tr>
+            <th>Method</th>
+            <th> Description</th>
+        </tr>
+        <tr>
+            <td>abs(x)</td>
+            <td> Returns the absolute value of x</td>
+        </tr>
+        <tr>
+            <td>acos(x)</td>
+            <td> Returns the arccosine of x, in radians</td>
+        </tr>
+        <tr>
+            <td>acosh(x)</td>
+            <td> Returns the hyperbolic arccosine of x</td>
+        </tr>
+        <tr>
+            <td>asin(x)</td>
+            <td> Returns the arcsine of x, in radians</td>
+        </tr>
+        <tr>
+            <td>asinh(x)</td>
+            <td> Returns the hyperbolic arcsine of x</td>
+        </tr>
+        <tr>
+            <td>atan(x)</td>
+            <td> Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians</td>
+        </tr>
+        <tr>
+            <td>atan2(y, x)</td>
+            <td> Returns the arctangent of the quotient of its arguments</td>
+        </tr>
+        <tr>
+            <td>atanh(x) </td>
+            <td>Returns the hyperbolic arctangent of x</td>
+        </tr>
+        <tr>
+            <td>cbrt(x) </td>
+            <td>Returns the cubic root of x</td>
+        </tr>
+        <tr>
+            <td>ceil(x) </td>
+            <td>Returns x, rounded upwards to the nearest integer</td>
+        </tr>
+        <tr>
+            <td>cos(x) </td>
+            <td>Returns the cosine of x (x is in radians)</td>
+        </tr>
+        <tr>
+            <td>cosh(x) </td>
+            <td>Returns the hyperbolic cosine of x</td>
+        </tr>
+        <tr>
+            <td>exp(x) </td>
+            <td>Returns the value of Ex</td>
+        </tr>
+        <tr>
+            <td>floor(x) </td>
+            <td>Returns x, rounded downwards to the nearest integer</td>
+        </tr>
+        <tr>
+            <td>log(x) </td>
+            <td>Returns the natural logarithm (base E) of x</td>
+        </tr>
+        <tr>
+            <td>max(x, y, z, ..., n) </td>
+            <td>Returns the number with the highest value</td>
+        </tr>
+        <tr>
+            <td>min(x, y, z, ..., n) </td>
+            <td>Returns the number with the lowest value</td>
+        </tr>
+        <tr>
+            <td>pow(x, y)</td>
+            <td> Returns the value of x to the power of y</td>
+        </tr>
+        <tr>
+            <td>random() </td>
+            <td>Returns a random number between 0 and 1</td>
+        </tr>
+        <tr>
+            <td>round(x)</td>
+            <td> Rounds x to the nearest integer</td>
+        </tr>
+        <tr>
+            <td>sin(x)</td>
+            <td> Returns the sine of x (x is in radians)</td>
+        </tr>
+        <tr>
+            <td>sinh(x)</td>
+            <td> Returns the hyperbolic sine of x</td>
+        </tr>
+        <tr>
+            <td>sqrt(x)</td>
+            <td> Returns the square root of x</td>
+        </tr>
+        <tr>
+            <td>tan(x)</td>
+            <td> Returns the tangent of an angle</td>
+        </tr>
+        <tr>
+            <td>tanh(x)</td>
+            <td> Returns the hyperbolic tangent of a number</td>
+        </tr>
+        <tr>
+            <td>trunc(x)</td>
+            <td> Returns the integer part of a number (x)</td>
+        </tr>
+    </table>
+</body>
+
+</html>

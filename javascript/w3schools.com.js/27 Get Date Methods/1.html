@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border: 1px solid black;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <a href="https://www.w3schools.com/js/js_date_methods.asp">
+            https://www.w3schools.com/js/js_date_methods.asp
+        </a>
+    </p>
+    <table style="border: 1px solid black;">
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>getFullYear()</td>
+            <td>Get the year as a four digit number (yyyy)</td>
+        </tr>
+        <tr>
+            <td>getMonth()</td>
+            <td>Get the month as a number (0-11)</td>
+        </tr>
+        <tr>
+            <td>getDate()</td>
+            <td>Get the day as a number (1-31)</td>
+        </tr>
+        <tr>
+            <td>getHours()</td>
+            <td>Get the hour (0-23)</td>
+        </tr>
+        <tr>
+            <td>getMinutes()</td>
+            <td>Get the minute (0-59)</td>
+        </tr>
+        <tr>
+            <td>getSeconds()</td>
+            <td>Get the second (0-59)</td>
+        </tr>
+        <tr>
+            <td>getMilliseconds()</td>
+            <td>Get the millisecond (0-999)</td>
+        </tr>
+        <tr>
+            <td>getTime()</td>
+            <td>Get the time (milliseconds since January 1, 1970)</td>
+        </tr>
+        <tr>
+            <td>getDay()</td>
+            <td>Get the weekday as a number (0-6)</td>
+        </tr>
+        <tr>
+            <td>Date.now()</td>
+            <td>Get the time. ECMAScript 5.</td>
+        </tr>
+    </table>
+
+    <h2>JavaScript getTime()</h2>
+
+    <p>The internal clock in JavaScript counts from midnight January 1, 1970.</p>
+    <p>The getTime() function returns the number of milliseconds since then:</p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.getFullYear();
+        document.getElementById("demo1").innerHTML = d.getMonth();
+        document.getElementById("demo2").innerHTML = d.getDate();
+        document.getElementById("demo3").innerHTML = d.getHours();
+        document.getElementById("demo4").innerHTML = d.getMinutes();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Set Date Methods</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <a href="https://www.w3schools.com/js/js_date_methods_set.asp">
+            https://www.w3schools.com/js/js_date_methods_set.asp
+        </a>
+    </p>
+    <table style="border: 1px solid black;">
+        <tr>
+            <th>Method</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>setFullYear()</td>
+            <td>Set the year as a four digit number (yyyy)</td>
+        </tr>
+        <tr>
+            <td>setMonth()</td>
+            <td>Set the month as a number (0-11)</td>
+        </tr>
+        <tr>
+            <td>setDate()</td>
+            <td>Set the day as a number (1-31)</td>
+        </tr>
+        <tr>
+            <td>setHours()</td>
+            <td>Set the hour (0-23)</td>
+        </tr>
+        <tr>
+            <td>setMinutes()</td>
+            <td>Set the minute (0-59)</td>
+        </tr>
+        <tr>
+            <td>setSeconds()</td>
+            <td>Set the second (0-59)</td>
+        </tr>
+        <tr>
+            <td>setMilliseconds()</td>
+            <td>Set the millisecond (0-999)</td>
+        </tr>
+        <tr>
+            <td>setTime()</td>
+            <td>Set the time (milliseconds since January 1, 1970)</td>
+        </tr>
+    </table>
+
+    <h2>JavaScript setFullYear()</h2>
+    <p>The setFullYear() method sets the year of a date object:</p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <script>
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d;
+        d.setFullYear(1111);
+        document.getElementById("demo1").innerHTML = d;
+    </script>
+</body>
+
+</html>

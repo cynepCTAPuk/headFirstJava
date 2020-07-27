@@ -5,19 +5,31 @@
 
     <a href="https://www.w3schools.com/js/js_dates.asp">https://www.w3schools.com/js/js_dates.asp</a>
     <h2>JavaScript new Date()</h2>
+    There are 4 ways to create a new date object:
+    <ul>
+        <li>new Date()</li>
+        <li>new Date(year, month, day, hours, minutes, seconds, milliseconds)</li>
+        <li>new Date(milliseconds)</li>
+        <li>new Date(date string)</li>
+    </ul>
     <p id="demo"></p>
+    <ul>
+        <li>The toUTCString() method converts a date to a UTC string (a date display standard)</li>
+        <li>The toDateString() method converts a date to a more readable format</li>
+        <li>The toISOString() method converts a date to a string, using the ISO standard format</li>
+    </ul>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
 
     <script>
         var d = new Date();
         document.getElementById("demo").innerHTML = d;
+        document.getElementById("demo1").innerHTML = d.toUTCString();
+        document.getElementById("demo2").innerHTML = d.toDateString();
+        document.getElementById("demo3").innerHTML = d.toISOString();
     </script>
 
-<ul>There are 4 ways to create a new date object:
-    <li>new Date()</li>
-    <li>new Date(year, month, day, hours, minutes, seconds, milliseconds)</li>
-    <li>new Date(milliseconds)</li>
-    <li>new Date(date string)</li>
-</ul>
 
 </body>
 

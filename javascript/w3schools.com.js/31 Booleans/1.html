@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Display the value of Boolean(10 > 9):</p>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = Boolean(10 > 9);
+        }
+    </script>
+
+    <h2>Everything Without a "Value" is False</h2>
+    <p>The Boolean value of 0 (zero) is false</p>
+    <p>The Boolean value of -0 (minus zero) is false</p>
+    <p>The Boolean value of "" (empty string) is false</p>
+    <p>The Boolean value of undefined is false</p>
+    <p>The Boolean value of null is false</p>
+    <p>The Boolean value of false is (you guessed it) false</p>
+    <p>The Boolean value of NaN is false</p>
+
+</body>
+
+</html>
