@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <a href="https://www.w3schools.com/js/js_switch.asp">
+        https://www.w3schools.com/js/js_switch.asp</a>
+
+    <h2>JavaScript switch</h2>
+    <p id="demo1"></p>
+
+    <script>
+        var day;
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+        }
+        document.getElementById("demo1").innerHTML = "Today is " + day;
+    </script>
+
+    <p id="demo2"></p>
+
+    <script>
+        var text;
+        switch (new Date().getDay()) {
+            case 4:
+            case 5:
+                text = "Soon it is Weekend";
+                break;
+            case 0:
+            case 6:
+                text = "It is Weekend";
+                break;
+            default:
+                text = "Looking forward to the Weekend";
+        }
+        document.getElementById("demo2").innerHTML = text;
+    </script>
+    
+    <hr>
+    <p>0 - Off, 1 - On</p>
+    <input id="switch" value=0 />
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo3"></p>
+
+    <script>
+        function myFunction() {
+            var x;
+            x = Number(document.getElementById("switch").value);
+            switch (x) {
+                case 0:
+                    text = "Off";
+                    break;
+                case 1:
+                    text = "On";
+                    break;
+                default:
+                    text = "No value found";
+            }
+            document.getElementById("demo3").innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>

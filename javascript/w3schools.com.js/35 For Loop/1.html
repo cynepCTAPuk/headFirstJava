@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <a href="https://www.w3schools.com/js/js_loop_for.asp">
+        https://www.w3schools.com/js/js_loop_for.asp</a>
+
+    <h2>JavaScript For Loop</h2>
+    <p id="demo"></p>
+
+    <script>
+        var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+        var text = "<ul>";
+        var i;
+        cars.sort();
+        // cars.reverse();
+        for (i = 0; i < cars.length; i++) {
+            text += "<li>" + cars[i] + "</li>";
+        }
+        text += "</ul>";
+        document.getElementById("demo").innerHTML = text;
+    </script>
+
+</body>
+
+</html>
