@@ -6,7 +6,7 @@
         https://www.w3schools.com/js/js_loop_for.asp</a>
 
     <h2>JavaScript For Loop</h2>
-    <p id="demo"></p>
+    <p id="demo1"></p>
 
     <script>
         var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
@@ -18,7 +18,74 @@
             text += "<li>" + cars[i] + "</li>";
         }
         text += "</ul>";
-        document.getElementById("demo").innerHTML = text;
+        document.getElementById("demo1").innerHTML = text;
+    </script>
+
+    <h2> Different Kinds of Loops</h2>
+    <p> JavaScript supports different kinds of loops:</p>
+    <ul>
+        <li>for - loops through a block of code a number of times</li>
+        <li>for/in - loops through the properties of an object</li>
+        <li>for/of - loops through the values of an iterable object</li>
+        <li>while - loops through a block of code while a specified condition is true</li>
+        <li>do/while - also loops through a block of code while a specified condition is true</li>
+    </ul>
+    <hr>
+
+    The for loop has the following syntax: <br>
+    for (statement 1; statement 2; statement 3) {<br>
+    // code block to be executed <br>
+    }
+    <p>Statement 1 is executed (one time) before the execution of the code block.</p>
+    <p>Statement 2 defines the condition for executing the code block.</p>
+    <p>Statement 3 is executed (every time) after the code block has been executed.</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        var text = "";
+        var i;
+        for (i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo2").innerHTML = text;
+    </script>
+
+    <h2>JavaScript For/In Loop</h2>
+    <p>The for/in statement loops through the properties of an object.</p>
+    <p id="demo3"></p>
+
+    <script>
+        var txt = "";
+        var person = { fname: "John", lname: "Doe", age: 25 };
+        var x;
+        for (x in person) {
+            txt += person[x] + " ";
+        }
+        document.getElementById("demo3").innerHTML = txt;
+    </script>
+
+    <h2>JavaScript For/Of Loop</h2>
+    <p>The for/of statement loops through the values of an iterable object.</p>
+
+    <script>
+        var cars = ['BMW', 'Volvo', 'Mini'];
+        var x;
+        document.write("<ul>");
+        for (x of cars) {
+            document.write("<li>" + x + "</li>");
+        }
+        document.write("</ul>")
+    </script>
+
+    <p>The for/of statement loops through the values of an iterable object.</p>
+
+    <script>
+        var txt = 'JavaScript';
+        var x;
+        for (x of txt) {
+            document.write(x + "<br >");
+        }
     </script>
 
 </body>
