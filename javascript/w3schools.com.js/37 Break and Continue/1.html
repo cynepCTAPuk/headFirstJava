@@ -17,6 +17,37 @@
         document.getElementById("demo1").innerHTML = text;
     </script>
 
+    <p>A loop with a <b>continue</b> statement.</p>
+    <p>A loop which will skip the step where i = 3.</p>
+    <p id="demo2"></p>
+
+    <script>
+        var text = "";
+        var i;
+        for (i = 0; i < 5; i++) {
+            if (i === 3) { continue; }
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo2").innerHTML = text;
+    </script>
+
+    <p>Lables</p>
+    <p id="demo3"></p>
+    <script>
+        var cars = ["BMW", "Volvo", "Saab", "Ford"];
+        var text = "";
+
+        list: {
+            text += cars[0] + "<br>";
+            text += cars[1] + "<br>";
+            break list;
+            text += cars[2] + "<br>";
+            text += cars[3] + "<br>";
+        }
+
+        document.getElementById("demo3").innerHTML = text;
+    </script>
+
 </body>
 
 </html>
