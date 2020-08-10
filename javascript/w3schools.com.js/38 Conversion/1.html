@@ -2,32 +2,32 @@
 <html>
 
 <body>
-<a href="https://www.w3schools.com/js/js_type_conversion.asp">
-    https://www.w3schools.com/js/js_type_conversion.asp</a>
-<h2>JavaScript Data Types</h2>
-<p>In JavaScript there are 5 different data types that can contain values:</p>
+    <a href="https://www.w3schools.com/js/js_type_conversion.asp">
+        https://www.w3schools.com/js/js_type_conversion.asp</a>
+    <h2>JavaScript Data Types</h2>
+    <p>In JavaScript there are 5 different data types that can contain values:</p>
 
-<ul>
-    <li>string</li>
-    <li>number</li>
-    <li>boolean</li>
-    <li>object</li>
-    <li>function</li>
-</ul>
-<p>There are 6 types of objects:</p>
-<ul>
-    <li>Object</li>
-    <li>Date</li>
-    <li>Array</li>
-    <li>String</li>
-    <li>Number</li>
-    <li>Boolean</li>
-</ul>
-<p>And 2 data types that cannot contain values:</p>
-<ul>
-    <li>null</li>
-    <li>undefined</li>
-</ul>
+    <ul>
+        <li>string</li>
+        <li>number</li>
+        <li>boolean</li>
+        <li>object</li>
+        <li>function</li>
+    </ul>
+    <p>There are 6 types of objects:</p>
+    <ul>
+        <li>Object</li>
+        <li>Date</li>
+        <li>Array</li>
+        <li>String</li>
+        <li>Number</li>
+        <li>Boolean</li>
+    </ul>
+    <p>And 2 data types that cannot contain values:</p>
+    <ul>
+        <li>null</li>
+        <li>undefined</li>
+    </ul>
 
     <h2>The JavaScript typeof Operator</h2>
     <p>The typeof operator returns the type of a variable, object, function or expression.</p>
@@ -45,6 +45,36 @@
             typeof function () { } + "<br>" +
             typeof myCar + "<br>" +
             typeof null;
+    </script>
+
+    <h2>The JavaScript constructor Property</h2>
+    <p>The constructor property returns the constructor function for a variable or an object.</p>
+    <p id="demo2"></p>
+
+    <script>
+        document.getElementById("demo2").innerHTML =
+            "john".constructor + "<br>" +
+            (3.14).constructor + "<br>" +
+            false.constructor + "<br>" +
+            [1, 2, 3, 4].constructor + "<br>" +
+            { name: 'john', age: 34 }.constructor + "<br>" +
+            new Date().constructor + "<br>" +
+            function () { }.constructor;
+    </script>
+
+    <h2>JavaScript Number Methods</h2>
+    <p>The toString() method converts a number to a string.<br>
+        x = 1234567890123456.78
+    </p>
+    <p id="demo3"></p>
+
+    <script>
+        var x = 1234567890123456.78;
+        document.getElementById("demo3").innerHTML =
+            x.toString() + " toString()" + "<br>" +
+            x.toExponential() + " toExponential()" + "<br>" +
+            x.toFixed() + " toFixed()" + "<br>" +
+            x.toPrecision() + " toPrecision()" + "<br>";
     </script>
 
 </body>
