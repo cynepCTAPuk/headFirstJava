@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border: 1px solid black;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.w3schools.com/js/js_regexp.asp">
+        https://www.w3schools.com/js/js_regexp.asp
+    </a>
+
+    <h2>JavaScript String Methods</h2>
+    <p>Search a string for "W3Schools" in phrase "Visit W3Schools!",
+        and display the position first symbol of the match:</p>
+    <p id="demo1"></p>
+
+    <script>
+        var str = "Visit W3Schools!";
+        var n = str.search("W3Schools");
+        document.getElementById("demo1").innerHTML = n;
+    </script>
+
+    <h2>JavaScript Regular Expressions</h2>
+    <p>Search a string for "w3Schools", and display the position of the match:</p>
+    <p id="demo2"></p>
+
+    <script>
+        var str = "Visit W3Schools!";
+        var n = str.search(/w3Schools/i);
+        document.getElementById("demo2").innerHTML = n;
+    </script>
+
+    <h2>JavaScript String Methods</h2>
+    <p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+    <button onclick="myFunction3()">Try it</button>
+    <p id="demo3">Please visit Microsoft!</p>
+
+    <script>
+        function myFunction3() {
+            var str = document.getElementById("demo3").innerHTML;
+            var txt = str.replace("Microsoft", "W3Schools");
+            document.getElementById("demo3").innerHTML = txt;
+        }
+    </script>
+
+    <h2>JavaScript Regular Expressions</h2>
+    <p>Replace "microsoft" with "W3Schools" in the paragraph below:</p>
+    <button onclick="myFunction4()">Try it, twice</button>
+    <p id="demo4">Please visit Microsoft and Microsoft!</p>
+
+    <script>
+        function myFunction4() {
+            var str = document.getElementById("demo4").innerHTML;
+            var txt = str.replace(/microsoft/i, "W3Schools");
+            document.getElementById("demo4").innerHTML = txt;
+        }
+    </script>
+
+    <h2>
+        Regular Expression Modifiers
+    </h2>
+    <p>
+        Modifiers can be used to perform case-insensitive more global searches:
+    </p>
+
+    <table>
+        <tr>
+            <th>Modifier </th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>i</td>
+            <td>Perform case-insensitive matching</td>
+        </tr>
+        <tr>
+            <td>g</td>
+            <td>Perform a global match (find all matches rather than stopping after the first match)</td>
+        </tr>
+        <tr>
+            <td>m</td>
+            <td>Perform multiline matching</td>
+        </tr>
+    </table>
+
+    <h2>
+        Regular Expression Patterns
+    </h2>
+    <p>
+        Brackets are used to find a range of characters:
+    </p>
+
+    <table>
+        <tr>
+            <th>Expression</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>[abc]</td>
+            <td>Find any of the characters between the brackets</td>
+        </tr>
+        <tr>
+            <td>[0-9]</td>
+            <td>Find any of the digits between the brackets</td>
+        </tr>
+        <tr>
+            <td>(x|y)</td>
+            <td>Find any of the alternatives separated with |</td>
+        </tr>
+    </table>
+
+    <p>
+        Metacharacters are characters with a special meaning:
+    </p>
+
+    <table>
+        <tr>
+            <th>Metacharacter</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>\d</td>
+            <td>Find a digit</td>
+        </tr>
+        <tr>
+            <td>\s</td>
+            <td>Find a whitespace character</td>
+        </tr>
+        <tr>
+            <td>\b</td>
+            <td>Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b
+            </td>
+        </tr>
+        <tr>
+            <td>\uxxxx</td>
+            <td>Find the Unicode character specified by the hexadecimal number xxxx</td>
+        </tr>
+    </table>
+
+    <p>
+        Quantifiers define quantities:
+    </p>
+
+    <table>
+        <tr>
+            <th>Quantifier</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>n+</td>
+            <td>Matches any string that contains at least one n</td>
+        </tr>
+        <tr>
+            <td>n*</td>
+            <td>Matches any string that contains zero or more occurrences of n</td>
+        </tr>
+        <tr>
+            <td>n?</td>
+            <td>Matches any string that contains zero or one occurrences of n</td>
+        </tr>
+    </table>
+
+    <hr style="border: 2px dotted red;">
+
+    <h2>JavaScript Regular Expressions</h2>
+    <p>Search for an "e" in the next paragraph:</p>
+    <p id="p01">The best things in life are free!</p>
+    <p id="demo5"></p>
+
+    <script>
+        text = document.getElementById("p01").innerHTML;
+        document.getElementById("demo5").innerHTML = /e/.test(text);
+    </script>
+
+    <hr style="border: 1px dashed green;">
+
+    <p id="demo6"></p>
+
+    <script>
+        var obj = /e/.exec("The best things in life are free!");
+        document.getElementById("demo6").innerHTML =
+            "Found " + "<b>" + obj[0] + "</b>" + " in position " + obj.index + " in the text: " + "<b>" + obj.input + "</b>";
+    </script>
+
+</body>
+
+</html>

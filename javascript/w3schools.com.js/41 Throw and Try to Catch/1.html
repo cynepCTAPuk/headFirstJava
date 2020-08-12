@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <a href="https://www.w3schools.com/js/js_errors.asp">
+        https://www.w3schools.com/js/js_errors.asp
+    </a>
+
+    <h2>JavaScript Error Handling</h2>
+    <p>This example demonstrates how to use <b>catch</b> to diplay an error.</p>
+    <p id="demo1"></p>
+
+    <script>
+        try {
+            adddlert("Welcome guest!");
+        }
+        catch (err) {
+            document.getElementById("demo1").innerHTML = err.message;
+        }
+    </script>
+
+    <p>Please input a number between 5 and 10:</p>
+    <input id="demo2" type="text">
+    <button type="button" onclick="myFunction2()">Test Input</button>
+    <p id="p02"></p>
+
+    <script>
+        function myFunction2() {
+            var message, x;
+            message = document.getElementById("p02");
+            message.innerHTML = "";
+            x = document.getElementById("demo2").value;
+            try {
+                if (x == "") throw "empty";
+                if (isNaN(x)) throw "not a number";
+                x = Number(x);
+                if (x < 5) throw "too low";
+                if (x > 10) throw "too high";
+            }
+            catch (err) {
+                message.innerHTML = "Input is " + err;
+            }
+            finally {
+                document.getElementById("demo2").value = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
