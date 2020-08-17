@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <a href="https://www.w3schools.com/js/js_scope.asp">
+        https://www.w3schools.com/js/js_scope.asp
+    </a>
+    <h2>JavaScript Scope</h2>
+
+    <p>Outside myFunction4() carName1 is undefined.</p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        myFunction1();
+        function myFunction1() {
+            var carName1 = "Volvo";
+            document.getElementById("demo1").innerHTML = typeof carName1 + " " + carName1;
+        }
+        document.getElementById("demo2").innerHTML = typeof carName1;
+    </script>
+    <hr>
+
+    <p>A GLOBAL variable can be accessed from any script or function.</p>
+    <p id="demo3"></p>
+    <script>
+        var carName1 = "Volvo";
+        myFunction3();
+        function myFunction3() {
+            document.getElementById("demo3").innerHTML = "I can display " + carName1;
+        }
+    </script>
+    <hr>
+
+    <p>
+        If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable:
+    </p>
+    <p id="demo4"></p>
+    <script>
+        myFunction4();
+        // code here can use carName1 as a global variable
+        document.getElementById("demo4").innerHTML = "I can display " + carName1;
+        function myFunction4() {
+            carName1 = "BMW";
+        }
+    </script>
+    <hr>
+
+    <p>In HTML, global variables defined with <b>var</b>, will become window variables.</p>
+    <p id="demo5"></p>
+    <script>
+        var carName5 = "Volvo";
+        // code here can use window.carName1
+        document.getElementById("demo5").innerHTML = "I can display " + window.carName5;
+    </script>
+
+
+</body>
+
+</html>

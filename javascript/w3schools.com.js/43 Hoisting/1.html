@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <a href="https://www.w3schools.com/js/js_hoisting.asp">
+        https://www.w3schools.com/js/js_hoisting.asp
+    </a>
+
+    <h2>JavaScript Hoisting</h2>
+
+    <p id="demo1"></p>
+    <script>
+        x1 = 5; // Assign 5 to x1
+        elem = document.getElementById("demo1"); // Find an element 
+        elem.innerHTML = x1;           // Display x1 in the element
+        var x1; // Declare x1
+    </script>
+
+    <p id="demo2"></p>
+    <script>
+        var x2; // Declare x2
+        x2 = 5; // Assign 5 to x2
+        elem = document.getElementById("demo2"); // Find an element 
+        elem.innerHTML = x2;           // Display x2 in the element
+    </script>
+
+    <h3 style="color: red;">Variables and constants declared with let or const are not hoisted!</h3>
+    <hr>
+    <p>JavaScript Initializations are Not Hoisted <br>
+        JavaScript only hoists declarations, not initializations.</p>
+
+    <p id="demo3"></p>
+    <script>
+        var x3 = 5; // Initialize x3
+        var y3 = 7; // Initialize y3
+        elem = document.getElementById("demo3"); // Find an element 
+        elem.innerHTML = x3 + " " + y3;       // Display x3 and y3
+    </script>
+
+    <p id="demo4"></p>
+    <script>
+        var x4 = 5;  // Initialize x4
+        elem = document.getElementById("demo4");      // Find an element 
+        elem.innerHTML = "x is " + x4 + " and y is " + y4;  // Display x4 and y4
+        var y4 = 7;  // Initialize y
+    </script>
+
+    <p id="demo5"></p>
+    <script>
+        var x = 5; // Initialize x
+        var y;   // Declare y
+        elem = document.getElementById("demo5"); // Find an element 
+        elem.innerHTML = x + " " + y;       // Display x and y
+        y = 7;   // Assign 7 to y
+    </script>
+    <hr>
+
+    <h2>
+        Declare Your Variables At the Top !
+    </h2>
+    <p>Hoisting is (to many developers) an unknown or overlooked behavior of JavaScript.</p>
+    <p>If a developer doesn't understand hoisting, programs may contain bugs (errors).</p>
+    <p>To avoid bugs, always declare all variables at the beginning of every scope.</p>
+    <p>Since this is how JavaScript interprets the code, it is always a good rule.</p>
+
+    <p style="background-color: yellowgreen;">JavaScript in strict mode does not allow variables to be used if they are not declared. <br>
+    Study "use strict" in the next chapter.</p>
+
+</body>
+
+</html>

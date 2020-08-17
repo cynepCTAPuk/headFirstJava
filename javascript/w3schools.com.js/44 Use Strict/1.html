@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <a href="https://www.w3schools.com/js/js_strict.asp">
+        https://www.w3schools.com/js/js_strict.asp
+    </a>
+
+    <h2>With "use strict":</h2>
+    <h3>Using a variable without declaring it, is not allowed.</h3>
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+    <script>
+        "use strict";
+        x1 = 3.14;  // This will cause an error (x is not defined).
+    </script>
+
+    <h2>Global "use strict" declaration.</h2>
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+    <script>
+        "use strict";
+        myFunction2();
+        function myFunction2() {
+            y2 = 3.14;   // This will cause an error (y is not defined)
+        }
+    </script>
+    <hr>
+
+    <p>"use strict" in a function will only cause errors in that function.</p>
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+    <script>
+        x3 = 3.14;    // This will not cause an error.
+        myFunction3();
+        function myFunction3() {
+            "use strict";
+            y3 = 3.14;  // This will cause an error (y is not defined).
+        }
+    </script>
+
+    <h2>
+        Not Allowed in Strict Mode
+    </h2>
+    <p>Using a variable, without declaring it, is not allowed:</p>
+    <p>Using an object, without declaring it, is not allowed:</p>
+    <p>Deleting a variable (or object) is not allowed.</p>
+    <p>Deleting a function is not allowed.</p>
+    <p>Duplicating a parameter name is not allowed: function x(p1, p1) {};</p>
+    <p>Octal numeric literals are not allowed: var x = 010;</p>
+    <p>Octal escape characters are not allowed: var x = "\010";</p>
+    <p>Writing to a read-only property is not allowed:</p>
+    <p>Writing to a get-only property is not allowed:</p>
+    <p>Deleting an undeletable property is not allowed:</p>
+    <p>The word eval cannot be used as a variable:</p>
+    <p>The word arguments cannot be used as a variable:</p>
+    <p>The with statement is not allowed:</p>
+    <p>For security reasons, eval() is not allowed to create variables in the scope from which it was called:</p>
+    <p>The this keyword in functions behaves differently in strict mode. <br>
+        The this keyword refers to the object that called the function. <br>
+        If the object is not specified, functions in strict mode will return undefined and functions in normal mode will
+        return the global object (window):</p>
+
+        <h2>
+            Future Proof!
+        </h2>
+        <p>Keywords reserved for future JavaScript versions can NOT be used as variable names in strict mode.</p>
+        <p>These are:</p>
+        <ul>
+            <li>implements</li>
+            <li>interface</li>
+            <li>let</li>
+            <li>package</li>
+            <li>private</li>
+            <li>protected</li>
+            <li>public</li>
+            <li>static</li>
+            <li>yield</li>
+        </ul>
+
+    <div style="background-color: salmon;">
+        <h2>Watch Out!</h2>
+        <p>The "use strict" directive is only recognized at the beginning of a script or a function.</p>
+    </div>
+
+
+</body>
+
+</html>
