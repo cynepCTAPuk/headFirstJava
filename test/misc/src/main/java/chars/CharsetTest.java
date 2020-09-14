@@ -8,17 +8,20 @@ import java.util.SortedMap;
 
 public class CharsetTest {
     public static void main(String[] args) throws UnsupportedEncodingException {
+/*
         SortedMap<String, Charset> charsets = Charset.availableCharsets();
         for (Map.Entry e : charsets.entrySet()) {
-//            if(e.getKey().toString().contains("UTF"))
-//            System.out.println(e.getKey() + ":" + e.getValue());
+            if(e.getKey().toString().contains("UTF"))
+            System.out.println(e.getKey() + ":" + e.getValue());
         }
+*/
         Charset currentCharset = Charset.defaultCharset();
         System.out.println(currentCharset);
 
         String s = "Хорошие новости!";
         byte[] buffer = s.getBytes();
         System.out.println(Arrays.toString(buffer));
+
         String out = new String(buffer);
         System.out.println(out);
 
@@ -32,5 +35,8 @@ public class CharsetTest {
         System.out.println(Arrays.toString(buffer2));
         out = new String(buffer2, "Windows-1251");
         System.out.println(out);
+
+        int[] ss = {1, 2};
+        System.out.println("\nРазмер массива: " + ss.length);
     }
 }

@@ -12,5 +12,10 @@ public class OrderLogicalOps {
             boolean result = b[0] && b[1] || b[2] && b[3];
             System.out.println(i + ": " + result);
         }
+        calc();
+    }
+
+    public static void calc() {
+        System.out.println("Hello Andrey");
     }
 }
