@@ -1,8 +1,10 @@
 package date_time;
 
+import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.*;
+import java.util.Date;
 import java.util.Locale;
 
 public class BirthDay {
@@ -12,6 +14,7 @@ public class BirthDay {
 
         LocalDate bd = LocalDate.of(1962, Month.SEPTEMBER, 10);
         LocalDate today = LocalDate.now();
+        System.out.println(today);
 //        LocalTime time = LocalTime.now();
 //        System.out.printf("Today is %s Time is %s\n", today, time);
         System.out.println("\nToday is "
@@ -33,6 +36,7 @@ public class BirthDay {
         p1 = Period.between(today, nextBDay);
         p2 = ChronoUnit.DAYS.between(today, nextBDay);
         System.out.printf("There are %d months and %d days until your next birthday (%d days)\n",
-                p1.getMonths(), p1.getDays(),p2);
+                p1.getMonths(), p1.getDays(), p2);
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
     }
 }
