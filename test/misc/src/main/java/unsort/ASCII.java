@@ -21,6 +21,11 @@ public class ASCII {
             if (++n % c == 0) System.out.format("%n");
         }
 
+        String something = "<Building>\n<Floor>\n<Room/>\n</Floor>\n</Building>";
+        System.out.println(something);
+        System.out.println(something.replace('\n','\0'));
+
+/*
         System.out.println("_".repeat(60));
         String s = String.join(",", "interfaces", "b", "c");
         System.out.println(s);
@@ -28,5 +33,6 @@ public class ASCII {
         int[] ints = new int[size];
         new Random().ints(30, 10, 100)
                 .forEach(result -> System.out.format("%2d ", result));
+*/
     }
 }
