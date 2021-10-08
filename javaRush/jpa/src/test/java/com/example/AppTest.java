@@ -89,7 +89,7 @@ public class AppTest {
         em.persist(cat);
         Category result = em.find(Category.class, 1L);
         assertNotNull(result);
-        System.out.println("result.getTitle(): "+result.getTitle());
+        System.out.println("result.getTitle(): " + result.getTitle());
     }
 
     @Test

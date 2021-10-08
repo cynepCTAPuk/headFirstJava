@@ -5,17 +5,17 @@ public class Thread29 {
         Runnable task = () -> {
             //Запаркуем текущий поток
             System.err.println("Will be Parked "
-                    + " thread: " + Thread.currentThread().getName());
+                                       + " thread: " + Thread.currentThread().getName());
             LockSupport.park();
             // Как только нас распаркуют - начнём действовать
             System.err.println("Unparked "
-                    + " thread: " + Thread.currentThread().getName());
+                                       + " thread: " + Thread.currentThread().getName());
         };
         Thread thread = new Thread(task);
         thread.start();
         Thread.currentThread().sleep(4_000);
         System.err.println("Thread state: " + thread.getState()
-                + " thread: " + Thread.currentThread().getName());
+                                   + " thread: " + Thread.currentThread().getName());
 
         LockSupport.unpark(thread);
         Thread.currentThread().sleep(4_000);

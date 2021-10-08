@@ -9,7 +9,7 @@ public class Thread43 {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         CompletableFuture<String> completed = CompletableFuture.completedFuture("Просто значение");
         CompletableFuture<Void> voidCompletableFuture = CompletableFuture.runAsync(() ->
-                System.out.println("run " + Thread.currentThread().getName()));
+                                                                                           System.out.println("run " + Thread.currentThread().getName()));
         CompletableFuture<String> supplier = CompletableFuture.supplyAsync(() -> {
             System.out.println("supply " + Thread.currentThread().getName());
             return "Значение";

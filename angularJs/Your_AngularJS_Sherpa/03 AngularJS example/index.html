@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script src="js.js"></script>
+    <meta name="description" content="Basic AngularJS example of data binding" />
+    <meta charset="utf-8">
+    <title>JS Bin</title>
+</head>
+
+<body ng-controller='ctrl'>
+    <br /><br />
+    <div>
+        Enter your name: <input type="text" ng-model="name"></input>
+    </div>
+    <div>Hello {{name}}<span ng-if='!!name'></span></div>
+
+    <br /><br />
+    <a ng-click="shouldShowDiv = !shouldShowDiv">Show content below</a>
+    <div ng-show="shouldShowDiv">This div will be shown only if <em>shouldShowDiv</em> is true</div>
+    <div ng-hide="shouldShowDiv">This div will be hidden if <em>shouldShowDiv</em> is not true</div>
+
+    <br /><br />
+    <div ng-init="count = 0">
+        <a ng-click="count = count + 1">Add one</a>
+        <h3>Double the count is: {{ 2 * count }}</h3>
+    </div>
+
+</body>
+
+</html>

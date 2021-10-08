@@ -1,17 +1,22 @@
-<html>
+<html ng-app='app'>
 
 <head>
     <script src="c://v/java/angular-1.8.0/angular.min.js"></script>
 </head>
 
-<body ng-app>
+<body>
     <div ng-controller="HelloCtrl">
-        var HelloCtrl = function($scope){
-            $scope.name = 'World';
-        }
         Say hello to: <input type="text" ng-model="name">
         <h1>Hello, {{name}}!</h1>
     </div>
+
+    <script>
+        let app = angular.module('app', []);
+        app.controller('HelloCtrl', function HelloCtrl($scope) {
+            $scope.name = 'World';
+        });
+
+    </script>
 </body>
 
 </html>

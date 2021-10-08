@@ -14,5 +14,6 @@ public class Thread55 {
                 Executors.newScheduledThreadPool(4);
         Runnable task = () -> System.out.println(Thread.currentThread().getName());
 //        scheduledExecutorService.scheduleAtFixedRate(task, 1, 2, TimeUnit.SECONDS);
-        scheduledExecutorService.scheduleWithFixedDelay(task, 1, 2, TimeUnit.SECONDS);    }
+        scheduledExecutorService.scheduleWithFixedDelay(task, 1, 2, TimeUnit.SECONDS);
+    }
 }

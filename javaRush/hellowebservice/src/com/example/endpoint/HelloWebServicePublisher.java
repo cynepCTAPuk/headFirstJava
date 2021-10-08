@@ -1,6 +1,7 @@
 package com.example.endpoint;
 
 // класс, для запуска веб-сервера с веб-сервисами
+
 import javax.xml.ws.Endpoint;
 // класс нашего веб-сервиса
 import com.example.ws.HelloWebServiceImpl;

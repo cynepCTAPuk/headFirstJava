@@ -2,8 +2,11 @@ package aaa;
 
 public class SwitchTest {
     public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
-            System.out.println(digit((int) (Math.random() * 9)));
+        for (int i = 0; i < 9; i++) {
+            double d = Math.random()*9;
+            System.out.print(digit((int) d));
+            System.out.print(" ");
+            System.out.println(dayOfWeek((int) d));
         }
     }
 
@@ -40,6 +43,36 @@ public class SwitchTest {
             case 9:
                 x = "Девять";
                 break;
+        }
+        return x;
+    }
+
+    private static String dayOfWeek(int a) {
+        String x = "";
+        switch (a) {
+            case 0:
+                x = "Воскресенье";
+                break;
+            case 1:
+                x = "Понедельник";
+                break;
+            case 2:
+                x = "Вторник";
+                break;
+            case 3:
+                x = "Среда";
+                break;
+            case 4:
+                x = "Четверг";
+                break;
+            case 5:
+                x = "Пятница";
+                break;
+            case 6:
+                x = "Суббота";
+                break;
+            default:
+                x = "Oops";
         }
         return x;
     }

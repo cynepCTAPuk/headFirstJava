@@ -3,7 +3,12 @@ package aaa;
 public class IntTest {
     public static void main(String[] args) {
         Request request = new Request();
-        System.out.println(Integer.toString(request.getNumber()));
+        request.setNumber(0xaf);
+        System.out.printf("%s %s%n", getString(request, 2), getString(request, 10));
+    }
+
+    private static String getString(Request request, int i) {
+        return Integer.toString(request.getNumber(), i);
     }
 }
 
