@@ -1,4 +1,4 @@
-package gc.task3405;
+package garbageCollector.task3405;
 
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;

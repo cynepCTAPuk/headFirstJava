@@ -12,7 +12,7 @@ public class Main {
             context.getBean(Quoter.class).sayQuote();
         }
 */
-        context.getBean(Quoter.class).sayQuote();
+//        context.getBean(Quoter.class).sayQuote();
 
     }
 }

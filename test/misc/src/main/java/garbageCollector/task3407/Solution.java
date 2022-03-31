@@ -1,4 +1,4 @@
-package gc.task3407;
+package garbageCollector.task3407;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;

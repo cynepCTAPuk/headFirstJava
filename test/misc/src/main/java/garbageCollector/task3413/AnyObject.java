@@ -1,4 +1,4 @@
-package gc.task3413;
+package garbageCollector.task3413;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;

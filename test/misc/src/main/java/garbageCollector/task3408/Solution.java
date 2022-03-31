@@ -1,4 +1,4 @@
-package gc.task3408;
+package garbageCollector.task3408;
 
 /* 
 Кэширование

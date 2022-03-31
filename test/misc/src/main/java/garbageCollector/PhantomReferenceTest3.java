@@ -1,4 +1,4 @@
-package gc;
+package garbageCollector;
 
 import java.lang.ref.*;
 

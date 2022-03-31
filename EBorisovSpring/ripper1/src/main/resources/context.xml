@@ -6,8 +6,10 @@
     <context:annotation-config/>
 <!--    <context:component-scan base-package="com.example.demo"/>-->
 <!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+    <bean class="com.example.demo.PostProxyInvokerContextListener"/>
     <bean class="com.example.demo.ProfilingHandlerBeanPostProcessor"/>
     <bean class="com.example.demo.InjectRandomIntAnnotationBeanPostProcessor"/>
+
     <bean class="com.example.demo.TerminatorQuoter" id="terminatorQuoter">
         <property name="message" value="I'll be back"/>
     </bean>

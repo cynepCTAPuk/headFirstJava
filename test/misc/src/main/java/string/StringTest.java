@@ -1,6 +1,11 @@
 package string;
 
 public class StringTest {
+    public static String toString(String string) {
+        System.out.println("toString");
+        return string;
+    }
+
     public static void main(String[] args) {
 /*
         String string = "ПриветМир";
@@ -18,8 +23,13 @@ public class StringTest {
         System.out.println("\uD83D\uDD0A");
         System.out.println("\u1148\u0097");
 */
+/*
         String s = "";
         System.out.println(s.length());
         System.out.println(s.isEmpty());
+*/
+
+        System.out.println(toString("main"));
     }
+
 }

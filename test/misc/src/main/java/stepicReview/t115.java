@@ -7,6 +7,9 @@ public class t115 {
         int[] array1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 11};
         int[] array2 = {};
         int[] array3 = {1};
+        checkSortArrayLength(array);
+        checkSortArrayLength(array1);
+        checkSortArrayLength(array2);
         checkSortArrayLength(array3);
     }
 

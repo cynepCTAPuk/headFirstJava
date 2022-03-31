@@ -1,4 +1,4 @@
-package gc.task3408;
+package garbageCollector.task3408;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

@@ -14,11 +14,12 @@ public class LocalDateTimeTest {
         System.out.println(Math.pow(2d, 2d));
 */
         Instant now = Instant.now();
-        System.out.println(now);
-        System.out.println(now.getEpochSecond());
-        System.out.println(now.toEpochMilli());
-        System.out.println(System.currentTimeMillis());
-        System.out.println(new Date().getTime());
+        int i = 0;
+        System.out.println(++i + ": " + now);
+        System.out.println(++i + ": " + now.getEpochSecond());
+        System.out.println(++i + ": " + now.toEpochMilli());
+        System.out.println(++i + ": " + System.currentTimeMillis());
+        System.out.println(++i + ": " + new Date().getTime());
 
         String dtStr = "2011-03-27 02:13:00 Europe/Moscow";
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss VV");

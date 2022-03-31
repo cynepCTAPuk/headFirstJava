@@ -1,4 +1,4 @@
-package gc.task3406;
+package garbageCollector.task3406;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
