@@ -18,4 +18,12 @@ class Human {
     public List<String> getPets() {
         return pets;
     }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", pets=" + pets +
+                '}';
+    }
 }

@@ -3,19 +3,20 @@
  */
 package stream.human;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class FlatMapDemo {
     public static void main(String[] args) {
         List<Human> humans = Arrays.asList(
                 new Human("Sam", Arrays.asList("Buddy", "Luce")),
-                new Human("Bob", Arrays.asList("Frankie", "Rosie")),
+                new Human("Bob", Arrays.asList("Frankie")),
                 new Human("Marta", Arrays.asList("Simba", "Tilly")));
         List<String> petNames;
+        System.out.println(humans);
+
+        humans.sort(Comparator.comparing(Human::getName));
+        System.out.println(humans);
 
         petNames = new ArrayList<>();
         for (Human human : humans) petNames.addAll(human.getPets());
@@ -38,6 +39,7 @@ public class FlatMapDemo {
                 .collect(Collectors.toList());
         System.out.println(petNames);
 
+/*
         int[][] arr = {{1, 2, 1, 2, 1}, {3, 4, 5}, {6, 7, 8, 9}};
         int size = 0;
         for (int[] ints : arr) size += ints.length;
@@ -70,6 +72,7 @@ public class FlatMapDemo {
                 .flatMap(Arrays::stream)
                 .distinct()
                 .collect(Collectors.joining()));
+*/
     }
 }
 
