@@ -1,6 +1,6 @@
 package stepicReview;
 
-public class t116 {
+public class T116 {
 
     public static void main(String[] args) {
         Node node = createLinkedList(15);

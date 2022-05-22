@@ -5,8 +5,6 @@
  */
 package collections;
 
-import unsort.Person;
-
 import java.util.*;
 
 public class ListTest {
@@ -21,7 +19,6 @@ public class ListTest {
     public static final String ANSI_WHITE = "\u001B[37m";
 
     public static void main(String[] args) {
-
         List<Person> arrayList = new ArrayList<>();
         Person person1 = new Person("One");
         Person person2 = new Person("Two");
@@ -32,18 +29,39 @@ public class ListTest {
 
         System.out.print(ANSI_RED + "ForEach: ");
         for (Person person : arrayList) System.out.print(person + " ");
+        System.out.println();
 
-        System.out.print(ANSI_BLUE + "\nIterator: ");
-        Iterator iterator = arrayList.iterator();
+        System.out.print(ANSI_BLUE + "Iterator: ");
+        Iterator<Person> iterator = arrayList.iterator();
         while (iterator.hasNext()) System.out.print(iterator.next() + " ");
 
         System.out.print(ANSI_RESET + "\n");
+        List<Integer> integerList = new LinkedList<>();
+        System.out.println(integerList);
 
-        List<Integer> theNumbers = new LinkedList<Integer>();
+        Collections.addAll(integerList, 4, 8, 15, 16, 23, 42);
+        integerList = new LinkedList<>(Arrays.asList(4, 8, 15, 16, 23, 42));
+        integerList.add(3);
+        System.out.println(integerList);
 
-        Collections.addAll(theNumbers, 4, 8, 15, 16, 23, 42);
-        theNumbers = new LinkedList<Integer>(Arrays.asList(4, 8, 15, 16, 23, 42));
-        theNumbers = Arrays.asList(4, 8, 15, 16, 23, 42); // immutable list
+        integerList = Arrays.asList(4, 8, 15, 16, 23, 42);      // immutable list
+        System.out.println(integerList);
+
+        integerList = Collections.emptyList();                  // immutable list
+        System.out.println(integerList);
+    }
+
+     static class Person {
+        String name;
+
+        public Person(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return "Person{" + "name='" + name + '\'' + '}';
+        }
     }
 }
 

@@ -1,6 +1,6 @@
 package stepicReview;
 
-public class t115 {
+public class T115 {
 
     public static void main(String[] args) {
         int[] array = {2, 1, 4, 1, 2, 3, 4, 5, 6, 7, 3, 1};
