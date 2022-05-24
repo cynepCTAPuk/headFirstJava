@@ -7,17 +7,9 @@ package collections;
 
 import java.util.*;
 
-public class ListTest {
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_BLACK = "\u001B[30m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_WHITE = "\u001B[37m";
+import static util.PrintColor.*;
 
+public class ListTest {
     public static void main(String[] args) {
         List<Person> arrayList = new ArrayList<>();
         Person person1 = new Person("One");
@@ -28,14 +20,16 @@ public class ListTest {
         arrayList.add(1, person3);
 
         System.out.print(ANSI_RED + "ForEach: ");
+        System.out.print(ANSI_RESET);
         for (Person person : arrayList) System.out.print(person + " ");
         System.out.println();
 
         System.out.print(ANSI_BLUE + "Iterator: ");
+        System.out.print(ANSI_RESET);
         Iterator<Person> iterator = arrayList.iterator();
         while (iterator.hasNext()) System.out.print(iterator.next() + " ");
 
-        System.out.print(ANSI_RESET + "\n");
+        System.out.println();
         List<Integer> integerList = new LinkedList<>();
         System.out.println(integerList);
 
