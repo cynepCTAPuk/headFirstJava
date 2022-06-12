@@ -17,5 +17,9 @@ public class PeekTest {
         System.out.println("-".repeat(30));
         Stream<String> nameStream = Stream.of("Alice", "Bob", "Chuck");
         nameStream.forEach(System.out::println);
+
+        System.out.println("-".repeat(30));
+        Stream<User> userStream = Stream.of(new User("Alice"), new User("Bob"), new User("Chuck"));
+        userStream.peek(u -> u.setName(u.getName().toUpperCase())).forEach(System.out::println);
     }
 }
