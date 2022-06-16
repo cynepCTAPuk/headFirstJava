@@ -19,6 +19,8 @@ public class FileCopy {
                 if (r == -1) break;
                 out.write(b, 0, r);
             }
+            in.close();
+            out.close();
         } else {
             System.out.println("FileCopy SourceFile DestinationFile");
         }

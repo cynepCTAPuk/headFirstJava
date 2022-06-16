@@ -1,18 +1,17 @@
 package xml;
 
-import xml.task3307.Solution;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
+import jakarta.xml.bind.annotation.XmlEnum;
+import jakarta.xml.bind.annotation.XmlEnumValue;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.*;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class JaxbTest4 {
     public static void main(String[] args) throws JAXBException, IOException {
@@ -43,7 +42,7 @@ public class JaxbTest4 {
     @XmlEnum(Integer.class)
     @XmlRootElement
     enum Code {
-        @XmlEnumValue ("1") START,
+        @XmlEnumValue("1") START,
         @XmlEnumValue ("2") INPROGRESS,
         @XmlEnumValue ("3") FINISH,
         @XmlEnumValue ("-1") ERROR

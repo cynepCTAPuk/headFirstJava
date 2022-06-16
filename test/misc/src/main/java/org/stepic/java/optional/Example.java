@@ -1,7 +1,5 @@
 package org.stepic.java.optional;
 
-import org.checkerframework.checker.nullness.Opt;
-
 import java.util.Optional;
 
 public class Example<X> {

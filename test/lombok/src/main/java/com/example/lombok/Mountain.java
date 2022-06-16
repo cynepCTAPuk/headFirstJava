@@ -17,6 +17,7 @@ import lombok.Data;
 
 public @Data class Mountain {
     private final String name;
-    private final double latitude, longitude;
+    private final double latitude;
+    private final double longitude;
     private String country;
 }
