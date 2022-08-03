@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logic operations</title>
+    <style type="text/css">
+        BODY {background: white;}
+        TABLE {width: auto; border: 1px solid white; border-collapse: collapse;}
+        TD, TH {padding: 3px; border: 1px solid black;}
+        TH {background: lightgrey;}
+    </style>
+</head>
+<body>
+<h3>35) Группа «операторы сдвига»</h3>
+<table>
+    <tr>
+        <th>Обозначение</th>
+        <th>Обозначение</th>
+        <th>Название</th>
+        <th>Описание (что делает)</th>
+    </tr>
+    <tr>
+        <td>>>/td>
+        <td>a >> b</td>
+        <td>сдвиг вправо</td>
+        <td>Сдвигает биты числа a, на b разрядов вправо.</td>
+    </tr>
+    <tr>
+        <td><<</td>
+        <td>c << d</td>
+        <td>сдвиг влево</td>
+        <td>Сдвигает биты числа c, на d разрядов влево.</td>
+    </tr>
+    <tr>
+        <td>>>>/td>
+        <td>a>>>2</td>
+        <td>сдвиг вправо с заполнением нулем</td>
+        <td>Сдвигает биты числа a на 2 разряда вправо.</td>
+    </tr>
+</table>
+<br>
+<table>
+    <tr>
+        <th>Пример</th>
+        <th>Числа в битовом виде</th>
+        <th>Ответ в битовом виде</th>
+        <th>Ответ</th>
+    </tr>
+    <tr>
+        <td>10 >> 1</td>
+        <td>00001010 >> 1</td>
+        <td>00000101</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>10 >> 2</td>
+        <td>00001010</td>
+        <td>00000010</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>10 << 1</td>
+        <td>00001010</td>
+        <td>00010100</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>10 << 2</td>
+        <td>00001010</td>
+        <td>00101000</td>
+        <td>40</td>
+    </tr>
+</table>
+<br>
+<table>
+    <tr>
+        <th>Выражение</th>
+        <th>Результат</th>
+        <th>Описание</th>
+    </tr>
+    <tr>
+        <td>10001010>>1</td>
+        <td>11000101</td>
+        <td rowspan="3">Отрицательное число остается отрицательным. <br>
+            Новые разряды заполняются 1 для отрицательных чисел.</td>
+    </tr>
+    <tr>
+        <td>1001010>>2</td>
+        <td>11110001</td>
+    </tr>
+    <tr>
+        <td>1001010>>3</td>
+        <td>11110001</td>
+    </tr>
+    <tr>
+        <td>1001010>>>1</td>
+        <td>01000101</td>
+        <td rowspan="3">Отрицательное число перестает быть отрицательным. <br>
+            Новые разряды заполняются 0 для отрицательных чисел.</td>
+    </tr>
+    <tr>
+        <td>1001010>>>2</td>
+        <td>00100010</td>
+    </tr>
+    <tr>
+        <td>1001010>>>3</td>
+        <td>00010001</td>
+    </tr>
+</table>
+</body>
+</html>
