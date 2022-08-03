@@ -1,0 +1,80 @@
+C:\v\java\GitHub\cynepCTAPuk\headFirstJava\ReactJS\new>npx create-react-app my-app
+Need to install the following packages:
+  create-react-app
+Ok to proceed? (y)
+npm WARN deprecated tar@2.2.2: This version of tar is no longer supported, and will not receive security updates. Please upgrade asap.
+
+Creating a new React app in C:\v\java\GitHub\cynepCTAPuk\headFirstJava\ReactJS\new\my-app.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+
+
+added 1930 packages, and audited 1931 packages in 1m
+
+152 packages are looking for funding
+  run `npm fund` for details
+
+58 vulnerabilities (16 moderate, 40 high, 2 critical)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+Installing template dependencies using npm...
+
+added 56 packages, and audited 1987 packages in 9s
+
+153 packages are looking for funding
+  run `npm fund` for details
+
+58 vulnerabilities (16 moderate, 40 high, 2 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+Removing template package using npm...
+
+
+removed 1 package, and audited 1986 packages in 4s
+
+153 packages are looking for funding
+  run `npm fund` for details
+
+58 vulnerabilities (16 moderate, 40 high, 2 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+Success! Created my-app at C:\v\java\GitHub\cynepCTAPuk\headFirstJava\ReactJS\new\my-app
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd my-app
+  npm start
+
+Happy hacking!
