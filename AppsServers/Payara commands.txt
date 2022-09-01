@@ -1,3 +1,0 @@
-C:\V\java\payara5\bin\asadmin start-domain
-
-C:\V\java\payara5\bin\asadmin stop-domain
