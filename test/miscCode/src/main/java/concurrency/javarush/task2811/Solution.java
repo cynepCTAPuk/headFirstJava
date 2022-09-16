@@ -1,0 +1,13 @@
+package concurrency.javarush.task2811;
+
+/* 
+ReentrantReadWriteLock
+*/
+
+import java.util.LinkedHashMap;
+
+public class Solution {
+    public static void main(String[] args) {
+        ReadWriteMap<Integer, String> linkedSafeMap = new ReadWriteMap<>(new LinkedHashMap<>());
+    }
+}

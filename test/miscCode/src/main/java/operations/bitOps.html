@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logic operations</title>
+    <style type="text/css">
+        BODY {background: white;}
+        TABLE {width: auto; border: 1px solid white; border-collapse: collapse;}
+        TD, TH {padding: 3px; border: 1px solid black;}
+        TH {background: lightgrey;}
+    </style>
+</head>
+<body>
+<h3>4) Группа – «побитовые операторы»</h3>
+<table>
+    <tr>
+        <th>Обозначение</th>
+        <th>Обозначение</th>
+        <th>Название</th>
+        <th>Описание (что делает)</th>
+    </tr>
+    <tr>
+        <td>&</td>
+        <td>a & b</td>
+        <td>AND – «и»</td>
+        <td>Побитовое «И»</td>
+    </tr>
+    <tr>
+        <td>|</td>
+        <td>c | d</td>
+        <td>OR – «или»</td>
+        <td>Побитовое «ИЛИ»</td>
+    </tr>
+    <tr>
+        <td>~</td>
+        <td>~a</td>
+        <td>NOT – «не»</td>
+        <td>Побитовое «НЕ»</td>
+    </tr>
+    <tr>
+        <td>^</td>
+        <td>a ^ b</td>
+        <td>XOR – «исключающее или»</td>
+        <td>Побитовое «ИСКЛЮЧАЮЩЕЕ ИЛИ»</td>
+    </tr>
+</table>
+<br>
+<table>
+    <tr>
+        <th>Логическое выражение</th>
+        <th>Битовое выражение</th>
+    </tr>
+    <tr>
+        <td>true && true == true</td>
+        <td>1&1 == 1</td>
+    </tr>
+    <tr>
+        <td>true && false == false</td>
+        <td>1&0 == 0</td>
+    </tr>
+    <tr>
+        <td>true || true == true</td>
+        <td>1|1 == 1</td>
+    </tr>
+    <tr>
+        <td>true || false == true</td>
+        <td>1|0 == 1</td>
+    </tr>
+    <tr>
+        <td>false || false = false</td>
+        <td>0|0 == 0</td>
+    </tr>
+    <tr>
+        <td>!false == true</td>
+        <td>~0 == 1</td>
+    </tr>
+    <tr>
+        <td>!true == false</td>
+        <td>~1 == 0</td>
+    </tr>
+</table>
+<br>
+<table>
+    <tr>
+        <th>Логические выражения</th>
+        <th>Битовое выражение</th>
+    </tr>
+    <tr>
+        <td>true XOR true == false</td>
+        <td>1 ^ 1 == 0</td>
+    </tr>
+    <tr>
+        <td>false XOR false == false</td>
+        <td>0 ^ 0 == 0</td>
+    </tr>
+    <tr>
+        <td>true XOR false == true</td>
+        <td>1 ^ 0 == 1</td>
+    </tr>
+    <tr>
+        <td>false XOR true == true</td>
+        <td>0 ^ 1 == 1</td>
+    </tr>
+</table>
+<br>
+<table>
+    <tr>
+        <th>Пример</th>
+        <th>Числа в битовом виде</th>
+        <th>Ответ в битовом виде</th>
+        <th>Ответ</th>
+    </tr>
+    <tr>
+        <td>5 & 3</td>
+        <td>00000101 & 00000011</td>
+        <td>00000001</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>7 & 2</td>
+        <td>00000111 & 00000010</td>
+        <td>00000010</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>5 | 9</td>
+        <td>00000101 | 00001001</td>
+        <td>00001101</td>
+        <td>13</td>
+    </tr>
+    <tr>
+        <td>5 ^ 9</td>
+        <td>00000101 ^ 00001001</td>
+        <td>00001100</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>~9</td>
+        <td>~00001001</td>
+        <td>11110110</td>
+        <td>246</td>
+    </tr>
+</table>
+</body>
+</html>
