@@ -3,7 +3,7 @@ package collections;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ListsTest {
+public class ListOfLists {
     public static void main(String[] args) {
         List<Double> d1 = Arrays.asList(2.0, 2.1, 2.2, 2.3, 2.4, 2.5);
         List<Double> d2 = Arrays.asList(2.0, 2.1, 2.2, 2.3, 2.4, 2.5);
