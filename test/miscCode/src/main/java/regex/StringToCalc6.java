@@ -17,7 +17,7 @@ public class StringToCalc6 {
     }
 
     public static void eval(String string) {
-        string = string.replaceAll(" ", "");
+        string = string.replace(" ", "");
         Stack<String> ops = new Stack<>();
         Stack<Double> vals = new Stack<>();
 

@@ -11,13 +11,13 @@ import static java.lang.Character.isDigit;
 public class StringToCalc3 {
     public static void main(String[] args) {
         String input = "5.1 + 20.2 - 11 + 1";
-        input = input.replaceAll(" ", "");
+        input = input.replace(" ", "");
         StringBuilder number = new StringBuilder();
         List<Double> numbers = new ArrayList<>();
         List<Character> operands = new ArrayList<>();
 
         char current;
-        char next = ' ';
+        char next;
         for (int i = 0; i < input.length(); i++) {
             current = input.charAt(i);
             if (i < input.length() - 1) next = input.charAt(i + 1);

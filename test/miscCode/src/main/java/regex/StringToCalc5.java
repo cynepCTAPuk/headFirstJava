@@ -10,7 +10,7 @@ public class StringToCalc5 {
         System.out.println(eval("sin(2 * (-5 + 1.5 * 4) + 28)"));
     }
 
-    public static double eval(final String str) {
+    private static double eval(final String str) {
         return new Object() {
             int pos = -1, ch;
 

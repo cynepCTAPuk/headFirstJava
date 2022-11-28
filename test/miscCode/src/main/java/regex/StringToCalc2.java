@@ -16,11 +16,10 @@ public class StringToCalc2 {
 
         char[] ch = input.toCharArray();
 
-        for (int i = 0; i < ch.length; i++) {
-            if (ch[i] != '+') {
-                sb.append(ch[i]);
-            } else {
-                list2.add(ch[i]);
+        for (char c : ch) {
+            if (c != '+') sb.append(c);
+            else {
+                list2.add(c);
                 list1.add(Integer.valueOf(sb.toString()));
                 sb.setLength(0);
             }

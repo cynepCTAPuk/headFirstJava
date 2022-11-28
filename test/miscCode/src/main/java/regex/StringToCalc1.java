@@ -16,9 +16,8 @@ public class StringToCalc1 {
             if (Character.isDigit(c)) parsedInteger += c;
             if (!Character.isDigit(c) || i == input.length() - 1) {
                 int parsed = Integer.parseInt(parsedInteger);
-                if (operator == "") {
-                    result = parsed;
-                } else {
+                if (operator == "") result = parsed;
+                else {
                     if (operator.equals("+")) result += parsed;
                     else if (operator.equals("-")) result -= parsed;
                 }

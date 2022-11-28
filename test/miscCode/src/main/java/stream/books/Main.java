@@ -6,20 +6,22 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        List<Dictionary> dictionaries = Arrays.asList(
+                new Dictionary(1, "one"),
+                new Dictionary(2, "two"),
+                new Dictionary(3, "three"));
+        List<Dictionary> dictionaries1 = Arrays.asList(
+                new Dictionary(1, "один"),
+                new Dictionary(2, "два"),
+                new Dictionary(3, "три"));
         List<Book> books = new ArrayList<>();
-        for (Dictionary dictionary : Arrays.asList(new Dictionary(1, "one"), new Dictionary(2, "two"), new Dictionary(3, "three")))
-            books.add(new Book("A1", dictionary));
-        for (Dictionary dictionary : Arrays.asList(new Dictionary(1, "один"), new Dictionary(2, "два"), new Dictionary(3, "три")))
-            books.add(new Book("A2", dictionary));
+        for (Dictionary dictionary : dictionaries) books.add(new Book("A1", dictionary));
+        for (Dictionary dictionary : dictionaries1) books.add(new Book("A2", dictionary));
         System.out.println(books);
 
-        String result;
-        for (int i = 1; i < 5; i++) {
-            result = getDescriptionFromBookAndItem(books, "A1", i);
-            System.out.println(result);
-            result = getDescriptionFromBookAndItem(books, "A2", i);
-            System.out.println(result);
-        }
+        int n = 4;
+        for (int i = 1; i < n; i++) System.out.println(getDescriptionFromBookAndItem(books, "A1", i));
+        for (int i = 1; i < n; i++) System.out.println(getDescriptionFromBookAndItem(books, "A2", i));
     }
 
     private static String getDescriptionFromBookAndItem(List<Book> books, String book, Integer value) {
