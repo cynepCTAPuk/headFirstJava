@@ -18,7 +18,7 @@
         <mysql.mysql-connector-java.version>8.0.20</mysql.mysql-connector-java.version>
         <!--        <org.hibernate.hibernate-core.version>4.3.10.Final</org.hibernate.hibernate-core.version>-->
         <!--        <org.hibernate.hibernate-core.version>4.3.11.Final</org.hibernate.hibernate-core.version>-->
-        <org.hibernate.hibernate-core.version>5.4.16.Final</org.hibernate.hibernate-core.version>
+        <org.hibernate.hibernate-core.version>5.4.24.Final</org.hibernate.hibernate-core.version>
     </properties>
 
     <dependencies>
