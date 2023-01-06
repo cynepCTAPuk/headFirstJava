@@ -1,1 +1,0 @@
-http://www.ng-newsletter.com.s3-website-us-east-1.amazonaws.com/posts/how-to-learn-angular.html
