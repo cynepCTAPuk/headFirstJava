@@ -1,4 +1,4 @@
-package string;
+package string.permutation;
 /**
  *  https://www.geeksforgeeks.org/java-program-to-print-all-permutations-of-a-given-string/
  *  Java program to print all permutations of a given string.

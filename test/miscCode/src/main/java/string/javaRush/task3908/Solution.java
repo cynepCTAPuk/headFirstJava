@@ -1,4 +1,4 @@
-package string.task3908;
+package string.javaRush.task3908;
 
 import java.util.HashMap;
 import java.util.Map;

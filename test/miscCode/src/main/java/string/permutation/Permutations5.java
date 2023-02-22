@@ -1,11 +1,8 @@
-package string;
+package string.permutation;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
-public class Permutations5a {
+public class Permutations5 {
 
     public static void collect(Set<List<String>> set, List<String> list) {
         if (list.size() == 0) return;
@@ -20,10 +17,10 @@ public class Permutations5a {
     public static void main(String[] args) {
         Set<List<String>> set = new HashSet();
         List<String> list = new ArrayList<>();
-        for (int i = 1; i < 5; i++) list.add(String.valueOf(i));
+        for (int i = 1; i < 12; i++) list.add(String.valueOf(i));
         System.out.println(list);
         collect(set, list);
         System.out.println(set.size());
-        for (List<String> l : set) System.out.println(l);
+//        for (List<String> l : set) System.out.println(l);
     }
 }

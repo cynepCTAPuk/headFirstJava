@@ -1,4 +1,4 @@
-package string.task2209;
+package string.javaRush.task2209;
 
 import java.io.BufferedReader;
 import java.io.IOException;

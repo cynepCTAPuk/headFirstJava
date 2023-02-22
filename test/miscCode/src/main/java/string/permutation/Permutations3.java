@@ -1,4 +1,4 @@
-package string;
+package string.permutation;
 
 import java.util.HashSet;
 import java.util.Set;

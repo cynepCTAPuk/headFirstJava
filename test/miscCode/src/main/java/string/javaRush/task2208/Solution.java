@@ -1,4 +1,4 @@
-package string.task2208;
+package string.javaRush.task2208;
 
 import java.util.LinkedList;
 import java.util.List;

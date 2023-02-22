@@ -1,4 +1,4 @@
-package string;
+package string.permutation;
 
 /**
  * https://www.baeldung.com/java-array-permutations

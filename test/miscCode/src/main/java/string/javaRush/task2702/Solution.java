@@ -1,4 +1,4 @@
-package string.task2702;
+package string.javaRush.task2702;
 
 /* 
 Нужный оператор

@@ -1,4 +1,4 @@
-package string.task2210;
+package string.javaRush.task2210;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package string.task2412;
+package string.javaRush.task2412;
 
 import java.text.ChoiceFormat;
 import java.text.Format;

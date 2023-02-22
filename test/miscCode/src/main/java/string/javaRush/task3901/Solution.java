@@ -1,4 +1,4 @@
-package string.task3901;
+package string.javaRush.task3901;
 
 import java.io.BufferedReader;
 import java.io.IOException;

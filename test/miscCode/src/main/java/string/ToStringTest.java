@@ -6,10 +6,6 @@ public class ToStringTest {
         String text = "Mya cat is " + cat;
         System.out.println(text);
 
-        Advertisement o = null;
-        text = "Object is " + o;
-        System.out.println(text);
-
         text = 5 + '\u0000' + "Log";
         System.out.println(text);
 

@@ -1,4 +1,4 @@
-package string;
+package string.permutation;
 
 /**
  * http://www.cyberforum.ru/java-j2se/thread1783280.html
