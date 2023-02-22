@@ -1,25 +1,22 @@
 package stream;
 
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class PeekTest {
-    public static void main(String[] args) {
-        List<String> collect = Stream.of("one", "two", "three", "four")
-                .filter(e -> e.length() > 3)
-                .peek(e -> System.out.print("Filtered value: " + e + " "))
-                .map(String::toUpperCase)
-                .peek(e -> System.out.println("Mapped value: " + e))
-                .collect(Collectors.toList());
-        System.out.println(collect);
+	public static void main(String[] args) {
+		int s = 0;
 
-        System.out.println("-".repeat(30));
-        Stream<String> nameStream = Stream.of("Alice", "Bob", "Chuck");
-        nameStream.forEach(System.out::println);
+		System.out.println(++s + " " + "-".repeat(30));
+		List<User> users = List.of(new User("Alice", 10), new User("Bob", 16), new User("Chuck", 30));
+		System.out.println(users);
 
-        System.out.println("-".repeat(30));
-        Stream<User> userStream = Stream.of(new User("Alice"), new User("Bob"), new User("Chuck"));
-        userStream.peek(u -> u.setName(u.getName().toUpperCase())).forEach(System.out::println);
-    }
+		System.out.println(++s + " " + "-".repeat(30));
+		List<User> users1 = users.stream()
+				.peek(u -> {
+					u.setName(u.getName().toUpperCase());
+					u.setAge(u.getAge() + 1);
+				})
+				.toList();
+		System.out.println(users1);
+	}
 }
