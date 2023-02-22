@@ -1,19 +1,28 @@
 package string;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class ToString {
-    public static void main(String[] args) {
-        char[] chars = {'a', 'b', 'c'};
-        System.out.println(String.valueOf(chars));
-        System.out.println(Arrays.toString(chars));
-        String str = null;
-        System.out.println(String.valueOf(str));
-        Double dbl = null;
-        System.out.println(String.valueOf(dbl));
+	public static void main(String[] args) {
+		int i = 0;
 
-        Integer i = 100;
-        System.out.println(String.valueOf(i));
-        System.out.println(Integer.toString(i));
-    }
+		System.out.println(++i + " " + "-".repeat(30));
+		Character[] characters = {'a', 'b', 'c'};
+		System.out.println(Arrays.toString(characters));
+		System.out.println(Arrays.asList(characters));
+
+		System.out.println(++i + " " + "-".repeat(30));
+		char[] chars = {'a', 'b', 'c'};
+		System.out.println(chars);
+		String[] strings = {"a", "b", "c"};
+		System.out.println(String.join(", ", strings));
+		System.out.println(Arrays.stream(strings).collect(Collectors.joining(", ", "{", "}")));
+
+		System.out.println(++i + " " + "-".repeat(30));
+		String str = null;
+		System.out.println(str);
+		Double dbl = null;
+		System.out.println(dbl);
+	}
 }
