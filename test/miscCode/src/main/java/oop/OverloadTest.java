@@ -1,6 +1,6 @@
 package oop;
 
-public class OverrideTest {
+public class OverloadTest {
     public static void print(int n) {
         System.out.println("int: " + n);
     }
@@ -18,10 +18,10 @@ public class OverrideTest {
     }
 
     public static void main(String[] args) {
-        OverrideTest.print(1);
-        OverrideTest.print((byte) 2);
-        OverrideTest.print("3");
-        OverrideTest.print((Integer) null);
-        OverrideTest.print((String) null);
+        OverloadTest.print(1);
+        OverloadTest.print((byte) 2);
+        OverloadTest.print("3");
+        OverloadTest.print((Integer) null);
+        OverloadTest.print((String) null);
     }
 }
