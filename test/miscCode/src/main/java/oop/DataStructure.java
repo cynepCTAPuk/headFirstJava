@@ -3,7 +3,7 @@ package oop;
 import java.util.Iterator;
 
 public class DataStructure {
-    private final static int SIZE = 15;
+    private static final int SIZE = 15;
     private final int[] arrayOfInts = new int[SIZE];     // Create an array
 
     public DataStructure() {
