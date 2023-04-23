@@ -1,13 +1,21 @@
 package string;
 
+import exceptions.MyException;
+
 public class ReverseInteger {
-	static int revers(int n) {
-	StringBuilder stringBuilder = new StringBuilder(String.valueOf(n));
-	stringBuilder.reverse();
-	return Integer.parseInt(stringBuilder.toString());
+	public static void main(String[] args) {
+		String format = "%,20d%n";
+		int n = -1234567890;
+		System.out.printf(format, n);
+		System.out.printf(format, revers(n));
+		System.out.printf(format, (Integer.MAX_VALUE));
+		System.out.printf(format, revers(Integer.MAX_VALUE));
 	}
 
-	public static void main(String[] args) {
-		System.out.println(revers(12345));
+	static long revers(long n) {
+		if (n < 0) throw new MyException("Number must be positive");
+		StringBuilder stringBuilder = new StringBuilder(String.valueOf(n));
+		stringBuilder.reverse();
+		return Long.parseLong(stringBuilder.toString());
 	}
 }
