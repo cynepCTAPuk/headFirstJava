@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="All">
+<Configuration>
     <Appenders>
-        <Console name="ConsoleAppender" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d [%t] %-5level %logger{36} - %msg%n%throwable"/>
+        <Console name="Console">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-
-        <File name="MyFileAppender" fileName="C:/000/log4j2_xml.log" immediateFlush="true" append="true">
-            <PatternLayout pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-        </File>
     </Appenders>
     <Loggers>
-        <Root level="All">
-            <AppenderRef ref="ConsoleAppender"/>
-            <AppenderRef ref="MyFileAppender"/>
+        <Root level="ERROR">
+            <AppenderRef ref="Console"/>
         </Root>
+        <logger name="com" level="INFO">
+            <AppenderRef ref="Console"/>
+        </logger>
+        <logger name="com.journaldev" level="TRACE">
+            <AppenderRef ref="Console"/>
+        </logger>
+        <logger name="net" level="ERROR">
+            <AppenderRef ref="Console"/>
+        </logger>
+        <logger name="net.journaldev" level="ERROR">
+            <AppenderRef ref="Console"/>
+        </logger>
     </Loggers>
 </Configuration>
