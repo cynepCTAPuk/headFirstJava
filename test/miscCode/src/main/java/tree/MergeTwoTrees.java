@@ -8,17 +8,21 @@ import java.io.PrintStream;
 public class MergeTwoTrees {
 	public static void main(String[] args) {
 		BinaryTreeModel tree1 = new BinaryTreeModel(1);
-		tree1.setLeft(new BinaryTreeModel(3));
-		tree1.setRight(new BinaryTreeModel(2));
-		tree1.getLeft().setLeft(new BinaryTreeModel(5));
+		tree1.setLeft(new BinaryTreeModel(2));
+		tree1.setRight(new BinaryTreeModel(3));
+		tree1.getLeft().setLeft(new BinaryTreeModel(4));
+		tree1.getLeft().setRight(new BinaryTreeModel(5));
+		tree1.getRight().setLeft(new BinaryTreeModel(6));
+		tree1.getRight().setRight(new BinaryTreeModel(7));
 		tree1.print3(System.out);
 
-		BinaryTreeModel tree2 = new BinaryTreeModel(2);
-		tree2.setLeft(new BinaryTreeModel(1));
+		BinaryTreeModel tree2 = new BinaryTreeModel(1);
+		tree2.setLeft(new BinaryTreeModel(2));
 		tree2.setRight(new BinaryTreeModel(3));
-		tree2.getLeft().setRight(new BinaryTreeModel(4));
+		tree2.getLeft().setLeft(new BinaryTreeModel(4));
+		tree2.getLeft().setRight(new BinaryTreeModel(5));
+		tree2.getRight().setLeft(new BinaryTreeModel(6));
 		tree2.getRight().setRight(new BinaryTreeModel(7));
-
 		tree2.print3(System.out);
 
 		BinaryTreeModel tree3 = mergeTrees(tree1, tree2);
@@ -76,10 +80,7 @@ class BinaryTreeModel {
 	}
 
 	String traversePreOrder(BinaryTreeModel root) {
-
-		if (root == null) {
-			return "";
-		}
+		if (root == null) return "";
 
 		StringBuilder sb = new StringBuilder();
 		sb.append(root.getValue());
@@ -93,8 +94,7 @@ class BinaryTreeModel {
 		return sb.toString();
 	}
 
-	void traverseNodes(StringBuilder sb, String padding, String pointer, BinaryTreeModel node,
-					   boolean hasRightSibling) {
+	void traverseNodes(StringBuilder sb, String padding, String pointer, BinaryTreeModel node, boolean hasRightSibling) {
 		if (node != null) {
 			sb.append("\n");
 			sb.append(padding);
@@ -102,11 +102,8 @@ class BinaryTreeModel {
 			sb.append(node.getValue());
 
 			StringBuilder paddingBuilder = new StringBuilder(padding);
-			if (hasRightSibling) {
-				paddingBuilder.append("│  ");
-			} else {
-				paddingBuilder.append("   ");
-			}
+			if (hasRightSibling) paddingBuilder.append("│  ");
+			else paddingBuilder.append("   ");
 
 			String paddingForBoth = paddingBuilder.toString();
 			String pointerRight = "└──";
@@ -133,7 +130,7 @@ class BinaryTreeModel {
 
 	void print3(PrintStream os) {
 		os.println();
-		os.println("-".repeat(5));
+		os.println("-".repeat(25));
 		os.print(traversePreOrder(this));
 	}
 }
