@@ -22,8 +22,7 @@ public class Demo {
 		List<String> list = new ArrayList<>(); // Java 8
 		Collections.addAll(list, "0a1", "_b2", "c3");
 		list.add("d4");
-		System.out.println(getResultImperative(list));
-		System.out.println(getResultDeclarative(list));
+		System.out.println(getSumLetters(list));
 	}
 
 	private static List<Integer> getIntegers() {
@@ -35,19 +34,11 @@ public class Demo {
 				.toList();
 	}
 
-	private static int getResultImperative(List<String> strings) {
-		return strings.stream().
-				filter(string -> !Character.isDigit(string.charAt(0)))
-				.filter(string -> !string.contains("_"))
+	private static int getSumLetters(List<String> strings) {
+		return strings.stream()
+				.filter(s -> !Character.isDigit(s.charAt(0)))
+				.filter(s -> !s.contains("_"))
 				.mapToInt(String::length)
 				.sum();
-	}
-
-	private static int getResultDeclarative(List<String> strings) {
-		return strings.stream().
-				filter(s -> !Character.isDigit(s.charAt(0))).
-				filter(s -> !s.contains("_")).
-				mapToInt(String::length).
-				sum();
 	}
 }
