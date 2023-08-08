@@ -1,7 +1,5 @@
 package annotation.jr.posts1896;
-/**
- * https://javarush.ru/groups/posts/1896-java-annotacii-chto-ehto-i-kak-ehtim-poljhzovatjhsja
- */
+// https://javarush.ru/groups/posts/1896-java-annotacii-chto-ehto-i-kak-ehtim-poljhzovatjhsja
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
