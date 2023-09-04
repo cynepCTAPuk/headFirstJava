@@ -15,5 +15,4 @@ public class StringTest {
         System.out.println("\uD83D\uDD0A");
         System.out.println("\u1148\u0097");
     }
-
 }
